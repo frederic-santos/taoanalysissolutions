@@ -2,3 +2,5 @@ auto/*
 mbb*.*
 *.aux
 *.log
+*prv_*
+*_region_*
