@@ -13,8 +13,10 @@
 \usepackage{amsmath}
 \usepackage[matha,mathb]{mathabx}
 \usepackage{mbboard}
+% Macros:
+\newcommand{\successor}[1]{#1 \! +\!\!+}
 % Environment:
-\newenvironment{exo}[2]{\textsc{Exercise #1}. --- #2 \hfill $\square$}
+\newenvironment{exo}[2]{\textsc{Exercise #1}. --- \textit{#2} \\}
 
 % Begin doc:
 \begin{document}
@@ -26,8 +28,27 @@ No exercises in this chapter.
 
 \section{The natural numbers}
 \label{sec:natural-numbers}
-\begin{exo}{2.2.1}{
-    Solution.
-}
+\begin{exo}{2.2.1}{Prove that the addition is associative, i.e. that
+    for any natural numbers $a, b, c$, we have $(a+b) + c = a + (b+c)$.}
+
+  Let's use induction on $c$ while keeping $a$ and $b$ fixed.
+  
+  \begin{itemize}
+  \item Base case for $c=0$: let's prove that $(a+b)+0 = a+(b+0)$. The
+    left hand side is equal to $(a+b)$ according to Lemma 2.2.3. For the
+    right hand side, if we apply the same lemma to the $(b+0)$ part,
+    we get $a + (b+0) = a+b$. Both sides are equal to $a+b$, and the
+    base case is thus done.
+  \item Now let's suppose inductively that $(a+b) + c = a + (b+c)$: we
+    have to prove that $(a+b) + \successor{c} = a + (b +
+    \successor{c})$. Using Lemma 2.2.3 on the right
+    hand side leads to $a + \successor{(b+c)}$. Now consider the left
+    hand side. Using still the same lemma, we get $(a+b) +
+    \successor{c} = \successor{\left((a+b) + c\right)}$. By the
+    inductive hypothesis, this is also equal to
+    $\successor{\left(a + (b+c)\right)}$. And, using the lemma 2.2.3
+    again, this also leads to $a + \successor{b+c}$. Therefore, both
+    sides are equal to $a + \successor{b+c}$, and we have closed the induction.
+  \end{itemize}
 \end{exo}
 \end{document}
