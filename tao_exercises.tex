@@ -14,9 +14,9 @@
 \usepackage[matha,mathb]{mathabx}
 \usepackage{mbboard}
 % Macros:
-\newcommand{\successor}[1]{#1 \! +\!\!+}
+\newcommand{\successor}[1]{#1 \! +\!\!\!+}
 % Environment:
-\newenvironment{exo}[2]{\textsc{Exercise #1}. --- \textit{#2} \\}
+\newenvironment{exo}[2]{\noindent \textsc{Exercise #1}. --- \textit{#2} \\}
 
 % Begin doc:
 \begin{document}
@@ -48,7 +48,33 @@ No exercises in this chapter.
     inductive hypothesis, this is also equal to
     $\successor{\left(a + (b+c)\right)}$. And, using the lemma 2.2.3
     again, this also leads to $a + \successor{b+c}$. Therefore, both
-    sides are equal to $a + \successor{b+c}$, and we have closed the induction.
+    sides are equal to $a + \successor{b+c}$, and we have closed the
+    induction.
+  \end{itemize}
+\end{exo}
+
+\begin{exo}{2.2.2}{Let $a$ be a positive number. Prove that there
+    exists exactly one natural number $b$ such that $\successor{b} =
+    a$.}
+  
+  Let's use induction on $a$.
+
+  \begin{itemize}
+  \item Base case for $a=1$: we know that $b=0$ matches this property,
+    since $\successor{0} = 1$ by Definition 2.1.3. Furthermore, there
+    is only one solution. Suppose that is another natural number $b$
+    such that $\successor{b} = 1$. Then, we would have
+    $\successor{b} = \successor{0}$, which would imply $b = 0$ by
+    Axiom 2.4. The base case is demonstrated.
+  \item Let's suppose inductively that there is exactly one natural
+    number $b$ such as $\successor{b} = a$. We have to prove that
+    there is exactly one natural number $b'$ such as
+    $\successor{b'} = \successor{a}$. By the induction hypothesis, and
+    taking $b' = \successor{b}$, we have
+    $\successor{b'} = \successor{(\successor{b})} = \successor{a}$. So
+    there exists a solution, with $b' = \successor{b} = a$. Uniqueness is
+    given by Axiom 2.4.: if $\successor{b'} = \successor{a}$, then we
+    necessarily have $b'=a$.
   \end{itemize}
 \end{exo}
 \end{document}
