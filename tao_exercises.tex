@@ -8,6 +8,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{titlesec}
 \titlelabel{\thetitle.\quad}
+\usepackage{enumitem}
 % Fonts and math packages:
 \usepackage{lmodern}
 \usepackage{amsmath}
@@ -67,8 +68,8 @@ No exercises in this chapter.
     $\successor{b} = \successor{0}$, which would imply $b = 0$ by
     Axiom 2.4. The base case is demonstrated.
   \item Let's suppose inductively that there is exactly one natural
-    number $b$ such as $\successor{b} = a$. We have to prove that
-    there is exactly one natural number $b'$ such as
+    number $b$ such that $\successor{b} = a$. We have to prove that
+    there is exactly one natural number $b'$ such that
     $\successor{b'} = \successor{a}$. By the induction hypothesis, and
     taking $b' = \successor{b}$, we have
     $\successor{b'} = \successor{(\successor{b})} = \successor{a}$. So
@@ -76,5 +77,89 @@ No exercises in this chapter.
     given by Axiom 2.4.: if $\successor{b'} = \successor{a}$, then we
     necessarily have $b'=a$.
   \end{itemize}
+\end{exo}
+
+\begin{exo}{2.2.3}{Let $a, b, c$ be natural numbers. Prove the
+    following properties of order for natural numbers:}
+  \begin{enumerate}[label=\emph{(\alph*)}]
+  \item Reflexivity: $a \geq a$. This is true since $a = 0 + a$ by
+    Definition 2.2.1. By commutativity of addition, we can also write
+    $a = a + 0$. So there is indeed a natural number $n$ (with
+    $n=0$) such that $a = a + n$, i.e. $a \geq a$.
+  \item Transitivity: if $a \geq b$ and $b \geq c$, then $a \geq
+    c$. From the part $a \geq b$, there exists a natural number $n$
+    such that $a = b + n$ according to Definition 2.2.11. A similar
+    consideration for the part $b \geq c$ leads to $b = c + m$, $m$
+    being a natural number. Combining together those two equalities,
+    we can write $a = b + n = (c + m) + n = c + (m + n)$ by
+    associativity (see Exercise 2.2.1). Then, $n+m$ being a natural
+    number\footnote{This is a trivial induction from the definition of
+      addition.}, the transitivity is demonstrated.
+  \item Anti-symmetry: if $a \geq b$ and $b \geq a$, then $a=b$. From
+    the part $a \geq b$, there exists a natural number $n$ such that $a
+    = b + n$. Similarly, there exists a natural number $m$ such that $b
+    = a + m$. Combining those two equalities leads to $a = b + n = (a +
+    m) + n = a + (m + n)$. By cancellation law (Proposition 2.2.6), we
+    can conclude that $0 = m + n$. According to Corollary 2.2.9, this
+    leads to $m = n = 0$. Therefore, both $m$ and $n$ are null,
+    meaning that $a = b + 0 = b$.
+  \item Preservation of order: $a \geq b$ iff $a + c \geq b +
+    c$. First, let's prove that
+    $a+c \geq b+c \Longrightarrow a \geq b$. If $a+c \geq b+c$, there
+    exists a natural number $n$ such that $a+c = b+c+n$. By cancellation
+    law (Proposition 2.2.6)\footnote{And also associativity and
+      commutativity that we do not detail explicitly here.}, we
+    conclude that $a = b + n$, i.e. $a\geq b$, thus demonstrating the
+    first implication. Conversely, let's suppose that $a \geq
+    b$. There exists a natural number $m$ such that $a = b +
+    m$. Therefore, $a + c = b+m+c$ for any natural number
+    $c$\footnote{It is easy to demonstrate that, if $a=b$, then
+      $a+n=b+n$ for any natural numbers $a,b,n$. This is a trivial
+      induction on $n$, but it seems to me that it should be proved. I
+      am not totally sure that we can use that starting only from
+      Peano's axioms.}. Still by associativity and commutativity, we
+    can rewrite this as $a+c = (b+c) +m$, i.e. $a+c \geq b+c$.
+  \item $a < b$ iff $\successor{a} \leq b$. First, let's prove that
+    $\successor{a} \leq b \Longrightarrow a < b$. By definition of
+    ordering, there exists a natural number $n$ such that
+    $b = (\successor{a}) + n$. By definition of addition, we can
+    re-write: $b = \successor{(\successor{a} + n)}$. Then, by
+    commutativity and yet again by definition of addition,
+    $b = \successor{(n + \successor{a})} = (\successor{n}) +
+    (\successor{a})$. Thus, there exists a natural number
+    $\successor{n}$ such that $b = \successor{n} + a$, which means that
+    $b \geq a$. But we still have to prove that $a \neq b$. Let's
+    suppose that $a=b$: in this case, by cancellation law, we would
+    have $\successor{n} = 0$, which is impossible according to Axiom
+    2.3 (0 is not the successor of any natural number). Thus, $a \neq
+    b$ et $b \geq a$: we have showed that $a < b$. 
+
+    Conversely, let's prove that
+    $a < b \Longrightarrow \successor{a} \leq b$. Starting from that
+    strict inequality, there exists a \textit{positive}\footnote{We
+      make use here of the statement \textit{(f)} demonstrated
+      below. There is no circularity here, since proving \textit{(f)}
+      will not make use of \textit{(e)}.} natural number $n$ such that
+    $b = a + n$. By Lemma 2.2.10, since $n$ is positive, it has one
+    unique antecessor $m$, so that $n$ can be written
+    $\successor{m}$. Thus,
+    $b = a + (\successor{m}) = \successor{(a + m)} = \successor{(m +
+      a)} = m + (\successor{a}) = (\successor{a}) + m$. And, $m$ being
+    a natural number, this corresponds to the statement $b \geq a$.
+  \item $a < b$ iff $b=a+d$ for some positive number $d$. First, let's
+    prove the first implication, $a<b \Longrightarrow b=a+d$ with
+    $d \neq 0$. Since $a<b$, we have in particular $a \leq b$, and
+    there exists a natural number $d$ such that $b=a+d$. For the sake
+    of contradiction, let's suppose that $d=0$. We would have $b=a$,
+    which would contradict the condition $a\neq b$ of the strict
+    inequality. Thus, $d$ is a positive number, which demonstrates the
+    left-to-right implication.
+
+    Conversely, let's suppose that $b = a+d$, with $d \neq 0$. This
+    expression gives immediately $a \leq b$. But if $a=b$, by
+    cancellation law, this would lead to $0=d$, a contradiction with
+    the fact that $d$ is a positive number. Thus, $a\neq b$ and $a
+    \leq b$, which demonstrates $a<b$.
+  \end{enumerate}
 \end{exo}
 \end{document}
