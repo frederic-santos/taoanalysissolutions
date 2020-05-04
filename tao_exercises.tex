@@ -158,4 +158,24 @@ No exercises in this chapter.
     \leq b$, which demonstrates $a<b$.
   \end{enumerate}
 \end{exo}
+
+\begin{exo}{2.2.4}{Demonstrate three lemmas used to prove to
+    trichotomy or order for natural numbers.}
+  
+  \begin{enumerate}[label=\emph{(\alph*)}]
+  \item Show that we have $0 \leq b$ for any natural number $b$. This is obvious
+    since, by definition of addition, $0 + b = b$ for any natural
+    number $b$. This is precisely the definition of $0 \leq b$.
+  \item Show that if $a > b$, then $\successor{a} > b$. If $a > b$,
+    then $a = b + d$, $d$ being a positive natural number. Let's
+    recall that $\successor{a} = a + 1$. Thus, $\successor{a} = a + 1
+    = b + d + 1 = b + (d+1)$ by associativity of
+    addition. Furthermore, $d+1$ is a positive natural number (by
+    Proposition 2.2.8). Thus, $\successor{a} > b$.
+  \item Show that if $a=b$, then $\successor{a}>b$. Once again, let's
+    use the fact that $\successor{a} = a+1$. Thus, $\successor{a} =
+    a+1 = b+1$, and $1$ is a positive natural number. This is the
+    definition of $\successor{a}>b$.
+  \end{enumerate}
+\end{exo}
 \end{document}
