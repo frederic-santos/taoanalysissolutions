@@ -106,19 +106,15 @@ No exercises in this chapter.
   \item Preservation of order: $a \geq b$ iff $a + c \geq b +
     c$. First, let's prove that
     $a+c \geq b+c \Longrightarrow a \geq b$. If $a+c \geq b+c$, there
-    exists a natural number $n$ such that $a+c = b+c+n$. By cancellation
-    law (Proposition 2.2.6)\footnote{And also associativity and
-      commutativity that we do not detail explicitly here.}, we
-    conclude that $a = b + n$, i.e. $a\geq b$, thus demonstrating the
-    first implication. Conversely, let's suppose that $a \geq
-    b$. There exists a natural number $m$ such that $a = b +
-    m$. Therefore, $a + c = b+m+c$ for any natural number
-    $c$\footnote{It is easy to demonstrate that, if $a=b$, then
-      $a+n=b+n$ for any natural numbers $a,b,n$. This is a trivial
-      induction on $n$, but it seems to me that it should be proved. I
-      am not totally sure that we can use that starting only from
-      Peano's axioms.}. Still by associativity and commutativity, we
-    can rewrite this as $a+c = (b+c) +m$, i.e. $a+c \geq b+c$.
+    exists a natural number $n$ such that $a+c = b+c+n$. By
+    cancellation law (Proposition 2.2.6)\footnote{And also
+      associativity and commutativity that we do not detail explicitly
+      here.}, we conclude that $a = b + n$, i.e. $a\geq b$, thus
+    demonstrating the first implication. Conversely, let's suppose
+    that $a \geq b$. There exists a natural number $m$ such that
+    $a = b + m$. Therefore, $a + c = b+m+c$ for any natural number
+    $c$. Still by associativity and commutativity, we can rewrite this
+    as $a+c = (b+c) +m$, i.e. $a+c \geq b+c$.
   \item $a < b$ iff $\successor{a} \leq b$. First, let's prove that
     $\successor{a} \leq b \Longrightarrow a < b$. By definition of
     ordering, there exists a natural number $n$ such that
