@@ -14,10 +14,12 @@
 \usepackage{amsmath}
 \usepackage[matha,mathb]{mathabx}
 \usepackage{mbboard}
+\usepackage{stmaryrd}
 % Macros:
 \newcommand{\successor}[1]{#1 \! +\!\!\!+}
 % Environment:
-\newenvironment{exo}[2]{\noindent \textsc{Exercise #1}. --- \textit{#2} \\}
+\newenvironment{exo}[2]{\noindent \textsc{Exercise #1}. ---
+  \textit{#2} \vspace{3mm}}
 
 % Begin doc:
 \begin{document}
@@ -159,9 +161,8 @@ No exercises in this chapter.
   \end{enumerate}
 \end{exo}
 
-\begin{exo}{2.2.4}{Demonstrate three lemmas used to prove to
-    trichotomy or order for natural numbers.}
-  
+\begin{exo}{2.2.4}{Demonstrate three lemmas used to prove the
+    trichotomy of order for natural numbers.}
   \begin{enumerate}[label=\emph{(\alph*)}]
   \item Show that we have $0 \leq b$ for any natural number $b$. This is obvious
     since, by definition of addition, $0 + b = b$ for any natural
@@ -177,5 +178,61 @@ No exercises in this chapter.
     a+1 = b+1$, and $1$ is a positive natural number. This is the
     definition of $\successor{a}>b$.
   \end{enumerate}
+\end{exo}
+
+\begin{exo}{2.2.5}{Prove the strong principle of induction, formulated
+    as follows: Let $m_0$ be a natural number, and let $P(m)$ be a
+    property pertaining to an arbitrary natural number $m$. Suppose
+    that for each $m \geq m_0$, we have the following implication: if
+    $P(m')$ is true for all natural numbers $m_0 \leq m' < m$, then
+    $P(m)$ is also true. (In particular, this means that $P(m_0)$ is
+    true, since in this case the hypothesis is vacuous.) Then we can
+    conclude that $P(m)$ is true for all natural numbers
+    $m \geq m_0$.}
+
+  First let's introduce a small lemma (similar to Proposition 2.2.12\textit{(e)}):
+  for any natural number $a$ and $b$, $a<\successor{b}$ iff $a\leq
+  b$. Indeed:
+  \begin{itemize}
+  \item If $a < \successor{b}$, then $\successor{b} = a+n$ for a given
+    positive natural $n$. By Lemma 2.2.10, there exists one natural
+    number $m$ such as $n = \successor{m}$. Thus $\successor{b} = a +
+    \successor{m}$, which can be rewritten $\successor{b} =
+    \successor{(a+m)}$ by Lemma 2.2.3\footnote{We could also rewrite
+      $b+1 = a + m + 1$ and then use the cancellation law.}. By Axiom
+    2.4., this is equivalent to $b = a+n$, which can also be written
+    $a \leq b$.
+  \item Conversely, if $a \leq b$, there exists a natural number $m$
+    such as $b = a+m$. Thus, $\successor{b} = \successor{(a+m)} =
+    a + (\successor{m})$ by Definition of addition
+    (2.2.1). And, $\successor{m}$ being a positive
+    number, this means that $b > a$ according to Proposition
+    2.2.12\textit{(f)}.
+  \end{itemize}
+
+  \medskip
+
+  Now we can prove the main proposition. Let $Q(n)$ be the property
+  ``$P(m)$ is true for all $m$ such that $m_0 \leq m < n$''. Let's
+  induct on $n$.
+
+  \begin{itemize}
+  \item (Although this is not necessary,) we could consider two types
+    of base cases. If $n < m_0$, $Q(n)$ is the proposition ``$P(m)$ is
+    true for all $m$ such that $m_0 \leq m < n$'', but there is no
+    such natural number $m$. Thus, $Q(n)$ is vacuously true. If
+    $n = m_0$, $P(m_0)$ is true by hypothesis, thus $Q(m_0)$ is also
+    true.
+  \item Now let's suppose inductively that $Q(n)$ is true, and show
+    that $Q(\successor{n})$ is also true. If $Q(n)$ is true, $P(m)$ is
+    true for all $m$ such that $m_0 \leq m < n$. By hypothesis, this
+    implies that $P(n)$ is true. Thus, $P(m)$ is true for any natural
+    number $m$ such that $m_0 \leq m \leq n$, i.e. such that $m_0 \leq
+    m < \successor{n}$ according to the lemma introduced above. This
+    is precisely $Q(\successor{n})$, and this closes the induction.
+  \end{itemize}
+  Thus, $Q(n)$ is true for all natural numbers $n$, which means in
+  particular that $P(m)$ is true for any natural number $m \geq
+  m_0$. This demonstrates the principle of string induction.
 \end{exo}
 \end{document}
