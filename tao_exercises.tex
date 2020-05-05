@@ -233,6 +233,42 @@ No exercises in this chapter.
   \end{itemize}
   Thus, $Q(n)$ is true for all natural numbers $n$, which means in
   particular that $P(m)$ is true for any natural number $m \geq
-  m_0$. This demonstrates the principle of string induction.
+  m_0$. This demonstrates the principle of strong induction.
+\end{exo}
+
+\bigskip
+\begin{exo}{2.2.6}{Let $n$ be a natural number, and let $P(m)$ be a
+    property pertaining to the natural numbers such that whenever
+    $P(\successor{m})$ is true, then $P(m)$ is true. Suppose that
+    $P(n)$ is also true. Prove that $P(m)$ is true for all natural
+    numbers $m \leq n$; this is known as the \emph{principle of
+      backwards induction}.}
+  
+  Terence Tao suggests to use induction on $n$. So let $Q(n)$ be the
+  following property: ``if $P(n)$ is true, then $P(m)$ is true for all
+  $m \leq n$. The goal is to prove $Q(n)$ for all natural numbers $n$.
+
+  \begin{itemize}
+  \item Base case $n = 0$: here, $Q(n)$ means that if $P(0)$ is true,
+    then $P(m)$ is true for any $m \leq 0$. By Definition 2.2.11, if
+    $m \leq 0$, there exists a natural number $d$ such that $0 = m +
+    d$. But, by Corollary 2.2.9, this implies that both $m = 0$ and $d
+    = 0$. Thus, the only number $m$ such that $m \leq 0$ is 0
+    itself. Therefore, $Q(0)$ is simply the tautology ``if $P(0)$ is
+    true, then $P(0)$ is true''--- a statement that we can safely
+    accept. The base case is the, demonstrated.
+  \item Let's suppose inductively that $Q(n)$ is true: we must show
+    that $Q(\successor{n})$ is also true. If $P(\successor{n})$ is
+    true, then by definition of $P$, $P(n)$ is also true. Then, by
+    induction hypothesis, $P(m)$ is true for all $m \leq n$. We have
+    showed that $P(\successor{n})$ implies $P(m)$ for all
+    $m \leq \successor{n}$\footnote{Actually, we use here yet another
+      lemma, similar to the one introduced for the previous
+      exercise. We use the fact that $m \leq \successor{n}$ is
+      equivalent to $m = \successor{n}$ or $m \leq n$, which is easy
+      to prove, but is not part of the ``standard'' results presented
+      in the textbook.}, which is precisely $Q(\successor{n})$. This
+    closes the induction.
+  \end{itemize}
 \end{exo}
 \end{document}
