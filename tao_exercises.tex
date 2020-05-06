@@ -17,6 +17,9 @@
 \usepackage{stmaryrd}
 % Macros:
 \newcommand{\successor}[1]{#1 \! +\!\!\!+}
+% Lemmas:
+\usepackage{amsthm}
+\newtheorem*{lem}{Lemma}
 % Environment:
 \newenvironment{exo}[2]{\noindent \textsc{Exercise #1}. ---
   \textit{#2} \vspace{3mm}}
@@ -190,11 +193,15 @@ No exercises in this chapter.
     conclude that $P(m)$ is true for all natural numbers
     $m \geq m_0$.}
 
-  First let's introduce a small lemma (similar to Proposition 2.2.12\textit{(e)}):
-  for any natural number $a$ and $b$, $a<\successor{b}$ iff $a\leq
-  b$. Indeed:
-  \begin{itemize}
-  \item If $a < \successor{b}$, then $\successor{b} = a+n$ for a given
+  First let's introduce a small lemma (similar to Proposition
+  2.2.12\textit{(e)}).
+
+  \begin{lem}
+    For any natural number $a$ and $b$, $a<\successor{b}$ iff $a\leq
+  b$.
+  \end{lem}
+  \begin{proof}
+    If $a < \successor{b}$, then $\successor{b} = a+n$ for a given
     positive natural $n$. By Lemma 2.2.10, there exists one natural
     number $m$ such as $n = \successor{m}$. Thus $\successor{b} = a +
     \successor{m}$, which can be rewritten $\successor{b} =
@@ -202,15 +209,14 @@ No exercises in this chapter.
       $b+1 = a + m + 1$ and then use the cancellation law.}. By Axiom
     2.4., this is equivalent to $b = a+n$, which can also be written
     $a \leq b$.
-  \item Conversely, if $a \leq b$, there exists a natural number $m$
+    
+    Conversely, if $a \leq b$, there exists a natural number $m$
     such as $b = a+m$. Thus, $\successor{b} = \successor{(a+m)} =
     a + (\successor{m})$ by Definition of addition
     (2.2.1). And, $\successor{m}$ being a positive
     number, this means that $b > a$ according to Proposition
     2.2.12\textit{(f)}.
-  \end{itemize}
-
-  \medskip
+  \end{proof}
 
   Now we can prove the main proposition. Let $Q(n)$ be the property
   ``$P(m)$ is true for all $m$ such that $m_0 \leq m < n$''. Let's
@@ -270,5 +276,89 @@ No exercises in this chapter.
       in the textbook.}, which is precisely $Q(\successor{n})$. This
     closes the induction.
   \end{itemize}
+\end{exo}
+
+\begin{exo}{2.3.1}{Show that multiplication is commutative, i.e., if
+    $n$ and $m$ are natural numbers, show that $n \times m = m \times
+    n$.}
+
+  We will use an induction of $n$ while keeping $m$ fixed. However,
+  this is not a trivial result, and even the base case is not
+  straightforward. We will first introduce some lemmas.
+
+  \begin{lem}
+    For any natural number $n$, $n \times 0 = 0$.
+  \end{lem}
+
+  \begin{proof}
+    Let's induct on $n$.
+    For the base case $n=0$, we know by Definition 2.3.1 of
+    multiplication that $0 \times 0 = 0$, since $0 \times m = 0$ for
+    any natural number $m$.
+
+    Now let's suppose that $n \times 0 = 0$. Thus, $\successor{n}
+    \times 0 = (n \times 0) + 0$ by Definition 2.3.1. But by induction
+    hypothesis, $n \times 0 = 0$, so that $\successor{n} \times 0 = 0
+    + 0 = 0$. This closes the induction.
+  \end{proof}
+
+  \begin{lem}
+    For all natural numbers $m$ and $n$, we have $m \times \successor{n} = (m
+    \times n) + m$.
+  \end{lem}
+
+  \begin{proof}
+    Let's induct on $m$. The base case $m=0$ is easy to prove: $0
+    \times \successor{n} = 0$ by Definition 2.3.1 of multiplication, and $(0
+    \times n) + 0 = 0$.
+
+    Now suppose inductively that
+    $m \times \successor{n} = (m \times n) + m$, and we must show that
+    \begin{equation}
+      \label{eq:proof_lemma_231}
+      \successor{m} \times \successor{n} = (\successor{m} \times n) +
+      \successor{m}
+    \end{equation}
+
+    We begin by the left hand side: by Definition
+    2.3.1,
+    $\successor{m} \times \successor{n} = (m \times \successor{n}) +
+    \successor{n}$. By induction hypothesis, this is equal to
+    $(m \times n) + m + \successor{n}$.
+
+    Then, apply the definition of multiplication to the right hand
+    side:
+    $(\successor{m} \times n) + \successor{m} = (m \times n) + n +
+    \successor{m}$. The Lemma 2.2.3 and the commutativity of addition
+    leads to
+    $(m \times n) + n + \successor{m} = (m \times n) + \successor{(n +
+      m)} = (m \times n) + \successor{(m + n)} = (m \times n) + m +
+    \successor{n}$, which is equal to the left hand side.
+
+    Thus, both sides of equation \eqref{eq:proof_lemma_231} are equal,
+    and we can close the induction.
+  \end{proof}
+  
+  Now it is easier to prove the main result ($n \times m = m \times
+  n$), by an induction on $n$.
+
+  \begin{itemize}
+  \item Base case $n = 0$: we already know by Definition 2.3.1 that $0
+    \times m = 0$. The first lemma introduced in this exercise also
+    provides $m \times 0 = 0$. Thus, the base case is proven, since $0
+    \times m = m \times 0 \; (= 0)$.
+  \item Now we suppose inductively that $n \times m = m \times n$, and
+    we must prove that:
+    \begin{equation}
+      \label{eq:recurr_commutativity_of_multiplication}
+      \successor{n} \times m = m \times \successor{n}
+    \end{equation}
+    By Definition 2.3.1 of multiplication, the left hand side is equal
+    to $(n \times m) + m$.
+
+    Using the lemma introduced above, the right hand side is equal to
+    $(m \times n) + m$. By induction hypothesis, this is also equal to
+    $(n \times m) + m$, which closes the induction.
+  \end{itemize}  
 \end{exo}
 \end{document}
