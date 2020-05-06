@@ -361,4 +361,35 @@ No exercises in this chapter.
     $(n \times m) + m$, which closes the induction.
   \end{itemize}  
 \end{exo}
+
+\begin{exo}{2.3.2}{Show that positive natural numbers have no zero
+    divisors, i.e. that $nm=0$ iff $n=0$ or $m=0$. In particular, if
+    $n$ and $m$ are both positive, then $nm$ is also positive.}
+
+  We'll prove the second statement first. Suppose, for the sake of
+  contradiction, that $nm = 0$ and that both $n$ and $m$ are positive
+  numbers. Since they are positive, by Lemma 2.2.10, there exists two
+  (unique) natural numbers $a$ and $b$ such that $n = \successor{a}$
+  and $m = \successor{b}$. Thus, the hypothesis $nm=0$ can also be
+  written $(\successor{a}) \times (\successor{b}) = 0$. But, by
+  Definition 2.3.1  of multiplication, $(\successor{a}) \times
+  (\successor{b}) = (a \times \successor{b}) + \successor{b}$. Thus,
+  we should have $(a \times \successor{b}) + \successor{b} = 0$. By
+  Corollary 2.2.9, this implies that both $(a \times \successor{b}) =
+  0$ and $\successor{b} = 0$, which is impossible since zero is the
+  successor of no natural number (Axiom 2.3).
+
+  Thus, we have proved that if $n$ and $m$ are both positive, then
+  $nm$ is also positive.  The main statement can now be proved more
+  easily.
+
+  \begin{itemize}
+  \item The right-to-left implication is straightforward: if $n=0$,
+    then by Definition of multiplication, $n \times m = 0 \times m =
+    0$. Since multiplication is commutative, we have the same result
+    if $m = 0$.
+  \item The left-to-right implication is exactly the contrapositive of
+    the statement we have just proved above.
+\end{itemize}
+\end{exo}
 \end{document}
