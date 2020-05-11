@@ -421,4 +421,38 @@ No exercises in this chapter.
     side. The induction is closed.
   \end{itemize}
 \end{exo}
+
+\begin{exo}{2.3.4}{Prove the identity $(a + b)^2 = a^2 + 2ab + b^2$
+    for all natural numbers $a,b$.}
+
+  Later.
+\end{exo}
+
+\begin{exo}{2.3.5}{Euclidean algorithm. Let $n$ be a natural number, and let $q$ be a
+    positive number. Prove that there exists natural numbers $m, r$
+    such that $0 \leq r < q$ and $n = mq + r$.}
+
+  We will induct on $n$ while remaining $q$ fixed.
+
+  \begin{itemize}
+  \item Base case: if $n=0$, there exists an obvious solution, namely
+    $m=0$ and $r=0$.
+  \item Suppose inductively that there exists $m, r$ such that $n = mq
+    + r$ with $0 \leq r < q$, and let's prove that there exists $m', r'$ such that
+    $n+1 = m'q+r'$, with $0 \leq r' < q$.
+
+    By the induction hypothesis, we have $n + 1 = mq + r + 1$. Since
+    $r < q$, we have $r + 1 \leq q$ (this is Proposition
+    2.2.12). Thus, we have two cases here:
+
+    \begin{enumerate}
+    \item If $r+1 < q$, then $n+1 = mq + (r+1)$, with $0 \leq r+1 <q$,
+      so that choosing $m' = m$ and $r' = r+1$ is convenient.
+    \item If $r+1 = q$, then $n + 1 = mq + q = (m + 1)q$ according to
+      the distributive law (Proposition 2.3.4). Thus, choosing $m' =
+      m+1$ and $r' = 0$ is convenient.
+    \end{enumerate}
+  \end{itemize}
+  This closes the induction.
+\end{exo}
 \end{document}
