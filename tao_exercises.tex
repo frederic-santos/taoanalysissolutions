@@ -366,7 +366,7 @@ No exercises in this chapter.
     divisors, i.e. that $nm=0$ iff $n=0$ or $m=0$. In particular, if
     $n$ and $m$ are both positive, then $nm$ is also positive.}
 
-  We'll prove the second statement first. Suppose, for the sake of
+  We will prove the second statement first. Suppose, for the sake of
   contradiction, that $nm = 0$ and that both $n$ and $m$ are positive
   numbers. Since they are positive, by Lemma 2.2.10, there exists two
   (unique) natural numbers $a$ and $b$ such that $n = \successor{a}$
@@ -391,5 +391,34 @@ No exercises in this chapter.
   \item The left-to-right implication is exactly the contrapositive of
     the statement we have just proved above.
 \end{itemize}
+\end{exo}
+
+\begin{exo}{2.3.3}{Show that multiplication is associative, i.e., for
+    any natural numbers $a, b,c $, we have $(a\times b) \times c = a
+    \times (b \times c)$.}
+
+  We will induct on $c$ while keeping $a$ and $b$ fixed.
+
+  \begin{itemize}
+  \item Base case: for $c=0$, we must prove that $(a \times b) \times
+    0 = a \times (b \times 0)$. The left hand side is equal to 0 by
+    definition (and commutativity) of
+    multiplication\footnote{Actually, we use the second lemma
+      introduced for the resolution of Exercise 2.3.1.}. The right hand
+    side is equal to $a0$, which is also 0. Both sides are null, and
+    the base case is proved.
+  \item Suppose inductively that
+    $(a\times b) \times c = a \times (b \times c)$, and let's prove
+    that
+    $(a\times b) \times \successor{c} = a \times (b \times
+    \successor{c})$. By definition (and commutativity) of
+    multiplication, the left hand side is equal to $(a \times b)
+    \times c + (a \times b)$. The right hand side is equal to $a
+    \times (b \times c + b)$, and by distributive law (i.e.,
+    Proposition 2.3.4), this is also $a \times (b \times c) + a \times
+    b$. But then, by inductive hypothesis, this can be rewritten $(a
+    \times b) \times c + a \times b$, which is equal to the left hand
+    side. The induction is closed.
+  \end{itemize}
 \end{exo}
 \end{document}
