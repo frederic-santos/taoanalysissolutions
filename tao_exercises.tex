@@ -425,9 +425,21 @@ No exercises in this chapter.
 \begin{exo}{2.3.4}{Prove the identity $(a + b)^2 = a^2 + 2ab + b^2$
     for all natural numbers $a,b$.}
 
-  Later.
+  By distribution law (i.e., Proposition 2.3.4) and commutativity of
+  multiplication, we have:
+
+  \begin{align*}
+    (a+b)^2 &= (a+b)(a+b) = (a+b)a + (a+b)b \\
+            &= a\times a + b \times a + a \times b + b \times b \\
+            &= a^2 + a \times b + a \times b + b^2 \\
+            &= a^2 + 2 ab + b^2
+  \end{align*}
+
+  (For the last step, we recall that, by Definition 2.3.1, $2 \times m
+  = m + m$ for any natural number $m$.)
 \end{exo}
 
+\bigskip
 \begin{exo}{2.3.5}{Euclidean algorithm. Let $n$ be a natural number, and let $q$ be a
     positive number. Prove that there exists natural numbers $m, r$
     such that $0 \leq r < q$ and $n = mq + r$.}

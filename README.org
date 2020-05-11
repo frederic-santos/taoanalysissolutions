@@ -5,7 +5,16 @@ I'll host on this repo my current work on Terence Tao's textbooks, [[https://www
 
 As I'm self-studying for fun and in a rather casual way, this constitutes only /propositions/ of solutions, maybe incorrect, and surely inelegant.
 
-*Notes*:
+* Current status
+** Analysis I
+- [X] Chapter 2
+
+More to come.
+
+** Analysis II
+More to come.
+
+* Notes
 - Pull requests to fix typos or errors are welcome.
 - The LaTeX file makes use of the [[https://www.ctan.org/pkg/mbboard][mbboard]] package. It provides nicer math fonts, but is not part of most LaTeX distributions and must be installed manually.
 - Those files are licensed under a [[http://creativecommons.org/licenses/by-nc-sa/4.0/][Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License]].
