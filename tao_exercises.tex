@@ -467,4 +467,49 @@ No exercises in this chapter.
   \end{itemize}
   This closes the induction.
 \end{exo}
+
+\section{Set theory}
+\begin{exo}{3.1.2}{Using only Definition 3.1.4, Axiom 3.1, Axiom 3.2,
+    and Axiom 3.3, prove that the sets $\emptyset$, $\{\emptyset\}$,
+    $\{\{\emptyset\}\}$, and $\{\emptyset, \{\emptyset\}\}$ are all
+    distinct (i.e., no two of them are equal to each other).}
+
+  As a general reminder, we recall that sets are objects (Axiom 3.1)
+  and the empty set $\emptyset$ is such that no object is an element of
+  $\emptyset$, thus $\emptyset \notin \emptyset$.
+  
+  \begin{enumerate}
+  \item First let's show that $\emptyset$ is different from all other
+    sets. $\emptyset$ is an element of $\{\emptyset\}$ and
+    $\{\emptyset, \{\emptyset\}\}$, and $\{\emptyset\}$ is an element
+    of $\{\{\emptyset\}\}$. But none of those two objects are elements
+    of $\emptyset$ (by Axiom 3.2), thus $\emptyset$ is different from
+    all three other sets.
+  \item Then let's show that $\{\emptyset\} \neq
+    \{\{\emptyset\}\}$. By Axiom 3.3, the singleton $\{\emptyset\}$ is
+    such that $x \in \{\emptyset\} \Longleftrightarrow x =
+    \emptyset$. Similarly, the singleton $\{\{\emptyset\}\}$ is such
+    that $x \in \{\{\emptyset\}\} \Longleftrightarrow x =
+    \{\emptyset\}$. But we already know that $\emptyset \neq
+    \{\emptyset\}$ so there exists an object, $\emptyset$, which is a
+    element of $\{\emptyset\}$ but not an element of
+    $\{\{\emptyset\}\}$. Those sets are not equal.
+  \item Now let's show that $\{\emptyset\} \neq \{\emptyset,
+    \{\emptyset\}\}$. By Axiom 3.3, the pair $\{\emptyset,
+    \{\emptyset\}\}$ is such that $x$ is an element of this set iff $x
+    = \emptyset$ or $x = \{\emptyset\}$. Thus, $\{\emptyset\}$ is an
+    element of $\{\emptyset, \{\emptyset\}\}$, but is not an element
+    of $\{\emptyset\}$ (if it was, we should have $\emptyset =
+    \{\emptyset\}$, which would be a contradiction with the first
+    point of this proof). Those two sets are thus different.
+  \item Finally, we also have
+    $\{\{\emptyset\}\} \neq \{\emptyset, \{\emptyset\}\}$. Indeed, we
+    have $\emptyset \in \{\emptyset, \{\emptyset\}\}$ by Axiom
+    3.3. However,
+    $\emptyset \in \{\{\emptyset\}\} \Longleftrightarrow \emptyset =
+    \{\emptyset\}$ by definition of a singleton, and we know this
+    latest statement is false by the first point of this proof. Those
+    two sets are also different.
+  \end{enumerate}
+\end{exo}
 \end{document}
