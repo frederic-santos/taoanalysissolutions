@@ -512,4 +512,36 @@ No exercises in this chapter.
     two sets are also different.
   \end{enumerate}
 \end{exo}
+
+\begin{exo}{3.1.3}{Prove the remaining claims in Lemma 3.1.13.}
+
+  Those claims are the following:
+  \begin{enumerate}
+  \item $\{a,b\} = \{a\} \cup \{b\}$. By Axiom 3.3, the pair $\{a,
+    b\}$ is such that $x \in \{a, b\} \Longleftrightarrow x = a$ or $x
+    = b$. Let's consider three cases:
+    \begin{itemize}
+    \item if $x = a$, $x \in \{a\}$ by Axiom 3.3, thus $x \in \{a\}
+      \cup \{b\}$ by Axiom 3.4
+    \item if $x = b$, $x \in \{b\}$ by Axiom 3.3, thus $x \in \{a\}
+      \cup \{b\}$ by Axiom 3.4
+    \item if $x \neq a$ and $x \neq b$, $x \notin \{a\}$ and $x \notin
+      \{b\}$ by Axiom 3.3, so that $x \notin \{a\} \cup \{b\}$
+    \end{itemize}
+    Thus, $\{a,b\}$ and $\{a\} \cup \{b\}$ have the same elements, and
+    are equal.
+  \item $A \cup B = B \cup A$ for all sets $A$ and $B$. Indeed, $x \in
+    A \cup B \Longleftrightarrow x \in A$ or $x \in B$. If $x \in A$,
+    then $x \in B \cup A$ by Axiom 3.4. A similar argument holds if $x
+    \in B$. Thus, in both cases, $x \in B \cup A$. We can show in a
+    similar fashion that any element of $B \cup A$ is in $A \cup B$.
+  \item $A \cup \emptyset = \emptyset \cup A = A$. Since we've just
+    showed that union is commutative, proving $A \cup \emptyset = A$
+    is sufficient. If $x \in A$, then $x \in A \cup \emptyset$. The
+    converse is also true: if $x \in A \cup \emptyset$, then $x \in A$
+    or $x \in \emptyset$. But there is no element in $\emptyset$, so
+    that we have necessarily $x \in A$. Thus, $A \cup \emptyset$ and
+    $A$ have the same elements: they are equal.
+  \end{enumerate}
+\end{exo}
 \end{document}
