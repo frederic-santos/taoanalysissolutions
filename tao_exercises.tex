@@ -567,4 +567,30 @@ No exercises in this chapter.
   \end{enumerate}
 \end{exo}
 
+\begin{exo}{3.1.5}{Let $A, B$ be sets. Show that the three statements
+    $A \subseteq B$, $A \cup B = B$ and $A \cap B = A$ are logically
+    equivalent (i.e., any one of them implies the other two).}
+  \begin{enumerate}
+  \item First, we prove that
+    $A \subseteq B \Longrightarrow A \cup B = B$. The first inclusion
+    $B \subseteq A \cup B$ is trivial, since any element of a set $B$
+    is always either in $A$ or $B$. For the converse inclusion, let
+    $x$ be an element of $A \cup B$, and let's prove that $x \in
+    B$. By Axiom 3.4, we have $x \in A$ or $x \in B$. If $x \in B$,
+    the result holds. If $x \in A$, then we also have $x \in B$ since
+    $A \subseteq B$. Thus, any element of $A \cup B$ is an element of
+    $B$, which demonstrates the equality $A \cup B = B$.
+  \item Then, we prove that $A \cup B = B \Longrightarrow A \cap B =
+    A$. The first inclusion is trivial: if $x \in A \cap B$, then we
+    always have $x \in A$. Now let's prove the converse inclusion: let
+    $x$ be an element of $A$; we must show that $x \in A \cap B$. If
+    $x \in A$, then $x \in A \cup B$. But, by hypothesis, $A \cup B =
+    B$, thus $x \in B$. So, $x \in A$ and $x \in B$, i.e. $x \in A
+    \cap B$. This demonstrates the implication.
+  \item Finally, we prove that $A \cap B = A \Longrightarrow A
+    \subseteq B$. Let $x \in A$. Since $A \cap B = A$, we have $x \in
+    A \cap B$. It follows that $x \in B$. We have proved that any
+    element $x \in A$ is also an element of $B$, i.e. $A \subseteq B$.
+ \end{enumerate}
+\end{exo}
 \end{document}
