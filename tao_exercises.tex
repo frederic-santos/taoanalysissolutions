@@ -544,4 +544,27 @@ No exercises in this chapter.
     $A$ have the same elements: they are equal.
   \end{enumerate}
 \end{exo}
+
+\begin{exo}{3.1.4}{Prove the remaining claims from Proposition 3.1.18.}
+
+  Let $A, B, C$ be sets. Those claims are the following:
+
+  \begin{enumerate}
+  \item If $A \subseteq B$ and $B \subseteq A$, then $B =
+    A$. According to Definition 3.1.4, two sets $A$ and $B$ are equal
+    iff every element of $A$ is an element of $B$, and vice
+    versa. This is precisely the present claim.
+  \item If $A \subsetneq B$ and $B \subsetneq C$, then
+    $A \subsetneq C$. Let $x$ be an element of $A$. Since
+    $A \subsetneq B$, $x$ is also an element of $B$. And since
+    $B \subsetneq C$, $x$ is also an element of $C$. This holds for
+    any $x$ in $A$, and thus it demonstrates that $A \subset
+    C$. Furthermore, since $A \subsetneq B$, there exists an element
+    $y \in B$ which is not an element of $A$. As $B \subsetneq C$, $y$
+    is also an element of $C$. Thus we have $y$, an element of $C$
+    which is not in $A$. Combined to the previous result $A \subset
+    C$, this demonstrates $A \subsetneq C$.
+  \end{enumerate}
+\end{exo}
+
 \end{document}
