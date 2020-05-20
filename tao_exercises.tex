@@ -593,4 +593,42 @@ No exercises in this chapter.
     element $x \in A$ is also an element of $B$, i.e. $A \subseteq B$.
  \end{enumerate}
 \end{exo}
+
+\begin{exo}{3.1.11}{Prove that the axiom of replacement (Axiom 3.6)
+    implies the axiom of specification (Axiom 3.5).}
+  
+  Let's recall the axiom of replacement. Let $A$ be a set. For every
+  $x \in A$, and for every (abstract) object $y$, let $P(x,y)$ be a
+  statement pertaining to both $x$ and $y$, such that for any
+  $x \in A$ there is at most one $y$ for which $P(x,y)$ is true. Then
+  there exists a set
+  $\{y \, : \, P(x,y) \text{ is true for some } x \in A \}$, such that
+  for any object $z$,
+  \[z \in \{y \, : \, P(x,y) \text{ is true for some } x \in A \}
+    \Longleftrightarrow P(x,z) \text{ is true for some } x \in A\]
+
+  Now, let $A$ be a set, $x$ an element of $A$, and $y$ an object. We
+  accept the axiom of replacement, and show that it implies the axiom
+  of specification.
+
+  Let $Q(x,y)$ be the property ``$x = y$ and $P(x)$''. According to
+  the axiom of replacement, there exists a set
+  $\{y \, : \, Q(x,y) \text{ is true for some } x \in A\}$ such that:
+  \begin{align*}
+    & z \in \{y \, : \, Q(x,y) \text{ is true for some } x \in A \} \\
+    \Longleftrightarrow \; & Q(x,z) \text{ is true for some } x \in A \\
+    \Longleftrightarrow \; & x = z \text{ and } P(x) \text{ is true
+                             for some } x \in A
+    \\
+    \Longleftrightarrow \; & x = z \text{ and } P(z) \text{ is true
+                             for some } x \in A \text{ 
+                             (by axiom of substitution)} \\
+    \Longleftrightarrow \; & z \in A \text{ and } P(z) \text{ is true }
+  \end{align*}
+
+  Thus, we have proven the existence of a set (the set $\{y \, : \,
+  Q(x,y) \text{ is true for some } x \in A \}$) satisfying the axiom
+  of specification: $z$ belongs to this set iff $z \in A$ and $P(z)$
+  is true.
+\end{exo}
 \end{document}
