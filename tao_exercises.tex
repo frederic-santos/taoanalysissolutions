@@ -594,6 +594,36 @@ No exercises in this chapter.
  \end{enumerate}
 \end{exo}
 
+\begin{exo}{3.1.8}{Let A, B be sets. Prove the absorption laws
+    $A \cap (A \cup B) = A$ and $A \cup (A \cap B) = A$.}
+  \begin{enumerate}
+  \item The first inclusion $A \cap (A \cup B) \subseteq A$ is
+    trivial: if $x \in A \cap (A \cup B)$ then in particular $x \in A$
+    by Definition 3.1.23 of an intersection\footnote{This intersection
+      is not empty since $A$ and $A \cup B$ are not disjoint.}. Thus,
+    we have $A \cap (A \cup B) \subseteq A$.
+
+    For the converse inclusion, let $x$ be an element of $A$. Then by
+    definition $x \in A$, and we have also $x \in A \cup B$ since $x
+    \in A$. Thus, $x \in A \cap (A \cup B)$, which proves the converse
+    inclusion.
+
+    Consequently, $A = A \cap (A \cup B)$.
+  \item First we show that $A \cup (A \cap B) \subseteq A$. Let
+    $x \in A \cup (A \cap B)$. By Definition of an union, we have
+    either $x \in A$, or $x \in A \cap B$. In both cases\footnote{If
+      $A$ and $B$ are disjoint, then the first case $x \in A$
+      necessarily holds, since $x \in A \cup B$ is impossible.}, we
+    have $x \in A$, so that the inclusion is proved.
+
+    Conversely, let $x \in A$. Then in particular, we have $x \in A
+    \cup (A \cap B)$ by Definition of an union, because $x \in
+    A$. Thus, $x \in A \cup (A \cap B)$.
+
+    We have proved that $A \cup (A \cap B) = A$.
+  \end{enumerate}
+\end{exo}
+
 \begin{exo}{3.1.11}{Prove that the axiom of replacement (Axiom 3.6)
     implies the axiom of specification (Axiom 3.5).}
   
