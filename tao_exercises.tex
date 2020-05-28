@@ -624,6 +624,32 @@ No exercises in this chapter.
   \end{enumerate}
 \end{exo}
 
+\begin{exo}{3.1.9}{Let $A, B, X$ be sets such that $A \cup B = X$ and
+    $A \cap B = \emptyset$. Show that $A = X \backslash B$ and
+    $B = X \backslash A$.}
+
+  The two sets $A$ and $B$ play a symmetrical role here, so that
+  proving one of these two assertions is sufficient. For instance, we
+  prove that $A = X \backslash B$.
+
+  \begin{itemize}
+  \item Let $x$ be an element of $A$. Since $x \in A$, we also have $x
+    \in A \cup B$ by definition of an union. But $A \cup B = X$, and
+    then $x \in X$. On the other hand, we cannot have $x \in B$,
+    because $x \in A$ and the sets $A, B$ are disjoint. Thus, $x \in
+    X$ and $x \notin B$, which means that $x \in X \backslash B$. We
+    have proved that $A \subseteq X \backslash B$.
+  \item Conversely, let $x$ be an element of $X \backslash B$. By
+    definition, this means that $x \in X$, i.e. $x \in A \cup B$, and
+    $x \notin B$. Since $x \in A \cup B$, we have either $x \in A$ or
+    $x \in B$, but we know that the latter is impossible. Thus, we
+    have necessarily $x \in A$. We have proved that $X \backslash B
+    \subseteq A$.
+  \item We can conclude that $X \backslash B = A$.
+  \end{itemize}
+  
+\end{exo}
+
 \begin{exo}{3.1.11}{Prove that the axiom of replacement (Axiom 3.6)
     implies the axiom of specification (Axiom 3.5).}
   
