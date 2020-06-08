@@ -345,7 +345,7 @@ No exercises in this chapter.
   \begin{itemize}
   \item Base case $n = 0$: we already know by Definition 2.3.1 that $0
     \times m = 0$. The first lemma introduced in this exercise also
-    provides $m \times 0 = 0$. Thus, the base case is proven, since $0
+    provides $m \times 0 = 0$. Thus, the base case is proved, since $0
     \times m = m \times 0 \; (= 0)$.
   \item Now we suppose inductively that $n \times m = m \times n$, and
     we must prove that:
@@ -682,9 +682,43 @@ No exercises in this chapter.
     \Longleftrightarrow \; & z \in A \text{ and } P(z) \text{ is true }
   \end{align*}
 
-  Thus, we have proven the existence of a set (the set $\{y \, : \,
+  Thus, we have proved the existence of a set (the set $\{y \, : \,
   Q(x,y) \text{ is true for some } x \in A \}$) satisfying the axiom
   of specification: $z$ belongs to this set iff $z \in A$ and $P(z)$
   is true.
 \end{exo}
+
+\bigskip
+
+\begin{exo}{3.3.1}{Show that the definition of equality in Definition
+    3.3.7 is reflexive, symmetric and transitive. Also verify the
+    substitution property: if $f_1, f_2 : X \rightarrow Y$ and $g_1,
+    g_2 : Y \rightarrow Z$ are functions such that $f_1 f_2$ and $g_1
+    = g_2$, then $g_1 \circ f_1 = g_2 \circ f_2$.}
+
+  \begin{enumerate}
+  \item Definition 3.3.7 says that two functions $f$ and $g$ are equal
+    if they have same domain $X$ and range $Y$, and if, for all
+    $x \in X$, $f(x) = g(x)$. This definition of equality is obviously
+    reflexive, symmetric and transitive if we assume that the objects
+    in the domain $X$ and the range $Y$ verify themselves the axioms
+    of equality.
+  \item Since $f_1 = f_2$, they have same domain $X$ and same range
+    $Y$. This is also the case for $g_1$ and $g_2$, with domain $Y$
+    and range $Z$. Thus, $g_1 \circ f_1$ has domain $X$ and range $Z$,
+    and so has $g_2 \circ f_2$. Furthermore, we have, for all
+    $x \in X$:
+    \begin{align*}
+      g_2 \circ f_2(x) &= g_2 \circ f_1(x) \text{ (since $f_1 = f_2$)}
+      \\
+                       &= g_1 \circ f_1(x) \text{ (since $g_1 = g_2$)}
+    \end{align*}
+    which closes the demonstration.
+  \end{enumerate}
+\end{exo}
 \end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
