@@ -717,6 +717,34 @@ No exercises in this chapter.
   \end{enumerate}
 \end{exo}
 
+\begin{exo}{3.3.2}{Let $f : X \rightarrow Y$ and $g : Y \rightarrow Z$
+  be functions. Show that if $f$ and $g$ are both injective, then so
+  is $g \circ f$. Similarly, show that if $f$ and $g$ are both
+  surjective, then so is $g \circ f$.}
+
+  First let's note that $g \circ f : X \rightarrow Z$.
+
+  \begin{enumerate}
+  \item Suppose that $f$ and $g$ are both injective, and let
+    $x, x' \in X$. We have successively :
+    \begin{eqnarray*}
+      g \circ f (x) & =& g \circ f (x') \\
+      g(f(x)) &=& g(f(x'))  \\
+      f(x) &=& f(x') \; \text{ because $g$ is injective}\\
+      x &=& x' \; \text{ because $f$ is injective}
+    \end{eqnarray*}
+    We have showed that $g \circ f (x) = g \circ f (x') \Rightarrow x
+    = x'$ for all $x, x' \in X$, i.e. that $g \circ f$ is injective.
+    
+  \item Suppose that $f$ and $g$ are both surjective, and let
+    be $z \in Z$. Since $g$ is surjective, there exists $y \in Y$ such
+    that $z = g(y)$. And since $f$ is surjective, there exists $x \in
+    X$ such that $y = f(x)$. Thus, combining those two results, there
+    exists $x \in X$ such that $z = g(f(x))$. This means precisely
+    that $g \circ f$ is surjective.
+  \end{enumerate}
+\end{exo}
+
 \begin{exo}{3.3.3}{When is the empty function injective? surjective?
     bijective?}
   
