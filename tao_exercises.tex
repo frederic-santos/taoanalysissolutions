@@ -17,6 +17,7 @@
 \usepackage{stmaryrd}
 % Macros:
 \newcommand{\successor}[1]{#1 \! +\!\!\!+}
+\newcommand{\rr}{\mathbb{R}}
 % Lemmas:
 \usepackage{amsthm}
 \newtheorem*{lem}{Lemma}
@@ -32,8 +33,9 @@
 \label{sec:introduction}
 No exercises in this chapter.
 
-\section{The natural numbers}
+\section{Starting at the beginning: the natural numbers}
 \label{sec:natural-numbers}
+
 \begin{exo}{2.2.1}{Prove that the addition is associative, i.e. that
     for any natural numbers $a, b, c$, we have $(a+b) + c = a + (b+c)$.}
 
@@ -763,6 +765,50 @@ No exercises in this chapter.
     $Y$. Thus, $f$ is surjective iff $Y = \emptyset$.
   \item Since $f$ is always injective, and is surjective iff $Y =
     \emptyset$, it is clear that $f$ is bijective iff $Y = \emptyset$.
+  \end{enumerate}
+\end{exo}
+
+\begin{exo}{3.3.4}{Let $f : X \rightarrow Y$, $\tilde{f} : X
+    \rightarrow Y$, $g : Y \rightarrow Z$, $\tilde{g} : Y \rightarrow
+    Z$ be functions. Show that if $g \circ f = g \circ \tilde{f}$ and
+    $g$ is injective, then $f = \tilde{f}$. Is this statement true if
+    $g$ is not injective? Also, show that if $g \circ f = \tilde{g}
+    \circ f$ and $f$ is surjective, then $g = \tilde{g}$. Is this
+    statement true if $f$ is not surjective?}
+
+  This exercise introduces some cancellation laws for composition.
+
+  \begin{enumerate}
+  \item First, note that $f$ and $\tilde{f}$ have same domain and
+    range, which is the first condition for two functions to be equal
+    (by Definition 3.3.7). Then, suppose that
+    $g \circ f = g \circ \tilde{f}$ and $g$ is injective. For the sake
+    of contradiction, suppose that there exists $x \in X$ such that
+    $f(x) \neq \tilde{f}(x)$. Since $g$ is injective, we would thus
+    have $g(f(x)) \neq g(\tilde{f}(x))$, which would be a
+    contradiction to the hypothesis $g \circ f = g \circ
+    \tilde{f}$. Thus, there is no $x$ such that $f(x) = \tilde{f}(x)$,
+    or in other words, $f = \tilde{f}$.
+
+    This property is false if $g$ is not injective. As a
+    counterexample, one can think of $f : \rr \rightarrow \rr$ with
+    $f(x) = x$, $\tilde{f} : \rr \rightarrow \rr$ with
+    $\tilde{f}(x) = -x$, and $g : \rr \rightarrow \rr_+$ with
+    $g(x) = |x|$.
+  \item As previously, first note that $g$ and $\tilde{g}$ have same
+    domain and range. Let be $y, y' \in Y$. Since $f$ is surjective,
+    there exist $x, x' \in X$ such that $y = f(x)$ and $y' = f(x')$
+    respectively. Since $g \circ f = g \circ \tilde{f}$, we have
+    $g(f(x)) = g(f(x'))$, i.e. $g(y) = g(y')$. We have showed that,
+    for any $y, y' \in Y$, we have $g(y) = g(y')$, which means that $g
+    = \tilde{g}$.
+
+    This statement is false if $f$ is not surjective. For instance,
+    let $f$ be a constant function, e.g. $f : \rr \rightarrow \rr$
+    with $f(x) = 1$ for all $x$. Let $g, \tilde{g} : \rr \rightarrow
+    \rr$ with $g(x) = 0$ and $\tilde{g}(x) = - x +1$. We have $g(1) =
+    \tilde{g}(1)$, i.e. $g(f(x)) = \tilde{g}(x)$ for all $x \in X$,
+    but we obviously do not have $g = \tilde{g}$.
   \end{enumerate}
 \end{exo}
 \end{document}
