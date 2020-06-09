@@ -811,6 +811,43 @@ No exercises in this chapter.
     but we obviously do not have $g = \tilde{g}$.
   \end{enumerate}
 \end{exo}
+
+\begin{exo}{3.3.5}{Let $f : X \rightarrow Y$ and $g : Y \rightarrow Z$
+  be functions. Show that if $g \circ f$ is injective, then $f$ must
+  be injective. Is it true that $g$ must also be injective? Show that
+  if $g \circ f$ is surjective, then $g$ must be surjective. Is it
+  true that $f$ must be surjective?}
+
+\begin{enumerate}
+\item If $g \circ f$ is injective, then for any given objects
+  $x, x' \in X$, we have $g(f(x)) = g(f(x')) \Longrightarrow x =
+  x'$. For the sake of contradiction, suppose that $f$ is not
+  injective. In this case, there exist two elements $a, a' \in X$ such
+  that $a \neq a'$ and $f(a) = f(a')$. We would thus have $g(f(a)) =
+  g(f(a'))$ (axiom of substitution) and $a \neq a'$, which is
+  incompatible with the hypothesis that $g \circ f$ is injective.
+
+  Thus, $g \circ f$ injective implies that $f$ is injective.
+
+  However, $g$ does not need to be injective. For instance, let's
+  consider $X = \{1,2\}$ and $Y = Z = \{1, 2, 3\}$. Let's define the
+  function $f$ as the mapping $f(1) = 1$, $f(2) = 2$. Let's define the
+  function $g$ as the mapping $g(1) = 1$, $g(2) = 2$, $g(3) = 2$. Here,
+  $f$ is injective, so is $g \circ f$, but $g$ is not injective.
+\item If $g \circ f$ is surjective, then for all $z \in Z$, there
+  exists $x \in X$ such that $z = g(f(x))$. For the sake of
+  contradiction, suppose that $g$ is not surjective: then, there
+  exists $z \in Z$ such that for all $y \in Y$, $z \neq g(y)$. In
+  particular, for all $x \in X$, since $f(x) \in Y$, we would have
+  $g(f(x)) \neq z$, which would be a contradiction with $g \circ f$
+  surjective.
+
+  However, $f$ does not need to be surjective. For instance, let's
+  consider $X = Y = \{1,2\}$ and $Z = \{1\}$. Let $f$ be the mapping
+  $f(1) = f(2) = 1$, and $g$ be the mapping $g(1) = g(2) = 1$. Here,
+  $g \circ f$ is surjective, but $f$ is not.
+\end{enumerate}
+\end{exo}
 \end{document}
 
 %%% Local Variables:
