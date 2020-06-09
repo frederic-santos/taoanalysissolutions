@@ -17,6 +17,7 @@
 \usepackage{stmaryrd}
 % Macros:
 \newcommand{\successor}[1]{#1 \! +\!\!\!+}
+\newcommand{\inv}[1]{#1^{-1}}
 \newcommand{\rr}{\mathbb{R}}
 % Lemmas:
 \usepackage{amsthm}
@@ -847,6 +848,43 @@ No exercises in this chapter.
   $f(1) = f(2) = 1$, and $g$ be the mapping $g(1) = g(2) = 1$. Here,
   $g \circ f$ is surjective, but $f$ is not.
 \end{enumerate}
+\end{exo}
+
+\begin{exo}{3.3.6}{Let $f : X \rightarrow Y$ be a bijective function,
+    and let $\inv{f} : Y \rightarrow X$ be its inverse. Verify the
+    cancellation laws $\inv{f}(f(x)) = x$ for all $x \in X$ and
+    $f(\inv{f}(y)) = y$ for all $y \in Y$. Conclude that $\inv{f}$ is
+    also invertible and has $f$ as its inverse.}
+
+  Recall that, by definition, for all $y \in Y$, $\inv{f}(y)$ is the only element
+  $x \in X$ such that $f(x) = y$.
+  \begin{enumerate}
+  \item Let $a$ be an element of $X$, we thus have $f(a) \in Y$. Let's
+    apply the definition to the element $y = f(a) \in Y$: by
+    definition, $\inv{f}(f(a))$ is the only element $x \in X$ such
+    that $f(x) = f(a)$. Since $f$ is bijective, this implies $x =
+    a$. We thus have proved that $\inv{f}(f(a)) = a$.
+  \item The proof for $f(\inv{f}(y)) = y$ is similar.
+  \item To prove that $\inv{f}$ is also invertible, we need to prove
+    that $\inv{f}$ is bijective, i.e. injective and surjective.
+
+    For any given $y \in Y$, since $f$ is bijective, there exists exactly
+    one $x \in X$ such that $y = f(x)$. Similarly, for any given $y'
+    \in Y$, there exists exactly one $x' \in X$ such that $y' =
+    f(x')$. In other words, $\inv{f}(y) = x$ and $\inv{f}(y') =
+    x'$. Suppose that $\inv{f}(y) = \inv{f}(y')$. This can be written
+    $x = x'$, which necessarily implies $f(x) = f(x')$ since $f$ is a
+    function (and by axiom of substitution). And this can also be
+    written $y = y'$. We thus have proved that for any $y, y' \in Y$,
+    $\inv{f}(y) = \inv{f}(y') \Longrightarrow y = y'$. Thus, $\inv{f}$
+    is injective.
+
+    Furthermore, for any given $x \in X$, let's denote $y =
+    f(x)$. Since $f$ is bijective, this means that $\inv{f}(y) =
+    x$. Thus, any $x \in X$ has a predecessor $y \in Y$ for $\inv{f}$,
+    i.e.  $\inv{f}$ is surjective.
+  \end{enumerate}
+  
 \end{exo}
 \end{document}
 
