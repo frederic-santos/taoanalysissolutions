@@ -884,7 +884,25 @@ No exercises in this chapter.
     x$. Thus, any $x \in X$ has a predecessor $y \in Y$ for $\inv{f}$,
     i.e.  $\inv{f}$ is surjective.
   \end{enumerate}
-  
+\end{exo}
+
+\begin{exo}{3.3.7}{Let $f : X \rightarrow Y$ and $g : Y \rightarrow Z$
+  be functions. Show that if $f$ and $g$ are bijective, then so is $g
+  \circ f$, and we have $\inv{(g \circ f)} = \inv{f} \circ \inv{g}$.}
+
+The first point is an immediate consequence of Exercise 3.3.2. We just
+have to show that $\inv{(g \circ f)} = \inv{f} \circ \inv{g}$.
+
+Let be any given element $z \in Z$. Since $g$ is bijective, there
+exists one single element $y \in Y$ such that $z = g(y)$, i.e.
+$y = \inv{g}(z)$. And since $f$ is also bijective, there exists
+exactly one single element $x \in X$ such that $y = f(x)$, i.e. $x =
+\inv{f}(y) = \inv{f}(\inv{g}(z))$.
+
+Thus, for every $z \in Z$, there exists exactly one $x \in X$ such
+that $g \circ f(x) = z$, and this element is
+$\inv{f}(\inv{g}(z))$. This means exactly that $\inv{(g \circ f)} =
+\inv{f} \circ \inv{g}.
 \end{exo}
 \end{document}
 
