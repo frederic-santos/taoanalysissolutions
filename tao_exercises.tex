@@ -716,6 +716,27 @@ No exercises in this chapter.
     which closes the demonstration.
   \end{enumerate}
 \end{exo}
+
+\begin{exo}{3.3.3}{When is the empty function injective? surjective?
+    bijective?}
+  
+  Let $f$ be the empty function, i.e. $f : \emptyset \rightarrow Y$
+  for a certain range $Y$.
+  \begin{enumerate}
+  \item $f$ is injective iff $x \neq x' \Rightarrow f(x) \neq
+    f(x')$. This can be considered as vacuously true since there are
+    no such $x$ and $x'$. $f$ can be considered as always injective,
+    for any range $Y$.
+  \item $f$ is surjective iff for any $y \in Y$, there exists $x \in
+    \emptyset$ such that $y = f(x)$. We can clearly see that this
+    assertion is false if $Y \neq \emptyset$, since any $y \in Y$ will
+    have no antecedent in $\emptyset$. Conversely, if $Y = \emptyset$,
+    the assertion is vacuously true, since there is no element in
+    $Y$. Thus, $f$ is surjective iff $Y = \emptyset$.
+  \item Since $f$ is always injective, and is surjective iff $Y =
+    \emptyset$, it is clear that $f$ is bijective iff $Y = \emptyset$.
+  \end{enumerate}
+\end{exo}
 \end{document}
 
 %%% Local Variables:
