@@ -201,7 +201,7 @@ No exercises in this chapter.
 
   \begin{lem}
     For any natural number $a$ and $b$, $a<\successor{b}$ iff $a\leq
-  b$.
+    b$.
   \end{lem}
   \begin{proof}
     If $a < \successor{b}$, then $\successor{b} = a+n$ for a given
@@ -393,7 +393,7 @@ No exercises in this chapter.
     if $m = 0$.
   \item The left-to-right implication is exactly the contrapositive of
     the statement we have just proved above.
-\end{itemize}
+  \end{itemize}
 \end{exo}
 
 \begin{exo}{2.3.3}{Show that multiplication is associative, i.e., for
@@ -594,7 +594,7 @@ No exercises in this chapter.
     \subseteq B$. Let $x \in A$. Since $A \cap B = A$, we have $x \in
     A \cap B$. It follows that $x \in B$. We have proved that any
     element $x \in A$ is also an element of $B$, i.e. $A \subseteq B$.
- \end{enumerate}
+  \end{enumerate}
 \end{exo}
 
 \begin{exo}{3.1.8}{Let A, B be sets. Prove the absorption laws
@@ -721,9 +721,9 @@ No exercises in this chapter.
 \end{exo}
 
 \begin{exo}{3.3.2}{Let $f : X \rightarrow Y$ and $g : Y \rightarrow Z$
-  be functions. Show that if $f$ and $g$ are both injective, then so
-  is $g \circ f$. Similarly, show that if $f$ and $g$ are both
-  surjective, then so is $g \circ f$.}
+    be functions. Show that if $f$ and $g$ are both injective, then so
+    is $g \circ f$. Similarly, show that if $f$ and $g$ are both
+    surjective, then so is $g \circ f$.}
 
   First let's note that $g \circ f : X \rightarrow Z$.
 
@@ -814,40 +814,40 @@ No exercises in this chapter.
 \end{exo}
 
 \begin{exo}{3.3.5}{Let $f : X \rightarrow Y$ and $g : Y \rightarrow Z$
-  be functions. Show that if $g \circ f$ is injective, then $f$ must
-  be injective. Is it true that $g$ must also be injective? Show that
-  if $g \circ f$ is surjective, then $g$ must be surjective. Is it
-  true that $f$ must be surjective?}
+    be functions. Show that if $g \circ f$ is injective, then $f$ must
+    be injective. Is it true that $g$ must also be injective? Show that
+    if $g \circ f$ is surjective, then $g$ must be surjective. Is it
+    true that $f$ must be surjective?}
 
-\begin{enumerate}
-\item If $g \circ f$ is injective, then for any given objects
-  $x, x' \in X$, we have $g(f(x)) = g(f(x')) \Longrightarrow x =
-  x'$. For the sake of contradiction, suppose that $f$ is not
-  injective. In this case, there exist two elements $a, a' \in X$ such
-  that $a \neq a'$ and $f(a) = f(a')$. We would thus have $g(f(a)) =
-  g(f(a'))$ (axiom of substitution) and $a \neq a'$, which is
-  incompatible with the hypothesis that $g \circ f$ is injective.
+  \begin{enumerate}
+  \item If $g \circ f$ is injective, then for any given objects
+    $x, x' \in X$, we have $g(f(x)) = g(f(x')) \Longrightarrow x =
+    x'$. For the sake of contradiction, suppose that $f$ is not
+    injective. In this case, there exist two elements $a, a' \in X$ such
+    that $a \neq a'$ and $f(a) = f(a')$. We would thus have $g(f(a)) =
+    g(f(a'))$ (axiom of substitution) and $a \neq a'$, which is
+    incompatible with the hypothesis that $g \circ f$ is injective.
 
-  Thus, $g \circ f$ injective implies that $f$ is injective.
+    Thus, $g \circ f$ injective implies that $f$ is injective.
 
-  However, $g$ does not need to be injective. For instance, let's
-  consider $X = \{1,2\}$ and $Y = Z = \{1, 2, 3\}$. Let's define the
-  function $f$ as the mapping $f(1) = 1$, $f(2) = 2$. Let's define the
-  function $g$ as the mapping $g(1) = 1$, $g(2) = 2$, $g(3) = 2$. Here,
-  $f$ is injective, so is $g \circ f$, but $g$ is not injective.
-\item If $g \circ f$ is surjective, then for all $z \in Z$, there
-  exists $x \in X$ such that $z = g(f(x))$. For the sake of
-  contradiction, suppose that $g$ is not surjective: then, there
-  exists $z \in Z$ such that for all $y \in Y$, $z \neq g(y)$. In
-  particular, for all $x \in X$, since $f(x) \in Y$, we would have
-  $g(f(x)) \neq z$, which would be a contradiction with $g \circ f$
-  surjective.
+    However, $g$ does not need to be injective. For instance, let's
+    consider $X = \{1,2\}$ and $Y = Z = \{1, 2, 3\}$. Let's define the
+    function $f$ as the mapping $f(1) = 1$, $f(2) = 2$. Let's define the
+    function $g$ as the mapping $g(1) = 1$, $g(2) = 2$, $g(3) = 2$. Here,
+    $f$ is injective, so is $g \circ f$, but $g$ is not injective.
+  \item If $g \circ f$ is surjective, then for all $z \in Z$, there
+    exists $x \in X$ such that $z = g(f(x))$. For the sake of
+    contradiction, suppose that $g$ is not surjective: then, there
+    exists $z \in Z$ such that for all $y \in Y$, $z \neq g(y)$. In
+    particular, for all $x \in X$, since $f(x) \in Y$, we would have
+    $g(f(x)) \neq z$, which would be a contradiction with $g \circ f$
+    surjective.
 
-  However, $f$ does not need to be surjective. For instance, let's
-  consider $X = Y = \{1,2\}$ and $Z = \{1\}$. Let $f$ be the mapping
-  $f(1) = f(2) = 1$, and $g$ be the mapping $g(1) = g(2) = 1$. Here,
-  $g \circ f$ is surjective, but $f$ is not.
-\end{enumerate}
+    However, $f$ does not need to be surjective. For instance, let's
+    consider $X = Y = \{1,2\}$ and $Z = \{1\}$. Let $f$ be the mapping
+    $f(1) = f(2) = 1$, and $g$ be the mapping $g(1) = g(2) = 1$. Here,
+    $g \circ f$ is surjective, but $f$ is not.
+  \end{enumerate}
 \end{exo}
 
 \begin{exo}{3.3.6}{Let $f : X \rightarrow Y$ be a bijective function,
@@ -887,22 +887,62 @@ No exercises in this chapter.
 \end{exo}
 
 \begin{exo}{3.3.7}{Let $f : X \rightarrow Y$ and $g : Y \rightarrow Z$
-  be functions. Show that if $f$ and $g$ are bijective, then so is $g
-  \circ f$, and we have $\inv{(g \circ f)} = \inv{f} \circ \inv{g}$.}
+    be functions. Show that if $f$ and $g$ are bijective, then so is $g
+    \circ f$, and we have $\inv{(g \circ f)} = \inv{f} \circ \inv{g}$.}
 
-The first point is an immediate consequence of Exercise 3.3.2. We just
-have to show that $\inv{(g \circ f)} = \inv{f} \circ \inv{g}$.
+  The first point is an immediate consequence of Exercise 3.3.2. We just
+  have to show that $\inv{(g \circ f)} = \inv{f} \circ \inv{g}$.
 
-Let be any given element $z \in Z$. Since $g$ is bijective, there
-exists one single element $y \in Y$ such that $z = g(y)$, i.e.
-$y = \inv{g}(z)$. And since $f$ is also bijective, there exists
-exactly one single element $x \in X$ such that $y = f(x)$, i.e. $x =
-\inv{f}(y) = \inv{f}(\inv{g}(z))$.
+  Let be any given element $z \in Z$. Since $g$ is bijective, there
+  exists one single element $y \in Y$ such that $z = g(y)$, i.e.
+  $y = \inv{g}(z)$. And since $f$ is also bijective, there exists
+  exactly one single element $x \in X$ such that $y = f(x)$, i.e. $x =
+  \inv{f}(y) = \inv{f}(\inv{g}(z))$.
 
-Thus, for every $z \in Z$, there exists exactly one $x \in X$ such
-that $g \circ f(x) = z$, and this element is
-$\inv{f}(\inv{g}(z))$. This means exactly that $\inv{(g \circ f)} =
-\inv{f} \circ \inv{g}.
+  Thus, for every $z \in Z$, there exists exactly one $x \in X$ such
+  that $g \circ f(x) = z$, and this element is
+  $\inv{f}(\inv{g}(z))$. This means exactly that $\inv{(g \circ f)} =
+  \inv{f} \circ \inv{g}$.
+\end{exo}
+
+\bigskip
+
+\begin{exo}{3.4.2}{Let $f : X \rightarrow Y$ be a function, let $S$ be
+    a subset of $X$ and let $U$ be a subset of $Y$. What, in general,
+    can one say about $\inv{f}(f(S))$ and $S$? What about
+    $f(\inv{f}(U))$ and $U$?}
+  
+  This exercise gives a first taste of Exercise 3.4.5 below.
+
+  \begin{enumerate}
+  \item First consider $\inv{f}(f(S))$ and $S$.
+    \begin{itemize}
+    \item Do we have $\inv{f}(f(S)) \subset S$? Generally, no. As an
+      counterexample, let's consider $f(x) = x^2$ with $X = Y =
+      \rr$ and $S = \{0,2\}$. We have $\inv{f}(f(S)) =
+      \inv{f}(\{0,4\}) = \{-2, 0, 2\}$. In this set, we have an
+      element, $-2$, which is not an element of $S$.
+    \item Do we have $S \subset \inv{f}(f(S))$? Yes. Let be $x \in
+      S$. Then, by definition, $f(x) \in f(S)$. So, $x \in X$ and is
+      such that $f(x) \in f(S)$: this is precisely the definition of
+      $x \in \inv{f}(f(S))$.
+    \item Conclusion: generally speaking, $S$ and $\inv{f}(f(S))$ are
+      not equal, but $S \subset \inv{f}(f(S))$.
+    \end{itemize}
+  \item Now consider $f(\inv{f}(U))$ and $U$.
+    \begin{itemize}
+    \item Do we have $U \subset f(\inv{f}(U))$? Generally, no. As a
+      counterexample, let's consider $f(x) = \sqrt{x}$ with $X =
+      \rr_+$, $Y = \rr$ and $U = [-1,1]$. We have $f(\inv{f}(U)) =
+      f([0,1]) = [0,1]$, which is clearly not a subset of $U$.
+    \item Do we have $f(\inv{f}(U)) \subset U$ ? Yes. Let be $y \in
+      f(\inv{f}(U))$. By definition, there exists $x \in \inv{f}(U)$
+      such that $y = f(x)$. But if $x \in \inv{f}(U)$, we have
+      $f(x)\in U$. And since $y = f(x)$, this means that $y \in U$.
+    \item Conclusion: generally speaking, $U$ \neq f(\inv{f}(U))$,
+      but $f(\inv{f}(U)) \subset U$.
+    \end{itemize}
+  \end{enumerate}
 \end{exo}
 \end{document}
 
