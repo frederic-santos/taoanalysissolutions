@@ -979,6 +979,51 @@ No exercises in this chapter.
     \end{itemize}
   \end{enumerate}
 \end{exo}
+
+\begin{exo}{3.4.3}{Let $A, B$ be two subsets of $X$, and let be $f : X
+    \rightarrow Y$. Show that $f(A \cap B) \subseteq f(A) \cap f(B)$,
+    that $f(A) \backslash f(B) \subseteq f(A \backslash B)$, and $f(A
+    \cup B) = f(A) \cup f(B)$. Is it true that, for the first two
+    statements, the $\subseteq$ relation can be improved to $=$?}
+  
+  Let's prove the three statements successively:
+  \begin{enumerate}
+  \item If $y \in f(A \cap B)$, then there exists $x \in A \cap B$
+    such that $f(x) = y$. Since $x \in A \cap B$, we have both $x \in
+    A$ and $x \in B$, which implies $y = f(x) \in f(A)$ and $y = f(x)
+    \in B$ respectively. Thus, $y \in f(A) \cap f(B)$, and we have
+    proved that $f(A \cap B) \subseteq f(A) \cap f(B)$.
+
+    However, the converse inclusion is false in general. For instance,
+    let's consider the two sets $A = \{1,2\}$, $B = \{2,3\}$ and the
+    (non injective) function $f$ defined as the mapping $f(1) = 1$,
+    $f(2) = 2$, $f(3) = 1$. We have $f(A) = \{1,2\}$,
+    $f(B) = \{1,2\}$, thus $f(A) \cap f(B) = \{1,2\}$. This is not a
+    subset of $f(A \cap B) = f(\{2\}) = \{2\}$.
+  \item If $y \in f(A) \backslash f(B)$, then there exists $x_0 \in A$
+    such that $y = f(x_0)$, but we have $f(b) \neq y$ for all
+    $b \in B$. Suppose that $x_0 \in B$: in this case,
+    $f(x_0) \neq y$, a contradiction. Thus, $y = f(x_0)$ with
+    $x_0 \in A \backslash B$, which proves that
+    $f(A) \backslash f(B) \subseteq f(A \backslash B)$.
+
+    However, the converse inclusion is false in general. For instance,
+    let's consider the two sets $A = \{1,2,3\}$, $B = \{3\}$ and the
+    function $f$ defined as the mapping $f(1) = 1$, $f(2) = 2$,
+    $f(3) = 1$. We have $f(A \backslash B) = \{1,2\}$ but
+    $f(A) \backslash f(B) = \{2\}$.
+  \item If $y \in f(A \cup B)$, then there exists $x \in A \cup B$
+    such that $y = f(x)$. If $x \in A$, then $f(x) \in f(A)$, which
+    implies $x \in f(A) \cup f(B)$. There is an identical result if $x
+    \in B$. Thus, $f(A\cup B) \subseteq f(A) \cup f(B)$.
+
+    Conversely, if $y \in f(A) \cup f(B)$, then we have either $y \in
+    f(A)$ or $y \in f(B)$ (or both). In the first case, there exists
+    $x \in A$ such that $y = f(x)$. But since $x \in A$, we also have
+    $x \in A\cup B$, so that $y \in f(A \cup B)$. The same result
+    holds if $y \in B$. Thus, in both cases, $y \in f(A \cup B)$.
+  \end{enumerate}
+\end{exo}
 \end{document}
 
 %%% Local Variables:
