@@ -907,6 +907,41 @@ No exercises in this chapter.
 
 \bigskip
 
+\begin{exo}{3.4.1}{Let $f : X \rightarrow Y$ be a bijective function,
+    and let $\inv{f} : Y \rightarrow X$ be its inverse. Let $V$ be any
+    subset of $Y$. Prove that the forward image of $V$ under $\inv{f}$
+    is the same as the inverse image of $V$ under $f$; thus the fact
+    that both sets are denoted as $\inv{f}$ will not lead to any
+    inconsistency.}
+
+  Since ``$\inv{f}(V)$'' may refer to two different things here, let's
+  first introduce some notations to avoid any confusion :
+  \begin{itemize}
+  \item Let $F$ be the \emph{forward image} of $V$ under $\inv{f}$,
+    i.e. $F = \{\inv{f}(y) \; | \; y \in V\}$.
+  \item Let $I$ be the \emph{inverse image} of $V$ under $f$, i.e.
+    $I = \{x \in X \; | \; f(x) \in V\}$.
+  \end{itemize}
+
+  In this exercise we must show that $F = I$, so as to ensure that the
+  two definitions of $\inv{f}$ are equivalent. So, we will prove that
+  $F \subseteq I$ and $I \subseteq F$.
+
+  \begin{enumerate}
+  \item Let be $x \in F$. Thus, there exists $y \in V$ such that
+    $x = \inv{f}(y)$. By definition, this is equivalent to $f(x) =
+    y$. But since $y \in V$, we can say that $f(x) \in V$. Thus, we
+    have both $x \in X$ (beacuse $F \subseteq X$) and $f(x) \in V$,
+    which means that $x \in I$.
+  \item Conversely, let be $x \in I$. By definition, this means that
+    $x \in X$ and that $f(x) \in V$, i.e. there exists a certain
+    element $y \in V$ such that $y = f(x) \in V$. This latter
+    statement is equivalent to $x = \inv{f}(y)$. Thus, we have $x \in
+    X$ and $x = \inv{f}(y)$ for a certain $y \in V$, which means that
+    $x \in F$.
+  \end{enumerate}
+\end{exo}
+
 \begin{exo}{3.4.2}{Let $f : X \rightarrow Y$ be a function, let $S$ be
     a subset of $X$ and let $U$ be a subset of $Y$. What, in general,
     can one say about $\inv{f}(f(S))$ and $S$? What about
@@ -939,7 +974,7 @@ No exercises in this chapter.
       f(\inv{f}(U))$. By definition, there exists $x \in \inv{f}(U)$
       such that $y = f(x)$. But if $x \in \inv{f}(U)$, we have
       $f(x)\in U$. And since $y = f(x)$, this means that $y \in U$.
-    \item Conclusion: generally speaking, $U$ \neq f(\inv{f}(U))$,
+    \item Conclusion: generally speaking, $U \neq f(\inv{f}(U))$,
       but $f(\inv{f}(U)) \subset U$.
     \end{itemize}
   \end{enumerate}
