@@ -1024,6 +1024,54 @@ No exercises in this chapter.
     holds if $y \in B$. Thus, in both cases, $y \in f(A \cup B)$.
   \end{enumerate}
 \end{exo}
+
+\begin{exo}{3.4.6}{Prove lemma 3.4.9. (Hint: start with the set
+    $\{0,1\}^X$ and apply the replacement axiom, replacing each
+    function $f$ with the object $f^{-1}(\{1\})$.)}
+
+  First, let's recall the main propositions involved in this exercise:
+
+  \begin{itemize}
+  \item \textbf{Replacement axiom}. Let $A$ be a set. For any object $x \in A$, and any object $y$, suppose we have a statement $P(x,y)$ pertaining to $x$ and $y$, such that for each $x \in A$ there is at most one $y$ for which $P(x,y)$ is true. Then there exists a set $\{y \; | \; P(x,y) \text{ is true for some } x \in A\}$, such that for any object $z$,
+\[ z \in \{y \; | \; P(x,y) \text{ is true for some } x \in A\} \Longleftrightarrow P(x,z) \text{ is true for some } x \in A\]
+
+\item \textbf{Power set axiom}. Let $X$ and $Y$ be sets. There there exists a set, denoted $Y^X$, which consists of all the function from $X$ to $Y$:
+\[f \in Y^X \Longleftrightarrow (f \text{ is a function from $X$ to $Y$}\}\]
+
+\item \textbf{Lemma 3.4.9}. Let $X$ be a set. Then the set $\{Y \; | \; Y \text{ is a subset of X}\}$ is a set.
+  \end{itemize}
+
+  The aim is to prove this lemma using the two axioms recalled here.
+
+  \begin{enumerate}
+  \item Let $X$ be a set, and $Y = \{0,1\}$. Per the power set axiom,
+    $\{0,1\}^X$ is a set, and it contains all the functions
+    $f : X \rightarrow \{0,1\}$.
+  \item Let $A$ be a subset of $X$. One can define the function
+    $f_A : X \rightarrow \{0,1\}$, such that for all $x \in X$,
+    $f(x) = 1$ if $x \in A$, and $f(x)=0$ otherwise. We can even say
+    more:
+    \begin{itemize}
+    \item If $A$ is a subset of $X$, then there exists an element
+      $f \in \{0,1\}^X$ such that $A = f^{-1}(\{1\})$: this is
+      precisely $f_A$ as defined above.
+    \item Conversely, if $f \in \{0,1\}^X$, then $f^{-1}(\{1\})$ is by
+      definition a subset of $X$.
+    \end{itemize}
+    Thus, the two statements ``$A$ is a subset of $X$'' and ``there
+    exists $f \in \{0,1\}^X$ such that $A = f^{-1}(\{1\})$'' are
+    equivalent.
+  \item Finally, let be $A \subset X$ and $f \in \{0,1\}^X$. Let's
+    define $P(f,A)$ the statement ``$A = f^{-1}(\{1\})$''. For each
+    $f$, there is at most one $A$ (in fact, \emph{exactly} one $A$)
+    such that $P(f,A)$ is true. Thus, per the axiom of replacement,
+    there exists a set:
+    \[\mathcal{P} = \{A \; | \; A = f^{-1}(\{1\}) \text{ for some } f \in \{0,1\}^X\}\]
+    And, thanks to the equivalence demonstrated in 2.:
+    \[ \mathcal{P} = \{A \; | \; A \text{ is a subset of } X\} \]
+    is a well-defined set, which we wanted to prove.
+  \end{enumerate}
+\end{exo}
 \end{document}
 
 %%% Local Variables:
