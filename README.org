@@ -13,6 +13,7 @@ As I'm self-studying for fun and in a rather casual way, this constitutes only /
 * Current status
 ** Analysis I
 - [X] Chapter 2
+- [ ] Chapter 3: is on its way
 
 More to come.
 
