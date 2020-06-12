@@ -1025,6 +1025,42 @@ No exercises in this chapter.
   \end{enumerate}
 \end{exo}
 
+\begin{exo}{3.4.4}{Let be $f : X \rightarrow Y$ a function, and let
+    $A, B$ be subsets of $Y$. Show that
+    $\inv{f}(A \cup B) = \inv{f}(A) \cup \inv{f}(B)$, that
+    $\inv{f}(A \cap B) = \inv{f}(A) \cap \inv{f}(B)$, and that
+    $\inv{f}(A \backslash B) = \inv{f}(A) \backslash \inv{f}(B)$.}
+  
+  We prove only the first statement here; since only very small
+  adjustments are required in its proof to prove the last two ones.
+
+  \begin{itemize}
+  \item Let be $x \in \inv{f}(A \cup B)$. By definition, $f(x) \in A \cup
+    B$, so that we have either $f(x) \in A$ or $f(x) \in B$.
+
+    If $f(x) \in A$, then $x \in \inv{f}(A)$ by definition. This
+    implies that $x \in \inv{f}(A) \cup \inv{f}(B)$.
+
+    The same conclusion holds if $f(x) \in B$. Thus, we have
+    demonstrated that
+    $\inv{f}(A \cup B) \subseteq \inv{f}(A) \cup \inv{f}(B)$.
+
+  \item For the conserve inclusion, let be $x \in \inv{f}(A) \cup
+  \inv{f}(B)$. We have either $x \in \inf{f}(A)$ or $x \in
+  \inv{f}(B)$.
+
+  If $x \in \inv{f}(A)$, then $f(x) \in A$, and since
+  $A \subset A \cup B$, we have $f(x) \in A \cup B$. This implies
+  $x \in \inv{f}(A \cup B)$.
+
+  The same conclusion holds if $x \in \inv{f}(B)$. Thus,
+  $\inv{f}(A) \cup \inv{f}(B) \subseteq \inv{f}(A \cup B)$.
+
+  \item This proves the equality $\inv{f}(A \cup B) = \inv{f}(A) \cup
+    \inv{f}(B)$.
+  \end{itemize}
+\end{exo}
+
 \begin{exo}{3.4.6}{Prove lemma 3.4.9. (Hint: start with the set
     $\{0,1\}^X$ and apply the replacement axiom, replacing each
     function $f$ with the object $f^{-1}(\{1\})$.)}
@@ -1072,6 +1108,7 @@ No exercises in this chapter.
     is a well-defined set, which we wanted to prove.
   \end{enumerate}
 \end{exo}
+
 \end{document}
 
 %%% Local Variables:
