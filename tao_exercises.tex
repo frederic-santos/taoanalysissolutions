@@ -1061,6 +1061,65 @@ No exercises in this chapter.
   \end{itemize}
 \end{exo}
 
+\begin{exo}{3.4.5}{Let $f : X \rightarrow Y$ be a function. Show that
+    $\inv{f}(f(S)) = S$ for every $S \subseteq Y$ iff $f$ is
+    surjective. Show that $f(\inv{f}(S)) = S$ for every $S \subseteq
+    X$ iff $f$ is injective.}
+
+  This exercise is a continuation of Exercise 3.4.2. Let's recall its
+  results, that will reduce the amount of things to be proven here:
+  \begin{itemize}
+  \item we always have $\inv{f}(f(S)) \subseteq S$ for every
+    $S \subseteq Y$, thus we just have to prove that $f$ is
+    surjective iff $S \subseteq \inv{f}(f(S))$ for every
+    $S \subseteq Y$.
+  \item we always have $S \subseteq f(\inv{f}(S))$ for every
+    $S \subseteq X$, thus we just have to prove that $f$ is
+    injective iff then $f(\inv{f}(S)) \subseteq S$ for every
+    $S \subseteq X$.
+  \end{itemize}
+
+  Let's prove those two statements.
+  \begin{enumerate}
+  \item Let $f$ be surjective: let's show that
+    $S \subseteq f(\inv{f}(S))$ for all $S \subseteq Y$. Let $S$ be a
+    subset of $Y$, and $y \in S$\footnote{If $S$ is empty, the
+      statement is vacuously true, so that we can suppose
+      $S \neq \emptyset$.}. Since $f$ is surjective, there exists
+    $x \in X$ such that $y = f(x)$. Recall that $y \in S$: this means
+    that$f(x) \in S$, i.e. $x \in \inv{f}(S)$. Thus,
+    $y = f(x) \in f(\inv{f}(S))$. We have proved that, if $f$ is
+    surjective, $y \in S \Rightarrow y \in f(\inv{f}(S))$, i.e.
+    $S \subseteq f(\inv{f}(S))$.
+
+    Conversely, suppose that $S \subseteq f(\inv{f}(S))$ for every
+    $S \subseteq Y$ and let's show that $f$ is surjective. Let's
+    choose $S = Y$: by hypothesis, we have
+    $Y \subseteq f(\inv{f}(Y))$. Then, let be $y \in Y$. There exists
+    $x \in \inv{f}(Y) \subseteq X$ such that $y = f(x)$. This means
+    precisely that $f$ is surjective.
+
+    The first equivalence is proved.
+
+  \item Let $f$ be injective, and $S \subseteq X$. Let be
+    $x \in \inv{f}(f(S))$. Thus, by definition, $f(x) \in f(S)$. This
+    means that there exists $x' \in f(S)$ such that $f(x) =
+    f(x')$. And since $f$ is injective, $x = x' \in S$. Thus, if $f$
+    is injective, $\inv{f}(f(S)) \subseteq S$ for every
+    $S \subseteq X$.
+
+    Conversely, suppose that $\inv{f}(f(S)) \subseteq S$ for every
+    $S \subseteq X$. In particular, this is true for any singleton
+    $S = \{x_0\}$, with $x_0 \in S$. In such a case, we obtain
+    $\inv{f}(f(\{x_0\})) = \{x_0\}$. For any element $x \in X$, if
+    $x \neq x_0$, we have $x \notin \{x_0\}$ by definition of a
+    singleton, thus $x \notin \inv{f}(f(\{x_0\}))$, and thus
+    $f(x) \neq f(x_0)$. This means that $f$ is injective.
+
+    The second equivalence is proved.    
+  \end{enumerate}
+\end{exo}
+
 \begin{exo}{3.4.6}{Prove lemma 3.4.9. (Hint: start with the set
     $\{0,1\}^X$ and apply the replacement axiom, replacing each
     function $f$ with the object $f^{-1}(\{1\})$.)}
@@ -1091,8 +1150,8 @@ No exercises in this chapter.
     \item If $A$ is a subset of $X$, then there exists an element
       $f \in \{0,1\}^X$ such that $A = f^{-1}(\{1\})$: this is
       precisely $f_A$ as defined above.
-    \item Conversely, if $f \in \{0,1\}^X$, then $f^{-1}(\{1\})$ is by
-      definition a subset of $X$.
+    \item Conversely, if $f \in \{0,1\}^X$, then $A = f^{-1}(\{1\})$
+      is by definition a subset of $X$.
     \end{itemize}
     Thus, the two statements ``$A$ is a subset of $X$'' and ``there
     exists $f \in \{0,1\}^X$ such that $A = f^{-1}(\{1\})$'' are
