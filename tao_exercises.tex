@@ -1168,6 +1168,40 @@ No exercises in this chapter.
   \end{enumerate}
 \end{exo}
 
+\begin{exo}{3.4.8}{Prove that Axiom 3.4 can be deduced from Axiom 3.1,
+  Axiom 3.3 and Axiom 3.11.}
+
+Let's recall very briefly the four axioms involved here :
+\begin{itemize}
+  \item Axiom 3.4 (to be proved) says that if $A$ and $B$ are sets,
+    then there exists a union set $A \cup B$ such that $x \in A \cup
+    B$ iff $x \in A$ or $x \in B$.
+\item Axiom 3.1 essentially says that sets are objects.
+\item Axiom 3.3 says that singletons are pair sets do exist.
+\item Axiom 3.11: let $A$ be a set, whose all elements are themselves
+  sets. Then there exists a set $\bigcup A$ whose elements are those
+  objects which are elements of elements of $A$, i.e., $x \in \bigcup
+  A$ iff $x \in S$ for some $S \in A$.
+\end{itemize}
+\end{exo}
+
+Here is a sketch of proof for Axiom 3.4. Let $A$ and $B$ be
+sets. According to Axiom 3.1, $A$ and $B$ are themselves objects: they
+can be elements of other sets. Consequently, according to Axiom 3.3,
+it makes sense to talk about the singleton sets $\{A\}$ and $\{B\}$,
+and the set $\{A, B\}$.
+
+Now we consider this latter set, which we denote $\mathcal{A} = \{A,
+B\}$. According to axiom 3.11, there exists a set $\bigcup
+\mathcal{A}$ whose elements those objects which are the elements of
+$\mathcal{A}$, i.e., $x \in \mathcal{A}$ iff there exists $S \in
+\mathcal{A}$ such that $x \in S$. But $\mathcal{A}$ is a pair set with
+only two elements, so that $S$ must necessarily be equal to $A$ or
+$B$.
+
+This leads to the following conclusion: if $A$ and $B$ are sets, then
+there exists a set $\mathcal{A}$ such that $x \in \mathcal{A}$ iff
+$x \in A$ or $x \in B$. This is precisely the Axiom 3.4.
 \end{document}
 
 %%% Local Variables:
