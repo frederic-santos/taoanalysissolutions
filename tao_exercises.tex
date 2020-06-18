@@ -19,6 +19,7 @@
 \newcommand{\successor}[1]{#1 \! +\!\!\!+}
 \newcommand{\inv}[1]{#1^{-1}}
 \newcommand{\rr}{\mathbb{R}}
+\newcommand{\partsof}[1]{\mathcal{P}\left( #1 \right)}
 % Lemmas:
 \usepackage{amsthm}
 \newtheorem*{lem}{Lemma}
@@ -1202,6 +1203,111 @@ $B$.
 This leads to the following conclusion: if $A$ and $B$ are sets, then
 there exists a set $\mathcal{A}$ such that $x \in \mathcal{A}$ iff
 $x \in A$ or $x \in B$. This is precisely the Axiom 3.4.
+
+\bigskip
+\begin{exo}{3.5.1}{Suppose we define the ordered pair $(x,y)$  for any
+    objects $x$ and $y$ by the formula $(x,y) := \{\{x\},
+    \{x,y\}\}$. Show that  this definition obeys the property (3.5), and
+    also whenever $X$ and $Y$ are sets, the cartesian product $X \times
+    Y$ is also a set.}
+
+  Recall that property (3.5) says that $(x,y) = (x',y')$ iff $x=x'$
+  and $y=y'$. The proof below is heavily inspired by the sketch given
+  by Paul Halmos in his famous book, \textit{Naive Set Theory}. (The
+  proof below is just immensely more verbose.)
+
+  \begin{enumerate}
+  \item First, we go back to Remark 3.1.9 by Terence Tao (page
+    37). In this remark, Tao says that for any object $a$, the pair
+    set $\{a, a\}$ is in fact the singleton $\{a\}$. Tao asks
+    \textit{why?} to the reader. This is easy to prove using the
+    Definition 3.1.4 (equality of sets): both sets have the same
+    elements, thus they are equal. This fact is a crucial point for
+    the current proof.
+
+    Indeed, first note that for any object $x$, the ordered pair
+    $(x,x)$ will be (by definition) equal to $\{\{x\},
+    \{x,x\}\}$. Applying twice the Remark 3.1.9 made by Terence Tao,
+    we can conclude that $(x,x) = \{\{x\}\}$ for any object $x$.
+    
+    Conversely, if any ordered pair $(x,y)$ is a singleton, this means
+    that $\{\{x\}, \{x,y\}\}$ is a singleton. This implies that both
+    elements of this pair set are equal, i.e. $\{x\} = \{x,y\}$. Thus,
+    (by Definition 3.1.4,) $y \in \{x\}$, i.e. $x=y$.
+    
+    This gives a handy conclusion, that we can write as a lemma:
+    \begin{lem} An ordered pair $(x,y)$ is a singleton if and only
+      if $x=y$ (and in this case, this singleton is $\{\{x\}\} =
+      \{\{y\}\}$).
+    \end{lem}
+    We can now prove more easily that property (3.5) is met.
+  \item Let's prove that the property (3.5) is satisfied.
+    \begin{itemize}
+    \item First, let be two ordered pairs $(a,b) = \{\{a\}, \{a,b\}\}$
+      and $(x,y) = \{\{x\}, \{x,y\}\}$. If $a=x$ and $y=b$, then we
+      obviously have $\{\{a\}, \{a,b\}\} = \{\{x\}, \{x,y\}\}$.
+    \item For the reciprocal, suppose that $(a,b) = (x,y)$, and let's
+      show that $a=x$ and $b=y$. We will consider two distinct cases.
+      \begin{enumerate}[label=\emph{(\alph*)}]
+      \item First consider the case where $a=b$ (note that this also
+        covers the case $x=y$, since they play symmetrical
+        roles). Thus $(a,b) = \{\{a\}\}$. Since $(a,b) = (x,y)$, we have
+        $\{\{x\},\{x,y\}\} = \{\{a\}\}$.
+
+        This means that $\{x\} \in \{\{a\}\}$, i.e. $a=x$.
+
+        But we also have $\{x,y\} \in \{\{a\}\}$, i.e. $\{x,y\} =
+        \{a\}$. This means in particular that $\{x,y\}$ is a
+        singleton, which is only possible if $x=y$ according to the
+        lemma introduced above.
+
+        Thus, $a=b$ by hypothesis, and $a=x$, and $x=y$. This finally
+        means that all four elements are equal: $a=b=x=y$.
+
+        We can insist: if we have either $a=b$ or $x=y$, then all four
+        elements are equal, and property (3.5) is met.
+        
+      \item The other case is $a \neq b$ (which also implies $x \neq
+        y$, otherwise all four elements would be equal). Since $(a,b)
+        = (x,y)$, we have $\{a\} \in \{\{x\}, \{x,y\}\}$, so that we
+        have either $\{a\} = \{x\}$ or $\{a\} = \{x,y\}$. The latter
+        case can be excluded: $\{a\} = \{x,y\}$ would mean that
+        $\{x,y\}$ is a singleton, thus $x=y$, a contradiction with our
+        hypothesis. Thus, the only possibility is $\{a\} = \{x\}$,
+        i.e. $a=x$.
+
+        We also have $\{a,b\} \in \{\{x\}, \{x,y\}\}$, and for the
+        same reason, the only possibility is $\{a,b\} = \{x,y\}$. But
+        we have showed that $a=x$, so that $\{a,b\} = \{a,y\}$. The
+        conclusion is $y=b$.
+      \end{enumerate}
+        
+      \item Conclusion: in both cases, $(a,b)$ implies both $a=x$ and $y=b$,
+      which is our initial goal. Property (3.5) is met.
+    \end{itemize}
+  \item Finally, if we adopt this definition, $X \times Y$ is a
+    set. Indeed, for every $x\in X$ and $y \in Y$, both $x$ and $y$
+    are elements of $X \cup Y$. Thus, the singleton $\{x\}$ and the
+    pair set $\{x,y\}$ are elements of the power set of $X \cup Y$
+    (which is indeed a set, by Lemma 3.4.9: see Exercise 3.4.6). In
+    other words, if $\partsof{A}$ denotes the power set of a set $A$,
+    we have $\{x\} \in \partsof{X \cup Y}$ and
+    $\{x,y\} \in \partsof{X \cup Y}$.
+
+    Thus, for every objects $x \in X$ and $y \in Y$,
+    $\{\{x\}, \{x,y\}\} \subset \partsof{X \cup Y}$. This latter
+    statement is equivalent to $\{\{x\}, \{x,y\}\} \in
+    \partsof{\partsof{X \cup Y}}$, which is also a well-defined set by
+    a (recursive) application of Lemma 3.4.9.
+
+    Then, for any element $S \in \partsof{\partsof{X \cup Y}}$, let
+    $P(S)$ be the property ``There exists $x \in X$ and $y \in Y$ such
+    that $S = \{\{x\}, \{x,y\}\}$''. By the axiom of specification
+    (Axiom 3.5), there exists a set $\{S \in \partsof{\partsof{X \cup
+        Y}} \, | \, P(S) \text{ is true}\}$: this set is precisely the
+    cartesian product $X \times Y$ we were looking for.
+  \end{enumerate}
+\end{exo}
 \end{document}
 
 %%% Local Variables:
