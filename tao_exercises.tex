@@ -1128,13 +1128,24 @@ No exercises in this chapter.
   First, let's recall the main propositions involved in this exercise:
 
   \begin{itemize}
-  \item \textbf{Replacement axiom}. Let $A$ be a set. For any object $x \in A$, and any object $y$, suppose we have a statement $P(x,y)$ pertaining to $x$ and $y$, such that for each $x \in A$ there is at most one $y$ for which $P(x,y)$ is true. Then there exists a set $\{y \; | \; P(x,y) \text{ is true for some } x \in A\}$, such that for any object $z$,
-\[ z \in \{y \; | \; P(x,y) \text{ is true for some } x \in A\} \Longleftrightarrow P(x,z) \text{ is true for some } x \in A\]
+  \item \textbf{Replacement axiom}. Let $A$ be a set. For any object
+    $x \in A$, and any object $y$, suppose we have a statement
+    $P(x,y)$ pertaining to $x$ and $y$, such that for each $x \in A$
+    there is at most one $y$ for which $P(x,y)$ is true. Then there
+    exists a set
+    $\{y \; | \; P(x,y) \text{ is true for some } x \in A\}$, such
+    that for any object $z$,
+    \[ z \in \{y \; | \; P(x,y) \text{ is true for some } x \in A\}
+      \Longleftrightarrow P(x,z) \text{ is true for some } x \in A\]
 
-\item \textbf{Power set axiom}. Let $X$ and $Y$ be sets. There there exists a set, denoted $Y^X$, which consists of all the function from $X$ to $Y$:
-\[f \in Y^X \Longleftrightarrow (f \text{ is a function from $X$ to $Y$}\}\]
+\item \textbf{Power set axiom}. Let $X$ and $Y$ be sets. There there
+  exists a set, denoted $Y^X$, which consists of all the function from
+  $X$ to $Y$:
+  \[f \in Y^X \Longleftrightarrow (f \text{ is a function from $X$ to
+      $Y$}\}\]
 
-\item \textbf{Lemma 3.4.9}. Let $X$ be a set. Then the set $\{Y \; | \; Y \text{ is a subset of X}\}$ is a set.
+\item \textbf{Lemma 3.4.9}. Let $X$ be a set. Then the set
+  $\{Y \; | \; Y \text{ is a subset of X}\}$ is a set.
   \end{itemize}
 
   The aim is to prove this lemma using the two axioms recalled here.
@@ -1167,6 +1178,56 @@ No exercises in this chapter.
     \[ \mathcal{P} = \{A \; | \; A \text{ is a subset of } X\} \]
     is a well-defined set, which we wanted to prove.
   \end{enumerate}
+\end{exo}
+
+\begin{exo}{3.4.7}{Let $X, Y$ be sets. Define a partial function
+    from $X$ to $Y$ to be any function $f: X' \rightarrow Y'$ with
+    $X' \subseteq X$ and $Y'\subseteq Y$. Show that the collection of
+    all partial functions from $X$ to $Y$ is itself a set.}
+  \begin{itemize}
+   \item Let be $X' \subseteq X$ and $Y' \subseteq Y$. If both $X'$
+     and $Y'$ are fixed, then per the power set axiom (3.10), there
+     exists a set $Y'^{X'}$ which consists of all the functions from
+     $X'$ to $Y'$.
+   \item By lemma 3.4.9, there exist a set $2^X$ which consists of all
+     the subsets of $X$, and a set $2^Y$ which consists of all the
+     subsets of $Y$.
+   \item Now we \emph{fix} an element $X'$ of $2^X$. Let be $Y'$ an
+     element of the set $2^Y$, $A$ a set, and $P$ the property
+     ``$P(Y', A)$: $A = Y'^{X'}$''. Per the replacement axiom, there
+     exists exactly one (and thus, at most one) set:
+     \begin{align*}
+       \{A \, | \, P(Y', A) \text{ is true for some } Y' \in 2^Y\}
+       &= \{A \, | \, A = Y'^{X'} \text{ for some } Y' \in 2^Y\}\\
+       &= \{Y'^{X'} \, | \, Y' \in 2^Y\}
+     \end{align*}
+   \item Each element of this set is itself a set. Thus we can apply
+     the axiom of union (3.11): there exists a set
+     $\bigcup \{Y'^{X'} \, | \, Y' \in 2^Y\}$ whose elements are those
+     objects which are elements of elements of
+     $\{Y'^{X'} \, | \, Y' \in 2^Y\}$, i.e.:
+
+     \[ \bigcup \{Y'^{X'} \, | \, Y' \in 2^Y\} = \{f | f:X'
+       \rightarrow Y' \text{ for some } Y' \in 2^Y\}\]
+
+     This set is obtained for one given \emph{fixed} subset
+     $X' \subseteq X$, so let's denote this set:
+     \[S_{X'} = \{f | f:X' \rightarrow Y' \text{ for some } Y' \in
+       2^Y\}\]
+   \item Now we apply once again the union set (3.11), especially in
+     its second formulation. If we denote $I = 2^X$, then for each
+     element $X' \in I$ we do have one set $S_{X'}$, which is defined
+     above. Thus, there exists a set
+     $\bigcup_{X' \in 2^X} S_{X'} := \bigcup \{S_{X'} \, | \, X' \in
+     2^X\}$. And, for every function $f$, we have
+     $f \in \bigcup \{S_{X'} \, | \, X' \in 2^X\}$ iff there exists
+     $X' \in 2^X$ such that $f \in S_{X'}$, i.e. if there exists
+     $X' \subset X$ and $Y' \subset Y$ such that
+     $f: X' \rightarrow Y'$.
+   \item Consequently, we have proved that there exists a set which
+     consists of the collection of all partial functions from $X$ to
+     $Y$.
+\end{itemize}
 \end{exo}
 
 \begin{exo}{3.4.8}{Prove that Axiom 3.4 can be deduced from Axiom 3.1,
