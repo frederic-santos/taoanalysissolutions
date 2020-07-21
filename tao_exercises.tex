@@ -20,6 +20,7 @@
 \newcommand{\inv}[1]{#1^{-1}}
 \newcommand{\rr}{\mathbb{R}}
 \newcommand{\partsof}[1]{\mathcal{P}\left( #1 \right)}
+\newcommand{\minus}{\, \textrm{---} \,}
 % Lemmas:
 \usepackage{amsthm}
 \newtheorem*{lem}{Lemma}
@@ -1368,6 +1369,35 @@ $x \in A$ or $x \in B$. This is precisely the Axiom 3.4.
         Y}} \, | \, P(S) \text{ is true}\}$: this set is precisely the
     cartesian product $X \times Y$ we were looking for.
   \end{enumerate}
+\end{exo}
+
+\section{The integers}
+\begin{exo}{4.1.1}{Verify that the definition of equality on the
+    integers is both reflexive and symmetric.}
+
+  Recall the Definition 4.1.1 of equality on integers: two integers
+  $a \minus b$ and $c \minus d$ are equal iff $a+d = c+b$. This
+  defines a binary relation, denoted ``$=$'' on the set of
+  integers. Let's show that this relation is reflexive and symmetric.
+
+  \begin{itemize}
+  \item Reflexivity: let $a$ and $b$ be natural numbers, so that
+    $a \minus b$ is an integer. We know that, on natural numbers,
+    equality is reflexive, i.e. $a+b = a+b$. This equality means
+    precisely that $a \minus b = a \minus b$.
+  \item Symmetry: let $a, b, c, d$ be natural numbers. If $a \minus b
+    = c \minus d$, do we also have $c \minus d = a \minus b$?
+
+    \[
+    \begin{array}{lrcl}
+                          & a \minus b  &=& c \minus d \\
+      \Longleftrightarrow & a+d &=& c+b \\
+      \Longleftrightarrow & c+b &=& a+d \text{ (equality is symmetric
+      on naturals})\\
+      \Longleftrightarrow & c \minus d &=& a \minus b
+    \end{array}
+    \]
+  \end{itemize}
 \end{exo}
 \end{document}
 
