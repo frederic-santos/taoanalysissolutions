@@ -20,7 +20,7 @@
 \newcommand{\inv}[1]{#1^{-1}}
 \newcommand{\rr}{\mathbb{R}}
 \newcommand{\partsof}[1]{\mathcal{P}\left( #1 \right)}
-\newcommand{\minus}{\, \textrm{---} \,}
+\newcommand{\minus}{\, \textrm{---}\!\textrm{--} \:}
 % Lemmas:
 \usepackage{amsthm}
 \newtheorem*{lem}{Lemma}
@@ -1398,6 +1398,34 @@ $x \in A$ or $x \in B$. This is precisely the Axiom 3.4.
     \end{array}
     \]
   \end{itemize}
+\end{exo}
+
+\begin{exo}{4.1.2}{Show that the definition of negation on the
+    integers is well-defined in the sense that if
+    $(a \minus b)=(a' \minus b')$, then
+    $-(a \minus b)=-(a' \minus b')$ (so equal integers have equal
+    negations).}
+  
+\end{exo}
+
+\begin{exo}{4.1.3}{Show that $(-1) \times a = -a$ for every integer
+    $a$.}
+
+  Since $a$ is an integer, there exist two natural numbers $n$ and $m$
+  such that $a = m \minus n$.
+  
+  On the one hand, by Definition 4.1.4, $-a = n \minus m$.
+
+  On the other hand, using once again Definition 4.1.4 and Definition
+  4.1.2,
+  \begin{align*}
+    (-1) \times a &= (0 \minus 1) \times (m \minus n) \\
+                  &= (0 \times m + 1 \times n) \minus (0 \times n + 1
+                    \times m) \\
+                  &= n \minus m
+  \end{align*}
+
+  Thus, we have indeed $(-1) \times a = -a$.
 \end{exo}
 \end{document}
 
