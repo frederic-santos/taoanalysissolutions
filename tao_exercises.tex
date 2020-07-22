@@ -1405,9 +1405,27 @@ $x \in A$ or $x \in B$. This is precisely the Axiom 3.4.
     $(a \minus b)=(a' \minus b')$, then
     $-(a \minus b)=-(a' \minus b')$ (so equal integers have equal
     negations).}
-  
+
+  Since $a \minus b = a' \minus b'$, we have $a+b' = a' + b$.
+
+  Also, by Definition 4.1.4 of negation, we have:
+  \begin{align*}
+    -(a \minus b) &= b \minus a \\
+    -(a' \minus b') &= b' \minus a' \\
+  \end{align*}
+
+  Then, we have successively:
+  \begin{align*}
+    b + a' &= a' + b \text{ (addition is commutative on naturals,
+             Prop. 2.2.4)}\\
+           &= a + b' \text{ (initial hypothesis)}\\
+           &= b' + a \text{ (by commutativity on naturals once again)}
+  \end{align*}
+  and this equality $b+a' = b'+a$ precisely means that $b \minus a =
+  b' \minus a'$, i.e. that $-(a \minus b) = -(a' \minus b')$.
 \end{exo}
 
+\bigskip
 \begin{exo}{4.1.3}{Show that $(-1) \times a = -a$ for every integer
     $a$.}
 
