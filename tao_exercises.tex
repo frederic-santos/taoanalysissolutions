@@ -1445,6 +1445,89 @@ $x \in A$ or $x \in B$. This is precisely the Axiom 3.4.
 
   Thus, we have indeed $(-1) \times a = -a$.
 \end{exo}
+
+\bigskip
+\begin{exo}{4.1.4}{Prove the remaining identities in Proposition
+    4.1.6.}
+
+  Let $x = a \minus b$, $y = c \minus d$ and $z = e \minus f$ be three
+  integers. Those identities are the following:
+
+  \begin{enumerate}
+  \item $x+y = y+x$, i.e., we must prove that addition is commutative
+    on the integers. We have:
+    \begin{align*}
+      x+y &= (a \minus b) + (c \minus d) \\
+          &= (a+c) \minus (b+d) \text{ (by Definition 4.1.2)} \\
+          &= (c+a) \minus (d+b) \text{ (addition is commutative on
+            naturals)} \\
+          &= (c \minus d) + (a \minus b) \text{ (by Definition 4.1.2
+            again)} \\
+          &= y + x
+    \end{align*}
+  \item $(x+y)+z = x+(y+z)$, i.e. prove that addition is associative on the
+    integers. This is a very similar proof, and this is a direct
+    consequence of associativity of addition on the naturals.
+  \item $x+0 = 0+x = x$. We have already showed that addition is
+    commutative on the integers, so we just have to prove that $x+0=x$.
+    \begin{align*}
+      x + 0 &= (a \minus b) + (0 \minus 0) \\
+            &= (a+0) \minus (b+0) \\
+            &= a \minus b = x.
+    \end{align*}
+  \item $x + (-x) = (-x)+x = 0$. Once again, thanks to the previous
+    result about commutativity, we just have to prove that $x + (-x) =
+    0$.
+    \begin{align*}
+      x + (-x) &= (a \minus b) + (b \minus a) \text{ (by Definition
+                 4.1.4)} \\
+               &= (a+b) \minus (b+a) \text{ (by Definition
+                 4.1.2)} \\
+               &= (a+b) \minus (a+b) \text{ (addition is commutative on
+                 naturals)} \\
+               &= 0 \text{ (because $m \minus m = 0 \minus 0$ for all integer $m$)}
+    \end{align*}
+  \item $xy = yx$, i.e. multiplication is commutative on the integers.
+    \begin{align*}
+      xy &= (a \minus b) \times (c \minus d) \\
+         &= (ac+bd) \minus (ad+bc) \text{ (by Definition 4.1.2)}\\
+         &= (ca+db) \minus (da+cb) \text{ (multiplication is
+           commutative on the naturals)}\\
+         &= yx \text{ (by Definition 4.1.2)}
+    \end{align*}
+  \item $(xy)z = x(yz)$, i.e. multiplication is associative on the
+    integers. This is actually the only identity proved in the main
+    text by Terence Tao.
+  \item $x1 = 1x = x$. The equality between the first two terms is a
+    direct consequence of commutativity of multiplication on the
+    integers. We just have to prove that $x1 = x$. And indeed, $x1 =
+    (a \minus b) \times (1 \minus 0) = (a1 + b0) \minus (b1 + a0) = a
+    \minus b = x$.
+  \item $x(y+z) = xy+xz$, i.e. show distributivity on the integers. On
+    the left side, we have:
+    \begin{align*}
+      x(y+z) &= (a \minus b)\left((c \minus d) + (e \minus f)\right)
+      \\
+             &= (a \minus b)\left((c+e) \minus (d+f) \right) \\
+             &= \left(a(c+e) + b(d+f) \right) \minus \left(a(d+f) +
+               b(c+e)\right) \\
+             &= \left((ac+ae+bd+bf)\right) \minus
+               \left((ad+af+bc+be)\right)
+    \end{align*}
+    and then on the left side:
+    \begin{align*}
+      xy+xz &= (a \minus b) (c \minus d) + (a \minus b)(e \minus f)\\
+            &= \left((ac+bd) \minus (ad+bc)\right) + \left((ae+bf)
+              \minus (af + be)\right)\\
+            &= \left((ac+ae+bd+bf)\right) \minus \left((ad+af+bc+be)\right)
+    \end{align*}
+  \item $(y+z)x = yx + zx$. This latter identity is a direct
+    consequence of commutativity of multiplication on the integers,
+    and distributivity on the integers, both being already proved
+    earlier in this exercise.
+  \end{enumerate}
+  
+\end{exo}
 \end{document}
 
 %%% Local Variables:
