@@ -1525,8 +1525,46 @@ $x \in A$ or $x \in B$. This is precisely the Axiom 3.4.
     consequence of commutativity of multiplication on the integers,
     and distributivity on the integers, both being already proved
     earlier in this exercise.
+  \end{enumerate}  
+\end{exo}
+
+\begin{exo}{4.1.5}{Prove Proposition 4.1.8, i.e.: let $x$ and $y$ be
+    integers such that $xy = 0$, then either $x=0$ or $y=0$ (or both).}
+
+  We will use here Lemma 4.1.5 (trichotomy of integers, which says
+  that any integer is either zero, or equal to a positive natural
+  number, or the negation of a positive natural number), and Lemma
+  2.3.3 (which provides an equivalent of Proposition 4.1.8 for natural
+  numbers only). We will prove the proposition for (all) three
+  possible cases: $x=0$, $x$ is a positive natural number, $-x$ is a
+  positive natural number.
+
+  $y$ will be considered as a fixed integer, $y = c \minus d$ with
+  $c,d$ natural numbers.
+
+  \begin{enumerate}
+  \item First let's take the case $x=0$. There is nothing to prove
+    here, the proposition is obviously true.
+  \item Then let's take the case where $x$ is a positive natural
+    number (and, consequently, is not equal to zero). In this case, as
+    an integer, $x$ can be written $n \minus 0$ with $n$ a positive
+    natural number.
+
+    We have $xy = (n \minus 0) \times (c \minus d) = (nc +
+    0d) \minus (nd + 0c) = nc \minus nd$.
+
+    Thus, $xy = 0$ iff $nc \minus nd = 0 \minus 0$, and by Definition
+    4.1.1, this means that $nc = nd$. But since all three $n,c,d$ are
+    natural numbers, we can use the cancellation law for natural
+    numbers and conclude that $c=d$.
+
+    This means that $y = c \minus c = 0 \minus 0 = 0$. Thus, in this
+    case, if $xy=0$ with $x$ non-zero, we have showed that $y$ is
+    necessarily equal to 0.
+  \item Finally, let's take the case where $x$ is the opposite of a
+    positive natural number $n$, i.e. $x = 0 \minus n$. A very similar
+    proof also leads to $c=d$, and to $y=0$.
   \end{enumerate}
-  
 \end{exo}
 \end{document}
 
