@@ -21,6 +21,9 @@
 \newcommand{\rr}{\mathbb{R}}
 \newcommand{\partsof}[1]{\mathcal{P}\left( #1 \right)}
 \newcommand{\minus}{\, \textrm{---}\!\textrm{--} \:}
+\newcommand{\quot}{\, \textrm{/}\!\textrm{/} \:}
+\newcommand{\zz}{\mathbb{Z}}
+\newcommand{\qq}{\mathbb{Q}}
 % Lemmas:
 \usepackage{amsthm}
 \newtheorem*{lem}{Lemma}
@@ -1371,14 +1374,14 @@ $x \in A$ or $x \in B$. This is precisely the Axiom 3.4.
   \end{enumerate}
 \end{exo}
 
-\section{The integers}
+\section{Integers and rationals}
 \begin{exo}{4.1.1}{Verify that the definition of equality on the
     integers is both reflexive and symmetric.}
 
   Recall the Definition 4.1.1 of equality on integers: two integers
   $a \minus b$ and $c \minus d$ are equal iff $a+d = c+b$. This
-  defines a binary relation, denoted ``$=$'' on the set of
-  integers. Let's show that this relation is reflexive and symmetric.
+  defines a binary relation on $\zz$, denoted ``$=$''. Let's show that
+  this relation is reflexive and symmetric.
 
   \begin{itemize}
   \item Reflexivity: let $a$ and $b$ be natural numbers, so that
@@ -1582,6 +1585,7 @@ $x \in A$ or $x \in B$. This is precisely the Axiom 3.4.
 \end{exo}
 
 \bigskip
+
 \begin{exo}{4.1.8}{Show that the principle of induction (Axiom 2.5)
     does not apply directly to the integers. More precisely, give an
     example of a property $P(n)$ pertaining to an integer $n$ such
@@ -1601,7 +1605,61 @@ $x \in A$ or $x \in B$. This is precisely the Axiom 3.4.
   true. Thus, $P(n)$ matches the required condtions.
 
   However, $P(-1)$ is obviously false.
-  
+\end{exo}
+
+\bigskip
+\begin{exo}{4.2.1}{Show that the definition of equality for the
+    rational numbers is reflexive, symmetric, and transitive.}
+
+  This exercise ressembles Exercise 4.1.1, and the same approach
+  applies. Recall the Definition 4.2.1: two rational numbers
+  $a \quot b$ and $c \quot d$ are equal iff $ad=bc$. This defines a
+  binary relation on $\qq$, denoted ``$=$''. Let's show that this
+  relation is reflexive, symmetric and transitive.
+
+  Hereafter, $a, b, c, d, e, f$ are integers (and $b,d,f$ are
+  non-zero).
+
+  \begin{itemize}
+  \item Reflexivity: here we must prove that $a \quot b = a \quot
+    b$. This is the case iff $ab = ba$, with is true because of
+    (commutativity of multiplication on $\zz$ and) reflexivity of
+    equality on $\zz$.
+  \item Symmetry: here we must prove that if $a \quot b = c \quot d$,
+    we also have $c \quot d = a \quot b$. We have successively:    
+    \[\begin{array}{lrcl}
+                          & a \quot b  &=& c \quot d \\
+      \Longleftrightarrow & ad &=& bc \\
+      \Longleftrightarrow & da &=& cb \text{ ($\times$ is commutative
+                                   on $\zz$)}\\
+      \Longleftrightarrow & cb &=& da \text{ ($=$ is symmetric
+                                   on $\zz$)}\\
+      \Longleftrightarrow & c \quot d &=& a \quot b
+    \end{array}\]
+  \item Transitivity: here we must prove that if $a \quot b = c \quot d$
+    and $c \quot d = e \quot f$, then $a \quot b = e \quot f$. I.e.,
+    we must prove that if $ad=bc$ and $cf = de$, then $af=be$.
+
+    Let's multiply by $e$ both sides of the equality $ad=bc$: we get
+    $ade = bce$. Since $de=cf$, we also get $acf=bce$.
+
+    In this latest equality, using the cancellation law (Corollary
+    4.1.9) for $c$ would lead to $af=be$, which would close the
+    proof. However, unlike $b$, $d$ or $f$, the integer $c$ may be
+    equal to 0, and in this case we cannot use the cancellation
+    law. There are thus two different cases:
+    \begin{itemize}
+    \item If $c \neq 0$, we simply use the cancellation law: since
+      $acf=bce$, then $af=be$, which means that
+      $a \quot b = e \quot f$.
+    \item If $c=0$, then $bc = 0$. But since $ad = bc$, we also have
+      $ad = 0$, and we know that $d \neq 0$. According to Proposition
+      4.1.8, this leads to $a=0$. A similar reasoning leads to
+      $e=0$. Thus, $a=c=e=0$, and $0=af=be$, which means
+      $a \quot b = e \quot f$.
+    \end{itemize}
+  \end{itemize}
+
 \end{exo}
 \end{document}
 
