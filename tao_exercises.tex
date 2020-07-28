@@ -1586,22 +1586,101 @@ $x \in A$ or $x \in B$. This is precisely the Axiom 3.4.
 
 \bigskip
 
-\begin{exo}{4.1.7}{Prove Lemma 4.1.11. The statements to prove are the
-  following:}
+\begin{exo}{4.1.7}{Prove Lemma 4.1.11.}
+  
+  The statements to prove are the following:
 
   \begin{enumerate}
   \item Show that $a>b$ if and only if $a-b$ is a positive natural
     number.
+
+    First suppose that $a>b$. This means (Definition 4.1.10) that
+    there exists a natural number $n$ such that $a = b+n$, and
+    $a \neq b$. Then, we add to both sides the opposite of $b$, and we
+    get $a + (-b) = b + n + (-b)$, i.e. $a-b = n$. In this latest
+    equality, $n$ cannot be zero, otherwise we would have $a=b$, which
+    is excluded. The first implication is proved.
+
+    Then suppose that $a-b =n$ with $n$ a positive natural
+    number. Adding $b$ to both sides leads to $a = b+n$, i.e. $a \geq
+    b$. We cannot have $a=b$, because this would be a contradiction
+    with the fact that $n \neq 0$. Thus, $a > b$.
+
   \item Show that addition preserves order, i.e. if $a>b$, then $a+c >
     b+c$.
+
+    Suppose that $a>b$. According to the previous point, this
+    means that $a-b = n$, with $n$ a positive natural number. Then, we
+    get successively:
+    \[
+      \begin{array}{rcll}
+      a &=& b+n &\text{ (by adding $b$ to both sides)}\\
+      a+c &=& b+c+n &\text{ (by adding $c$ to both sides)}\\
+      a + c -b -c &=& n &\text{ (by adding $(-b) + (-c)$ to both sides)}\\
+      a+c - (b+c) &=& n &\text{ (by using the distributive law and
+                    Exercise 4.1.3)}
+      \end{array}
+    \]
+    Using again the previous point, since $(a+c) - (b+c)$ is equal to
+    a positive natural number, we can conclude that $a+c > b+c$.
+    
   \item Show that positive multiplication preserves order, i.e. if
     $a>b$ and $c$ is positive, then $ac > bc$.
+
+    Since $a>b$, according to the first point of this exercise, we
+    have $a-b=n$, with $n$ a positive natural number. According to the
+    distributive law, $(a-b)c =ac-bc$. But we also have $(a-b)c = nc$,
+    and $nc$ is a positive natural number (as product of two positive
+    numbers, see Lemma 2.3.3). Thus, $ac-bc$ is equal to a positive
+    number, which means that $ac > bc$.
+    
   \item Show that negation reverses order, i.e. if $a>b$, then
     $-a<-b$.
+
+    Here, we will need a small lemma, which says that for any natural
+    number $n$, we have $n = -(-n)$. There are several ways to show
+    this result: either by proving that $(-1) \times (-1) = 1$ and
+    using Exercise 4.1.3, or simply by noting that $n + (n) = 0$ for
+    all $n$, which means that $n$ is the opposite of $-n$ (i.e., $n =
+    -(-n)$).
+
+    Now this point is easy to prove. $a>b$ means that $a-b$ is a
+    positive number, as shown earlier in this exercise. We want to
+    prove that $-a < -b$, and proving this assertion requires to show
+    that $-b -(-a)$ is a positive number. But $-b-(-a) = -b+a = a-b$,
+    which is a positive natural number. Thus we are done.
+    
   \item Show that order is transitive, i.e. if $a>b$ and $b>c$, then
     $a>c$.
+
+    Still using the first point of this exercise, we have $a-b=n$ and
+    $b-c=m$, with $n,m$ two positive natural numbers. We know that
+    $n+m$ is positive as the sum of two positive numbers, thus
+    $n+m = a-b+b-c = a-c$ is positive. This means that $a>c$.
+    
   \item Show order trichotomy, i.e.: exactly one of the statements
     $a>b$, $a<b$, or $a=b$ is true.
+    \begin{itemize}
+    \item If $a=b$, then obviously (exactly) one of those statements is
+    true.
+    \item Now consider the case $a \neq b$, and let's show that we
+    have either $a>b$ or $a<b$ (and cannot have both).
+
+    Let's consider the integer $a-b$. By trichotomy of integers (Lemma
+    4.1.5), we know that we have either $a-b=0$ (which is excluded
+    here), or $a-b=n$ with $n$ positive, or $a-b = -n$ with $n$
+    positive.
+
+    If $a-b = n$, then $a>b$ according to the first point of this
+    exercise. If $a-b = -n$, then $-n = -(a-b) = b-a$, thus $b>a$.
+
+    Finally, we just have to show that we cannot have both $a>b$ and
+    $b>a$ at the same time. If $a>b$, then the integer $a-b$ is
+    positive. If $b>a$, then $b-a$ is positive, i.e. $-(b-a) = a-b$ is
+    the opposite of a positive natural. Thus, $a-b$ is both positive
+    and the opposite of a positive number, which is excluded by the
+    trichotomy of integers.
+    \end{itemize}
   \end{enumerate}
 \end{exo}
 
