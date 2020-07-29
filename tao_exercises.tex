@@ -1759,6 +1759,38 @@ $x \in A$ or $x \in B$. This is precisely the Axiom 3.4.
   \end{itemize}
 
 \end{exo}
+
+\begin{exo}{4.2.2}{Prove the remaining components of Lemma 4.2.3.}
+
+  Let $a \quot b = a' \quot b'$ be two rationals; let $c \quot d = c'
+  \quot d'$ be two rationals. The remaining claims are the following:
+
+  \begin{itemize}
+  \item Prove that $-(a' \quot b') = -(a \quot b)$. This equality
+    holds iff $(-a') \quot b' = (-a) \quot b$, i.e. iff $(-a')b =
+    b'(-a)$. We have successively:
+    \begin{align*}
+      (-a')b &= (-1)a'b \text{ (see Exercise 4.1.3)} \\
+             &= (-1)ab' \text{ (because $a \quot b = a' \quot b'$)} \\
+             &= (-a)b' \text{ (using Exercise 4.1.3 one again)}
+    \end{align*}
+    Thus we are done.
+  \item Prove that
+    $(a \quot b) \times (c \quot d) = (a' \quot b') \times (c \quot
+    d)$. To prove this equality, we must show that
+    $(ac) \quot (bd) = (a'c) \quot (b'd)$. By definition of equality
+    between rationals, this holds iff $acb'd = bda'c$. Since
+    $ab'=ba'$, the claim follows (using commutativity of
+    multiplication on integers\footnote{This kind of precision about
+      very basic properties of naturals and integers will not be
+      mentioned anymore.}).
+  \item Prove that $(a \quot b) \times (c \quot d) = (a \quot b)
+    \times (c' \quot d')$. To prove this equality, we must show that
+    $(ac) \quot (bd) = (ac') \quot (bd')$. By definition of equality
+    between rationals, this holds iff $acbd' = bdac'$. Since
+    $cd'=dc'$, the claim follows.
+  \end{itemize}
+\end{exo}
 \end{document}
 
 %%% Local Variables:
