@@ -1791,6 +1791,79 @@ $x \in A$ or $x \in B$. This is precisely the Axiom 3.4.
     $cd'=dc'$, the claim follows.
   \end{itemize}
 \end{exo}
+
+\begin{exo}{4.2.3}{Prove the remaining components of Proposition
+    4.2.4.}
+
+  Let $x = a \quot b$, $y = c \quot d$, and $z=e \quot f$ be rational
+  numbers, with $a,c,e$ integers, and $b,d,f$ non-zero integers. The
+  remaining claims are the following:
+
+  \begin{enumerate}
+  \item $x+y = y+x$, i.e. addition is commutative for the
+    rationals.
+
+    On the one hand, we have $x+y = a \quot b + c \quot d =
+    (ad + bc) \quot bd$.
+
+    On the other hand, $y + x = c \quot d + a \quot b = (cb + da)
+    \quot db = (ad + bc) \quot bd$ using the commutativity of addition
+    and multiplication on the integers. Thus, the two expressions are
+    equal.
+  \item $(x+y) + z = x + (y+z)$: already proved in the book.
+  \item $x+0 = 0 + x = x$. By the first point of this exercise, we
+    already know that $x+0 = 0+x$, so we have just to show that
+    $x+0=x$. We have $x+0= a \quot b + 0 \quot 1 = (a1+b0) \quot (b1) = a
+    \quot b = x$, which is the required result.
+  \item $x + (-x) = (-x) + x = 0$. Once again, the part $x + (-x) =
+    (-x) + x$ comes from the first point of this exercise, so we just
+    have to prove that $x + (-x) = 0$. We have $x + (-x) = a \quot b +
+    -(a \quot b) = a \quot b + (-a) \quot b = (ab - ba) \quot b^2 = 0
+    \quot b^2$. But we know that $0 \quot m = 0 \quot 1 = 0$ for all non-zero
+    integer $m$, since $0 \times 1 = m \times 0$. Thus, $x + (-x) = 0
+    \quot b^2 = 0$, as required.
+  \item $xy = yx$, i.e. multiplication is commutative on the
+    rationals. Indeed, $xy = (a \quot b) \times (c \quot d) = (ac)
+    \quot (bd)$ by definition. On the other hand, $yx = (c \quot d)
+    \times (a \quot b) = (ca) \quot (db) = (ac) \quot (bd)$ by
+    commutativity of multiplication on the integers. Thus, $xy = yx$.
+  \item $(xy)z = x(yz)$, i.e. multiplication is associative on the
+    rationals. We have $(xy)z = (ace) \quot (bdf) = x(yz)$ by
+    associativity of multiplication on the integers.
+  \item $x1 = 1x = x$. Once again, we already know that $x1 = 1x$,
+    thanks to the fifth point of this exercise. So we just have to
+    show that $x1 = x$. We have $x1 = (a \quot b) \times (1 \quot 1) =
+    (a1) \quot (b1) = a \quot b = x$.
+  \item $x(y+z) = xy+xz$, i.e. distributivity of multplication for the
+    rationals. On the one hand, we have:
+    \begin{align*}
+      x(y+z) &= (a \quot b) (c \quot d + e \quot f) \\
+             &= (a \quot b) ((cf + de) \quot (df)) \\
+             &= (acf + ade) \quot (bdf)
+    \end{align*}
+    On the other hand\footnote{We use implicitly here the fact that
+      $(nm) \quot n = m \quot 1$ for all integers $n,m$ with $m \neq
+      0$, which is straightforward to prove.}:
+    \begin{align*}
+      xy + xz &= (a \quot b)(c \quot d) + (a \quot b)(e \quot f) \\
+              &= (ac) \quot (bd) + (ae) \quot (bf) \\
+              &= (acbf + bdae) \quot (b^2df) \\
+              &= (acf + ade) \quot (bdf)
+    \end{align*}
+    Thus we have indeed $x(y+z) = xy+xz$.
+  \item $(y+z)x = yx+zx$. This can be deduced immediately from
+    commutativity of multiplication and the eighth point of this
+    exercise.
+  \item For all $x \neq 0$, $xx^{-1} = x^{-1}x = 1$. Once again, the
+    part $xx^{-1} = x^{-1}x$ comes from the fifth point of this
+    exercise, so that we just have have to show that $xx^{-1} = 1$.
+    \begin{align*}
+      x\inv{x} &= (a \quot b) \times (b \quot a) \\
+               &= (ab) \quot (ba) \\
+               &= 1 \quot 1 = 1
+    \end{align*}
+  \end{enumerate}
+\end{exo}
 \end{document}
 
 %%% Local Variables:
