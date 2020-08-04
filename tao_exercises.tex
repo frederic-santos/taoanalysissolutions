@@ -1864,6 +1864,65 @@ $x \in A$ or $x \in B$. This is precisely the Axiom 3.4.
     \end{align*}
   \end{enumerate}
 \end{exo}
+
+\begin{exo}{4.2.4}{Prove Lemma 4.2.7. (trichotomy of rationals), i.e.,
+    if $x$ is a rational number, then exactly one of the following
+    three statements is true: (a) $x$ is equal to 0, (b) $x$ is a positive
+    rational number, or (c) $x$ is a negative rational number.}
+
+  Following the hint given by Terence Tao, we'll first prove that
+  \emph{at least} one of those statements is true, and then that
+  \emph{at most} one of them is true. Let be $x = a \quot b$, where
+  $a$ is an integer and $b$ a non-zero integer.
+
+  \begin{enumerate}
+  \item Let's prove that at least one of those statements is
+    true.
+
+    First, an obvious case: if $a=0$, then $x = a \quot b = 0$,
+    thus one of the statements is true. Now consider the case where $a
+    \neq 0$. By the trichotomy of integers, $a$ can be either positive
+    or negative. Similarly, $b$ can also be either positive or
+    negative (it cannot be null, by definition). Thus, there are four
+    main cases:
+
+    \begin{itemize}
+    \item $a>0$ and $b>0$. Here, by Definition 4.2.6, $x = a \quot b$
+      is positive.
+    \item $a>0$ and $b<0$. Here, $b = -m$, with $m$ a positive natural
+      number. Thus, $x = a \quot (-m)$. But $a \quot (-m) = (-a) \quot
+      m$ (this is easy to verify: $am = (-a)(-m)$). This means that $x
+      = (-a) \quot m$, with both $a$ and $m$ positive, i.e. $x$ is
+      negative.
+    \item $a<0$ and $b>0$. Here, $x = a \quot b$ is negative by
+      Definition 4.2.6.
+    \item $a<0$ and $b<0$. Here, we can say that $a=-n$ and $b=-m$,
+      with $n,m$ positive natural numbers. Thus, $x = (-n) \quot (-m)
+      = n \quot m$ (once again, this latest equality is easy to
+      verify). Thus, $x$ is positive.
+    \end{itemize}
+    Conclusion: if all four cases, at least one of the three
+    properties is true.
+  \item Now prove that at most one of those statements is true.
+    \begin{itemize}
+    \item Suppose, for the sake of contradiction, that we have both
+      $x=0$ and $x$ positive. On the one hand, ``$x=a \quot b=0$''
+      implies that $a=0$ (see Terence Tao's remark, page 83). On the
+      other hand, ``$x$ is positive'' implies that $a>0$. So we would
+      have both $a=0$ and $a$ positive, which is not compatible with
+      the trichotomy of integers.
+    \item A similar argument holds if we suppose both $x=0$ and $x$
+      negative.
+    \item Now suppose that we have both $x$ positive and $x$ negative,
+      i.e. $x = c \quot d = (-n) \quot m$, with $c,d,n,m$ positive
+      natural numbers. Thus, we should have $cm = (-n)d$. On the one
+      hand, $cm$ is positive, as the multiplication of two positive
+      natural numbers. On the other hand, $(-n)d = -(nd)$ is
+      negative. The equality $cm = -nd$ is thus impossible.
+    \end{itemize}
+    Conclusion: all three statements are mutually exclusive.
+  \end{enumerate}
+\end{exo}
 \end{document}
 
 %%% Local Variables:
