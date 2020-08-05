@@ -15,6 +15,7 @@
 \usepackage[matha,mathb]{mathabx}
 \usepackage{mbboard}
 \usepackage{stmaryrd}
+\usepackage{hyperref}
 % Macros:
 \newcommand{\successor}[1]{#1 \! +\!\!\!+}
 \newcommand{\inv}[1]{#1^{-1}}
@@ -1921,6 +1922,58 @@ $x \in A$ or $x \in B$. This is precisely the Axiom 3.4.
       negative. The equality $cm = -nd$ is thus impossible.
     \end{itemize}
     Conclusion: all three statements are mutually exclusive.
+  \end{enumerate}
+\end{exo}
+
+\begin{exo}{4.2.5}{Prove Proposition 4.2.9.}
+
+  Let $x,y,z$ be rational numbers. This proposition includes the
+  following statements:
+
+  \begin{enumerate}
+  \item Prove that exactly one of the three statements $x=y$, $x < y$, or $x > y$
+    is true.
+
+    This statement is very close to Lemma 4.2.7, proved in the
+    previous exercise. Let's consider the rational number
+    $x-y$. According to the trichotomy of rationals, this number can
+    be either zero, positive or negative (exactly one of these
+    statements is true).
+
+    If $x-y = 0$, then $x=y$. If $x-y$ is positive, then $x>y$. And if
+    $x-y$ is negative, then $x<y$. Thus, the order trichotomy is
+    a direct consequence of the ordering of rationals.
+  \item Prove that one has $x < y$ if and only if $y > x$.
+
+    Since $x<y$, the rational number $x-y$ is negative, and can be
+    written $(-a) \quot b$ for positive integers $a,b$. And since $x-y
+    = -a \quot b$, we have $a \quot b = y-x$, i.e. $y-x$ is positive,
+    i.e. $y>x$.
+  \item Prove that if $x < y$ and $y < z$, then $x < z$.
+
+    Since $x<y$, $x-y$ is negative. Similarly, $y-z$ is negative. This
+    means that $x-y$ can be written $(-a) \quot b$, and $y-z$ can be
+    written $(-c) \quot d$, with $a,b,c,d$ positive integers.
+
+    On the one hand, their sum is $x-z$. On the other hand, their sum
+    is $((-ad) + (-cb)) \quot (bd)$. This latest expression is a
+    negative rational, thus we have $x<z$.
+  \item Prove that if $x < y$, then $x+z < y+z$.
+
+    Suppose that $x < y$. Thus, $x-y$ is negative. But we have, for
+    any rational $z$, $x-y = (x+z) - (y+z)$, and thus this latter
+    expression is also negative. This means that $x+z < y+z$.
+  \item Prove that if $x < y$ and $z$ is positive, then $xz < yz$.
+
+    Since $x<y$, the rational number $x-y$ is negative. Furthermore,
+    we know (by Proposition 4.2.4) that $xz-yz = (x-y)z$. In the
+    expression $(x-y)z$, $z$ is supposed to be positive and $x-y$ is
+    negative, thus their product is negative\footnote{This is never
+      explicitly mentioned in the book. However, using Exercise 4.1.3,
+      we know that for every integer $a$, we have $-a = (-1) \times
+      a$. So let's consider the product $n(-m)$ where $n,m$ are
+      positive integers: this product is $(-1)nm = -(nm)$, and thus is
+      negative.}. This means that $xz < yz$.
   \end{enumerate}
 \end{exo}
 \end{document}
