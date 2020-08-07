@@ -18,6 +18,7 @@
 \usepackage{hyperref}
 % Macros:
 \newcommand{\successor}[1]{#1 \! +\!\!\!+}
+\newcommand{\abs}[1]{\lvert #1 \rvert}
 \newcommand{\inv}[1]{#1^{-1}}
 \newcommand{\rr}{\mathbb{R}}
 \newcommand{\partsof}[1]{\mathcal{P}\left( #1 \right)}
@@ -1993,6 +1994,119 @@ $x \in A$ or $x \in B$. This is precisely the Axiom 3.4.
   Note: in particular, this exercise says that if $x>y$, then $-x<-y$
   (with $z=-1$).
 \end{exo}
+
+\bigskip
+\begin{exo}{4.3.1}{Prove Proposition 4.3.3.}
+
+  Let $x,y,z$ be rational numbers. The statements to prove are the
+  following:
+
+  \begin{enumerate}
+    \item Show that $\abs{x} \geq 0$ for all $x$, and that $\abs{x} =
+      0$ iff $x=0$.
+
+      There are three cases:
+      
+      \begin{itemize}
+      \item if $x=0$, then $\abs{x} := 0$, thus we have in particular
+        $\abs{x} \geq 0$.
+      \item if $x > 0$, then $\abs{x} := x$, thus $\abs{x} > 0$. And in
+        particular, this means that $\abs{x} \geq 0$.
+      \item if $x < 0$, then $\abs{x} := -x$, thus $\abs{x} > 0$. And
+        in particular, $\abs{x} \geq 0$.
+      \end{itemize}
+
+      We can note that the only case where $\abs{x} = 0$ is when
+      $x=0$. Thus, by trichotomy of rationals, $\abs{x} = 0$ iff
+      $x=0$.
+    \item Show that $\abs{x+y} \leq \abs{x} + \abs{y}$.
+
+      \begin{itemize}
+      \item If $x=0$ or $y=0$, this is immediate.
+      \item If $x>0$ and $y>0$, $x+y$ is positive, thus
+        $\abs{x+y} = x+y = \abs{x} + \abs{y}$.
+      \item If $x<0$ and $y<0$, $x+y$ is negative, thus $\abs{x+y} =
+        -(x+y) = -x-y$. On the other hand, $\abs{x} + \abs{y} = -x -y$.
+      \item Finally, the case where $x$ and $y$ are of opposite
+        signs. Say that $x$ is positive and $y$ negative, but they are
+        exchangeable. On the one hand, $\abs{x} + \abs{y} = x-y >
+        0$. On the other hand, $\abs{x+y}$ can be either equal to
+        $x+y$ if $x+y>0$, i.e. if $x>-y$; or equal to $-x-y$ if
+        $x+y<0$, i.e. if $x<-y$.
+
+        In the first case, since $-y<0<y$ by hypothesis, we have
+        $\abs{x+y} = x+y < x-y = \abs{x} + \abs{y}$.
+
+        In the second case, since $-x < 0 < x$ by hypothesis, we have
+        $\abs{x+y} = -x-y < x-y = \abs{x} + \abs{y}$.
+      \end{itemize}
+      Conclusion: in all cases, we have indeed $\abs{x+y} \leq \abs{x}
+      + \abs{y}$.
+    \item Show that $-y \leq x \leq y$ iff $y \geq \abs{x}$. (Thus, in
+      particular, $-\abs{x} \leq x \leq \abs{x}$.)
+
+      \begin{itemize}
+      \item First suppose that $y \geq \abs{x}$. Note that, whatever
+        could be the value of $x$, we have necessarily $y \geq 0$
+        according to the first point of this exercise. Now we can
+        split into three cases.
+
+        If $x=0$ then $y \geq 0$ and the claim is immediate.
+
+        If $x > 0$, then $\abs{x} = x$, and the part $y \geq x$ is
+        immediate. Furthermore, the other part $-y \leq x$ is also
+        immediate since $-y$ is negative and $x$ is positive.
+
+        If $x < 0$, then $\abs{x} = -x$, thus we have $y \geq -x$,
+        i.e. $-y \leq x$ according to Exercise 4.2.6. Additionally,
+        the part $x \leq y$ is immediate since $x$ is negative and $y$
+        is positive.
+      \item Conversely, suppose that $-y \leq x \leq y$. If
+        $x \geq 0$, then $\abs{x} = x$, thus the rightmost inequality
+        gives $x = \abs{x} \leq y$. In the other case, if $x < 0$,
+        then $\abs{x} = -x$. The leftmost inequality $-y \leq x$ leads
+        (according to Exercise 4.2.6) to $y \geq -x$, i.e.
+        $y \geq \abs{x}$.
+      \end{itemize}
+    \item Show that $\abs{xy} = \abs{x} \times \abs{y}$. (In particular,
+      $\abs{-x} = \abs{x}$.)
+
+      Once again, we can split into several cases, as in the second
+      point of this exercise.
+
+      \begin{itemize}
+      \item If $x=0$ or $y=0$, both sides of the equality are zero
+        (cf. the first point of this exercise), thus the claim is
+        immediate.
+      \item If $x>0$ and $y>0$, the product $xy$ is also
+        positive. Thus, $\abs{xy} = xy$, and $\abs{x}\times \abs{y} =
+        xy$, and the claim follows.
+      \item If $x<0$ and $y<0$, then the product $xy$ is positive, and
+        $\abs{xy} = xy$. On the other hand, $\abs{x} \times \abs{y} =
+        (-x)(-y) = xy$, and the claim follows.
+      \item If $x$ and $y$ are of opposite signs (say $x$ positive and
+        $y$ negative, but they are exchangeable), then $xy$ is
+        negative, and $\abs{xy} = -xy$. On the other hand, $\abs{x}
+        \times \abs{y} = -xy$, thus the claim follows.
+      \end{itemize}
+
+    \item Show that $d(x,y) \leq 0$ for all $x,y$, and that $d(x,y) = 0$ iff $x=y$.
+      
+      We have $d(x,y) = \abs{x-y} \geq 0$ according to the first point
+      of this exercise. Furthermore, still according to the first point, $d(x,y) =
+      \abs{x-y} = 0$ iff $x-y = 0$, i.e. $x=y$.
+    \item Show that $d(x,y) = d(y,x)$.
+      
+      We have $d(x,y) = \abs{x-y}$ and $d(y,x) = \abs{y-x}$ by
+      definition. But $\abs{y-x} = \abs{-(x-y)} = \abs{x-y}$ according
+      to the fourth point of this exercise.
+    \item Show that $d(x,z) = d(x,y) + d(y,z)$.
+      
+      We have $d(x,z) = \abs{x-z} = \abs{(x-y) + (y-z)} \leq \abs{x-y} +
+      \abs{y-z}$ according to the second point of this exercise. The
+      claim follows.
+    \end{enumerate}
+  \end{exo}
 \end{document}
 
 %%% Local Variables:
