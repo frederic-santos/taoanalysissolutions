@@ -26,6 +26,7 @@
 \newcommand{\quot}{\, \textrm{/}\!\textrm{/} \:}
 \newcommand{\zz}{\mathbb{Z}}
 \newcommand{\qq}{\mathbb{Q}}
+\renewcommand{\epsilon}{\varepsilon}
 % Lemmas:
 \usepackage{amsthm}
 \newtheorem*{lem}{Lemma}
@@ -2106,7 +2107,63 @@ $x \in A$ or $x \in B$. This is precisely the Axiom 3.4.
       \abs{y-z}$ according to the second point of this exercise. The
       claim follows.
     \end{enumerate}
-  \end{exo}
+\end{exo}
+
+\begin{exo}{4.3.2}{Prove the remaining claims in Proposition 4.3.7.}
+
+  Let $x,y,z,w$ be rational numbers.
+
+  \begin{enumerate}
+  \item If $x=y$, then $d(x,y)=0$ according to Proposition
+    4.3.3(e). Thus, $d(x,y) \leq \epsilon$ for any positive number
+    $\epsilon$.
+
+    Conversely, suppose that $d(x,y) \leq \epsilon$ for any
+    $\epsilon > 0$, and let's prove that $x=y$. Suppose, for the the
+    sake of contradiction, that $x \neq y$; and let be
+    $\epsilon = \abs{x-y}/2$. Since $x \neq y$, we have $\abs{x-y}>0$,
+    thus $\epsilon$ is a positive number. Furthermore,
+    $d(x,y) = \epsilon + \epsilon$, thus $d(x,y) > \epsilon$, which is
+    a contradiction.
+  \item This is a direct consequence from Proposition
+    4.3.3(f). Indeed, since $d(x,y) = d(y,x)$, we obviously have
+    $d(y,x) \leq \epsilon$ when $d(x,y) \leq \epsilon$.
+  \item Suppose that $d(x,y) \leq \epsilon$ and $d(y,z) \leq
+    \delta$. Thus, by triangle inequality, $d(x,z) \leq d(x,y +
+    d(y,z) \leq \epsilon + \delta$.
+  \item Suppose that $d(x,y) \leq \epsilon$ and $d(z,w) \leq
+    \delta$. Thus,
+    \begin{align*}
+      d(x+z, y+w) &= \abs{(x+z) - (y+w)}\\
+                  &= \abs{(x-y) + (z-w)}\\
+                  &\leq \abs{x-y} + \abs{z-w}\\
+                  &\leq \epsilon + \delta
+    \end{align*}
+    which means that $x+z$ and $y+w$ are $(\epsilon+\delta)$-close.
+
+    Similarly, $d(x-z, y-w) = \abs{(x-y)+(w-z)}$, and using just the
+    symmetry of distance, we can conclude that $x-z$ and $y-w$ are
+    $(\epsilon+\delta)$-close according to the previous result.
+  \item This is clear: we have $d(x,y) \leq \epsilon < \epsilon'$.
+  \item Since $d(x,y) \leq \epsilon$, we have
+    $-\epsilon \leq y-x \leq \epsilon$. Similarly, we have
+    $-\epsilon \leq z-x \leq \epsilon$.
+
+    $y$ and $z$ are exchangeable here, so we can suppose that $y
+    \leq w \leq z$. From this inequality, we can get $y-x \leq w-x
+    \leq z-x$. Extending this with the former inequalities, we have:
+    \[-\epsilon \leq y-x \leq w-x \leq z-x \leq \epsilon\] and in
+    particular $-\epsilon \leq w-x \leq \epsilon$, which means
+    $d(w,x) \leq \epsilon$.
+  \item We have $d(x,y) = \abs{x-y} \leq \epsilon$. Since $z$ is
+    positive, we have $\abs{z} > 0$, thus
+    $\abs{x-y}\abs{z} \leq \epsilon \abs{z}$. But according to
+    Proposition 4.3.3(d), $\abs{x-y}{z} = \abs{(x-y)z} =
+    \abs{xz-yz}$. Thus, \abs{xz-yz} \leq \epsilon \abs{z}$, i.e.,
+    $xz$ and $yz$ are $\epsilon \abs{z}$-close.
+  \end{enumerate}    
+    
+\end{exo}
 \end{document}
 
 %%% Local Variables:
