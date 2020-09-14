@@ -2159,10 +2159,139 @@ $x \in A$ or $x \in B$. This is precisely the Axiom 3.4.
     positive, we have $\abs{z} > 0$, thus
     $\abs{x-y}\abs{z} \leq \epsilon \abs{z}$. But according to
     Proposition 4.3.3(d), $\abs{x-y}{z} = \abs{(x-y)z} =
-    \abs{xz-yz}$. Thus, \abs{xz-yz} \leq \epsilon \abs{z}$, i.e.,
+    \abs{xz-yz}$. Thus, $\abs{xz-yz} \leq \epsilon \abs{z}$, i.e.,
     $xz$ and $yz$ are $\epsilon \abs{z}$-close.
-  \end{enumerate}    
+  \end{enumerate}  
+\end{exo}
+
+\begin{exo}{4.3.3}{Prove Proposition 4.3.10.}
+  
+  Let $x$, $y$ be rationals, and $n$, $m$ be natural numbers. The
+  claims to prove are the following (they are re-ordered and
+  re-numbered here):
+
+  \begin{enumerate}
+  \item Show that $x^n x^m = x^{n+m}$. We induct on $n$ while keeping
+    $m$ fixed.
     
+    For the base case $n=0$ , we have on the one hand $x^n x^m = x^0
+    x^m = 1 \cdot x^m = x^m$. On the other hand, $x^{n+m} = x^{0+m} =
+    x^m$. Thus, both sides are equal, and the base case is done.
+    
+    Now suppose that $x^n x^m = x^{n+m}$, and let's show that $x^{n+1}
+    x^m = x^{(n+1)m}$. We have:
+    \[
+      \begin{array}{rcll}
+        x^{n+1} x^m  &=& (x^n x)x^m & \text{ (by Definition 4.3.9)} \\
+                     &=& x^n x^m x  & \text{ (by associativity and
+                                      commutativity of multiplication)} \\
+                     &=& x^{n+m} x  & \text{ (by induction hypothesis)} \\
+                     &=& x^{n+m+1}  & \text{ (by Definition 4.3.9 once again)}
+      \end{array}
+  \]
+  This closes the induction.
+
+  \item Show that $(xy)^n = x^n y^n$. Let's induct on $n$. The base
+    case $n=0$ is obvious, since both sides are equal to 1. Now
+    suppose inductively that $(xy)^n = x^n y^n$. Thus we have:
+    \[
+      \begin{array}{rcll}
+        (xy)^{n+1}  &=& (xy)^n (xy) & \text{ (by Definition 4.3.9)} \\
+                    &=& x^n y^n xy & \text{ (by inductive
+                                     hypothesis)}\\
+                    &=& x^n x y^n y & \text{ (by commutativity of
+                        multiplication)}\\
+                    &=& x^{n+1} y^{n+1} & \text{ (by Definition 4.3.9
+                                          once again)}
+      \end{array}
+    \]
+    
+  \item Show that $(x^n)^m = x^{nm}$. We induct on $n$ while keeping
+    $m$ fixed.
+
+    For the base case $n=0$, we have $(x^n)^m = 1^m = 1$, since $1^m =
+    1$ for all natural number $m$\footnote{This can easily be proved
+      by induction, which we'll not write formally here.}. On the
+    other hand, $x^{nm} = x^{0m} = 1$. Thus, both sides are equal, and
+    the base case is done.
+
+    Now suppose inductively that $(x^n)^m = x^{nm}$. Then we have:
+    \[
+      \begin{array}{rcll}
+        (x^{n+1})^m  &=& (x^nx)^m & \text{ (by Definition 4.3.9)} \\
+                     &=& (x^{n})^m x^m & \text{ (proved in 2. from this
+                                         exercise)}\\
+                     &=& x^{nm} x^m & \text{ (by inductive
+                                      hypothesis)} \\
+                     &=& x^{nm+m} & \text{ (proved in 1. from this
+                                    exercise)}\\
+                     &=& x^{(n+1)m}
+      \end{array}
+    \]
+    This closes the induction.
+    
+  \item Show that if $n>0$, then $x^n = 0$ iff $x=0$. For that, let's
+    induct on $n$. Here the base case starts with $n=1$ since we
+    suppose $n>0$. For $n=1$, $x^1 = x$, thus we obviously have $x^1=0
+    \, \Leftrightarrow x=0$ since both objects are equal.
+
+    Now suppose inductively that $x^n = 0$ iff $x=0$. We must show
+    that $x^{n+1} = 0$ iff $x=0$. Here we'll need the following lemma:
+    \begin{lem}Let $x,y$ be rational numbers. Then, if $xy=0$, we have
+      either $x=0$ or $y=0$.
+    \end{lem}
+    \begin{proof}
+      Let's denote $x = a \quot b$ and $y = c \quot d$. By Definition
+      4.2.2, $xy = (ac) \quot (bd)$. Thus, since $xy = 0$, we have
+      $ac=0$ (see Tao's remark p. 83). And, by Proposition 4.1.8, we
+      have either $a=0$ or $c=0$. In the first case, this means that
+      $x=0$; in the second case this means that $y=0$.
+    \end{proof}
+    Now go back to the main proof. First, if $x=0$, we have
+    $x^{n+1} = x^n x = 0^n \times 0 = 0$. Conversely, if
+    $x^{n+1} = 0$, then $x^n x = 0$. According to the previous lemma,
+    this means that either $x^n =0$ or $x=0$. In the second case, we
+    are done. In the first case, the induction hypothesis also allows
+    to conclude that $x^n=0$. This closes the induction.
+
+  \item Show that if $x \geq y \geq 0$, then $x^n \geq y^n \geq
+    0$. Let's induct on $n$.
+
+    For the base case $n=0$, $x^0 = y^0 = 1$. Thus in particular we
+    have indeed $x^0 \geq y^0 \geq 0$.
+
+    Now suppose inductively that $x^n \geq y^n \geq 0$, and show that
+    $x^{n+1} \geq y^{n+1} \geq 0$. We start from $x^n \geq y^n \geq 0$
+    and multiply all terms by $x$ (which preserves inequality since
+    $x$ is supposed to be positive): we get
+    $x^{n+1} \geq xy^n \geq 0$. If we start from $x \geq y \geq 0$ and
+    multiply all terms by $y^n$ (which is also positive by induction
+    hypothesis), we get $y^nx \geq y^{n+1} \geq 0$. Now combine all
+    those inequalities:
+    \[x^{n+1} \geq xy^n \geq y^{n+1} \geq 0\]
+    This closes the induction.
+
+  \item Show that $\abs{x^n} = \abs{x}^n$. Let's induct on $n$.
+
+    For the base case $n=0$, we have $\abs{x^n} = \abs{x^0} = \abs{1} = 1$; and
+    $\abs{x}^n = \abs{x}^0 = 1$. Thus both sides are equal, and the
+    base case is done.
+
+    Now suppose that $\abs{x^n} = \abs{x}^n$ and show that
+    $\abs{x^{n+1}} = \abs{x}^{n+1}$. We have:
+    \[
+      \begin{array}{rcll}
+        \abs{x^{n+1}} &=& \abs{x^n x} & \text{ (by Definition 4.3.9)} \\
+                      &=& \abs{x^n} \cdot \abs{x} & \text{ (by
+                                                    Proposition 4.3.3d)}\\
+                      &=& \abs{x}^n \cdot \abs{x} & \text{ (by inductive
+                                                    hypothesis)} \\
+                      &=& \abs{x}^{n+1}
+      \end{array}
+    \]
+    This closes the induction.
+  \end{enumerate}
+  
 \end{exo}
 \end{document}
 
