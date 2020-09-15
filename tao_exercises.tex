@@ -2291,7 +2291,102 @@ $x \in A$ or $x \in B$. This is precisely the Axiom 3.4.
     \]
     This closes the induction.
   \end{enumerate}
+\end{exo}
+
+\begin{exo}{4.3.4}{Prove Proposition 4.3.12.}
+
+  This is essentially the same exercise as 4.3.3, but dealing with
+  integer exponents (instead of natural exponents). The claims to
+  prove are the following (and once again, they are re-labeled):
   
+  \begin{enumerate}
+  \item Prove that $x^nx^m = x^{n+m}$. Let's distinguish three cases:
+    \begin{itemize}
+    \item If $n, m \geq 0$, then this is simply Proposition 4.3.10(a).
+    \item If $n, m < 0$, then $n=-p$ and $m=-q$ with $p,q$ positive
+      natural numbers. Thus,
+      $x^n x^m = (1/x^p) \cdot (1/x^q) = 1/(x^p x^q)$ by Definition
+      4.2.2. But since $p,q$ are positive, this is also equal to
+      $1/(x^{p+q})$ according to Proposition 4.3.10(a). This can also
+      be written $x^{-(p+q)}$ by Definition 4.3.11, which is finally
+      equal to $x^{n+m}$.
+    \item If $n \geq 0$ and $m < 0$ (or inversely, since they are
+      exchangeable), then $m = -q$ with $q$ a positive natural number.
+      Thus, $x^n x^m = x^n \times (1 / x^q) = x^n / x^q$. But we can
+      note that $blabla$.
+    \end{itemize}
+  \item
+  \item
+  \item
+  \item Prove that if $x,y > 0$ and $n \neq 0$, then $x^n = y^n
+    \Longrightarrow x = y$. Let's consider two cases: $n > 0$ and $n
+    < 0$.
+
+    First, if $n > 0$, suppose for the sake of contradiction that we
+    have both $x^n = y^n$ and $x \neq y$. According to the trichotomy
+    of rationals (Lemma 4.2.7), this last claim means that we have
+    either $x > y$ or $y > x$. Since $x$ and $y$ are exchangeable, we
+    only prove the first case here, $x > y$. In this case,
+    Proposition 4.3.10(c) leads to $x^n > y^n$, which is obviously not
+    compatible with our initial hypothesis $x^n = y^n$. A similar
+    contradiction follows in the case $y > x$. Thus, both $x>y$ and
+    $y>x$ are impossible, and the only possibility is $x=y$.
+
+    Now, if $n <0$, then $n=-p$, with $p$ a positive natural
+    number. Suppose that $x^n = y^n$, i.e. that $x^{-p} = y^{-p}$, or
+    finally $1/x^p = 1/y^p$. From this last equality, by multiplying
+    both sides by $x^py^p$, we get $y^p = x^p$. We are thus back in
+    the previous case, and obtain $x=y$.
+  \item Prove that $\abs{x^n} = \abs{x}^n$. If $n \geq 0$, this is
+    simply Proposition 4.3.10(d). So let's consider the case $n <
+    0$. We'll need a quick lemma:
+
+    \begin{lem}
+      For all rationals $x \neq 0$, we have $\abs{1/x} = 1 / \abs{x}$.
+    \end{lem}
+
+    \begin{proof}
+      If $x>0$, there is nothing to show. If $x<0$, then $1/x$ is also
+      negative\footnote{Formally, see Definition 4.2.6, and note that
+        $a \quot (-b) = (-a) \quot b$ if $a$ and $b$ are positive
+        integers.}. Thus, $1 / \abs{x} = 1 / (-x)$; and
+      $\abs{1/x} = -(1/x)$. And we have clearly $1/(-x) = -(1/x)$
+      because $1/(-x) + 1/x = 0$.
+    \end{proof}
+
+    In this case, $n = -p$, with $p$ a positive natural number. We
+    have successively:
+    \[
+      \begin{array}{rcll}
+        \abs{x^n} &=& \abs{x^{-p}} \\
+                  &=&\abs{1/(x^p)} & \text{ (by Definition 4.3.11)} \\
+                  &=& \abs{(1/x)^p} & \text{ (Proposition 4.3.12(a))} \\
+                  &=& \abs{1/x}^p & \text{ (Proposition 4.3.10(d))} \\
+                  &=& (\abs{1} / \abs{x})^p & \text{ (lemma introduced
+                                              just above)} \\
+                  &=& 1 / \abs{x}^p & \text{ (Proposition 4.3.12(a))}
+        \\
+                  &=& \abs{x}^{-p} & \text{ (Definition 4.3.11)} \\
+                  &=& \abs{x}^n
+      \end{array}
+    \]
+  \end{enumerate}
+\end{exo}
+
+\begin{exo}{4.3.5}{Prove that $2^N \geq N$ for all positive integers $N$.}
+
+  Let's use induction on $N$. Since we only consider positive
+  integers, we have here $N \geq 1$, and in particular, the base case
+  starts at $N=1$.
+
+  For the base case $N=1$, the assertion is true, since we have indeed
+  $2^1 \geq 1$.
+
+  Now suppose inductively that $2^N \geq N$, and show that $2^{N+1}
+  \geq N+1$.  We have $2^{N+1} = 2^N \times 2 \geq N \times 2$ by
+  induction hypothesis. But we know that $2N = N+N$ (recall Definition
+  2.3.1 for instance), thus we can rewrite this as $2^{N+1} \geq
+  N+N$. And since $N \geq 1$, we finally get $2^{N+1} \geq N+1$.
 \end{exo}
 \end{document}
 
