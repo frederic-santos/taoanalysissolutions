@@ -2332,7 +2332,31 @@ $x \in A$ or $x \in B$. This is precisely the Axiom 3.4.
                &=& x^n \times y^n &
       \end{array}
     \]
-  \item
+  \item Show that if $x \geq y > 0$, then $x^n \geq y^n > 0$ if $n$ is
+    positive, and $0 < x^n \leq y^n$ if $n$ is negative.
+    \begin{itemize}
+    \item If $n > 0$, according to Proposition 4.3.10(c), we already
+      have $x^n \geq y^n \geq 0$, so that we just have to show that
+      the rightmost inequality is strict, i.e. that $y^n > 0$. To show
+      that, we only need to prove $y^n \neq 0$. For the sake of
+      contradiction, let's suppose that $y^n = 0$. Our starting
+      hypothesis was $x \geq y > 0$, thus we know that $y \neq
+      0$. According to Proposition 4.3.10(b), we can't have both
+      $y \neq 0$ and $y^n = 0$, this is a contradiction. Thus, we
+      indeed have $y^n \neq 0$, which shows the inequality
+      $x^n \geq y^n > 0$ as required.
+    \item If $n < 0$, this includes an important result, which is that
+      taking the inverse reverses order. Indeed, let's begin by
+      proving that if $x \geq y > 0$, then $1/x \leq 1/y$. Since both
+      $x$ and $y$ are positive, their product $xy$ is also positive,
+      and $1/(xy)$ is also positive. Following Proposition 4.2.9(e),
+      we can multiply both sides of $x \geq y$ by $1/(xy)$ to get $1/y
+      \geq 1/x$. Then, we immediately get $(1/y)^p \geq (1/x)^p$ for
+      any positive number $p$ by Proposition 4.3.10(c), which can be
+      rewritten $y^n \geq x^n$ with $n = -p$ negative. And since both
+      numbers are positive (because $x$ and $y$ are positive), the
+      claim follows.
+    \end{itemize}
   \item Prove that if $x,y > 0$ and $n \neq 0$, then $x^n = y^n
     \Longrightarrow x = y$. Let's consider two cases: $n > 0$ and $n
     < 0$.
