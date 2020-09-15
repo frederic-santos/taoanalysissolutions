@@ -2313,10 +2313,25 @@ $x \in A$ or $x \in B$. This is precisely the Axiom 3.4.
     \item If $n \geq 0$ and $m < 0$ (or inversely, since they are
       exchangeable), then $m = -q$ with $q$ a positive natural number.
       Thus, $x^n x^m = x^n \times (1 / x^q) = x^n / x^q$. But we can
-      note that $blabla$.
+      note that... (to be completed!).
     \end{itemize}
   \item
-  \item
+  \item Show that $(xy)^n = x^n y^n$. If $n \geq 0$, this is simply
+    Proposition 4.3.10(a). So let's consider the case $n < 0$. In this
+    case, $n = -p$, with $p$ a positive natural number. Thus we have
+    successively:
+    \[
+      \begin{array}{rcll}
+        (xy)^n &=& (xy)^{-p} &\\
+               &=& 1 / (xy)^p & \text{ (by Definition 4.3.11)}\\
+               &=& 1/(x^p y^p) & \text{ (Proposition 4.3.10(a))}\\
+               &=& 1/(x^p) \, \times 1/(y^p) & \text{ (Definition
+                                               4.2.2)} \\
+               &=& x^{-p} \times y^{-p} & \text{ (by Definition
+                                          4.3.11)}\\
+               &=& x^n \times y^n &
+      \end{array}
+    \]
   \item
   \item Prove that if $x,y > 0$ and $n \neq 0$, then $x^n = y^n
     \Longrightarrow x = y$. Let's consider two cases: $n > 0$ and $n
