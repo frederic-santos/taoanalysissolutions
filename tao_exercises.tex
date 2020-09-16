@@ -2312,10 +2312,24 @@ $x \in A$ or $x \in B$. This is precisely the Axiom 3.4.
       equal to $x^{n+m}$.
     \item If $n \geq 0$ and $m < 0$ (or inversely, since they are
       exchangeable), then $m = -q$ with $q$ a positive natural number.
-      Thus, $x^n x^m = x^n \times (1 / x^q) = x^n / x^q$. But we can
-      note that... (to be completed!).
+      Thus, $x^n x^m = x^n \times (1 / x^q) = x^n / x^q$. We will
+      (once again) split into two cases:
+      \begin{itemize}
+      \item if $n \geq -m$, i.e. if $n - q \geq 0$, then we can note
+        that $x^{n-q} \cdot x^q = x^n$ according to Proposition
+        4.3.10(a). Thus, let's multiply both sides of this equality by
+        $x^{-q}$ to get $x^{n-q} = x^n x^{-q}$; which can be rewritten
+        $x^{n+m} = x^n x^m$ as required.
+      \item if $n < -m$, i.e. $q-n>0$, then we can note that
+        $x^{q-n} x^n = x^q$ according to Proposition 4.3.10(a). Also,
+        since $n-q < 0$, according to Definition 4.3.11, we have
+        $x^{n-q} = 1 / x^{q-n}$. Let's multiply both sides by $1/x^n$,
+        to get $x^{n-q} / x^n = 1 / (x^{q-n} x^n) = 1 / x^q =
+        x^{-q}$. Finally, multiply both sides by $x^n$ to get
+        $x^{n+m} = x^n x^m$.
+      \end{itemize}
     \end{itemize}
-  \item
+  \item Prove that $(x^n)^m = x^{nm}$.
   \item Show that $(xy)^n = x^n y^n$. If $n \geq 0$, this is simply
     Proposition 4.3.10(a). So let's consider the case $n < 0$. In this
     case, $n = -p$, with $p$ a positive natural number. Thus we have
