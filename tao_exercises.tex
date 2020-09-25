@@ -24,8 +24,10 @@
 \newcommand{\partsof}[1]{\mathcal{P}\left( #1 \right)}
 \newcommand{\minus}{\, \textrm{---}\!\textrm{--} \:}
 \newcommand{\quot}{\, \textrm{/}\!\textrm{/} \:}
+\newcommand{\nn}{\mathbb{N}}
 \newcommand{\zz}{\mathbb{Z}}
 \newcommand{\qq}{\mathbb{Q}}
+\newcommand{\floor}[1]{\lfloor #1 \rfloor}
 \renewcommand{\epsilon}{\varepsilon}
 % Lemmas:
 \usepackage{amsthm}
@@ -2440,6 +2442,55 @@ $x \in A$ or $x \in B$. This is precisely the Axiom 3.4.
   induction hypothesis. But we know that $2N = N+N$ (recall Definition
   2.3.1 for instance), thus we can rewrite this as $2^{N+1} \geq
   N+N$. And since $N \geq 1$, we finally get $2^{N+1} \geq N+1$.
+\end{exo}
+
+\bigskip
+
+\begin{exo}{4.4.1}{Prove Proposition 4.4.1.}
+
+  We have to prove that, for any rational number $x$, there exists an
+  integer $n$ such that $n \leq x < n+1$. Let's proceed through the
+  following four steps:
+
+  \begin{itemize}
+  \item Suppose that $x \in \qq_+$. Thus, $x = a/b$, with $a$ and $b$
+    natural numbers. According to Proposition 2.3.9, there exists
+    $n, r \in \nn$ such that $a=bn+r$, with $0 \leq r < b$. By
+    dividing all terms by $b$, this also means that
+    $x = a/b = n + r/b$, with $0 \leq r/b < 1$.
+
+    Since $0 \leq r/b < 1$, we have $n \leq n + r/b < n+1$, i.e. $n
+    \leq x < n+1$, as required.    
+  \item Now suppose that $x \in \qq_{-}^{\star}$. Consequently, $-x
+    \in \qq_+$, and we are back in the previous case: there exists a
+    natural number $n$ such that $n \leq -x < n+1$, i.e. $-n-1 < x
+    \leq -n$. Now we have two possible cases:
+    \begin{itemize}
+    \item if $x=-n$, then let be $m = -n$. Thus, $m-1 < x \leq m$, and
+      then $m \leq x < m+1$, as required.
+    \item if $x \neq -n$, then let be $m = -n-1$. Thus,
+      $m < x \leq m + 1$, i.e. $m-1 \leq x < m$. And by denoting
+      $p=m-1$, we have $p \leq x < p+1$ as required.
+    \end{itemize}
+  \item Let's prove that this integer $n$ is unique. Suppose that we
+    have two integers $m, n$ such that:
+    \begin{align}
+      n &\leq x < n+1 \label{intpartn} \\
+      m &\leq x < m+1 \label{intpartm}
+    \end{align}
+    From (\ref{intpartm}), we also have $-m-1 < -x \leq -m$. And, by
+    adding this inequality to (\ref{intpartn}), we get
+    $n-m-1 < 0 < n-m+1$. The left-hand side says that $n < m+1$,
+    i.e. that $n \leq m$ (recall Proposition 2.2.12 (e)). Similarly,
+    the right-hand side says that $n > m-1$, i.e. that $n \geq
+    m$. Thus, we have both $n \leq m$ and $n \geq m$, which means that
+    $n=m$.
+  \item Finally, this means in particular that there exists a natural
+    number $N$ such that $N > x$. Indeed, if $x$ is negative, then
+    $N=0$ is suitable; and if $x$ is positive, then $N$ is directly
+    given by $N = \floor{x} + 1$.
+  \end{itemize}
+  
 \end{exo}
 \end{document}
 
