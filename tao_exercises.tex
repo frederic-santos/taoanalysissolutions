@@ -2489,8 +2489,65 @@ $x \in A$ or $x \in B$. This is precisely the Axiom 3.4.
     number $N$ such that $N > x$. Indeed, if $x$ is negative, then
     $N=0$ is suitable; and if $x$ is positive, then $N$ is directly
     given by $N = \floor{x} + 1$.
+  \end{itemize}  
+\end{exo}
+
+\begin{exo}{4.4.2}{A sequence $a_0, a_1, a_2, \ldots$ of numbers
+    (natural numbers, integers, rationals, or reals) is said to be in
+    \emph{infinite descent} if we have $a_n > a_{n+1}$ for all natural
+    numbers $n$ (i.e., $a_0 > a_1 > a_2 > \ldots$).
+  \begin{enumerate}
+  \item Prove the principle of infinite descent: that it is not
+    possible to have a sequence of natural numbers which is in
+    infinite descent.
+  \item Does the principle of infinite descent work if the sequence
+    $a_1, a_2, a_3, \ldots$ is allowed to take integer values instead
+    of natural number values? What about if it is allowed to take
+    positive rational values instead of natural numbers? Explain.
+  \end{enumerate}}
+
+We follow the hints given by Terence Tao.
+
+\begin{enumerate}
+\item Assume for the sake of contradiction that we have a sequence of
+  natural numbers $(a_n)$ which is in infinite descent. Let $k$ be a
+  natural number, and $P_k$ be the property ``$a_n \geq k$ for all
+  natural numbers $n$''. Let's induct on $k$.
+
+  For the base case, $P_0$ is true since $a_n$ are natural numbers for
+  all $n$, so that $a_n \geq 0$ for all $n$ by definition.
+
+  Now let's suppose inductively that $P_k$ is true, i.e. that
+  $a_0 > a_1 > a_2 > \ldots \geq k$. If we had $a_p = k$ for one given
+  natural number $p$, then we would have $k = a_p > a_{p+1}$. But
+  also, $a_{p+1} > a_{p+2} > ... > k$ by induction
+  hypothesis. However, the inequality $k \geq a_{p+1} > k$ is a
+  contradiction, so that $a_n \neq k$ for all $n$. Thus, $P_{k+1}$
+  is also true: we have $a_n > k+1$ for all $n$.
+
+  However, having $a_n > k$ for all natural numbers $k,n$ is a
+  contradiction. Indeed, for $k = a_0$ and $n=1$, we have $a_1 > a_0$,
+  which contradicts the fact that $(a_n)$ is in infinite descent.
+
+  Thus, there are no such sequence of natural numbers.
+
+\item A general note: to prove that the infinite descent principle
+  does not work for integers or rationals, it is enough to find
+  \emph{one} sequence of such numbers which is actually in infinite
+  descent. Instead of a formal proof as in the previous case, a simple
+  counterexample will do the trick.
+  \begin{itemize}
+  \item If the sequence $a_0 > a_1 > \ldots$ can take integer values,
+    lets define the sequence by $a_n = -n$. By definition, we have
+    $a_n > a_{n+1}$ for all natural number $n$ (since $-n > -n-1$, as
+    a simple induction will show).
+  \item If the sequence $a_0 > a_1 > \ldots$ can take rational values,
+    lets define the sequence by $a_n = 1/n$. Thus, we have $a_n >
+    a_{n+1}$ for all natural number $n$, since $1/n > 1/(n+1)$. (This
+    can be shown as follows: $1/n - 1/(n+1) = 1 / (n(n+1)) > 0$.)
   \end{itemize}
-  
+\end{enumerate}
+
 \end{exo}
 \end{document}
 
