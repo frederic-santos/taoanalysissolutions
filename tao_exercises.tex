@@ -2549,6 +2549,45 @@ We follow the hints given by Terence Tao.
 \end{enumerate}
 
 \end{exo}
+
+\section{The real numbers}
+\begin{exo}{5.1.1}{Prove Lemma 5.1.15, i.e. that every Cauchy sequence
+    is bounded.}
+
+  Let $(a_n)_{n=1}^\infty$ be a Cauchy sequence.
+
+  \begin{itemize}
+  \item By definition 5.1.8, for every rational $\epsilon > 0$, there
+    exists a natural number $N$ such that if $j,k \geq N$, then
+    $d(a_j, a_k) \leq \epsilon$. In particular, let's rephrase this
+    statement with the arbitrary value $\epsilon = 1$ (valid, since 1
+    is a positive rational): there exists a natural number $N$ such
+    that if $j,k \geq N$, then $|a_j - a_k| \leq 1$.
+    
+    Since $N \geq N$, we can take in particular $k=N$ to get yet another
+    particular formulation: if $j \geq N$, then $|a_j - a_N| \leq 1$.
+    
+    According to Proposition 4.3.3(b), we have $|x+y| \leq |x| + |y|$ for
+    all rationals $x,y$. Let's consider $x = a_j - a_N$ and $y = a_N$:
+    this leads to $|a_j| \leq |a_j + a_N| + |a_N|$, i.e.
+    $|a_j| - |a_N| \leq |a_j - a_N|$.
+    
+    Thus, this means that $|a_j| - |a_N| \leq |a_j - a_N| \leq 1$ as
+    soon as $j \geq N$, i.e. that $|a_j| \leq 1 + |a_N|$ for
+    $j \geq N$. We have bounded part of the infinite sequence.
+    
+  \item The other part is simply the finite sequence $a_0, a_1, \cdots,
+    a_{N-1}$. By Lemma 5.1.14, this finite sequence is necessarily bounded
+    by a rational number $M$.
+    
+  \item Finally, let's consider the rational number $B = 1 + |a_N| +
+    M$. Since we have both $B \geq M$ and $B \geq 1 + |a_N|$, both the
+    infinite sequence $(a_n)_{n=N}^\infty$ and the finite sequence
+    $a_0, \cdots, a_{N-1}$ are bounded by $B$. Thus, the whole Cauchy
+    sequence $(a_n)_{n=1}^\infty$ is bounded by $B$.
+  \end{itemize}
+  
+\end{exo}
 \end{document}
 
 %%% Local Variables:
