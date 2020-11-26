@@ -28,6 +28,7 @@
 \newcommand{\zz}{\mathbb{Z}}
 \newcommand{\qq}{\mathbb{Q}}
 \newcommand{\floor}[1]{\lfloor #1 \rfloor}
+\newcommand{\seq}[2]{(#1)_{n=#2}^\infty}
 \renewcommand{\epsilon}{\varepsilon}
 % Lemmas:
 \usepackage{amsthm}
@@ -2587,6 +2588,34 @@ We follow the hints given by Terence Tao.
     sequence $(a_n)_{n=1}^\infty$ is bounded by $B$.
   \end{itemize}
   
+\end{exo}
+
+\begin{exo}{5.2.1}{Show that if $\seq{a_n}{1}$ and $\seq{b_n}{1}$ are
+    eventually $\epsilon$-close, then $\seq{a_n}{1}$ is a Cauchy
+    sequence if and only if $\seq{b_n}{1}$ is a Cauchy sequence.}
+
+  First note that $\seq{a_n}{1}$ and $\seq{b_n}{1}$ are exchangeable
+  here, so that showing only one direction (``if $\seq{a_n}{1}$ is
+  Cauchy, then $\seq{b_n}{1}$ is Cauchy'') will be enough.
+
+  Let be $\epsilon > 0$ a positive rational. Since $\seq{a_n}{1}$ and
+  $\seq{b_n}{1}$ are eventually $\epsilon$-close, there exists a
+  natural number $N_1$ such that $n \geq N_1 \Longrightarrow |a_n - b_n|
+  \leq \frac{\epsilon}{3}$. Furthermore, since $\seq{a_n}{1}$ is a
+  Cauchy sequence, there exists a natural number $N_2$ such that $j,k
+  \geq N_2 \Longrightarrow |a_j - a_k| \leq \frac{\epsilon}{3}$.
+
+  Let be $N = \max(N_1, N_2)$. If $j,k \geq N$, then we have:
+  \begin{align*}
+    |b_j - b_k| &= |b_j - a_j + a_j - a_k + a_k - b_k| \\
+                &\leq |b_j - a_j| + |a_j - a_k| + |a_k - b_k| \text{
+                  \; (by triangle inequality)}\\
+                &\leq \frac{\epsilon}{3} + \frac{\epsilon}{3} +
+                  \frac{\epsilon}{3} \\
+                &\leq \epsilon
+  \end{align*}
+
+  which means that $\seq{b_n}{1}$ is a Cauchy sequence.
 \end{exo}
 \end{document}
 
