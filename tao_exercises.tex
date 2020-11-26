@@ -2617,6 +2617,38 @@ We follow the hints given by Terence Tao.
 
   which means that $\seq{b_n}{1}$ is a Cauchy sequence.
 \end{exo}
+
+\bigskip
+
+\begin{exo}{5.2.2}{Let $\epsilon > 0$. Show that if $\seq{a_n}{1}$ and
+  $\seq{b_n}{1}$ are eventually $\epsilon$-close, then $\seq{a_n}{1}$
+  is bounded if and only if $\seq{b_n}{1}$ is bounded.}
+
+As in the previous exercise, $\seq{a_n}{1}$ and $\seq{b_n}{1}$ are
+exchangeable here, so that showing only one direction will be enough.
+
+\begin{itemize}
+\item Since $\seq{a_n}{1}$ is bounded, there exists a rational number
+  $M_1$ such that $|a_n| \leq M_1$ for all natural $n$.
+\item Since $\seq{a_n}{1}$ and $\seq{b_n}{1}$ are eventually
+  $\epsilon$-close, there exists a positive natural number $N$ such
+  that $n \geq N \Longrightarrow |a_n - b_n| \leq \epsilon$.
+\item Let's decompose $\seq{b_n}{1}$ into a finite and an infinite
+  part, and show that both parts are bounded.
+
+  By Lemma 5.1.14, there exists a positive rational $M_2$ such that
+  the finite sequence $b_0, \ldots, b_{N-1}$ is bounded by
+  $M_2$.
+
+  Furthermore, we know by triangle inequality that, if $n \geq N$, we
+  have $|b_n| - |a_n| \leq |b_n - a_n| \leq \epsilon$. Consequently,
+  $|b_n| \leq |a_n| + \epsilon \leq M_1 + \epsilon$.
+
+  Finally, let be $M = M_1 + M_2 + \epsilon$: we have indeed $|b_n|
+  \leq M$ for all natural $n$.
+\end{itemize}
+\end{exo}
+
 \end{document}
 
 %%% Local Variables:
