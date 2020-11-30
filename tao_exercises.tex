@@ -28,6 +28,7 @@
 \newcommand{\zz}{\mathbb{Z}}
 \newcommand{\qq}{\mathbb{Q}}
 \newcommand{\floor}[1]{\lfloor #1 \rfloor}
+\newcommand{\formallimit}[1]{\text{LIM}_{n \rightarrow \infty} #1}
 \newcommand{\seq}[2]{(#1)_{n=#2}^\infty}
 \renewcommand{\epsilon}{\varepsilon}
 % Lemmas:
@@ -2647,6 +2648,44 @@ exchangeable here, so that showing only one direction will be enough.
   Finally, let be $M = M_1 + M_2 + \epsilon$: we have indeed $|b_n|
   \leq M$ for all natural $n$.
 \end{itemize}
+\end{exo}
+
+\begin{exo}{5.3.1}{Prove Proposition 5.3.3.}
+
+  The three laws of equality must be verified.
+  
+  \begin{enumerate}
+  \item Reflexivity: let's prove that $x=x$. By Definition 5.3.1, we
+    have $x=x$ if and only if $\formallimit{a_n} = \formallimit{a_n}$,
+    i.e. if and only if $\seq{a_n}{1}$ and $\seq{a_n}{1}$ are
+    equivalent Cauchy sequences. Let be $\epsilon > 0$ a positive
+    rational, and let be $N = 1$. For all $n \geq N$, we have $|a_n -
+    a_n| = 0 \leq \epsilon$, QED.
+  \item Symmetry: let's suppose that $x=y$, and let's show that
+    $y=x$. Let $\epsilon > 0$ be a positive rational. We have:
+    \begin{align*}
+      x = y & \Longrightarrow \text{$\seq{a_n}{1}$ and $\seq{b_n}{1}$ are
+              equivalent Cauchy sequences} \\
+            & \Longrightarrow \exists N \geq 1 \text{ such that } |a_n
+              - b_n| \leq \epsilon \text{ for } n \geq N \\
+            & \Longrightarrow \exists N \geq 1 \text{ such that } |b_n
+              - a_n| \leq \epsilon \text{ for } n \geq N \\
+            & \Longrightarrow \text{$\seq{b_n}{1}$ and $\seq{a_n}{1}$ are
+              equivalent Cauchy sequences} \\
+            & \Longrightarrow y = x
+    \end{align*}
+  \item Transitivity: if $x=y$ and $y=z$. Let be $\epsilon > 0$ a
+    positive rational. Since $x=y$, there exists $N_1 \geq 1$ such
+    that $|a_n - b_n| \leq \epsilon/2$ for $n \geq N_1$. Since $y=z$,
+    there exists $N_2 \geq 1$ such that $|b_n - c_n| \leq \epsilon/2$
+    for $n \geq N_2$. Thus, if $n \geq \max(N_1, N_2)$, $a_n$ and
+    $b_n$ are $\epsilon-2$-close, and $b_n$ and $c_n$ are
+    $\epsilon-2$-close. Thus, according to Proposition 4.3.7(c), $a_n$
+    and $c_n$ are $\epsilon$-close, which means that $\seq{a_n}{1}$
+    and $\seq{c_n}{1}$ are eventually $\epsilon$-close for all
+    $\epsilon$, i.e. are equivalent Cauchy sequences. This closes the
+    proof.
+  \end{enumerate}
 \end{exo}
 
 \end{document}
