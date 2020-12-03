@@ -2727,25 +2727,31 @@ exchangeable here, so that showing only one direction will be enough.
     sequences $a,a,a,a,\ldots$ and $b,b,b,b, \ldots$ are equivalent if
     and only if $a=b$).}
   
+  In what follows, we denote $\seq{a_n}{1}$ the constant sequence
+  $a,a,a,\ldots$, and $\seq{b_n}{1}$ the constant sequence
+  $b,b,b,\ldots$.
+
+  \begin{itemize}
+  \item If $a=b$, we have $|a-b| = 0$, i.e. $|a_n-b_n| = 0$ for all
+    $n \geq 1$. Thus, $\seq{a_n}{1}$ and $\seq{b_n}{1}$ are
+    $\epsilon$-close for all $\epsilon > 0$: they are equivalent Cauchy
+    sequences. This means that $a=b$.
+  \item If $\formallimit{a} = \formallimit{b}$, let's suppose (for the
+    sake of contradiction) that $a \neq b$, and let's denote $\epsilon =
+    \frac{|a-b|}{2}$. Since $a\neq b$, we have $\epsilon > 0$., and we
+    also have $|a-b| > \epsilon$. In other words, for all $n \geq 1$, we
+    have found an $\epsilon$ such that $|a_n-b_n| > \epsilon$: this is a
+    contradiction with the fact that $\seq{a_n}{1}$ and  $\seq{b_n}{1}$
+    are equivalent Cauchy sequences. Thus, $a=b$.
+  \end{itemize}
 \end{exo}
 
-In what follows, we denote $\seq{a_n}{1}$ the constant sequence
-$a,a,a,\ldots$, and $\seq{b_n}{1}$ the constant sequence
-$b,b,b,\ldots$.
-
-\begin{itemize}
-\item If $a=b$, we have $|a-b| = 0$, i.e. $|a_n-b_n| = 0$ for all
-  $n \geq 1$. Thus, $\seq{a_n}{1}$ and $\seq{b_n}{1}$ are
-  $\epsilon$-close for all $\epsilon > 0$: they are equivalent Cauchy
-  sequences. This means that $a=b$.
-\item If $\formallimit{a} = \formallimit{b}$, let's suppose (for the
-  sake of contradiction) that $a \neq b$, and let's denote $\epsilon =
-  \frac{|a-b|}{2}$. Since $a\neq b$, we have $\epsilon > 0$., and we
-  also have $|a-b| > \epsilon$. In other words, for all $n \geq 1$, we
-  have found an $\epsilon$ such that $|a_n-b_n| > \epsilon$: this is a
-  contradiction with the fact that $\seq{a_n}{1}$ and  $\seq{b_n}{1}$
-  are equivalent Cauchy sequences. Thus, $a=b$.
-\end{itemize}
+\begin{exo}{5.3.4}{Let $\seq{a_n}{1}$ be a sequence of rational
+    numbers which is bounded. Let $\seq{b_n}{1}$ be another sequence
+    of rational numbers which is equivalent to $\seq{a_n}{1}$. Show
+    that $\seq{b_n}{1}$ is also bounded.}
+  
+\end{exo}
 
 \end{document}
 
