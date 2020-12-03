@@ -2686,40 +2686,66 @@ exchangeable here, so that showing only one direction will be enough.
     $\epsilon$, i.e. are equivalent Cauchy sequences. This closes the
     proof.
   \end{enumerate}
-
-  \begin{exo}{5.3.2}{Prove Proposition 5.3.10.}
-
-    To prove that $xy$ is a real number, we must show that
-    $\seq{a_nb_n}{1}$ is a Cauchy sequence. Let $\epsilon > 0$ be a
-    positive rational. We must show that there exists a natural number
-    $N$ such that $j,k \geq N \Longrightarrow |a_jb_j - a_kb_k| \leq
-    \epsilon$.
-
-    We already know that:
-    \begin{itemize}
-    \item Since $\seq{a_n}{1}$ is a Cauchy sequence, it is bounded by
-      a rational number $M_a$. Furthermore, there exists a natural
-      number $N_a$ such that
-      $j,k \geq N_a \Longrightarrow |a_j - a_k| \leq \frac{\epsilon}{2M_a}$.
-    \item In a similar fashion, since $\seq{b_n}{1}$ is a Cauchy
-      sequence, it is bounded by a rational number $M_b$. Furthermore,
-      there exists a natural number $N_b$ such that
-      $j,k \geq N_b \Longrightarrow |b_j - b_k| \leq \frac{\epsilon}{2M_b}$.
-    \end{itemize}
-
-    Now let's consider $N = \max(N_a, N_b)$. If $j,k \geq N$, we have:
-    \begin{align*}
-      |a_jb_j - a_kb_k| &= |a_jb_j - a_jb_k + a_jb_k - a_kb_k| \\
-                        &\leq |a_j| \cdot |b_j-b_k| + |b_k| \cdot
-                          |a_j-a_k| \\
-                        &\leq M_a \frac{\epsilon}{2M_a} + M_b
-                          \frac{\epsilon}{2M_b} \\
-                        &\leq \epsilon
-    \end{align*}
-    
-    This proves that $\seq{a_nb_n}{1}$ is a Cauchy sequence, as required.
-  \end{exo}
 \end{exo}
+
+\begin{exo}{5.3.2}{Prove Proposition 5.3.10.}
+
+  To prove that $xy$ is a real number, we must show that
+  $\seq{a_nb_n}{1}$ is a Cauchy sequence. Let $\epsilon > 0$ be a
+  positive rational. We must show that there exists a natural number
+  $N$ such that $j,k \geq N \Longrightarrow |a_jb_j - a_kb_k| \leq
+  \epsilon$.
+
+  We already know that:
+  \begin{itemize}
+  \item Since $\seq{a_n}{1}$ is a Cauchy sequence, it is bounded by
+    a rational number $M_a$. Furthermore, there exists a natural
+    number $N_a$ such that
+    $j,k \geq N_a \Longrightarrow |a_j - a_k| \leq \frac{\epsilon}{2M_a}$.
+  \item In a similar fashion, since $\seq{b_n}{1}$ is a Cauchy
+    sequence, it is bounded by a rational number $M_b$. Furthermore,
+    there exists a natural number $N_b$ such that
+    $j,k \geq N_b \Longrightarrow |b_j - b_k| \leq \frac{\epsilon}{2M_b}$.
+  \end{itemize}
+
+  Now let's consider $N = \max(N_a, N_b)$. If $j,k \geq N$, we have:
+  \begin{align*}
+    |a_jb_j - a_kb_k| &= |a_jb_j - a_jb_k + a_jb_k - a_kb_k| \\
+                      &\leq |a_j| \cdot |b_j-b_k| + |b_k| \cdot
+                        |a_j-a_k| \\
+                      &\leq M_a \frac{\epsilon}{2M_a} + M_b
+                        \frac{\epsilon}{2M_b} \\
+                      &\leq \epsilon
+  \end{align*}
+  
+  This proves that $\seq{a_nb_n}{1}$ is a Cauchy sequence, as required.
+\end{exo}
+
+\bigskip
+\begin{exo}{5.3.3}{Let $a, b$ be rational numbers. Show that $a=b$ if
+    and only if $\formallimit{a} = \formallimit{b}$ (i.e., the Cauchy
+    sequences $a,a,a,a,\ldots$ and $b,b,b,b, \ldots$ are equivalent if
+    and only if $a=b$).}
+  
+\end{exo}
+
+In what follows, we denote $\seq{a_n}{1}$ the constant sequence
+$a,a,a,\ldots$, and $\seq{b_n}{1}$ the constant sequence
+$b,b,b,\ldots$.
+
+\begin{itemize}
+\item If $a=b$, we have $|a-b| = 0$, i.e. $|a_n-b_n| = 0$ for all
+  $n \geq 1$. Thus, $\seq{a_n}{1}$ and $\seq{b_n}{1}$ are
+  $\epsilon$-close for all $\epsilon > 0$: they are equivalent Cauchy
+  sequences. This means that $a=b$.
+\item If $\formallimit{a} = \formallimit{b}$, let's suppose (for the
+  sake of contradiction) that $a \neq b$, and let's denote $\epsilon =
+  \frac{|a-b|}{2}$. Since $a\neq b$, we have $\epsilon > 0$., and we
+  also have $|a-b| > \epsilon$. In other words, for all $n \geq 1$, we
+  have found an $\epsilon$ such that $|a_n-b_n| > \epsilon$: this is a
+  contradiction with the fact that $\seq{a_n}{1}$ and  $\seq{b_n}{1}$
+  are equivalent Cauchy sequences. Thus, $a=b$.
+\end{itemize}
 
 \end{document}
 
