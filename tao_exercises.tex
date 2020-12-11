@@ -2762,6 +2762,23 @@ exchangeable here, so that showing only one direction will be enough.
   also bounded.
 \end{exo}
 
+\bigskip
+\begin{exo}{5.3.5}{Show that $\formallimit{1/n} = 0$.}
+
+  As a real number, by definition, $0$ is the formal limit of the
+  constant sequence $0, 0, 0, \ldots$. Thus, we must show that
+  $\formallimit{1/n} = \formallimit{0}$. Still by definition, we must
+  prove that the sequence $\seq{1/n}{1}$ is equivalent to the sequence
+  $\seq{0}{1}$. This can be achieved by proving that for all
+  $\epsilon > 0$, there exists a natural $N \geq 1$ such that
+  $n \geq N \Longrightarrow |1/n - 0| \leq \epsilon$, i.e. such that
+  $n \geq 1/\epsilon$.
+
+  By Proposition 4.4.1, there always exists a natural number $N$ such
+  that $N > 1 / \epsilon$. Then, if $n \geq N$, we have the desired
+  proprty, which closes the proof.
+\end{exo}
+
 \end{document}
 
 %%% Local Variables:
