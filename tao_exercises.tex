@@ -2779,6 +2779,48 @@ exchangeable here, so that showing only one direction will be enough.
   proprty, which closes the proof.
 \end{exo}
 
+\bigskip
+
+\begin{exo}{5.4.2}{Prove the remaining claims in Proposition 5.4.7.}
+
+  Let $x, y, z$ be real numbers. Those claims are as follows:
+  \begin{enumerate}[label=\emph{(\alph*)}]
+  \item (Order trichotomy) Prove that exactly one of the three statements
+    $x = y$, $x < y$, or $x > y$ is true.
+
+    This is actually a simple rephrasing of the trichotomy of real
+    numbers. Indeed, let's consider the real number $x-y$. According
+    to Proposition 5.4.4, this real number is either null (in this
+    case, $x = y$), positive (in this case, $x > y$) or negative (in
+    this case, $x < y$).
+  \item (Order is anti-symmetric) Prove that one has $x < y$ if and
+    only if $y > x$.
+
+    The following statements are equivalent:
+    \begin{align*}
+      x < y & \Longleftrightarrow x - y \text{ is positive} \\
+            & \Longleftrightarrow -(x - y) \text{ is negative
+              (Prop. 5.4.4)} \\
+            & \Longleftrightarrow y - x  \text{ is negative} \\
+            & \Longleftrightarrow y > x
+    \end{align*}
+  \item (Order is transitive) Prove that if $x < y$ and $y < z$, then
+    $x < z$.
+
+    Note that $x-z = (x-y) + (y-z)$. In this sum, both terms are
+    negative, so that their sum is also negative (this can easily be
+    deduced from Proposition 5.4.4). Thus, $x-z$ is negative, which
+    closes the proof.
+  \item (Addition preserves order) Prove that if $x < y$, then
+    $x+z < y+z$.
+
+    Note that if $x<y$, then $x-y$ is negative. Since $x-y = (x+z) -
+    (y+z)$, we get the statement required.
+  \item is already proven in the main text.
+  \end{enumerate}
+  
+\end{exo}
+
 \end{document}
 
 %%% Local Variables:
