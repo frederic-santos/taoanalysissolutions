@@ -3,10 +3,9 @@
 
 I'll host on this repo my current work on Terence Tao's textbooks, [[https://www.springer.com/gp/book/9789811017896][Analysis I]] & [[https://www.springer.com/gp/book/9789811018046][II]].
 
-As I'm self-studying for fun and in a rather casual way, this constitutes only /propositions/ of solutions, maybe incorrect, and surely inelegant.
+Note that this constitutes only /propositions/ of solutions; errors are still possible. Pull requests to fix typos or errors are welcome.
 
 * Notes
-- Pull requests to fix typos or errors are welcome.
 - The LaTeX file makes use of the [[https://www.ctan.org/pkg/mbboard][mbboard]] package. It provides nicer math fonts, but is not part of most LaTeX distributions and must be installed manually.
 - Those files are licensed under a [[http://creativecommons.org/licenses/by-nc-sa/4.0/][Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License]].
 
