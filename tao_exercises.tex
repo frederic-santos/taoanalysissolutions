@@ -2831,6 +2831,35 @@ exchangeable here, so that showing only one direction will be enough.
   0$, the claim follows.
 \end{exo}
 
+\bigskip
+\begin{exo}{5.4.5}{Prove Proposition 5.4.14: Given any two real
+    numbers $x < y$, we can find a rational number $q$ such that
+    $x < q < y$.}
+
+  Following the hint given by Terence Tao, we can make use of
+  Exercise 5.4.4. Actually, we do have a positive real number here:
+  since $x < y$, then $y - x$ is positive. Thus, according to Exercise
+  5.4.4, we can find a positive integer $N$ such that $y-x > 1/N > 0$.
+
+  Now let's multiply all terms by $N$. Since $N$ is positive, we get
+  the following inequality: $Ny - Nx > 1 > 0$. Intuitively: since
+  $Ny - Nx > 1$, we should be able to find explicitly an integer
+  lying between them. Then, dividing by $N$ will provide the desired
+  inequality.
+
+  $Nx$ is a real number. According to Exercise 5.4.3, there exists an
+  integer $n$ such that $n+1 > Nx \geq n$. In particular, since $Nx
+  \geq n$, we also have $Nx + 1 \geq n + 1$.
+
+  Thus, gathering all the inequalities we know:
+  \begin{equation}
+    Ny > Nx + 1 \geq n + 1 > Nx
+  \end{equation}
+
+  Then let's divide by $N$: we finally get $y > \frac{n+1}{N} > x$,
+  which is the required property with $q = \frac{n+1}{N}$.
+\end{exo}
+
 \end{document}
 
 %%% Local Variables:
