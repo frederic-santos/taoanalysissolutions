@@ -2860,6 +2860,54 @@ exchangeable here, so that showing only one direction will be enough.
   which is the required property with $q = \frac{n+1}{N}$.
 \end{exo}
 
+\bigskip
+
+\begin{exo}{5.4.6}{Let $x, y$ be real numbers and let $\epsilon > 0$
+    be a positive real. Show that $|x-y| < \epsilon$ if and only if $y
+    - \epsilon < x < y + \epsilon$; and that $|x-y| \leq \epsilon$ iff
+    $y - \epsilon \leq x \leq y + \epsilon$.}
+  
+  We only give the proof for the strict version; the other one being
+  totally similar.
+
+  \begin{itemize}
+  \item First suppose that $|x-y| < \epsilon$, and let's consider two
+    cases depending on the sign of $x-y$.
+    \begin{itemize}
+    \item If $x-y \geq 0$, i.e. if $x \geq y$, then $|x-y| = x-y <
+      \epsilon$ by hypothesis. If we add $y$ to both sides of this
+      inequality, we get $x < y + \epsilon$, which is the first part
+      of the required result. Furthermore, we know that $y \leq
+      x$. And since $\epsilon$ is positive, we have $y - \epsilon < y
+      \leq x$. Thus, by combining all those results, we finally get $y
+      - \epsilon < y \leq x \leq y + \epsilon$, as required.
+    \item If $x-y < 0$, i.e. if $x < y$, then $|x-y| = y-x < \epsilon$
+      by hypothesis. This leads to $y - \epsilon < x$, which is the
+      first part of the result. Also, since $x < y$, we have $x < y <
+      y+\epsilon$. Combining all those results, we finally have $y -
+      \epsilon < x < y < y + \epsilon$ as required.
+    \end{itemize}
+    
+  \item Conversely, suppose that $y-\epsilon < x < y+\epsilon$. Adding
+    $(-y)$ to each part leads to $-\epsilon < x-y < \epsilon$. There
+    are now three cases depending on the sign of $x-y$:
+    \begin{itemize}
+    \item If $x-y > 0$, then $|x-y| = x-y < \epsilon$ as required.
+    \item If $x-y < 0$, then $|x-y| = y-x$. But we know that
+      $y-\epsilon < x$, i.e. $y-x < \epsilon$, as required.
+    \item If $x-y = 0$, then by definition, $|x-y| = 0 < \epsilon$, as
+      required.
+    \end{itemize}
+  \end{itemize}
+\end{exo}
+
+\begin{exo}{5.4.7}{Let $x$ and $y$ be real numbers. Show that
+    $x \leq y + \epsilon$ for all real numbers $\epsilon > 0$ if and
+    only if $x \leq y$. Show that $|x-y| \leq \epsilon$ for all real
+    numbers $\epsilon > 0$ if and only if $x=y$.}
+  
+\end{exo}
+
 \end{document}
 
 %%% Local Variables:
