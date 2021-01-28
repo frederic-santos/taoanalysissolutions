@@ -2908,6 +2908,26 @@ exchangeable here, so that showing only one direction will be enough.
   
 \end{exo}
 
+\bigskip
+
+\begin{exo}{5.4.8}{Let $\seq{a_n}{1}$ be a Cauchy sequence of
+    rationals, and let $x$ be a real number. Show that if $a_n \leq x$
+    for all $n \geq 1$, then $\formallimit{a_n} \leq x$. Similarly,
+    show that if $a_n \geq x$ for all $n \geq 1$, then
+    $\formallimit{a_n} \geq x$.}
+
+  Suppose, for the sake of contradiction, that we have both
+  $a_n \leq x$ for all $n \geq 1$ and $\formallimit{a_n} > x$. Then,
+  according to Proposition 5.4.14, there exists a rational $q$ such
+  that $x < q < \formallimit{a_n}$. We have thus $a_n \leq x < q$ for
+  all $n \geq 1$. According to Corollary 5.4.10 with the constant
+  sequence of rationals $\seq{q_n} := q$, we should have
+  $\formallimit{a_n} \leq q$.
+
+  Thus, we have both $\formallimit{a_n} \leq q$ and $x < q <
+  \formallimit{a_n}$, which is a contradiction and closes the proof.
+\end{exo}
+
 \end{document}
 
 %%% Local Variables:
