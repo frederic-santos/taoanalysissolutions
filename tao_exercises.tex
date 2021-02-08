@@ -2905,10 +2905,33 @@ exchangeable here, so that showing only one direction will be enough.
     $x \leq y + \epsilon$ for all real numbers $\epsilon > 0$ if and
     only if $x \leq y$. Show that $|x-y| \leq \epsilon$ for all real
     numbers $\epsilon > 0$ if and only if $x=y$.}
-  
-\end{exo}
 
-\bigskip
+  \begin{enumerate}
+  \item Let's prove the first statement. It is obvious that if
+    $x \leq y$, then $x \leq y + \epsilon$ for all $\epsilon >
+    0$. Let's thus prove the other direction. Let's use the
+    contrapositive statement: suppose that $x > y$. Thus, $x - y >
+    0$. Now let $\delta$ be a positive real number defined by
+    $\delta = \frac{x - y}{2} > 0$. We have:
+    \begin{align*}
+      y + \delta &= y + \frac{x}{2} + \frac{x}{2} \\
+                 &= \frac{x}{2} + \frac{y}{2} \\
+                 &< \frac{x}{2} + \frac{x}{2} = x
+    \end{align*}
+    Thus, if $x > y$, there exists $\delta > 0$ such that $x > y
+    +\delta$. Using the contrapositive, we conclude that if $x \leq y
+    + \epsilon$ for all $\epsilon > 0$, then $x \leq y$.
+  \item The second statement has a very similar proof. Once again, it
+    is obvious that if $x=y$, then $|x-y| \leq \epsilon$, since we
+    have $|x-y|=0$. For the other direction, let's use the
+    contrapositive once again, and suppose that $x \neq y$. Thus,
+    $|x-y| > 0$, and in particular, $|x-y| > \frac{|x-y|}{2} >
+    0$. Consequently, if $x\neq y$, there exists $\delta =
+    \frac{|x-y|}{2} > 0$ such that $|x-y| > \delta$. The
+    contrapositive means that if $|x-y| \leq \epsilon$ for all
+    $\epsilon > 0$, then $x=y$, as required.
+  \end{enumerate}
+\end{exo}
 
 \begin{exo}{5.4.8}{Let $\seq{a_n}{1}$ be a Cauchy sequence of
     rationals, and let $x$ be a real number. Show that if $a_n \leq x$
