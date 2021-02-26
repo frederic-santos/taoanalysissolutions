@@ -2951,6 +2951,63 @@ exchangeable here, so that showing only one direction will be enough.
   \formallimit{a_n}$, which is a contradiction and closes the proof.
 \end{exo}
 
+\bigskip
+\begin{exo}{5.2.2}{Let $E$ be a non-empty subset of $\rr$, let
+    $n \geq 1$ be an integer, and let $L < K$ be integers. Suppose
+    $K/n$ is an upper bound for $E$, but that $L/n$ is not an upper
+    bound for $E$. Without using Theorem 5.5.9, show that there exists
+    an integer $L < m \leq K$ such that $m/n$ is an upper bound for
+    $E$, but that $(m-1)/n$ is not an upper bound for $E$. (Hint:
+    prove by contradiction, and use induction.)}
+
+  This is not an easy exercise, so that we begin by an informal
+  draft of the proof. Tao's advice is to prove by contradiction,
+  i.e. to suppose that the following statement holds:
+  
+  $(\mathcal{H})$: there exists no integer $m$ such that
+  $L < m \leq K$, where $m/n$ is an upper bound for $E$, but
+  $\frac{m-1}{n}$ is not.
+
+  What would be the contradiction if we accept this fact? Let's
+  proceed by ``descending induction''. Let's start with $m = K$: we
+  already know that $K/n$ is an upper bound, thus according to
+  $(\mathcal{H})$, $(K-1)/n$ is necessarily also an upper bound. Now
+  let's continue with $m = K-1$: we can see that, necessarily,
+  $(K-2)/n$ should also be an upper bound. And so on, until we finally
+  reach (after $K-L-1$ steps) $m = L+1$, which will be still supposed
+  to be an upper bound at this stage; but according to
+  $(\mathcal{H})$, $L/n$ should also be an upper bound, which would be
+  a contradiction with the fundamental assumption of this exercise.
+
+  Thus, we have to combine, in some way, an induction reasoning with
+  this hypothesis $(\mathcal{H})$ that we would like to reject.
+
+  Actually, if we suppose that $(\mathcal{H})$ is true, we can show by
+  induction that for any natural $j$, $(K-j)/n$ is an upper bound for
+  $E$:
+
+  \begin{itemize}
+  \item The base case $j = 0$ is straightforward: we already know that
+    $K/n$ is an upper bound.
+  \item Now let's suppose inductively that $(K-j) / n$ is an upper
+    bound, and let's show that $(K-j-1) / n$ is also an upper
+    bound. We know that $L/n$ is not an upper bound, so there must
+    exist some $x_0 \in E$ such that $x_0 > L/n$. But since
+    $(K-j) / n$ is an upper bound, we have the following inequalities:
+    $L/n < x_0 \leq (K-j) / n \leq K/n$. In particular, this means
+    that $L < K-j$; and this also means that $L < K-j \leq K$. Thus,
+    we also have necessarily $(K-j-1) / n$ as an upper bound,
+    otherwise the integer $(K-j)$ would be a contradiction for
+    $(\mathcal{H})$. This closes the induction.
+  \end{itemize}
+
+  Now the contradiction appears formally: take the (positive) natural
+  number $K-L$, and apply the previous statement proved by
+  induction. We should have $(K - (K-L)) / n = L/n$ as an upper bound
+  for $E$, which is a contradiction with the main assumption of this
+  exercise.
+\end{exo}
+
 \end{document}
 
 %%% Local Variables:
