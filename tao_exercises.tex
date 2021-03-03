@@ -3052,6 +3052,85 @@ exchangeable here, so that showing only one direction will be enough.
   \end{itemize}
 \end{exo}
 
+\begin{exo}{5.5.4}{Let $q_1, q_2, q_3, \ldots$ be a sequence of
+    rational numbers with the property that $|q_n - q_{n'}| \leq 1/M$
+    whenever $M \geq 1$ is an integer and $n, n' \geq M$. Show that
+    $q_1, q_2, q_3, \ldots$ is a Cauchy sequence. Furthermore, if $S
+    := \formallimit{q_n}$, show that $|q_M - S| \leq 1/M$ for every $M
+    \geq 1$. (Hint: use Exercise 5.4.8.)}
+
+  \begin{enumerate}
+  \item Let $\epsilon > 0$ be a positive rational number. To show that
+    $\seq{q_n}{1}$ is a Cauchy sequence, we must prove that there exists  a
+    natural number $N \geq 1$ such that $n, n' \geq N \Longrightarrow
+    |q_n - q_{n'}| \leq \epsilon$.
+
+    Let's apply the archimedean property\footnote{This has actually
+      previously been shown in Exercise 5.4.4.}: since $1$ and
+    $\epsilon$ are both positive real numbers, there exists a natural
+    number $M$ such that $M \epsilon \geq 1$, i.e. such that $1/M \leq
+    \epsilon$.
+
+    Thus, for a given value of $\epsilon$, taking this natural number
+    $M$ provides the required result. Indeed, if $n, n' \geq M$, we
+    have $|q_n - q_{n'}| \leq 1/M$ by initial hypothesis, and $1/M
+    \leq \epsilon$ by archimedean property. Thus $|q_n - q_{n'}| \leq
+    \epsilon$, as required.
+  \item Let be $S = \formallimit{q_n}$. We want to show that $|q_M -
+    S| \leq 1/M$ for all $M \geq 1$.
+
+    Recall that $|q_n - q_{n'}| \leq 1/M$ for any $n, n' \geq M$ by
+    initial hypothesis. By fixing $n' := M$ to a given value, we get
+    in particular:
+    \begin{equation}
+      \label{eq:554_fix_n}
+      \forall n \geq M \geq 1, \; \; \; \; |q_n - q_{M}| \leq \frac{1}{M}
+    \end{equation}
+
+    This is equivalent to:
+    \begin{equation}
+      \label{eq:554_encadrement_qn}
+      \forall n \geq M \geq 1, \; \; \; \; - \frac{1}{M} + q_M \leq q_n
+      \leq \frac{1}{M} + q_M
+    \end{equation}
+
+    At this point, we cannot immediately apply the insight from
+    Exercise 5.4.8 because of this ``$n \geq M \geq 1$'' part (we
+    would like to have this property for ``$n \geq 1$'' instead). We
+    can overcome this difficulty by defining a new ``instrumental''
+    sequence $\seq{a_n}{1}$:
+    \begin{equation}
+      \label{eq:554_an}
+      a_n = \left\{
+        \begin{array}{lr}
+          q_M & \text{ if } n \leq M \\
+          q_n & \text{ if } n > M \\
+        \end{array}
+      \right.
+    \end{equation}
+    The sequences $\seq{a_n}{1}$ and $\seq{q_n}{1}$ are equivalent
+    since they are eventually equal. Thus,
+    $\formallimit{a_n} = \formallimit{q_n}$ by definition of a real
+    number.
+
+    And this time, we can adapt the insight from
+    \eqref{eq:554_encadrement_qn} by removing the problematic ``$n
+    \geq M$" part: we have actually, for all $n \geq 1$,
+
+    \begin{equation}
+      \label{eq:554_encadrement_an}
+      \forall n \geq M \geq 1, \; \; \; \; - \frac{1}{M} + q_M \leq a_n
+      \leq \frac{1}{M} + q_M
+    \end{equation}
+    so that, according to Exercise 5.4.8, we have $-1/M + q_M \leq S
+    \leq 1/M + q_M$, i.e. $|q_M - S| \leq 1/M$.
+    
+    This is valid for any given $M \geq 1$, and thus closes the proof.
+  \end{enumerate}
+  
+  
+\end{exo}
+
 \end{document}
 
 %%% Local Variables:
