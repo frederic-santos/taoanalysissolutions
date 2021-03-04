@@ -2954,6 +2954,29 @@ exchangeable here, so that showing only one direction will be enough.
 \end{exo}
 
 \bigskip
+\begin{exo}{5.5.1}{Let $E$ be a subset of the real numbers $\rr$, and
+    suppose that $E$ has a least upper bound $M$ which is a real
+    number, i.e., $M = \sup(E)$. Let $-E$ be the set $-E := \{-x : x
+    \in E\}$. Show that $-M$ is the greatest lower bound of $-E$,
+    i.e., $-M = \inf(-E)$.}
+
+  According to the definition of the greatest lower bound, we have two
+  separate things to show: first, that $-M$ is a lower bound for $-E$,
+  and second, that any other lower bound for $-E$ is inferior to $-M$.
+
+  \begin{enumerate}
+  \item Let $z$ be an element of $-E$. By definition, we have $z = -x$
+    for some $x \in E$. Since $x \in E$, we have $x \leq M$, i.e. $z =
+    -x \geq -M$. This means that $-M$ is a lower bound for $-E$.
+  \item Let be $-A$ another lower bound for $-E$, and show that
+    $-A \geq -M$. Let be $x \in E$. Thus, we have $-x \in -E$,
+    and by definition, $-x \geq -A$. This can also be written $x \leq
+    A$, meaning that $A$ is an upper bound for $E$. But by definition
+    of the least upper bound $M$, we have $A \leq M$, i.e. $-A \geq
+    -M$ as required: this closes the proof.
+  \end{enumerate}
+\end{exo}
+
 \begin{exo}{5.5.2}{Let $E$ be a non-empty subset of $\rr$, let
     $n \geq 1$ be an integer, and let $L < K$ be integers. Suppose
     $K/n$ is an upper bound for $E$, but that $L/n$ is not an upper
@@ -3127,8 +3150,6 @@ exchangeable here, so that showing only one direction will be enough.
     
     This is valid for any given $M \geq 1$, and thus closes the proof.
   \end{enumerate}
-  
-  
 \end{exo}
 
 \end{document}
