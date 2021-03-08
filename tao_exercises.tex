@@ -3152,6 +3152,28 @@ exchangeable here, so that showing only one direction will be enough.
   \end{enumerate}
 \end{exo}
 
+\begin{exo}{5.5.5}{Establish an analogue of Proposition 5.4.14, in
+    which ``rational'' is replaced by ``irrational''.}
+
+  We have to prove that there exists an irrational number $s$ between
+  any real numbers $x, y$. Actually, we only know one concrete example
+  of irrational number so far in Tao's text: the number $\sqrt{2}$
+  (see Proposition 4.4.4). We thus should use it in this proof.
+
+  Let be $x, y$ two real numbers, and consider the two real numbers $x
+  + \sqrt{2}$ and $y + \sqrt{2}$. According to Proposition 5.4.14,
+  there exists a rational number $q$ such that $x + \sqrt{2} < q < y +
+  \sqrt{2}$; i.e. $x < q - \sqrt{2} < y$.
+
+  But it is easy to show that $q - \sqrt{2}$ cannot be a rational
+  number: if it was a rational, then we would have $q - \sqrt{2} =
+  q'$, with $q'$ a rational number. And then, we would have $\sqrt{2}
+  = q - q' \in \qq$, which would contradict Proposition 4.4.4.
+
+  Thus we can indeed construct an irrational number between any pair
+  of real numbers $x,y$.
+\end{exo}
+
 \end{document}
 
 %%% Local Variables:
