@@ -3174,6 +3174,83 @@ exchangeable here, so that showing only one direction will be enough.
   of real numbers $x,y$.
 \end{exo}
 
+\bigskip
+\begin{exo}{5.6.1}{Prove Lemma 5.6.6. (Hints: review the proof of
+    Proposition 5.5.12; proofs by contradiction will be useful.)}
+
+  The claims to prove are:
+
+  \begin{enumerate}[label=\emph{(\alph*)}]
+  \item If $y = x^{1/n}$, then $y^n = x$.
+
+    To prove this one, we can basically go back to Proposition 5.5.12
+    and adapt its proof, as suggested by Terence Tao. The general
+    sketch is as follows: by Definition 5.6.4, we have
+    $y := \sup \{z \in \rr \, | \, z \geq 0, z^n \leq x \}$. We should
+    show that both the assertions $y^n > x$ and $y^n < x$ lead to
+    contradictions with this definition. What could be such
+    contradictions? For instance, it could be the fact that there
+    exists a greater number than $y$ in the set
+    $\{z \in \rr \, | \, z \geq 0, z^n \leq x \}$, i.e. that $y$ is
+    \emph{not} an upper bound. To show that, we must find a small
+    number $\zeta > 0$ such that
+    $(y+\zeta) \in \{z \in \rr \, | \, z \geq 0, z^n \leq x \}$, or in
+    other words, $(y + \zeta)^n \leq x$. But another possible
+    contradiction could be to show that $y$ is an upper bound but not
+    the \emph{least} upper bound, i.e. that there exists a small
+    number $0 < \epsilon < 1$ such that $y - \epsilon$ is also an
+    upper bound of the set
+    $\{z \in \rr \, | \, z \geq 0, z^n \leq x \}$.
+
+    Starting with each of the two hypotheses $y^n > x$ and $y^n < x$,
+    we'll try to obtain one of these two contradictions.
+
+    \begin{itemize}
+    \item First suppose that we have $y^n < x$. Here we will refrain
+      from using the binomial theorem in the proof, but we will use it
+      as an intuition. Let be a small real number $0 < \epsilon <
+      1$. First, we will show that if $y^n < x$, then we can find a
+      real number $M > 0$ such that
+      $(y + \epsilon)^n \leq y^n + M\epsilon$. This would be easiest
+      with the binomial theorem, but it can also by shown by
+      induction. Indeed, the base case $n=1$ is obvious, since $M=1$
+      is okay. Now, let's suppose inductively that there exists a
+      natural number $M$ such that we have
+      $(y + \epsilon)^n \leq y^n + M \epsilon$. Thus:
+      \begin{align*}
+        (y + \epsilon)^{n+1} &\leq (y+\epsilon) (y^n + M\epsilon) \\
+                             &\leq y^{n+1} + \epsilon(My + y^n +
+                               M\epsilon) \\
+                             &\leq y^{n+1} + \epsilon \underbrace{(My + y^n +
+                               M)}_{:= M'} \text{ (because $\epsilon < 1$)}
+      \end{align*}
+      i.e. there exists also a natural number $M'$ such that
+      $(y + \epsilon)^{n+1} \leq y^{n+1} + M' \epsilon$, which closes
+      the induction. And thus, we have:
+      $(y + \epsilon)^n \leq y^n + M\epsilon < y^n < x$, for some
+      $\epsilon > 0$. This means that $y$ is no longer the supremum of
+      the set $\{z \in \rr \, | \, z \geq 0, z^n \leq x \}$, which
+      contradicts our initial hypothesis. Thus, $y^n < x$ leads to a
+      contradiction.
+    \item Then suppose that we have $y^n > x$. A similar approach
+      applies. Let $0 < \epsilon < 1$ be a small number. Although not
+      detailed here, it is now quite easy to show in a similar fashion
+      that there exists a real number $M$ such that
+      $(y - \epsilon)^n \geq y^n - M\epsilon$. But since $y^n > x$
+      (strictly), we know that there exists a small number $\zeta > 0$
+      such that $y^n > y^n - \zeta > x$. If we choose $\epsilon$ so
+      that we have $M\epsilon = \zeta$, then we get $(y - \epsilon)^n
+      > x$. This means that there exists a smaller number than $y$
+      which is also an upper bound for $\{z \in \rr \, | \, z \geq 0,
+      z^n \leq x \}$, which contradicts the definition of $y$ as the
+      supremum of this set.
+    \end{itemize}
+    Thus, both the statements $y^n > x$ and $y^n < x$ are impossible,
+    which allows us to conclude that $y^n = x$, as required.
+  \item
+  \end{enumerate}  
+\end{exo}
+
 \end{document}
 
 %%% Local Variables:
