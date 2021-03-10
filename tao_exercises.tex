@@ -3247,7 +3247,25 @@ exchangeable here, so that showing only one direction will be enough.
     \end{itemize}
     Thus, both the statements $y^n > x$ and $y^n < x$ are impossible,
     which allows us to conclude that $y^n = x$, as required.
-  \item
+
+    Note that, in other words, we've just showed that for any positive
+    real $x$, we have:
+    \begin{equation}
+      \label{eq:566a}
+      \left(x^{1/n}\right)^n = x
+    \end{equation}
+    and this is thus something we can use in the next steps.
+  \item Conversely, if $y^n=x$, then $y = x^{1/n}$. (Additional hint:
+    use the previous result, and Proposition 4.3.12.)
+
+    Suppose that we have $y^n = x$. Since the $n$-th root is
+    well-defined, the $n$-th roots of two equal numbers are also
+    equal, i.e. $\left(y^n \right)^{1/n} = x^{1/n}$. Now we can use
+    the insight from equation \eqref{eq:566a}. In one hand, we have
+    $\left[\left(y^n \right)^{1/n}\right]^n = y^n$; and this is equal
+    to $\left(x^{1/n}\right)^n$. But according to Proposition 4.3.12
+    (and its counterpart for the real numbers), the equality $y^n =
+    \left(x^{1/n}\right)^n$ implies $y = x^{1/n}$ as required.
   \end{enumerate}  
 \end{exo}
 
