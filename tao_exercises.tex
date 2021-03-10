@@ -3266,7 +3266,25 @@ exchangeable here, so that showing only one direction will be enough.
     to $\left(x^{1/n}\right)^n$. But according to Proposition 4.3.12
     (and its counterpart for the real numbers), the equality $y^n =
     \left(x^{1/n}\right)^n$ implies $y = x^{1/n}$ as required.
-  \end{enumerate}  
+  \item $x^{1/n}$ is a non-negative number, and is positive iff $x$ is
+    positive.
+
+    First, $x^{1/n}$ is obviously non-negative, since it is defined as
+    the supremum of a (non-empty) set of non-negative numbers.
+
+    Now let's prove that it is positive iff $x > 0$.
+    \begin{itemize}
+    \item If $x^{1/n} > 0$, then we have $\left(x^{1/n}\right)^n > 0^n$
+        according to (the counterpart for real numbers of) Proposition
+        4.3.12(b). But $0^n = 0$, and $\left(x^{1/n}\right)^n = x$
+        according to equation \eqref{eq:566a}. Thus we have indeed $x
+        > 0$.
+    \item If $x > 0$, let's suppose for the sake of contradiction that
+      $x^{1/n} = 0$. Then, still according to equation
+      \eqref{eq:566a}, we should have $x = \left(x^{1/n}\right)^n =
+      0$, which is a contradiction.
+    \end{itemize}
+  \end{enumerate}
 \end{exo}
 
 \end{document}
