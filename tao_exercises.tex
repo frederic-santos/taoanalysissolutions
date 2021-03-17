@@ -3307,7 +3307,39 @@ exchangeable here, so that showing only one direction will be enough.
       i.e. that $x \leq y$, which is a contradiction. Thus we have
       necessarily $x^{1/n} > y^{1/n}$.
     \end{itemize}
-  \item TODO
+  \item If $x > 1$, then $x^{1/k}$ is a decreasing (i.e.
+    $x^{1/k} < x^{1/l}$ whenever $k > l$) function of $k$. If
+    $0 < x < 1$, then $x^{1/k}$ is an increasing function of $k$. If
+    $x=1$, then $x^{1/k}$ for all $k$. Here $k$ ranges over the
+    positive integers.
+
+    \begin{itemize}
+    \item Let be $x=1$. We know that $1^k = 1$ for any positive
+      integer $k$. Now, applying equation \eqref{eq:566b} leads to $1
+      = 1^{1/k}$ for any positive integer $k$, as required.
+    \item Let be $x>1$, and two positive integers $k>l$. We have to
+      show that $x^{1/k} < x^{1/l}$. First, note that if $k > l$, then
+      we have $k = l+p$ with $p$ a positive integer (recall Definition
+      4.1.10). Let's suppose, for the sake of contradiction, that we
+      have $x^{1/k} \geq x^{1/l}$. Thus, we should have
+      $(x^{1/k})^{kl} \geq (x^{1/l})^{kl}$ according to Proposition
+      4.3.10(c), i.e. $x^l \geq x^k$ (we use equation \eqref{eq:566a}
+      for this latest claim). But this last inequality could be
+      written $x^l \geq x^{l+p}$, i.e. $1 \geq x^p$ by cancellation
+      law. But this is a contradiction: if $x>1$, we cannot have
+      $x^p \leq 1$ with $p$ a positive integer\footnote{Just perform a
+        quick inductive proof if needed.}. Thus, $x^{1/k}$ is indeed a
+      decreasing function of $k$ in this case.
+    \item Let be $0<x<1$, and two positive integers $k>l$ (thus, we
+      still have $k = l+p$ for a certain positive integer $p$). We
+      have to show that $x^{1/k} > x^{1/l}$. A very similar proof
+      applies. Let's suppose, for the sake of contradiction, that we
+      have $x^{1/k} \leq x^{1/l}$. We should thus have
+      $(x^{1/k})^{kl} \leq (x^{1/l})^{kl}$, i.e. $x^l \leq x^k$. This
+      means that $x^l \leq x^{l+p}$, i.e. $1 \leq x^p$, which is
+      impossible if $0<x<1$. This shows the contradiction and closes
+      the proof.
+    \end{itemize}
   \item We have $(xy)^{1/n} = x^{1/n}y^{1/n}$.
     \begin{itemize}
     \item On the one hand, we have $\left[(xy)^{1/n}\right]^n = xy$
