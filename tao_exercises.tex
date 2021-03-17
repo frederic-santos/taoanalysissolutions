@@ -3248,8 +3248,8 @@ exchangeable here, so that showing only one direction will be enough.
     Thus, both the statements $y^n > x$ and $y^n < x$ are impossible,
     which allows us to conclude that $y^n = x$, as required.
 
-    Note that, in other words, we've just showed that for any positive
-    real $x$, we have:
+    Note that, in other words, we've just showed that for any
+    non-negative real $x$, we have:
     \begin{equation}
       \label{eq:566a}
       \left(x^{1/n}\right)^n = x
@@ -3266,6 +3266,13 @@ exchangeable here, so that showing only one direction will be enough.
     to $\left(x^{1/n}\right)^n$. But according to Proposition 4.3.12
     (and its counterpart for the real numbers), the equality $y^n =
     \left(x^{1/n}\right)^n$ implies $y = x^{1/n}$ as required.
+
+    Note that, in other words, we've just showed that for any
+    non-negative real $x$, we have:
+    \begin{equation}
+      \label{eq:566b}
+      \left(x^n\right)^{1/n} = x
+    \end{equation}
   \item $x^{1/n}$ is a non-negative number, and is positive iff $x$ is
     positive.
 
@@ -3324,6 +3331,25 @@ exchangeable here, so that showing only one direction will be enough.
   \end{enumerate}
 \end{exo}
 
+\begin{exo}{5.6.3}{If $x$ is a real number, show that
+    $|x| = (x^2)^{1/2}$.}
+
+  To show that $(x^2)^{1/2}$ is equal to $|x|$, we should consider
+  three cases according to the definition of absolute values, and
+  prove that $(x^2)^{1/2} = 0$ if $x=0$, $(x^2)^{1/2} = x$ if $x > 0$,
+  and $(x^2)^{1/2} = -x$ if $x < 0$.
+
+  \begin{itemize}
+  \item If $x=0$, we have $x^2 = 0$, and thus $(x^2)^{1/2} = 0$
+    according to Lemma 5.6.6(c).
+  \item If $x>0$, we have $(x^2)^{1/2} = x$ according to equation
+    \eqref{eq:566b}, i.e. Lemma 5.6.6(b).
+  \item If $x<0$, then $-x > 0$. Also, we know that $x^2 = (-x)^2$ for
+    every real $x$. Thus, $(x^2)^{1/2} = ((-x)^2)^{1/2} = -x$ as
+    required, still by Lemma 5.6.6(b).
+  \end{itemize}
+  
+\end{exo}
 \end{document}
 
 %%% Local Variables:
