@@ -3363,6 +3363,50 @@ exchangeable here, so that showing only one direction will be enough.
   \end{enumerate}
 \end{exo}
 
+\begin{exo}{5.6.2}{Prove Lemma 5.6.9.}
+  Let $x,y > 0$ be positive reals, and let $q,r$ be rationals. In the
+  whole exercise, let's say that $q = a/b$ and $r = a'/b'$. The claims
+  to prove are:
+
+  \begin{enumerate}[label=\emph{(\alph*)}]
+  \item $x^q$ is a positive real.
+
+    By Definition 5.6.7, $x^q = (x^{1/b})^a$. Since
+    $x>0$, we know by Lemma 5.6.6(c) that $x^{1/b}$ is a positive
+    real. Thus, $x^q = (x^{1/b})^a$ is also positive (by the
+    counterpart for reals of Proposition 4.3.12(b)).
+  \item $x^{q+r} = x^q x^r$ and $(x^q)^r = x^{qr}$.
+    \begin{itemize}
+    \item We have $q+r = \frac{ab' + a'b}{bb'}$ (recall Definition
+      4.2.2). By Definition 5.6.7, $x^{q+r} = (x^{1/bb'})^{ab'+a'b}$.
+      But we also can write $q = ab'/bb'$ and $r = a'b/bb'$. We know
+      by Lemma 5.6.8 that our choices of numerators and denominators
+      for $q$ and $r$ do not matter as regards $x^q$ and $x^r$. Thus
+      we also have $x^q x^r = (x^{1/bb'})^{ab'}(x^{1/bb'})^{a'b}$,
+      which is equal to $(x^{1/bb'})^{ab'+a'b}$ by Proposition
+      4.3.12(a). Thus, $x^{q+r} = x^q x^r$.
+    \item We have:
+      \begin{align*}
+        ((x^q)^r)^{bb'} &= ((((x^{1/b})^a)^{1/b'})^{a'})^{bb'} \\
+                        &= (((x^{1/b})^a)^{1/b'})^{a'bb'} \\
+                        &= ((((x^{1/b})^a)^{1/b'})^{b'})^{a'b} \\
+                        &= ((x^{1/b})^a)^{a'b} \\
+                        &= ((x^{1/b})^b)^{aa'} \\
+                        &= x^{aa'}
+      \end{align*}
+      And, also:
+      \begin{align*}
+        (x^{qr})^{bb'} &= ((x^{1/bb'})^{aa'})^{bb'} \\
+                       &= (x^{1/bb'})^{aa'bb'} \\
+                       &= ((x^{1/bb'})^{bb'})^{aa'} \\
+                       &= x^{aa'}
+      \end{align*}
+      Thus, both expressions are equal, and this implies $x^{qr} =
+      (x^q)^r$ according to Proposition 4.3.12(c).
+    \end{itemize}
+  \end{enumerate}
+\end{exo}
+
 \begin{exo}{5.6.3}{If $x$ is a real number, show that
     $|x| = (x^2)^{1/2}$.}
 
