@@ -3420,9 +3420,26 @@ exchangeable here, so that showing only one direction will be enough.
       x^{-n} = 1/x^n, \; \; \forall n \in \zz
     \end{equation}
 
-    Now the exercise is straightforward: if $q = a/b$ with $b>0$,
+    Now the claim is straightforward: if $q = a/b$ with $b>0$,
     then $x^{-q} = (x^{1/b})^{-a} = 1/((x^{1/b})^a) = 1/x^q$ according
     to equation \eqref{eq:562c}.
+
+  \item If $q > 0$, then $x > y$ iff $x^q > y^q$.
+
+    First, note that if $q>0$, then $q=a/b$ with both $a, b$ as
+    positive integers.
+    \begin{itemize}
+    \item If $x > y$, then $x^{1/b} > y^{1/b}$ according to Lemma
+      5.6.6(d). And then, $(x^{1/b})^a > (y^{1/b})^a$ according to
+      (the counterpart for real numbers of) Proposition 4.3.12(b),
+      i.e. $x^q > y^q$.
+    \item If $x^q > y^q$, then by definition,
+      $(x^{1/b})^a > (y^{1/b})^a$, and both terms are positive. Thus,
+      by Lemma 5.6.6(d), we have
+      $((x^{1/b})^a)^{1/a} > ((y^{1/b})^a)^{1/a}$, i.e. $x^{1/b} >
+      y^{1/b}$. And, by Proposition 4.3.12(b), $x = (x^{1/b})^b >
+      (y^{1/b})^b = y$, as required.
+    \end{itemize}
   \end{enumerate}
 \end{exo}
 
