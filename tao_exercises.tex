@@ -3404,6 +3404,25 @@ exchangeable here, so that showing only one direction will be enough.
       Thus, both expressions are equal, and this implies $x^{qr} =
       (x^q)^r$ according to Proposition 4.3.12(c).
     \end{itemize}
+    
+  \item $x^{-q} = 1/x^q$.
+
+    First, note that Definitions 4.3.11 and 5.6.2 only say that
+    $x^{-n} = 1/x^n$ if $n$ is a \textit{positive} integer. But this
+    is actually true for any integer $n$: if $n=0$, then both $x^{-n}$
+    and $1/x^n$ are equal to $1$ and are thus equal; and if $n < 0$,
+    then there exists a positive integer $m$ such that $n = -m$, and
+    we have $x^{-n} = x^m$, $1/x^n = 1/x^{-m} = 1/(1/x^m) = x^m$ by
+    Definition 5.6.2. Thus in all cases,
+
+    \begin{equation}
+      \label{eq:562c}
+      x^{-n} = 1/x^n, \; \; \forall n \in \zz
+    \end{equation}
+
+    Now the exercise is straightforward: if $q = a/b$ with $b>0$,
+    then $x^{-q} = (x^{1/b})^{-a} = 1/((x^{1/b})^a) = 1/x^q$ according
+    to equation \eqref{eq:562c}.
   \end{enumerate}
 \end{exo}
 
