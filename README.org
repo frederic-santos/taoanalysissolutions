@@ -11,10 +11,11 @@ Note that this constitutes only /propositions/ of solutions; errors are still po
 
 * Current status
 ** Analysis I
-- [X] Chapter 2: completed
-- [ ] Chapter 3: in progress
-- [X] Chapter 4: (mostly) completed
-- [ ] Chapter 5: in progress
+- [X] Chapter 2: completed.
+- [ ] Chapter 3: numerous exercises are completed, but a substantial part of solutions are still missing.
+- [X] Chapter 4: (mostly) completed.
+- [X] Chapter 5: completed.
+- [ ] Chapter 6: in progress
 
 More to come.
 
