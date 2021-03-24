@@ -3365,8 +3365,8 @@ exchangeable here, so that showing only one direction will be enough.
 
 \begin{exo}{5.6.2}{Prove Lemma 5.6.9.}
   Let $x,y > 0$ be positive reals, and let $q,r$ be rationals. In the
-  whole exercise, let's say that $q = a/b$ and $r = a'/b'$. The claims
-  to prove are:
+  whole exercise, let's say that $q = a/b$ and $r = a'/b'$, with
+  $b, b' > 0$. The claims to prove are:
 
   \begin{enumerate}[label=\emph{(\alph*)}]
   \item $x^q$ is a positive real.
@@ -3441,7 +3441,49 @@ exchangeable here, so that showing only one direction will be enough.
       (y^{1/b})^b = y$, as required.
     \end{itemize}
 
-  \item TODO
+  \item If $x > 1$, then $x^q > x^r$ if and only if $q > r$. If
+    $x < 1$, then $x^q > x^r$ if and only if $q < r$.
+
+    First, note that we have:
+    \begin{equation}
+      \label{eq:562e}
+      (x^{1/b})^a = (x^a)^{1/b}
+    \end{equation}
+    because on the one hand,
+    $((x^{1/b})^a)^b = (x^{1/b})^{ab} = (x^{1/b})^{ba} =
+    ((x^{1/b})^b)^a = x^a$, where we used Proposition 4.3.12(a)
+    twice. And on the other hand, $((x^a)^{1/b})^b = x^a$ by Lemma
+    5.6.6(a). Thus, we have $((x^{1/b})^a)^b = ((x^a)^{1/b})^b$, which
+    implies $(x^{1/b})^a = (x^a)^{1/b}$ by Proposition
+    4.3.12(c). (This proof holds for $a \neq 0$, but equation
+    \eqref{eq:562e} is obvious if $a=0$.)
+
+    Now we go back to the main claims to prove.
+    \begin{itemize}
+    \item Let be $x > 1$. First suppose that $q > r$, and let's show
+      that $x^q > x^r$. If $q > r$, then we have $a/b > a'/b'$,
+      i.e. $ab'/bb' > a'b/bb'$, i.e. $ab' > a'b$. Since both $ab'$ and
+      $a'b$ are integers and $x>1$, we thus have $x^{ab'} >
+      x^{a'b}$. And, by Lemma 5.6.6(d), we have $(x^{ab'})^{1/bb'} >
+      (x^{a'b})^{1/bb'}$, i.e. $x^{ab'/bb'} > x^{a'b/bb'}$, and
+      finally $x^q > x^r$ by Lemma 5.6.8.
+
+      Now suppose that $x^q > x^r$ (note that both of them are
+      positive since $x > 1$), and let's show that $q > r$, i.e. that
+      $ab' > a'b$. Since we can also write $q = ab'/bb'$ and
+      $r=a'b/bb'$ (and this does not affect the result by Lemma
+      5.6.8), we have $x^{ab'} = (x^q)^{bb'} > (x^r)^{bb'} =
+      x^{a'b}$. And, if we multiply both sides by $x^{-a'b}$, which is
+      a positive number, we get $x^{ab'-a'b} > 1$. We see that, in this
+      inequality, we obviously cannot have $ab'-ab' = 0$. We cannot
+      have $ab' - a'b < 0$ either, because in this case, we would have
+      $ab' - a'b = -n$ with $n$ a positive integer. I.e., we would
+      have $x^{-n}>1$, i.e. $1/x^n > 1$, a fact which is incompatible
+      with our initial hypothesis $x>1$. Thus, we only have one
+      possibility: $ab' - a'b > 0$, i.e. $q>r$.
+    \item Let be $0 < x < 1$. Detailed proof is not given here, but is
+      similar to the previous case.
+    \end{itemize}
   \item $(xy)^q = x^q y^q$.
 
     We have:
