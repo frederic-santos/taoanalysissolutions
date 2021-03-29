@@ -3515,7 +3515,26 @@ exchangeable here, so that showing only one direction will be enough.
     every real $x$. Thus, $(x^2)^{1/2} = ((-x)^2)^{1/2} = -x$ as
     required, still by Lemma 5.6.6(b).
   \end{itemize}
-  
+\end{exo}
+
+\section{Limits of sequences}
+\begin{exo}{6.1.2}{Let $\seq{a_n}{m}$ be a sequence of real numbers,
+    and let $L$ be a real number. Show that $\seq{a_n}{m}$ converges
+    to $L$ iff, given any real $\epsilon > 0$, one can find an $N \geq
+    m$ such that $|a_n - L| \leq \epsilon$ for all $n \geq N$.}
+
+  \begin{itemize}
+  \item First suppose that $\seq{a_n}{m}$ converges to $L$. Let be
+    $\epsilon$ a positive real number. By Definition 6.1.5,
+    $\seq{a_n}{m}$ is eventually $\epsilon$-close to $L$, i.e., there
+    exists a natural $N \geq m$ such that $|a_n - L| \leq \epsilon$,
+    as required.
+  \item Now show to converse implication. Let be $\epsilon$ a positive
+    real. We know that we can find an $N \geq m$ such that
+    $|a_n - L| \leq \epsilon$ for all $n \geq N$, and thus
+    $\seq{a_n}{m}$ is eventually close to $\epsilon$. This is true for
+    all $\epsilon$, so that $\seq{a_n}{m}$ converges to $L$.
+  \end{itemize}
 \end{exo}
 \end{document}
 
