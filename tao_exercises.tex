@@ -3518,6 +3518,28 @@ exchangeable here, so that showing only one direction will be enough.
 \end{exo}
 
 \section{Limits of sequences}
+\begin{exo}{6.1.1}{Let $\seq{a_n}{0}$ be a sequence of real numbers,
+    such that $a_{n+1} > a_n$ for each natural number $n$. Prove that
+    whenever $n$ and $m$ are natural numbers such that $m > n$, then
+    we have $a_m > a_n$. (We refer to these sequences as increasing
+    sequences.)}
+
+  Let be $k = m-n$, so that $k > 0$ represents the difference between
+  the two indexes under comparison. Let's induct on $k$ to prove that
+  $a_{n+k} > a_n$ for all natural number $n$ and any $k > 0$.
+
+  \begin{itemize}
+  \item The base case is $k = 1$, i.e. $m = n+1$. We must show here
+    that $a_{n+1} > a_n$, but this is true by our initial hypothesis.
+  \item Now suppose inductively that this is true for a certain
+    natural $k$, i.e. that we have $a_{n+k} > a_n$ for all $n$. We
+    have to show that we have $a_{n+k+1} > a_n$ for all $n$. But we
+    know by our initial hypothesis that $a_{n+k+1} > a_{n+k}$, thus we
+    have $a_{n+k+1} > a_{n+k} > a_n$, i.e. by transitivity, $a_{n+k+1}
+    > a_n$ as required. This closes the induction.
+  \end{itemize}
+\end{exo}
+
 \begin{exo}{6.1.2}{Let $\seq{a_n}{m}$ be a sequence of real numbers,
     and let $L$ be a real number. Show that $\seq{a_n}{m}$ converges
     to $L$ iff, given any real $\epsilon > 0$, one can find an $N \geq
