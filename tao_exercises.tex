@@ -2783,6 +2783,85 @@ exchangeable here, so that showing only one direction will be enough.
 
 \bigskip
 
+\begin{exo}{5.4.1}{Prove Proposition 5.4.4.}
+  
+  Let $x$ be a real number.
+  \begin{enumerate}
+  \item First we show that at most one of the three statements above is
+    true. To do this, we show that all those statements are ``pairwise
+    incompatible''.
+    \begin{itemize}
+    \item First suppose that we have both $x = 0$ and $x$ positive. If
+      $x = 0$, then $x$ is the formal limit of the sequence
+      $0, 0, \ldots$. If $x$ is positive, then $x = \formallimit{a_n}$
+      with $a_n \geq c$ for all $n$ and a certain rational $c > 0$. By
+      Definition 5.3.1, this implies that both sequences
+      $0, 0, \ldots$ and $\seq{a_n}{1}$ must be equivalent Cauchy
+      sequences. I.e., for all $\epsilon > 0$, there must exist
+      $M \geq 1$ such that $|a_n - 0| \leq \epsilon$ for all
+      $n \geq M$. But taking $\epsilon = c/2$ leads to an obvious
+      contradiction: we cannot have both $a_n \geq c$ and
+      $|a_n| \leq c/2$ for all $n \geq M$. Thus, $x$ cannot be both
+      zero and positive.
+    \item A similar argument shows that $x$ cannot be both zero and
+      negative.
+    \item Finally, we show that $x$ cannot be both positive and
+      negative. If $x$ is positive, then $x = \formallimit{a_n}$, with
+      $\seq{a_n}{1}$ positively bounded away from $0$, i.e.
+      $a_n \geq c$ for a certain rational $c > 0$. Similarly, if $x$
+      is negative, then $x = \formallimit{b_n}$, with $\seq{b_n}{1}$
+      negatively bounded away from $0$, i.e. $b_n \leq -d$, or
+      $-b_n \geq d$, for a certain rational $d > 0$. But then,
+      according to Definition 5.3.1, $\seq{a_n}{1}$ and $\seq{b_n}{1}$
+      should be equivalent Cauchy sequences, i.e. for any rational
+      $\epsilon > 0$, there should exist $M \geq 1$ such that
+      $|a_n - b_n| \leq \epsilon$ for $n \geq M$. But since $a_n -b_n$
+      is positive, this also can be written simply
+      $a_n - b_n \leq \epsilon$. But since we have both $a_n \geq c$
+      and $-b_n \geq d$, we know that $a_n - b_n \geq c+d$ for all
+      natural numbers $n$, an obvious contradiction (take
+      $\epsilon = (c+d)/2$).
+    \item Thus, at most one of the three statements is true.
+    \end{itemize}
+  \item Next we show that at least one of the statements ``$x$ is
+    zero'', ``$x$ is positive'', ``$x$ is negative'' is
+    true. Actually, if $x=0$, we know that the statement ``$x$ is
+    zero'' is true, so we're done. We can thus suppose that
+    $x \neq 0$, and we have just to show that $x$ is either positive
+    or negative.
+
+    If $x \neq 0$, then by Lemma 5.3.14, $x = \formallimit{a_n}$ with
+    $\seq{a_n}{1}$ bounded away from $0$, i.e. there exists $c > 0$
+    such that $|a_n| \geq c$ for any natural $n$.
+
+    It turns out that, for any Cauchy sequence $\seq{a_n}{1}$, if
+    $\seq{a_n}{1}$ is bounded away from $0$, it is either eventually
+    positively bounded away from $0$, or eventually negatively bounded
+    away from $0$.
+
+    Indeed, suppose that we have at the same time
+    $|a_n| \geq \epsilon$ for all $n \geq N$, $a_k \geq \epsilon$ for
+    some $k \geq N$ and $a_j \leq -\epsilon$ for some $j \geq
+    N$. In such a case, we would have by triangular inequality:
+    \[
+      |a_k - a_j| \geq ||a_k| - |a_j|| \geq |\epsilon + \epsilon| \geq
+      2\epsilon
+    \]
+
+    Thus, for all $N$, we could find two indexes $j,k \geq N$ such
+    that $|a_k - a_j| > \epsilon$, which contradicts that fact that
+    $\seq{a_n}{1}$ is a Cauchy sequence. Consequently, the Cauchy
+    sequence $\seq{a_n}{1}$ is either eventually positively bounded
+    away from 0, or eventually negatively bounded away from 0.
+
+    In the first case, $x = \formallimit{a_n}$ is a positive
+    number\footnote{Actually, we also have to define an equivalent
+      sequence $\seq{b_n}{1}$ defined by $a_n = b_n$ if $n \geq N$ and
+      $b_n = 1$ otherwise to get what we want.}, and in the second
+    case it is a negative number.
+  \end{enumerate}
+\end{exo}
+
 \begin{exo}{5.4.2}{Prove the remaining claims in Proposition 5.4.7.}
 
   Let $x, y, z$ be real numbers. Those claims are as follows:
