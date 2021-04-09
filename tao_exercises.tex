@@ -3708,6 +3708,30 @@ exchangeable here, so that showing only one direction will be enough.
     to $c$.
   \end{itemize}
 \end{exo}
+
+\begin{exo}{6.1.5}{Prove Proposition 6.1.12.}
+
+  We must prove that convergent sequences are Cauchy sequences. Let
+  $\seq{a_n}{m}$ be a convergent sequence to $c$, and let's prove that
+  $\seq{a_n}{m}$ is a Cauchy sequence.
+
+  Let be $\epsilon > 0$ a positive real number. By Definition 6.1.5,
+  there exists a natural number $N \geq m$ such that
+  $n \geq N \Longrightarrow |a_n - c| \leq \epsilon/2$.
+
+  Now let be $j,k \geq N$ two natural numbers. We have, by triangular
+  inequality:
+  \begin{align*}
+    |a_j - a_k| &= |a_j - c + c - a_k| \\
+                & \leq |a_j - c| + |a_k - c| \\
+                &\leq \epsilon/2 + \epsilon/2 \\
+                &\leq \epsilon
+  \end{align*}
+
+  Thus, we have showed that there exists $N \geq m$ such that, for any
+  natural numbers $j, k \geq N$, we have $|a_j - a_k| \leq \epsilon$.
+  This means that $\seq{a_n}{m}$ is indeed a Cauchy sequence.  
+\end{exo}
 \end{document}
 
 %%% Local Variables:
