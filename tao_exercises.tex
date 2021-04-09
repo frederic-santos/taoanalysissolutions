@@ -3671,6 +3671,43 @@ exchangeable here, so that showing only one direction will be enough.
     proved that $\seq{a_n}{m'}$ converges to $c$.
   \end{itemize}
 \end{exo}
+
+\begin{exo}{6.1.4}{Let $\seq{a_n}{m}$ be a sequence of real numbers,
+    let $c$ be a real number, and let $k \geq 0$ be a non-negative
+    integer. Show that $\seq{a_n}{m}$ converges to $c$ if and only if
+    $\seq{a_{n+k}}{m}$ converges to $c$.}
+
+  This exercise is pretty similar to the previous
+  one.\footnote{Actually, it would be possible to use Exercise 6.1.3
+    here, but, quite unexpectedly, this would just make the proof a
+    little harder, because it would require to use some notions (like
+    composition of functions, or intervals) that were very rarely used
+    until now. The present proof is easier to write at this point of
+    our knowledge.}
+  
+  \begin{itemize}
+  \item First, suppose that $\seq{a_n}{m}$ converges to $c$. Let
+    $\epsilon > 0$ be a real number. We must show that there exists
+    $M \geq m$ such that
+    $n+k \geq M \Rightarrow |a_{n+k} - c| \leq \epsilon$. We know that
+    there exists $N \geq m$ such that
+    $n \geq N \Rightarrow |a_n -c| \leq \epsilon$. But for any
+    $k \leq 0$, we have $n + k \geq n$, so that as soon as $n \geq N$,
+    we have $n+k \geq n \geq N$, and thus $|a_{n+k} - c| \leq
+    \epsilon$. So, choosing $M := N$ is suitable here, and we have
+    showed the first part.
+  \item Now prove the converse implication: suppose that
+    $\seq{a_{n+k}}{m}$ converges to $c$. We want to show that there
+    exists $N \geq m$ such that
+    $n \geq N \Rightarrow |a_n -c| \leq \epsilon$. We already know
+    that there exists $M \geq m$ such that
+    $n \geq M \Rightarrow |a_{n+k} - c| \leq \epsilon$. Let be
+    $N := M+k$. We can see that if $n \geq N$, we have $n \geq M+k$,
+    i.e. $n-k \geq M$, and thus $|a_{(n-k)+k} - c| \leq \epsilon$ as
+    required. So, $N := M+k$ is suitable, and $\seq{a_n}{m}$ converges
+    to $c$.
+  \end{itemize}
+\end{exo}
 \end{document}
 
 %%% Local Variables:
