@@ -3732,6 +3732,62 @@ exchangeable here, so that showing only one direction will be enough.
   natural numbers $j, k \geq N$, we have $|a_j - a_k| \leq \epsilon$.
   This means that $\seq{a_n}{m}$ is indeed a Cauchy sequence.  
 \end{exo}
+
+\bigskip
+
+\begin{exo}{6.1.6}{Prove Proposition 6.1.15; i.e. that formal limits
+    are genuine limits.}
+
+  Let $\seq{a_n}{m}$ be a Cauchy sequence of real numbers, and
+  $L := \formallimit{a_n}$. We have to show that $\seq{a_n}{m}$
+  converges to $L$.
+
+  Now we assume, for the sake of contradiction, that $\seq{a_n}{m}$ is
+  not eventually $\epsilon$-close to $L$, i.e. that there exists
+  $\epsilon > 0$ such that:
+
+  \begin{equation}
+    \label{eq:616-nec}
+    \forall N \geq m, \, \exists n \geq N \; : \; |a_n - L| > \epsilon
+  \end{equation}
+
+  Precisely, let's consider this positive real $\epsilon$ in what
+  follows. Also, recall that $\seq{a_n}{m}$ is a Cauchy sequence, so
+  that:
+  \begin{equation}
+    \label{eq:616-cauchy}
+    \exists T \geq m \; : \; j,k \geq T \Longrightarrow |a_j - a_k |
+    \leq \epsilon/2
+  \end{equation}
+
+  According to \eqref{eq:616-nec}, there exists $t \geq T$ such that
+  $|a_t - L| > \epsilon$. And since $t \geq T$, let's also consider
+  any $s \geq T$: according to \eqref{eq:616-cauchy}, we have $|a_s -
+  a_t| \leq \epsilon /2$. In particular, let's now fix $t$ so that we
+  can rephrase this property as:
+  \begin{equation}
+    \label{eq:616-c}
+    \forall s \geq T, \; |a_s - a_t| \leq \epsilon/2 \; \; \; ; \; \; \;
+    \text{i.e., } a_t - \epsilon/2 \leq a_s \leq a_t + \epsilon/2
+  \end{equation}
+
+  The inequality $|a_t - L| > \epsilon$ opens two possible cases:
+  \begin{itemize}
+  \item if $a_t > L + \epsilon$, then we have from \eqref{eq:616-c}:
+    \[ L + \epsilon - \epsilon/2 < a_t - \epsilon/2 \leq a_s \]
+    so that $L + \epsilon/2 \leq a_s$ for all $s \geq T$. According to
+    Exercise 5.4.8, we should conclude that $L + \epsilon/2 \leq L$,
+    which is clearly a contradiction.
+  \item if $a_t < L - \epsilon$, then then we have from \eqref{eq:616-c}:
+    \[ a_s \leq a_t + \epsilon/2 \leq L - \epsilon + \epsilon/2\]
+    so that $a_s \leq L - \epsilon/2$ for all $s \geq T$. According to
+    Exercise 5.4.8, we should conclude that $L \leq L - \epsilon/2$,
+    which is also a contradiction.
+  \end{itemize}
+
+  Thus, necessarily, $\seq{a_n}{m}$ is eventually $\epsilon$-close to
+  $L$ for any $\epsilon > 0$, i.e. $\seq{a_n}{m}$ converges to $L$.
+\end{exo}
 \end{document}
 
 %%% Local Variables:
