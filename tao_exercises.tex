@@ -3788,6 +3788,38 @@ exchangeable here, so that showing only one direction will be enough.
   Thus, necessarily, $\seq{a_n}{m}$ is eventually $\epsilon$-close to
   $L$ for any $\epsilon > 0$, i.e. $\seq{a_n}{m}$ converges to $L$.
 \end{exo}
+
+\bigskip
+
+\begin{exo}{6.1.7}{Show that Definition 6.1.16 is consistent with
+    Definition 5.1.12 (i.e., prove an analogue of Proposition 6.1.4
+    for bounded sequences instead of Cauchy sequences).}
+
+  Let be $\seq{a_n}{m}$ a sequence of real\footnote{If $\seq{a_n}{m}$ is
+    a sequence of rational numbers, there is literally nothing to
+    prove, so that we can skip this case.} numbers.
+
+  \begin{itemize}
+  \item First suppose that $\seq{a_n}{m}$ is bounded according to
+    Definition 5.1.12. It means that there exists a non-negative
+    rational $M \geq 0$ such that $|a_n| \leq M$ for all $n \geq m$.
+    We have to show that there exists a positive real $M' > 0$ such
+    that $|a_n| \leq M'$ for all $n \geq m$. If we just take $M' := M
+    +1$, we have $M' > M$ and $M' \in \rr$ because $M' \in \qq$. Thus,
+    we have $|a_n| \leq M < M'$ for all $n \geq m$, as required. Thus,
+    $\seq{a_n}{m}$ is bounded according to Definition 6.1.16.
+  \item Now suppose that $\seq{a_n}{m}$ is bounded according to
+    Definition 6.1.16. It means that there exists a positive real
+    number $M' > 0$ such that $|a_n| \leq M'$ for all $n \geq m$. We
+    have to show that there exists a non-negative rational number
+    $M \geq 0$ such that $|a_n| \leq M$ for all $n \geq m$. According
+    to Proposition 5.4.12, there exists a positive integer $N$ such
+    that $M' \leq N$. This implies that $|a_n| \leq M' \leq N$ for all
+    $n \geq m$. And since $N$ is a positive integer, it's also a
+    non-negative rational. Thus, $\seq{a_n}{m}$ is bounded according
+    to Definition 5.1.12.
+  \end{itemize}
+\end{exo}
 \end{document}
 
 %%% Local Variables:
