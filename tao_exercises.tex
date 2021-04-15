@@ -3820,6 +3820,71 @@ exchangeable here, so that showing only one direction will be enough.
     to Definition 5.1.12.
   \end{itemize}
 \end{exo}
+
+\begin{exo}{6.1.8}{Prove Theorem 6.1.19 about limit laws.}
+
+  We'll prove each statement successively.
+
+  \begin{enumerate}[label=\emph{(\alph*)}]
+  \item Let be $\epsilon > 0$. We have to prove that there exists a
+    natural number $N \geq m$ such that for all $n \geq N$, we have
+    $|(a_n + b_n) - (x+y)| \leq \epsilon$.
+
+    Since $\seq{a_n}{m}$ converges to $x$, there exists $N_1 \geq m$
+    such that $n \geq N_1 \Rightarrow |a_n - x| \leq \epsilon/2$.
+
+    Similarly, there exists $N_2 \geq m$ such that
+    $n \geq N_2 \Rightarrow |b_n - y| \leq \epsilon/2$.
+
+    Let be $N := \max(N_1, N_2)$. Thus, by triangular inequality, we
+    have for all $n \geq N$:
+    \begin{align*}
+      |(a_n + b_n) - (x+y)| &\leq |a_n + x| + |b_n + y| \\
+                            & \leq \epsilon/2 + \epsilon/2 \\
+                            & \leq \epsilon
+    \end{align*}
+    as required. This closes the proof.
+  \item Let be $\epsilon > 0$. We have to prove that there exists a
+    natural number $N \geq m$ such that for all $n \geq N$, we have
+    $|a_nb_n - xy| \leq \epsilon$.
+
+    Let's start by some algebraic manipulations:
+    \begin{align*}
+      |a_nb_n - xy| &= |a_nb_n - a_ny + a_ny  - xy| \\
+                    &= |a_n(b_n - y) + y (a_n-x)| \\
+                    & \leq |a_n| \times |b_n -y| + |y| \times |a_n -x|
+    \end{align*}
+
+    Hopefully, there exists an upper bound for each term of this last
+    expression, at least eventually. Indeed:
+
+    \begin{itemize}
+    \item Since $\seq{a_n}{m}$ is convergent, it is bounded according
+      to Corollary 6.1.17. Thus, there exists $M \geq 0$ such that
+      $|a_n| \leq M$ for all $n \geq m$.
+    \item Since $\seq{b_n}{m}$ converges to $y$, there exists an
+      integer $N_b \geq m$ such that
+      $n \geq N_b \Rightarrow |b_n - y| \leq \frac{\epsilon}{2M}$.
+    \item Since $\seq{a_n}{m}$ converges to $x$, there exists an
+      integer $N_a \geq m$ such that
+      $n \geq N_b \Rightarrow |a_n - x| \leq \frac{\epsilon}{2(|y|+1)}$.
+      (Note that we don't choose $\frac{\epsilon}{2|y|}$, because we
+      don't know whether $|y| \neq 0$ or not, so we need an additional
+      precaution.)
+    \end{itemize}
+
+    Let be $N := \max(N_a, N_b)$. For $n \geq N$, we thus have:
+    \begin{align*}
+      |a_nb_n - xy| & \leq |a_n| \times |b_n -y| + |y| \times |a_n -x|
+      \\
+                    &\leq M \times \frac{\epsilon}{2M} + |y| \times
+                      \frac{\epsilon}{2(|y|+1)} \\
+                    &\leq \epsilon/2 + \epsilon/2 \\
+                    &\leq \epsilon
+    \end{align*}
+    as required. This closes the proof.
+  \end{enumerate}
+\end{exo}
 \end{document}
 
 %%% Local Variables:
