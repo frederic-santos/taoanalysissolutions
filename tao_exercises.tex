@@ -31,6 +31,7 @@
 \newcommand{\floor}[1]{\lfloor #1 \rfloor}
 \newcommand{\formallimit}[1]{\text{LIM}_{n \rightarrow \infty} #1}
 \newcommand{\seq}[2]{(#1)_{n=#2}^\infty}
+\newcommand{\limit}[1]{\text{lim}_{n \rightarrow \infty} #1}
 \renewcommand{\epsilon}{\varepsilon}
 % Lemmas:
 \usepackage{amsthm}
@@ -3883,6 +3884,19 @@ exchangeable here, so that showing only one direction will be enough.
                     &\leq \epsilon
     \end{align*}
     as required. This closes the proof.
+  \item Here, a direct proof would be possible (and short), for
+    instance by using Proposition 4.3.3(d). But following Tao's hint,
+    let's use the previous results of this exercise instead. Let's
+    consider the constant sequence $\seq{c_n}{m} = c, c, c, \ldots$;
+    so that the sequence $\seq{ca_n}{m}$ is actually the product of the
+    two sequences $\seq{a_n}{m}$ and $\seq{c_n}{m}$. Obviously,
+    $\seq{c_n}{m}$ converges to $c$, so that according to statement
+    \emph{(b)}, we have $\limit{ca_n} = \limit{c_n a_n} = \limit{c_n}
+    \limit{a_n} = cx$, which closes the proof.
+  \item According to \emph{(c)} taking $c = -1$, we have
+    $\limit{(-b_n)} = - \limit{b_n} = -y$. Furthermore, according to
+    \emph{(a)}, we have $\limit{(a_n + (-b_n))} = \limit{a_n} +
+    \limit{(-b_n)} = x - y$, as requested.
   \end{enumerate}
 \end{exo}
 \end{document}
