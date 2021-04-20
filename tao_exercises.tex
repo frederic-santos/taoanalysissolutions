@@ -3897,6 +3897,113 @@ exchangeable here, so that showing only one direction will be enough.
     $\limit{(-b_n)} = - \limit{b_n} = -y$. Furthermore, according to
     \emph{(a)}, we have $\limit{(a_n + (-b_n))} = \limit{a_n} +
     \limit{(-b_n)} = x - y$, as requested.
+  \item Following Tao's hint, we begin by proving an intermediate
+    result, which is the following: if $\seq{b_n}{m}$ is a sequence of
+    non-zero real numbers, and converges to $y \neq 0$, then
+    $\seq{b_n}{m}$ is bounded away from zero. Note that, by the
+    ``second formula'' of triangular inequality, we have:
+    \begin{equation}
+      \label{eq:618e}
+      |y| - |b_n| \leq \left| |y| - |b_n| \right| \leq |y - b_n|
+    \end{equation}
+    Furthermore, since $\seq{b_n}{m}$ converges to $y$, there exists a
+    positive integer $M \geq m$ such that, for all $n \geq M$, we have
+    $|b_n - y| \leq |y|/2$. This result, along with equation
+    \eqref{eq:618e}, implies that $|b_n| \geq |y|/2$ for all $n \geq
+    M$, so that $\seq{b_n}{m}$ is eventually bounded away from zero,
+    for $n \geq M$.
+    But since $b_n \neq 0$ for all $n$, just consider $c = \min(|b_m|,
+    |b_{m+1}|, \ldots, |b_{M-1}|, |y|/2)$: we thus have $|b_n| \geq c$ for
+    all $n \geq m$, and $c$ is positive. Thus, $\seq{b_n}{m}$ is
+    indeed bounded away from zero.
+
+    Note that saying ``$\seq{b_n}{m}$ is bounded away from zero'', or
+    $|b_n| \geq c$ for all $n \geq m$, means that $|1/b_n| \leq 1/c$,
+    i.e. that $\seq{1/b_n}{m}$ is bounded.
+
+    Let be $\epsilon > 0$ a positive real number. Since $\seq{b_n}{m}$
+    converges to $y$, there exists a positive integer $N$ such that
+    for all $n \geq N$, we have $|y-b_n| \leq \epsilon|y|c$ (which is
+    a positive real number, because $|y| \neq 0$. Now let's
+    consider:
+    \begin{align*}
+      \left| \frac{1}{b_n} - \frac{1}{y} \right| &= \left| \frac{y -
+                                                   b_n}{yb_n} \right|
+      \\
+                                                 &= \left| \frac{1}{y}
+                                                   \right| \times
+                                                   \left|
+                                                   \frac{1}{b_n}
+                                                   \right| \times
+                                                   \left|y - b_n
+                                                   \right| \\
+                                                 & \leq \frac{1}{|y|}
+                                                   \times
+                                                   \frac{1}{c} \times
+                                                   |y - b_n| \\
+                                                 & \leq \frac{1}{|y|}
+                                                   \times
+                                                   \frac{1}{c} \times
+                                                   \epsilon |y| c
+                                                   \; \; \text{ for
+                                                   all } n \geq N\\
+                                                 &\leq \epsilon
+    \end{align*}
+    This means that, for any positive real $\epsilon$, one can find a
+    positive integer $N \geq m$ such that $\left| \frac{1}{b_n} -
+      \frac{1}{y} \right| \leq \epsilon$. Thus, $\seq{1/b_n}{m}$
+    converges to $1/y$.
+  \item This is a direct consequence of the parts \emph{(b)} and
+    \emph{(e)}. Indeed, by part \emph{(b)}, we have: $\limit{(a_n /
+      b_n)} = \limit{(a_n \times 1/b_n)} = \limit{a_n} \times \limit{1 /
+      b_n}$. And by part \emph{(e)}, we have $\limit{1/b_n} =
+    1/\limit{b_n}$, which gives the property we wanted to show.
+  \item We must show that $\limit{\max(a_n, b_n)} = \max(x, y)$. We
+    immediately see that we have two different cases: if $x \geq y$,
+    then $\max(x, y) = x$ and then we must show that $\limit{\max(a_n,
+      b_n)} = x$; else if $x < y$, then $\max(x,y) = y$ and we must
+    show that $\limit{\max(a_n, b_n)} = y$. Let's consider those two
+    cases separately. In what follows, let be $\epsilon > 0$ a
+    positive real.
+    \begin{itemize}
+    \item If $x \geq y$, we actually have to prove that there exists a
+      positive integer $N \geq m$ such that for all $n \geq N$, we
+      have $|\max(a_n, b_n) - x| \leq \epsilon$. We already know
+      that $\seq{a_n}{m}$ converges to $x$, thus:
+      \begin{equation}
+        \label{eq:618ga}
+        \exists N_a \geq m \; : \; n \geq N_a \Longrightarrow |a_n -
+        x| \leq \epsilon
+      \end{equation}
+      Similarly, since $\seq{b_n}{m}$ converges to $y$:
+      \begin{equation}
+        \label{eq:618gb}
+        \exists N_b \geq m \; : \; n \geq N_b \Longrightarrow |b_n -
+        y| \leq \epsilon
+      \end{equation}
+      Now let's consider $N := \max(N_a, N_b)$, which is a positive
+      integer. For all $n \geq N$, we have both
+      $x - \epsilon \leq a_n \leq \epsilon +x$ by \eqref{eq:618ga},
+      and $y - \epsilon \leq b_n \leq \epsilon +y \leq \epsilon +x$ by
+      \eqref{eq:618gb}. Combining those two relationships\footnote{We
+        also use the property that if $x \leq a$ and $y \leq a$, then
+        $\max(x,y) \leq a$.} leads to:
+      \[ x-\epsilon \leq a_n \leq \max(a_n, b_n) \leq \epsilon +x\]
+      whose the most important part is
+      $x-\epsilon \leq \max(a_n, b_n) \leq x+\epsilon$, which is
+      equivalent to $|\max(a_n, b_n) - x| \leq \epsilon$, as requested
+      initially. This closes the proof for this first case.
+    \item If $x < y$, the proof is very similar. We have to prove that
+      there exists a positive integer $N \geq m$ such that for all
+      $n \geq N$, we have $|\max(a_n, b_n) - y| \leq \epsilon$. Once
+      again, we can combine the previous results to get:
+      \[ y-\epsilon \leq b_n \leq \max(a_n, b_n) \leq \epsilon +y\]
+      i.e. $|\max(a_n, b_n) - y| \leq \epsilon$ as requested.
+    \end{itemize}
+  \item Taking the inspiration in the way we defined the greatest
+    lower bound from the least upper bound (Exercise 5.5.1), we could
+    first note that $\min(a,b) = -\max(-a, -b)$. Then, this would be a
+    direct consequence from part \emph{(c)} and \emph{(g)}.
   \end{enumerate}
 \end{exo}
 \end{document}
