@@ -4006,6 +4006,52 @@ exchangeable here, so that showing only one direction will be enough.
     direct consequence from part \emph{(c)} and \emph{(g)}.
   \end{enumerate}
 \end{exo}
+
+\begin{exo}{6.1.9}{Explain why Theorem 6.1.19(f) fails when the limit
+    of the denominator is $0$.}
+
+  Theroem 6.1.19(f) says that if $\seq{a_n}{m}$ converges to $x$ and
+  $\seq{b_n}{m}$ converges to $y \neq 0$ (with $b_n \neq 0$ for all $n
+  \geq m$), then $\seq{a_n/b_n}{m}$ converges to $x/y$. If $y = 0$,
+  the number $x/y$ simply does not exist, so that the statement is
+  pointless.
+
+  Note however that the sequence $\seq{a_n/b_n}{m}$ \emph{may}
+  converge even if we have $\lim{b_n} = 0$: think of the situation
+  $a_n = b_n = 1/n$, for instance.
+\end{exo}
+
+\bigskip
+
+\begin{exo}{6.1.10}{Show that the concept of equivalent Cauchy
+    sequence, as defined in Definition 5.2.6, does not change if
+    $\epsilon$ is required to be positive real instead of positive
+    rational. More precisely, if $\seq{a_n}{0}$ and $\seq{b_n}{0}$ are
+    sequences of reals, show that $\seq{a_n}{0}$ and $\seq{b_n}{0}$
+    are eventually $\epsilon$-close for every rational $\epsilon >
+    0$ if and only if they are eventually $\epsilon$-close for every
+    real $\epsilon > 0$.}
+
+  Following Tao's hint, we just adapt the proof of Proposition 6.1.4.
+  
+  \begin{itemize}
+  \item First suppose that $\seq{a_n}{0}$ and $\seq{b_n}{0}$ are
+    eventually $\epsilon$-close for every real $\epsilon > 0$. In
+    particular, this means that they are $\epsilon$-close for any
+    \emph{rational} $\epsilon > 0$, so there is nothing to prove.
+  \item Then suppose that $\seq{a_n}{0}$ and $\seq{b_n}{0}$ are
+    eventually $\epsilon$-close for every rational $\epsilon > 0$. Now
+    let $\epsilon > 0$ be a \emph{real} number. According to
+    Proposition 5.4.12, there exists a positive rational $q$ such that
+    $q \leq \epsilon$. Since $q$ is a rational, $\seq{a_n}{0}$ and
+    $\seq{b_n}{0}$ are $q$-close, according to our initial hypothesis,
+    i.e., $|a_n - b_n| \leq q \leq \epsilon$ for all $n$ greater than
+    some positive integer $N$. In particular, this means that
+    $\seq{a_n}{0}$ and $\seq{b_n}{0}$ are eventually $\epsilon$-close,
+    as requested.
+  \end{itemize}
+  
+\end{exo}
 \end{document}
 
 %%% Local Variables:
