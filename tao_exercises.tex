@@ -4050,7 +4050,82 @@ exchangeable here, so that showing only one direction will be enough.
     $\seq{a_n}{0}$ and $\seq{b_n}{0}$ are eventually $\epsilon$-close,
     as requested.
   \end{itemize}
+\end{exo}
+
+\begin{exo}{6.2.1}{Prove Proposition 6.2.5.}
   
+  Hereafter, $x, y, z$ are extended real numbers. Thus, they can be
+  either real numbers, or $\pm \infty$.
+
+  \begin{enumerate}[label=\emph{(\alph*)}]
+  \item We have to show that $x \leq x$. We have three cases here. If
+    $x$ is a real number, this is an obvious statement. If
+    $x = + \infty$, then by Definition 6.2.3(b), we have
+    $x \leq +\infty$ for all extended real $x$, so that the claim
+    $x \leq x$ is still true. Similarly, if $x = - \infty$, we have
+    $- \infty \leq x$ for all extended real $x$ according to
+    Definition 6.2.3(c).
+  \item We have to show the trichotomy of extended real numbers, i.e.
+    that we always have exactly one of the statements $x < y$, $x = y$
+    or $x > y$. Both $x$ and $y$ can be either real numbers, $+\infty$
+    or $- \infty$, so that we have nine cases to study exhaustively.
+    \begin{enumerate}[label=(\roman*)]
+    \item If both $x, y$ are real numbers, then this is simply
+      Proposition 5.4.7(a)\footnote{Actually, the statement (a) from
+        Proposition 4.2.9, and applied to reals by Proposition 5.4.7,
+        but I'll shorten this for the rest of the exercise.}.
+    \item If $x$ is a real number and $y = + \infty$, then we have
+      $x \leq y$ by Definition 6.2.3(b), and we also have $x \neq y$
+      by Definition 6.2.1. Thus, $x < y$ is true, and the two other
+      statements $x = y$ and $x > y$ are false. (It is easy to see
+      that $x > y$ is false, because it corresponds to none of the
+      cases listed in Definition 6.2.3.)
+    \item If $x$ is a real number and $y = - \infty$, then we have $y
+      \leq x$ according to Definition 6.2.3(c), and $x \neq y$
+      according to Definition 6.2.1. Thus, $x > y$ is true; whereas
+      $x=y$ is false, and $x<y$ is also false because it corresponds
+      to none of the cases listed in Definition 6.2.3.
+    \item If $x = +\infty$ and $y$ is a real number, then we have
+      $x \geq y$ by Definition 6.2.3(b), and $x \neq y$ by Definition
+      6.2.1. Thus, $x > y$ is true; whereas $x = y$ is false, and
+      $x<y$ is also false because it corresponds to none of the cases
+      listed in Definition 6.2.3.
+    \item If $x = +\infty$ and $y = +\infty$, then we have $x = y$.
+      Thus, both statements $x<y$ and $x>y$ are incompatible with this
+      one. It means that exactly one statement ($x=y$) is true in this
+      case.
+    \item If $x = +\infty$ and $y = -\infty$, then we have $y \leq x$
+      by Definition 6.2.3(b-c). According to Definition 6.2.1, we also
+      have $x \neq y$. Thus, $y > x$ is true; whereas $x=y$ is false,
+      and $x > y$ is also false because it corresponds to none of the
+      cases listed in Definition 6.2.3.
+    \item The three last cases where $x = - \infty$ and $y$ is either
+      $- \infty$, a real, or $+ \infty$, can be shown in a similar
+      fashion, and are ``symmetrical'' with all previous proofs.
+    \end{enumerate}
+  \item We have to show that if $x \leq y$ and $y \leq z$, then $x
+    \leq z$. We'll choose wisely below some of the cases that really
+    make sense in such a siuation.
+    \begin{itemize}
+    \item If $z = +\infty$, then according to Definition 6.2.3(b),
+      $x \leq z$ is always true, regardless of the value of $y$.
+    \item If $z = -\infty$, only possible situation makes sense: the
+      situation where $x=y=z=-\infty$. Thus, the transitivity
+      ($x \leq z$) is still true in this case.
+    \item If $z$ is a real number, then $x, y$ cannot be $+ \infty$.
+      If $y = -\infty$, then necessarily $x = -\infty$, and we thus
+      have $x \leq z$. If $x, y$ are real numbers, then it is simply
+      Proposition 5.4.7(c). And if $y$ is a real number and
+      $x = -\infty$, then $x \leq z$ by Definition 6.2.3(c).
+    \end{itemize}
+  \item Finally we have to show that if $x \leq y$, then $-y \leq -x$.
+    If $y = +\infty$, then $-y = -\infty$ and thus $-y \leq -x$ for
+    all extended real $-x$, thus the statement is true in this case.
+    If $y = - \infty$, then we have necessarily $x = -\infty$, and
+    thus $-x = -y$, so that the statement still holds.
+    Finally, if $y$ is a real number, then the statement is simply
+    Proposition 5.4.7 if $x$ is real, and is obvious if $x = -\infty$.
+  \end{enumerate}
 \end{exo}
 \end{document}
 
