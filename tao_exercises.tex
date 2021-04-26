@@ -32,6 +32,7 @@
 \newcommand{\formallimit}[1]{\text{LIM}_{n \rightarrow \infty} #1}
 \newcommand{\seq}[2]{(#1)_{n=#2}^\infty}
 \newcommand{\limit}[1]{\text{lim}_{n \rightarrow \infty} #1}
+\newcommand{\extrr}{\overline{\rr}}
 \renewcommand{\epsilon}{\varepsilon}
 % Lemmas:
 \usepackage{amsthm}
@@ -4125,6 +4126,65 @@ exchangeable here, so that showing only one direction will be enough.
     thus $-x = -y$, so that the statement still holds.
     Finally, if $y$ is a real number, then the statement is simply
     Proposition 5.4.7 if $x$ is real, and is obvious if $x = -\infty$.
+  \end{enumerate}
+\end{exo}
+
+\begin{exo}{6.2.2}{Prove Theorem 6.2.11.}
+
+  We have to prove the following statements:
+
+  \begin{enumerate}[label=\emph{(\alph*)}]
+  \item For every $x \in E$ we have $x \leq \sup(E)$ and $x \geq
+    \inf(E)$.
+
+    \begin{itemize}
+    \item First, suppose that $+ \infty \in E$. We thus have
+      $\sup(E) = +\infty$ by Definition 6.2.6(b); and by Definition
+      6.2.3(b), $x \leq +\infty = \sup(E)$ for all $x \in E$, as
+      required.
+    \item Now suppose that $+ \infty \notin E$, but $- \infty \in E$.
+      There are two possible cases here. If $x = -\infty$, then
+      $-\infty = x \leq y$ for all extended real$y$ by Definition
+      6.2.3(c); and in particular, with $y = \sup(E)$, we have
+      $x \leq \sup(E)$ as required. On the other hand, if $x$ is a
+      real number, then $x \in E \setminus \left\{ -\infty \right\}$,
+      so that $x \leq \sup(E \setminus \left\{ -\infty \right\}) :=
+      \sup(E)$ by Definition 6.2.6(c), as required.
+    \item Finally, if $E$ consists only of real numbers, we have $x
+      \leq \sup(E)$ by Definition 5.5.10 as long as $E$ has an upper
+      bound; otherwise we have $\sup(E) = +\infty$ by Definition
+      6.2.6(b), and thus $x \leq \sup(E)$ bu Definition 6.2.3(b).
+      Thus, in all cases, we have indeed $x \leq \sup(E)$.
+    \item The other statement, $x \geq \inf(E)$, is a direct
+      consequence. Indeed, if $x \in E$, then by definition, $-x \in
+      -E$, and thus $-x \leq \sup(-E)$ according to our previous
+      conclusions. And finally, $-x \leq \sup(-E)$ is equivalent to $x
+      \geq -\sup(-E)$, i.e. $x \geq \inf(E)$, according to Proposition
+      6.2.5(d) and the definition of the greatest lower bound.
+    \end{itemize}
+    
+  \item Suppose that $M \in \extrr$ is an upper bound for $E$, i.e.,
+    $x \leq M$ for all $x \in E$. Then we have $\sup(E) \leq M$.
+
+    \begin{itemize}
+    \item If $+ \infty \in E$, then $\sup(E) = + \infty$ by Definition
+      6.2.6(b). But the only possible upper bound for $E$ is
+      $+\infty$, so that we have necessarily $\sup(E) = M = + \infty$.
+      The statement is thus true is this case.
+    \item If $E$ consists only of real numbers, there are three
+      sub-cases. If $E$ is empty, the $\sup(E) = -\infty$, so that
+      $\sup(E) \leq M$ regardless of the value of $M$. If $E$ is
+      non-empty and not bounded above, then $\sup(E) = + \infty$ and
+      $M$ can only be equal to $+ \infty$, so that $\sup(E) = M$. And
+      finally, if $E$ is non-empty but bounded above, then the results
+      comes from Definition 5.5.10.
+    \item If $+ \infty \notin E$ but $- \infty \in E$, then
+      $\sup(E) := \sup(E \setminus \left\{ -\infty \right\})$. But the
+      set $E \setminus \left\{ -\infty \right\}$ consists only of real
+      numbers, so that we can basically go back to the previous case,
+      to get $\sup(E) = \sup(E \setminus \left\{ -\infty \right\})
+      \leq M$.
+    \end{itemize}
   \end{enumerate}
 \end{exo}
 \end{document}
