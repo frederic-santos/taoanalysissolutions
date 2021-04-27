@@ -4187,6 +4187,54 @@ exchangeable here, so that showing only one direction will be enough.
     \end{itemize}
   \end{enumerate}
 \end{exo}
+
+\begin{exo}{6.3.1}{Verify the claim in Example 6.3.4: Let $a_n :=
+    1/n$; thus $\seq{a_n}{1}$ is the sequence $1, 1/2, 1/3, \ldots$.
+    Then $\sup\seq{a_n}{1} = 1$ and $\inf \seq{a_n}{1} = 0$.}
+
+  Let's prove those two statements separately.
+  
+  \begin{itemize}
+  \item First, note that $1$ is an upper bound for $\seq{a_n}{1}$:
+    since $n \geq 1$, we always have $1/n \leq 1$. Furthermore, let
+    $M$ be an upper bound for $\seq{a_n}{1}$. By definition, we must
+    have $M \geq a_n$ for all $n \geq 1$; and in particular
+    $M \geq a_1 = 1$. Thus, $1$ is indeed the least upper bound of
+    $\seq{a_n}{1}$.
+  \item Second, $0$ is a lower bound for $\seq{a_n}{1}$: we obviously
+    have $1/n \geq 0$ for all $n \geq 1$. Let's suppose for the sake
+    of contradiction that there exists a greater lower bound $m$ of
+    $\seq{a_n}{1}$. By definition, this means that $a_n \geq 0$ for
+    all $n \geq 1$, and that $m > 0$. But according to the archimedean
+    property with $\epsilon = 1$, there exists a natural number $N$
+    such that $mN \geq 1$, i.e. $m \geq 1/N$, that is to say $a_N \leq
+    m$. This is a contradiction, since $m$ is not a lower bound
+    anymore. Thus, $0$ is indeed the greatest lower bound of
+    $\seq{a_n}{1}$.
+  \end{itemize}
+\end{exo}
+
+\begin{exo}{6.3.2}{Prove Proposition 6.3.6.}
+
+  Let $E = \{ a_n \, : \, n \geq m\}$, and $x = \sup \seq{a_n}{m}$. By
+  Definition 6.3.1, we thus have $x = \sup(E)$. Let's prove all
+  statements from the Proposition.
+
+  \begin{itemize}
+  \item Obviously, we have $a_n \leq x$ for all $n \geq m$, according
+    to Theorem 6.2.11(a).
+  \item Let be $M \in \extrr$ an upper bound for $\seq{a_n}{m}$. This
+    is equivalent to say that $M$ is an upper bound for $E$. Thus,
+    according to Theorem 6.2.11(b), we have $M \geq x$.
+  \item Now let be $y \in \extrr$ such that $y < x$. Suppose, for the
+    sake of contradiction, that $y \geq a_n$ for all $n \geq m$. This
+    means that $y$ is an upper bound for $\seq{a_n}{m}$, and that $y <
+    x$. This contradicts the conclusion from the previous bullet point
+    of this exercise. Thus, there exists an $n \geq m$ such that $y <
+    a_n$. And since $a_n \in E$, we also have $y < a_n \leq x$, as
+    required.
+  \end{itemize}
+\end{exo}
 \end{document}
 
 %%% Local Variables:
