@@ -4235,6 +4235,87 @@ exchangeable here, so that showing only one direction will be enough.
     required.
   \end{itemize}
 \end{exo}
+
+\begin{exo}{6.3.3}{Prove Proposition 6.3.8. (increasing
+    bounded sequences converge).}
+
+  Let $\seq{a_n}{m}$ be a sequence of real numbers. The hypotheses
+  are, first, that $a_{n+1} \geq a_n$ for all $n \geq m$; and second,
+  that there exists a positive integer $M$ such that $|a_n| \leq M$
+  for all $n \geq m$.
+
+  Let be $\ell = \sup \seq{a_n}{m}$. Since $\seq{a_n}{m}$ is bounded,
+  $\ell$ is a real number. We will show that $\seq{a_n}{m}$ converges
+  to $\ell$.
+
+  Let be $\epsilon > 0$ a real number. First, we already know that:
+  \begin{equation}
+    \label{eq:633a}
+    a_n \leq \ell
+  \end{equation}
+  for all $n \geq m$. Thus, in particular, we have
+  $a_n \leq \ell + \epsilon$ for all $n \geq m$.
+
+  Also, according to the third statement of Proposition 6.3.6, if $y$
+  is a real number such that $y < \ell$, there exists at least one
+  element of $\seq{a_n}{m}$, say $a_{n_0}$, such that $y < a_{n_0} <
+  \ell$. In particular, with $y = \ell - \epsilon$, we thus have:
+  \begin{equation}
+    \label{eq:633b}
+    \ell - \epsilon < a_{n_0} \leq a_n
+  \end{equation}
+  But recall that the sequence $\seq{a_n}{m}$ is an increasing
+  sequence: we have (as a quick induction shows) $a_n \geq a_{n_0}$
+  for all $n \geq n_0$. Combining the two equations \eqref{eq:633a}
+  and \eqref{eq:633b}, we get $\ell - \epsilon < a_{n_0} \leq a_n \leq
+  \ell \leq \ell + \epsilon$ for all $n \geq n_0$.
+
+  Let's summarise:
+  \begin{equation}
+    \label{eq:633c}
+    \forall \epsilon > 0, \exists n_0 \geq m \; \; : \; \; n \geq n_0
+    \Longrightarrow \ell - \epsilon \leq a_n \leq \ell + \epsilon
+  \end{equation}
+  which means precisely that $\seq{a_n}{m}$ converges to $\ell$, as required.
+\end{exo}
+
+\begin{exo}{6.3.4}{Explain why Proposition 6.3.10 fails when $x > 1$.
+    In fact, show that the sequence $\seq{x^n}{1}$ diverges when
+    $x > 1$. Compare this with the argument in Example 1.2.3; can you
+    now explain the flaws in the reasoning in that example?}
+
+  First, the proof of Proposition 6.3.10 supposes that the sequence
+  $\seq{x^n}{1}$ is decreasing and has a lower bound of 0, which is
+  not the case here: the sequence $\seq{x^n}{1}$ is increasing and has
+  no real upper bound (or, let's say that its upper bound is $+
+  \infty$). So the situation is not identical, and even not
+  ``symmetrical''.
+
+  Actually, when $x>1$, the sequence $\seq{x^n}{1}$ diverges to
+  $+\infty$. Let's suppose, for the sake of contradiction, that it
+  converges to a real number $\ell$ instead. Since $x>1$, we have
+  $0 < 1/x < 1$, so that by Proposition 6.3.10, $\seq{1/x^n}{1}$ is a
+  sequence that converges to 0. Thus, if we denote
+  $a_n = x^n \times 1/x^n$, the sequence $\seq{a_n}{1}$ is the product
+  of two convergent sequences, so that if we apply the limit laws
+  (Theorem 6.1.19(b)), we would have
+  $\limit{a_n} = \ell \times 0 = 0$. But this is impossible, since
+  $a_n = 1$ for all $n \geq 1$. It is thus impossible for
+  $\seq{x^n}{1}$ to be a convergent sequence if $x>1$.
+
+  Finally, the issue in Example 1.2.3 is that there is a ``hidden''
+  assumption in it: it is not explicitly stated, but it is a strong
+  one. In this example, we begin with the statement: ``let $L$ be the
+  limit $L = \limit{x^n}$'', and then we apply the limit laws (Theorem
+  6.1.19) as if we were sure that $\seq{x^n}{1}$ is a convergent
+  sequence, i.e. that $L$ is a real number. But in the next steps of
+  this example (where we take $x=-1$ or $x=2$), this is absolutely not
+  the case: instead this sequence diverges. Thus, it was wrong to
+  apply the limit laws, and the whole reasoning is flawed. It is only
+  correct in the case where $x\leq 1$, i.e. where $L = 0$ or $x=1$,
+  which is also a remark we make during this example.
+\end{exo}
+
 \end{document}
 
 %%% Local Variables:
