@@ -4316,6 +4316,55 @@ exchangeable here, so that showing only one direction will be enough.
   which is also a remark we make during this example.
 \end{exo}
 
+\bigskip
+\begin{exo}{6.4.1}{Prove Proposition 6.4.5.}
+  
+  Let $\seq{a_n}{m}$ be a sequence of real numbers, which converges to
+  $c$. There are two statements to prove.
+
+  \begin{itemize}
+  \item First, let's prove that $c$ is a limit point for
+    $\seq{a_n}{m}$. Intuitively this is obvious since being a limit
+    point is somewhat weaker than being a limit, but show it
+    rigorously this requires some manipulations on quantifiers.
+
+    Let be $\epsilon > 0$ a real number and $N\geq m$ a positive
+    integer. We must show that there exists $k \geq N$ such that $|a_k
+    - c| \leq \epsilon$.
+
+    Actually, we know that $\seq{a_n}{m}$ converges to $c$. It means
+    that there exists $N' \geq m$ such that, for \emph{all}
+    $n \geq N'$, we have $|a_n - c| \leq \epsilon$.
+
+    Thus, any positive integer $n \geq \max(N, N')$ will do the trick,
+    and in particular $n = \max(N, N')$: we will have $n \geq
+    N$ and $|a_n - c|$ as required.
+    
+  \item Now let's prove that $c$ is the \emph{only} limit point of
+    $\seq{a_n}{m}$. Here, drawing a picture will help a lot. Let's
+    suppose, for the sake of contradiction, that there exists another
+    limit point $c' \neq c$ for $\seq{a_n}{m}$. Let's consider the
+    positive real number $\epsilon = |c-c'| / 3$ (we know it is
+    positive, because $c-c' \neq 0$ by hypothesis).
+
+    Since $\seq{a_n}{m}$ converges to $c$, there exists a positive
+    integer $N \geq m$ such that $|a_n - c| \leq \epsilon$ for all $n
+    \geq N$. Also, since $c'$ is a limit point, there exists $n_0 \geq
+    N$ such that $|a_{n_0} - c'| \leq \epsilon$. Thus:
+
+    \begin{align*}
+      |c-c'| & \leq |c - a_{n_0} + a_{n_0} - c'| \\
+             &\leq |a_{n_0} - c| + |a_{n_0} - c'| \\
+             & \leq \frac{\epsilon}{3} + \frac{\epsilon}{3} =
+      \frac{2\epsilon}{3} = \frac{2}{3} |c-c'|
+    \end{align*}
+
+    This is a clear contradiction. Thus, $\seq{a_n}{m}$ has no other
+    limit point than $c$.
+  \end{itemize}
+  
+\end{exo}
+
 \end{document}
 
 %%% Local Variables:
