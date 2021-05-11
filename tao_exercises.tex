@@ -33,6 +33,7 @@
 \newcommand{\seq}[2]{(#1)_{n=#2}^\infty}
 \newcommand{\limit}[1]{\text{lim}_{n \rightarrow \infty} #1}
 \newcommand{\extrr}{\overline{\rr}}
+\newcommand{\liminfp}[2]{\inf (#1^+_N)_{N=#2}^{\infty}}
 \renewcommand{\epsilon}{\varepsilon}
 % Lemmas:
 \usepackage{amsthm}
@@ -4362,6 +4363,127 @@ exchangeable here, so that showing only one direction will be enough.
     This is a clear contradiction. Thus, $\seq{a_n}{m}$ has no other
     limit point than $c$.
   \end{itemize}
+\end{exo}
+
+\begin{exo}{6.4.2}{State and prove analogues of Exercises 6.1.3 and
+    6.1.4 for limit points, limit superior and limit inferior.}
+
+  As stated before, Exercises 6.1.3 and 6.1.4 provided very similar
+  statements, so that we'll just prove here the analogues for Exercise
+  6.1.3. They can be stated as follows.
+
+  Let $m' \geq m$ two positive integers, and $c$ a real number.
+
+  \begin{enumerate}
+  \item Statement for limit points: $c$ is a limit point for
+    $\seq{a_n}{m}$ iff $c$ is a limit point for $\seq{a_n}{m'}$.
+
+    Actually, $c$ is a limit point for $\seq{a_n}{m}$ iff:
+    \begin{equation}
+      \label{eq:642a1}
+      \forall \epsilon > 0, \forall N \geq m, \exists n \geq N \; : \;
+      |a_n -c| \leq \epsilon
+    \end{equation}
+
+    Similarly, $c$ is a limit point for $\seq{a_n}{m'}$ iff:
+    \begin{equation}
+      \label{eq:642a2}
+      \forall \epsilon > 0, \forall N' \geq m', \exists n \geq N' \; : \;
+      |a_n -c| \leq \epsilon
+    \end{equation}
+
+    \begin{itemize}
+    \item First suppose that $c$ is a limit point for $\seq{a_n}{m}$,
+      and let's show that it is a limit point for $\seq{a_n}{m'}$.
+      Let be $\epsilon > 0$ a positive real and $N' \geq m'$ a positive
+      integer. Since $m' \geq m$, we also have $N' \geq m$. Thus, by
+      \eqref{eq:642a1}, we know that there exists $n \geq N'$ such that
+      $|a_n-c|$, as required. Thus, $c$ is a limit point for
+      $\seq{a_n}{m'}$.
+    \item Now suppose that $c$ is a limit point for $\seq{a_n}{m'}$,
+      and let's show that it is a limit point for $\seq{a_n}{m}$. Let
+      be $\epsilon > 0$ a positive real and $N \geq m$ a positive
+      integer. We can distinguish two sub-cases here. If $N \geq m'$,
+      then \eqref{eq:642a2} indeed provides a $n \geq N$ such that
+      $|a_n - c| \leq \epsilon$, as required. Else, if $m \leq N <
+      m'$, then according to \eqref{eq:642a2}, there exists an $n \geq
+      m'$ such that $|a_n -c| \leq \epsilon$. We thus have $m \leq N <
+      m' \leq n$, i.e. in particular $N < n'$, and $|a_n -c| \leq
+      \epsilon$, as required. Thus, in both sub-cases, $c$ is a limit
+      point for $\seq{a_n}{m}$.
+    \end{itemize}
+    
+  \item Statement for limit superior: $\ell$ is the limit superior of
+    $\seq{a_n}{m}$ iff $\ell$ is the limit superior of
+    $\seq{a_n}{m'}$.
+
+    Actually, $\ell$ is the limit superior of $\seq{a_n}{m}$ iff:
+    \begin{equation}
+      \label{eq:642b1}
+      \ell = \liminfp{a}{m}
+    \end{equation}
+    Similarly, $\ell'$ is the limit superior of $\seq{a_n}{m'}$ iff:
+    \begin{equation}
+      \label{eq:642b1}
+      \ell' = \liminfp{a}{m'}
+    \end{equation}
+
+    First, note that the sequence $(a_N^+)^\infty_{N=m}$ is
+    decreasing. In particular, thanks to Proposition 6.3.8, it means
+    that its limit is equal to its greatest lower bound, i.e.,
+    $\lim_{N \rightarrow +\infty} (a_N^+) = \inf (a_N^+)_{N=m}^\infty$. But we
+    already know, thanks to Exercises 6.1.3 and 6.1.4, that this limit
+    does not depend on the starting index of the sequence. Thus, we
+    indeed have $\ell = \ell'$.
+  \item The statement and proof for limit inferior are similar to the
+    previous one, since the sequence $(a_N^-)^\infty_{N=m}$ is
+    increasing.
+  \end{enumerate}
+\end{exo}
+
+\begin{exo}{6.4.3}{Prove parts (c), (d) and (e) of Proposition
+    6.4.12.}
+
+  Let $\seq{a_n}{m}$ be a sequence of real numbers, $L^+$ its limit
+  superior and $L^-$ its limit superior.
+  
+  \begin{enumerate}[label=\emph{(\alph*)}]
+    \setcounter{enumi}{2}
+  \item Prove that $\inf \seq{a_n}{m} \leq L^- \leq L^+ \leq \sup
+    \seq{a_n}{m}$.
+
+    We will prove each inequality separately.
+    \begin{itemize}
+    \item First let's prove that $\inf \seq{a_n}{m} \leq L^-$. By
+      Definition 6.4.6, $L^- = \sup (a^-_N)_{N=m}^\infty$. Thus, we have
+      $L^- \geq a^-_N$ for all $N \geq m$. In particular, for $N = m$,
+      we have $L^- \geq a^-_m = \inf \seq{a_n}{m}$, as required.
+    \item The proof for $L^+ \leq \sup \seq{a_n}{m}$ is similar. By
+      Definition 6.4.6, $L^+ = \inf (a^+_N)_{N=m}^\infty$. Thus, we
+      have $L^+ \leq a^+_N$ for all $N \geq m$. In particular, for
+      $N = m$, we have $L^+ \leq a^+_m = \sup \seq{a_n}{m}$, as
+      required.
+    \item Finally, let's prove that $L^- \leq L^+$. Let be
+      $\epsilon > 0$ a positive real. First, according to Proposition
+      6.3.6, there exists a positive integer $N_1$ such that
+      $a_{N_1}^- + \epsilon > L^- \geq a^-_{N_1}$. Similarly, there
+      exists a positive integer $N_2$ such that
+      $a_{N_2}^+ - \epsilon < L^+ \leq a_{N_2}^+$. Suppose that
+      $N_1 \leq N_2$. Given that we have $a_N^- \leq a_N^+$ for all
+      $N$, and that $(a^-_N)_{N = m}^\infty$ is an increasing
+      sequence\footnote{Both results are easy to prove, although not
+        stated explicitly in the main text.}, we get:
+      \[ L^- - \epsilon \leq a^-_{N_1} \leq a^-_{N_2} \leq a^+_{N_2} <
+        L^+ + \epsilon \]
+      which leads to $L^- - L^+ \leq 2 \epsilon$ for all $\epsilon >
+      0$. This implies that $L^- - L^+ \leq 0$ (otherwise we would
+      have an obvious contradiction).
+
+      The case $N_2 \leq N_1$ can be written in a similar fashion.
+
+      Thus, the whole inequality is proven.
+    \end{itemize}
+\end{enumerate}
   
 \end{exo}
 
