@@ -4483,6 +4483,99 @@ exchangeable here, so that showing only one direction will be enough.
 
       Thus, the whole inequality is proven.
     \end{itemize}
+  \item Prove that if $c$ is any limit point of $\seq{a_n}{m}$, then
+    we have $L^- \leq c \leq L^+$.
+
+    We only show here the inequality $c \leq L^+$; its counterpart
+    $L^- \leq c$ can be proved the same way.
+
+    Let's suppose, for the sake of contradiction, that we have
+    $c > L^+$. Let be $\epsilon = \frac{c - L^+}{3}$, which is by
+    hypothesis a positive real number. We have $L^+ + \epsilon > L^+$.
+    Thus, by Proposition 6.4.2(a), there exists $N \geq m$ such that:
+    \begin{equation}
+      \label{eq:642d1}
+      a_n < L^+ + \epsilon = \frac{2L^+ + c}{3} \text{ for all $n \geq N$}
+    \end{equation}
+    But this is a contradiction with the fact that $c$ is a limit
+    point for $\seq{a_n}{m}$. Indeed, if $c$ is a limit point, then
+    there exists $n \geq N$ such that $|a_n - c| \leq \epsilon$,
+    i.e.: $c-\epsilon < a_n  < c+\epsilon$, and in particular
+    \begin{equation}
+      \label{eq:642d2}
+      a_n > c - \epsilon = \frac{3c-c+L^+}{3} = \frac{2c+L^+}{3}
+    \end{equation}
+    But equations \eqref{eq:642d1} and \eqref{eq:642d2} are
+    incompatible, since they would lead to $a_n < \frac{2L^+ + c}{3} <
+    \frac{2c+L^+}{3} < a_n$, i.e. $a_n < a_n$. Thus, our starting
+    hypothesis $c \leq L^+$ is false, and we have necessarily $c >
+    L^+$ as required.
+  \item Prove that if $L^+$ is finite, then it is a limit point of
+    $\seq{a_n}{m}$ (and similarly for $L^-$).
+
+    Once again, we only give the proof for $L^+$, the other one being
+    very similar.
+
+    Let be $\epsilon > 0$ a positive real, and $N \geq m$ a positive
+    integer. Since $L^+ + \epsilon > L^+$, according to Proposition
+    6.4.2(a), there exists $N' \geq m$ such that
+    $a_n < L^+ + \epsilon$ for all $n \geq N'$. In particular, if
+    $n \geq M := \max(N, N')$, then we have $a_n < L^+ + \epsilon$.
+
+    Also, we have $L^+ - \epsilon < L^+$. Thus, according to
+    Proposition 6.4.2(b), there exists $n \geq M$ such that
+    $a_n > L^+ - \epsilon$.
+
+    Thus, for any given $\epsilon > 0$ and any given $N \geq m$, there
+    exists $n \geq M \geq N$ such that
+    $L^+ - \epsilon < a_n < L^+ + \epsilon$, i.e.
+    $|a_n - L^+| \leq \epsilon$. $L^+$ is thus a limit point, as
+    required.
+
+    
+  \item Prove that $\seq{a_n}{m}$ converges to $c$ iff $L^+ = L^- =
+    c$.
+
+    \begin{itemize}
+    \item First, let's suppose that $L^+ = L^- = c$. According to
+      Proposition 6.4.5, if $\seq{a_n}{m}$ is a convergent sequence,
+      then its limit is a limit point. But according to Proposition
+      6.4.2(d), if $L^- = L^+ = c$, the only possible limit point for
+      $\seq{a_n}{m}$ is $c$. However, we have only shown that \emph{if
+        $\seq{a_n}{m}$ is a convergent sequence, then it converges to
+        $c$}, but we do not know whether or not $\seq{a_n}{m}$ is
+      convergent.
+
+      Let be $\epsilon > 0$. According to Proposition 6.4.2(a), if
+      $x = L^+ + \epsilon = c + \epsilon > L^+$, then there exists
+      $N \geq m$ such that $a_n < c + \epsilon$ for all $n \geq N$.
+      Similarly, since $y = L^- - \epsilon = c - \epsilon < L^-$, then
+      there exists $N' \geq m$ such that $a_n > c - \epsilon$ for all
+      $n \geq N'$.
+      
+      Thus, for all $n \geq \max(N,N')$, we have $c - \epsilon < a_n <
+      c + \epsilon$, i.e. $|a_n -c| \leq \epsilon$. This means that
+      $\seq{a_n}{m}$ converges to $c$.
+    \item Conversely, let's suppose that $\seq{a_n}{m}$ converges to
+      $c$.
+
+      Let be $\epsilon > 0$. First, since $\seq{an}{m}$ converges to
+      $c$, there exists $N \geq m$ such that
+      $|a_n - c| \leq \epsilon/2$ for all $n \geq N$. Also, since
+      $L^-$ is a limit point, there exists $k \geq N$ such that
+      $|a_k - L^-| \leq \epsilon/2$. Thus, we have both
+      $|a_k - c| \leq \epsilon/2$ and $|a_k - L^-| \leq \epsilon/2$.
+
+      We then derive, by triangular inequality:
+      $|L^- - c| \leq |L^- - a_n| + |a_n - c| \leq \epsilon/2 +
+      \epsilon/2 = \epsilon$. This means that $|L^- - c| \leq
+      \epsilon$ for all $\epsilon > 0$, which is equivalent to $L^- =
+      c$.
+
+      Similarly, we could prove that $c = L^+$.
+
+      Finally, we indeed have $L^- = c = L^+$ as required.
+    \end{itemize}
 \end{enumerate}
   
 \end{exo}
