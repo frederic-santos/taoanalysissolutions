@@ -4577,7 +4577,41 @@ exchangeable here, so that showing only one direction will be enough.
       Finally, we indeed have $L^- = c = L^+$ as required.
     \end{itemize}
 \end{enumerate}
-  
+\end{exo}
+
+\begin{exo}{6.4.4}{Prove Lemma 6.4.13.}
+
+  Let be $\seq{a_n}{m}$ and $\seq{b_n}{m}$ two sequences of real
+  numbers, such that $a_n \leq b_n$ for all $n \geq m$. We will prove
+  the four statements of this lemma.
+
+  \begin{enumerate}
+  \item Prove that $\sup \seq{a_n}{m} \leq \sup \seq{b_n}{m}$.
+
+    Let be $B = \sup \seq{b_n}{m}$. By definition, $B$ is an upper
+    bound for $\seq{b_n}{m}$, so that we have $B \geq b_n \geq a_n$
+    for all $n \geq m$. In particular, $B$ is also an upper bound for
+    $\seq{a_n}{m}$. And, by Definition 5.5.5 of a least upper bound,
+    we thus have $B \geq \sup \seq{a_n}{m}$ as required.
+  \item Prove that $\inf \seq{a_n}{m} \leq \inf \seq{b_n}{m}$.
+
+    A very similar argument applies. Let be $A = \sup \seq{a_n}{m}$.
+    By definition, $A$ is an lower bound for $\seq{a_n}{m}$, so that
+    we have $A \leq a_n \leq b_n$ for all $n \geq m$. In particular,
+    $A$ is also a lower bound for $\seq{b_n}{m}$. We thus have
+    $A \leq \inf \seq{b_n}{m}$ as required.
+  \item Prove that $\limsup a_n \leq \limsup b_n$.
+
+    Let be, for any $N \geq m$, $a_N^+ = \sup \seq{a_n}{N}$, and
+    $b_N^+ = \sup \seq{b_n}{N}$. According to the first point of this
+    exercise, we have $a_N^+ \leq b_N^+$ for all $N \geq m$. According
+    to the second point, we have
+    $\inf (a_N^+)_{N=m}^{\infty} \leq \inf (b_N^+)_{N=m}^\infty$, i.e.
+    $\limsup a_n \leq \limsup b_n$ as required.
+  \item Prove that $\liminf a_n \leq \liminf b_n$.
+
+    Once again, the proof is similar to the previous point.
+  \end{enumerate}
 \end{exo}
 
 \end{document}
