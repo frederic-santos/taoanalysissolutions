@@ -4614,6 +4614,26 @@ exchangeable here, so that showing only one direction will be enough.
   \end{enumerate}
 \end{exo}
 
+\begin{exo}{6.4.5}{Use Lemma 6.4.13 to prove Corollary 6.4.14.}
+
+  Let $\seq{a_n}{m}, \seq{b_n}{m}, \seq{c_n}{m}$ be sequences of real
+  numbers such that $a_n \leq b_n \leq c_n$ for all $n \geq m$; and
+  the sequences $\seq{a_n}{m}$ and $\seq{c_n}{m}$ converge to $L$.
+
+  According to Corollary 6.4.14, we have
+  $\limsup a_n \leq \limsup b_n \leq \limsup c_n$. But according to
+  Proposition 6.4.12(f), when a sequence converges to a real number
+  $L$, its limit superior is simply equal to its limit $L$. Thus, we
+  have $L = \limsup a_n \leq \limsup b_n \leq \limsup c_n = L$, i.e.
+  $\limsup b_n = L$.
+
+  The same statement apply for $\liminf b_n$, which is also equal to
+  $L$.
+
+  Thus, still according to Proposition 6.4.12(f), $\seq{b_n}{m}$
+  converges to $L$, as required.  
+\end{exo}
+
 \end{document}
 
 %%% Local Variables:
