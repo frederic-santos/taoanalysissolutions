@@ -4634,6 +4634,41 @@ exchangeable here, so that showing only one direction will be enough.
   converges to $L$, as required.  
 \end{exo}
 
+\bigskip
+\begin{exo}{6.4.6}{Give an example of two bounded sequences
+    $\seq{a_n}{1}$ and $\seq{b_n}{1}$ such that $a_n < b_n$ for all
+    $n \geq 1$, but that $\sup \seq{a_n}{1} \nless \seq{b_n}{1}$.
+    Explain why this does not contradict Lemma 6.4.13.}
+
+  The sequences defined by $a_n = -1/n$ and $b_n = 0$ for all $n \geq
+  1$ are suitable, since $-1/n < 0$ for all $n \geq 1$, but both least
+  upper bounds are equal to 0.
+
+  This does not contradict Lemma 6.4.13 which deals with large
+  inequalities; instead, it is even perfectly in accordance with
+  Remark 5.4.11 in the previous chapter.
+\end{exo}
+
+\bigskip
+\begin{exo}{6.4.7}{Prove Corollary 6.4.17.}
+
+  This corollary says that $\seq{a_n}{m}$ converges to $0$ iff
+  $\seq{|a_n|}{m}$ converges to $0$. Let's denote $b_n = |a_n|$ in
+  what follows.
+  
+  \begin{itemize}
+  \item First suppose that $\limit{|a_n|} = 0$. We know that we have,
+    for all $n \geq m$, $-|a_n| \leq a_n \leq |a_n|$. According to the
+    squeeze test, we have indeed $\limit{a_n} = 0$.
+  \item Now suppose that $\limit{a_n} = 0$. Let $\epsilon > 0$ be a
+    positive real number. We have $|b_n - 0| = |b_n| = ||a_n|| = |a_n|
+    = |a_n - 0|$. We know, by definition, that there exists $N \geq m$
+    such that, for all $n \geq N$, we have $|a_n - 0| \leq \epsilon$,
+    and thus $|b_n - 0| \leq \epsilon$. This means that $\seq{b_n}{m}$
+    converges to $0$, as required.
+  \end{itemize}
+\end{exo}
+
 \end{document}
 
 %%% Local Variables:
