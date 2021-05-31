@@ -4669,6 +4669,35 @@ exchangeable here, so that showing only one direction will be enough.
   \end{itemize}
 \end{exo}
 
+\begin{exo}{6.5.2}{Prove Lemma 6.5.2.}
+
+  Here, there are a lot of cases to consider.
+
+  \begin{itemize}
+  \item First, if $x = 1$, then $x^n = 1$ for all $n \geq 1$, so that
+    $(x^n)_n$ is a constant sequence. Thus, $\limit{x^n} = 1$.
+  \item Similarly, if $x = 0$, then $\limit{x^n} = 0$.
+  \item If $-1 < x < 1$ and $x \neq 0$, we have $0 < |x| < 1$. This
+    means, according to Proposition 6.3.10, that $\limit{|x|^n} = 0$.
+    But, we can note that we have, for all $n \geq 1$, the inequality
+    $-|x^n| \leq x^n \leq |x|^n$. Since
+    $\limit{|x|^n} = \limit{-|x|^n} = 0$, then according to the
+    squeeze test, we also have $\limit{x^n} = 0$.
+  \item If $x = -1$, then the sequence $(x^n)_n$ is alternatively
+    equal to $1$ or $-1$. Consequently, it has two limits points,
+    which are $1$ and $-1$; it is even possible to show that $L^- =
+    -1$ and $L^+ = 1$. Thus, it cannot converge, since a convergent
+    sequence has only one limit point, and cannot have $L^- \neq L^+$.
+  \item If $x > 1$, then Exercise 6.3.4 says that the sequence
+    $(x^n)_n$ is divergent.
+  \item Finally, if $x <- 1$, then the exact same reasoning performed
+    in Exercise 6.3.4 would also prove that $(x^n)_n$ is divergent.
+  \end{itemize}
+
+  Thus, as required, we have shown that $\limit{x^n}$ exists and is
+  equal to zero when $|x| < 1$, exists and is equal to 1 when $x=1$,
+  and diverges when $x=-1$ or when $|x| > 1$.
+\end{exo}
 \end{document}
 
 %%% Local Variables:
