@@ -4669,6 +4669,22 @@ exchangeable here, so that showing only one direction will be enough.
   \end{itemize}
 \end{exo}
 
+\begin{exo}{6.5.1}{Show that $\limit{1/n^q} = 0$ for any rational $q >
+    0$.}
+
+  Since $q$ is a positive rational, let's suppose that $q := a/b$,
+  with $a, b > 0$ two positive integers. With a little algebra, we can
+  rewrite $1/n^q = (1/n)^q = (1/n)^{a/b} = ((1/n)^{1/b})^a$, using in
+  particular Definition 5.6.7, and in a somewhat hidden manner,
+  equation \eqref{eq:562e} from this document.
+  
+  Using Corollary 6.5.1, we know that $\limit{1/n^{1/k}} = 0$ for
+  every integer $k \geq 1$. In particular, we have
+  $\limit{(1/n)^{1/b}} = \limit{(1/n^{1/b})} = 0$. Thus, using the
+  limit laws (Theorem 6.1.19(b), iterated $a$ times), we conclude that
+  $ \limit{1/n^q} = \limit{(1/n^{1/b})^a} = 0^a = 0$.
+\end{exo}
+
 \begin{exo}{6.5.2}{Prove Lemma 6.5.2.}
 
   Here, there are a lot of cases to consider.
