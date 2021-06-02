@@ -4714,6 +4714,76 @@ exchangeable here, so that showing only one direction will be enough.
   equal to zero when $|x| < 1$, exists and is equal to 1 when $x=1$,
   and diverges when $x=-1$ or when $|x| > 1$.
 \end{exo}
+
+\bigskip
+
+\begin{exo}{6.5.3}{Prove Lemma 6.5.3. (You may need to treat the cases
+    $x \geq 1$ and $x < 1$ separately. You might wish to ﬁrst use
+    Lemma 6.5.2 to prove the preliminary result that for every
+    $\epsilon > 0$ and every real number $M > 0$, there exists an $n$
+    such that $M^{1/n} \leq 1 + \epsilon$.)}
+
+  We first prove the preliminary result suggested by Terence Tao. Let
+  be $\epsilon > 0$ a positive real number, so that
+  $1 + \epsilon > 1$. By Lemma 6.5.2, this implies that the sequence
+  $\seq{a_n}{1}$ defined by $a_n = (1+\epsilon)^n$ diverges.
+  Furthermore, by Lemma 5.6.9(e), $(1+\epsilon)^n$ is a strictly
+  increasing function of $n$. It cannot be bounded because, by
+  Proposition 6.3.8, it would imply that $\seq{a_n}{1}$ is a
+  convergent sequence. Thus, $\seq{a_n}{1}$ is strictly increasing and
+  not bounded above. In other words, for all $M > 0$, there exists a
+  natural number $N$ such that $(1+\epsilon)^N \geq M$; and since we
+  have an increasing function of $n$, we even get
+  $(1+\epsilon)^n \geq M$ for all $n \geq N$. This is equivalent to
+  $(1+\epsilon) \geq M^{1/n}$ by Lemma 5.6.6(d), which proves this
+  preliminary result.
+
+  \smallskip
+  Let's go back to the main claim. We'll distinguish two cases. Let be
+  $\epsilon > 0$.
+
+  \begin{enumerate}
+  \item If $x \geq 1$, we have $x^{1/n} > 1$ for all $n \geq 1$
+    (because if we suppose, for the sake of contradiction, that
+    $x^{1/n} < 1$, we would have $(x^{1/n})^n < 1^n$, i.e. $x<1$).
+    Thus, we have $0 < x^{1/n} - 1$ for all $n \geq 1$. Furthermore,
+    according to the preliminary result, there exists an $N$ such that
+    $x^{1/n}-1 \leq \epsilon$ for all $n \geq N$. We thus have $-
+    \epsilon \leq 0 \leq x^{1/n} - 1 \leq \epsilon$ for all $n \geq N$,
+    i.e. $|x^{1/n} - 1| \leq \epsilon$ for all $n \geq N$. This means
+    that $\limit{x^{1/n}} = 1$, as required.
+  \item If $x < 1$, we have $1/x > 1$. Thus, when considering $1/x$,
+    we are back to the previous case, i.e. we have
+    $\limit{(1/x)^{1/n}} = 1$. But, by Lemma 5.6.9(b), we have
+    $(1/x)^{1/n} = (x^{-1})^{1/n} = x^{-1/n} = 1/x^{1/n}$. Thus, we
+    have $\limit{1/x^{1/n}} = 1$. Finally, by the limit laws (Theorem
+    6.1.19(e)), we get $\limit{x^{1/n}} = 1/1 = 1$, as required.
+  \end{enumerate}
+\end{exo}
+
+\begin{exo}{6.6.1}{Prove Lemma 6.6.4.}
+
+  This lemma states that being a subsequence is reflexive and
+  transitive.
+
+  \begin{itemize}
+  \item Let's show that $\seq{a_n}{1}$ is a subsequence of
+    $\seq{a_n}{1}$. This is obvious: let's take the strictly
+    increasing function $f(n) = n$ for all $n \in \nn^*$: this will
+    indeed give $a_n = a_{f(n)}$, i.e. $\seq{a_n}{1}$ as a subsequence
+    of $\seq{a_n}{1}$.
+  \item Now consider that $\seq{b_n}{1}$ is a subsequence of
+    $\seq{a_n}{1}$, and that $\seq{c_n}{1}$ is a subsequence of
+    $\seq{b_n}{1}$. It means that we have, for all $n \in \nn^*$,
+    $b_n = a_{f(n)}$ and $c_n = b_{g(n)}$, with $f, g$ two strictly
+    increasing functions from $\nn^*$ to $\nn^*$. The function
+    $f \circ g$ is also strictly increasing, as the composition of two
+    strictly increasing functions. Thus, we have $c_n = b_{g(n)} =
+    a_{f\circ g(n)}$ for all $n \in \nn^*$, i.e. $\seq{c_n}{1}$ as a
+    subsequence of $\seq{a_n}{1}$.
+  \end{itemize}
+  
+\end{exo}
 \end{document}
 
 %%% Local Variables:
