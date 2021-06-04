@@ -4782,8 +4782,27 @@ exchangeable here, so that showing only one direction will be enough.
     a_{f\circ g(n)}$ for all $n \in \nn^*$, i.e. $\seq{c_n}{1}$ as a
     subsequence of $\seq{a_n}{1}$.
   \end{itemize}
-  
 \end{exo}
+
+\begin{exo}{6.6.2}{Can you find two sequences $\seq{a_n}{0}$ and
+    $\seq{b_n}{0}$ which are not the same sequence, but such that each
+      is a subsequence of the other?}
+
+    It might appear counterintuitive, but the answer is yes! One can
+    think of the sequences defined by $a_n = (-1)^n$ and $b_n =
+    (-1)^{n+1}$. We have, for any natural number $n$, $a_n = b_{n+1}$
+    and $b_n = a_{n+1}$. I.e., we have found a strictly increasing
+    function $f : n \mapsto n+1$ such that $a_n = b_{f(n)}$ and $b_n =
+    a_{f(n)}$ for all $n \in \nn$; and these sequences are not equal.
+
+    Note that any example where $\seq{b_n}{0}$ is simply a ``shift''
+    of a periodic sequence $\seq{a_n}{0}$ would do the trick. For
+    instance, the sequence $a_n = 0, 0, 1, 1, 0, 0, \ldots$ and the
+    sequence $b_n = 1, 1, 0, 0, 1, 1, \ldots$, with the function $f :
+    n \mapsto n+2$.
+\end{exo}
+\bigskip
+  
 \end{document}
 
 %%% Local Variables:
