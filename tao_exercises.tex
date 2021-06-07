@@ -4802,7 +4802,48 @@ exchangeable here, so that showing only one direction will be enough.
     n \mapsto n+2$.
 \end{exo}
 \bigskip
-  
+
+\begin{exo}{6.6.4}{Prove Proposition 6.6.5. (Note that one of the two
+    implications has a very short proof.)}
+
+  First let's prove a preliminary result: if $f : \mathbb{N}
+  \rightarrow \mathbb{N}$ is a strictly increasing function, then
+  $f(n) \geq n$ for all $n \in \nn$. We can use induction on $n$:
+  \begin{itemize}
+  \item for the base case $n = 0$, we indeed have $f(0) \geq 0$
+    because $f(0) \in \nn$;
+  \item now suppose inductively that $f(n) \geq n$. Since $f$ is
+    strictly increasing, we have $f(n+1) > f(n) \geq n$, and thus,
+    $f(n+1) > n$, i.e. $f(n+1) \geq n+1$. This closes the induction
+    for this preliminary result.
+  \end{itemize}
+ 
+  For the exercise itself, we must prove that the two statements ``The
+  sequence $\seq{a_n}{0}$ converges to $L$'' and ``Every subsequence
+  of $\seq{a_n}{0}$ converges to $L$'' are equivalent.
+
+  \begin{itemize}
+  \item First suppose that every subsequence of $\seq{a_n}{0}$
+    converges to $L$. According to Lemma 6.6.4, $\seq{a_n}{0}$ is a
+    subsequence of $\seq{a_n}{0}$, thus in particular, $\seq{a_n}{0}$
+    converges to $L$.
+    
+  \item Now suppose that the sequence $\seq{a_n}{0}$ converges to $L$.
+    Let be $\epsilon > 0$, and $f : \nn \rightarrow \nn$ a strictly
+    increasing function such that $\seq{a_{f(n)}}{0}$ is a subsequence
+    of $\seq{a_n}{0}$.
+
+    Since $\seq{a_n}{0}$ converges to $L$, there exists a natural
+    number $N$ such that $|a_n - L| \leq \epsilon$ for all $n \geq N$.
+    But, according to our preliminary result, we have $f(n) \geq n$,
+    and thus by transitivity, $f(n) \geq N$. This means that
+    $|a_{f(n)} - L| \leq \epsilon$. Unfolding those findings: there
+    exists an $N$ such that $|a_{f(n)} - L| \leq \epsilon$ for all $n
+    \geq N$, i.e., $\seq{a_{f(n)}}{0}$ converges to $L$.
+  \end{itemize}
+
+  Thus, both statements are indeed equivalent.
+\end{exo}
 \end{document}
 
 %%% Local Variables:
