@@ -4803,6 +4803,93 @@ exchangeable here, so that showing only one direction will be enough.
 \end{exo}
 \bigskip
 
+\begin{exo}{6.6.3}{Let $\seq{a_n}{0}$ be a sequence which is not
+    bounded. Show that there exists a subsequence $\seq{b_n}{0}$ of
+    $\seq{a_n}{0}$ such that $\limit{1/b_n}$ exists and is equal to
+    zero. (Hint: for each natural number $j$, recursively introduce
+    the quantity
+    $n_j := \min \left\{n \in \nn \, : \, |a_n| \geq j, n > n_j
+    \right\}$, omitting the condition $n > n_{j-1}$ when $j = 0$.
+    First explain why the set
+    $\left\{n \in \nn \, : \, |a_n| \geq j, n > n_j \right\}$ is
+    non-empty; then set $b_j := a_{n_j}$. To ensure the existence and
+    uniqueness of the minimum, one either needs to invoke the well
+    ordering principle (which we have placed in Proposition 8.1.4, but
+    whose proof does not rely on any material not already presented),
+    or the least upper bound principle (Theorem 5.5.19).)}
+
+  For any natural number $j$, let's denote $A_j := \left\{n \in \nn \, : \,
+    |a_n| \geq j, n > n_{j-1}\right\}$, where $n_j$ is recursively defined
+  by:
+  \[
+    \left \{
+      \begin{array}{l @{\, := \,} l}
+        n_0 & \min \left\{n \in \nn \, : \, |a_n| \geq 0 \right\} \\
+        n_j & \min \left\{n \in \nn \, : \, |a_n| \geq j ; n > n_j \right\}
+      \end{array}
+    \right.
+  \]
+
+  \begin{itemize}
+  \item For all natural number $j$, the set $A_j$ is non-empty because
+    $\seq{a_n}{0}$ is not bounded. Indeed, let's suppose for the sake
+    of contradiction that there exists a natural number $j$ such that
+    $A_j = \emptyset$. It means that, for all natural numbers
+    $n > n_j$, we have $|a_n| < j$. In such a case, $\seq{a_n}{j}$ is
+    bounded by $j$, and thus $\seq{a_n}{0}$ is bounded by
+    $M := \max(j, |a_0|, \ldots, |a_{j-1}|)$. This contradicts our initial
+    hypothesis that $\seq{a_n}{0}$ is not bounded. Thus, $A_j$ is
+    non-empty for all $j \in \nn$.
+  \item $A_j$ also has a lower bound for all $j \in \nn$. Indeed, by
+    definition, $n_{j-1}$ is a lower bound for $A_j$. So, $A_j$ is
+    always non-empty and has a lower bound. Thus, by Theorem 5.5.19,
+    $A_j$ has a greatest lower bound, that we will denote $\inf(A_j)$.
+    (Furthermore, it is unique, by Theorem 5.5.18.)
+  \item Let's show that $\inf(A_j) \in A_j$ for all $j \in \nn$. Since
+    $\inf(A_j)$ is the greatest lower bound, $\inf(A_j) + 1/2$ is not
+    a lower bound for $A_j$ (otherwise we would have an obvious
+    contradiction). Thus, there exists $n \in A_j$ such that
+    $\inf(A_j) \leq n < \inf(A_j) + 1/2$. Let's suppose, for the sake
+    of contradiction, that there exists an $m \in A_j$ such that
+    $m < n$. We would have $\inf(A_j) \leq m < n < \inf(A_j) + 1/2$,
+    so that we could place two distinct integers within a range of
+    width $1/2$, which is impossible\footnote{One may also give a
+      proof by contradiction by writing
+      $x + 1/2 - x = \underbrace{x+1/2 - m}_{>0} + \underbrace{m -
+        n}_{>1} + \underbrace{n - x}_{>0}$, to prove this fact in this
+      particular situation.}. Thus, we have $n \leq m$ for all
+    $m \in A_j$. It means that $n$ is also a lower bound for $A_j$,
+    and thus $n \leq \inf(A_j)$. And since we have both
+    $n \leq \inf(A_j)$ and $n \geq \inf(A_j)$, we finally get
+    $\inf(A_j) = n \in A_j$, as required\footnote{We actually have
+      proven a generalizable lemma: for any non-empty set
+      $X \subset \nn$, the greatest lower bound $\inf(X)$ is in $X$.
+      This will be useful in Exercise 6.6.5 as well; and will be
+      useful in Chapter 8.}. Thus, the numbers $n_j$ are well-defined.
+  \item Finally, let be $\epsilon > 0$ a positive real number, and a
+    function $f : \nn \rightarrow \nn$ defined by $f(j) = n_j$. It is
+    a strictly increasing function by definition of the numbers $n_j$.
+    Let's consider the sequence $\seq{b_n}{0}$ defined by
+    $b_j := a_{n_j} = a_{f(j)}$ for all $j \in \nn$.
+
+    By definition, we also have $|a_{n_j}| \geq j$ for all
+    $j \in \nn$, which is equivalent to $1/|a_{n_j}| \leq 1/j$.
+
+    By the archimedean property (Corollary 5.4.13, and Exercise
+    5.4.4), there exists a natural number $j$ such that
+    $\epsilon > 1/j > 0$.
+
+    Finally, let be a natural number $k > j$: we thus have $|a_{n_k}|
+    \geq k > j$, i.e. $1/|a_{n_k}| < 1/j$.
+
+    Thus, unwrapping all these findings: for any $\epsilon > 0$, there
+    exists a natural number $j$ such that, for any $k > j$, we have
+    $1/|a_{n_k}| = |b_{k} - 0| \leq 1/j \leq \epsilon$, i.e.,
+    $\limit{b_n} = 0$, as required.
+  \end{itemize}
+\end{exo}
+
+\medskip
 \begin{exo}{6.6.4}{Prove Proposition 6.6.5. (Note that one of the two
     implications has a very short proof.)}
 
