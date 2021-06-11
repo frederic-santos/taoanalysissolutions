@@ -5019,6 +5019,110 @@ exchangeable here, so that showing only one direction will be enough.
   \end{enumerate}
 \end{exo}
 
+\section{Series}
+\begin{exo}{7.1.1}{Prove Lemma 7.1.4. (Hint: you will need to use
+    induction, but the base case might not necessarily be at 0.)}
+
+  Recall that, by Definition 7.1.1, a series $\sum_{i=m}^n a_i$ is
+  recursively defined by $\sum_{i=m}^n a_i = 0$ for $n<m$,
+  and $\sum_{i=m}^{n+1} a_i = \sum_{i=m}^n a_i + a_{n+1}$ for $m \geq
+  n$.
+
+  The claims to prove are the following.
+
+  \begin{enumerate}[label=\emph{(\alph*)}]
+  \item For all integers $m \leq n < p$, we have $\sum_{i=m}^{n} a_i +
+    \sum_{i=n+1}^{p} a_i = \sum_{i=m}^{p} a_i$.
+
+    Let's use induction on $p$, while keeping $m, n$ fixed. Since we
+    have $n < p$, the base case is $p = n+1$. For $p=n+1$, we have:
+    \[ \sum_{i=m}^{n} a_i + \sum_{i=n+1}^{p} a_i = \sum_{i=m}^{n} a_i
+      + \sum_{i=n+1}^{n+1} a_i = \sum_{i=m}^{n} a_i + a_{n+1} =
+      \sum_{i=m}^{n+1} a_i = \sum_{i=m}^{p} a_i\] as expected. The
+    base case is done. Now let's suppose inductively that
+    $\sum_{i=m}^{n} a_i + \sum_{i=n+1}^{p} a_i = \sum_{i=m}^{p} a_i$,
+    and let's prove that this equality still holds for $p+1$. We have:
+    \begin{align*}
+      \sum_{i=m}^{n} a_i + \sum_{i=m}^{p+1} &= \sum_{i=m}^{n} a_i +
+                                              \sum_{i=m}^{p} a_i + a_{p+1}
+                                              \text { (Definition 7.1.1)}
+      \\
+                                            &= \sum_{i=m}^p a_i + a_{p+1}
+                                              \text{ (induction
+                                              hypothesis)} \\
+                                            &= \sum_{i=m}^{p+1} a_i
+                                              \text{ (Definition 7.1.1)}
+    \end{align*}
+    which closes the induction and proves the equality for all
+    integers $m \leq n < p$.
+  \item For $k$ an integer, and $m \leq n$ two integers, we have
+    $\sum_{i=m}^{n}a_i = \sum_{j=m+k}^{n+k} a_{j-k}$.
+
+    Let's use induction on $n$, the ``offset'' $k$ being fixed. For
+    the base case $n=m$, we have $\sum_{j=m+k}^{n + k} a_{j-k} =
+    \sum_{j=m+k}^{m + k} a_{j-k} = a_{m+k-k} = a_m$. On the other hand, we also
+    have $\sum_{i=m}^{n}a_i = \sum_{i=m}^{m} a_i = a_m$, which proves
+    the base case.
+
+    Now let's suppose inductively that $\sum_{i=m}^{n}a_i =
+    \sum_{j=m+k}^{n+k} a_{j-k}$. We thus have:
+    \begin{align*}
+      \sum_{j=m+k}^{n+k+1} a_{j-k} &= \sum_{j=m+k}^{n+k} a_{j-k} +
+                                     a_{n+1} \\
+                                   &= \sum_{i=m}^n a_i + a_{n+1}
+                                     \text{ (induction hypothesis)} \\
+                                   &= \sum_{i=m}^{n+1} a_i
+    \end{align*}
+    which closes the induction, the property being true for all $n
+    \geq m$, with any arbitrary offset $k$.
+  \item For $m \leq n$ two integers, we have $\sum_{i=m}^{n} (a_i+b_i)
+    = (\sum_{i=m}^{n} a_i) + (\sum_{i=m}^{n} b_i)$.
+
+    Let's use induction on $n$. The base case is $m=n$ and is obvious,
+    since we have on the one hand $\sum_{i=m}^{m} (a_i+b_i) = a_m +
+    b_m$, and on the other hand $(\sum_{i=m}^{m} a_i) +
+    (\sum_{i=m}^{m} b_i) = a_m + b_m$.
+
+    Now let's suppose inductively that
+    $\sum_{i=m}^{n} (a_i+b_i) = (\sum_{i=m}^{n} a_i) + (\sum_{i=m}^{n}
+    b_i)$. Then we have:
+    \begin{align*}
+      \sum_{i=m}^{n+1} (a_i+b_i) &= \sum_{i=m}^{n} (a_i+b_i) + (a_{n+1}
+                                   + b_{n+1}) \\
+                                 &= \left(\sum_{i=m}^{n} a_i +
+                                   \sum_{i=m}^{n} b_i\right) + a_{n+1}
+                                   + b_{n+1} \text{ (induction
+                                   hypothesis)} \\
+                                 &= \sum_{i=m}^{n} a_i + a_{n+1} +
+                                   \sum_{i=m}^{n} b_i + b_{n+1} \\
+                                 &= \sum_{i=m}^{n+1} a_i +
+                                   \sum_{i=m}^{n+1} b_i
+    \end{align*}
+    which closes the induction. The property is thus true for all $n
+    \geq m$.
+  \item For $m \leq n$ integers, and $c$ a real number, we have
+    $\sum_{i=m}^{n}ca_i = c \left(\sum_{i=m}^{n}a_i\right)$.
+
+    Let's induct on $n$, first considering the base case $n = m$. We
+    have $\sum_{i=m}^{m} ca_i = c a_m =
+    c\left(\sum_{i=m}^{m}a_i\right)$ as required.
+
+    Now let's suppose inductively that
+    $\sum_{i=m}^{n}ca_i = c \left(\sum_{i=m}^{n}a_i\right)$. Then we
+    have:
+    \begin{align*}
+      \sum_{i=m}^{n+1}ca_i &= \sum_{i=m}^{n}ca_i + ca_{n+1} \\
+                           &= c \left(\sum_{i=m}^{n}a_i\right) +
+                             ca_{n+1} \text{ (induction hypothesis)}\\
+                           &= c \left(\sum_{i=m}^{n}a_i +
+                             a_{n+1}\right)\\
+                           &= c \sum_{i=m}^{n+1} a_i
+    \end{align*}
+    which closes the induction. The property is thus true for all $n
+    \geq m$.
+  \end{enumerate}
+\end{exo}
+
 \end{document}
 %%% Local Variables:
 %%% mode: latex
