@@ -4865,7 +4865,7 @@ exchangeable here, so that showing only one direction will be enough.
       proven a generalizable lemma: for any non-empty set
       $X \subset \nn$, the greatest lower bound $\inf(X)$ is in $X$.
       This will be useful in Exercise 6.6.5 as well; and will be
-      useful in Chapter 8.}. Thus, the numbers $n_j$ are well-defined.
+      useful in Chapter 8. \label{note-borne-inf-n}}. Thus, the numbers $n_j$ are well-defined.
   \item Finally, let be $\epsilon > 0$ a positive real number, and a
     function $f : \nn \rightarrow \nn$ defined by $f(j) = n_j$. It is
     a strictly increasing function by definition of the numbers $n_j$.
@@ -4931,8 +4931,95 @@ exchangeable here, so that showing only one direction will be enough.
 
   Thus, both statements are indeed equivalent.
 \end{exo}
-\end{document}
 
+\bigskip
+
+\begin{exo}{6.6.5}{Prove Proposition 6.6.6. (Hint: to show that (a)
+    implies (b), deﬁne the numbers $n_j$ for each natural number $j$
+    by the formula
+    $n_j := \min \left\{n > n_{j-1} \, : \, |a_n - L| \leq 1/j
+    \right\}$, with the convention $n_0 := 0$, explaining why the set
+    $\left\{n > n_{j-1} \, : \, |a_n - L| \leq 1/j\right\}$ is
+    non-empty. Then consider the sequence $a_{n_j}$. To ensure the
+    existence and uniqueness of the minimum, one either needs to
+    invoke the well ordering principle (which we have placed in
+    Proposition 8.1.4, but whose proof does not rely on any material
+    not already presented), or the least upper bound principle
+    (Theorem 5.5.19).)}
+
+  This exercise is pretty similar to Exercise 6.6.3, and we will
+  re-use here a preliminary result shown there---see also note
+  \ref{note-borne-inf-n}.
+
+
+  \begin{enumerate}
+  \item First we show that (b) implies (a). Let be $f : \nn
+    \rightarrow \nn$ a strictly increasing function such that
+    $\seq{a_{f(n)}}{0}$ converges to $L$. We must show that $L$ is a
+    limit point of $\seq{a_n}{0}$, i.e. that:
+    \begin{equation}
+      \label{eq:665a}
+      \forall \epsilon > 0, \, \forall N \geq 0, \, \exists n \geq N \;
+      : \; |a_n - L| \leq \epsilon
+    \end{equation}
+    So let be $\epsilon > 0$ and $N \geq 0$. If $\seq{a_{f(n)}}{0}$
+    converges to $L$, there exists $M \geq 0$ such that
+    $n \geq M \Rightarrow |a_{f(n)} - L| < \epsilon$. We know that $f$
+    is a strictly increasing function, so that $f(n) \geq n$ for all
+    $n \in \nn$, as previously shown in Exercise 6.6.4. Thus, if one
+    considers $p := \max(M, N)$, we have:
+    \begin{itemize}
+    \item $f(p) \geq p \geq N$
+    \item $f(p) \geq p \geq M$, so that $|a_{f(p)} - L| \leq \epsilon$
+    \end{itemize}
+    Choosing $n := f(p) \geq N$, the condition in formula
+    \eqref{eq:665a} is thus verified.
+  \item Now we prove that (a) implies (b).
+    \begin{itemize}
+    \item First, we note that the set
+      $\left\{n > n_{j-1} \, : \, |a_n - L| \leq 1/j\right\}$ is
+      non-empty for all $j \geq 1$. For instance, with $j = 1$, this
+      set is equal to $\left\{n > 0 \, : \, |a_n - L| \leq 1\right\}$:
+      this set is non-empty since $L$ is a limit point of
+      $\seq{a_n}{0}$. This gives an intuition for the general case.
+      Generally speaking, let's suppose for the sake of contradiction
+      that the set
+      $A_j := \left\{n > n_{j-1} \, : \, |a_n - L| \leq 1/j\right\}$
+      is non empty for one given $j \geq 1$. It means that we can
+      define $\epsilon := 1/j$ and $N := n_{j-1}$ such that, for all
+      $n \geq N$, we have $|a_n - L| > \epsilon$. This is precisely
+      the negation of the fact that $L$ is a limit point of
+      $\seq{a_n}{0}$ (see formula \eqref{eq:665a}): we have a clear
+      contradiction. Thus, this set $A_j$ is non-empty for every
+      natural number $j \geq 1$.
+    \item Thus, for all $j \geq 1$, this set $A_j$ is non-empty, and
+      it has a lower bound (for instance, $0$ is obviously a lower
+      bound, since $A_j$ is a subset of $\nn$). By Theorem 5.5.9, we
+      thus know that this set has a (unique) greatest lower bound,
+      which we can write $\inf(A_j)$. By note \ref{note-borne-inf-n},
+      we have $\inf(A_j) \in A_j$, i.e., $\inf(A_j) = \min(A_j) = n_j$
+      is well-defined.
+    \item Now let be $f : \nn \rightarrow \nn$ the strictly increasing
+      function defined by $f(j) := n_j$; and let's consider the
+      subsequence of $\seq{a_n}{0}$ defined by $a_{f(j)} = a_{n_j}$.
+      Let be $\epsilon > 0$. By the archimedean property (or Exercise
+      5.4.4), there exists a natural number $j \geq 1$ such that
+      $\epsilon > 1/j > 0$. We thus have a natural number $n_j$ such
+      that $|a_{n_j} - L| \leq 1/j < \epsilon$. Furthermore, if $k >
+      j$, we have $n_k > n_j$, and thus we have: $|a_{n_k} - L| \leq
+      1/k \leq 1/j < \epsilon$. Unfolding all these findings:
+      \begin{equation}
+        \label{eq:665b}
+        \forall \epsilon > 0, \exists j \geq 1 \; : \; n \geq j
+        \Rightarrow |a_{f(j)} - L| \leq \epsilon
+      \end{equation}
+      which means that the subsequence $\seq{a_{f(n)}}{0}$ converges
+      to $0$, as required.
+    \end{itemize}    
+  \end{enumerate}
+\end{exo}
+
+\end{document}
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: t
