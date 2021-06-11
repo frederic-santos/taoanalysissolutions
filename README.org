@@ -5,20 +5,21 @@ I'll host on this repo my current work on Terence Tao's textbooks, [[https://www
 
 Note that this constitutes only /propositions/ of solutions; errors are still possible. Pull requests to fix typos or errors are welcome.
 
-* Notes
+** Notes
 - The LaTeX file makes use of the [[https://www.ctan.org/pkg/mbboard][mbboard]] package. It provides nicer math fonts, but is not part of most LaTeX distributions and must be installed manually.
 - Those files are licensed under a [[http://creativecommons.org/licenses/by-nc-sa/4.0/][Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License]].
 
-* Current status
-** Analysis I
+** Current status
+*** Analysis I
 - [X] Chapter 2: completed.
 - [ ] Chapter 3: numerous exercises are completed, but a substantial part of solutions are still missing.
 - [X] Chapter 4: (mostly) completed.
 - [X] Chapter 5: completed.
-- [ ] Chapter 6: in progress
+- [X] Chapter 6: (mostly) completed.
+- [ ] Chapter 7: in progress.
 
 More to come.
 
-** Analysis II
+*** Analysis II
 More to come.
 
