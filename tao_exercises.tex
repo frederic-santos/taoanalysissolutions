@@ -19,7 +19,7 @@
 \usepackage{hyperref}
 % Macros:
 \newcommand{\successor}[1]{#1 \! +\!\!\!+}
-\newcommand{\abs}[1]{\lvert #1 \rvert}
+\newcommand{\aval}[1]{\left\lvert #1 \right\rvert}
 \newcommand{\inv}[1]{#1^{-1}}
 \newcommand{\rr}{\mathbb{R}}
 \newcommand{\partsof}[1]{\mathcal{P}\left( #1 \right)}
@@ -34,6 +34,7 @@
 \newcommand{\limit}[1]{\text{lim}_{n \rightarrow \infty} #1}
 \newcommand{\extrr}{\overline{\rr}}
 \newcommand{\liminfp}[2]{\inf (#1^+_N)_{N=#2}^{\infty}}
+\newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
 \renewcommand{\epsilon}{\varepsilon}
 % Lemmas:
 \usepackage{amsthm}
@@ -4424,7 +4425,7 @@ exchangeable here, so that showing only one direction will be enough.
     \end{equation}
     Similarly, $\ell'$ is the limit superior of $\seq{a_n}{m'}$ iff:
     \begin{equation}
-      \label{eq:642b1}
+      \label{eq:642b2}
       \ell' = \liminfp{a}{m'}
     \end{equation}
 
@@ -5117,6 +5118,48 @@ exchangeable here, so that showing only one direction will be enough.
                            &= c \left(\sum_{i=m}^{n}a_i +
                              a_{n+1}\right)\\
                            &= c \sum_{i=m}^{n+1} a_i
+    \end{align*}
+    which closes the induction. The property is thus true for all $n
+    \geq m$.
+  \item For $m \leq n$ integers, prove that $|\sum_{i=m}^{n}a_i| \leq
+    \sum_{i=m}^{n} |a_i|$.
+
+    Let's use induction on $n$, first considering the base case $n=m$.
+    We have $|\sum_{i=m}^{m}a_i| = |a_m| = \sum_{i_m}^{m} |a_i|$, as
+    required.
+
+    Now let's suppose inductively that we have
+    $|\sum_{i=m}^{n}a_i| \leq \sum_{i=m}^{n} |a_i|$. Then we have:
+    \begin{align*}
+      \aval{\sum_{i=m}^{n+1}a_i} & := \aval{\sum_{i=m}^{n} a_i + a_{n+1}} \\
+                                & \leq \aval{\sum_{i=m}^{n} a_i} +
+                                  |a_{n+1}| \text{ (Proposition
+                                  4.3.3(b))} \\
+                                 & \leq \sum_{i=m}^{n} |a_i| +
+                                   |a_{n+1}| \text{ (induction
+                                   hypothesis)} \\
+                                 & \leq \sum_{i=m}^{n+1} |a_i|
+    \end{align*}
+    which closes the induction. The property is thus true for all $n
+    \geq m$.
+  \item For $m \leq n$ integers, prove that, if $a_i \leq b_i$ for all
+    $m \leq i \leq n$, we have $\sum_{i=m}^{n} \leq \sum_{i=m}^{n}
+    b_i$.
+
+    Once again, let's use induction on $n$, starting with the base
+    case $n = m$. In this case, we have $\sum_{i=m}^{n}a_i := a_m \leq
+    b_m := \sum_{i=m}^{n} b_i$, as required.
+
+    Now let's suppose inductively that we have
+    $\sum_{i=m}^{n} \leq \sum_{i=m}^{n} b_i$. Then, if $a_{n+1} \leq
+    b_{n+1}$, we have:
+
+    \begin{align*}
+      \sum_{i=m}^{n+1} a_i & := \sum_{i=m}^{n} a_i + a_{n+1} \\
+                           & \leq \sum_{i=m}^n a_i + b_{n+1} \\
+                           & \leq \sum_{i=m}^{n} b_i + b_{n+1} \text{
+                             (induction hypothesis)} \\
+                           & \leq \sum_{i=m}^{n+1} b_i
     \end{align*}
     which closes the induction. The property is thus true for all $n
     \geq m$.
