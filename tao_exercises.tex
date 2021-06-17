@@ -5207,7 +5207,72 @@ exchangeable here, so that showing only one direction will be enough.
     $\sum_{y \in Y} f(g(y)) = \sum_{i=1}^{n}f \circ g \circ g^{-1}
     \circ h (i) = \sum_{i=1}^{n} f(h(i))$.
 
-    Thus, we have indeed $\sum_{x \in X} f(x) = \sum_{y \in Y} f(g(y))$.
+    Thus, we have indeed $\sum_{x \in X} f(x) = \sum_{y \in Y}
+    f(g(y))$.
+  \item For $n \leq m$ two integers and $X = \{i \in \zz \, : \, n
+    \leq i \leq m\}$, we have $\sum_{i=n}^{m}a_i = \sum_{i \in X} a_i$.
+
+    Let be $f : \intset{n}{m} \rightarrow X$ defined by $f(i) = a_i$ a
+    function; so that we have
+    $\sum_{i \in X} a_i = \sum_{i \in X} f(i)$. First of all, note
+    that $X$ has $m-n+1$ elements. Furthermore, let be
+    $g : \intset{1}{m-n+1} \rightarrow X$ the bijection defined by
+    $g(i) = i+n-1$ (we could show rigorously that this function is
+    bijective, but this is straightforward). We thus have, by
+    definition:
+    $\sum_{i \in X} a_i = \sum_{i \in X} f(i) = \sum_{i=1}^{m-n+1}
+    f(g(i)) = \sum_{i=1}^{m-n+1} f(i+n-1) =
+    \sum_{i=1}^{m-n+1}a_{i+n-1}$.
+
+    Now we can use Lemma 7.1.4(b), to get $\sum_{i=1}^{m-n+1}a_{i+n-1}
+    = \sum_{i=n}^{m} a_i$, so that we have finally showed that
+    $\sum_{i \in X} a_i = \sum_{i=n}^{m} a_i$.
+  \item If $X, Y$ are sets such that $X \cap Y = \emptyset$, and $f :
+    X \cup Y \rightarrow \rr$, we have $\sum_{z \in X \cup Y} f(z) =
+    \sum_{x \in X} f(x) + \sum_{y \in Y} f(y)$.
+
+    Suppose that $X$ has $n$ elements and $Y$ has $m$ elements. Thus,
+    there exist two bijections $g: \intset{1}{n} \rightarrow X$ and
+    $h: \intset{1}{m} \rightarrow Y$. Thus, by definition, we have
+    $\sum_{x \in X} f(x) = \sum_{i=1}^{n}f(g(i))$ and
+    $\sum_{y \in Y} f(y) = \sum_{i=1}^{m}f(h(i))$.
+
+    By Lemma 7.1.4(b), we have $\sum_{i=1}^{m} f(h(i)) =
+    \sum_{i=n+1}^{n+m} f(h(i-n))$.
+
+    Now let's construct a new function $k : \intset{1}{n+m}
+    \rightarrow X \cup Y$, defined by: $k(i) = g(i) \in X$ if $1 \leq i \leq
+    n$ and $k(i) = h(i) \in Y$ if $n+1 \leq i \leq n+m$. In
+    particular, $k(i) \in X \cup Y$ for all $i \in \intset{1}{n+m}$.
+    Let's prove that $k$ is a bijection.
+
+    \begin{itemize}
+    \item Let's suppose that there exists $z \in X \cup Y$ such that
+      $k(i) \neq z$ for all $i \in \intset{1}{n+m}$. If $z \in X$,
+      this means in particular that there exists one $z \in X$ such
+      that $g(i) \neq z$ for all $i \in \intset{1}{n}$, a
+      contradiction. A similar contradiction follows if $z \in Y$.
+      Thus, $k$ is surjective.
+    \item Now suppose that there exist two $i,j \in\intset{1}{n+m}$
+      such that $k(i) = k(j)$. If both $i,j \in \intset{1}{n}$, it is a
+      contradiction with the fact that $g$ is injective; a similar
+      contradiction follows for $h$ if both $i,j \in \intset{n+1}{m}$.
+      Finally, if $i \in \intset{1}{n}$ and $j \in \intset{n+1}{m}$
+      (or the converse), it is a contradiction with the fact that $X
+      \cap Y = \emptyset$. Thus, $k$ is injective.
+    \end{itemize}
+
+    Thus, we have:
+    \begin{align*}
+      \sum_{x \in X \cup Y} f(x) &= \sum_{i=1}^{n+m}f(k(i)) \\
+                         &= \sum_{i=1}^{n}f(k(i)) +
+                           \sum_{i=n+1}^{n+m}f(k(i)) \text{ (by Lemma
+                           7.1.4(a))} \\
+                         &= \sum_{i=1}^{n}f(g(i)) +
+                           \sum_{i=n+1}^{n+m}f(h(i)) \\
+                         &= \sum_{x \in X} f(x) + \sum_{y \in Y} f(y)
+    \end{align*}
+    as required, which closes the proof.
   \end{enumerate}
 \end{exo}
 
