@@ -5287,6 +5287,45 @@ exchangeable here, so that showing only one direction will be enough.
                                  & := \sum_{x \in X} f(x) + \sum_{x
                                    \in X} g(x)
     \end{align*}
+    
+  \item If $c$ is a real number, the we have $\sum_{x \in X} cf(x) = c
+    \sum_{x \in X} f(x)$.
+
+    If we define a function $g$ as $g(x) := cf(x)$, and $h$ a
+    bijection $\intset{1}{n} \rightarrow X$, we have:
+    
+    \begin{align*}
+      \sum_{x \in X} cf(x) &= \sum_{x \in X} g(x) = \sum_{i=1}^{n} g(h(i)) = \sum_{i=1}^n cf(h(i)) \\
+                           &= c \times \sum_{i=1}^{n} f(h(i)) \text{
+                             (Lemma 7.1.4(d))} \\
+                           &= c \times \sum_{x \in X} f(x)
+    \end{align*}
+  \item If $f,g$ are functions such that $f(x) \leq g(x)$ for all $i
+    \in \rr$, then we have $\sum_{x \in X} f(x) \leq \sum_{x \in X}
+    g(x)$.
+
+    If $X$ has $n$ elements, let $h : \intset{1}{n} \rightarrow X$ be
+    a bijection. Then we have:
+    \begin{align*}
+      \sum_{x \in X} f(x) &= \sum_{i=1}^{n} f(h(i)) \\
+                     & \leq \sum_{i=1}^{n} g(h(i)) \text{ (Lemma
+                       7.1.4(f))} \\
+                     &= \sum_{x \in X} g(x)
+    \end{align*}
+  \item Triangle inequality: we have $\aval{\sum_{x \in X} f(x)} \leq
+    \sum_{x \in X} |f(x)|$.
+
+    If we consider the function $k : X \rightarrow \rr$ such that
+    $k(x) = |f(x)|$ for all $x \in X$; and $h : \intset{1}{n}
+    \rightarrow X$ a bijection, we have:
+    \begin{align*}
+      \aval{\sum_{x \in X} f(x)} &= \aval{\sum_{i=1}^{n} f(h(i))} \\
+                                 & \leq \sum_{i=1}^{n} |f(h(i))|
+                                   \text{ (Lemma 7.1.4(e))} \\
+                                 & = \sum_{i=1}^{n} k(h(i)) = \sum_{x
+                                   \in X} k(x) \\
+                                 &= \sum_{x \in X} |f(x)|
+    \end{align*}
   \end{enumerate}
 \end{exo}
 
