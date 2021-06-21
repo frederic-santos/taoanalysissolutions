@@ -5273,6 +5273,20 @@ exchangeable here, so that showing only one direction will be enough.
                          &= \sum_{x \in X} f(x) + \sum_{y \in Y} f(y)
     \end{align*}
     as required, which closes the proof.
+  \item If $X$ is a finite set, then we have $\sum_{x \in X} (f(x) +
+    g(x)) = \sum_{x \in X} f(x) + \sum_{x \in X} g(x)$.
+
+    Suppose that $X$ has $n$ elements, so that there exists a
+    bijection $h : \intset{1}{n} \rightarrow X$. Then we have:
+    \begin{align*}
+      \sum_{x \in X} f(x) + g(x) & := \sum_{i=1}^{n} f(h(i)) + g(h(i))
+      \\
+                                 & = \sum_{i=1}^{n} f(h(i)) +
+                                   \sum_{i=1}^{n} g(h(i)) \text{
+                                   (Lemma 7.1.4(e))} \\
+                                 & := \sum_{x \in X} f(x) + \sum_{x
+                                   \in X} g(x)
+    \end{align*}
   \end{enumerate}
 \end{exo}
 
