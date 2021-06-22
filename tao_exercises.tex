@@ -5329,6 +5329,67 @@ exchangeable here, so that showing only one direction will be enough.
   \end{enumerate}
 \end{exo}
 
+\begin{exo}{7.1.4}{Deﬁne the factorial function $n!$ for natural
+    numbers $n$ by the recursive definition $0! := 1$ and
+    $(n + 1)! := n! \times (n + 1)$. If $x$ and $y$ are real numbers,
+    prove the binomial formula
+    $(x + y)^n = \sum_{j=0}^n \frac{n!}{j!(n - j)!} x^{j}y^{n-j}$ for
+    all natural numbers $n$. (Hint: induct on $n$.)}
+
+  First we begin with a small preliminary result, which is that for
+  all $n, j$ natural numbers, we have
+  $\frac{(n+1)!}{j! (n+1-j)!} = \frac{n!}{(j-1)! (n-j+1)!} +
+  \frac{n!}{j! (n-j)!}$. Indeed:
+  \begin{align*}
+    \frac{n!}{(j-1)! (n-j+1)!} +
+    \frac{n!}{j! (n-j)!} &= \frac{n! \times j}{j! (n-j+1)!} + \frac{n!
+                           \times (n-j+1)}{j! (n-j+1)!} \\
+                         &= \frac{n! \times (n+1)}{j! (n-j+1)!} \\
+    &= \frac{(n+1)!}{j! (n+1-j)!}
+  \end{align*}
+
+
+ Now we can go back to the main proof, for which we will induct on $n$.
+  \begin{itemize}
+  \item Let's start with the base case $n=0$. On the one hand,
+    by Definition 5.6.1, we have $(x+y)^0 = 1$. On the other hand, we
+    have
+    $\sum_{j=0}^{0} \frac{n!}{j!(n - j)!} x^{j}y^{n-j} = \frac{0!}{0!
+      \times 0!} x^0 y^0 = 1$, so that the base case is done.
+
+  \item Now suppose inductively that we have
+    $(x + y)^n = \sum_{j=0}^n \frac{n!}{j!(n - j)!} x^{j}y^{n-j}$, and
+    let's prove that this property is still true for $n+1$. We have:
+
+    \begin{align*}
+      (x+y)^{n+1} &= (x+y) \times (x+y)^n \\
+                  &= x \left(\sum_{j=0}^n
+                    \frac{n!}{j!(n - j)!} x^{j}y^{n-j} \right) + y \left( \sum_{j=0}^n
+                    \frac{n!}{j!(n - j)!} x^{j}y^{n-j} \right) \text{ (by induction
+                    hypothesis)} \\
+                  &= \left(\sum_{j=0}^n
+                    \frac{n!}{j!(n - j)!} x^{j+1}y^{n-j} \right) + \left(\sum_{j=0}^n
+                    \frac{n!}{j!(n - j)!} x^{j}y^{n-j+1} \right) \\
+                  &= \left( x^{n+1} + \sum_{j=0}^{n-1}
+                    \frac{n!}{j!(n - j)!} x^{j+1}y^{n-j} \right) +
+                    \left( y^{n+1} + \sum_{j=1}^{n}
+                    \frac{n!}{j!(n - j)!} x^{j}y^{n-j+1} \right) \\
+                  &= \left( x^{n+1} + \sum_{j=1}^{n}
+                    \frac{n!}{(j-1)!(n - j +1)!} x^{j}y^{n-j+1} \right) +
+                    \left( y^{n+1} + \sum_{j=1}^{n}
+                    \frac{n!}{j!(n - j)!} x^{j}y^{n-j+1} \right) \\
+                  &= x^{n+1} + \sum_{j=1}^{n}
+                    \left(\frac{n!}{(j-1)!(n - j +1)!} +
+                    \frac{n!}{j!(n - j)!}\right) x^{j}y^{n-j+1} +
+                    y^{n+1} \\
+                  &= x^{n+1} + \sum_{j=1}^{n}
+                    \frac{(n+1)!}{j! (n +1 - j)!} x^{j}y^{n-j+1} + y^{n+1} \\
+                    &= \sum_{j=0}^{n+1} \frac{(n+1)!}{j! (n +1 - j)!} x^{j}y^{n-j+1}
+    \end{align*}
+    so that the property is true for all natural number $n$.
+  \end{itemize}
+\end{exo}
+
 \end{document}
 %%% Local Variables:
 %%% mode: latex
