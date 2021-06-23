@@ -5390,6 +5390,49 @@ exchangeable here, so that showing only one direction will be enough.
   \end{itemize}
 \end{exo}
 
+\begin{exo}{7.1.5}{Let $X$ be a finite set, let $m$ be an integer, and
+    for each $x \in X$ let $\seq{a_n(x)}{m}$ be a convergent sequence
+    of real numbers. Show that the sequence
+    $\seq{\sum_{x \in X} a_n(x)}{m}$ is convergent, and that
+    $\limit{\sum_{x \in X} a_n(x)} = \sum_{x \in X} \limit{a_n(x)}$.}
+
+  Let's suppose that $X$ has $r$ elements. Note that, in particular,
+  the property is equivalent to $\limit{\sum_{i=1}^r a_n(h(i))} =
+  \sum_{i=1}^r \limit{a_n(h(i))}$ for any bijection $h : \intset{1}{r}
+  \rightarrow X$.
+
+  Let's induct on $r$, the cardinality of $X$.
+
+  \begin{itemize}
+  \item We start with the base case $r=0$, i.e. $X = \emptyset$. In
+    this case, by Proposition 7.1.11(a), we have immediately
+    $\sum_{x \in X} a_n(x) = 0$, so that $\limit{\sum_{x \in X}
+      a_n(x)} = 0$ as the limit of a constant sequence. Similarly, we
+    have $\sum_{x \in X} \limit{a_n(x)} = 0$, as a sum over an empty
+    set $X$. Thus, the base case is done.
+  \item Now suppose inductively that $\limit{\sum_{x \in X} a_n(x)} =
+    \sum_{x \in X} \limit{a_n(x)}$ when $X$ has $r$ elements, and
+    let's show that this property is still true when $X$ has $r+1$
+    elements.
+
+    Let be $h : \intset{1}{r+1} \rightarrow X$ a bijection. By
+    Definition 7.1.6, we have:
+    \begin{align*}
+      \sum_{x \in X} a_n(x) &= \sum_{i=1}^{r+1} a_n(h(i)) \\
+                            &= \sum_{i=1}^r a_n(h(i)) + a_n(h(r+1))
+    \end{align*}
+
+    By the induction hypothesis, $\sum_{i=1}^r a_n(h(i))$ is a
+    convergent sequence; and $a_n(h(r+1))$ is a convergent sequence by
+    the initial hypothesis; so that we can apply Theorem 6.1.19(a):
+    \begin{align*}
+      \limit{\sum_{x \in X} a_n(x)} &= \limit{\sum_{i=1}^r a_n(h(i)) +
+                                      a_n(h(r+1))} \\
+                                    &= \limit{\sum_{i=1}^r a_n(h(i))} + \limit{a_n(h(r+1))}
+    \end{align*}
+  \end{itemize}
+\end{exo}
+
 \end{document}
 %%% Local Variables:
 %%% mode: latex
