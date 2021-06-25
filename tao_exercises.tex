@@ -5426,10 +5426,20 @@ exchangeable here, so that showing only one direction will be enough.
     convergent sequence; and $a_n(h(r+1))$ is a convergent sequence by
     the initial hypothesis; so that we can apply Theorem 6.1.19(a):
     \begin{align*}
-      \limit{\sum_{x \in X} a_n(x)} &= \limit{\sum_{i=1}^r a_n(h(i)) +
-                                      a_n(h(r+1))} \\
-                                    &= \limit{\sum_{i=1}^r a_n(h(i))} + \limit{a_n(h(r+1))}
+      \limit{\sum_{x \in X} a_n(x)} &= \limit{\left( \sum_{i=1}^r a_n(h(i)) +
+                                      a_n(h(r+1)) \right)} \\
+                                    &= \limit{\sum_{i=1}^r a_n(h(i))}
+                                      + \limit{a_n(h(r+1))} \\
+                                    &= \sum_{i=1}^r \limit{a_n(h(i))}
+                                      + \limit{a_n(h(r+1))} \text{ (by
+                                      induction hypothesis)} \\
+                                    &= \sum_{i=1}^{r+1}
+                                      \limit{a_n(h(i))} \text{
+                                      (Definition 7.1.1)} \\
+      &= \sum_{x \in X} \limit{a_n(x)} \text{ (by Proposition 7.1.11(c))}
     \end{align*}
+    so that the property is also true when $X$ has $n+1$ elements.
+    This closes the induction.
   \end{itemize}
 \end{exo}
 
