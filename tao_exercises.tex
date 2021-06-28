@@ -5443,6 +5443,25 @@ exchangeable here, so that showing only one direction will be enough.
   \end{itemize}
 \end{exo}
 
+\begin{exo}{7.2.2}{Prove Proposition 7.2.5.}
+
+  We have to prove that the formal series $\sum_{n=m}^\infty a_n$
+  converges iff, for any $\epsilon > 0$, there exists an integer $N
+  \geq m$ such that $\aval{\sum_{n=p}^q a_n} \leq \epsilon$ for all $p, q
+  \geq N$.
+
+  First, note that the second statement is just another way to say
+  that the partial sum $S_n = \sum_{i=m}^n a_n$ is a Cauchy sequence.
+  Indeed, for $q \geq p \geq N$, we have
+  $\aval{S_q - S_p} = \aval{\sum_{n=m}^q a_n - \sum_{n=m}^p a_n} =
+  \aval{\sum_{n=p}^q a_n}$ (by Lemma 7.1.4(a)). Thus, the equivalence
+  to prove is simply the fact that $\sum_{n=m}^\infty a_n$
+  converges iff the sequence of its partial sums $(S_N)_{N=m}^\infty$ is a
+  Cauchy sequence. Proposition 6.1.12 and Theorem 6.4.18 immediately
+  provide this equivalence.
+  
+\end{exo}
+
 \end{document}
 %%% Local Variables:
 %%% mode: latex
