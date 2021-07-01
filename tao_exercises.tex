@@ -5474,6 +5474,77 @@ exchangeable here, so that showing only one direction will be enough.
   In particular, let's take $p=q$, and we have $|a_p| \leq \epsilon$
   for all $p \geq N$, which says precisely that $\seq{a_n}{m}$
   converges to 0.
+\end{exo}
+\bigskip
+
+\begin{exo}{7.2.5}{Prove Proposition 7.2.14.}
+
+  We have to prove several statements here:
+
+  \begin{enumerate}[label=\emph{(\alph*)}]
+  \item Let's consider the partial sums $S_N := \sum_{n=m}^{N} a_n$
+    and $T_N := \sum_{n=m}^{N} b_n$. Saying that the formal series
+    $\sum_{n=m}^{\infty} a_n$ and $\sum_{n=m}^{\infty} b_n$ are
+    convergent means that the sequences of their partials sums,
+    $(S_N)_{N=m}^\infty$ and $(T_N)_{N=m}^\infty$ are convergent,
+    towards $x$ and $y$ respectively.
+
+    By Theorem 6.1.19(a), the sequence $(S_N + T_N)_{N=m}^\infty$
+    converges to $x+y$. But by definition, we have $S_N + T_N =
+    \sum_{n=m}^{N} a_n + \sum_{n=m}^{N} b_n = \sum_{n=m}^{N} a_n +
+    b_n$ by Lemma 7.1.4(c). It means that the partial sum of the
+    formal series $\sum_{n=m}^\infty a_n + b_n$ converges to $x+y$, so
+    that we have proved the result.
+    
+  \item The proof would be very similar to the previous one; just use
+    Lemma 7.1.4(d) and Theorem 6.1.19(c) instead.
+
+  \item The sequence of partial sums, $(S_N)_{N=m}^\infty$, converges
+    iff $(S_N)_{N=m+k}^\infty$ is convergent (recall Exercise 6.1.3
+    or Remark 6.1.9). Thus, if one of the two formal series
+    $\sum_{n=m}^{\infty}a_n$ and $\sum_{n=m+k}^{\infty}a_n$ is
+    convergent, the other one is also convergent.
+
+    Furthermore, for all integers $N, k$, we know by Lemma 7.1.4(a)
+    that we have $\sum_{n=m}^{N}a_n = \sum_{n=m}^{m+k-1}a_n +
+    \sum_{n=m+k}^{N}a_n$.
+  \end{enumerate}  
+\end{exo}
+
+\begin{exo}{7.2.6}{Prove Lemma 7.2.15.}
+
+  Let be $\seq{a_n}{0}$ a sequence that converges to 0, and let's
+  consider the formal series $\sum_{n=0}^{\infty}(a_n - a_{n+1})$. Its
+  partials sums are, for any integer $N \geq 0$, $S_N :=
+  \sum_{n=0}^{N}(a_n - a_{n+1}) = a_0 - a_{N+1}$. This can be shown by
+  an induction on $N \geq 0$:
+  \begin{itemize}
+  \item Let's start with the base case $N=0$. In this case, we have
+    $S_0 = \sum_{n=0}^{0} (a_n - a_{n+1}) = a_0 - a1$, as expected.
+  \item Now suppose inductively that the property for a given positive
+    integer $N$, and let's show that it is still true for $N+1$. We
+    have:
+    \begin{align*}
+      S_{N+1} & := \sum_{n=0}^{N+1}(a_n - a_{n+1}) \\
+              &= \sum_{n=0}^{N} (a_n - a_{n+1}) + (a_{N+1} - a_{N+2})
+                \text{ (Definition 7.1.1)} \\
+              &= a_0 - a_{N+1} + a_{N+1} - a_{N+2} \text{ (induction
+                hypothesis)} \\
+              &= a_0 - a_{N+2}
+    \end{align*}
+    which closes the induction, so that the property is true for all
+    $N \geq 0$.
+  \end{itemize}
+
+  Now, let be $\epsilon > 0$ a positive real number. Recall that
+  $\seq{a_n}{0}$ converges to 0, so that there exists a positive
+  integer $M \geq 0$ such that $|a_n| \leq \epsilon$ for all $n \geq
+  M$. On the other hand, we have, for all $N \geq 0$, $|S_N - a_0| =
+  |a_0 - a_{N+1} - a_0| = |a_{N+1}|$. Thus, there exists a positive
+  integer $M' := M-1$ such that, for all $N \geq M'$, we have $|S_N -
+  a_0| \leq \epsilon$. This means that $(S_N)_{N = 0}^\infty$
+  converges to $a_0$, i.e. that the formal series
+  $\sum_{n=0}^{\infty}(a_n - a_{n+1})$ converges to $a_0$, as required.
   
 \end{exo}
 
