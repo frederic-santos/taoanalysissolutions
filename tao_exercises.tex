@@ -5508,6 +5508,18 @@ exchangeable here, so that showing only one direction will be enough.
     Furthermore, for all integers $N, k$, we know by Lemma 7.1.4(a)
     that we have $\sum_{n=m}^{N}a_n = \sum_{n=m}^{m+k-1}a_n +
     \sum_{n=m+k}^{N}a_n$.
+  \item Let be $\epsilon > 0$ a positive real number. Since the formal
+    series $\sum_{n=m}^{\infty}a_n$ converges to $x$, there exists a
+    positive integer $M$ such that
+    $|\sum_{n=m}^N a_n - x| \leq \epsilon$ for all $N \geq M$. By
+    Lemma 7.1.4(b), this is equivalent to
+    $|\sum_{n=m+k}^{N+k} a_{n-k} - x| \leq \epsilon$, for $k$ a
+    positive integer and for all $N \geq M$.
+
+    Thus, there exists a positive integer $M' := M+k$ such that, for
+    all $N \geq M'$, we have $|\sum_{n=m+k}^{N} a_{n-k} - x| \leq
+    \epsilon$, which means that $\sum_{n=m+k}^{\infty}a_{n-k}$ also
+    converges to $x$.
   \end{enumerate}  
 \end{exo}
 
