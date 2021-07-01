@@ -5545,7 +5545,51 @@ exchangeable here, so that showing only one direction will be enough.
   a_0| \leq \epsilon$. This means that $(S_N)_{N = 0}^\infty$
   converges to $a_0$, i.e. that the formal series
   $\sum_{n=0}^{\infty}(a_n - a_{n+1})$ converges to $a_0$, as required.
-  
+\end{exo}
+\bigskip
+
+\begin{exo}{7.3.1}{Use Proposition 7.3.1 to prove Corollary 7.3.2.}
+
+  First, an important remark: if we have $|a_n| \leq b_n$ for all
+  $n \geq m$, we have in particular $b_n \geq 0$ for all $n \geq m$,
+  so that the formal series $\sum_{n=m}^{\infty} b_n$ is a series of
+  non-negative numbers. Since it is convergent by hypothesis, it is
+  thus possible to apply Proposition 7.3.1 to this series: there
+  exists a real number $M$ such that $T_N := \sum_{n=m}^{N}b_n \leq M$
+  for all $N \geq m$.
+
+  \begin{itemize}
+  \item First, let's show the first part of Corollary 7.3.2, that is
+    to say that $\sum_{n=m}^{\infty} a_n$ is absolutely convergent as
+    soon as $\sum_{n=m}^{\infty} b_n$ is convergent.
+
+    Since we have $|a_n| \leq b_n$ for all $n \geq m$ by hypothesis,
+    we have also for all $N\geq m$ the inequality
+    $\sum_{n=m}^{N}|a_n| \leq \sum_{n=m}^N {b_n} \leq M$ by Lemma
+    7.1.4(f), so that the formal series $\sum_{n=m}^{\infty}|a_n|$ is
+    itself convergent by Proposition 7.3.1 again. This proves the
+    first statement.
+  \item Now let's prove that $\aval{\sum_{n=m}^{\infty}a_n} \leq
+    \sum_{n=m}^{\infty} |a_n|$. This is actually simply Proposition
+    7.2.9, so there is nothing to add here.
+  \item Finally, let's prove that
+    $\sum_{n=m}^{\infty}|a_n| \leq \sum_{n=m}^{\infty} b_n$. By
+    Proposition 7.2.14(a)-(b), we know that, since
+    $\sum_{n=m}^{\infty} |a_n|$ and $\sum_{n=m}^{\infty} b_n$ are
+    convergent, then $\sum_{n=m}^{\infty}b_n - |a_n|$ is convergent,
+    so that its partial sum $V_N := \sum_{n=m}^{N}b_n - |a_n|$
+    converges to some limit $L$.
+    Also, we already know that $b_n - |a_n| \geq 0$ for all
+    $n \geq m$, so that $V_N \geq 0$ for all $N \geq m$, and thus $L
+    \geq 0$ by Proposition 5.4.9.
+
+    To summarize: $\sum_{n=m}^{\infty} (b_n - |a_n|) =
+    \sum_{n=m}^{\infty}b_n - \sum_{n=m}^{\infty}|a_n| = L \geq 0$, and
+    thus in particular, $\sum_{n=m}^{\infty}b_n \geq
+    \sum_{n=m}^{\infty}|a_n|$, as required.
+
+    This closes the proof.
+  \end{itemize}  
 \end{exo}
 
 \end{document}
