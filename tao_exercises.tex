@@ -5499,15 +5499,16 @@ exchangeable here, so that showing only one direction will be enough.
   \item The proof would be very similar to the previous one; just use
     Lemma 7.1.4(d) and Theorem 6.1.19(c) instead.
 
-  \item The sequence of partial sums, $(S_N)_{N=m}^\infty$, converges
-    iff $(S_N)_{N=m+k}^\infty$ is convergent (recall Exercise 6.1.3
-    or Remark 6.1.9). Thus, if one of the two formal series
-    $\sum_{n=m}^{\infty}a_n$ and $\sum_{n=m+k}^{\infty}a_n$ is
-    convergent, the other one is also convergent.
-
-    Furthermore, for all integers $N, k$, we know by Lemma 7.1.4(a)
-    that we have $\sum_{n=m}^{N}a_n = \sum_{n=m}^{m+k-1}a_n +
-    \sum_{n=m+k}^{N}a_n$.
+  \item For all integers $N \geq m$ and $k \geq 0$, we know by Lemma
+    7.1.4(a) that we have
+    $\sum_{n=m}^{N}a_n = \sum_{n=m}^{m+k-1}a_n + \sum_{n=m+k}^{N}a_n$.
+    If we set $S_N := \sum_{n=m}^{N}a_n$;
+    $x := \sum_{n=m}^{m+k-1}a_n$; and $T_N := \sum_{n=m+k}^{N}a_n$, we
+    have for all $N \geq m$, the equality $S_N = x + T_N$. As a very
+    general fact (not shown in the book, but easy to prove), the
+    sequence $(S_N)_{N=m}^\infty$ converges to $L$ iff the sequence
+    $(T_N)_{N=m}^\infty$ converges to $L-x$. The statement follows.
+    
   \item Let be $\epsilon > 0$ a positive real number. Since the formal
     series $\sum_{n=m}^{\infty}a_n$ converges to $x$, there exists a
     positive integer $M$ such that
