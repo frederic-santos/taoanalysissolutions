@@ -5636,8 +5636,13 @@ exchangeable here, so that showing only one direction will be enough.
 
     But, by Lemma 6.5.2 (combined with Exercise 6.1.4), we know that
     $\seq{x^{n+1}}{0}$ converges to 0; so that by the convergence
-    laws, $(S_N)_{N=0}^\infty$ converges to $\frac{1}{1-x}$. This
-    closes the proof.
+    laws, $(S_N)_{N=0}^\infty$ converges to $\frac{1}{1-x}$.
+
+    However, this only shows that  $(S_N)_{N=0}^\infty$ is
+    conditionally convergent. Actually, it is absolutely convergent.
+    Indeed, according to Proposition 4.3.10(d), we have $|x^n| =
+    |x|^n$, and the series $\sum_{n=0}^{\infty} |x|^n$ is convergent,
+    by the previous result. This closes the proof.
   \end{itemize}
   
 \end{exo}
