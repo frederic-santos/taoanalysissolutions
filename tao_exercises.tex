@@ -5605,6 +5605,43 @@ exchangeable here, so that showing only one direction will be enough.
   \end{itemize}  
 \end{exo}
 
+\begin{exo}{7.3.2}{Prove Lemma 7.3.3.}
+
+  Let be $x$ a real number and let's consider the formal series
+  $\sum_{n=0}^{\infty} x^n$.
+
+  \begin{itemize}
+  \item If $|x| \geq 1$, then $\seq{x^n}{0}$ does not converge to $0$,
+    by Lemma 6.5.2. Thus, by the zero test (Corollary 7.2.6), the
+    formal series $\sum_{n=0}^{\infty}x^n$ is not convergent.
+  \item If $|x| < 1$, then let's prove that for all $N \geq 0$, the
+    partial sum $S_N$ is equal to $\sum_{n=0}^{N}x^n$. Let's induct on
+    $N$, starting with the base case $N=0$. In this case, we have $S_0
+    = \sum_{n=0}^{0}x^n = 1$; and on the other side, we have
+    $\frac{1-x^{N+1}}{1-x} = \frac{1-x}{1-x} = 1$, so the base case is
+    done.
+
+    Now let's suppose inductively that $S_N = \frac{1-x^{N+1}}{1-x}$
+    and let's prove that this property still holds for $S_{N+1}$. On
+    the one hand we have:
+    \begin{align*}
+      S_{N+1} & := \sum_{n=0}^{N}x^n + x^{N+1} \\
+              &= \frac{1-x^{N+1}}{1-x} + x^{N+1} \text{ (induction
+                hypothesis)} \\
+              &= \frac{1 - x^{N+1} + (1-x)x^{N+1}}{1-x} \\
+              &= \frac{1 - x^{N+2}}{1-x}
+    \end{align*}
+    as required, so that the property holds for all $N \geq 0$: we
+    always have $S_N = \frac{1-x^{N+1}}{1-x}$.
+
+    But, by Lemma 6.5.2 (combined with Exercise 6.1.4), we know that
+    $\seq{x^{n+1}}{0}$ converges to 0; so that by the convergence
+    laws, $(S_N)_{N=0}^\infty$ converges to $\frac{1}{1-x}$. This
+    closes the proof.
+  \end{itemize}
+  
+\end{exo}
+
 \end{document}
 %%% Local Variables:
 %%% mode: latex
