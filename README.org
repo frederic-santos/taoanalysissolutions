@@ -16,7 +16,8 @@ Note that this constitutes only /propositions/ of solutions; errors are still po
 - [X] Chapter 4: (mostly) completed.
 - [X] Chapter 5: completed.
 - [X] Chapter 6: (mostly) completed.
-- [ ] Chapter 7: in progress.
+- [X] Chapter 7: (mostly) completed.
+- [ ] Chapter 8: in progress.
 
 More to come.
 
