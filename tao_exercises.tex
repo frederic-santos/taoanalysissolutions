@@ -5644,7 +5644,51 @@ exchangeable here, so that showing only one direction will be enough.
     |x|^n$, and the series $\sum_{n=0}^{\infty} |x|^n$ is convergent,
     by the previous result. This closes the proof.
   \end{itemize}
-  
+\end{exo}
+
+\section{Infinite sets}
+\begin{exo}{8.1.2}{Prove Proposition 8.1.4. (Hint: you can either use
+    induction, or use the principle of inﬁnite descent, Exercise
+    4.4.2, or use the least upper bound (or greatest lower bound)
+    principle, Theorem 5.5.9.) Does the well- ordering principle work
+    if we replace the natural numbers by the integers? What if we
+    replace the natural numbers by the positive rationals? Explain.}
+
+  Let be $X \subset \nn$ such that $\# X = p$; let's show that there
+  exists $n \in X$ such that $n \leq m$ for all $m \in X$.
+
+  We could indeed show this property by using the greatest lower bound
+  principle: we have showed in Exercise 6.6.3 that, for every subset
+  $X \subset \nn$, the greatest lower bound $\inf(X)$ belongs to $X$.
+  But we will give here another proof, using induction on $p$.
+
+  \begin{itemize}
+  \item Let's start with the base case $n=1$ (note that the base case
+    is not $n=0$, since $X$ is supposed to be non-empty). In such a
+    case, $X$ is a singleton, i.e. there exists $n \in \nn$ such that
+    $X = \{n\}$. By reflexivity, we have of course $n \leq n$, i.e. we
+    have $n \leq m$ for all $m \in X$, as required.
+  \item Now suppose inductively that the property is true for a
+    cardinality of $p$, and let's show that it is still true if
+    $\# X = p+1$. By Lemma 3.6.9, there exists $x \in \nn$ and a
+    subset $Y \subset \nn$ with $\# Y = p$, such that $X = Y \cup
+    \{x\}$. By the induction hypothesis, there exists $n \in Y$ such
+    that $n \leq m$ for all $m \in Y$.
+
+    Now, let be $n' := \min(n, x)$. We thus have $n' \leq n \leq m$
+    for all $m \in Y$ (and thus, in particular, $n' \leq m$); and $n'
+    \leq x$ by definition. Thus, we have $n' \leq m$ for all $m \in Y
+    \cup \{x\}$, that is to say $n' \leq m$ for all $m \in X$, as
+    required. This closes the induction.
+  \end{itemize}
+
+  Note that the well ordering principle does not apply for the
+  integers, because a non-empty set of integers can have arbitrarily
+  small negative numbers: consider for instance the set
+  $A = \{\ldots, -3, -2, -1, 0\}$. This is not applicable to the
+  positive rationals either: one can think of the set
+  $B = \{1/n : n \in \nn^\star\}$, which has an infimum of $0$, but
+  has no smallest element in $B$.
 \end{exo}
 
 \end{document}
