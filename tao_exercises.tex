@@ -5702,7 +5702,6 @@ exchangeable here, so that showing only one direction will be enough.
   
 \end{exo}
 
-\pagebreak
 \begin{exo}{8.1.4}{Prove Proposition 8.1.8.}
 
   Let $Y$ be a set, and $f : \nn \rightarrow Y$ a function (non
@@ -5710,7 +5709,7 @@ exchangeable here, so that showing only one direction will be enough.
   countable.
 
   Let's define the set
-  $A := \{ n \in \nn \, : \, f(m) \neq f(n) \text{ for all } 0 \leq m \leq n
+  $A := \{ n \in \nn \, : \, f(m) \neq f(n) \text{ for all } 0 \leq m < n
   \}$, intuitively the set of natural numbers $n$ such that $f(n)$
   does not appear in the sequence $f(0), \cdots, f(n-1)$. We write
   $f_{|A}$ the restriction of $f$ to $A$, and let's show that $f_{|A}$
@@ -5732,7 +5731,7 @@ exchangeable here, so that showing only one direction will be enough.
     $f(a_1) = y$. Since we suppose $f(a) \neq y$ for all $a \in A$, we
     have $a_1 \notin A$. By definition of the set $A$, it means that
     there exists a natural number $a_2 < a_1$ such that
-    $f(a_2) = f(a_1) = y$, and still $n_2 \notin A$. Similarly, there
+    $f(a_2) = f(a_1) = y$, and still $a_2 \notin A$. Similarly, there
     exists a natural number $a_3 < a_2$ such that $a_3 \notin A$ and
     $f(a_3) = f(a_2) = f(a_1) = y$. Actually, we are constructing like
     this a sequence $\seq{a_n}{1}$ of natural numbers which is in
