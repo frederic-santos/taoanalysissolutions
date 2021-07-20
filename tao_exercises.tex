@@ -5702,8 +5702,51 @@ exchangeable here, so that showing only one direction will be enough.
   
 \end{exo}
 
-\begin{exo}{8.1.4}{}
-  
+\pagebreak
+\begin{exo}{8.1.4}{Prove Proposition 8.1.8.}
+
+  Let $Y$ be a set, and $f : \nn \rightarrow Y$ a function (non
+  necessarily bijective). We have to show that $f(\nn)$ is at most
+  countable.
+
+  Let's define the set
+  $A := \{ n \in \nn \, : \, f(m) \neq f(n) \text{ for all } 0 \leq m \leq n
+  \}$, intuitively the set of natural numbers $n$ such that $f(n)$
+  does not appear in the sequence $f(0), \cdots, f(n-1)$. We write
+  $f_{|A}$ the restriction of $f$ to $A$, and let's show that $f_{|A}$
+  is a bijection from $A$ to $f(\nn)$.
+
+  \begin{itemize}
+  \item First, $f_{|A}$ is injective: let's suppose that we have two
+    natural numbers $a, b \in A$ such that $f(a) = f(b)$. By
+    definition of $A$, we must have $f(m) \neq f(a)$ for all $m < a$.
+    Since $f(a) = f(b)$, we necessarily have $b \geq a$. Similarly, we
+    must have $f(m) \neq f(b)$ for all $m < b$, which implies $a \geq
+    b$. The two inequalities $a \geq b$ and $b \geq a$ imply $a=b$,
+    which shows that $f_{|A}$ is injective.
+  \item Now, let's prove that $f_{|A} : A \rightarrow f(\nn)$ is
+    surjective. Let be $y \in f(\nn)$, and let's suppose, for
+    the sake of contradiction, that $f(a) \neq y$ for all $a \in A$.
+
+    By definition of $f(\nn)$, there exists $a_1 \in \nn$ such that
+    $f(a_1) = y$. Since we suppose $f(a) \neq y$ for all $a \in A$, we
+    have $a_1 \notin A$. By definition of the set $A$, it means that
+    there exists a natural number $a_2 < a_1$ such that
+    $f(a_2) = f(a_1) = y$, and still $n_2 \notin A$. Similarly, there
+    exists a natural number $a_3 < a_2$ such that $a_3 \notin A$ and
+    $f(a_3) = f(a_2) = f(a_1) = y$. Actually, we are constructing like
+    this a sequence $\seq{a_n}{1}$ of natural numbers which is in
+    infinite descent. But this is impossible (see Exercise 4.4.2).
+    Thus, for every $y \in f(\nn)$, we necessarily have a $a \in A$
+    such that $f(a) = y$; i.e., $f_{|A} : A \rightarrow f(\nn)$ is
+    surjective.
+  \end{itemize}
+
+  Thus, $f_{|A} : A \rightarrow f(\nn)$ is bijective. By Corollary
+  8.1.6, every subset of $\nn$ is at most countable, so that $A$
+  (which is clearly a subset of $\nn$) is at most countable. And since
+  $f(\nn)$ has the same cardinality as $A$, this shows that $f(\nn)$
+  is at most countable and closes the proof.
 \end{exo}
 
 \end{document}
