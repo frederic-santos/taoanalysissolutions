@@ -5697,7 +5697,57 @@ exchangeable here, so that showing only one direction will be enough.
   Those gaps only state a few results that we will better show below.
 
   \begin{enumerate}
-  \item TODO
+  \item Show that the set $\{x \in X \, : \, x \neq a_m \text{ for all
+    } m < n\}$ is infinite.
+
+    By definition, we have
+    $X = \{a_0, \cdots, a_{n-1}\} \cup \{x \in X \, : \, x \neq a_m
+    \text{ for all } m < n\}$. Obviously, the set $\{a_0, \cdots,
+    a_{n-1}\}$ is finite. Let's suppose for the sake of contradiction
+    that $\{x \in X \, : \, x \neq a_m \text{ for all
+    } m < n\}$ is also finite. Then, by Proposition 3.6.14(b), $X$
+    would also be finite as the union of two finite sets, which is a
+    contradiction.
+
+  \item Show that $\seq{a_n}{0}$ is strictly increasing.
+
+    By definition, we have:
+    \begin{align*}
+      a_n &:= \min \{x \in X \, : \, x \neq a_m
+            \text{ for all } m < n\} \\
+      a_{n+1} &:= \min \{x \in X \, : \,
+                x \neq a_m \text{ for all } m < n+1\}
+    \end{align*}
+
+    Let's write $A_n := \{x \in X \, : \, x \neq a_m \text{ for all } m <
+    n\}$; we thus have $A_{n+1} \subset A_n$ for all natural number
+    $n$. Consequently, $\min A_{n+1} \geq \min A_n$ for all $n$; i.e.
+    $a_{n+1} \geq a_n$ for all $n$. Furthermore, by definition,
+    $a_{n+1} \neq a_n$, so that we finally have $a_{n+1} > a_n$ for
+    all $n$, i.e. $\seq{a_n}{0}$ is a strictly increasing sequence.    
+
+  \item Show that $a_n \neq a_m$ for all $n \neq m$.
+
+    Suppose, for the sake of contradiction, that there exists two
+    distinct natural numbers $n, m$ such that $a_n = a_m$. This would
+    be a contradiction with the fact that $\seq{a_n}{0}$ is a strictly
+    increasing sequence.
+
+  \item Show that $a_n \in X$ for all $n \in \nn$.
+
+    By Proposition 8.1.4 (well-ordering principle), the minimum of a
+    subset of natural numbers is well-defined: $\min X = \inf X \in X$
+    if $X \subset \nn$.
+
+  \item Obvious statement, simple rephrasing of the definition.
+    
+  \item Show that $a_n \geq n$ for all $n$.
+
+    This can be shown by a simple induction: $\seq{a_n}{0}$ is a
+    strictly increasing sequence of natural numbers, so that $a_0 \geq
+    0$ (base case), and if we suppose inductively that $a_n \geq n$,
+    we thus have $a_{n+1} > a_n \geq n$, i.e. $a_{n+1} \geq n+1$. This
+    closes the induction.
   \end{enumerate}
   
 \end{exo}
