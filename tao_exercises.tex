@@ -5798,6 +5798,33 @@ exchangeable here, so that showing only one direction will be enough.
   is at most countable and closes the proof.
 \end{exo}
 
+\begin{exo}{8.1.5}{Use Proposition 8.1.8 to prove Corollary 8.1.9.}
+
+  We have to show the following claim: if $X$ is a countable set, and
+  $f : X \rightarrow Y$ a function, then $f(X)$ is at most countable
+  (i.e., any image of a countable set is itself countable).
+
+  By definition, if $X$ is a countable set, there exists a bijective
+  function $g : \nn \rightarrow X$. Let's consider the function
+  $h = f \circ g$, which is a function from $\nn$ to $Y$. We will show
+  that $f(X) = h(\nn)$.
+  
+  \begin{itemize}
+  \item First, $f(X) \subseteq h(\nn)$. Indeed, let be $y \in f(X)$.
+    By definition, there exists $x \in X$ such that $y = f(x)$. But
+    since $g$ is bijective, there exists $n \in \nn$ such that $y=
+    f(g(n))$, i.e., there exists $n \in \nn$ such that $y = h(n)$.
+    Thus, $y \in h(\nn)$.
+  \item Furthermore, $h(\nn) \subseteq f(X)$. Let be $y \in h(\nn)$.
+    By definition, there exists $n \in \nn$ such that
+    $y = h(n) = f \circ g(n) = f(g(n))$. But since $g(n) \in X$, we
+    have $y = f(g(n)) \in f(X)$ as required.
+  \end{itemize}
+
+  Thus, we have indeed $f(X) = h(\nn)$, and since $h(\nn)$ is a
+  countable set by Proposition 8.1.8, $f(X)$ is indeed countable.
+\end{exo}
+
 \end{document}
 %%% Local Variables:
 %%% mode: latex
