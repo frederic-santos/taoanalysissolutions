@@ -5852,6 +5852,41 @@ exchangeable here, so that showing only one direction will be enough.
   as required. This closes the proof.
 \end{exo}
 
+\bigskip
+\begin{exo}{8.1.7}{Prove Proposition 8.1.10.}
+
+  We have to prove that if $X$ and $Y$ are countable, then $X \cup Y$
+  is countable. We follow the hint given by Terence Tao for this
+  proof.
+
+  Since $X$ and $Y$ are countable, there exist two bijections
+  $f : \nn \rightarrow X$ and $g : \nn \rightarrow Y$. Let be
+  $h : \nn \rightarrow X \cup Y$ a function defined by $h(2n) = f(n)$
+  and $h(2n+1) = g(n)$ for all natural numbers $n$. Let's show that we
+  have $h(\nn) = X \cup Y$.
+
+  \begin{itemize}
+  \item First, the fact that $h(\nn) \subset X \cup Y$ is obvious: for
+    all $m \in \nn$, $h(m)$ belongs either to $X$ or $Y$ depending on
+    whether $m$ is odd or even, but in both cases,
+    $h(m) \in X \cup Y$.
+  \item Now let's prove that $X \cup Y \subset h(\nn)$. Let be $z \in
+    X \cup Y$. If $z \in X$, then there exists $n \in \nn$ such that
+    $f(n) = z$, and thus $h(2n) = z$. This means that $z \in h(\nn)$.
+    A similar argument applies if $z \in Y$. Thus, we have indeed $X
+    \cup Y \subset h(\nn)$.
+  \end{itemize}
+
+  Those two properties show that $X \cup Y = h(\nn)$. According to
+  Proposition 8.1.8 or Corollary 8.1.9, $h(\nn)$ is at most countable,
+  as the image of the countable set $\nn$. Thus, $h(\nn)$ can be
+  either finite or countable. Let's suppose that it is a finite set.
+  In this case, $X \cup Y$ is a finite set. By Proposition 3.6.14(c),
+  $X$ is also finite, as a subset of a finite set. This is a clear
+  contradiction with our initial hypothesis that $X$ is countably
+  infinite. Thus, $h(\nn) = X \cup Y$ is countable, as required.  
+\end{exo}
+
 \end{document}
 %%% Local Variables:
 %%% mode: latex
