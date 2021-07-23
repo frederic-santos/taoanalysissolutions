@@ -7,7 +7,7 @@ Note that this constitutes only /propositions/ of solutions; errors are still po
 
 ** Notes
 - The LaTeX file makes use of the [[https://www.ctan.org/pkg/mbboard][mbboard]] package. It provides nicer math fonts, but is not part of most LaTeX distributions and must be installed manually.
-- Those files are licensed under a [[http://creativecommons.org/licenses/by-nc-sa/4.0/][Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License]].
+- Those files are licensed under a [[http://creativecommons.org/licenses/by-nc-sa/4.0/][Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License]]. You are thus free to re-use and modify the LaTeX source, for non-commercial purposes only.
 
 ** Current status
 *** Analysis I
