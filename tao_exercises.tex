@@ -5825,6 +5825,33 @@ exchangeable here, so that showing only one direction will be enough.
   countable set by Proposition 8.1.8, $f(X)$ is indeed countable.
 \end{exo}
 
+\bigskip
+\begin{exo}{8.1.6}{Let $A$ be a set. Show that $A$ is at most
+    countable if and only if there exists an injective map $f : A
+    \rightarrow \nn$.}
+
+  First suppose that there exists an injective function
+  $f : A \rightarrow \nn$. By definition, $f$ is thus a bijection
+  between $A$ and $f(A)$, and those two sets thus have the same
+  cardinality. But since we have $f(A) \subset \nn$, the set $f(A)$ is
+  at most countable by Corollary 8.1.6. Thus, $A$ is at most
+  countable, as required.
+
+  Now suppose that $A$ is at most countable. We have two options here:
+  \begin{enumerate}
+  \item If $A$ is countably infinite, then there exists a bijection $f
+    : A \rightarrow \nn$, and in particular, $f$ is thus injective.
+  \item If $A$ is finite, then $A$ has a finite number of
+    elements---say $n$ elements. Consequently, there exists a
+    bijective function $g : A \rightarrow \intset{1}{n}$. Now let be
+    $f : A \rightarrow \nn$ such that $f(a) = g(a)$ for all $a \in A$.
+    In particular, $f$ is injective---but not necessarily surjective.
+  \end{enumerate}
+
+  In both cases, we have found an injective map $f : A \rightarrow \nn$
+  as required. This closes the proof.
+\end{exo}
+
 \end{document}
 %%% Local Variables:
 %%% mode: latex
