@@ -5887,6 +5887,34 @@ exchangeable here, so that showing only one direction will be enough.
   infinite. Thus, $h(\nn) = X \cup Y$ is countable, as required.  
 \end{exo}
 
+\bigskip
+\begin{exo}{8.1.8}{Use Corollary 8.1.13 to prove Corollary 8.1.14.}
+
+  We must show that any cartesian product of two countable sets is
+  itself countable, i.e., if $X$ and $Y$ are countable, then $X \times
+  Y$ is countable.
+
+  By definition, there exist two bijections $f : X \rightarrow \nn$
+  and $g : Y \rightarrow \nn$. Now let be the function $h : X \times Y
+  \rightarrow \nn \times \nn$ defined by $h(x, y) = (f(x), g(y))$ for
+  all $x \in X$ and $y \in Y$. We will show that $h$ is also bijective.
+
+  \begin{itemize}
+  \item $h$ is injective: if we suppose that $h(x, y) = h(x', y')$,
+    then we have $(f(x), g(y)) = (f(x'), g(y'))$, i.e. $f(x) = f(x')$
+    and $g(y) = g(y')$. Since $f$ and $g$ are bijective, this implies
+    $x=x'$ and $y=y'$, so that $h$ is injective.
+  \item $h$ is also surjective because $f$ and $g$ are surjective: for
+    all $n \in \nn$, there exists $x \in X$ such that $n = f(x)$; and
+    similarly, for all $m \in \nn$ there exists $y \in Y$ such that
+    $m = g(y)$. Thus, for all $(n,m) \in \nn \times \nn$ there exists
+    $(x,y) \in X \times Y$ such that $h(x,y) = (n,m)$, i.e., $h$ is
+    surjective.
+  \end{itemize}
+
+  Thus, $X \times Y$ and $\nn \times \nn$ have the same cardinality.
+  By Corollary 8.1.13, this means that $X \times Y$ is countable.
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
