@@ -8,6 +8,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{titlesec}
 \titlelabel{\thetitle.\quad}
+\newcommand{\sectionbreak}{\clearpage} % start each section on a new page
 \usepackage{enumitem}
 % Fonts and math packages:
 \usepackage{lmodern}
@@ -1386,6 +1387,40 @@ $x \in A$ or $x \in B$. This is precisely the Axiom 3.4.
         Y}} \, | \, P(S) \text{ is true}\}$: this set is precisely the
     cartesian product $X \times Y$ we were looking for.
   \end{enumerate}
+\end{exo}
+
+\begin{exo}{3.6.3}{Let $n$ be a natural number, and let
+    $f : \{i \in \nn \, : \, 1 \leq i \leq n\} \rightarrow \nn$ be a
+    function. Show that there exists a natural number $M$ such that
+    $f(i) \leq M$ for all $1 \leq i \leq n$. Thus ﬁnite subsets of the
+    natural numbers are bounded.}
+
+  Let's induct on $n$.
+
+  \begin{itemize}
+  \item Let's take $n=1$ for the base case. $f$ is thus a function
+    from the singleton $\{1\}$ to $\nn$. If we choose the natural
+    number $M := f(1)$, we have indeed $f(i) \leq M$ for all
+    $i \in \{1\}$.
+  \item Now suppose inductively that the proposition is true for a
+    natural number $n$, and let's show that it is still true for
+    $n+1$.
+
+    Let be
+    $f : \{i \in \nn \, : \, 1 \leq i \leq n+1\} \rightarrow \nn$. By
+    the induction hypothesis, we already know that there exists an $M$
+    such that $f(i) \leq M$ for $1 \leq i \leq n$. Now let be
+    $M' := M + f(n+1)$. Since $f(n+1)$ is a natural number, we have
+    $M \leq M'$, so that $f(i) \leq M'$ for all $1 \leq i \leq n$ by
+    transitivity.
+
+    Also, we have $f(n+1) \leq f(n+1) + M = M'$ because $M$ is a
+    natural number.
+
+    Thus, we have found a natural number $M'$ such that $f(i) \leq M'$
+    for all $i \in \intset{1}{n+1}$, as required. This closes the
+    proof.
+  \end{itemize}
 \end{exo}
 
 \section{Integers and rationals}
