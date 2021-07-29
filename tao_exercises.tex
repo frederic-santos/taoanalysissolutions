@@ -8,7 +8,6 @@
 \usepackage[T1]{fontenc}
 \usepackage{titlesec}
 \titlelabel{\thetitle.\quad}
-\newcommand{\sectionbreak}{\clearpage} % start each section on a new page
 \usepackage{enumitem}
 % Fonts and math packages:
 \usepackage{lmodern}
@@ -49,11 +48,14 @@
 %%% Begin doc:
 \begin{document}
 \maketitle
+\tableofcontents
 
+\pagebreak
 \section{Introduction}
 \label{sec:introduction}
 No exercises in this chapter.
 
+\pagebreak
 \section{Starting at the beginning: the natural numbers}
 \label{sec:natural-numbers}
 
@@ -491,6 +493,7 @@ No exercises in this chapter.
   This closes the induction.
 \end{exo}
 
+\pagebreak
 \section{Set theory}
 \begin{exo}{3.1.2}{Using only Definition 3.1.4, Axiom 3.1, Axiom 3.2,
     and Axiom 3.3, prove that the sets $\emptyset$, $\{\emptyset\}$,
@@ -1423,6 +1426,7 @@ $x \in A$ or $x \in B$. This is precisely the Axiom 3.4.
   \end{itemize}
 \end{exo}
 
+\pagebreak
 \section{Integers and rationals}
 \begin{exo}{4.1.1}{Verify that the definition of equality on the
     integers is both reflexive and symmetric.}
@@ -2594,6 +2598,7 @@ We follow the hints given by Terence Tao.
 
 \end{exo}
 
+\pagebreak
 \section{The real numbers}
 \begin{exo}{5.1.1}{Prove Lemma 5.1.15, i.e. that every Cauchy sequence
     is bounded.}
@@ -3636,6 +3641,7 @@ exchangeable here, so that showing only one direction will be enough.
   \end{itemize}
 \end{exo}
 
+\pagebreak
 \section{Limits of sequences}
 \begin{exo}{6.1.1}{Let $\seq{a_n}{0}$ be a sequence of real numbers,
     such that $a_{n+1} > a_n$ for each natural number $n$. Prove that
@@ -5056,6 +5062,7 @@ exchangeable here, so that showing only one direction will be enough.
   \end{enumerate}
 \end{exo}
 
+\pagebreak
 \section{Series}
 \begin{exo}{7.1.1}{Prove Lemma 7.1.4. (Hint: you will need to use
     induction, but the base case might not necessarily be at 0.)}
@@ -5681,6 +5688,7 @@ exchangeable here, so that showing only one direction will be enough.
   \end{itemize}
 \end{exo}
 
+\pagebreak
 \section{Infinite sets}
 \begin{exo}{8.1.2}{Prove Proposition 8.1.4. (Hint: you can either use
     induction, or use the principle of inﬁnite descent, Exercise

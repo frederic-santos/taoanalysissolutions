@@ -3,6 +3,7 @@ mbb*.*
 *.aux
 *.log
 *.out
+*.toc
 *prv_*
 *_region_*
 notes.*
