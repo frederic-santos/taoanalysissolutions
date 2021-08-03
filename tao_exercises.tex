@@ -5958,6 +5958,51 @@ exchangeable here, so that showing only one direction will be enough.
   Thus, $X \times Y$ and $\nn \times \nn$ have the same cardinality.
   By Corollary 8.1.13, this means that $X \times Y$ is countable.
 \end{exo}
+
+\bigskip
+\begin{exo}{8.2.1}{Prove Lemma 8.2.3.}
+
+  We have to prove that, if $X$ is a countable set, then
+  $\sum_{x \in X} f(x)$ is absolutely convergent iff
+  $\sup\left\{ \sum_{x \in A} |f(x)| \, : \, A \subseteq X, \text{ $A$
+      finite}\right\}$.
+
+  A preliminary remark: since $X$ is a countable set, there exists a
+  bijection $g : \nn \rightarrow X$.
+
+  \begin{itemize}
+  \item First suppose that
+    $\sup\left\{ \sum_{x \in A} |f(x)| \, : \, A \subseteq X, \text{
+        $A$ finite}\right\} < \infty$, and let's show that the series
+    $\sum_{x \in X} f(x)$ is absolutely convergent.
+
+    Let be $N$ a natural number. Since $g$ is a bijection from $\nn$
+    to $X$, the set $A_N := g(\intset{0}{N})$ is a (finite) subset of
+    $X$ for any value of $N$. Furthermore, since the restriction
+    $g : \intset{0}{N} \rightarrow A_N$ is bijective, we have
+    $\sum_{x \in A_N} |f(x)| = \sum_{n=0}^N |f(g(n))|$. Thus, by our
+    initial hypothesis,
+    \begin{equation} \label{eq:821a}
+      \sup\left\{ \sum_{x \in A_N} |f(x)| \, : \, N \in \nn\right\} =
+      \sup\left\{ \sum_{n=0}^N |f(g(n))| \, : \, N \in \nn\right\} <
+      \infty
+    \end{equation}
+    Let's denote $S_N := \sum_{n=0}^{N} |f(g(n))|$. The sequence
+    $(S_N)_{N=0}^\infty$ is a sequence of partial sums of non-negative
+    numbers, so that it is increasing, and thus converges iff it is
+    bounded (Proposition 6.3.8). By equation \eqref{eq:821a}, we have
+    $\sup (S_N)_{N=0}^\infty < \infty$, which means that
+    $(S_N)_{N=0}^\infty$ converges. It means that $\sum_{n=0}^{\infty}
+    |f(g(n))|$ converges for some bijection $g : \nn \rightarrow X$,
+    i.e. that $\sum_{x \in X} f(x)$ is absolutely convergent by
+    Definition 8.2.1.
+  \item Now suppose that $\sum_{x \in X} |f(x)|$ is absolutely
+    convergent and let's show that we have
+    $\sup\left\{ \sum_{x \in A} |f(x)| \, : \, A \subseteq X, \text{
+        $A$ finite}\right\} < \infty$.
+  \end{itemize}
+  
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
