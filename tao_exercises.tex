@@ -30,9 +30,9 @@
 \newcommand{\zz}{\mathbb{Z}}
 \newcommand{\qq}{\mathbb{Q}}
 \newcommand{\floor}[1]{\lfloor #1 \rfloor}
-\newcommand{\formallimit}[1]{\text{LIM}_{n \rightarrow \infty} #1}
+\newcommand{\formallimit}[1]{\text{LIM}_{n \to \infty} #1}
 \newcommand{\seq}[2]{(#1)_{n=#2}^\infty}
-\newcommand{\limit}[1]{\text{lim}_{n \rightarrow \infty} #1}
+\newcommand{\limit}[1]{\text{lim}_{n \to \infty} #1}
 \newcommand{\extrr}{\overline{\rr}}
 \newcommand{\liminfp}[2]{\inf (#1^+_N)_{N=#2}^{\infty}}
 \newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
@@ -718,8 +718,8 @@ No exercises in this chapter.
 
 \begin{exo}{3.3.1}{Show that the definition of equality in Definition
     3.3.7 is reflexive, symmetric and transitive. Also verify the
-    substitution property: if $f_1, f_2 : X \rightarrow Y$ and $g_1,
-    g_2 : Y \rightarrow Z$ are functions such that $f_1 f_2$ and $g_1
+    substitution property: if $f_1, f_2 : X \to Y$ and $g_1,
+    g_2 : Y \to Z$ are functions such that $f_1 f_2$ and $g_1
     = g_2$, then $g_1 \circ f_1 = g_2 \circ f_2$.}
 
   \begin{enumerate}
@@ -743,12 +743,12 @@ No exercises in this chapter.
   \end{enumerate}
 \end{exo}
 
-\begin{exo}{3.3.2}{Let $f : X \rightarrow Y$ and $g : Y \rightarrow Z$
+\begin{exo}{3.3.2}{Let $f : X \to Y$ and $g : Y \to Z$
     be functions. Show that if $f$ and $g$ are both injective, then so
     is $g \circ f$. Similarly, show that if $f$ and $g$ are both
     surjective, then so is $g \circ f$.}
 
-  First let's note that $g \circ f : X \rightarrow Z$.
+  First let's note that $g \circ f : X \to Z$.
 
   \begin{enumerate}
   \item Suppose that $f$ and $g$ are both injective, and let
@@ -759,7 +759,7 @@ No exercises in this chapter.
       f(x) &=& f(x') \; \text{ because $g$ is injective}\\
       x &=& x' \; \text{ because $f$ is injective}
     \end{eqnarray*}
-    We have showed that $g \circ f (x) = g \circ f (x') \Rightarrow x
+    We have showed that $g \circ f (x) = g \circ f (x') \to x
     = x'$ for all $x, x' \in X$, i.e. that $g \circ f$ is injective.
     
   \item Suppose that $f$ and $g$ are both surjective, and let
@@ -774,10 +774,10 @@ No exercises in this chapter.
 \begin{exo}{3.3.3}{When is the empty function injective? surjective?
     bijective?}
   
-  Let $f$ be the empty function, i.e. $f : \emptyset \rightarrow Y$
+  Let $f$ be the empty function, i.e. $f : \emptyset \to Y$
   for a certain range $Y$.
   \begin{enumerate}
-  \item $f$ is injective iff $x \neq x' \Rightarrow f(x) \neq
+  \item $f$ is injective iff $x \neq x' \to f(x) \neq
     f(x')$. This can be considered as vacuously true since there are
     no such $x$ and $x'$. $f$ can be considered as always injective,
     for any range $Y$.
@@ -792,8 +792,8 @@ No exercises in this chapter.
   \end{enumerate}
 \end{exo}
 
-\begin{exo}{3.3.4}{Let $f : X \rightarrow Y$, $\tilde{f} : X
-    \rightarrow Y$, $g : Y \rightarrow Z$, $\tilde{g} : Y \rightarrow
+\begin{exo}{3.3.4}{Let $f : X \to Y$, $\tilde{f} : X
+    \to Y$, $g : Y \to Z$, $\tilde{g} : Y \to
     Z$ be functions. Show that if $g \circ f = g \circ \tilde{f}$ and
     $g$ is injective, then $f = \tilde{f}$. Is this statement true if
     $g$ is not injective? Also, show that if $g \circ f = \tilde{g}
@@ -815,9 +815,9 @@ No exercises in this chapter.
     or in other words, $f = \tilde{f}$.
 
     This property is false if $g$ is not injective. As a
-    counterexample, one can think of $f : \rr \rightarrow \rr$ with
-    $f(x) = x$, $\tilde{f} : \rr \rightarrow \rr$ with
-    $\tilde{f}(x) = -x$, and $g : \rr \rightarrow \rr_+$ with
+    counterexample, one can think of $f : \rr \to \rr$ with
+    $f(x) = x$, $\tilde{f} : \rr \to \rr$ with
+    $\tilde{f}(x) = -x$, and $g : \rr \to \rr_+$ with
     $g(x) = |x|$.
   \item As previously, first note that $g$ and $\tilde{g}$ have same
     domain and range. Let be $y, y' \in Y$. Since $f$ is surjective,
@@ -828,15 +828,15 @@ No exercises in this chapter.
     = \tilde{g}$.
 
     This statement is false if $f$ is not surjective. For instance,
-    let $f$ be a constant function, e.g. $f : \rr \rightarrow \rr$
-    with $f(x) = 1$ for all $x$. Let $g, \tilde{g} : \rr \rightarrow
+    let $f$ be a constant function, e.g. $f : \rr \to \rr$
+    with $f(x) = 1$ for all $x$. Let $g, \tilde{g} : \rr \to
     \rr$ with $g(x) = 0$ and $\tilde{g}(x) = - x +1$. We have $g(1) =
     \tilde{g}(1)$, i.e. $g(f(x)) = \tilde{g}(x)$ for all $x \in X$,
     but we obviously do not have $g = \tilde{g}$.
   \end{enumerate}
 \end{exo}
 
-\begin{exo}{3.3.5}{Let $f : X \rightarrow Y$ and $g : Y \rightarrow Z$
+\begin{exo}{3.3.5}{Let $f : X \to Y$ and $g : Y \to Z$
     be functions. Show that if $g \circ f$ is injective, then $f$ must
     be injective. Is it true that $g$ must also be injective? Show that
     if $g \circ f$ is surjective, then $g$ must be surjective. Is it
@@ -873,8 +873,8 @@ No exercises in this chapter.
   \end{enumerate}
 \end{exo}
 
-\begin{exo}{3.3.6}{Let $f : X \rightarrow Y$ be a bijective function,
-    and let $\inv{f} : Y \rightarrow X$ be its inverse. Verify the
+\begin{exo}{3.3.6}{Let $f : X \to Y$ be a bijective function,
+    and let $\inv{f} : Y \to X$ be its inverse. Verify the
     cancellation laws $\inv{f}(f(x)) = x$ for all $x \in X$ and
     $f(\inv{f}(y)) = y$ for all $y \in Y$. Conclude that $\inv{f}$ is
     also invertible and has $f$ as its inverse.}
@@ -909,7 +909,7 @@ No exercises in this chapter.
   \end{enumerate}
 \end{exo}
 
-\begin{exo}{3.3.7}{Let $f : X \rightarrow Y$ and $g : Y \rightarrow Z$
+\begin{exo}{3.3.7}{Let $f : X \to Y$ and $g : Y \to Z$
     be functions. Show that if $f$ and $g$ are bijective, then so is $g
     \circ f$, and we have $\inv{(g \circ f)} = \inv{f} \circ \inv{g}$.}
 
@@ -930,8 +930,8 @@ No exercises in this chapter.
 
 \bigskip
 
-\begin{exo}{3.4.1}{Let $f : X \rightarrow Y$ be a bijective function,
-    and let $\inv{f} : Y \rightarrow X$ be its inverse. Let $V$ be any
+\begin{exo}{3.4.1}{Let $f : X \to Y$ be a bijective function,
+    and let $\inv{f} : Y \to X$ be its inverse. Let $V$ be any
     subset of $Y$. Prove that the forward image of $V$ under $\inv{f}$
     is the same as the inverse image of $V$ under $f$; thus the fact
     that both sets are denoted as $\inv{f}$ will not lead to any
@@ -965,7 +965,7 @@ No exercises in this chapter.
   \end{enumerate}
 \end{exo}
 
-\begin{exo}{3.4.2}{Let $f : X \rightarrow Y$ be a function, let $S$ be
+\begin{exo}{3.4.2}{Let $f : X \to Y$ be a function, let $S$ be
     a subset of $X$ and let $U$ be a subset of $Y$. What, in general,
     can one say about $\inv{f}(f(S))$ and $S$? What about
     $f(\inv{f}(U))$ and $U$?}
@@ -1004,7 +1004,7 @@ No exercises in this chapter.
 \end{exo}
 
 \begin{exo}{3.4.3}{Let $A, B$ be two subsets of $X$, and let be $f : X
-    \rightarrow Y$. Show that $f(A \cap B) \subseteq f(A) \cap f(B)$,
+    \to Y$. Show that $f(A \cap B) \subseteq f(A) \cap f(B)$,
     that $f(A) \backslash f(B) \subseteq f(A \backslash B)$, and $f(A
     \cup B) = f(A) \cup f(B)$. Is it true that, for the first two
     statements, the $\subseteq$ relation can be improved to $=$?}
@@ -1048,7 +1048,7 @@ No exercises in this chapter.
   \end{enumerate}
 \end{exo}
 
-\begin{exo}{3.4.4}{Let be $f : X \rightarrow Y$ a function, and let
+\begin{exo}{3.4.4}{Let be $f : X \to Y$ a function, and let
     $A, B$ be subsets of $Y$. Show that
     $\inv{f}(A \cup B) = \inv{f}(A) \cup \inv{f}(B)$, that
     $\inv{f}(A \cap B) = \inv{f}(A) \cap \inv{f}(B)$, and that
@@ -1084,7 +1084,7 @@ No exercises in this chapter.
   \end{itemize}
 \end{exo}
 
-\begin{exo}{3.4.5}{Let $f : X \rightarrow Y$ be a function. Show that
+\begin{exo}{3.4.5}{Let $f : X \to Y$ be a function. Show that
     $\inv{f}(f(S)) = S$ for every $S \subseteq Y$ iff $f$ is
     surjective. Show that $f(\inv{f}(S)) = S$ for every $S \subseteq
     X$ iff $f$ is injective.}
@@ -1112,7 +1112,7 @@ No exercises in this chapter.
     $x \in X$ such that $y = f(x)$. Recall that $y \in S$: this means
     that$f(x) \in S$, i.e. $x \in \inv{f}(S)$. Thus,
     $y = f(x) \in f(\inv{f}(S))$. We have proved that, if $f$ is
-    surjective, $y \in S \Rightarrow y \in f(\inv{f}(S))$, i.e.
+    surjective, $y \in S \to y \in f(\inv{f}(S))$, i.e.
     $S \subseteq f(\inv{f}(S))$.
 
     Conversely, suppose that $S \subseteq f(\inv{f}(S))$ for every
@@ -1175,9 +1175,9 @@ No exercises in this chapter.
   \begin{enumerate}
   \item Let $X$ be a set, and $Y = \{0,1\}$. Per the power set axiom,
     $\{0,1\}^X$ is a set, and it contains all the functions
-    $f : X \rightarrow \{0,1\}$.
+    $f : X \to \{0,1\}$.
   \item Let $A$ be a subset of $X$. One can define the function
-    $f_A : X \rightarrow \{0,1\}$, such that for all $x \in X$,
+    $f_A : X \to \{0,1\}$, such that for all $x \in X$,
     $f(x) = 1$ if $x \in A$, and $f(x)=0$ otherwise. We can even say
     more:
     \begin{itemize}
@@ -1203,7 +1203,7 @@ No exercises in this chapter.
 \end{exo}
 
 \begin{exo}{3.4.7}{Let $X, Y$ be sets. Define a partial function
-    from $X$ to $Y$ to be any function $f: X' \rightarrow Y'$ with
+    from $X$ to $Y$ to be any function $f: X' \to Y'$ with
     $X' \subseteq X$ and $Y'\subseteq Y$. Show that the collection of
     all partial functions from $X$ to $Y$ is itself a set.}
   \begin{itemize}
@@ -1230,11 +1230,11 @@ No exercises in this chapter.
      $\{Y'^{X'} \, | \, Y' \in 2^Y\}$, i.e.:
 
      \[ \bigcup \{Y'^{X'} \, | \, Y' \in 2^Y\} = \{f | f:X'
-       \rightarrow Y' \text{ for some } Y' \in 2^Y\}\]
+       \to Y' \text{ for some } Y' \in 2^Y\}\]
 
      This set is obtained for one given \emph{fixed} subset
      $X' \subseteq X$, so let's denote this set:
-     \[S_{X'} = \{f | f:X' \rightarrow Y' \text{ for some } Y' \in
+     \[S_{X'} = \{f | f:X' \to Y' \text{ for some } Y' \in
        2^Y\}\]
    \item Now we apply once again the union set (3.11), especially in
      its second formulation. If we denote $I = 2^X$, then for each
@@ -1245,7 +1245,7 @@ No exercises in this chapter.
      $f \in \bigcup \{S_{X'} \, | \, X' \in 2^X\}$ iff there exists
      $X' \in 2^X$ such that $f \in S_{X'}$, i.e. if there exists
      $X' \subset X$ and $Y' \subset Y$ such that
-     $f: X' \rightarrow Y'$.
+     $f: X' \to Y'$.
    \item Consequently, we have proved that there exists a set which
      consists of the collection of all partial functions from $X$ to
      $Y$.
@@ -1393,7 +1393,7 @@ $x \in A$ or $x \in B$. This is precisely the Axiom 3.4.
 \end{exo}
 
 \begin{exo}{3.6.3}{Let $n$ be a natural number, and let
-    $f : \{i \in \nn \, : \, 1 \leq i \leq n\} \rightarrow \nn$ be a
+    $f : \{i \in \nn \, : \, 1 \leq i \leq n\} \to \nn$ be a
     function. Show that there exists a natural number $M$ such that
     $f(i) \leq M$ for all $1 \leq i \leq n$. Thus ﬁnite subsets of the
     natural numbers are bounded.}
@@ -1410,7 +1410,7 @@ $x \in A$ or $x \in B$. This is precisely the Axiom 3.4.
     $n+1$.
 
     Let be
-    $f : \{i \in \nn \, : \, 1 \leq i \leq n+1\} \rightarrow \nn$. By
+    $f : \{i \in \nn \, : \, 1 \leq i \leq n+1\} \to \nn$. By
     the induction hypothesis, we already know that there exists an $M$
     such that $f(i) \leq M$ for $1 \leq i \leq n$. Now let be
     $M' := M + f(n+1)$. Since $f(n+1)$ is a natural number, we have
@@ -3706,14 +3706,14 @@ exchangeable here, so that showing only one direction will be enough.
     \begin{equation}
       \label{eq:613}
       \forall \epsilon > 0, \exists N \geq m \; : \;  n\geq m
-      \Rightarrow |a_n - c| \leq \epsilon
+      \to |a_n - c| \leq \epsilon
     \end{equation}
     So let be $\epsilon > 0$, and let's take $N' := N + m'$. We have
     both $N' \geq N$ and $N' \geq m'$. Thus, if $n \geq N'$, we also
     have $n \geq N$, which implies $|a_n - c| \leq \epsilon$ according
     to equation \eqref{eq:613}. Thus, we have indeed found a positive
     integer $N' \geq m'$ such that
-    $n \geq N' \Rightarrow |a_n - c| \leq \epsilon$, i.e., we have
+    $n \geq N' \to |a_n - c| \leq \epsilon$, i.e., we have
     proved that $\seq{a_n}{m'}$ converges to $c$.
   \end{itemize}
 \end{exo}
@@ -3735,9 +3735,9 @@ exchangeable here, so that showing only one direction will be enough.
   \item First, suppose that $\seq{a_n}{m}$ converges to $c$. Let
     $\epsilon > 0$ be a real number. We must show that there exists
     $M \geq m$ such that
-    $n+k \geq M \Rightarrow |a_{n+k} - c| \leq \epsilon$. We know that
+    $n+k \geq M \to |a_{n+k} - c| \leq \epsilon$. We know that
     there exists $N \geq m$ such that
-    $n \geq N \Rightarrow |a_n -c| \leq \epsilon$. But for any
+    $n \geq N \to |a_n -c| \leq \epsilon$. But for any
     $k \leq 0$, we have $n + k \geq n$, so that as soon as $n \geq N$,
     we have $n+k \geq n \geq N$, and thus $|a_{n+k} - c| \leq
     \epsilon$. So, choosing $M := N$ is suitable here, and we have
@@ -3745,9 +3745,9 @@ exchangeable here, so that showing only one direction will be enough.
   \item Now prove the converse implication: suppose that
     $\seq{a_{n+k}}{m}$ converges to $c$. We want to show that there
     exists $N \geq m$ such that
-    $n \geq N \Rightarrow |a_n -c| \leq \epsilon$. We already know
+    $n \geq N \to |a_n -c| \leq \epsilon$. We already know
     that there exists $M \geq m$ such that
-    $n \geq M \Rightarrow |a_{n+k} - c| \leq \epsilon$. Let be
+    $n \geq M \to |a_{n+k} - c| \leq \epsilon$. Let be
     $N := M+k$. We can see that if $n \geq N$, we have $n \geq M+k$,
     i.e. $n-k \geq M$, and thus $|a_{(n-k)+k} - c| \leq \epsilon$ as
     required. So, $N := M+k$ is suitable, and $\seq{a_n}{m}$ converges
@@ -3877,10 +3877,10 @@ exchangeable here, so that showing only one direction will be enough.
     $|(a_n + b_n) - (x+y)| \leq \epsilon$.
 
     Since $\seq{a_n}{m}$ converges to $x$, there exists $N_1 \geq m$
-    such that $n \geq N_1 \Rightarrow |a_n - x| \leq \epsilon/2$.
+    such that $n \geq N_1 \to |a_n - x| \leq \epsilon/2$.
 
     Similarly, there exists $N_2 \geq m$ such that
-    $n \geq N_2 \Rightarrow |b_n - y| \leq \epsilon/2$.
+    $n \geq N_2 \to |b_n - y| \leq \epsilon/2$.
 
     Let be $N := \max(N_1, N_2)$. Thus, by triangular inequality, we
     have for all $n \geq N$:
@@ -3910,10 +3910,10 @@ exchangeable here, so that showing only one direction will be enough.
       $|a_n| \leq M$ for all $n \geq m$.
     \item Since $\seq{b_n}{m}$ converges to $y$, there exists an
       integer $N_b \geq m$ such that
-      $n \geq N_b \Rightarrow |b_n - y| \leq \frac{\epsilon}{2M}$.
+      $n \geq N_b \to |b_n - y| \leq \frac{\epsilon}{2M}$.
     \item Since $\seq{a_n}{m}$ converges to $x$, there exists an
       integer $N_a \geq m$ such that
-      $n \geq N_b \Rightarrow |a_n - x| \leq \frac{\epsilon}{2(|y|+1)}$.
+      $n \geq N_b \to |a_n - x| \leq \frac{\epsilon}{2(|y|+1)}$.
       (Note that we don't choose $\frac{\epsilon}{2|y|}$, because we
       don't know whether $|y| \neq 0$ or not, so we need an additional
       precaution.)
@@ -4474,7 +4474,7 @@ exchangeable here, so that showing only one direction will be enough.
     First, note that the sequence $(a_N^+)^\infty_{N=m}$ is
     decreasing. In particular, thanks to Proposition 6.3.8, it means
     that its limit is equal to its greatest lower bound, i.e.,
-    $\lim_{N \rightarrow +\infty} (a_N^+) = \inf (a_N^+)_{N=m}^\infty$. But we
+    $\lim_{N \to +\infty} (a_N^+) = \inf (a_N^+)_{N=m}^\infty$. But we
     already know, thanks to Exercises 6.1.3 and 6.1.4, that this limit
     does not depend on the starting index of the sequence. Thus, we
     indeed have $\ell = \ell'$.
@@ -4910,7 +4910,7 @@ exchangeable here, so that showing only one direction will be enough.
       This will be useful in Exercise 6.6.5 as well; and will be
       useful in Chapter 8. \label{note-borne-inf-n}}. Thus, the numbers $n_j$ are well-defined.
   \item Finally, let be $\epsilon > 0$ a positive real number, and a
-    function $f : \nn \rightarrow \nn$ defined by $f(j) = n_j$. It is
+    function $f : \nn \to \nn$ defined by $f(j) = n_j$. It is
     a strictly increasing function by definition of the numbers $n_j$.
     Let's consider the sequence $\seq{b_n}{0}$ defined by
     $b_j := a_{n_j} = a_{f(j)}$ for all $j \in \nn$.
@@ -4937,7 +4937,7 @@ exchangeable here, so that showing only one direction will be enough.
     implications has a very short proof.)}
 
   First let's prove a preliminary result: if $f : \mathbb{N}
-  \rightarrow \mathbb{N}$ is a strictly increasing function, then
+  \to \mathbb{N}$ is a strictly increasing function, then
   $f(n) \geq n$ for all $n \in \nn$. We can use induction on $n$:
   \begin{itemize}
   \item for the base case $n = 0$, we indeed have $f(0) \geq 0$
@@ -4959,7 +4959,7 @@ exchangeable here, so that showing only one direction will be enough.
     converges to $L$.
     
   \item Now suppose that the sequence $\seq{a_n}{0}$ converges to $L$.
-    Let be $\epsilon > 0$, and $f : \nn \rightarrow \nn$ a strictly
+    Let be $\epsilon > 0$, and $f : \nn \to \nn$ a strictly
     increasing function such that $\seq{a_{f(n)}}{0}$ is a subsequence
     of $\seq{a_n}{0}$.
 
@@ -4997,7 +4997,7 @@ exchangeable here, so that showing only one direction will be enough.
 
   \begin{enumerate}
   \item First we show that (b) implies (a). Let be $f : \nn
-    \rightarrow \nn$ a strictly increasing function such that
+    \to \nn$ a strictly increasing function such that
     $\seq{a_{f(n)}}{0}$ converges to $L$. We must show that $L$ is a
     limit point of $\seq{a_n}{0}$, i.e. that:
     \begin{equation}
@@ -5007,7 +5007,7 @@ exchangeable here, so that showing only one direction will be enough.
     \end{equation}
     So let be $\epsilon > 0$ and $N \geq 0$. If $\seq{a_{f(n)}}{0}$
     converges to $L$, there exists $M \geq 0$ such that
-    $n \geq M \Rightarrow |a_{f(n)} - L| < \epsilon$. We know that $f$
+    $n \geq M \to |a_{f(n)} - L| < \epsilon$. We know that $f$
     is a strictly increasing function, so that $f(n) \geq n$ for all
     $n \in \nn$, as previously shown in Exercise 6.6.4. Thus, if one
     considers $p := \max(M, N)$, we have:
@@ -5042,7 +5042,7 @@ exchangeable here, so that showing only one direction will be enough.
       which we can write $\inf(A_j)$. By note \ref{note-borne-inf-n},
       we have $\inf(A_j) \in A_j$, i.e., $\inf(A_j) = \min(A_j) = n_j$
       is well-defined.
-    \item Now let be $f : \nn \rightarrow \nn$ the strictly increasing
+    \item Now let be $f : \nn \to \nn$ the strictly increasing
       function defined by $f(j) := n_j$; and let's consider the
       subsequence of $\seq{a_n}{0}$ defined by $a_{f(j)} = a_{n_j}$.
       Let be $\epsilon > 0$. By the archimedean property (or Exercise
@@ -5054,7 +5054,7 @@ exchangeable here, so that showing only one direction will be enough.
       \begin{equation}
         \label{eq:665b}
         \forall \epsilon > 0, \exists j \geq 1 \; : \; n \geq j
-        \Rightarrow |a_{f(j)} - L| \leq \epsilon
+        \to |a_{f(j)} - L| \leq \epsilon
       \end{equation}
       which means that the subsequence $\seq{a_{f(n)}}{0}$ converges
       to $0$, as required.
@@ -5212,7 +5212,7 @@ exchangeable here, so that showing only one direction will be enough.
 \begin{exo}{7.1.2}{Prove Proposition 7.1.11.}
 
   First recall the main definition: if $X$ is a finite set with $n$
-  elements, $f : X \rightarrow \rr$ a function, and $g$ a bijection
+  elements, $f : X \to \rr$ a function, and $g$ a bijection
   from $\intset{1}{n}$ to $X$, then we have
   $\sum_{x \in X}f(x) := \sum_{i=1}^{n}f(g(i))$.
 
@@ -5228,21 +5228,21 @@ exchangeable here, so that showing only one direction will be enough.
     $\sum_{x \in X} f(x) = \sum_{i=1}^{0} f(g(i)) = 0$.
   \item If $X = \{x_0\}$, we have $\sum_{x \in X} f(x) = f(x_0)$.
 
-    In this case, $X$ has $n = 1$ element, and $g : \{1\} \rightarrow
+    In this case, $X$ has $n = 1$ element, and $g : \{1\} \to
     X$ such that $g(1) = x_0$ is a bijection. Thus, by definition, we
     have $\sum_{x \in X} f(x) = \sum_{i=1}^{1} f(g(i)) = f(g(1)) =
     f(x_0)$.
-  \item If $X$ is a finite set and $g : Y \rightarrow X$ a bijection,
+  \item If $X$ is a finite set and $g : Y \to X$ a bijection,
     then $\sum_{x \in X} f(x) = \sum_{y \in Y} f(g(y))$.
 
     First note that since $g$ is a bijection, $Y$ also has $n$
     elements.
 
     On the one hand, since $X$ has $n$ elements, there exists a
-    bijection $h : \intset{1}{n} \rightarrow X$ such that $\sum_{x \in
+    bijection $h : \intset{1}{n} \to X$ such that $\sum_{x \in
       X} f(x) = \sum_{i=1}^{n} f(h(i))$.
 
-    On the other hand, let be $k : \intset{1}{n} \rightarrow Y$ a
+    On the other hand, let be $k : \intset{1}{n} \to Y$ a
     function defined by $k = g^{-1} \circ h$. Since $k$ is the
     composition of two bijections, it is itself a bijection (cf.
     Exercise 3.3.2). We thus have :
@@ -5254,11 +5254,11 @@ exchangeable here, so that showing only one direction will be enough.
   \item For $n \leq m$ two integers and $X = \{i \in \zz \, : \, n
     \leq i \leq m\}$, we have $\sum_{i=n}^{m}a_i = \sum_{i \in X} a_i$.
 
-    Let be $f : \intset{n}{m} \rightarrow X$ defined by $f(i) = a_i$ a
+    Let be $f : \intset{n}{m} \to X$ defined by $f(i) = a_i$ a
     function; so that we have
     $\sum_{i \in X} a_i = \sum_{i \in X} f(i)$. First of all, note
     that $X$ has $m-n+1$ elements. Furthermore, let be
-    $g : \intset{1}{m-n+1} \rightarrow X$ the bijection defined by
+    $g : \intset{1}{m-n+1} \to X$ the bijection defined by
     $g(i) = i+n-1$ (we could show rigorously that this function is
     bijective, but this is straightforward). We thus have, by
     definition:
@@ -5270,12 +5270,12 @@ exchangeable here, so that showing only one direction will be enough.
     = \sum_{i=n}^{m} a_i$, so that we have finally showed that
     $\sum_{i \in X} a_i = \sum_{i=n}^{m} a_i$.
   \item If $X, Y$ are sets such that $X \cap Y = \emptyset$, and $f :
-    X \cup Y \rightarrow \rr$, we have $\sum_{z \in X \cup Y} f(z) =
+    X \cup Y \to \rr$, we have $\sum_{z \in X \cup Y} f(z) =
     \sum_{x \in X} f(x) + \sum_{y \in Y} f(y)$.
 
     Suppose that $X$ has $n$ elements and $Y$ has $m$ elements. Thus,
-    there exist two bijections $g: \intset{1}{n} \rightarrow X$ and
-    $h: \intset{1}{m} \rightarrow Y$. Thus, by definition, we have
+    there exist two bijections $g: \intset{1}{n} \to X$ and
+    $h: \intset{1}{m} \to Y$. Thus, by definition, we have
     $\sum_{x \in X} f(x) = \sum_{i=1}^{n}f(g(i))$ and
     $\sum_{y \in Y} f(y) = \sum_{i=1}^{m}f(h(i))$.
 
@@ -5283,7 +5283,7 @@ exchangeable here, so that showing only one direction will be enough.
     \sum_{i=n+1}^{n+m} f(h(i-n))$.
 
     Now let's construct a new function $k : \intset{1}{n+m}
-    \rightarrow X \cup Y$, defined by: $k(i) = g(i) \in X$ if $1 \leq i \leq
+    \to X \cup Y$, defined by: $k(i) = g(i) \in X$ if $1 \leq i \leq
     n$ and $k(i) = h(i) \in Y$ if $n+1 \leq i \leq n+m$. In
     particular, $k(i) \in X \cup Y$ for all $i \in \intset{1}{n+m}$.
     Let's prove that $k$ is a bijection.
@@ -5319,7 +5319,7 @@ exchangeable here, so that showing only one direction will be enough.
     g(x)) = \sum_{x \in X} f(x) + \sum_{x \in X} g(x)$.
 
     Suppose that $X$ has $n$ elements, so that there exists a
-    bijection $h : \intset{1}{n} \rightarrow X$. Then we have:
+    bijection $h : \intset{1}{n} \to X$. Then we have:
     \begin{align*}
       \sum_{x \in X} f(x) + g(x) & := \sum_{i=1}^{n} f(h(i)) + g(h(i))
       \\
@@ -5334,7 +5334,7 @@ exchangeable here, so that showing only one direction will be enough.
     \sum_{x \in X} f(x)$.
 
     If we define a function $g$ as $g(x) := cf(x)$, and $h$ a
-    bijection $\intset{1}{n} \rightarrow X$, we have:
+    bijection $\intset{1}{n} \to X$, we have:
     
     \begin{align*}
       \sum_{x \in X} cf(x) &= \sum_{x \in X} g(x) = \sum_{i=1}^{n} g(h(i)) = \sum_{i=1}^n cf(h(i)) \\
@@ -5346,7 +5346,7 @@ exchangeable here, so that showing only one direction will be enough.
     \in \rr$, then we have $\sum_{x \in X} f(x) \leq \sum_{x \in X}
     g(x)$.
 
-    If $X$ has $n$ elements, let $h : \intset{1}{n} \rightarrow X$ be
+    If $X$ has $n$ elements, let $h : \intset{1}{n} \to X$ be
     a bijection. Then we have:
     \begin{align*}
       \sum_{x \in X} f(x) &= \sum_{i=1}^{n} f(h(i)) \\
@@ -5357,9 +5357,9 @@ exchangeable here, so that showing only one direction will be enough.
   \item Triangle inequality: we have $\aval{\sum_{x \in X} f(x)} \leq
     \sum_{x \in X} |f(x)|$.
 
-    If we consider the function $k : X \rightarrow \rr$ such that
+    If we consider the function $k : X \to \rr$ such that
     $k(x) = |f(x)|$ for all $x \in X$; and $h : \intset{1}{n}
-    \rightarrow X$ a bijection, we have:
+    \to X$ a bijection, we have:
     \begin{align*}
       \aval{\sum_{x \in X} f(x)} &= \aval{\sum_{i=1}^{n} f(h(i))} \\
                                  & \leq \sum_{i=1}^{n} |f(h(i))|
@@ -5441,7 +5441,7 @@ exchangeable here, so that showing only one direction will be enough.
   Let's suppose that $X$ has $r$ elements. Note that, in particular,
   the property is equivalent to $\limit{\sum_{i=1}^r a_n(h(i))} =
   \sum_{i=1}^r \limit{a_n(h(i))}$ for any bijection $h : \intset{1}{r}
-  \rightarrow X$.
+  \to X$.
 
   Let's induct on $r$, the cardinality of $X$.
 
@@ -5457,7 +5457,7 @@ exchangeable here, so that showing only one direction will be enough.
     let's show that this property is still true when $X$ has $r+1$
     elements.
 
-    Let be $h : \intset{1}{r+1} \rightarrow X$ a bijection. By
+    Let be $h : \intset{1}{r+1} \to X$ a bijection. By
     Definition 7.1.6, we have:
     \begin{align*}
       \sum_{x \in X} a_n(x) &= \sum_{i=1}^{r+1} a_n(h(i)) \\
@@ -5797,7 +5797,7 @@ exchangeable here, so that showing only one direction will be enough.
 
 \begin{exo}{8.1.4}{Prove Proposition 8.1.8.}
 
-  Let $Y$ be a set, and $f : \nn \rightarrow Y$ a function (non
+  Let $Y$ be a set, and $f : \nn \to Y$ a function (non
   necessarily bijective). We have to show that $f(\nn)$ is at most
   countable.
 
@@ -5816,7 +5816,7 @@ exchangeable here, so that showing only one direction will be enough.
     must have $f(m) \neq f(b)$ for all $m < b$, which implies $a \geq
     b$. The two inequalities $a \geq b$ and $b \geq a$ imply $a=b$,
     which shows that $f_{|A}$ is injective.
-  \item Now, let's prove that $f_{|A} : A \rightarrow f(\nn)$ is
+  \item Now, let's prove that $f_{|A} : A \to f(\nn)$ is
     surjective. Let be $y \in f(\nn)$, and let's suppose, for
     the sake of contradiction, that $f(a) \neq y$ for all $a \in A$.
 
@@ -5830,11 +5830,11 @@ exchangeable here, so that showing only one direction will be enough.
     this a sequence $\seq{a_n}{1}$ of natural numbers which is in
     infinite descent. But this is impossible (see Exercise 4.4.2).
     Thus, for every $y \in f(\nn)$, we necessarily have a $a \in A$
-    such that $f(a) = y$; i.e., $f_{|A} : A \rightarrow f(\nn)$ is
+    such that $f(a) = y$; i.e., $f_{|A} : A \to f(\nn)$ is
     surjective.
   \end{itemize}
 
-  Thus, $f_{|A} : A \rightarrow f(\nn)$ is bijective. By Corollary
+  Thus, $f_{|A} : A \to f(\nn)$ is bijective. By Corollary
   8.1.6, every subset of $\nn$ is at most countable, so that $A$
   (which is clearly a subset of $\nn$) is at most countable. And since
   $f(\nn)$ has the same cardinality as $A$, this shows that $f(\nn)$
@@ -5844,11 +5844,11 @@ exchangeable here, so that showing only one direction will be enough.
 \begin{exo}{8.1.5}{Use Proposition 8.1.8 to prove Corollary 8.1.9.}
 
   We have to show the following claim: if $X$ is a countable set, and
-  $f : X \rightarrow Y$ a function, then $f(X)$ is at most countable
+  $f : X \to Y$ a function, then $f(X)$ is at most countable
   (i.e., any image of a countable set is itself countable).
 
   By definition, if $X$ is a countable set, there exists a bijective
-  function $g : \nn \rightarrow X$. Let's consider the function
+  function $g : \nn \to X$. Let's consider the function
   $h = f \circ g$, which is a function from $\nn$ to $Y$. We will show
   that $f(X) = h(\nn)$.
   
@@ -5871,10 +5871,10 @@ exchangeable here, so that showing only one direction will be enough.
 \bigskip
 \begin{exo}{8.1.6}{Let $A$ be a set. Show that $A$ is at most
     countable if and only if there exists an injective map $f : A
-    \rightarrow \nn$.}
+    \to \nn$.}
 
   First suppose that there exists an injective function
-  $f : A \rightarrow \nn$. By definition, $f$ is thus a bijection
+  $f : A \to \nn$. By definition, $f$ is thus a bijection
   between $A$ and $f(A)$, and those two sets thus have the same
   cardinality. But since we have $f(A) \subset \nn$, the set $f(A)$ is
   at most countable by Corollary 8.1.6. Thus, $A$ is at most
@@ -5883,15 +5883,15 @@ exchangeable here, so that showing only one direction will be enough.
   Now suppose that $A$ is at most countable. We have two options here:
   \begin{enumerate}
   \item If $A$ is countably infinite, then there exists a bijection $f
-    : A \rightarrow \nn$, and in particular, $f$ is thus injective.
+    : A \to \nn$, and in particular, $f$ is thus injective.
   \item If $A$ is finite, then $A$ has a finite number of
     elements---say $n$ elements. Consequently, there exists a
-    bijective function $g : A \rightarrow \intset{1}{n}$. Now let be
-    $f : A \rightarrow \nn$ such that $f(a) = g(a)$ for all $a \in A$.
+    bijective function $g : A \to \intset{1}{n}$. Now let be
+    $f : A \to \nn$ such that $f(a) = g(a)$ for all $a \in A$.
     In particular, $f$ is injective---but not necessarily surjective.
   \end{enumerate}
 
-  In both cases, we have found an injective map $f : A \rightarrow \nn$
+  In both cases, we have found an injective map $f : A \to \nn$
   as required. This closes the proof.
 \end{exo}
 
@@ -5903,8 +5903,8 @@ exchangeable here, so that showing only one direction will be enough.
   proof.
 
   Since $X$ and $Y$ are countable, there exist two bijections
-  $f : \nn \rightarrow X$ and $g : \nn \rightarrow Y$. Let be
-  $h : \nn \rightarrow X \cup Y$ a function defined by $h(2n) = f(n)$
+  $f : \nn \to X$ and $g : \nn \to Y$. Let be
+  $h : \nn \to X \cup Y$ a function defined by $h(2n) = f(n)$
   and $h(2n+1) = g(n)$ for all natural numbers $n$. Let's show that we
   have $h(\nn) = X \cup Y$.
 
@@ -5937,9 +5937,9 @@ exchangeable here, so that showing only one direction will be enough.
   itself countable, i.e., if $X$ and $Y$ are countable, then $X \times
   Y$ is countable.
 
-  By definition, there exist two bijections $f : X \rightarrow \nn$
-  and $g : Y \rightarrow \nn$. Now let be the function $h : X \times Y
-  \rightarrow \nn \times \nn$ defined by $h(x, y) = (f(x), g(y))$ for
+  By definition, there exist two bijections $f : X \to \nn$
+  and $g : Y \to \nn$. Now let be the function $h : X \times Y
+  \to \nn \times \nn$ defined by $h(x, y) = (f(x), g(y))$ for
   all $x \in X$ and $y \in Y$. We will show that $h$ is also bijective.
 
   \begin{itemize}
@@ -5967,39 +5967,75 @@ exchangeable here, so that showing only one direction will be enough.
   $\sup\left\{ \sum_{x \in A} |f(x)| \, : \, A \subseteq X, \text{ $A$
       finite}\right\}$.
 
-  A preliminary remark: since $X$ is a countable set, there exists a
-  bijection $g : \nn \rightarrow X$.
-
   \begin{itemize}
   \item First suppose that
     $\sup\left\{ \sum_{x \in A} |f(x)| \, : \, A \subseteq X, \text{
         $A$ finite}\right\} < \infty$, and let's show that the series
     $\sum_{x \in X} f(x)$ is absolutely convergent.
 
-    Let be $N$ a natural number. Since $g$ is a bijection from $\nn$
-    to $X$, the set $A_N := g(\intset{0}{N})$ is a (finite) subset of
-    $X$ for any value of $N$. Furthermore, since the restriction
-    $g : \intset{0}{N} \rightarrow A_N$ is bijective, we have
+    A preliminary remark: since $X$ is a countable set, there exists a
+    bijection $g : \nn \to X$. Let be $N$ a natural number.
+    Since $g$ is a bijection from $\nn$ to $X$, the set
+    $A_N := g(\intset{0}{N})$ is a (finite) subset of $X$ for any
+    value of $N$. Furthermore, since the restriction
+    $g : \intset{0}{N} \to A_N$ is bijective, we have
     $\sum_{x \in A_N} |f(x)| = \sum_{n=0}^N |f(g(n))|$. Thus, by our
     initial hypothesis,
-    \begin{equation} \label{eq:821a}
-      \sup\left\{ \sum_{x \in A_N} |f(x)| \, : \, N \in \nn\right\} =
-      \sup\left\{ \sum_{n=0}^N |f(g(n))| \, : \, N \in \nn\right\} <
-      \infty
-    \end{equation}
+    \begin{align}
+      \sup\left\{ \sum_{n=0}^N |f(g(n))| \, : \, N \in \nn\right\}
+      &= \sup\left\{ \sum_{x \in A_N} |f(x)| \, : \, N \in \nn\right\}
+      \label{eq:821a} \\
+      &\leq \sup\left\{\sum_{x \in A} |f(x)| \, : \, A \subseteq X, \text{ $A$
+      finite}\right\} < \infty \label{eq:821b}
+    \end{align}
     Let's denote $S_N := \sum_{n=0}^{N} |f(g(n))|$. The sequence
     $(S_N)_{N=0}^\infty$ is a sequence of partial sums of non-negative
     numbers, so that it is increasing, and thus converges iff it is
-    bounded (Proposition 6.3.8). By equation \eqref{eq:821a}, we have
+    bounded (Proposition 6.3.8). By equations
+    \eqref{eq:821a}--\eqref{eq:821b}, we have
     $\sup (S_N)_{N=0}^\infty < \infty$, which means that
-    $(S_N)_{N=0}^\infty$ converges. It means that $\sum_{n=0}^{\infty}
-    |f(g(n))|$ converges for some bijection $g : \nn \rightarrow X$,
-    i.e. that $\sum_{x \in X} f(x)$ is absolutely convergent by
-    Definition 8.2.1.
-  \item Now suppose that $\sum_{x \in X} |f(x)|$ is absolutely
+    $(S_N)_{N=0}^\infty$ converges. It means that
+    $\sum_{n=0}^{\infty} |f(g(n))|$ converges for some bijection
+    $g : \nn \to X$, i.e. that $\sum_{x \in X} f(x)$ is
+    absolutely convergent by Definition 8.2.1.
+  \item Now suppose that $\sum_{x \in X} f(x)$ is absolutely
     convergent and let's show that we have
     $\sup\left\{ \sum_{x \in A} |f(x)| \, : \, A \subseteq X, \text{
         $A$ finite}\right\} < \infty$.
+
+    Since $\sum_{x \in X} f(x)$ is absolutely convergent, then by
+    Definition 8.2.1, there exists some bijection $g : \nn \to X$ such
+    that $\sum_{n=0}^\infty f(g(n))$ is absolutely convergent. But by
+    Proposition 7.4.1, we know that if one such bijection $g$ exists,
+    then the series $\sum_{n=0}^\infty f(h(n))$ is also absolutely
+    convergent for any other bijection $h : \nn \to X$.
+
+    So, let's choose a bijection $h$ that suits us. Let $A$ be a
+    finite (non-empty) subset of $X$ having $N$ elements; we define
+    $h : \nn \to X$ a bijection such that $h(\intset{0}{N-1}) = A$. We
+    thus have (by Proposition 7.2.14(c)):
+    \begin{equation}
+      \sum_{n = 0}^\infty |f(h(n))| = \sum_{n=0}^{N-1} |f(h(n))|
+      + \sum_{n = N}^{\infty} |f(h(n))|
+    \end{equation}
+    which is equivalent to
+    \begin{equation}
+      \sum_{x \in X} |f(x)| = \sum_{x \in A} |f(x)| + \sum_{n =
+        N}^\infty |f(h(n))|
+    \end{equation}
+
+    And since $\sum_{n = N}^\infty |f(h(n))|$ converges (Proposition
+    7.2.14(d)) to a positive real number (Proposition 5.4.9), we get:
+    $\sum_{x \in A} |f(x)| \leq \sum_{x \in X} |f(x)|$ for any subset
+    $A$ of $X$.
+
+    Finally, our initial hypothesis was that $\sum_{x \in X} f(x)$ is
+    absolutely convergent, i.e. that $\sum_{x \in X} |f(x)|$ is a
+    (positive) real number $M$. Thus, there exists $M \in \rr$ such
+    that $\sum_{x \in A} |f(x)| \leq M$, which is equivalent to
+    $\sup\left\{ \sum_{x \in A} |f(x)| \, : \, A \subseteq X, \text{
+        $A$ finite}\right\} < \infty$, as required. This closes the
+    proof.
   \end{itemize}
   
 \end{exo}
