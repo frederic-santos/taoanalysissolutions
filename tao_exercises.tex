@@ -5960,6 +5960,76 @@ exchangeable here, so that showing only one direction will be enough.
 \end{exo}
 
 \bigskip
+\begin{exo}{8.1.9}{Suppose that $I$ is an at most countable set, and
+    for each $\alpha \in I$, let $A_\alpha$ be an at most countable
+    set. Show that the set $\bigcup_{\alpha \in I} A_\alpha$ is also
+    at most countable. In particular, countable unions of countable
+    sets are countable. (This exercise requires the axiom of choice,
+    see Section 8.4.)}
+
+  This statement, although quite intuitive, is actually tricky to
+  prove rigorously. There are a bunch of things that make the proof
+  even trickier; for instance:
+  \begin{itemize}
+  \item the sets $I$ and $A_\alpha$ are said to be \emph{at most}
+    countable, i.e. either finite or countably infinite: do we have to
+    handle those cases separately?
+  \item intuitively and informally, we have actually a denumerable
+    sequence of sets, and in each set, we can also count the elements.
+    For instance, we have a set
+    $A_{\alpha_1} = \{a_{11}, a_{12}, \ldots \}$, a set
+    $A_{\alpha_2} = \{a_{21}, a_{22}, \ldots \}$, and so on. Each
+    element of $\bigcup_\alpha A_\alpha$ thus has two indices (the
+    index of its set, and the index of its place in this set), so that
+    we can think of a map between $\nn \times \nn$ and
+    $\bigcup_\alpha A_\alpha$. But the sets $A_\alpha$ are not
+    supposed to be disjoint, so that we do not really see how this map
+    could be necessarily bijective (a same object $x$ can belong to
+    several $A_\alpha$, and thus, several pairs $(n,k)$ can provide an
+    $x = a_{nk}$).
+  \end{itemize}
+
+  We thus need to think to a way to overcome these problems. A first
+  remark can address (at least part of) them: if there exists an
+  injection $f : A \to C$ between a set $A$ and a countable set $C$,
+  then $A$ is at most countable. Indeed, $f$ is a bijection between
+  $A$ and $f(A)$, so that they have the same cardinality; and $f(A)$
+  is at most countable because it is a subset of $C$ (Corollary
+  8.1.7). Alternatively, if $A$ is at most countable, there exists a
+  bijection between $A$ and a subset of $\nn$.
+
+  Using the notion of injection instead of bijection seems to be the
+  way to go. So, let's begin the main proof!
+
+  \begin{itemize}
+  \item Since $I$ is at most countable, there exists a bijection
+    $g : N \to I$, where $N$ is a subset of the natural numbers. Thus,
+    $(A_\alpha)_{\alpha \in I} = (A_{g(m)})_{m \in N}$.
+  \item Also, since each set $A_{g(m)}$ is at most countable, there
+    exists an injective function $f_m : A_{g(m)} \to \nn$ for
+    each given $m \in N$. So, for each $m \in N$, let be
+    $\mathcal{F}_m$ the set of all possible injections from
+    $A_{g(m)}$ to $\nn$. By the axiom of choice, we can choose
+    simultaneously an injection in each of these sets (although we do
+    not know which one exactly), so that we end up with an at most
+    countable set of injections $\{f_m\}_{m \in N}$.
+  \item Now let's consider
+    $x \in \bigcup_{\alpha \in I} A_\alpha = \bigcup_{m \in N}
+    A_{g(m)}$. As we said previously, $x$ can belong to one or several
+    sets in this union. Thus, let's consider the set
+    $\{m \in N \, : \, x \in A_{g(m)} \}$. It's a subset of $\nn$, so
+    that by the well-ordering principle (Proposition 8.1.4), there
+    exists exactly one minimal element $n$ in this set.
+  \item Now let's define
+    $\theta : \bigcup_{m \in N} A_{g(m)} \to \nn \times \nn$ the
+    function such that, for all $x \in \bigcup_{m \in N} A_{g(m)}$, we
+    have $\theta(x) = (n, f_n(x))$ with $n$ the minimal element
+    defined above. $\theta$ is injective since $n$ is uniquely defined
+    and $f_n$ is injective. Thus, $\bigcup_{m \in N} A_{g(m)}$ is at
+    most countable, as required.
+  \end{itemize}  
+\end{exo}
+
 \begin{exo}{8.2.1}{Prove Lemma 8.2.3.}
 
   We have to prove that, if $X$ is a countable set, then
