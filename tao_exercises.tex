@@ -6107,7 +6107,65 @@ exchangeable here, so that showing only one direction will be enough.
         $A$ finite}\right\} < \infty$, as required. This closes the
     proof.
   \end{itemize}
-  
+\end{exo}
+
+\begin{exo}{8.2.2}{Prove Lemma 8.2.5.}
+
+  Let's follow the hint, and first consider the number:
+
+  \begin{equation}
+    \label{eq:822a}
+    M := \sup \left\{ \sum_{x \in A} |f(x)| \, : \, A \subseteq X, A
+      \text{ finite} \right\}
+  \end{equation}
+
+  which is (by Definition 8.2.4) a finite real number since
+  $\sum_{x \in X} f(x)$ is supposed to be absolutely convergent; and
+  for each positive integer $n$, the set:
+
+  \[A_n = \left\{x \in X \, : \, |f(x)| > 1/n \right\} \]
+
+  \begin{itemize}
+  \item Let's show that all the sets $A_n$ are finite. Suppose, for
+    the sake of contradiction, that there exists a natural number $n$
+    such that $A_n$ is infinite. Since it is an infinite set, in
+    particular there exists a subset finite $A \subset A_n$ such
+    that $\# A = 2 Mn$. Thus we have $\sum_{x \in A} |f(x)| >
+    \sum_{x \in A} 1/n = 2M$. I.e., we have found a finite subset
+    $A \subset A_n \subseteq X$ such that:
+    \[\sum_{x \in A} |f(x)| > \sup \left\{ \sum_{x \in A} |f(x)| \, : \, A \subseteq X, A
+        \text{ finite} \right\}, \] an obvious contradiction. Thus,
+    $A_n$ is finite for all $n > 0$.
+  \item Since $A_n$ is a finite subset of $X$, then by equation
+    \eqref{eq:822a}, we have $\sum_{x \in A_n} |f(x)| \leq M$.
+    But also, we have by definition of $A_n$ (and Proposition
+    7.1.11(h)) that $\sum_{x \in A_n} 1/n < \sum_{x\in A_n} |f(x)|$,
+    so that by transitivity:
+    \begin{equation*}
+      M > \sum_{x \in A_n} 1/n = \# A_n \times (1/n)
+    \end{equation*}
+    and thus $\#A_n < Mn$ for all natural number $n > 0$.
+  \item Now, we show that
+    \begin{equation}
+      \label{eq:822b}
+      A := \left\{x \in X \, : \, f(x) \neq 0 \right\} =
+      \bigcup_{n=1}^\infty A_n
+    \end{equation}
+    On the one hand, if $x \in A$, then $f(x) \neq 0$, and in
+    particular $|f(x)| > 0$. By Exercise 5.4.4, there exists a
+    positive integer $m$ such that $|f(x)| > 1/m > 0$, i.e. such that
+    $x \in A_m$.
+
+    Conversely, if $x \in \bigcup_{n=1}^\infty A_n$, then by
+    definition there exists a positive integer $m$ such that $x \in
+    A_m$, so that $|f(x)| > /m$, and thus $x \in A$.
+
+    Both sets are thus equal.
+  \item Finally, by Exercise 8.1.9, a countable union of countable set
+    is countable. Thus, $\bigcup_{n=1}^\infty A_n$ is countable, i.e.
+    $\left\{x \in X \, : \, f(x) \neq 0 \right\} $ is countable. This
+    closes the proof.
+  \end{itemize}
 \end{exo}
 \end{document}
 %%% Local Variables:
