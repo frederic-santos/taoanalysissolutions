@@ -6167,6 +6167,66 @@ exchangeable here, so that showing only one direction will be enough.
     closes the proof.
   \end{itemize}
 \end{exo}
+
+\begin{exo}{8.2.4}{Prove Lemma 8.2.7.}
+
+  Let be $\sum_{x \in A} f(x)$ a series which is conditionally but not
+  absolutely convergent; and let's define the two sets
+  $A_+ := \{n \in \nn \, : \, a_n \geq 0\}$ and
+  $A_- := \{n \in \nn \, : \, a_n < 0\}$. We have to prove that
+  neither $\sum_{x \in A_+} f(x)$ nor $\sum_{x \in A_-} f(x)$ are
+  conditionally convergent.
+
+  We'll use a proof by contradiction.
+  
+  \begin{itemize}
+  \item First, we are going to suppose something which is a little too
+    strong: let's suppose that \emph{both} $\sum_{x \in A_+} f(x)$ and
+    $\sum_{x \in A_-} f(x)$ are conditionally convergent\footnote{This
+      hypothesis is too strong because the proper negation which
+      should be the starting point for our proof by contradiction
+      would be: ``one of $\sum_{x \in A_+} f(x)$ or
+      $\sum_{x \in A_-} f(x)$ is conditionally convergent''. We'll fix
+      that later.}.
+
+    In this case, $\sum_{x \in A_+} f(x)$ is absolutely
+    convergent (because for the positive series, conditional and
+    absolute convergence are the same thing). Also, the series
+    $\sum_{x \in A_-} (-f(x))$ is convergent by Proposition 7.2.14(b);
+    and as it is a positive series, it is absolutely convergent; so
+    that $\sum_{x \in A_-} f(x)$ itself is absolutely convergent by
+    Proposition 8.2.6(b). Thus, for both $\sum_{x \in A_+} f(x)$ and
+    $\sum_{x \in A_-} f(x)$, conditional convergence implies absolute
+    convergence.
+
+    Since $\nn = A_+ \sqcup A_-$, we have by Proposition 8.2.6(c) that
+    $\sum_{x \in A_+} f(x) + \sum_{x \in A_+} f(x) = \sum_{x \in A}
+    f(x)$ is absolutely convergent; a contradiction.
+
+    Thus, $\sum_{x \in A_+} f(x)$ and $\sum_{x \in A_-} f(x)$ cannot
+    be both conditionally convergent.
+  \item However, we have not really proved Lemma 8.2.7 when doing
+    this. Instead, we need to prove that \emph{even only one of them}
+    cannot be conditionally convergent.
+
+    Actually, it turns out that when one of them is convergent, the
+    other one is also convergent, which closes the proof.
+
+    Indeed, let's suppose that $\sum_{x \in A_+} f(x)$ is
+    (conditionally, and thus absolutely) convergent. Let's define the
+    series $\sum_{x \in A} g(x)$, where $g(x) = 0$ whenever
+    $f(x) < 0$, and $g(x) = f(x)$ whenever $f(x) \geq 0$. We thus have
+    $\sum_{x \in A_+} g(x) = \sum_{x \in A_+} f(x)$, so that it is
+    absolutely convergent. Furthermore, we have $\sum_{x \in A_-} g(x)
+    = \sum_{x \in A_-} |g(x)| = 0$, so that it is also absolutely
+    convergent. Thus, by Proposition 8.2.6(c), $\sum_{x \in A} g(x)$
+    is absolutely convergent, and $\sum_{x \in A} g(x) = \sum_{x \in
+      A_+} g(x) = \sum_{x \in A_+} f(x)$.
+
+    %% TODO
+  \end{itemize}
+  
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
