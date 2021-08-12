@@ -1426,6 +1426,42 @@ $x \in A$ or $x \in B$. This is precisely the Axiom 3.4.
   \end{itemize}
 \end{exo}
 
+\begin{exo}{3.6.7}{Let $A$ and $B$ be sets. Let us say that $A$ has
+    \emph{lesser or equal cardinality} to $B$ if there exists an
+    injection $f : A \to B$ from $A$ to $B$. Show that if $A$ and $B$
+    are ﬁnite sets, then $A$ has lesser or equal cardinality to $B$ if
+    and only if $\#(A) \leq \#(B)$.}
+
+  Since $A$ is finite, there exists a natural number $n$ such that $\#
+  A = n$; and thus a bijection $g : \intset{1}{n} \to A$.
+
+  Similarly, there exists $m \in \nn$ such that $\# B = m$; and thus a
+  bijection $h : \intset{1}{m} \to B$.
+
+  \begin{itemize}
+  \item First suppose that $n \leq m$, and let's show that there
+    exists a bijection $f : A \to B$. Let's define a function $f : A
+    \to B$, such that for all $i \in \intset{1}{n}$, we have $f(g(i))
+    = h(i)$. We claim that $f$ is injective. Indeed, let's suppose
+    that we have $f(x) = f(x')$ for $x, x' \in A$. Since $g$ is
+    bijective, there exists $i,j \in \intset{1}{n}$ such that $f(g(i))
+    = f(g(j))$. By definition of $f$, this means that $h(i) = h(j)$.
+    Since $h$ is also bijective, it means that $i = j$. And since
+    $i=i$, we have $g(i) = g(j)$, and thus $x=x'$.
+
+    We have showed that $f(x) = f(x')$ for all $x,x' \in A$, i.e.,
+    that $f$ is injective, as required.
+  \item Now suppose that there exists an injection $f : A \to B$, and
+    let's show that $\# A \leq  \# B$. Obviously, $f$ is a bijection
+    from $A$ to $f(A)$. It means that $f(A)$ and $A$ have the same
+    cardinality, $n$.
+
+    But $f(A) \subseteq B$, so that by Proposition 3.6.14(c), we have
+    $\# B \geq \# (f(A)) = n$, which closes the proof.
+  \end{itemize}
+  
+\end{exo}
+
 \pagebreak
 \section{Integers and rationals}
 \begin{exo}{4.1.1}{Verify that the definition of equality on the
@@ -5992,11 +6028,12 @@ exchangeable here, so that showing only one direction will be enough.
   We thus need to think to a way to overcome these problems. A first
   remark can address (at least part of) them: if there exists an
   injection $f : A \to C$ between a set $A$ and a countable set $C$,
-  then $A$ is at most countable. Indeed, $f$ is a bijection between
-  $A$ and $f(A)$, so that they have the same cardinality; and $f(A)$
-  is at most countable because it is a subset of $C$ (Corollary
-  8.1.7). Alternatively, if $A$ is at most countable, there exists a
-  bijection between $A$ and a subset of $\nn$.
+  then $A$ is at most countable (see also Exercise 3.6.7). Indeed, $f$
+  is a bijection between $A$ and $f(A)$, so that they have the same
+  cardinality; and $f(A)$ is at most countable because it is a subset
+  of $C$ (Corollary 8.1.7). Alternatively, if $A$ is at most
+  countable, there exists a bijection between $A$ and a subset of
+  $\nn$.
 
   Using the notion of injection instead of bijection seems to be the
   way to go. So, let's begin the main proof!
@@ -6168,6 +6205,85 @@ exchangeable here, so that showing only one direction will be enough.
   \end{itemize}
 \end{exo}
 
+\begin{exo}{8.2.3}{Prove Proposition 8.2.6.}
+
+  All statements can be deduced in a similar fashion from the usual
+  series laws given in Chapter 7, so that we won't prove all of them
+  in painful details below; we just give an example of proof for one
+  of them. Remember that since $X$ is possibly uncountable here, only
+  Definition 8.2.4 and Lemma 8.2.5 can be used to prove the
+  statements. However, Lemma 8.2.5 allows to reduce them into a case
+  where the sum is computed on an at most countable set, so that
+  Propositions 7.1.11 and 7.2.14 apply (more or less) immediately.
+
+  For what follows, let's define
+  $F := \left\{x \in X \, : \, f(x) \neq 0 \right\}$ and
+  $G := \left\{x \in X \, : \, g(x) \neq 0 \right\}$. By Lemma 8.2.5,
+  both $F$ and $G$ are at most countable.
+
+  Also, let's define
+  $M_f := \sup\{\sum_{x \in A} |f(x)| \, : \, A \subseteq X, A \text{
+    finite} \}$, by Definition 8.2.4 we know that $M_f$ is a finite
+  real number; similarly we define
+  $M_g := \sup\{\sum_{x \in A} |g(x)| \, : \, A \subseteq X, A \text{
+    finite} \}$ which is also a finite real number.
+
+  \begin{enumerate}[label=\emph{(\alph*)}]
+    \setcounter{enumi}{1}
+  \item Let be $c$ a real number. First a general remark: if
+    $\sum_{x \in X} f(x)$ is absolutely convergent, then
+    $\sum_{x \in X} cf(x)$ is also absolutely convergent. Indeed, we
+    know that for all finite subset $A \subseteq X$, we have
+    $\sum_{x \in A} |f(x)| \leq M_f$, so that by Proposition 7.1.11(g)
+    we have
+    $\sum_{x \in A} |cf(x)| \leq |c| \sum_{x \in A} |f(x)| \leq
+    |c|M_f$. It means that the set
+    $\{\sum_{x \in A} |cf(x)| \, : \, A \subseteq X, A \text{ finite}
+      \}$ is bounded, i.e. that $\sum_{x \in X} cf(x)$ is absolutely
+      convergent. Now consider several cases.
+
+    If $c=0$ there is almost nothing to prove. On the one hand, we
+    have $c \times \sum_{x \in X} f(x) = 0$ (because
+    $\sum_{x \in X} f(x)$ is a finite real number); on the other hand
+    we have
+    $\sum_{x \in X} cf(x) := \sum_{\{x \in X \, : \, cf(x) = 0 \}}
+    f(x) = \sum_\emptyset f(x) = 0$ by Proposition 7.1.11(a). Thus, we
+    have $\sum_{x \in X} cf(x) = 0 = c \sum_{x \in X} f(x)$, and the
+    claim follows.
+
+    Now, suppose instead that $c \neq 0$. Note that, in this case,
+    $f(x) = 0 \Longleftrightarrow cf(x) = 0$, so that:
+    \begin{equation}
+      \label{eq:823b1}
+      \{x \in X \, : \, f(x) \neq 0\} = \{x \in X \, : \, cf(x) \neq
+      0\}
+    \end{equation}
+
+    Also, we know that
+    $c \times \sum_{x \in X} f(x) := c \times \sum_{x \in F} f(x)$,
+    the set $F$ being at most countable.
+
+    \begin{itemize}
+    \item If $F$ is finite, then by Proposition 7.1.11(g), we have
+      $c \times \sum_{x \in F} f(x) = \sum_{x \in F} cf(x)$. Thus, we
+      have
+      $c \times \sum_{x \in X} f(x) := c \times \sum_{x \in F} f(x) =
+      \sum_{x \in F} cf(x) =: \sum_{x \in X} cf(x)$ (using equation
+      \eqref{eq:823b1} under the hood for the last equality), as
+      expected.
+    \item If $F$ is countably infinite, since we have already shown
+      that $\sum_{x \in X} cf(x) := \sum_{x \in F} cf(x)$ is
+      absolutely convergent, we can apply Definition 8.2.1: there
+      exists a bijection $g : \nn \to F$ such that
+      $\sum_{n = 0}^\infty cf(g(n))$ is absolutely convergent. By
+      Proposition 7.2.14(b), we finally have:
+      \[\sum_{x \in F} cf(x) := \sum_{n = 0}^\infty cf(g(n)) = c
+        \sum_{n = 0}^\infty f(g(n)) =: c \sum_{x \in F} f(x)\]
+      as expected.
+    \end{itemize}
+  \end{enumerate}
+\end{exo}
+
 \begin{exo}{8.2.4}{Prove Lemma 8.2.7.}
 
   Let be $\sum_{n=0}^\infty a_n$ a series which is conditionally but
@@ -6234,8 +6350,7 @@ exchangeable here, so that showing only one direction will be enough.
     In particular, we have shown that whenever $\sum_{n \in A_+}a_n$
     is convergent, the other series $\sum_{n \in A_-}a_n$ is also
     convergent, as expected. This closes the proof.
-  \end{itemize}
-  
+  \end{itemize} 
 \end{exo}
 \end{document}
 %%% Local Variables:
