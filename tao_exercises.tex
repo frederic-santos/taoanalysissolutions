@@ -6353,6 +6353,36 @@ exchangeable here, so that showing only one direction will be enough.
   \end{itemize} 
 \end{exo}
 
+\begin{exo}{8.5.3}{Given two positive integers $n, m \in \nn - \{0\}$,
+    we say that $n$ divides $m$, and write $n|m$, if there exists a
+    positive integer $a$ such that $m = na$. Show that the set
+    $\nn - \{0\}$ with the ordering relation $|$ is a partially
+    ordered set but not a totally ordered one.}
+
+  To show that this defines a partially order set, we just have to
+  prove that the relation $|$ is reflexive, anti-symmetric and
+  transitive.
+
+  \begin{itemize}
+  \item If is obviously reflexive because we have $n = n \times 1$,
+    and $1$ is a positive integer.
+  \item It is anti-symmetric because if we suppose that $n|m$, we must
+    have $m=na$ for some positive integer $a$. Similarly, if we have
+    $m|n$, we must have $n=mb$ for some positive integer $b$.
+    Gathering these two statements, we get $n = n(ab)$, i.e. $ab=1$ by
+    cancellation law (Corollary 2.3.7). The only possibility for
+    $ab=1$ on the natural numbers is that  both $a=1$ and $b=1$, as a
+    quick proof by contradiction would show. Thus, we have $n=mb=m$,
+    as required.
+  \item It is also transitive because if $n|m$ and $m|p$, we have
+    $m=na$ and $p=mb$ for some natural numbers $a,b$. Thus, $p=n(ab)$,
+    with $ab$ a natural number, so that $n|p$ as required.
+  \end{itemize}
+
+  However, this does not define a totally ordered set, since we have
+  neither $2|3$ nor $3|2$.  
+\end{exo}
+
 \bigskip
 \begin{exo}{8.5.4}{Show that the set of positive real numbers, $\rr_+
     = \{ x \in \rr \, : \, x>0 \}$, has no minimal element.}
