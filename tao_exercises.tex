@@ -6352,6 +6352,20 @@ exchangeable here, so that showing only one direction will be enough.
     convergent, as expected. This closes the proof.
   \end{itemize} 
 \end{exo}
+
+\bigskip
+\begin{exo}{8.5.4}{Show that the set of positive real numbers, $\rr_+
+    = \{ x \in \rr \, : \, x>0 \}$, has no minimal element.}
+
+  This is actually a direct consequence of Exercise 5.4.4, and thus of
+  the Archimedean property of $\rr$. Suppose that there exists $m \in
+  \rr_+$ such that $m = \min(\rr_+)$. Obviously, we must have $m < 1$,
+  since there exists elements such as $1/2 \in \rr_+$. Let's apply the
+  Archimedean property with $x = 1$: there exists a positive integer
+  $M$ such that $Mm > 1$, i.e. such that $1/M < m$. But $1/M$ is a
+  positive rational number, thus a positive real number, which is a
+  contradiction.  
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
