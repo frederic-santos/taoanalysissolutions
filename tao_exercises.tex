@@ -6353,6 +6353,36 @@ exchangeable here, so that showing only one direction will be enough.
   \end{itemize} 
 \end{exo}
 
+\begin{exo}{8.5.2}{Give examples of a set $X$ and a relation $\leq_X$
+    such that the relation $\leq_X$ is...}
+
+  We have the cases below:
+  \begin{enumerate}[label=\emph{(\alph*)}]
+  \item Reflexive and anti-symmetric but not transitive. Consider
+    $X = \nn$, and $\leq_X$ defined by $n \leq_X m$ iff
+    $0 \leq n-m \leq 1$. This relation is obviously reflexive. It is
+    also anti-symmetric, since $n \leq_X m$ and $m \leq_X n$ imply
+    that we have both ``$n=m$ or $n=1+m$'' and ``$n=m$ or $m=1+n$'',
+    which lets $n=m$ for the only possibility. But it is not
+    transitive since $1 \leq_X 2$ and $2 \leq_X 3$ but we do not have
+    $1 \leq_X 3$.
+  \item Reflexive and transitive but not anti-symmetric. Consider $X =
+    \rr^2$ and $\leq_X$ defined by $(x,y) \leq_X (x',y')$ iff $x \leq
+    x'$. It is obviously reflexive and transitive, but not
+    anti-symmetric since $(2,3) \leq_X (2,4)$ and $(2,4) \leq_X (2,3)$
+    but we do not have $(2,3) = (2,4)$.
+  \item Anti-symmetric and transitive but not reflexive. Consider $X
+    = \rr$ and $\leq_X$ defined by the usual strict inequality $<$.
+    Obviously, it is transitive. It might not immediately clear why it
+    is also anti-symmetric, however: how could it happen that we have
+    $x=y$ after both statements $x<y$ and $y<x$, since each of them
+    implies in particular that $x \neq y$? By trichotomy of order, we
+    can never have both of them at the same time, so that the
+    implication $(x < y) \text { and } (y < x) \Longrightarrow x = y$
+    is \emph{vacuously} true. And thus, $<$ is indeed anti-symmetric.
+  \end{enumerate}
+\end{exo}
+
 \begin{exo}{8.5.3}{Given two positive integers $n, m \in \nn - \{0\}$,
     we say that $n$ divides $m$, and write $n|m$, if there exists a
     positive integer $a$ such that $m = na$. Show that the set
@@ -6364,7 +6394,7 @@ exchangeable here, so that showing only one direction will be enough.
   transitive.
 
   \begin{itemize}
-  \item If is obviously reflexive because we have $n = n \times 1$,
+  \item It is obviously reflexive because we have $n = n \times 1$,
     and $1$ is a positive integer.
   \item It is anti-symmetric because if we suppose that $n|m$, we must
     have $m=na$ for some positive integer $a$. Similarly, if we have
