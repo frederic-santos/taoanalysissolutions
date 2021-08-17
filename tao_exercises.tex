@@ -6426,6 +6426,51 @@ exchangeable here, so that showing only one direction will be enough.
   positive rational number, thus a positive real number, which is a
   contradiction.  
 \end{exo}
+
+\bigskip
+\begin{exo}{8.5.5}{Let $f : X \to Y$ be a function from one set $X$ to
+    another set $Y$. Suppose that $Y$ is partially ordered with some
+    ordering relation $\leq_Y$. Deﬁne a relation $\leq_X$ on $X$ by
+    defining $x \leq_X x'$ if and only if $f(x) <_Y f(x')$ or
+    $x = x'$. Show that this relation $\leq_X$ turns $X$ into a
+    partially ordered set. If we know in addition that the relation
+    $\leq_Y$ makes $Y$ totally ordered, does this mean that the
+    relation $\leq_X$ makes $X$ totally ordered also? If not, what
+    additional assumption needs to be made on $f$ in order to ensure
+    that $\leq_X$ makes $X$ totally ordered?}
+
+  First we prove that $\leq_X$ makes $X$ a partially ordered set, by
+  showing that the three properties of ordering relations hold for
+  $\leq_X$:
+  \begin{itemize}
+  \item Reflexivity is obviously okay: $x \leq_X x$ is true iff $f(x)
+    <_Y f(x)$ or $x=x$; one of these two statements is clearly true.
+  \item $\leq_X$ is anti-symmetric: suppose that we have both $x
+    \leq_X y$ and $y \leq_X x$ for $x,y \in X$. Since $x \leq_X y$, we
+    have either $x=y$ (and in this case we are done) or $f(x) <_Y
+    f(y)$. Let's suppose that $f(x) <_Y f(y)$. By the second
+    hypothesis, we have $y \leq_X x$, so that we have either $y=x$
+    (and in this case we are done) or $f(y) <_Y f(x)$. But since we
+    already have supposed that $f(x) <_Y f(y)$, we cannot have $f(y)
+    <_Y f(x)$. Thus, the only possibility is $x=y$, as expected.
+  \item $\leq_X$ is also transitive: if we suppose that we have both
+    $x \leq_X y$ and $y \leq_X z$, we have actually [$x=y$ or
+    $f(x) <_Y f(y)$] and [$y=z$ or $f(y) <_Y f(z)$]; and we must show
+    that this implies [$x=z$ or $f(x) <_Y f(z)$]. A cumbersome but
+    easy distinction into four pairs of cases would show that $\leq_X$
+    is transitive.
+  \end{itemize}
+
+  However, the hypothesis that $Y$ is totally ordered does not make
+  $X$ a totally ordered set. For instance, let's take $X=Y=\rr$ and
+  $f$ the constant function $f(x) = 0 \, \forall x \in \rr$. In this
+  case, we have neither $2 \leq_X 3$ (because $2=3$ is false, and
+  $f(2) < f(3)$ is false), nor $3 \leq_X 2$ (the same remark applies).
+  So, at least, $f$ must not be constant. But it's still not enough!
+  Indeed, let's take $f(x) = x^2$. We have neither $-1 \leq_X 1$
+  (because $-1=1$ is false, and $f(-1) < f(1)$ is false) nor
+  $1 \leq_X -1$ (same remark). Thus, $f$ must be at least injective.
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
