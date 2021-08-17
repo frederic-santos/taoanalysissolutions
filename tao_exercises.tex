@@ -6471,6 +6471,23 @@ exchangeable here, so that showing only one direction will be enough.
   (because $-1=1$ is false, and $f(-1) < f(1)$ is false) nor
   $1 \leq_X -1$ (same remark). Thus, $f$ must be at least injective.
 \end{exo}
+
+\bigskip
+\begin{exo}{8.5.7}{Let $X$ be a partially ordered set, and let $Y$ be
+    a totally ordered subset of $X$. Show that $Y$ can have at most
+    one maximum and at most one minimum.}
+
+  Let's suppose that there exist two distinct elements $m\neq m'$ in
+  $Y$ such that both $m$ and $m'$ are minimal elements. Since $Y$ is
+  totally ordered, we have either $m \leq m'$, or $m' \leq m$. Suppose
+  that $m \leq m'$. By Definition 8.5.5, since $m'$ is a minimal
+  element, it is impossible that $m < m'$; thus $m=m'$ is the only
+  possibility. The same conclusion applies if we suppose that $m' \leq
+  m$, so we are done.
+
+  A similar argument shows that $Y$ can have at most one maximal
+  element.
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
