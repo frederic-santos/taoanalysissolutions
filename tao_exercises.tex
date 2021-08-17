@@ -6488,6 +6488,44 @@ exchangeable here, so that showing only one direction will be enough.
   A similar argument shows that $Y$ can have at most one maximal
   element.
 \end{exo}
+
+\bigskip
+\begin{exo}{8.5.8}{Show that every finite non-empty subset of a totally
+    ordered set has a minimum and a maximum. (Hint: use induction.)
+    Conclude in particular that every finite totally ordered set is
+    well-ordered.}
+
+  Let be $X$ a totally ordered set, and $Y$ a finite non-empty subset
+  of $X$. Since $Y$ is finite, we may say that it has $n$ elements.
+  Let's induct on $n$.
+
+  \begin{itemize}
+  \item For the base case, let's suppose that $n=1$ (we don't start
+    from $0$ since $Y$ is supposed to be non-empty). It means that $Y$
+    is a singleton set, i.e., $Y = \{x\}$ for some $x \in X$. We can
+    say that $x$ is a minimal element, since there is no $y \in Y$
+    such that $y < x$ (because there is simply no other element in
+    $Y$). Similarly, $x$ is a maximal element, so the base case is
+    done.
+  \item Now suppose inductively that the property holds for any subset
+    $Y$ which has $n$ elements, and let's prove that it is still true
+    when $Y$ is supposed to have $n+1$ elements. By Lemma 3.6.9, if we
+    suppose $\# Y = n+1$, we can write $Y = A \cup \{x\}$ with
+    $\#A = n$. By the induction hypothesis, $A$ has a minimum $m$ and
+    a maximum $M$. If we have $x < m$, then $x$ is a minimum for $Y$;
+    else (i.e., if $m \leq x$) $m$ is still a minimum for $Y$.
+    Similarly, if we have $x > M$, then $x$ is a maximum for $Y$; else
+    (i.e., if $M \geq x$) $M$ is still a maximum for $Y$. In all
+    cases, $Y$ has a minimum and a maximum, as expected. This closes
+    the induction, and proves that every finite non-empty subset of a
+    totally ordered set has a minimum and a maximum.
+  \end{itemize}
+
+  If $X$ is a finite totally ordered set, all non-empty subsets
+  $Y \subseteq X$ are finite. Thus, we have even proved that every
+  finite totally ordered set is well-ordered, in the sense of
+  Definition 8.5.8.
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
