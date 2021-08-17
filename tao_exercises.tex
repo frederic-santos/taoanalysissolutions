@@ -6526,6 +6526,34 @@ exchangeable here, so that showing only one direction will be enough.
   finite totally ordered set is well-ordered, in the sense of
   Definition 8.5.8.
 \end{exo}
+
+\bigskip
+\begin{exo}{8.5.9}{Let $X$ be a totally ordered set such that every
+    non-empty subset of $X$ has both a minimum and a maximum. Show that
+    $X$ is finite.}
+
+   Suppose for sake of contradiction that $X$ is infinite. By the
+   initial hypothesis, there exists a minimal element $x_0 \in X$.
+   Since $X$ is infinite, the set $X - \{x_0\}$ is non-empty; let be
+   $x_1$ its minimum. We have $x_0 \leq x_1$ because $x_1 \in X$ and
+   $x_0 = \min(X)$, but we also have $x_0 \neq x_1$ because $x_1 \in X
+   - \{x_0\}$ by definition. Thus, we have $x_0 < x_1$. Now let's
+   consider the subset of $X$ defined by $X - \{x_0, x_1\}$: it it
+   still a non-empty subset (otherwise $X$ could not be infinite), and
+   the same argument as above would show that its minimum $x_2$ (wich
+   certainly exists) is such that $x_0 < x_1 < x_2$. We can thus
+   repeat these steps indefinitely to construct an increasing sequence
+   $x_0 < x_1 < x_2 < \cdots$.
+
+   More formally, we can define recursively $x_0 := \min(X)$ and, for
+   each natural number $n$, $x_{n+1} := \min(X - \cup_{i=0}^n
+   \{x_i\})$; so that $\seq{x_n}{0}$ is an increasing sequence.
+
+   By definition, the set $\{x_0, x_1, \cdots \}$ is an infinite set,
+   is thus a non-empty subset of $X$, but has no maximal element. This
+   contradicts our initial hypothesis. Thus, $X$ cannot be infinite:
+   it is a finite set.
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
