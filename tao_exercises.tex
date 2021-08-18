@@ -6554,6 +6554,40 @@ exchangeable here, so that showing only one direction will be enough.
    contradicts our initial hypothesis. Thus, $X$ cannot be infinite:
    it is a finite set.
 \end{exo}
+
+\bigskip
+\begin{exo}{8.5.10}{Prove Proposition 8.5.10.}
+
+  Let be $X$ a totally ordered set, and $P$ a property such that, for
+  any $n \in X$, we have the following implication: [$P(m)$ is true
+  for all $m \in X$ with $m < n$] $\Rightarrow$ [$P(n)$ is true]. We
+  have to prove that $P(n)$ is true for all $n \in X$.
+
+  First, note that, if we denote $0 := \min(X)$ (and this minium
+  necessarily exists since $X$ is totally ordered), $P(0)$ must be
+  true. Indeed, the statement ``$P(m)$ is true for all $m \in X$ with
+  $m < 0$'' is vacuously true, so that $P(0)$ must be true.
+
+  Now suppose, for the sake of contradiction, that the set $Y$ defined
+  by
+  \[Y := \{ n \in X \, : \, P(m) \text{ is false for some $m \in X$
+      with } m \leq n\}\]
+  is non-empty. Since $X$ is totally ordered, there exists a minimal
+  element $M$ in $Y$, i.e. there exists some $M := \min(Y)$. In
+  particular, $M$ is the lowest element of $X$ for which $P(M)$ is
+  false.
+
+  It is impossible that $M=0$, because it would imply that $P(0)$ is
+  false, which has been excluded. Thus, we have $M \neq 0$, or more
+  precisely, $M > 0$.
+
+  Since $M > 0$, for all elements $m \in X$ such that $0 \leq m < M$
+  (there is at least one such element, which is $0$), $P(m)$ is true.
+  By our initial hypothesis, it would thus imply that $P(M)$ is true;
+  a contradiction.
+
+  Thus, $Y$ is empty, and $P(n)$ is true for all $n \in X$.  
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
