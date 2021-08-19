@@ -34,6 +34,7 @@
 \newcommand{\seq}[2]{(#1)_{n=#2}^\infty}
 \newcommand{\limit}[1]{\text{lim}_{n \to \infty} #1}
 \newcommand{\extrr}{\overline{\rr}}
+\newcommand{\adh}[1]{\overline{#1}}
 \newcommand{\liminfp}[2]{\inf (#1^+_N)_{N=#2}^{\infty}}
 \newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
 \renewcommand{\epsilon}{\varepsilon}
@@ -6617,6 +6618,34 @@ exchangeable here, so that showing only one direction will be enough.
 
   Thus, $Y$ is empty, and $P(n)$ is true for all $n \in X$.  
 \end{exo}
+
+\pagebreak
+\section{Continuous functions on $\mathbb{R}$}
+\begin{exo}{9.1.1}{Let $X$ be any subset of the real line, and let $Y$
+    be a set such that $X \subseteq Y \subseteq \adh{X}$. Show that
+    $\adh{Y} = \adh{X}$.}
+
+  We will show that we have $\adh{X} \subseteq \adh{Y}$, and $\adh{Y}
+  \subseteq \adh{X}$. Let be $\epsilon > 0$ a positive real number.
+  
+  \begin{itemize}
+  \item Let be $x' \in \adh{X}$. By definition, there exists $x \in X$
+    such that $|x - x'| \leq \epsilon$. But since $X \subseteq Y$, we
+    also have $x \in Y$. Thus, for any arbitrary $\epsilon > 0$, we
+    have indeed an $x \in Y$ such that $|x'-x| \leq \epsilon$, which
+    means that $x' \in \adh{Y}$. So, $\adh{X} \subseteq \adh{Y}$.
+  \item Let be $y' \in \adh{Y}$. By definition, there exists $y \in Y$
+    such that $|y'-y| \leq \epsilon/2$. But since
+    $Y \subseteq \adh{X}$, we have $y \in \adh{X}$. It means that we
+    can find an $x \in X$ such that $|y-x| \leq \epsilon/2$. Thus, we
+    have found an $x \in X$ such that
+    $|y'-x| \leq |y'-y| + |y-x| \leq \epsilon/2 + \epsilon/2 \leq
+    \epsilon$, for any arbitrary $\epsilon > 0$. It means that
+    $y' \in \adh{X}$; so that $\adh{Y} \subseteq \adh{X}$.
+  \item We have thus proved that $\adh{X} = \adh{Y}$, as expected.
+  \end{itemize}
+\end{exo}
+
 \end{document}
 %%% Local Variables:
 %%% mode: latex
