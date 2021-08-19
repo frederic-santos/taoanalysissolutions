@@ -778,10 +778,10 @@ No exercises in this chapter.
   Let $f$ be the empty function, i.e. $f : \emptyset \to Y$
   for a certain range $Y$.
   \begin{enumerate}
-  \item $f$ is injective iff $x \neq x' \to f(x) \neq
-    f(x')$. This can be considered as vacuously true since there are
-    no such $x$ and $x'$. $f$ can be considered as always injective,
-    for any range $Y$.
+  \item $f$ is injective iff $x \neq x' \Rightarrow f(x) \neq f(x')$.
+    This can be considered as vacuously true since there are no such
+    $x$ and $x'$ in $\emptyset$. $f$ can be considered as always
+    injective, for any range $Y$.
   \item $f$ is surjective iff for any $y \in Y$, there exists $x \in
     \emptyset$ such that $y = f(x)$. We can clearly see that this
     assertion is false if $Y \neq \emptyset$, since any $y \in Y$ will
@@ -1393,6 +1393,26 @@ $x \in A$ or $x \in B$. This is precisely the Axiom 3.4.
   \end{enumerate}
 \end{exo}
 
+\begin{exo}{3.6.2}{Show that a set $X$ has cardinality $0$ if and only
+    if $X$ is the empty set.}
+
+  First suppose that $X = \emptyset$ and let's show that $\#X = 0$. By
+  Definition 3.6.5, we must show that there exists a bijection between
+  $X$ and the set $\{i \in \nn \, : \, 1 \leq i \leq 0\}$. It turns
+  out that $X = \emptyset$ by hypothesis, and that $\{i \in \nn \, :
+  \, 1 \leq i \leq 0\}$ is also equal to $\emptyset$. And, by Exercise
+  3.3.3, we know that the empty function $f : \emptyset \to \emptyset$
+  is bijective. Thus, we have indeed $\#X = 0$.
+
+  Now suppose that we have a set $X$ such that $\#X = 0$, and let's
+  show that $X = \emptyset$. If $#X = 0$, we know that there exists a
+  bijection from $\{i \in \nn \, : \, 1 \leq i \leq 0\}$ to $X$, i.e.
+  from $\emptyset$ to $X$. Still by Exercise 3.3.3, a function $f :
+  \emptyset \to X$ can be bijective if and only if $X = \emptyset$, so
+  we are done.
+\end{exo}
+
+\bigskip
 \begin{exo}{3.6.3}{Let $n$ be a natural number, and let
     $f : \{i \in \nn \, : \, 1 \leq i \leq n\} \to \nn$ be a
     function. Show that there exists a natural number $M$ such that
