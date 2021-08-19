@@ -6353,6 +6353,35 @@ exchangeable here, so that showing only one direction will be enough.
   \end{itemize} 
 \end{exo}
 
+\begin{exo}{8.3.1}{Let $X$ be a finite set of cardinality $n$. Show
+    that $2^X$ is a finite set of cardinality $2^n$.}
+
+  Let's use induction on $n$, the number of elements of $X$.
+
+  \begin{itemize}
+  \item For the base case, if $n=0$, $X$ is simply the empty set. In
+    such a case, $2^\emptyset = \{\emptyset\}$ has indeed one single
+    element, i.e. has a cardinality of $2^0 = 1$, and is thus finite.
+  \item Now suppose inductively that $2^X$ has $2^n$ elements if $X$
+    has $n$ elements, and let's show that this property still holds
+    for $n+1$.
+
+    Suppose that $\#X = n+1$, and let's pick $x \in X$. If we denote
+    $A = X \backslash \{x\}$, then we have $X = A \cup \{x\}$, with
+    $\#A = n$. Note that any subset of $X$ consists either of a subset
+    of $A$, or of the pairwise union between $\{x\}$ and a subset of
+    $A$ (obviously, any such set is a subset of $X$; and conversely,
+    any subset of $X$ may or may not contain $x$, and is otherwise
+    composed of elements of $A$).
+
+    Thus, we have
+    $2^X = \{S \, : \, S \in 2^A\} \sqcup \{S \cup \{x\} \, : \, S \in
+    2^A\}$. By the induction hypothesis, $2^A$ has cardinality $2^n$,
+    so that, by Proposition 3.6.14(b), we have
+    $\#X = 2^n + 2^n = 2^{n+1}$, as expected.
+  \end{itemize}  
+\end{exo}
+
 \begin{exo}{8.5.2}{Give examples of a set $X$ and a relation $\leq_X$
     such that the relation $\leq_X$ is...}
 
