@@ -1405,7 +1405,7 @@ $x \in A$ or $x \in B$. This is precisely the Axiom 3.4.
   is bijective. Thus, we have indeed $\#X = 0$.
 
   Now suppose that we have a set $X$ such that $\#X = 0$, and let's
-  show that $X = \emptyset$. If $#X = 0$, we know that there exists a
+  show that $X = \emptyset$. If $\#X = 0$, we know that there exists a
   bijection from $\{i \in \nn \, : \, 1 \leq i \leq 0\}$ to $X$, i.e.
   from $\emptyset$ to $X$. Still by Exercise 3.3.3, a function $f :
   \emptyset \to X$ can be bijective if and only if $X = \emptyset$, so
@@ -6664,6 +6664,48 @@ exchangeable here, so that showing only one direction will be enough.
     $y' \in \adh{X}$; so that $\adh{Y} \subseteq \adh{X}$.
   \item We have thus proved that $\adh{X} = \adh{Y}$, as expected.
   \end{itemize}
+\end{exo}
+
+\begin{exo}{9.1.2}{Prove Lemma 9.1.11.}
+  
+  Let $X$ and $Y$ be subsets of $\rr$.
+  
+  \begin{itemize}
+  \item Prove that $X \subseteq \adh{X}$. If $x \in X$, then for any
+    $\epsilon > 0$ we always have an $y \in X$ such that $|x-y| \leq
+    \epsilon$: let's take $y=x$, so that $|x-y| = 0 \leq \epsilon$.
+    
+  \item Prove that $\adh{X \cap Y} \subseteq \adh{X} \cap \adh{Y}$.
+    Let be $\epsilon > 0$ a real number, and $z' \in \adh{X \cap Y}$.
+    By definition, there exists $z \in X \cap Y$ such that
+    $|z'-z| \leq \epsilon$. We have $z \in X$ and $z \in Y$. Thus, for
+    an arbitrary $\epsilon > 0$, we have found a $z \in X$ such that
+    $|z'-z| \leq \epsilon$, i.e. $z' \in \adh{X}$. Similarly,
+    $z' \in \adh{Y}$. Thus, $z' \in \adh{X} \cap \adh{Y}$. Thus, we
+    have proved $\adh{X \cap Y} \subseteq \adh{X} \cap \adh{Y}$ as
+    required.
+    
+  \item Prove that $\adh{X \cup Y} = \adh{X} \cup \adh{Y}$. Let be
+    $\epsilon > 0$ a positive real number, and
+    $z' \in \adh{X} \cup \adh{Y}$. We have either $z' \in \adh{X}$ or
+    $z' \in \adh{Y}$. Suppose that $z' \in \adh{X}$. By definition,
+    there exists $x \in X$ such that $|z'-x| \leq \epsilon$. But since
+    $X \subseteq X \cup Y$, we have found an $x \in X \cup Y$ such
+    that $|z' - x| \leq \epsilon$, and thus we conclude that
+    $z' \in \adh{X \cup Y}$. The same conclusion applies if we suppose
+    instead that $z' \in \adh{Y}$. Thus, we have indeed
+    $\adh{X} \cup \adh{Y} \subseteq \adh{X \cup Y}$.
+
+    Now let be $z' \in \adh{X \cup Y}$.
+    
+  \item Prove that if $X \subseteq Y$, then $\adh{X} \subseteq
+    \adh{Y}$. Let be $x' \in \adh{X}$, and $\epsilon > 0$ a real
+    number. By definition, there exists $x \in X$ such that $|x'-x|
+    \leq \epsilon$. But since $X \subseteq Y$, we also have $x \in Y$.
+    Thus, for any $\epsilon > 0$, we have an $x \in Y$ such that $|x'
+    - x| \leq \epsilon$, which means that $x' \in \adh{Y}$.
+  \end{itemize}
+  
 \end{exo}
 
 \end{document}
