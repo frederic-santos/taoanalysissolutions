@@ -6696,7 +6696,18 @@ exchangeable here, so that showing only one direction will be enough.
     instead that $z' \in \adh{Y}$. Thus, we have indeed
     $\adh{X} \cup \adh{Y} \subseteq \adh{X \cup Y}$.
 
-    Now let be $z' \in \adh{X \cup Y}$.
+    Now let be $z' \in \adh{X \cup Y}$. Suppose that $z' \notin \adh{X}
+    \cup \adh{Y}$; this means that $z' \notin \adh{X}$ and $z' \notin
+    \adh{Y}$. Thus, there exists $\delta > 0$ such that $|z'-x| >
+    \delta$ for all $x \in X$. Similarly, there exists $\gamma > 0$
+    such that $|z' - y| > \gamma$ for all $y \in Y$. We conclude that,
+    for $\epsilon := \min(\delta, \gamma)$, we have $|z'-x| >
+    \epsilon$ for all $x \in X$ and $|z'-y| > \epsilon$ for all $y \in
+    Y$; i.e. that $|z'-z| > \epsilon$ for all $z \in X \cup Y$. Thus,
+    $z \notin \adh{X \cup Y}$, which obviously contradicts our initial
+    hypothesis. It means that whenever $z' \in \adh{X \cup Y}$, we
+    have $z' \in \adh{X} \cup \adh{Y}$, i.e. $\adh{X \cup Y} \subseteq
+    \adh{X} \cup \adh{Y}$ as required.
     
   \item Prove that if $X \subseteq Y$, then $\adh{X} \subseteq
     \adh{Y}$. Let be $x' \in \adh{X}$, and $\epsilon > 0$ a real
