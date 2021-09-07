@@ -6716,7 +6716,52 @@ exchangeable here, so that showing only one direction will be enough.
     Thus, for any $\epsilon > 0$, we have an $x \in Y$ such that $|x'
     - x| \leq \epsilon$, which means that $x' \in \adh{Y}$.
   \end{itemize}
-  
+\end{exo}
+
+\begin{exo}{9.1.3}{Prove Lemma 9.1.13}
+
+  We will prove all statements in a slightly different order, and will
+  use previous results from this chapter.
+
+  First, note that, by Definition 9.1.8, any adherent point to a
+  subset $X \subseteq \rr$ is necessarily a real number. It means
+  that, for any set $X \subseteq \rr$, we have
+  $\adh{X} \subseteq \rr$. This gives our first statement:
+
+  \begin{enumerate}[label=(\roman*)]
+  \item The closure of $\rr$ is $\rr$. Indeed, we have $\adh{\rr}
+    \subseteq \rr$ by our remark above, and we have $\rr \subseteq
+    \adh{\rr}$ by Lemma 9.1.11. The claim follows.
+  \item Now we prove that the closure of $\emptyset$ is
+    $\emptyset$. Suppose, for the sake of contradiction, that
+    $\adh{\emptyset}$ is not empty. Then there exists, by Definition
+    9.1.8, a real number $x \in \adh{\emptyset}$. So, for a given
+    $\epsilon > 0$, we necessarily have a $z \in \emptyset$ such that
+    $|x-z| \leq \epsilon$, but there exists no such $z$. Thus,
+    $\adh{\emptyset}$ is empty.
+  \item The closure of $\nn$ is $\nn$. Indeed, by Lemma 9.1.1, we
+    already know that $\nn \subseteq \adh{\nn}$, so that we just have
+    to show that $\adh{\nn} \subseteq \nn$. Let be $n \in
+    \adh{\nn}$. Suppose, for the sake of contradiction, that $n
+    \notin \nn$, i.e. that $n \in \rr \backslash \nn$. By Exercise
+    5.4.3, there exists an integer $m$ such that $m \leq n < m+1$. Let
+    be $d_1 = |m-n| > 0$, which is a positive real number since $n
+    \notin \nn$ and $m \in \nn$. Similarly, let be $d_2 := |n - (m+1)|
+    > 0$. Now, let be $d := \min(d_1, d_2) / 2$, which is also a
+    positive real number. Obviously, $n$ is not $d$-adherent to $\nn$,
+    so that $n \notin \adh{\nn}$, a contradiction. Thus, we have indeed
+    $\nn = \adh{\nn}$.
+  \item The proof for $\zz = \adh{\zz}$ is similar.
+  \item Finally, let's show that $\adh{\qq} = \rr$. As for the
+    previous cases, we only have to show that $\rr \subseteq
+    \adh{\qq}$, since we already know that $\adh{\qq} \subseteq
+    \rr$. So, let be $z \in \rr$, and let's show that $z \in
+    \adh{\qq}$. Let be $\epsilon > 0$ a positive real number. By
+    Proposition 5.4.14, there always exists a rational $y \in \qq$
+    such that $z-\epsilon < y < z+\epsilon$, i.e. such that $|y-z| <
+    \epsilon$. Thus, $z$ is $\epsilon$-adhrent to $\qq$ for any
+    $\epsilon > 0$. This means that $z \in \adh{\qq}$, as expected.
+  \end{enumerate}
 \end{exo}
 
 \end{document}
