@@ -6764,6 +6764,21 @@ exchangeable here, so that showing only one direction will be enough.
   \end{enumerate}
 \end{exo}
 
+\begin{exo}{9.1.4}{Give an example of two subsets $X, Y$ of the real
+    line such that $\adh{X \cap Y} \neq \adh{X} \cap \adh{Y}$.}
+
+  We already know, from Lemma 9.1.11, that
+  $\adh{X \cap Y} \subseteq \adh{X} \cap \adh{Y}$. Thus, we have to
+  find $X, Y \subseteq \rr$ such that $\adh{X} \cap \adh{Y}$ fails to
+  be a subset of $\adh{X \cap Y}$.
+
+  Let be $X = ]1, 2[$ and $Y = ]2, 3[$. We have (by Lemma 9.1.12)
+  $\adh{X} = [1,2]$ and $\adh{Y} = [2,3]$, so that $\adh{X} \cap
+  \adh{Y} = \{2\}$. On the other hand, we have $X \cap Y = \emptyset$,
+  so that $\adh{X \cap Y} = \emptyset$ (by Lemma 9.1.13). Thus, we
+  indeed have $\adh{X \cap Y} \neq \adh{X} \cap \adh{Y}$, as expected.
+\end{exo}
+
 \end{document}
 %%% Local Variables:
 %%% mode: latex
