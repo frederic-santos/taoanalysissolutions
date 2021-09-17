@@ -6779,6 +6779,36 @@ exchangeable here, so that showing only one direction will be enough.
   indeed have $\adh{X \cap Y} \neq \adh{X} \cap \adh{Y}$, as expected.
 \end{exo}
 
+\bigskip
+\begin{exo}{9.1.5}{Prove Lemma 9.1.4.}
+
+  Let $X$ be a subset of $\rr$, and let be $\ell \in \rr$. We have to
+  prove that the following two statements are equivalent: (a) There
+  exists a sequence $\seq{a_n}{1}$ whose all elements lie in $X$ and
+  which converges to $\ell$. (b) $\ell \in \adh{X}$.
+
+  \begin{itemize}
+  \item First, we prove that (a) implies (b). Suppose that we
+    have a sequence $\seq{a_n}{1}$ that converges to $\ell \in \rr$
+    and such that $a_n \in X$ for all $n \geq 1$, and let be $\epsilon
+    > 0$. By definition, there exists a positive integer $N$ such that
+    $|a_n - \ell| \leq \epsilon$ for all $n \geq N$; and in
+    particular, $\ell$ is $\epsilon$-adherent to $X$ since $|a_N -
+    \ell| \leq \epsilon$ with $a_N \in X$. Thus, $\ell \in \adh{X}$.
+  \item Now prove that (b) implies (a). Let be $\ell \in \adh{X}$. For
+    any given positive integer $n$, let be the set
+    $A_n := \{ x \in X \, : \, |x - \ell| \leq 1/n\}$. By definition,
+    $A_n$ is non empty for all $n \geq 1$, i.e. there exists a real
+    number $a_n \in A_n$ for all $n \geq 1$. By the axiom of choice,
+    we can thus define a sequence $\seq{a_n}{1}$ where $a_n \in A_n$
+    for all $n \geq 1$. This means that for all $n \geq 1$, we have
+    $\ell - 1/n \leq a_n \leq \ell + 1/n$. By the squeeze test,
+    $\seq{a_n}{1}$ converges to $\ell$.
+  \item Thus, both statements are equivalent, as expected.
+  \end{itemize}
+  
+\end{exo}
+
 \end{document}
 %%% Local Variables:
 %%% mode: latex
