@@ -6832,6 +6832,37 @@ exchangeable here, so that showing only one direction will be enough.
   closed set that contains $X$.  
 \end{exo}
 
+\bigskip
+\begin{exo}{9.1.7}{Let $n > 1$ be a positive integer, and let $X_1,
+    \ldots, X_n$ be closed subsets of $\rr$. Show that $X_1 \cup
+    \ldots \cup X_n$ is also closed.}
+
+  Let's use induction on $n$. To show the base case, $n=2$, we must
+  show that $X_1 \cup X_2$ is closed whenever $X_1$ and $X_2$ are
+  closed. By Lemma 9.1.11, we have $\adh{X_1 \cup X_2} = \adh{X_1}
+  \cup \adh{X_2}$, and this is equal to $X_1 \cup X_2$ since $X_1,
+  X_2$ are closed. Thus the base case is done.
+
+  Now suppose inductively that $X_1 \cup \ldots \cup X_n$ is closed
+  for some positive integer $n$, and let's show that $X_1 \cup
+  \ldots \cup X_{n+1}$ is also closed. We have:
+  \begin{align*}
+    \adh{(X_1 \cup \ldots \cup X_n) \cup X_{n+1}} &= (\adh{X_1 \cup
+                                                    \ldots \cup X_n})
+                                                    \cup \adh{X_{n+1}}
+                                                    \text{ (Lemma 9.1.11)} \\
+                                                  &= (\adh{X_1} \cup
+                                                    \ldots \cup \adh{X_n})
+                                                    \cup \adh{X_{n+1}} \text{ (by
+                                                    induction
+                                                    hypothesis)} \\
+                                                  &= \adh{X_1} \cup
+                                                    \ldots \cup \adh{X_{n+1}}
+  \end{align*}
+
+  This closes the induction.
+\end{exo}
+
 \end{document}
 %%% Local Variables:
 %%% mode: latex
