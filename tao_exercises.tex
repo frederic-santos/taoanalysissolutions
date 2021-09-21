@@ -6847,20 +6847,56 @@ exchangeable here, so that showing only one direction will be enough.
   for some positive integer $n$, and let's show that $X_1 \cup
   \ldots \cup X_{n+1}$ is also closed. We have:
   \begin{align*}
-    \adh{(X_1 \cup \ldots \cup X_n) \cup X_{n+1}} &= (\adh{X_1 \cup
-                                                    \ldots \cup X_n})
-                                                    \cup \adh{X_{n+1}}
-                                                    \text{ (Lemma 9.1.11)} \\
-                                                  &= (\adh{X_1} \cup
-                                                    \ldots \cup \adh{X_n})
-                                                    \cup \adh{X_{n+1}} \text{ (by
-                                                    induction
-                                                    hypothesis)} \\
-                                                  &= \adh{X_1} \cup
-                                                    \ldots \cup \adh{X_{n+1}}
+    \adh{X_1 \cup \ldots \cup X_n \cup X_{n+1}} &= \adh{(X_1 \cup
+                                                  \ldots \cup X_n)
+                                                  \cup X_{n+1}} \\
+                                                &= (\adh{X_1 \cup
+                                                  \ldots \cup X_n})
+                                                  \cup \adh{X_{n+1}}
+                                                  \text{ (Lemma 9.1.11)} \\
+                                                &= (\adh{X_1} \cup
+                                                  \ldots \cup \adh{X_n})
+                                                  \cup \adh{X_{n+1}} \text{ (by
+                                                  induction
+                                                  hypothesis)} \\
+                                                &= \adh{X_1} \cup
+                                                  \ldots \cup
+                                                  \adh{X_n} \cup
+                                                  \adh{X_{n+1}} \\
+                                                &= X_1 \cup \ldots
+                                                  \cup X_n
+                                                  \cup X_{n+1} \text{
+                                                  (because all $X_i$'s
+                                                  are closed)}
   \end{align*}
 
   This closes the induction.
+\end{exo}
+
+\bigskip
+\begin{exo}{9.1.8}{Let $I$ be a set (possibly infinite), and for each
+    $\alpha \in I$ let $X_\alpha$ be a closed subset of $\rr$. Show
+    that the intersection $\bigcap_{\alpha \in I} X_\alpha$ is also closed.}
+
+  Recall that $\bigcap_{\alpha \in I} X_\alpha$ is the set such that,
+  for any real $x$, we have $x \in \bigcap_{\alpha \in I} X_\alpha$
+  iff $x \in X_\alpha$ for all $\alpha \in I$.
+
+  We already know by Lemma 9.1.11 that we have $\bigcap_{\alpha \in I}
+  X_\alpha \subseteq \adh{\bigcap_{\alpha \in I} X_\alpha}$; thus, to
+  show that $\bigcap_{\alpha \in I} X_\alpha$ is closed, we just have
+  to show that $\adh{\bigcap_{\alpha \in I} X_\alpha} \subseteq
+  \bigcap_{\alpha \in I} X_\alpha$.
+
+  Let be $x' \in \adh{\bigcap_{\alpha \in I} X_\alpha}$, and
+  $\epsilon > 0$ any positive real. By definition, there exists
+  $x \in \bigcap_{\alpha \in I} X_\alpha$ such that
+  $|x' - x| \leq \epsilon$. By definition of an intersection, we have
+  $x \in X_\alpha$ for all $\alpha \in I$, so that we also have
+  $x' \in \adh{X_\alpha}$ for all $\alpha \in I$. Thus,
+  $x' \in \bigcap_{\alpha \in I} \adh{X_\alpha}$. But since each
+  $X_\alpha$ is closed, we finally get
+  $x' \in \bigcap_{\alpha \in I} X_\alpha$, as expected.
 \end{exo}
 
 \end{document}
