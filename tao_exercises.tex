@@ -6806,7 +6806,30 @@ exchangeable here, so that showing only one direction will be enough.
     $\seq{a_n}{1}$ converges to $\ell$.
   \item Thus, both statements are equivalent, as expected.
   \end{itemize}
-  
+\end{exo}
+
+\begin{exo}{9.1.6}{Let $X$ be a subset of $\rr$. Show that $\adh{X}$
+    is closed. Furthermore, show that if $Y$ is any closed set that
+    contains $X$, then $Y$ also contains $\adh{X}$.}
+
+  First we show that $\adh{X}$ is closed. We already know, by Lemma
+  9.1.11, that we have $\adh{X} \subseteq \adh{\adh{X}}$. Thus, we
+  juste have to show that $\adh{\adh{X}} \subseteq \adh{X}$. Let be
+  $x'' \in \adh{\adh{X}}$, and $\epsilon > 0$ any positive real
+  number. By definition, there exists $x'\in \adh{X}$ such that we
+  have $|x'' - x'| \leq \epsilon$/2. And since $x' \in \adh{X}$, then
+  by definition, there exists $x \in X$ such that we have $|x'-x| \leq
+  \epsilon/2$. Thus, by triangular inequality, we have $|x'' - x| \leq
+  |x'' - x'| + |x' - x| \leq 2 \epsilon /2 \leq \epsilon$. Thus, for
+  any $\epsilon > 0$, there exists $x \in X$ such that $|x'' - x| \leq
+  \epsilon$, which show that $x'' \in \adh{X}$, and thus that
+  $\adh{\adh{X}} \subseteq \adh{X}$, as expected.
+
+  Now let be $Y$ a closed set, i.e. a set such that $Y = \adh{Y}$. By
+  Lemma 9.1.11, if $X \subseteq Y$, then we have
+  $\adh{X} \subseteq \adh{Y}$. But since $\adh{Y} = Y$, we have
+  $\adh{X} \subseteq Y$, as expected. Thus, $\adh{Y}$ is the smallest
+  closed set that contains $X$.  
 \end{exo}
 
 \end{document}
