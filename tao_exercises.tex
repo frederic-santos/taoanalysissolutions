@@ -6780,7 +6780,7 @@ exchangeable here, so that showing only one direction will be enough.
 \end{exo}
 
 \bigskip
-\begin{exo}{9.1.5}{Prove Lemma 9.1.4.}
+\begin{exo}{9.1.5}{Prove Lemma 9.1.14.}
 
   Let $X$ be a subset of $\rr$, and let be $\ell \in \rr$. We have to
   prove that the following two statements are equivalent: (a) There
@@ -6899,6 +6899,46 @@ exchangeable here, so that showing only one direction will be enough.
   $x' \in \bigcap_{\alpha \in I} X_\alpha$, as expected.
 \end{exo}
 
+\bigskip
+\begin{exo}{9.1.9}{Let $X$ be a subset of the real line, and $x$ be a
+    real number. Show that every adherent point of $X$ is either a
+    limit point or an isolated point of $X$, but cannot be both.
+    Conversely, show that every limit point and every isolated point
+    of $X$ is an adherent point of $X$.}
+
+  Let's begin by the last assertion. First we prove that any isolated
+  point of $X$ is an adherent point of $X$. Let be $x \in X$ an
+  isolated point. The claim is obvious since, by Lemma 9.1.11, we have
+  $X \subseteq \adh{X}$, so that $x \in \adh{X}$. Also, we prove that
+  any limit point of $X$ is adherent to $X$. If $x$ is a limit point
+  of $X$, then $x \in \adh{X - \{x\}}$. It means that, for all
+  $\epsilon > 0$, there exists some $y \in X - \{x\}$ such that $|x-y|
+  \leq \epsilon$. But since $X -\{x\} \subseteq X$, there exists
+  actually some $y \in X$ such that $|x-y| \leq \epsilon$ for all
+  $\epsilon > 0$, which means that $x \in \adh{X}$ as expected.
+
+  Now suppose that $x \in \adh{X}$ and let's show that it is either a
+  limit point or an isolated point. Having $x \in \adh{X}$ means that:
+
+  \begin{equation*}
+    \forall \epsilon > 0, \exists y \in X \, : \, |x-y| \leq \epsilon
+  \end{equation*}
+
+  There are two cases which are mutually exclusive: either the $y \in
+  X$ we can find for any given value of $\epsilon$ always lies in $X -
+  \{x\}$, or it is not the case. In the first case, we have:
+  \begin{equation*}
+    \forall \epsilon > 0, \exists y \in X - \{x\} \, : \, |x-y| \leq \epsilon
+  \end{equation*}
+  i.e., $x$ is a limit point of $X$. In the other case, let's take the
+  negation to get:
+  \begin{equation*}
+    \exists \epsilon > 0 \, : \, \forall y \in X - \{x\}, |x-y| > \epsilon
+  \end{equation*}
+  i.e., $x$ is an isolated point of $X$. The claim follows.
+\end{exo}
+
+\bigskip
 \end{document}
 %%% Local Variables:
 %%% mode: latex
