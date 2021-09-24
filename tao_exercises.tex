@@ -6939,6 +6939,21 @@ exchangeable here, so that showing only one direction will be enough.
 \end{exo}
 
 \bigskip
+\begin{exo}{9.1.10}{If $X$ is a non-empty subset of $\R$, show that
+    $X$ is bounded if and only if $\inf(X)$ and $\sup(X)$ are finite.}
+
+  First suppose that $X$ is bounded. Thus, by definition, there exists
+  a positive real number $M$ such that $X \subseteq [-M, M]$. Thus, we
+  have $\sup(X) \leq M$ (because $M$ is an upper bound of $X$, and
+  $\sup(X)$ is the least upper bound), so that $\sup(X)$ is finite.
+  Similarly for $\inf(X) \geq -M$.
+
+  Now suppose that both $\inf(X)$ and $\sup(X)$ are finite. We thus
+  have $\inf(X) = a$ and $\sup(X) = b$ for some real numbers $a,b$. By
+  definition, we have $a \leq x \leq b$ for all $x \in X$. It means
+  that $X \subseteq [a,b]$. Let's pick $M := \max(|a|, |b|)$; we thus
+  have $X \subseteq [-M, M]$ as expected.  
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
