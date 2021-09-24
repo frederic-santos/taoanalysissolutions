@@ -6954,6 +6954,18 @@ exchangeable here, so that showing only one direction will be enough.
   that $X \subseteq [a,b]$. Let's pick $M := \max(|a|, |b|)$; we thus
   have $X \subseteq [-M, M]$ as expected.  
 \end{exo}
+
+\bigskip
+\begin{exo}{9.1.11}{Show that if $X$ is a bounded subset of $\R$, then
+    the closure $\adh{X}$ is also bounded.}
+
+  If $X$ is bounded, we have $X \subseteq [-M,M]$ for some positive
+  real number $M$. The interval $[-M,M]$ is a closed subset, thus its
+  closure is also $[-M,M]$. Now let's use Exercise 9.1.6, with
+  $Y := [-M,M]$ being the closed subset that contains $X$; we thus have
+  $X \subseteq \adh{X} \subseteq [-M,M]$. It means that $\adh{X}$ is
+  bounded, as expected.
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
