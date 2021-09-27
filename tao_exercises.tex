@@ -6939,7 +6939,7 @@ exchangeable here, so that showing only one direction will be enough.
 \end{exo}
 
 \bigskip
-\begin{exo}{9.1.10}{If $X$ is a non-empty subset of $\R$, show that
+\begin{exo}{9.1.10}{If $X$ is a non-empty subset of $\rr$, show that
     $X$ is bounded if and only if $\inf(X)$ and $\sup(X)$ are finite.}
 
   First suppose that $X$ is bounded. Thus, by definition, there exists
@@ -6956,8 +6956,8 @@ exchangeable here, so that showing only one direction will be enough.
 \end{exo}
 
 \bigskip
-\begin{exo}{9.1.11}{Show that if $X$ is a bounded subset of $\R$, then
-    the closure $\adh{X}$ is also bounded.}
+\begin{exo}{9.1.11}{Show that if $X$ is a bounded subset of $\rr$,
+    then the closure $\adh{X}$ is also bounded.}
 
   If $X$ is bounded, we have $X \subseteq [-M,M]$ for some positive
   real number $M$. The interval $[-M,M]$ is a closed subset, thus its
@@ -6966,6 +6966,36 @@ exchangeable here, so that showing only one direction will be enough.
   $X \subseteq \adh{X} \subseteq [-M,M]$. It means that $\adh{X}$ is
   bounded, as expected.
 \end{exo}
+
+\bigskip
+\begin{exo}{9.1.14}{Show that any finite subset of $\rr$ is closed and
+    bounded.}
+
+  Let be $A_n$ a finite subset of $\rr$. We can use induction on $n$,
+  the number of elements of $A_n$.
+
+  \begin{itemize}
+  \item For the base case, $A_1$ is simply a singleton set; say that
+    $A_1 := \{a_1\}$ with $a_1 \in \rr$. Obviously, $A_1$ is closed,
+    because $a_1$ is an adherent point of $A_1$, and no other real can
+    be $\epsilon$-adherent to $A_1$ for all $\epsilon > 0$ (if
+    $x \neq a_1$, then $x$ is not $\epsilon$-adherent to $A_1$ for
+    $\epsilon = |x-a_1|/2$, for instance). Furthermore, $A_1$ is
+    bounded, since $|x| \leq a_1$ for all $x \in A_1$.
+  \item Now suppose inductively that any set $A_n$ is closed and
+    bounded if $A_n$ has $n$ elements, and let's show that any set
+    $A_{n+1}$ with $n+1$ elements is also closed and bounded. If
+    $A_{n+1}$ has $n+1$ elements, then we have $A_{n+1} = A_n \cup
+    \{a_{n+1}\}$, where $A_n$ has $n$ elements (e.g., Proposition
+    3.6.14 (a)). But, by the base case, $\{a_{n+1}\}$ is closed and
+    bounded; and by the induction hypothesis, $A_n$ is closed and
+    bounded. Thus, by Exercise 9.1.7, $A_n \cup \{a_{n+1}\}$ is also
+    closed. This union set is also bounded: if $A_n$ is bounded by
+    $M$, then $A_{n+1}$ is bounded by $\max(M, |a_{n+1}|)$.
+  \end{itemize}
+
+\end{exo}
+
 \end{document}
 %%% Local Variables:
 %%% mode: latex
