@@ -6968,6 +6968,39 @@ exchangeable here, so that showing only one direction will be enough.
 \end{exo}
 
 \bigskip
+\begin{exo}{9.1.13}{Prove Theorem 9.1.24 (Heine-Borel theorem).}
+
+  We have to prove that these two statements are equivalent for any
+  subset $X$ of $\rr$: (a) $X$ is closed and bounded; (b) from any
+  sequence of elements of $X$, one can get a subsequence that
+  converges to a real number $L \in X$.
+
+  \begin{itemize}
+  \item First we prove that (a) implies (b). Let be $X$ a subset of
+    $\rr$ which is closed and bounded, and let be $\seq{a_n}{0}$ a
+    sequence such that $a_n \in X$ for all $n \geq 0$. Since $X$ is
+    bounded, there exists a real number $M > 0$ such that
+    $X \subseteq [-M, M]$. The sequence $\seq{a_n}{0}$ is bounded: we
+    have necessarily $|a_n| \leq M$ (because $a_n \in X$) for all
+    $n \geq 0$. Since $\seq{a_n}{0}$ is bounded, there exists a
+    subsequence of $\seq{a_n}{0}$ which converges to a real number
+    $L \in \rr$ (Bolzano-Weierstrass theorem). But since $X$ is
+    closed, we have $L \in X$ by Corollary 9.1.17. The claim follows.
+  \item Now we prove that (b) implies (a). We start from (b), and
+    suppose for the sake of contradiction that $X$ is not closed.
+    Thus, there exists a sequence $\seq{a_n}{0}$ such that $a_n \in X$
+    for all $n \geq 0$, which converges to a real number $L \notin X$
+    (by negation of Corollary 9.1.17). But according to (b), from the
+    sequence $\seq{a_n}{0}$, we can extract a subsequence that
+    converges to $L' \in X$. It is a contradiction, since it implies
+    that $L \neq L'$, which is impossible by Proposition 6.6.5. Thus,
+    $X$ is closed.
+
+    Furthermore, $X$ is bounded. Indeed, 
+  \end{itemize}
+\end{exo}
+
+
 \begin{exo}{9.1.14}{Show that any finite subset of $\rr$ is closed and
     bounded.}
 
