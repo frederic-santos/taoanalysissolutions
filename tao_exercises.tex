@@ -7025,6 +7025,30 @@ exchangeable here, so that showing only one direction will be enough.
     bounded. Thus, by Exercise 9.1.7, $A_n \cup \{a_{n+1}\}$ is also
     closed. This union set is also bounded: if $A_n$ is bounded by
     $M$, then $A_{n+1}$ is bounded by $\max(M, |a_{n+1}|)$.
+
+    Now let's show that $X$ is bounded. Suppose for the sake of
+    contradiction that $X$ is not bounded. In particular, either $X$
+    has no upper bound, or no lower bound (or both). Suppose that $X$
+    has no upper bound; the proof is similar if it has no lower bound.
+    Saying that $X$ is not bounded above means that, for all $n \geq
+    0$, the set $A_n := \{x \in X \, : \, x > n \}$ is not empty.
+    Thus, by the axiom of (countable) choice, we can define a sequence
+    $\seq{a_n}{0}$ such that $a_n \in A_n$ for all $n \geq 0$. In
+    particular, we have $a_n > n$ for all $n \geq 0$. But this
+    sequence has no limit point: indeed, saying that $\seq{a_n}{0}$
+    has a finite limit point $L$ means that:
+    \begin{equation}
+      \label{exo9.1.13}
+      \forall \epsilon > 0, \forall N \geq 0, \exists n \geq N \, :
+      \, L - \epsilon \leq a_n \leq L + \epsilon
+    \end{equation}
+    But this is impossible: let's take $\epsilon = 1$, and any
+    $n > L+1$; we thus have $a_n > L + 1$ by definition, which is not
+    compatible with \eqref{exo9.1.13}. And according to Proposition
+    6.6.6, if $\seq{a_n}{0}$ has no limit point, then we cannot
+    extract a convergent subsequence from $\seq{a_n}{0}$; a
+    contradiction with our initial hypothesis (a). This closes the
+    proof.
   \end{itemize}
 \end{exo}
 
