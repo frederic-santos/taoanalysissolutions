@@ -7026,7 +7026,40 @@ exchangeable here, so that showing only one direction will be enough.
     closed. This union set is also bounded: if $A_n$ is bounded by
     $M$, then $A_{n+1}$ is bounded by $\max(M, |a_{n+1}|)$.
   \end{itemize}
+\end{exo}
 
+\begin{exo}{9.2.1}{Let $f, g, h$ be functions from $\rr$ to $\rr$:
+    which of the following statements are true?}
+
+  The first statement, $(f+g) \circ h = (f \circ h) + (g \circ h)$,
+  is true. Indeed, we have for all $x \in \rr$:
+  \begin{align*}
+    ((f+g) \circ h) (x) &= (f+g) (h(x)) \\
+                        &= f(h(x)) + g(h(x)) \\
+                        &= (f \circ h) (x) + (g \circ h) (x)
+  \end{align*}
+
+  The second statement, $f \circ (g+h) = (f \circ g) + (f \circ h)$,
+  is false. Indeed, let's consider $f(x) = x^2$, $g(x) = x$ and $h(x)
+  = -x$. On the one hand we have $f \circ (g+h) (1) = f(1 - 1) = f(0)
+  = 0$; and the other hand we have $(f \circ g + f \circ h) (1) = f(1)
+  + f(-1) = 1 + 1 = 2$.
+
+  The third statement, $(f+g) \times h = (f \times h) + (g \times h)$,
+  is true. Indeed, we have for all $x \in \rr$:
+  \begin{align*}
+    ((f+g) \times h)(x) &= (f+g)(x) \times h(x) \\
+                        &= (f(x) + g(x)) \times h(x) \\
+                        &= f(x)h(x) + g(x)h(x)
+  \end{align*}
+
+  The last statement, $f \times (g+h) = (f \times g) + (f \times h)$,
+  is true. Indeed, we have for all $x \in \rr$:
+  \begin{align*}
+    (f \times (g+h))(x) &= f(x) \times (g+h)(x) \\
+                        &= f(x) \times (g(x) + h(x)) \\
+                        &= f(x)g(x) + f(x)h(x)
+  \end{align*}  
 \end{exo}
 
 \end{document}
