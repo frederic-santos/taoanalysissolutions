@@ -7086,6 +7086,37 @@ exchangeable here, so that showing only one direction will be enough.
   \end{align*}  
 \end{exo}
 
+\begin{exo}{9.3.1}{Prove Proposition 9.3.9.}
+
+  We must prove that these two statements are equivalent: (a) $f$
+  converges to $L$ at $x_0$ in $E$; (b) for every sequence
+  $\seq{a_n}{0}$ which consists entirely of elements of $E$ and
+  converges to $x_0$, the sequence $\seq{f(a_n)}{0}$ converges to $L$.
+
+  \begin{itemize}
+  \item First we prove that (a) implies (b). Suppose that $f$
+    converges to $L$ at $x_0$, and let be $\seq{a_n}{0}$ a sequence of
+    elements of $E$ that converges to $x_0$. We must show that:
+    \begin{equation}
+      \label{eq:931a}
+      \forall \epsilon > 0, \exists N \geq 0 \, : \, n \geq N
+      \Longrightarrow |f(a_n) - L| \leq \epsilon
+    \end{equation}
+
+    Let be $\epsilon > 0$. We know that there exists a $\delta > 0$
+    such that $|x - x_0| < \delta \Rightarrow |f(x) - L| \leq
+    \epsilon$. Consider this positive real $\delta$. Since
+    $\seq{a_n}{0}$ converges to $x_0$, there exists a natural number
+    $N$ such that $n \geq N \Rightarrow |a_n - x_0| \leq \delta$.
+    Thus, for this number $N$, we have:
+    \[n \geq N \Longrightarrow |a_n - x_0| \leq \delta \Longrightarrow
+      |f(a_n) - L| \leq \epsilon\]
+    so that this natural number $N$ is suitable for the property in
+    equation \eqref{eq:931a}. This closes the first part of the proof.
+  \item Conversely, let's prove that (b) implies (a).
+  \end{itemize}
+\end{exo}
+
 \end{document}
 %%% Local Variables:
 %%% mode: latex
