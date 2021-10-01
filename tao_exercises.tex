@@ -7113,7 +7113,30 @@ exchangeable here, so that showing only one direction will be enough.
       |f(a_n) - L| \leq \epsilon\]
     so that this natural number $N$ is suitable for the property in
     equation \eqref{eq:931a}. This closes the first part of the proof.
-  \item Conversely, let's prove that (b) implies (a).
+  \item Conversely, let's prove that (b) implies (a). Suppose for the
+    sake of contradiction that we have (b), but $f$ does not converges
+    to $L$ at $x_0$. It means that:
+    \begin{equation}
+      \label{eq:931b}
+      \exists \epsilon > 0 \, : \, \forall \delta > 0, \exists x \in E,
+      |x-x_0| < \delta \text{ and } |f(x) - L| > \epsilon
+    \end{equation}
+
+    And in particular:
+    \begin{equation}
+      \label{eq:931c}
+      \exists \epsilon > 0 \, : \, \forall n \geq 0, \exists a_n \in E,
+      |a_n - x_0| < \frac{1}{n+1} \text{ and } |f(a_n) - L| > \epsilon
+    \end{equation}
+    
+    Consider this positive real $\epsilon > 0$. Using equation
+    \eqref{eq:931c}, we build a sequence $\seq{a_n}{0}$ of elements of
+    $E$ such that, for all $n \geq 0$, we have
+    $x_0 - \frac{1}{n+1} < a_n < x_0 + \frac{1}{n+1}$. According to
+    the squeeze test, it implies that $\seq{a_n}{0}$ converges to
+    $x_0$. But at the same time, $f(a_n)$ is never $\epsilon$-close to
+    $L$, still according to equation \eqref{eq:931c}. This is a
+    contradiction with the hypothesis (b). The claim follows.
   \end{itemize}
 \end{exo}
 
