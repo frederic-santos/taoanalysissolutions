@@ -7141,6 +7141,27 @@ exchangeable here, so that showing only one direction will be enough.
   \end{itemize}
 \end{exo}
 
+\begin{exo}{9.3.2}{Prove the remaining claims in Proposition 9.3.14.}
+
+  All the claims can be proved in a very similar fashion, and each of
+  them is itself very similar to the proof of the first claim given in
+  the book. We will just prove another one, namely that $fg$ has a
+  limit $LM$ at $x_0$ in $E$.
+
+  Since $x_0$ is adherent to $E$, there exists a sequence
+  $\seq{a_n}{0}$ of elements of $E$ that converges to $x_0$ (Lemma
+  9.1.14). By Proposition 9.3.9, we thus know that $\seq{f(a_n)}{0}$
+  converges to $L$. Similarly, $\seq{g(a_n)}{0}$ converges to $M$. By
+  Theorem 6.1.19(b), we have
+  \[\lim_{n \to \infty} \seq{(f \times g)(a_n)}{0} =
+    \lim_{n \to \infty} \seq{f(a_n)}{0} \times \lim_{n \to \infty}
+    \seq{g(a_n)}{0} = LM.\] Thus, since $\seq{a_n}{0}$ is an arbitrary
+  sequence, we have showed that for any sequence $\seq{a_n}{0}$ of
+  elements of $E$ that converges to $x_0$, the sequence
+  $\seq{(fg)(a_n)}{0}$ converges to $LM$. Thus, by Proposition 9.3.9,
+  $fg$ has a limit $LM$ at $x_0$ in $E$.
+\end{exo}
+
 \end{document}
 %%% Local Variables:
 %%% mode: latex
