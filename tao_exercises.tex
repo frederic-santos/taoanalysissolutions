@@ -7162,6 +7162,30 @@ exchangeable here, so that showing only one direction will be enough.
   $fg$ has a limit $LM$ at $x_0$ in $E$.
 \end{exo}
 
+\bigskip
+\begin{exo}{9.3.3}{Prove Lemma 9.3.18.}
+
+  Let be $\delta > 0$ a positive real number. We have the following
+  equivalent statements:
+
+  \begin{align*}
+    & \lim_{x \to x_0 \, ; \, x \in E \cap ]x_0 - \delta, x_0 + \delta[}
+      f(x) = L \\
+    & \Longleftrightarrow \left( \forall \epsilon > 0, \exists \alpha > 0 \,
+      : \, x \in \{z \in E \cap ]x_0 - \delta, x_0 + \delta[ \, : \,
+      |z - x_0| < \alpha\} \Rightarrow |f(x) - L| < \epsilon \right) \\
+    & \Longleftrightarrow \left( \forall \epsilon > 0, \exists \alpha > 0 \,
+      : \, x \in \{z \in E \cap ]x_0 - \min(\delta, \alpha), x_0 +
+      \min(\delta, \alpha)[\} \Rightarrow |f(x) - L| < \epsilon
+      \right) \\
+    & \Longleftrightarrow \left( \forall \epsilon > 0, \exists \gamma > 0 \,
+      : \, x \in \{z \in E \cap ]x_0 - \gamma, x_0 + \gamma[ \}
+      \Rightarrow |f(x) - L| < \epsilon \right) \\
+    & \Longleftrightarrow \lim_{x \to x_0 \, ; \, x \in E} f(x) = L 
+  \end{align*}
+  
+\end{exo}
+
 \end{document}
 %%% Local Variables:
 %%% mode: latex
