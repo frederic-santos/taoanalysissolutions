@@ -7183,7 +7183,40 @@ exchangeable here, so that showing only one direction will be enough.
       \Rightarrow |f(x) - L| < \epsilon \right) \\
     & \Longleftrightarrow \lim_{x \to x_0 \, ; \, x \in E} f(x) = L 
   \end{align*}
-  
+\end{exo}
+
+\begin{exo}{9.4.1}{Prove Proposition 9.4.7.}
+
+  We will prove the following implications: (a) implies (c), (c)
+  implies (d), (d) implies (b), and (b) implies (a).
+
+  \begin{itemize}
+  \item First we prove that (a) implies (c). Let be $\epsilon > 0$ a
+    positive real. If $f$ is continuous at $x_0$, then by Definition
+    9.4.1, we have $\lim_{x \to x_0} f(x) = f(x_0)$. Thus, for any
+    $\epsilon' > 0$, there exists $\delta > 0$ such that
+    $|x-x_0| < \delta \Rightarrow |f(x)-f(x_0)| \leq \epsilon'$. Let's
+    take $\epsilon' := \epsilon/2$, and we have
+    $|x-x_0| < \delta \Rightarrow |f(x)-f(x_0)| \leq \epsilon' <
+    \epsilon$, as expected for (c).
+  \item Then, it is simply obvious that (c) implies (d), since (c) is
+    simply one of the possible cases of (d).
+  \item Now we show that (d) implies (b). Let be $\seq{a_n}{0}$ a
+    sequence that converges to $x_0$. Also, let $\epsilon > 0$ be a
+    positive real number. Then, by (d), there exists $\delta > 0$ such
+    that $|x - x_0| \leq \delta \Rightarrow |f(x) - f(x_0)| \leq
+    \epsilon$. Let's consider this number $\delta > 0$. Since
+    $\seq{a_n}{0}$ converges to $x_0$, there exists $N \geq 0$ such
+    that $n \geq N \Rightarrow |a_n - x_0| \leq \delta$.
+
+    Gathering all those implications, for any arbitrary $\epsilon >
+    0$, we have found a natural number $N \geq 0$ such that, if $n
+    \geq N$, then we have $|a_n - x_0| \leq \delta$, and thus $|f(a_n)
+    - f(x_0)| \leq \epsilon$. It means that $\seq{f(a_n)}{0}$
+    converges to $f(x_0)$, as expected.
+  \item And finally, we have to prove that (b) implies (a). This is a
+    direct application of Proposition 9.3.9.
+  \end{itemize}
 \end{exo}
 
 \end{document}
