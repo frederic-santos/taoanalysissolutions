@@ -7219,6 +7219,39 @@ exchangeable here, so that showing only one direction will be enough.
   \end{itemize}
 \end{exo}
 
+\begin{exo}{9.4.2}{Let $X$ be a subset of $\rr$, and let $c \in \rr$.
+    Show that the constant function $f : X \to \rr$ defined by
+    $f(x) := c$ is continuous, and show that the identity function
+    $g : X \to \rr$ defined by $g(x) := x$ is also continuous.}
+
+  The remarks made in the textbook page 224, along with the Examples
+  9.4.2 and 9.4.3, would suffice to show this property. But we will
+  ignore those paragraphs and give a proper proof, mainly using
+  Proposition 9.3.9.
+
+  \begin{itemize}
+  \item First we show that the constant function $f(x)=c$ is
+    continuous. Let be $x_0$ any real number. Let be $\seq{a_n}{0}$
+    any sequence of real numbers that converges to $x_0$. By
+    Proposition 9.3.9, the sequence $\seq{f(a_n)}{0}$ must converge to
+    $L$, which is the limit $L := \lim_{x \to x_0} f(x)$. But the
+    sequence $\seq{f(a_n)}{0}$ is the constant sequence
+    $c,c,c,\ldots$, which necessarily converges to $c$. Thus, by
+    Proposition 9.3.9, we have $L = c$. This shows that $f$ is
+    continuous at any real number $x_0$.
+  \item Now we show that the identity function $f(x) = x$ is
+    continuous. Let be $x_0$ any real number. Let be $\seq{a_n}{0}$
+    any sequence of real numbers that converges to $x_0$. By
+    Proposition 9.3.9, the sequence $\seq{f(a_n)}{0}$ must converge to
+    $L$, which is the limit $L := \lim_{x \to x_0} f(x)$. But the
+    sequence $\seq{f(a_n)}{0}$ is the sequence $\seq{a_n}{0}$, which
+    is known to converge to $x_0$. Thus, by Proposition 9.3.9, we have
+    $L = x_0$. This shows that $f$ is continuous at any real number
+    $x_0$.
+  \end{itemize}
+  
+\end{exo}
+
 \end{document}
 %%% Local Variables:
 %%% mode: latex
