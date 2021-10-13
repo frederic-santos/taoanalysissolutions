@@ -7249,7 +7249,64 @@ exchangeable here, so that showing only one direction will be enough.
     $L = x_0$. This shows that $f$ is continuous at any real number
     $x_0$.
   \end{itemize}
-  
+\end{exo}
+
+\begin{exo}{9.4.3}{Prove Proposition 9.4.10. (Hint: you can use Lemma
+    6.5.3, combined with the squeeze test (Corollary 6.4.14) and
+    Proposition 6.7.3.)}
+
+  Let be $a >0$ a positive real, and we must show that $f : \rr \to
+  \rr$ defined by $f(x) := a^x$ is continuous. In other words, we must
+  show that, for any real number $x_0$, we have:
+  \begin{equation}
+    \label{eq:943a}
+    \lim_{x \to x_0} a^x = a^{x_0},
+  \end{equation}
+  By Proposition 9.4.7, one way to show that is to prove that for any
+  sequence $\seq{r_n}{0}$ of \emph{real} numbers that converges to
+  $x_0$, we have
+  \begin{equation}
+    \label{eq:943b}
+    \lim_{n \to \infty} a^{r_n} = a^{x_0}.
+  \end{equation}
+  This result is not immediate because we just know similar results
+  for sequences of \emph{rational} numbers (e.g., Definition 6.7.2).
+
+  In what follows, as in the proof of Lemma 6.7.1, we should consider
+  three distinct cases: $a>1$, $a=1$ and $a<1$. We will only prove the
+  first one, because the second one is obvious and the third one is
+  very similar.
+
+  Thus, let be $\seq{r_n}{0}$ a sequence of \emph{real} numbers
+  that converges to $x_0$. We must show \eqref{eq:943b}.
+
+  By Proposition 5.4.14, there exists a \emph{rational} number
+  $\alpha_n$ in the interval $]r_n - 1/n, r_n[$ for all $n > 0$.
+  Similarly, there exists a \emph{rational} number $\beta_n$ in the
+  interval $]r_n, r_n + 1/n[$ for all $n > 0$. Thus, using the axiom
+  of countable choice, we can build two sequences of rational numbers,
+  $\seq{\alpha_n}{0}$ and $\seq{\beta_n}{0}$, such that we have
+  \begin{equation}
+    \label{eq:943c}
+    r_n - 1/n < \alpha_n < r_n < \beta_n < r_n + 1/n
+  \end{equation}
+  for all $n > 0$ (there is a tiny problem for $n=0$, but we could
+  have chosen $1/(n+1)$ instead of $1/n$ to solve it). Also, it is
+  obvious that $\seq{\alpha_n}{0}$, $\seq{r_n}{0}$ and
+  $\seq{\beta_n}{0}$ are all equivalent sequences, and thus they all
+  converge to $x_0$.
+
+  Thus, starting from \eqref{eq:943c} and using Lemma 5.6.9(e) applied
+  to real numbers, we have in particular, since $a > 1$ by hypothesis:
+  \begin{equation}
+    \label{eq:943d}
+    a^{\alpha_n} < a^{r_n} < a^{\beta_n}
+  \end{equation}
+  for all $n > 0$. But, by Definition 6.7.2, we know that
+  $\lim_{n \to \infty} a^{\alpha_n} = a^{x_0}$ and
+  $\lim_{n \to \infty} a^{\beta_n} = a^{x_0}$. Thus, by the squeeze
+  test, we also have $\lim_{n \to \infty} a^{r_n} = a^{x_0}$, as
+  expected. This closes the proof.
 \end{exo}
 
 \end{document}
