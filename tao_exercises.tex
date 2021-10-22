@@ -7389,6 +7389,34 @@ exchangeable here, so that showing only one direction will be enough.
 
   A similar proof can be given to show that $f(0-) = -\infty$.
 \end{exo}
+\bigskip
+
+\begin{exo}{9.6.1}{Give examples of: (a) a function $f: ]1,2[ \to \rr$
+    which is continuous and bounded, attains its minimum somewhere,
+    but does not attain its maximum anywhere; (b) a function
+    $f:[0,\infty[ \to \rr$ which is continuous and bounded, attains
+    its maximum somewhere, but does not attain its minimum anywhere;
+    (c) a function $f:[-1,1]\to \rr$ which is bounded but does not
+    attain its minimum anywhere or its maximum anywhere; (d) a
+    function $f:[-1,1]\to \rr$ which has no upper bound and no lower
+    bound. Explain why none of the examples you construct violate the
+    maximum principle.}
+
+  We can find the following examples:
+
+  \begin{enumerate}[label=(\alph*)]
+  \item $f(x) = |x - 1.5|$ is an example of such a function. It does
+    not contradict the maximum principle since $]1,2[$ is not closed.
+  \item $f(x) = 1/(x+1)$ is an example. It does not contradict the
+    maximum principle since $]0, +\infty[$ is not closed.
+  \item $f(x)$ defined by $f(x) = |x|$ if $x \not \in \{-1, 0, 1\}$
+    and $f(x) = 0.5$ if $x \in \{-1,0,1\}$ is an example.  It does
+    not contradict the maximum principle since it is not continuous.
+  \item $f(x)$ defined by $f(x) = 1/x$ if $x \neq 0$ and $f(0) = 0$ is
+    an example. It does not contradict the maximum principle since it
+    is not continuous.
+  \end{enumerate}
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
