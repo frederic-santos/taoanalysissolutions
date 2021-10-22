@@ -7309,6 +7309,38 @@ exchangeable here, so that showing only one direction will be enough.
   expected. This closes the proof.
 \end{exo}
 
+\bigskip
+\begin{exo}{9.4.4}{Prove Proposition 9.4.11. (Hint: from limit laws
+    (Proposition 9.3.14) one can show that $\lim_{x\to 1} x^n = 1$ for
+    all integers $n$. From this and the squeeze test (Corollary
+    6.4.14) deduce that $\lim_{x \to 1} x^p = 1$ for all real numbers
+    $p$. Finally, apply Proposition 6.7.3.)}
+
+  We follow the hint to show that:
+
+  \begin{enumerate}
+  \item $\lim_{x\to 1} x^n = 1$ for all integers $n$. If $n=0$, the
+    statement is obvious. If $n$ is a positive integer, then a quick
+    induction shows the result: for the base case $n=1$, we know that
+    $\lim_{x \to 1} x = 1$ by Example 9.4.3 (for instance), and then we
+    get the result for all $n > 0$ since $x^{n+1} = x^n \times x$,
+    using the limit laws. A similar argument applies if $n < 0$,
+    because we know (for instance by the limit laws) that $\lim_{x \to
+      1} 1/x = 1$, and that $1/x^{n+1} = (1/x) \times (1/x^n)$.
+  \item $\lim_{x \to 1} x^p = 1$ for all real numbers $p$.
+  \item Finally, we can conclude that the function
+    $f : ]0, \infty[ \to \rr$ defined by $f(x) := x^p$ is continuous.
+    We must show that $\lim_{x \to a} x^p = a^p$ for all $a \in \rr$.
+    Let be $\epsilon > 0$. By the previous result, there exists
+    $\alpha > 0$ such that $|x - 1| < \alpha \Rightarrow |x^p - 1| <
+    \epsilon/a^p$. Multiplying this last inequality by $a^p$ (which
+    preserves order since $a > 0$), we get:
+    \[ \forall \epsilon > 0, \exists \alpha > 0 \, : \, |x-1| < \alpha
+      \Rightarrow |x^p - | < \epsilon\]
+  \end{enumerate}
+\end{exo}
+
+
 \end{document}
 %%% Local Variables:
 %%% mode: latex
