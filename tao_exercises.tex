@@ -7327,8 +7327,8 @@ exchangeable here, so that showing only one direction will be enough.
     using the limit laws. A similar argument applies if $n < 0$,
     because we know (for instance by the limit laws) that $\lim_{x \to
       1} 1/x = 1$, and that $1/x^{n+1} = (1/x) \times (1/x^n)$.
-  \item $\lim_{x \to 1} x^p = 1$ for all real numbers $p$.
-  \item Finally, we can conclude that the function
+  \item (TODO) $\lim_{x \to 1} x^p = 1$ for all real numbers $p$.
+  \item (TODO) Finally, we can conclude that the function
     $f : ]0, \infty[ \to \rr$ defined by $f(x) := x^p$ is continuous.
     We must show that $\lim_{x \to a} x^p = a^p$ for all $a \in \rr$.
     Let be $\epsilon > 0$. By the previous result, there exists
@@ -7340,7 +7340,24 @@ exchangeable here, so that showing only one direction will be enough.
   \end{enumerate}
 \end{exo}
 
+\begin{exo}{9.4.5}{Prove Proposition 9.4.13.}
 
+  To show the result, by Proposition 9.4.7(b), we have to prove that,
+  for any sequence $\seq{a_n}{0}$ of elements of $X$ that converges to
+  $x_0$, the sequence $\seq{g \circ f (a_n)}{0}$ converges to
+  $g \circ f (x_0)$.
+
+  Thus, let be $\seq{a_n}{0}$ a sequence of elements of $X$ that
+  converges to $x_0$. Because $f$ is continuous at $x_0$, the sequence
+  $\seq{f(a_n)}{0}$ converges to $f(x_0)$. And since $g$ is continuous
+  at $f(x_0)$, the sequence $\seq{g(f(a_n))}{0}$ converges to
+  $g(f(x_0))$.
+
+  Thus, for any sequence $\seq{a_n}{0}$ of elements of $X$ that
+  converges to $x_0$, the sequence $\seq{g \circ f (a_n)}{0}$
+  converges to $g \circ f (x_0)$, i.e., by Proposition 9.4.7, $g \circ
+  f$ is continuous at $x_0$, as expected.
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
