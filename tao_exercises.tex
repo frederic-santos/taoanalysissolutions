@@ -7358,6 +7358,37 @@ exchangeable here, so that showing only one direction will be enough.
   converges to $g \circ f (x_0)$, i.e., by Proposition 9.4.7, $g \circ
   f$ is continuous at $x_0$, as expected.
 \end{exo}
+\bigskip
+
+\begin{exo}{9.5.1}{Let $E$ be a subset of $\rr$, let $f : E \to \rr$
+    be a function, and let $x_0$ be an adherent point of $E$. Write
+    down a definition of what it would mean for the limit
+    $lim_{x \to x_0 ; x \in E} f(x)$ to exist and equal $+ \infty$ or
+    $- \infty$. If $f : \rr - \{0\} \to \rr$ is the function
+    $f (x) := 1/x$, use your definition to conclude $f(0+) = +\infty$
+    and $f(0-) = - \infty$.}
+
+  We can state the following definition. We have
+  $\lim_{x \to x_0 ; x > x_0} f(x) = + \infty$ iff for any positive
+  real $A > 0$, there exists $\delta > 0$ such that $f(x) > A$ for all
+  $x \in ]x_0, x_0 + \delta[$. We have
+  $\lim_{x \to x_0 ; x < x_0} f(x) = + \infty$ iff for any positive
+  real $A > 0$, there exists $\delta > 0$ such that $f(x) > A$ for all
+  $x \in ]x_0 - \delta, x_0[$. We have
+  $\lim_{x \to x_0} f(x) = + \infty$ iff
+  $\lim_{x \to x_0 ; x > x_0} f(x) = + \infty = \lim_{x \to x_0 ; x <
+    x_0} f(x)$.
+
+  (A similar definition can be written for $- \infty$.)
+
+  In particular, let's consider the function $f(x) := 1/x$ defined on
+  $\rr - \{0\}$. Let be $A > 0$ a positive real number. Then, let be
+  $\delta := 1/(A+1) > 0$. For any $x \in ]0, \delta[$, we have
+  $|x-0| = |x| < 1/(A+1)$, i.e. $x < 1/(A+1)$, and thus $1/x > A+1 >
+  A$. Thus, $f(0+) = \infty$ according to the above definition.
+
+  A similar proof can be given to show that $f(0-) = -\infty$.
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
