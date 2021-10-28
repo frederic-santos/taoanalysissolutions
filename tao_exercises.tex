@@ -7417,6 +7417,30 @@ exchangeable here, so that showing only one direction will be enough.
     is not continuous.
   \end{enumerate}
 \end{exo}
+
+\begin{exo}{9.7.1.}{Prove Corollary 9.7.4.}
+  
+  Since $f$ is continuous on $[a,b]$, then by the maximum principle
+  (Proposition 9.6.7), there exists $x_{max} \in [a,b]$ such that
+  $f(x_{max}) = M$, and $x_{min} \in [a,b]$ such that
+  $f(x_{min}) = m$.
+
+  We can suppose without loss of generality that $x_{min} < x_{max}$;
+  because the case $x_{max} < x_{min}$ can be proved similarly, and
+  there is almost nothing to prove if $x_{min} = x_{max}$ ($f$ would
+  be constant, so picking any $c \in [a,b]$ would be sufficient).
+
+  By Exercise 9.4.6, since $f$ is continuous on $[a,b]$, then $f$ is
+  also continuous on $[x_{min}, x_{max}]$. We can thus apply the
+  intermediate value theorem on this interval to get the result: for
+  any $y \in [m,M]$, there exists indeed a $c \in [x_{min}, x_{max}]$
+  such that $f(c) = y$.
+
+  Also, we know that for any $y \in f([a,b])$, we have both $y \leq M$
+  and $y \geq m$ by definition, so that $f([a,b]) \subseteq [m,M]$.
+  And by the result we have just shown, we also know that
+  $[m,M] \subseteq f([a,b])$, thus we are done.  
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
