@@ -7360,6 +7360,28 @@ exchangeable here, so that showing only one direction will be enough.
 \end{exo}
 \bigskip
 
+\begin{exo}{9.4.6}{Let $X$ be a subset of $\rr$, and let
+    $f: X \to \rr$ be a continuous function. If $Y$ is a subset of
+    $X$, show that the restriction $f|_Y : Y \to \rr$ of $f$ to $Y$ is
+    also a continuous function.}
+
+  Let be $x_0 \in X$. Since $f$ is continuous on $X$, it is continuous
+  in $x_0$, and then we have:
+  \begin{equation}
+    \label{eq:946a}
+    \forall \epsilon > 0, \exists \delta > 0 \, : \, x \in ]x_0 - \delta,
+    x_0 + \delta[ \cap X \Longrightarrow |f(x) - f(x_0)| < \epsilon
+  \end{equation}
+
+  Now let be $y_0 \in Y$. In particular, $y_0 \in X$. Let be the
+  $\delta > 0$ given by equation \ref{eq:946a}. Then for any $y \in ]y_0 - \delta,
+    y_0 + \delta[ \cap Y$, we also have $y \in ]y_0 - \delta,
+    y_0 + \delta[ \cap X$, so that we have indeed $|f(y) - f(y_0)| <
+    \epsilon$ still be equation \ref{eq:946a}. Since $y_0$ is
+    arbitrary, $f|_Y$ is continuous.
+\end{exo}
+
+\bigskip
 \begin{exo}{9.5.1}{Let $E$ be a subset of $\rr$, let $f : E \to \rr$
     be a function, and let $x_0$ be an adherent point of $E$. Write
     down a definition of what it would mean for the limit
