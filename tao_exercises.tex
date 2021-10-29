@@ -7463,6 +7463,28 @@ exchangeable here, so that showing only one direction will be enough.
   And by the result we have just shown, we also know that
   $[m,M] \subseteq f([a,b])$, thus we are done.  
 \end{exo}
+
+\bigskip
+\begin{exo}{9.7.2}{Let $f : [0,1] \to [0,1]$ be a continuous function.
+    Show that there exists a real number $x$ in $[0,1]$ such that
+    $f(x) = x$. This point $x$ is known as a fixed point of $f$.}
+
+  Let be the function $g : [0,1] \to \rr$ defined by $g(x) := f(x) -
+  x$.
+
+  \begin{itemize}
+  \item This function $g$ is continuous on $[0,1]$, since $f$ is
+    continuous by hypothesis, the identity function $x \mapsto x$ is
+    also continuous (Exercice 9.4.2), and the difference of two
+    continuous functions is still continuous (Proposition 9.4.9).
+  \item Furthermore, note that $f(x) = x$ iff $g(x) = 0$. We thus have
+    to prove that there exists a $x \in [0,1]$ such that $g(x) = 0$.
+  \item We have $g(0) = f(0) \in [0,1]$; and $g(1) = f(1) - 1 \in
+    [-1,0]$. Thus, we have in particular $g(1) \leq 0 \leq g(0)$, and
+    $g$ is continuous. The intermediate value theorem thus says that
+    there exists a $x \in [0,1]$ such that $g(x) = 0$, as desired.
+  \end{itemize}
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
