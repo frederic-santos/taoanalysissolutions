@@ -5747,10 +5747,66 @@ exchangeable here, so that showing only one direction will be enough.
 
 \pagebreak
 \section{Infinite sets}
+\begin{exo}{8.1.1}{Let $X$ be a set. Show that $X$ is infinite if and
+    only if there exists a proper subset $Y \subsetneq X$ of $X$ which
+    has the same cardinality as $X$. (This exercise requires the axiom
+    of choice, Axiom 8.1)}
+
+  This exercise is about the characterization of Dedekind-infinite
+  sets.
+
+  \begin{itemize}
+  \item First suppose that $X$ and $Y$ have the same cardinality, i.e.
+    that there exists a bijection $f : Y \to X$ between $X$ and a
+    proper subset $Y \subsetneq X$. For the sake of contradiction,
+    let's suppose that $X$ is finite. Then, by
+    definition\footnote{This is Definition 3.6.10, i.e. the definition
+      of Cantor-finite sets.}, there exists $n \in \nn$ such that
+    $\# X = n$. On the one hand, since $Y$ is a proper subset of $X$,
+    by Proposition 3.6.14 (c), we must have $\#Y < \#X$, i.e.
+    $\#Y < n$. On the other hand, since $f$ is a bijection, $X$ and
+    $Y$ have the same cardinality, i.e. $\#Y = \#X = n$. Thus we have
+    a contradiction; $X$ cannot be finite.
+  \item Conversely, suppose that $X$ is infinite, and let's show that
+    we can construct a bijection $f: X \to Y$ from $X$ to a proper
+    subset $Y \subsetneq X$.
+
+    We begin by defining recursively an infinite collection
+    $A_0, A_1, A_2, \ldots$ of non-empty subsets of $X$. Since $X$ is
+    infinite, in particular it is non-empty; thus by the lemma of
+    single choice we can pick a $x_0 \in X$. We define
+    $A_0 := \{a_0\}$. Now since $X$ is infinite, $X \backslash A_0$ is
+    clearly non-empty, and thus we can also pick a
+    $a_1 \in X \backslash A_0$. We can thus define the non-empty
+    subset $A_1 := A_0 \cup \{a_1\}$. Recursively, let's suppose that
+    $A_n$ has been defined and is a finite non-empty subset of $X$.
+    Thus, the set $X \backslash \bigcup_{i=0}^n A_i$ is non-empty, so
+    that we can pick a $a_{n+1}$ in it, and then form the set
+    $A_{n+1} := A_n \cup \{a_{n+1}\}$. The axiom of (countable) choice
+    ensures that we can repeat this recursive algorithm infinitely
+    many times, to finally get the set $A := \bigcup_{n \in \nn} A_n$.
+
+    Now let's define the proper subset $Y := X \backslash \{a_0\}$,
+    and the following function $f : X \to Y$
+    \[
+      \left \{
+        \begin{array}{r @{\;  = \;} ll}
+          f(x) & x &\text{ if } x \in X \backslash A \\
+          f(x) & a_{n+1} &\text{ if } x \in A, x = a_n
+        \end{array}
+      \right.
+    \]
+
+    One can clearly see that $f$ is a surjection, and also an
+    injection. This closes the proof.
+  \end{itemize}
+  
+\end{exo}
+
 \begin{exo}{8.1.2}{Prove Proposition 8.1.4. (Hint: you can either use
     induction, or use the principle of inﬁnite descent, Exercise
     4.4.2, or use the least upper bound (or greatest lower bound)
-    principle, Theorem 5.5.9.) Does the well- ordering principle work
+    principle, Theorem 5.5.9.) Does the well-ordering principle work
     if we replace the natural numbers by the integers? What if we
     replace the natural numbers by the positive rationals? Explain.}
 
@@ -5898,6 +5954,7 @@ exchangeable here, so that showing only one direction will be enough.
   is at most countable and closes the proof.
 \end{exo}
 
+\bigskip
 \begin{exo}{8.1.5}{Use Proposition 8.1.8 to prove Corollary 8.1.9.}
 
   We have to show the following claim: if $X$ is a countable set, and
