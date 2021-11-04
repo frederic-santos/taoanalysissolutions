@@ -7497,7 +7497,7 @@ exchangeable here, so that showing only one direction will be enough.
   \end{enumerate}
 \end{exo}
 
-\begin{exo}{9.7.1.}{Prove Corollary 9.7.4.}
+\begin{exo}{9.7.1}{Prove Corollary 9.7.4.}
   
   Since $f$ is continuous on $[a,b]$, then by the maximum principle
   (Proposition 9.6.7), there exists $x_{max} \in [a,b]$ such that
@@ -7541,6 +7541,22 @@ exchangeable here, so that showing only one direction will be enough.
     $g$ is continuous. The intermediate value theorem thus says that
     there exists a $x \in [0,1]$ such that $g(x) = 0$, as desired.
   \end{itemize}
+\end{exo}
+
+\begin{exo}{9.8.1}{Explain why the maximum principle remains true if
+    the hypothesis that $f$ is continuous is replaced with $f$ being
+    monotone, or with $f$ being strictly monotone. (You can use the
+    same explanation for both cases.)}
+
+  Let be $f : [a,b] \to \rr$ an increasing function. By definition, we
+  have $f(x) \leq f(y)$ for all $x,y \in [a,b]$ such that $x \leq y$.
+  In particular, since $x \leq b$ for all $x \in [a,b]$, we have $f(x)
+  \leq f(b)$ for all $x \in [a,b]$. And thus, since $b \in [a,b]$, $f$
+  attains its maximum at $b$ on $[a,b]$. Similarly, it attains its
+  minimum at $a$.
+
+  The proof is similar if $f$ is supposed to be strictly increasing,
+  or decreasing, or strictly decreasing.
 \end{exo}
 \end{document}
 %%% Local Variables:
