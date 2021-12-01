@@ -7572,6 +7572,26 @@ exchangeable here, so that showing only one direction will be enough.
   that $f(x) = 3/2$.
 \end{exo}
 \bigskip
+
+\begin{exo}{9.8.3}{Let $a < b$ be real numbers, and let
+    $f : [a, b] \to \rr$ be a function which is both continuous and
+    one-to-one. Show that $f$ is strictly monotone.}
+
+  We divide the proof into three cases:
+
+  \begin{itemize}
+  \item If we suppose $f(a) = f(b)$, then we have immediately a
+    contradiction, since $f$ is not injective. This case is thus
+    simply impossible.
+  \item If we suppose $f(a) > f(b)$, let's suppose for the sake of
+    contradiction that $f$ is not strictly monotone increasing. Thus,
+    there exists two real numbers $x < y$ in $[a,b]$, such that
+    $f(x) \geq f(y)$. (TODO)
+  \item If we suppose $f(a) < f(b)$, a direct adaptation of the second
+    case shows immediately that $f$ must be strictly monotone
+    decreasing.
+  \end{itemize}
+\end{exo}
 \pagebreak
 
 \section{Differentiability}
