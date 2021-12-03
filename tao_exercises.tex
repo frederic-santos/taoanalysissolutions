@@ -7640,8 +7640,48 @@ exchangeable here, so that showing only one direction will be enough.
   \end{itemize}
 \end{exo}
 
-\begin{exo}{}{}
-  
+\begin{exo}{9.9.2}{Prove Proposition 9.9.8.}
+
+  Recall the two statements:
+  \begin{enumerate}[label=(\alph*)]
+  \item $f$ is uniformly continuous on $X$
+  \item For any two equivalent sequences $\seq{x_n}{1}$ and
+    $\seq{y_n}{1}$ of elements of $X$, the sequences $\seq{f(x_n)}{1}$
+    and $\seq{f(y_n)}{1}$ are also equivalent.
+  \end{enumerate}
+
+  Let's prove each implication separately.
+
+  \begin{itemize}
+  \item First, we show that (a) implies (b). Let be $\seq{x_n}{1}$ and
+    $\seq{y_n}{1}$ two equivalent sequences of elements of $X$. Let be
+    $\epsilon > 0$. Since $f$ is uniformly continuous, there exists
+    $\delta > 0$ such that $|f(x) - f(y)| \leq \epsilon$ whenever
+    $|x-y| \leq \delta$ (for $x,y \in X$).
+
+    But since $\seq{x_n}{1}$ and $\seq{y_n}{1}$ are equivalent, there
+    exists $N \geq 1$ such that $n \geq N$ implies $|x_n - y_n| \leq
+    \delta$.
+
+    Thus, if $n \geq N$, we have $|x_n - y_n| \leq \delta$, and thus
+    $|f(x_n) - f(y_n)| \leq \epsilon$. This means that
+    $\seq{f(x_n)}{1}$ and $\seq{f(y_n)}{1}$ are equivalent.
+  \item Now we show that (b) implies (a). We will use contradiction
+    here\footnote{Note that we use the same approach as in Exercise
+      9.3.1.}. Thus, we suppose that (b) is true, but that $f$ is not
+    uniformly continuous. For $f$, not being uniformly continuous
+    means that:
+    \begin{equation}
+      \label{eq:992a}
+      \exists \epsilon > 0, \exists y_0 \in X \, : \; \forall \delta
+      \leq 0, \: |f(x) - f(y_0)| \geq \epsilon, \text{ although } |x-y_0|
+      < \delta
+    \end{equation}
+    If we consider a sequence $\seq{x_n}{1}$ of elements of $X$ that
+    converges to $y_0$, then the sequences $\seq{x_n}{1}$ and
+    $\seq{y_0}{1}$ are equivalent. This is thus a clear contradiction
+    with \eqref{eq:992a}.
+  \end{itemize}
 \end{exo}
 \pagebreak
 
