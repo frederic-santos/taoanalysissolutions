@@ -7577,20 +7577,48 @@ exchangeable here, so that showing only one direction will be enough.
     $f : [a, b] \to \rr$ be a function which is both continuous and
     one-to-one. Show that $f$ is strictly monotone.}
 
-  We divide the proof into three cases:
+  (This one may be more a detailed sketch of a proof rather than an
+  actual rigorous proof.) We divide the proof into three cases:
 
-  \begin{itemize}
+  \begin{enumerate}
   \item If we suppose $f(a) = f(b)$, then we have immediately a
     contradiction, since $f$ is not injective. This case is thus
-    simply impossible.
+    simply impossible. (More generally, $f$ cannot be constant on any
+    interval $[c,d] \subseteq [a,b]$, since it would obviously not be
+    injective in such a case. Thus, $f$ can only be strictly
+    increasing or strictly decreasing on such intervals.)
   \item If we suppose $f(a) > f(b)$, let's suppose for the sake of
-    contradiction that $f$ is not strictly monotone increasing. Thus,
-    there exists two real numbers $x < y$ in $[a,b]$, such that
-    $f(x) \geq f(y)$. (TODO)
+    contradiction that $f$ is not strictly monotone increasing on
+    $[a,b]$. Actually, $f$ must at least be strictly increasing on a
+    subset of $[a,b]$, since $f(a) > f(b)$ (otherwise we have an
+    obvious contradiction), but this hypothesis means that $f$ is not
+    strictly increasing on the whole interval $[a,b]$. Thus, there
+    must exist three real numbers $c,d,e$, such that
+    $a \leq c < d < e \leq b$, and we have yet another time several
+    possible cases:
+    \begin{itemize}
+    \item $f$ is strictly increasing on $[c,d]$ and strictly
+      decreasing on $[d,e]$, i.e., we have $f(c) < f(d)$ and
+      $f(d) > f(e)$. One can show that\footnote{Actually, this is
+        yet another division into cases, depending on whether
+        $f(c) > f(e)$ or $f(c) \leq f(e)$, but this is easily shown,
+        and even more easily understandable by drawing a picture.}
+      $m := \frac{f(c) + f(e)}{2}$ belongs to both intervals
+      $[f(c), f(d)]$ and $[f(d), f(e)]$. Thus, applying the
+      intermediate value theorem on each interval $[c,d]$ and $[d,e]$
+      shows that there exists $x_1 \in [c,d]$, $x_2 \in [d,e]$ such
+      that $f(x_1) = f(x_2) = m$, although $x_1 \neq x_2$. (The only
+      possibility for $x_1$ and $x_2$ to be equal to each other would
+      be that $x_1 = x_2 = d$, which would imply that $f$ is constant
+      on both $[c,d]$ and $[d,e]$, a contradiction.) Thus $f$ would
+      not be injective, a contradiction.
+    \item A similar argument applies if $f$ is strictly decreasing on
+      $[c,d]$ and then increasing on $[d,e]$.
+    \end{itemize}
   \item If we suppose $f(a) < f(b)$, a direct adaptation of the second
     case shows immediately that $f$ must be strictly monotone
     decreasing.
-  \end{itemize}
+  \end{enumerate}
 \end{exo}
 \pagebreak
 
