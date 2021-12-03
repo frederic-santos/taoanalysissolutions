@@ -7620,6 +7620,29 @@ exchangeable here, so that showing only one direction will be enough.
     decreasing.
   \end{enumerate}
 \end{exo}
+
+\begin{exo}{9.9.1}{Prove Lemma 9.9.7.}
+
+  We have to prove that two sequences $\seq{a_n}{1}$ and
+  $\seq{b_n}{1}$ are equivalent if and only if
+  $\lim_{n \to \infty} (a_n - b_n) = 0$.
+
+  \begin{itemize}
+  \item If these two sequences are equivalent (in the sense of
+    Definition 9.9.5), then let be $\epsilon > 0$. By definition,
+    there exists $N \geq 1$ such that, for all $n \geq N$, we have
+    $|a_n - b_n| \leq \epsilon$, i.e., $|(a_n - b_n) - 0| \leq
+    \epsilon$. This means precisely that $\lim_{n \to \infty} (a_n -
+    b_n) = 0$.
+  \item All these steps can be reversed to show that if $\lim_{n \to
+      \infty} (a_n - b_n) = 0$, then $\seq{a_n}{1}$ and $\seq{b_n}{1}$
+    are equivalent.
+  \end{itemize}
+\end{exo}
+
+\begin{exo}{}{}
+  
+\end{exo}
 \pagebreak
 
 \section{Differentiability}
