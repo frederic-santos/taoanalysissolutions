@@ -7757,6 +7757,84 @@ exchangeable here, so that showing only one direction will be enough.
   \epsilon$ as expected. This closes the proof.
 \end{exo}
 
+\bigskip
+\begin{exo}{10.1.4}{Prove Theorem 10.1.13.}
+
+  Let's prove the different statements of this theorem.
+
+  \begin{enumerate}[label=(\alph*)]
+  \item If $f(x) = c$ for all $x \in \rr$, then at any point $x_0 \in
+    \rr$, the quotient $\frac{f(x) - f(x_0)}{x - x_0}$ is equal to $0$.
+    Thus, we have in particular $\lim_{x \to x_0} \frac{f(x) -
+      f(x_0)}{x - x_0} = \lim_{x \to x_0} 0 = 0$. This means that
+    $f'(x_0) = 0$ for all $x_0 \in \rr$, as expected.
+  \item Similarly, if $f(x) = x$ for all $x \in \rr$, then at any
+    point $x_0 \in \rr$, the quotient $\frac{f(x) - f(x_0)}{x - x_0}$
+    is equal to $1$. Thus, the same argument leads to $f'(x_0) = 1$
+    for all $x_0 \in \rr$.
+  \item We have:
+    \begin{align*}
+      \frac{(f+g)(x) - (f+g)(x_0)}{x - x_0} &= \frac{f(x) + g(x) -
+                                              f(x_0) - g(x_0)}{x -
+                                              x_0}  \\
+                                            &= \frac{f(x) - f(x_0)}{x
+                                              - x_0} + \frac{g(x) -
+                                              g(x_0)}{x - x_0}
+    \end{align*}
+    and thus, in particular, since both terms of the right-hand side
+    converge by hypothesis, we have by Proposition 9.3.14:
+    \begin{align*}
+      \lim_{x \to x_0} \frac{(f+g)(x) - (f+g)(x_0)}{x - x_0}
+      &= \lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0} + \lim_{x \to
+        x_0} \frac{g(x) - g(x_0)}{x - x_0} \\
+      &= f'(x_0) + g'(x_0)
+    \end{align*}
+    as expected.
+  \item We have:
+    \begin{align*}
+      \frac{(fg)(x) - (fg)(x_0)}{x - x_0}
+      &= \frac{f(x)g(x) - f(x_0)g(x_0)}{x-x_0} \\
+      &= \frac{f(x)g(x) - f(x_0)g(x) + f(x_0)g(x) -
+        f(x_0)g(x_0)}{x-x_0} \\
+      &= g(x)\frac{f(x) - f(x_0)}{x-x_0} + f(x_0) \frac{g(x)-g(x_0)}{x-x_0}
+    \end{align*}
+    and since $f,g$ are differentiable (and thus continuous) by
+    hypothesis, we have by Proposition 9.3.14
+    \begin{align*}
+      \lim_{x \to x_0} \frac{(fg)(x) - (fg)(x_0)}{x - x_0}
+      &= \lim_{x \to x_0} \left(g(x)\frac{f(x) - f(x_0)}{x-x_0} +
+        f(x_0) \frac{g(x)-g(x_0)}{x-x_0} \right) \\
+      &= \lim_{x\to x_0} \left(g(x)\frac{f(x) - f(x_0)}{x-x_0}\right)
+        + \left( f(x_0) \frac{g(x)-g(x_0)}{x-x_0} \right) \\
+      &= g(x_0) f'(x_0) + f(x_0) + g'(x_0)
+    \end{align*}
+    as expected.
+  \item Obvious using limit laws and/or Proposition 9.3.14.
+  \item Obvious by combining (c) and (e), setting $c := - 1$.
+  \item We have:
+    \begin{equation*}
+      \frac{1/g(x) - 1/g(x_0)}{x-x_0}
+      = \frac{g(x_0) - g(x)}{g(x)g(x_0)(x-x_0)}
+      = \frac{1}{g(x)g(x_0)} \times \frac{g(x_0) - g(x)}{x-x_0}
+    \end{equation*}
+    Since $g$ is differentiable (and thus continuous), we have
+    $\lim_{x \to x_0} \frac{1}{g(x) g(x_0)} = \frac{1}{g^2(x_0)}$; and
+    we also have $\lim_{x \to x_0} \frac{g(x) - g(x_0)}{x-x_0} =
+    g'(x_0)$. Thus, since both terms converge, we can apply
+    Proposition 9.3.14 to get:
+    \begin{align*}
+      \lim_{x \to x_0} \frac{1/g(x) - 1/g(x_0)}{x-x_0}
+      &= \lim_{x \to x_0} \left( \frac{1}{g(x)g(x_0)} \times
+        \frac{g(x_0) - g(x)}{x-x_0}\right) \\
+      &= \lim_{x \to x_0} \frac{1}{g(x)g(x_0)} \times \lim_{x \to x_0}
+        \frac{g(x_0) - g(x)}{x-x_0} \\
+      &= \frac{-g'(x_0)}{g^2(x_0)}
+    \end{align*}
+    as expected.
+  \item Obvious by combining (g) and (d).
+  \end{enumerate}
+\end{exo}
+
 \end{document}
 %%% Local Variables:
 %%% mode: latex
