@@ -7835,6 +7835,32 @@ exchangeable here, so that showing only one direction will be enough.
   \end{enumerate}
 \end{exo}
 
+\begin{exo}{10.1.5}{Let $n$ be a natural number, and let
+    $f : \rr \to \rr$ be the function $f (x) := x^n$. Show that $f$ is
+    differentiable on $\rr$ and $f'(x) = nx^{n-1}$ for all
+    $x \in \rr$.}
+
+  Let's use induction on $n$.
+  \begin{itemize}
+  \item The case $n=0$ corresponds to the constant function $f(x) =
+    1$; see Exercise 10.1.4(a).
+  \item We really start at $n=1$; in this case we have $f(x) = x$. We
+    have shown in Exercise 10.1.4(b) that $f'(x) = 1 = 1 \times x^0$,
+    as expected.
+  \item Now suppose inductively that the property is true for some
+    natural number $n \in \nn$, and let's show that it is still true
+    for $n+1$. If we set $f(x) := x^{n+1}$, we can write $f(x) = x
+    \times x^n$. By the induction hypothesis, $x \to x^n$ is
+    differentiable on $\rr$; and we know that the identity function $x
+    \to x$ is also differentiable on $\rr$. Thus we can use the
+    product rule:
+    \begin{equation*}
+      f'(x) = 1 \times x^n + x \times nx^{n-1} = (n+1)x^n
+    \end{equation*}
+    as expected. This closes the proof.
+  \end{itemize}
+\end{exo}
+
 \end{document}
 %%% Local Variables:
 %%% mode: latex
