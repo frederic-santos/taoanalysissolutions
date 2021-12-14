@@ -7852,13 +7852,31 @@ exchangeable here, so that showing only one direction will be enough.
     for $n+1$. If we set $f(x) := x^{n+1}$, we can write $f(x) = x
     \times x^n$. By the induction hypothesis, $x \to x^n$ is
     differentiable on $\rr$; and we know that the identity function $x
-    \to x$ is also differentiable on $\rr$. Thus we can use the
-    product rule:
+    \to x$ is also differentiable on $\rr$. Thus $f$ is differentiable
+    on $\rr$, and we can use the product rule:
     \begin{equation*}
       f'(x) = 1 \times x^n + x \times nx^{n-1} = (n+1)x^n
     \end{equation*}
     as expected. This closes the proof.
   \end{itemize}
+\end{exo}
+
+\begin{exo}{10.1.6}{Let $n$ be a negative integer, and let $f : \rr -
+    \{0\} \to \rr$ be the function $f(x) := x^n$. Show that $f$ is
+    differentiable on $\rr$ and $f'(x) = nx^{n-1}$ for all $x \in \rr
+    - \{0\}$.}
+
+  Here, we suppose that $n < 0$. Thus, if we set $m := -n$, then $m$
+  is a positive integer, and we have $f(x) = 1/x^m$ by Définition
+  5.6.2.
+
+  We know that $x \to x^m$ is differentiable on $\rr$, and thus on
+  $\rr - \{0\}$. By Theorem 10.1.13(g), the function $x \to 1/x^m$ is
+  differentiable on $\rr - \{0\}$ and we have:
+  \begin{equation*}
+    f'(x) = \left( 1/x^m \right)' = - \frac{mx^{m-1}}{x^{2m}} = -m x^{-m-1} = nx^{n-1},
+  \end{equation*}
+  (using also Exercise 10.1.5,) as expected.
 \end{exo}
 
 \end{document}
