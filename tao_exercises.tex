@@ -7867,7 +7867,7 @@ exchangeable here, so that showing only one direction will be enough.
     - \{0\}$.}
 
   Here, we suppose that $n < 0$. Thus, if we set $m := -n$, then $m$
-  is a positive integer, and we have $f(x) = 1/x^m$ by Définition
+  is a positive integer, and we have $f(x) = 1/x^m$ by Definition
   5.6.2.
 
   We know that $x \to x^m$ is differentiable on $\rr$, and thus on
@@ -7877,6 +7877,48 @@ exchangeable here, so that showing only one direction will be enough.
     f'(x) = \left( 1/x^m \right)' = - \frac{mx^{m-1}}{x^{2m}} = -m x^{-m-1} = nx^{n-1},
   \end{equation*}
   (using also Exercise 10.1.5,) as expected.
+\end{exo}
+\bigskip
+
+\begin{exo}{10.2.1}{Prove Proposition 10.2.6.}
+
+  We will prove the proposition for the case of a local maximum; the
+  proof is similar for a local minimum. First, if $f$ attains a local
+  maximum at $x_0$, there exists a $\delta > 0$ such that:
+  \begin{equation}
+    \label{eq:10.2.1a}
+    \forall x \in ]a,b[ \, \cap \, ]x_0 - \delta, x_0 + \delta[, \; f(x_0) \geq f(x)
+  \end{equation}
+
+  Now, recall $f$ is differentiable at $x_0$, so that we have
+  $f'(x_0) = \lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0}$. Since
+  this limit does exist, the left limit and the right limit must match
+  (if they don't, a quick proof by contradiction would show that $f$
+  is not differentiable at $x_0$); i.e. we must have:
+  \begin{equation}
+    \label{eq:10.2.1b}
+    \lim_{x \to x_0; \, x \in ]x_0 - \delta, x_0[} \frac{f(x) -
+      f(x_0)}{x - x_0} = \lim_{x \to x_0; \, x \in ]x_0, x_0 + \delta[} \frac{f(x) -
+      f(x_0)}{x - x_0} = f'(x_0)
+  \end{equation}
+
+  In both cases, we have $f(x) \leq f(x_0)$ since $x_0$ is a local
+  maximum, so that the numerator is negative. But in the case of the
+  left limit, we have $x-x_0 \leq 0$, so that
+  \begin{equation}
+    f'(x_0) = \lim_{x \to x_0; \, x \in ]x_0 - \delta, x_0[}
+    \frac{f(x) - f(x_0)}{x - x_0} \geq 0
+  \end{equation}
+  (taking the limit of a positive quantity leads to a positive limit),
+  and similarly, for the right limit, we have
+  \begin{equation}
+    f'(x_0) = \lim_{x \to x_0; \, x \in ]x_0, x_0 + \delta[}
+    \frac{f(x) - f(x_0)}{x - x_0} \leq 0
+  \end{equation}
+
+  But since left and right limits are equal, the only possibility is
+  that they are both equal to zero, so that the limit $f'(x_0)$ itself
+  is equal to zero. Thus, we have indeed $f'(x_0) = 0$, as expected.
 \end{exo}
 
 \end{document}
