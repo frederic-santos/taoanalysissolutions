@@ -7921,6 +7921,43 @@ exchangeable here, so that showing only one direction will be enough.
   is equal to zero. Thus, we have indeed $f'(x_0) = 0$, as expected.
 \end{exo}
 
+\bigskip
+\begin{exo}{10.2.2}{Give an example of a function
+    $f : ]-1, 1[ \to \rr$ which is continuous and attains a global
+    maximum at $0$, but which is not differentiable at $0$. Explain
+    why this does not contradict Proposition 10.2.6.}
+
+  The function $f$ defined by $f(x) = x+1$ if $x \in ]-1, 0]$ and
+  $f(x) = -x+1$ if $x \in ]0, 1[$ attains a global maximum of $1$ at
+  $x=0$, but is not differentiable at $0$ (since the left limit
+  $\lim_{x \to 0^-} \frac{f(x)-f(0)}{x-0}$ is equal to $1$ whereas the
+  right limit $\lim_{x \to 0^+} \frac{f(x)-f(0)}{x-0}$ is equal to
+  $-1$).
+
+  This does not contradict Proposition 10.2.6 because this proposition
+  only deals with functions that are supposed to be differentiable.
+\end{exo}
+\bigskip
+
+\begin{exo}{10.2.3}{Give an example of a function
+    $f : ]-1, 1[ \to \rr$ which is differentiable, and whose
+    derivative equals $0$ at $0$, but such that $0$ is neither a local
+    minimum nor a local maximum. Explain why this does not contradict
+    Proposition 10.2.6.}
+
+  The function $f$ defined by $f(x) := x^3$ is an example of such a
+  function. Indeed, by Exercise 10.1.5, $f$ is differentiable and we
+  have $f'(x) = 3x^2$; so that $f'(0) = 0$. However, $f$ is increasing
+  on $]0, 1[$ (see Lemma 5.6.9(d)); and $f$ is also increasing on
+  $]-1,0]$ because if we have $x < y \leq 0$, then we have $x^2 > y^2
+  \geq 0$, and thus $x^3 < y^3 \leq 0$. Thus, $f$ is increasing on the
+  whole interval $]-1,1[$, so that $0$ cannot be a local extremum.
+
+  This does not contradict Proposition 10.2.6 because this proposition
+  only says that \emph{if $f$ attains a local extremum at $x_0$, then
+    $f'(x_0) = 0$}; it does not say that ``if $f'(x_0) = 0$, then $f$
+  attains a local extremum at $x_0$''.
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
