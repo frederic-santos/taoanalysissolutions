@@ -7958,6 +7958,41 @@ exchangeable here, so that showing only one direction will be enough.
     $f'(x_0) = 0$}; it does not say that ``if $f'(x_0) = 0$, then $f$
   attains a local extremum at $x_0$''.
 \end{exo}
+\bigskip
+
+\begin{exo}{10.2.4}{Prove Theorem 10.2.7.}
+  
+  We suppose that $g : [a, b] \to \rr$ is a continuous function,
+  differentiable on $]a, b[$, and such that $g(a) = g(b)$. We must
+  show that there exists an $x \in ]a, b[$ such that $g'(x) = 0$.
+
+  Intuitively, if $g(a) = g(b)$, either $f$ is totally ``flat'' (i.e.,
+  constant), or $f$ is not constant and must be increasing and then
+  decreasing (or decreasing and then increasing) somewhere to go back
+  back to its starting point. Let's consider those cases separately.
+
+  \begin{itemize}
+  \item If $g$ is constant, then $g'(x) = 0$ for all $x \in ]a,b[$
+    (see Theorem 10.1.13(a)). Thus the claim is trivial: any $x \in
+    ]a,b[$ is a good pick.
+  \item If $g$ is not constant on $[a,b]$, then there exists a $x_0
+    \in ]a,b[$ such that $x_0 \neq g(a)$ (and also $x_0 \neq g(b)$).
+    Since $g$ is continuous on $[a,b]$, then by the maximum principle
+    (Proposition 9.6.7), there exists a $x_{max} \in [a,b]$ and a
+    $x_{min} \in [a,b]$ that are respectively the global maximum and
+    minimum of $g$ on $[a,b]$. Once again, there are several
+    (sub-)cases:
+    \begin{itemize}
+    \item If $x_{max} \in ]a,b[$, then by Proposition 10.2.6, we have
+      $g'(x_{max}) = 0$: the claim follows.
+    \item If $x_{max} = a$, then $g$ attains a local maximum at $x=a$
+      (and thus also at $x=b$). Since $g$ is supposed to be
+      non-constant, we have $x_{max} \neq x_{min}$. In particular, we
+      thus have $x_{min} \neq a$ and $x_{min} \neq b$, i.e. $x_{min}
+      \in ]a,b[$. Using Proposition 10.2.6, the claim follows.
+    \end{itemize}
+  \end{itemize}
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
