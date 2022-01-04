@@ -7993,6 +7993,28 @@ exchangeable here, so that showing only one direction will be enough.
     \end{itemize}
   \end{itemize}
 \end{exo}
+
+\begin{exo}{10.2.5}{Use Theorem 10.2.7 to prove Corollary 10.2.9.
+    (Hint: consider a function of the form $f (x) - cx$ for some
+    carefully chosen real number $c$.)}
+
+  Our goal here is to choose the number $c$ so that the function
+  $g : [a,b] \to \rr$ defined by $g(x) := f(x) - cx$ will obey to the
+  requirements of Rolle's theorem. Of course, since $f$ is continuous
+  on $[a,b]$ and differentiable on $]a,b[$, $g$ is also continuous and
+  differentiable on the same intervals. Thus, we only have to choose
+  $c$ so that we have $g(a) = g(b)$.
+
+  We have respectively $g(a) = f(a) - ca$, and $g(b) = f(b) - c(b)$,
+  so that $g(a) = g(b)$ iff $c = (f(b) - f(a)) / (b-a)$. Thus, let's
+  define the function $g$ by $g(x) := f(x) - \frac{f(b)-f(a)}{b-a}x$.
+  We can apply Rolle's theorem to this function $g$, i.e., we know
+  that there exists $x_0 \in ]a,b[$ such that $g'(x_0) = 0$.
+
+  But we have $g'(x) = f'(x) - \frac{f(b)-f(a)}{b-a}$. Thus, for this
+  number $x_0$, we have actually $f'(x_0) = \frac{f(b)-f(a)}{b-a}$, as
+  expected.
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
