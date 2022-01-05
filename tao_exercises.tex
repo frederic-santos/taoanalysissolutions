@@ -8015,6 +8015,29 @@ exchangeable here, so that showing only one direction will be enough.
   number $x_0$, we have actually $f'(x_0) = \frac{f(b)-f(a)}{b-a}$, as
   expected.
 \end{exo}
+
+\bigskip
+\begin{exo}{10.2.6}{Let $M > 0$, and let $f : [a, b] \to \rr$ be a
+    function which is continuous on $[a, b]$ and differentiable on
+    $]a, b[$, and such that $|f'(x)| \leq M$ for all $x \in ]a, b[$.
+    Show that for any $x, y \in [a, b]$, we have the inequality
+    $|f(x) - f(y)| \leq M |x - y|$.}
+
+  The proposition is obvious when $x = y$ since both sides of the
+  inequality are equal to $0$; so that we can suppose that we have
+  $a \leq x < y \leq b$ (if $y > x$, we just have to switch their
+  roles in the arguments below).
+
+  Since $f$ is continuous on $[a,b]$ and differentiable on $]a,b[$,
+  then in particular its restriction $f|_{[x,y]}$ is continuous on
+  $[x,y]$ and differentiable on $]x,y[$. We can thus apply the mean
+  value theorem to this restriction $f|_{[x,y]}$; it tells us that
+  there exists a real number $c \in ]x,y[$ such that $f'(c) =
+  \frac{f(x)-f(y)}{x-y}$. But since $f'$ is bounded by $M$, we have
+  $|f'(c)| \leq M$, i.e. $|f(x) - f(y)| \leq M|x-y|$, as expected.
+\end{exo}
+\bigskip
+
 \end{document}
 %%% Local Variables:
 %%% mode: latex
