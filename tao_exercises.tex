@@ -8038,6 +8038,19 @@ exchangeable here, so that showing only one direction will be enough.
 \end{exo}
 \bigskip
 
+\begin{exo}{10.2.7}{Let $f : \rr \to \rr$ be a differentiable function
+    such that $f'$ is bounded. Show that $f$ is uniformly continuous.}
+
+  First, saying that $f'$ is bounded means that there exists a real
+  number $M>0$ such that $|f'(x)| \leq M$ for all $x \in \rr$. Since
+  $f'$is bounded, then from the previous exercise (10.2.6) we know
+  that we have $|f(x) - f(y)| \leq M |x-y|$ for all $x,y \in \rr$.
+
+  Now let be $\epsilon > 0$. If we set $\delta := \epsilon/M$, then
+  for all $x,y \in \rr$ such that $|x-y| \leq \delta$, we have
+  \[ |f(x)-f(y)| \leq M|x-y| \leq \epsilon\]
+  so that $f$ is uniformly continuous, as expected.
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
