@@ -8060,7 +8060,7 @@ exchangeable here, so that showing only one direction will be enough.
   show that we have $f'(x_0) \geq 0$.
 
   Since $f$ is differentiable at $x_0$, then we have
-  \[\lim_{x \to x_0 ; x \in X -\{x_0\}} \frac{f(x)-f(x_0)}{x-x_0} =
+  \[\lim_{x \to x_0 ; \, x \in X -\{x_0\}} \frac{f(x)-f(x_0)}{x-x_0} =
     f'(x_0)\] But $f$ is monotone increasing, so that
   $\frac{f(x)-f(x_0)}{x-x_0}$ is always a non-negative quantity (if
   $x<x_0$ then $f(x) \leq f(x_0)$; and if $x>x_0$ then
@@ -8069,6 +8069,42 @@ exchangeable here, so that showing only one direction will be enough.
 
   A similar argument show that if $f$ is monotone decreasing, then
   $f'(x_0) \leq 0$.
+\end{exo}
+
+\bigskip
+\begin{exo}{10.3.2}{Give an example of a function
+    $f : ]-1, 1[ \to \rr$ which is continuous and monotone increasing,
+    but which is not differentiable at $0$. Explain why this does not
+    contradict Proposition 10.3.1.}
+
+  Consider the function $f : ]-1, 1[ \to \rr$ defined by $f(x) = x$ if
+  $x \in ]-1,0]$ and $f(x) = 2x$ if $x \in ]0,1[$. This function $f$
+  is continuous at $0$, because its left and right limits at $0$ are
+  both null:
+  \begin{align*}
+    f(0-) & = \lim_{x \to 0 ; \, x \in ]-1,0[} f(x) = \lim_{x \to 0 ; \, x
+            \in ]-1,0[} x = 0 \\
+    f(0+) &= \lim_{x \to 0 ; \, x \in ]0,1[} f(x) = \lim_{x \to 0 ; \,
+            x \in ]0,1[} 2x = 0
+  \end{align*}
+  and since $f(0)=0$, this shows that $f$ is continuous at $0$.
+  However, $f$ is not differentiable at $0$, because
+  \begin{align*}
+    \lim_{x \to 0 ; \, x \in ]-1,0[} \frac{f(x)-f(0)}{x-0}
+    &= \lim_{x \to 0 ; \, x \in ]-1,0[} \frac{x}{x} = 1
+  \end{align*}
+  whereas
+  \begin{align*}
+    \lim_{x \to 0 ; \, x \in ]0,1[} \frac{f(x)-f(0)}{x-0}
+    &= \lim_{x \to 0 ; \, x \in ]0,1[} \frac{2x}{x} = 2.
+  \end{align*}
+  Thus, the right and left limits do not match, i.e., the limit
+  $\lim_{x \to 0 ; \, x \in ]-1,1[-\{0\}} \frac{f(x)-f(0)}{x-0}$ is not
+  defined, and $f$ is not differentiable at $0$.
+
+  This example does not contradict Proposition 10.3.1, because it is
+  only applicable when $f$ is differentiable at a gievn $x_0$, which
+  is not the case here (see also Remark 10.3.2).
 \end{exo}
 \end{document}
 %%% Local Variables:
