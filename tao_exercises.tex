@@ -8051,6 +8051,25 @@ exchangeable here, so that showing only one direction will be enough.
   \[ |f(x)-f(y)| \leq M|x-y| \leq \epsilon\]
   so that $f$ is uniformly continuous, as expected.
 \end{exo}
+
+\bigskip
+\begin{exo}{10.3.1}{Prove Proposition 10.3.1.}
+
+  Let $f : X \to \rr$ be a function which is differentiable at $x_0
+  \in X$. First suppose that $f$ is monotone increasing, and let's
+  show that we have $f'(x_0) \geq 0$.
+
+  Since $f$ is differentiable at $x_0$, then we have
+  \[\lim_{x \to x_0 ; x \in X -\{x_0\}} \frac{f(x)-f(x_0)}{x-x_0} =
+    f'(x_0)\] But $f$ is monotone increasing, so that
+  $\frac{f(x)-f(x_0)}{x-x_0}$ is always a non-negative quantity (if
+  $x<x_0$ then $f(x) \leq f(x_0)$; and if $x>x_0$ then
+  $f(x) \geq f(x_0)$). Thus, since the limit of a non-negative
+  quantity cannot be negative, we have $f'(x_0) \geq 0$, as expected.
+
+  A similar argument show that if $f$ is monotone decreasing, then
+  $f'(x_0) \leq 0$.
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
