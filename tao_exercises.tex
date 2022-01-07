@@ -8140,6 +8140,25 @@ exchangeable here, so that showing only one direction will be enough.
   numerator must also be positive, so that we get $f(y) > f(x)$, as
   expected.
 \end{exo}
+
+\bigskip
+\begin{exo}{10.3.5}{Give an example of a subset $X \in \rr$ and a
+    function $f : X \to \rr$ which is differentiable on $X$, is such
+    that $f'(x) > 0$ for all $x \in X$, but $f$ is not strictly
+    monotone increasing. (Hint: the conditions here are subtly
+    diﬀerent from those in Proposition 10.3.3. What is the diﬀerence,
+    and how can one exploit that diﬀerence to obtain the example?)}
+
+  The main difference with Proposition 10.3.3 is that, here, we do not
+  consider a function $f$ defined on an \emph{interval}, but on an
+  arbitrary subset of the real line. In particular, we can choose $X$
+  as a subset that is not connected (see Definition 11.1.1). For
+  instance, let's consider $X := [1,2] \cup [3,4]$ such that $f(x) :=
+  x$ when $x \in [1,2]$ and $f(x) := x-3$ when $x \in [3,4]$. $f$ is
+  continuous and differentiable; and we have $f'(x) = 1 > 0$ for all
+  $x \in X$. However, $f$ is not strictly increasing, since we have
+  $f(2) = 2$ and $f(3) = 0$.
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
