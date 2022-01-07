@@ -8121,6 +8121,25 @@ exchangeable here, so that showing only one direction will be enough.
   function is increasing) nor Proposition 10.3.3 (which states a
   converse statement).
 \end{exo}
+
+\bigskip
+\begin{exo}{10.3.4}{Prove Proposition 10.3.3.}
+
+  Let $f : [a,b] \to \rr$ be a differentiable function. We will prove
+  only the first statement, i.e. that if $f'(x) > 0$ for all
+  $x \in [a,b]$, then $f$ is strictly monotone increasing. After that,
+  the two other statements can be easily proven in a similar fashion.
+
+  Let be $x,y \in [a,b]$ such that $x < y$. To show that $f$ is
+  strictly increasing, we must show that we have $f(x) < f(y)$. Since
+  $f$ is supposed to be differentiable, it is in particular
+  differentiable on $]x,y[$. We can thus apply the mean value theorem:
+  there exists a real number $c \in ]x,y[$ such that
+  $f'(c) = \frac{f(y)-f(x)}{y-x}$. But since $f'$ is positive, we have
+  $\frac{f(y)-f(x)}{y-x} > 0$. Since the denominator is positive, the
+  numerator must also be positive, so that we get $f(y) > f(x)$, as
+  expected.
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
