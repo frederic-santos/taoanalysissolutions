@@ -18,7 +18,9 @@ Note that this constitutes only /propositions/ of solutions; errors are still po
 - [X] Chapter 6: (mostly) completed.
 - [X] Chapter 7: (mostly) completed.
 - [ ] Chapter 8: numerous exercises are completed, but a substantial part of solutions is still missing.
-- [ ] Chapter 9: in progress.
+- [X] Chapter 9: (mostly) completed.
+- [ ] Chapter 10 : in progress.
+- [ ] Chapter 11 : in progress.
 
 More to come.
 
