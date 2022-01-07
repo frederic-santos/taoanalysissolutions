@@ -8159,6 +8159,46 @@ exchangeable here, so that showing only one direction will be enough.
   $x \in X$. However, $f$ is not strictly increasing, since we have
   $f(2) = 2$ and $f(3) = 0$.
 \end{exo}
+
+\pagebreak
+\section{The Riemann integral}
+\begin{exo}{11.1.1}{Prove Lemma 11.1.4.}
+
+  Here, proving that (b) implies (a) is slightly easier than the
+  converse implication. We will thus begin by this implication.
+
+  \begin{itemize}
+  \item If $X$ is a bounded interval, then there exist $a \leq b$ such
+    that $X$ is an interval of the form $(a,b)$, where the parentheses
+    stand for either opening or closing brackets. In either of these
+    four cases, we clearly have $X \subset [-M, M]$ if we set $M :=
+    \max(|a|, |b|) +1$, so that $X$ is bounded (Definition 9.1.22).
+
+    Furthermore, $X$ is connected by definition of an interval
+    (Definition 9.1.1). Indeed, let's consider two elements $x<y$ in
+    $X$, and $z$ another real such that $x<z<y$. By transitivity of
+    order, we clearly have $z \in (a,b)$, as expected.
+  \item Now suppose that $X$ is bounded and connected, and let's show
+    that it is a bounded interval. If $X$ is empty, the claim follows,
+    because of the convention adopted in the definitions. If $X$ is
+    not empty, consider $a := \inf(X)$ and $b := \sup(X)$ (they exist
+    as real numbers because $X$ is a bounded, non empty subset of the
+    real line). By definition of the infimum and supremum, we have
+    $X \subseteq [a,b]$.
+
+    Now let be $z \in ]a,b[$, i.e., $a < z < b$. By definition of the
+    infimum of $X$, there exists an $x \in X$ such that $a < x < z$;
+    otherwise $a$ would not be the infimum of $X$ (there would exist a
+    smaller minorant). Similarly, there exists a $y \in X$ such that
+    $z < y < b$. Thus, we have $x < z < y$, and since $X$ is
+    supposed to be connected, we have $z \in X$. We have just show
+    that $]a,b[ \subseteq X$.
+
+    Thus, we have $]a,b[ \subseteq X \subseteq [a,b]$; i.e., $X$ can
+    only be one of the four sets $[a,b], [a,b[, ]a,b]$ and $]a,b[$. In each
+    case, $X$ is a bounded interval, as expected.
+  \end{itemize}
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
