@@ -41,6 +41,7 @@
 % Lemmas:
 \usepackage{amsthm}
 \newtheorem*{lem}{Lemma}
+\newtheorem*{theorem}{Theorem}
 % Environment:
 \newenvironment{exo}[2]{\noindent \textsc{Exercise #1}. ---
   \textit{#2} \vspace{3mm}}
@@ -7880,41 +7881,190 @@ exchangeable here, so that showing only one direction will be enough.
 \end{exo}
 \bigskip
 
+\begin{exo}{10.1.7}{Prove Theorem 10.1.5.}
+
+  This theorem defines the \emph{chain rule} for functions of a real
+  variable. Because each hypothesis in this theorem is really crucial,
+  let's recall them:
+
+  \begin{theorem}[Chain rule]
+    Let $X,Y$ be subsets of $\rr$, let $x_0 \in X$ be a limit point of
+    $X$, and let $y_0 \in Y$ be a limit point of $Y$. Let
+    $f : X \to Y$ be a function such that $f(x_0)=y_0$, and such that
+    $f$ is differentiable at $x_0$. Suppose that $g : Y \to \rr$ is a
+    function which is differentiable at $y_0$. Then the function
+    $g \circ f : X \to \rr$ is differentiable at $x_0$, and
+    $(g\circ f)'(x_0) = g'(y_0)f'(x_0)$.
+  \end{theorem}
+
+  We know that $f$ is differentiable at $x_0$, so that if we set
+  $L_1 := f'(x_0)$ we have the following Newton's approximation
+  (Proposition 10.1.7):
+  \begin{equation}
+    \label{eq:10.1.7a}
+    \forall \epsilon > 0, \, \exists \delta > 0 \; : \; |x-x_0| \leq
+    \delta \Longrightarrow |f(x) - f(x_0) - L_1(x-x_0)| \leq
+    \epsilon|x-x_0|
+  \end{equation}
+  and, using the triangular inequality, this also implies that
+   \begin{equation}
+    \label{eq:10.1.7a.bis}
+    \forall \epsilon > 0, \, \exists \delta > 0 \; : \; |x-x_0| \leq
+    \delta \Longrightarrow |f(x) - f(x_0)| \leq |L_1|\times |x-x_0| +
+    \epsilon|x-x_0|.
+  \end{equation}
+  
+  In particular, since $f$ is differentiable at $x_0$, it is also
+  continuous at $x_0$ (Proposition 10.1.10), thus we have
+  \begin{equation}
+    \label{eq:10.1.7b}
+    \forall \epsilon > 0, \, \exists \delta > 0 \; : \; |x-x_0| \leq
+    \delta \Longrightarrow |f(x) - f(x_0)| \leq \epsilon.
+  \end{equation}
+
+  Finally, we know that $g$ is differentiable at $y_0 := f(x_0)$, so
+  that if we set $L_2 := g'(y_0)$, we have the following Newton's
+  approximation:
+   \begin{equation}
+    \label{eq:10.1.7c}
+    \forall \epsilon > 0, \, \exists \delta > 0 \; : \; |y-y_0| \leq
+    \delta \Longrightarrow |g(y) - g(y_0) - L_2(y-y_0)| \leq
+    \epsilon|y-y_0|.
+  \end{equation}
+
+  By combining these three facts, we want to show that we have the
+  following Newton's approximation for $g \circ f$:
+  \begin{equation}
+    \label{eq:10.1.7d}
+    \forall \epsilon > 0, \, \exists \delta > 0 \; : \; |x-x_0| \leq
+    \delta \Longrightarrow |g \circ f(x) - g \circ f(x_0) - L_2L_1(x-x_0)| \leq
+    \epsilon|x-x_0|.
+  \end{equation}
+
+  Thus, let be $\epsilon > 0$ a positive real number, and let's define
+  another positive real number $\epsilon'$ such that
+  $\epsilon \leq \epsilon'(\epsilon' + |L_1| + |L_2|)$ --- the
+  rationale for introducing this quantity will be clearer a bit later
+  in the proof. \footnote{The existence of this $\epsilon'$ could be proved by
+  more advanced knowledge in algebra, but it may be proved in another
+  (painful but more elementary) way. Indeed, the number $(1 + |L_1| +
+  |L_2|)$ is positive, and so is $\epsilon$. Thus, by the Archimedean
+  principle (Corollary 5.4.13), there exists a positive integer $M$
+  such that $M\epsilon > (1 + |L_1| + |L_2|)$, i.e. such that
+  $\epsilon > (\frac{1}{M} + \frac{1}{M} |L_1| + \frac{1}{M} |L_2|)$.
+  And since we have $\frac{1}{M} \geq \frac{1}{M^2}$ for any positive
+  integer $M$, then we have $\epsilon > (\frac{1}{M^2} + \frac{1}{M}
+  |L_1| + \frac{1}{M} |L_2|)$. Let's take $\epsilon' = \frac{1}{M}$
+  and we are done.}
+
+  By equation \eqref{eq:10.1.7c}, for this choice of $\epsilon' > 0$, there exists a
+  $\delta_1 > 0$ such that we have
+  $|g(y) - g(y_0) - L_2(y-y_0)| \leq \epsilon' |y-y_0|$ whenever
+  ($y \in Y$ and) $|y-y_0| \leq \delta_1$.
+
+  In this result, consider the part $|y-y_0|$. Actually, we know that
+  if we set $\epsilon := \delta_1$ in equation \eqref{eq:10.1.7b},
+  then there exists a real number $\delta_2>0$ such that
+  $|f(x)-f(x_0)| \leq \delta_1$ whenever ($x \in X$ and)
+  $|x-x_0| \leq \delta_2$.
+
+  Now, still for our initial choice of an $\epsilon' > 0$, we know by
+  equation \eqref{eq:10.1.7a} that there exists a $\delta_3>0$ such that
+  $|f(x) - f(x_0) - L_1(x-x_0)| \leq \epsilon' |x-x_0|$ whenever ($x \in
+  X$ and) $|x-x_0| \leq \delta_3$.
+
+  Now we set $\delta := \min(\delta_2, \delta_3)$, and we unwrap all
+  these facts. If $|x-x_0| \leq \delta$, then we have
+  $|f(x)-f(x_0)| \leq \delta_1$, and thus,
+  \begin{equation}
+    \label{eq:10.1.7e}
+    |g(f(x)) - g(f(x_0)) - L_2(f(x)-f(x_0))| \leq \epsilon'
+    |f(x)-f(x_0)|
+  \end{equation}
+
+  This is still quite far from what we want, i.e. equation
+  \eqref{eq:10.1.7d}. In particular, we still don't have the
+  $L_1L_2(x-x_0)$ quantity that we want. One way to overcome this is
+  to force this quantity into the previous equation, i.e. to apply the
+  ``middle-man trick'' (see hint of Exercise 10.1.4), and then to
+  apply the triangular inequality:
+  \begin{align*}
+    &|g(f(x)) - g(f(x_0)) - L_2(f(x)-f(x_0))|\\
+    &= |g(f(x)) - g(f(x_0)) - L_2(f(x)-f(x_0)-L_1(x-x_0)) -
+      L_2L_1(x-x_0)| \\
+    &\geq |g(f(x)) - g(f(x_0)) - L_2L_1(x-x_0)| - |L_2(f(x)-f(x_0)-L_1(x-x_0))|
+  \end{align*}
+
+  We are now much closer to equation \eqref{eq:10.1.7d}! We can now
+  combine all the inequalities to say that, if $|x-x_0| \leq \delta$,
+  then we have:
+  \begin{align*}
+    &|g(f(x)) - g(f(x_0)) - L_2L_1(x-x_0)| -
+      |L_2(f(x)-f(x_0)-L_1(x-x_0))| \leq \epsilon'|f(x)-f(x_0)| \\
+    \Longrightarrow & |g(f(x)) - g(f(x_0)) - L_2L_1(x-x_0)| \leq
+                      |L_2(f(x)-f(x_0)-L_1(x-x_0))| +
+                      \epsilon'|f(x)-f(x_0)|\\
+    \Longrightarrow & |g(f(x)) - g(f(x_0)) - L_2L_1(x-x_0)| \leq
+                      |L_2|\times|f(x)-f(x_0) - L_1(x-x_0)| +
+                      \epsilon'|f(x)-f(x_0)|\\
+    \Longrightarrow & |g(f(x)) - g(f(x_0)) - L_2L_1(x-x_0)| \leq
+                      |L_2|\epsilon'|x-x_0| +
+                      \epsilon'|f(x)-f(x_0)| \text{ (cf. eq.
+                      \eqref{eq:10.1.7a})} \\
+    \Longrightarrow & |g(f(x)) - g(f(x_0)) - L_2L_1(x-x_0)| \leq
+                      |L_2|\epsilon'|x-x_0| +
+                      \epsilon'(|L_1||x-x_0| + \epsilon'|x-x_0|)
+                      \text{ (cf. eq. \eqref{eq:10.1.7a.bis})} \\
+    \Longrightarrow & |g(f(x)) - g(f(x_0)) - L_2L_1(x-x_0)| \leq
+                      \epsilon'(\epsilon' + |L_1| + |L_2|)|x-x_0|
+  \end{align*}
+
+  Thus, by definition of $\epsilon'$, we finally conclude that for our
+  initial arbitrary $\epsilon > 0$, there exists a $\delta > 0$ such
+  that, whenever $x \in X$ and $|x-x_0| \leq \delta$, we have:
+  \begin{equation*}
+    |g(f(x)) - g(f(x_0)) - L_2L_1(x-x_0)| \leq \epsilon |x-x_0|
+  \end{equation*}
+  
+  We have thus shown that $g \circ f$ has a Newton's approximation at
+  $x_0$, i.e. that $g \circ f$ is differentiable at $x_0$ and that $(g
+  \circ f)'(x_0) = L_2L_1 = g'(f(x_0))f'(x_0)$, as expected.
+\end{exo}
+\bigskip
+
 \begin{exo}{10.2.1}{Prove Proposition 10.2.6.}
 
   We will prove the proposition for the case of a local maximum; the
   proof is similar for a local minimum. First, if $f$ attains a local
   maximum at $x_0$, there exists a $\delta > 0$ such that:
-  \begin{equation}
-    \label{eq:10.2.1a}
+  \begin{equation*}
     \forall x \in ]a,b[ \, \cap \, ]x_0 - \delta, x_0 + \delta[, \; f(x_0) \geq f(x)
-  \end{equation}
+  \end{equation*}
 
   Now, recall $f$ is differentiable at $x_0$, so that we have
   $f'(x_0) = \lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0}$. Since
   this limit does exist, the left limit and the right limit must match
   (if they don't, a quick proof by contradiction would show that $f$
   is not differentiable at $x_0$); i.e. we must have:
-  \begin{equation}
-    \label{eq:10.2.1b}
+  \begin{equation*}
     \lim_{x \to x_0; \, x \in ]x_0 - \delta, x_0[} \frac{f(x) -
       f(x_0)}{x - x_0} = \lim_{x \to x_0; \, x \in ]x_0, x_0 + \delta[} \frac{f(x) -
       f(x_0)}{x - x_0} = f'(x_0)
-  \end{equation}
+  \end{equation*}
 
   In both cases, we have $f(x) \leq f(x_0)$ since $x_0$ is a local
   maximum, so that the numerator is negative. But in the case of the
   left limit, we have $x-x_0 \leq 0$, so that
-  \begin{equation}
+  \begin{equation*}
     f'(x_0) = \lim_{x \to x_0; \, x \in ]x_0 - \delta, x_0[}
     \frac{f(x) - f(x_0)}{x - x_0} \geq 0
-  \end{equation}
+  \end{equation*}
   (taking the limit of a positive quantity leads to a positive limit),
   and similarly, for the right limit, we have
-  \begin{equation}
+  \begin{equation*}
     f'(x_0) = \lim_{x \to x_0; \, x \in ]x_0, x_0 + \delta[}
     \frac{f(x) - f(x_0)}{x - x_0} \leq 0
-  \end{equation}
+  \end{equation*}
 
   But since left and right limits are equal, the only possibility is
   that they are both equal to zero, so that the limit $f'(x_0)$ itself
