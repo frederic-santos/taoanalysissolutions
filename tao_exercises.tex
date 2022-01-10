@@ -8199,6 +8199,29 @@ exchangeable here, so that showing only one direction will be enough.
     case, $X$ is a bounded interval, as expected.
   \end{itemize}
 \end{exo}
+
+\begin{exo}{11.1.2}{Prove Corollary 11.1.6.}
+
+  Let be $I, J$ two bounded intervals; we must show that $I \cap J$ is
+  also a bounded interval. By Lemma 11.1.4, we know that $I, J$ are
+  both bounded connected sets, and it will suffice to show that
+  $I \cap J$ is also a bounded and connected set.
+
+  \begin{itemize}
+  \item Since $I$ is bounded, we have $I \subset [-M, M]$ for some
+    $M>0$. Similarly, we have $J \subset [-N, N]$ for some $N>0$.
+    Thus, if we set $P := \max(M, N)$, we have clearly $I \cap J
+    \subset [-P, P]$, so that $I \cap J$ is bounded.
+  \item Let be $x<y$ in $I \cap J$, and another element $z$ such that
+    $x<z<y$. Let's show that $z \in I \cap J$. Since $x,y,z \in I \cap J$,
+    then in particular $x,y,z \in I$, which is a connected set. Thus,
+    $z \in I$. A similar argument show that $z \in J$. Thus, $z \in I
+    \cap J$, as expected, which show that $I \cap J$ is connected.
+  \end{itemize}
+
+  Since $I\cap J$ is both bounded and connected, it is an interval, as
+  expected.
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
