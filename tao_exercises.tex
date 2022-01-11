@@ -37,6 +37,7 @@
 \newcommand{\adh}[1]{\overline{#1}}
 \newcommand{\liminfp}[2]{\inf (#1^+_N)_{N=#2}^{\infty}}
 \newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
+\renewcommand{\P}{\mathbf{P}}
 \renewcommand{\epsilon}{\varepsilon}
 % Lemmas:
 \usepackage{amsthm}
@@ -8408,6 +8409,30 @@ exchangeable here, so that showing only one direction will be enough.
   In particular, the interval $]m,b[$ is non empty, is a subset of
   $I$, but the elements of $]m,b[$ cannot be found in any $I_j$ in the
   partition. This is a contradiction.
+\end{exo}
+
+\bigskip
+\begin{exo}{11.1.4}{Prove Lemma 11.1.18.}
+
+  Let $I$ be an interval, $\P$ and $\P'$ be partitions of $I$, and
+  let's show that $\P \# \P'$ is a partition of $I$ that is finer than
+  both $\P$ and $\P'$. First, recall that
+  $\P \# \P' := \{J \cap K \, : \, J \in \P, K \in \P'\}$.
+
+  \begin{itemize}
+  \item Let be $x \in I$. Since $\P$ is a partition of $I$ there
+    exists exactly one $J \in \P$ such that $x \in J$. Similarly,
+    since $\P'$ is a partition of $I$, there exists exactly one
+    $K \in \P'$ such that $x \in K$. Thus, we have $x \in J \cap K$,
+    which is an element of $\P \# \P'$. This element is unique,
+    otherwise this would obviously contradict the unicity of $J$ and
+    $K$. Thus, $\P \# \P'$ is indeed a partition of $I$.
+  \item Let be $S \in \P \# \P'$. By definition, we have $S = J \cap
+    K$ for $J \in \P$ and $K \in \P'$. Thus, in particular, $S
+    \subseteq J$; this shows that $\P \# P'$ is finer than $\P$.
+    Similarly, $S \subseteq K$; this show that $\P \# \P'$ is finer
+    than $\P'$.
+  \end{itemize}
 \end{exo}
 \end{document}
 %%% Local Variables:
