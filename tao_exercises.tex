@@ -8372,6 +8372,43 @@ exchangeable here, so that showing only one direction will be enough.
   Since $I\cap J$ is both bounded and connected, it is an interval, as
   expected.
 \end{exo}
+
+\pagebreak
+\begin{exo}{11.1.3}{Let $I$ be a bounded interval of the form
+    $I=]a,b[$ or $I=[a,b[$ for some real numbers $a<b$. Let
+    $I_1,\ldots,I_n$ be a partition of $I$. Prove that one of the
+    intervals $I_j$ in this partition is of the form $I_j=]c,b[$ or
+    $I_j=[c,b[$ for some $a\leq c\leq b$. (Hint: prove by
+    contradiction. First show that if $I_j$ is not of the form
+    $]c, b[$ or $[c, b[$ for any $a \leq c \leq b$, then $\sup I_j$ is
+    strictly less than $b$.)}
+
+  First note that for any interval $I$ of real numbers of the form $[b,t[$
+  $[b,t]$, $]b,t]$ or $]b,t[$, we have $\sup(I) = t$ and $\inf(I) = b$.
+  (Indeed, $t$ is an upper bound for each of these intervals, and for
+  any $\epsilon > 0$, $t-\epsilon$ is not an upper bound. Similarly
+  for $b$.)
+
+  Thus, since $I_j$ is an element of a partition of $I$, we must have
+  $\sup(I_j) \leq b$ (otherwise, if $\sup(I_j) > b$, we could find an
+  element of $I_j$ which is greater than $b$, i.e. an element of $I_j$
+  that is not an element of $I$, which is not possible in a
+  partition).
+
+  Thus, for all $I_j$ in the partition, we have $\sup(I_j) \leq b$. If
+  $I_j$ is not of the form $]c,b[$ or $[c,b[$ for any $a \leq c \leq
+  b$, then obviously $\sup(I_j) \neq b$, and thus $\sup(I_j) < b$.
+
+  Now let's suppose, for the sake of contradiction, that no interval
+  $I_j$ in $I_1, \ldots, I_n$ is of the form $I_j = ]c,b[$ or
+  $I_j = ]c,b]$. Thus we have $\sup(I_j) < b$ for all
+  $1 \leq j \leq n$. Since a partition is a \emph{finite} collection
+  of intervals, we can define
+  $m := \max_{1 \leq j \leq n} (\sup I_j)$, and we will have $m < b$.
+  In particular, the interval $]m,b[$ is non empty, is a subset of
+  $I$, but the elements of $]m,b[$ cannot be found in any $I_j$ in the
+  partition. This is a contradiction.
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
