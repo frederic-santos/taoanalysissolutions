@@ -8449,6 +8449,25 @@ exchangeable here, so that showing only one direction will be enough.
 \end{exo}
 \bigskip
 
+\begin{exo}{11.2.2}{Prove Lemma 11.2.8. (Hint: use Lemmas 11.1.18 and
+    11.2.7 to make $f$ and $g$ piecewise constant with respect to the
+    same partition of $I$.)}
+
+  Consider that $f$ is piecewise constant with respect to some
+  partition $\P$ of $I$, and $g$ is piecewise constant with respect to some
+  partition $\P'$ of $I$.
+
+  By Lemma 11.1.18, $\P \# \P'$ is also a partition of $I$ and is
+  finer than both $\P$ and $\P'$. Furthermore, by Lemma 11.2.7, we
+  know that $f$ and $g$ are thus piecewise constant with respect to
+  $\P \# \P'$.
+
+  For this partition $\P \# \P'$, it thus clear that $f+g$ is piecewise
+  constant. Indeed, for any $K \in \P \# \P'$, we have $f|_K = c_f$
+  and $g|_K = c_g$, so that $(f+g)|_K = c_f + c_g$. A similar argument
+  applies for $f-g$, $\max(f,g)$, $fg$, and for $f/g$ if $g$ vanishes
+  nowhere on $I$.
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
