@@ -8468,6 +8468,65 @@ exchangeable here, so that showing only one direction will be enough.
   applies for $f-g$, $\max(f,g)$, $fg$, and for $f/g$ if $g$ vanishes
   nowhere on $I$.
 \end{exo}
+
+\bigskip
+\begin{exo}{11.2.3}{Prove Proposition 11.2.13.}
+
+  Let $I$ be a bounded interval, and let $f: I \to \rr$ be a function.
+  Suppose that $\P$ and $\P'$ are partitions of $I$ such that $f$ is
+  piecewise constant both with respect to $\P$ and $\P'$. We have to
+  show that $p.c.\int_{[\P]}f = p.c. \int_{[\P']}f$.
+
+  \begin{itemize}
+  \item Let's begin with a preliminary result. Consider $\P$ and $\P'$
+    two partitions of an interval $I$. We claim that, for any
+    $J \in \P$, the set $S_J := \{J \cap K \, : \, K \in \P'\}$ is a
+    partition of $J$ (of course, we can switch the r\^oles of $P$ and
+    $P'$ and this statement will still be true). Indeed, let be
+    $x \in J$ (we consider that $J$ is non empty, otherwise the result
+    is trivial). In particular, $x \in I$. Since $\P'$ is a partition
+    of $I$, there exists exactly one $K \in P'$ such that $x \in K$.
+    Thus, $x \in J \cap K$, and since $K$ is unique, so is $J \cap K$.
+    Thus, $S_J$ is indeed a partition of $J$.
+  \item Another preliminary result : as a consequence, for any
+    $J \in \P$, we have:
+    \begin{align*}
+      \sum_{K \in \P'} |J \cap K|
+      &= \sum_{X \in S_J} |X| &\text{ (by Proposition 7.1.11(c))} \\
+      &= |J| &\text{ (by Theorem 11.1.13)}
+    \end{align*}
+  \item Now let's begin the actual proof. First, note that, by Lemma
+    11.2.7, $f$ is  piecewise constant with respect to $\P \# \P'$, so
+    that $p.c. \int_{[\P \# \P']} f$ is well-defined.
+  \item We thus have:
+    \begin{align*}
+      p.c. \int_{[\P \# \P']} f
+      &= \sum_{X \in \P \# \P'} c_X |X|
+      &\text{ (by Definition 11.2.9)} \\
+      &= \sum_{(J,K) \in \P \times \P'} c_{J \cap K} |J \cap K|
+      &\text{ (by Definition 11.1.14)} \\
+      &= \sum_{J \in P} \sum_{K \in \P'} c_{J \cap K} |J \cap K|
+      &\text{ (by Corollary 7.1.14)} \\
+      &= \sum_{J \in P} \sum_{K \in \P'} c_J |J \cap K|
+      &\text{ (because $c_J = c_{J \cap K}$ for all $K \in \P'$)} \\
+      &= \sum_{J \in P} c_J \sum_{K \in \P'} |J \cap K|
+      &\text{ (by linearity of finite sums)}\\
+      &= \sum_{J \in P} c_J |J|
+      &\text{ (see preliminary result above)} \\
+      &= p.c. \int_{[\P]} f
+      &\text{ (by Definition 11.2.9)}
+    \end{align*}
+  \end{itemize}
+
+  Note that when we used Fubini's theorem for finite series (Corollary
+  7.1.14) above, we could have written the double summation in the
+  reverse order, i.e.,
+  $\sum_{K \in P'} \sum_{J \in \P} c_{J \cap K} |J \cap K|$. It is
+  easy to see that, in this case, we would have got
+  $p.c. \int_{[\P']} f$ in the end. Thus, we have shown that
+  \[ p.c. \int_{[\P \# \P']} f = p.c. \int_{[\P]} f = p.c. \int_{[\P']} f\]
+  and we have in particular the equality of Proposition 11.2.13.
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
