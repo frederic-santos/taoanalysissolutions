@@ -8527,6 +8527,74 @@ exchangeable here, so that showing only one direction will be enough.
   \[ p.c. \int_{[\P \# \P']} f = p.c. \int_{[\P]} f = p.c. \int_{[\P']} f\]
   and we have in particular the equality of Proposition 11.2.13.
 \end{exo}
+
+\bigskip
+\begin{exo}{11.2.4}{Prove Theorem 11.2.16.}
+
+  Let be two piecewise constant functions $f : I \to \rr$ and
+  $g : I \to \rr$, and let $\P$ be a given partition of $I$. As a
+  general remark (see Proposition 11.2.13 or Exercise 11.2.3 above),
+  $p.c. \int_I f$ and $p.c. \int_I g$ do not depend on the choice of
+  the partition of $I$, so that we can consider that
+  $p.c. \int_I f = p.c. \int_{[\P]} f$ and similarly for $g$.
+
+  \begin{enumerate}[label=(\alph*)]
+  \item Show that $p.c. \int_I (f+g) = p.c. \int_I f + p.c. \int_I g$.
+    By Definition 11.2.9, we have $p.c. \int_I f = p.c. \int_{[\P]} f
+    = \sum_{J \in \P} c_J |J|$, where $c_J$ is the constant value of
+    $f$ on $J$. Similarly, $p.c. \int_I g = p.c. \int_{[\P]} g
+    = \sum_{J \in \P} d_J |J|$, where $d_J$ is the constant value of
+    $g$ on $J$. Since these two summations are finite, we have
+    (by linearity of finite sums, Proposition 7.1.11(f))
+    \begin{equation*}
+      p.c. \int_{I} f + p.c. \int_{I} g = \sum_{J \in \P} (c_J + d_J) |J|.
+    \end{equation*}
+    Now, observe that $f+g$ is also piecewise constant on $I$ (Lemma
+    11.2.8) and that the constant value of $f+g$ on each element
+    $J \in \P$ is obviously $c_J + d_J$ (with previous notations).
+    Thus, we also have, by Definition 11.2.9,
+    \begin{equation*}
+      p.c. \int_I (f+g) = p.c. \int_{[\P]} (f+g) = \sum_{J \in \P} (c_J+d_J) |J|.
+    \end{equation*}
+    This shows that we have indeed
+    $p.c. \int_I (f+g) = p.c. \int_I f + p.c. \int_I g$.
+    
+  \item Show that, for any real number $c$, we have $p.c. \int_I (cf)
+    = c (p.c. \int_I f)$. The exact same argument applies, replacing
+    just Proposition 7.1.11(f) by Proposition 7.1.11(g):
+    \[p.c. \int_I (cf) := p.c. \int_{[\P]} (cf) = \sum_{J \in \P}
+      (cc_J)|J| = c \sum_{J \in \P} c_J |J| = c \int_{[\P]} f =: c \int_I f\]
+   
+  \item Show that $p.c.\int_I (f-g) = p.c. \int_I f - p.c. \int_I g$.
+    This is a direct consequence of (b), choosing $c=-1$, and then (a).
+
+  \item Show that if $f(x) \geq 0$ for all $x \in I$, then $p.c.
+    \int_I f \geq 0$. If $f(x) \geq 0$, then all constant values $c_J$
+    are positive. Since the lengths $|J|$ are also clearly positive,
+    we have immediately $p.c. \int_I f := p.c. \int_{[\P]} f = \sum_{J
+      \in \P} c_J |J| \geq 0$, as expected.
+    
+  \item Show that if $f(x) \geq g(x)$ for all $x \in I$, then $p.c.
+    \int_I f \geq \int_I g$. First note that $f(x) \geq g(x)$ iff
+    $f(x) - g(x) \geq 0$. Thus, by the previous result (d), we have
+    $p.c. \int_I (f-g) \geq 0$. By the previous result (c), this can also
+    be written $p.c. \int_I f - p.c. \int_I g \geq 0$. This shows that
+    we have indeed $p.c. \int_I f \geq \int_I g$.
+    
+  \item Show that if $f(x) = c$ for all $x \in I$, then we have $p.c.
+    \int_I f = c|I|$. In this case, we $c_J = c$ for all $J \in \P$
+    with the previous notations. Thus we have
+    \begin{align*}
+      p.c. \int_I f &= p.c. \int_{[\P]} f & \text{ (Definition 11.2.14)}\\
+                    &= \sum_{J \in \P} c|J| & \text{ (Definition 11.2.9)}\\
+                    &= c \sum_{J \in \P} |J| & \text{ (Proposition
+                                               7.1.11(f))}\\
+                    &= c |I| & \text{ (Theorem 11.1.13)}
+    \end{align*}
+    as expected.
+  \end{enumerate}
+  
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
