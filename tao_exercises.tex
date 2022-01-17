@@ -8592,6 +8592,76 @@ exchangeable here, so that showing only one direction will be enough.
                     &= c |I| & \text{ (Theorem 11.1.13)}
     \end{align*}
     as expected.
+    
+  \item Here we have to show that if $J$ is a bounded interval
+    containing $I$ and $F : J \to \rr$ is the function defined by
+    $F(x) := f(x)$ if $x\in I$ and $f(x) := 0$ if $x\notin I$, then
+    $F$ is piecewise constant on $J$, and $p.c. \int_J F = p.c. \int_I
+    f$.
+
+    First, we want to say something like ``$\{I, J\backslash I\}$ is a
+    partition of $I$''. This may seem trivial; however it is not
+    really trivial using Tao's definition of a partition. Indeed,
+    Definition 11.1.10 requires that all elements in a partition be
+    bounded intervals. If we really want to be picky about that, we
+    can split into cases. Indeed, since $I$ is supposed to be a
+    bounded interval, we have $I = (a,b)$, where the parentheses stand
+    for either closing or opening brackets. Thus, $J$ can be either of
+    the form $(c,b)$, $(a,d)$ or $(c,d)$, where $c \leq a < b \leq d$.
+    In either case, $J \backslash I$ is a bounded interval, or the
+    reunion of two bounded intervals. Thus, there clearly exists a
+    partition $\P''$ of $J$, defined by $\P'' := \P \cup \P'$, where
+    $\P$ is a partition of $I$ and $\P'$ is a partition of $J
+    \backslash I$.
+
+    Thus, $F$ is clearly piecewise constant relative to $\P''$, since
+    it is piecewise constant on $\P$ by hypothesis, and $F$ is
+    constant equal to $0$ on each interval in $\P'$. Thus, $F$ is
+    piecewise constant on $J$.
+
+    We thus have
+    \begin{align*}
+      p.c. \int_J F &= p.c. \int_{[\P'']} F & \text{ (Definition 11.2.14)}\\
+                    &= p.c. \int_{[\P \cup P']} F &\\
+                    &= \sum_{K \in \P \cup \P'} c_K |K| & \text{ (Definition 11.2.9)}\\
+                    &= \sum_{K \in \P} c_K |K| + \sum_{K \in \P'} c_K
+                      |K| & \text{ (Proposition 7.1.11(e))}\\
+                    &= \sum_{K \in \P} c_K |K| + \sum_{K \in \P'} 0 \times
+                      |K|&\\
+                    &=\sum_{K\in \P}c_K |K|&\\
+                    &= p.c. \int_I f &
+    \end{align*}
+    as expected.
+    
+  \item We have to show that if $\{J,K\}$ is a partition of $I$ into
+    two intervals $J$ and $K$, then the functions $f|_J : J \to \rr$
+    and $f|_K : K \to \rr$ are piecewise constant on $J$ and $K$
+    respectively, and we have $p.c. \int_I f = p.c. \int_J f|_J + p.c.
+    \int_K f|_K$.
+
+    $f$ is supposed to be piecewise constant on $I$, so if we consider
+    a partition $\P$ of $I$, then $f$ is piecewise constant with
+    respect to $\P$. We can see easily that
+    $\P_J := \{J \cap L : L \in \P\}$ is a partition of $J$, and
+    $\P_K := \{K \cap L : L \in \P\}$ is a partition of $K$. Thus,
+    $\P_J \cup \P_K$ is a partition of $I$, and $f$ is piecewise
+    constant with respect to this partition. Thus, in particular,
+    $f|_J$ is piecewise constant with respect to $\P_J$, and similarly
+    with $f|_K$ and $\P_K$.
+
+    Inspired by the previous result (g), let's define the function $F
+    : I \to \rr$ by $F(x) := f|_J(x)$ if $x \in J$ and $F(x) := 0$
+    otherwise. Similarly, we define $G
+    : I \to \rr$ by $G(x) := f|_K(x)$ if $x \in K$ and $G(x) := 0$
+    otherwise. Clearly, we have $f(x) = F(x) + G(x)$ for all $x \in
+    I$. Thus, we have:
+    \begin{align*}
+      p.c. \int_I f &= p.c. \int_I (F + G) & \\
+                    &= p.c. \int_I F + p.c. \int_I G & \text{ (Theorem
+                                                       11.2.16(a))} \\
+                    &= p.c. \int_J f|_J + p.c. \int_K f|_K & \text{ (Theorem 11.2.16(g))}
+    \end{align*}
+    as expected.
   \end{enumerate}
   
 \end{exo}
