@@ -8682,6 +8682,26 @@ exchangeable here, so that showing only one direction will be enough.
 \end{exo}
 \bigskip
 
+\begin{exo}{11.3.2}{Let $f : I \to \rr$, $g : I \to \rr$ and
+    $h : I \to \rr$ be functions. If $f$ majorizes $g$, is it true
+    that $f+h$ majorizes $g+h$? Is is true that $f\cdot h$ majorizes
+    $g\cdot h$? If $c$ is a real number, is it true that $cf$
+    majorizes $cg$?}
+
+  If $f$ majorizes $g$, then $f(x) \geq g(x)$ for any given $x \in I$.
+  Thus, whatever may be $h(x)$, we have $f(x) + h(x) \geq g(x) +
+  h(x)$. This is true for any $x \in I$, thus $f+h$ majorizes $g+h$.
+
+  However, $fh$ does not majorize $gh$. Indeed, since we give no
+  restriction on $h$, this function might be negative at some places.
+  The most trivial example would be the constant function $h(x) = c$
+  for some real number $c < 0$. In this case, for all $x \in I$, we
+  have $f(x) \geq g(x)$ but $f(x)h(x) \leq g(x)h(x)$.
+
+  In particular, it shows at the same time that if we set $c := -1$
+  (or any other negative value), $cf$ does not majorize $cg$.
+\end{exo}
+\bigskip
 
 \end{document}
 %%% Local Variables:
