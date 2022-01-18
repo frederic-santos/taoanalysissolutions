@@ -8663,8 +8663,26 @@ exchangeable here, so that showing only one direction will be enough.
     \end{align*}
     as expected.
   \end{enumerate}
-  
 \end{exo}
+
+\begin{exo}{11.3.1}{Let $f : I \to \rr$, $g : I \to \rr$ and
+    $h : I \to \rr$ be functions. Show that if $f$ majorizes $g$ and
+    $g$ majorizes $h$, then $f$ majorizes $h$. Show that if $f$ and
+    $g$ majorize each other, then they must be equal.}
+
+  If $f$ majorizes $g$ and  $g$ majorizes $h$, we have $f(x) \geq
+  g(x)$ and $g(x) \geq h(x)$ for any given $x \in I$. By transitivity
+  of order on the real numbers, we thus have $f(x) \geq h(x)$. It is
+  true for any given $x \in I$, thus $f$ majorizes $h$.
+
+  Similarly, if $f$ majorizes $g$ and $g$ majorizes $f$, then we have
+  $f(x) \leq g(x)$ and $f(x) \geq g(x)$ for any given $x \in I$. Thus,
+  we have $f(x) = g(x)$ by antisymmetry of order on the reals. Thus,
+  we have indeed $f = g$.
+\end{exo}
+\bigskip
+
+
 \end{document}
 %%% Local Variables:
 %%% mode: latex
