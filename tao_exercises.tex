@@ -39,6 +39,8 @@
 \newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
 \renewcommand{\P}{\mathbf{P}}
 \renewcommand{\epsilon}{\varepsilon}
+\newcommand{\infint}[2]{\underline{\int_{#2}} #1}
+\newcommand{\supint}[2]{\overline{\int_{#2}} #1}
 % Lemmas:
 \usepackage{amsthm}
 \newtheorem*{lem}{Lemma}
@@ -8701,8 +8703,36 @@ exchangeable here, so that showing only one direction will be enough.
   In particular, it shows at the same time that if we set $c := -1$
   (or any other negative value), $cf$ does not majorize $cg$.
 \end{exo}
-\bigskip
+\pagebreak
 
+\begin{exo}{11.3.3}{Prove Lemma 11.3.7.}
+
+  The claim we must prove is that, if $f$ is piecewise constant on
+  $I$, it is Riemann-integrable, abd its Riemann integral (defined in
+  Definition 11.3.4) is equal to the piecewise constant integral
+  (defined in Definition 11.2.14).
+
+  Recall that, in Definition 11.3.1, the inequalities are
+  \emph{large}: we say that a function $f$ majorizes $g$ on $I$ iff $f(x)
+  \geq g(x)$ for all $x \in I$. In particular, it means that the
+  binary relation ``majorizes'' is reflexive, i.e., that any
+  function $f$ majorizes itself, since $f(x) \geq f(x)$ for all $x \in
+  I$. We have a similar remark for the relation ``minorizes''.
+
+  With this remark in mind, the Lemma 11.3.7 is trivial:
+  \begin{itemize}
+  \item $f$ majorizes $f$, thus by Definition 11.3.2, we have
+    $\supint{f}{I} \leq p.c. \int_I f$.
+  \item $f$ minorizes $f$, thus by Definition 11.3.2, we have
+    $\infint{f}{I} \geq p.c. \int_I f$.
+  \end{itemize}
+  Thus we have $\supint{f}{I} \leq p.c. \int_I f \leq \infint{f}{I}$.
+  But we must also have $\supint{f}{I} \geq \infint{f}{I}$ by Lemma
+  11.3.3. The only possibility for those two statements to be
+  simultaneously true is that $\supint{f}{I} = p.c. \int_I f =
+  \infint{f}{I}$, i.e., $f$ is Riemann-integrable, and its Riemann
+  integral is equal to its piecewise constant integral.
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
