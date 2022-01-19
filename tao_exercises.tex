@@ -4549,7 +4549,10 @@ exchangeable here, so that showing only one direction will be enough.
     6.4.12.}
 
   Let $\seq{a_n}{m}$ be a sequence of real numbers, $L^+$ its limit
-  superior and $L^-$ its limit superior.
+  superior and $L^-$ its limit inferior. In the proofs below, we will
+  make the additional hypothesis that $L^-$ and $L^+$ are finite; the
+  general case may need a painful split into cases depending on
+  whether they are finite or not.
   
   \begin{enumerate}[label=\emph{(\alph*)}]
     \setcounter{enumi}{2}
@@ -4568,24 +4571,24 @@ exchangeable here, so that showing only one direction will be enough.
       $N = m$, we have $L^+ \leq a^+_m = \sup \seq{a_n}{m}$, as
       required.
     \item Finally, let's prove that $L^- \leq L^+$. Let be
-      $\epsilon > 0$ a positive real. First, according to Proposition
-      6.3.6, there exists a positive integer $N_1$ such that
-      $a_{N_1}^- + \epsilon > L^- \geq a^-_{N_1}$. Similarly, there
-      exists a positive integer $N_2$ such that
-      $a_{N_2}^+ - \epsilon < L^+ \leq a_{N_2}^+$. Suppose that
-      $N_1 \leq N_2$. Given that we have $a_N^- \leq a_N^+$ for all
-      $N$, and that $(a^-_N)_{N = m}^\infty$ is an increasing
-      sequence\footnote{Both results are easy to prove, although not
-        stated explicitly in the main text.}, we get:
-      \[ L^- - \epsilon \leq a^-_{N_1} \leq a^-_{N_2} \leq a^+_{N_2} <
-        L^+ + \epsilon \]
-      which leads to $L^- - L^+ \leq 2 \epsilon$ for all $\epsilon >
+      $\epsilon > 0$ a positive real. Since $L^+ + \epsilon > L^+$, by
+      Proposition 6.4.12(a), there exists a positive integer
+      $N_1 \geq m$ such that $a_n < L^+ + \epsilon$ whenever
+      $n \geq N_1$. Similarly, there exists a positive integer
+      $N_2 \geq m$ such that $a_n > L^- - \epsilon$ whenever
+      $n \geq N_2$. If we set $N := \max(N_1, N_2)$, then for all
+      $n \geq N$, we get:
+      \[ L^- - \epsilon < a_n < L^+ + \epsilon \]
+      which leads to $L^- - L^+ < 2 \epsilon$ for all $\epsilon >
       0$. This implies that $L^- - L^+ \leq 0$ (otherwise we would
       have an obvious contradiction).
 
-      The case $N_2 \leq N_1$ can be written in a similar fashion.
-
-      Thus, the whole inequality is proven.
+      Thus, we have indeed $L^- \leq L^+$, as expected\footnote{For an
+        alternative proof that may not require the additional
+        hypothesis that both $L^-$ and $L^+$ are finite, argue by
+        contradiction, and show that somehow, if $L^- > L^+$, we will
+        get eventually something like $a_n < a_n$ later in the
+        sequence.}
     \end{itemize}
   \item Prove that if $c$ is any limit point of $\seq{a_n}{m}$, then
     we have $L^- \leq c \leq L^+$.
@@ -4596,7 +4599,7 @@ exchangeable here, so that showing only one direction will be enough.
     Let's suppose, for the sake of contradiction, that we have
     $c > L^+$. Let be $\epsilon = \frac{c - L^+}{3}$, which is by
     hypothesis a positive real number. We have $L^+ + \epsilon > L^+$.
-    Thus, by Proposition 6.4.2(a), there exists $N \geq m$ such that:
+    Thus, by Proposition 6.4.12(a), there exists $N \geq m$ such that:
     \begin{equation}
       \label{eq:642d1}
       a_n < L^+ + \epsilon = \frac{2L^+ + c}{3} \text{ for all $n \geq N$}
@@ -4622,7 +4625,7 @@ exchangeable here, so that showing only one direction will be enough.
 
     Let be $\epsilon > 0$ a positive real, and $N \geq m$ a positive
     integer. Since $L^+ + \epsilon > L^+$, according to Proposition
-    6.4.2(a), there exists $N' \geq m$ such that
+    6.4.12(a), there exists $N' \geq m$ such that
     $a_n < L^+ + \epsilon$ for all $n \geq N'$. In particular, if
     $n \geq M := \max(N, N')$, then we have $a_n < L^+ + \epsilon$.
 
@@ -8768,6 +8771,8 @@ exchangeable here, so that showing only one direction will be enough.
   Combining equations \eqref{eq:11.3.4a} and \eqref{eq:11.3.4b}, we get
   $p.c. \int_I g \geq U(f,\P)$, as expected.
 \end{exo}
+\bigskip
+
 \end{document}
 %%% Local Variables:
 %%% mode: latex
