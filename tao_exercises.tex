@@ -8733,6 +8733,41 @@ exchangeable here, so that showing only one direction will be enough.
   \infint{f}{I}$, i.e., $f$ is Riemann-integrable, and its Riemann
   integral is equal to its piecewise constant integral.
 \end{exo}
+
+\bigskip
+\begin{exo}{11.3.4}{Prove Lemma 11.3.11.}
+
+  We will only prove the first statement of this lemma, i.e. that for
+  any piecewise constant function $g$ (w.r.t. a partition $\P$ of $I$)
+  that majorizes $f$ on $I$, we have
+  \[ p.c. \int_I g \geq U(f, \P) \; ;\]
+  the second statement can be proved in the same way.
+
+  Let be $\P$ a partition of $I$. We know that the piecewise constant
+  integral does not depend on the choice of the partition (Proposition
+  11.2.13), thus we have
+  \begin{equation}
+    \label{eq:11.3.4a}
+    p.c. \int_I g = p.c. \int_{[\P]} g = \sum_{J \in \P} c_J |J| =
+    \sum_{J \in \P ; \, J \neq \emptyset} c_J |J|
+  \end{equation}
+  where $c_J$ is the constant value of $g$ any interval $J \in \P$.
+  (The last equality comes from the fact that $|J| = 0$ if $|J| =
+  \emptyset$, so that the restriction on the last summation excludes
+  nothing but null elements, and lets the whole sum identical.)
+
+  Since $g$ majorizes $f$ on $I$, for all $J \in \P$, and for all $x$
+  in this interval $J$, we have $f(x) \leq c_J$, i.e. $f(x) \leq c_J$.
+  In particular,  $c_J \geq \sup_{x \in J} f(x)$ on each interval $J
+  \in \P$. Thus we have
+  \begin{equation}
+    \label{eq:11.3.4b}
+    \sum_{J \in \P ; \, J \neq \emptyset} c_J |J| \geq \sum_{J \in \P
+      ; \, J \neq \emptyset} (\sup_{x \in J} f(x))  |J| = U(f, \P)
+  \end{equation}
+  Combining equations \eqref{eq:11.3.4a} and \eqref{eq:11.3.4b}, we get
+  $p.c. \int_I g \geq U(f,\P)$, as expected.
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
