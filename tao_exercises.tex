@@ -8827,6 +8827,66 @@ exchangeable here, so that showing only one direction will be enough.
     partition of } I\}$, as expected.
   \end{itemize}
 \end{exo}
+
+\begin{exo}{11.4.1}{Prove Theorem 11.4.1.}
+
+  Here we have to prove the properties of the (general) Riemann
+  integral, using the properties of the piecewise constant integral
+  developed earlier. It might not be so easy to see where to start, so
+  that we will recall some definitions and derive some preliminary
+  results that will be useful for the whole exercise.
+
+  \begin{itemize}
+  \item First, since $f$ and $g$ are supposed to be Riemann integrable, we
+    thus have $\int_I f = \supint{f}{I} = \infint{f}{I}$, and similarly
+    for $g$.
+  \item By definition, we have
+    $\supint{f}{I} := \inf \{p.c. \int_I g : g \text{ is p.c. and
+      majorizes } f\}$. In particular, by definition of an infimum, it
+    means that for all $\epsilon > 0$, there exists a piecewise
+    constant function $\overline{f}$ that majorizes $f$ such that
+    \begin{equation}
+      \label{eq:11.4.1a}
+      \supint{f}{I} + \epsilon > p.c. \int_I \overline{f} = \int_I \overline{f}
+    \end{equation}
+    But since $f$ is Riemann-integrable, we have
+    $\int_I f = \supint{f}{I}$; and since $\overline{f}$ is piecewise
+    constant and majorizes $f$, we have
+    $\int_I \overline{f} \geq \supint{f}{I}$. Thus, equation
+    \eqref{eq:11.4.1a} can be extended as
+    \begin{equation}
+      \label{eq:11.4.1b}
+      \int_I f + \epsilon = \supint{f}{I} + \epsilon > \int_I
+      \overline{f} \geq \supint{f}{I} = \int_I f
+    \end{equation}
+  \item A similar argument for the lower integral show that, for all
+    $\epsilon > 0$, there exists a piecewise constant function
+    $\underline{f}$ minorizing $f$ such that
+    \begin{equation}
+      \label{eq:11.4.1c}
+      \int_I f - \epsilon = \infint{f}{I} - \epsilon < \int_I
+      \underline{f} \leq \infint{f}{I} = \int_I f
+    \end{equation}
+  \item Putting together equations
+    \eqref{eq:11.4.1b}-\eqref{eq:11.4.1c}, we finally get that for all
+    $\epsilon > 0$, there exists two piecewise constant functions
+    $\overline{f}$ and $\underline{f}$ majorizing and minorizing $f$
+    respectively, such that
+    \begin{equation}
+      \label{eq:11.4.1d}
+      \int_I f - \epsilon < \int_I \underline{f} \leq \int_I f \leq
+      \int_I \overline{f} < \int_I f + \epsilon
+    \end{equation}
+  \item Of course, we have the exact analogue for $g$ with
+    \begin{equation}
+      \label{eq:11.4.1e}
+      \int_I g - \epsilon < \int_I \underline{g} \leq \int_I g \leq
+      \int_I \overline{g} < \int_I g + \epsilon
+    \end{equation}
+  \end{itemize}
+
+  We are now ready to begin the actual proofs of the theorem.  
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
