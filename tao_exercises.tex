@@ -8773,6 +8773,60 @@ exchangeable here, so that showing only one direction will be enough.
 \end{exo}
 \bigskip
 
+\begin{exo}{11.3.5}{Prove Proposition 11.3.12.}
+
+  As for the last exercise, we will only prove the first statement,
+  i.e. that $\supint{f}{I} = \inf \{U(f, \P) : \P \text{ is a
+    partition of } I\}$. The second statement can be proved in a
+  similar fashion.
+
+  \begin{itemize}
+  \item First, let's prove that
+    $\supint{f}{I} \geq \inf \{U(f, \P) : \P \text{ is a partition of
+    } I\}$. 
+
+    Let be $\P$ any partition of $I$, and $g$ any function piecewise
+    constant with respect to $\P$ that majorizes $f$ on $I$. Thus we
+    have $p.c. \int_I g \geq U(f, \P)$, by Lemma 11.3.11.
+
+    It means that $U(f, \P)$ is a lower bound for the set $\{ p.c.
+    \int_I g \; | \; g \text{ is p.c. and majorizes } f \}$. Thus, by
+    definition of an infimum (taken on functions $g$), we have
+    \[ U(f, \P) \geq \inf \left\{ p.c. \int_I g \; \Bigl| \; g \text{ is p.c. and
+          majorizes } f \right\} =: \supint{f}{I}\]
+    This is true for any given partition $\P$ of $I$. Thus, it means
+    that $\supint{f}{I}$ is a lower bound for the set $\{U(f,\P) : \P
+    \text{ is a partition of } I\}$. By definition of an infimum
+    (taken on partitions $\P$), we have
+    \[\supint{f}{I} \geq \inf \left\{ U(f,\P) : \P
+        \text{ is a partition of } I\right\}\]
+    as expected.
+  \item Now, let's prove that
+    $\supint{f}{I} \leq \inf \{U(f, \P) : \P \text{ is a partition of }
+    I\}$.
+
+    Let be $\P$ any given partition of $I$. Let be a function $S : I
+    \to \rr$ defined as follows. For any interval $J \in
+    \P$, we set $S(x) := \sup_{x \in J} f(x)$. Since $f$ is bounded on
+    $I$, the function $S$ is well defined (the supremum on $J$ is
+    always a real number). Furthermore, by construction, $S$ is
+    piecewise constant on $I$ with respect to $\P$, and $S$ majorizes
+    $f$ on $I$. Thus, by Definition 11.3.2 of the upper Riemann integral,
+    \[ \supint{f}{I} \leq p.c. \int_I S(x) = p.c. \int_{[\P]} S(x) =
+      \sum_{J \in \P ; \, J \neq \emptyset} (\sup_{x \in J} f(x)) |J|
+      = U(f, \P).\] Since the inequality $\supint{f}{I} \leq U(f, \P)$
+    is true for any partition $\P$ of $I$, the quantity
+    $\supint{f}{I}$ is a lower bound for the set
+    $\{U(f, \P) : \P \text{ is a partition of } I\}$. Thus, by
+    definition of an infimum (taken on partitions $\P$), we have
+    \[ \supint{f}{I} \leq \inf \{U(f, \P) \, : \, \P \text{ is a
+        partition of } I \}\]
+    as expected.
+    
+  \item Thus, we have $\supint{f}{I} = \inf \{U(f, \P) : \P \text{ is a
+    partition of } I\}$, as expected.
+  \end{itemize}
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
