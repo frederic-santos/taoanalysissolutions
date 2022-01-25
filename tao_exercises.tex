@@ -8859,7 +8859,7 @@ exchangeable here, so that showing only one direction will be enough.
       \int_I f + \epsilon = \supint{f}{I} + \epsilon > \int_I
       \overline{f} \geq \supint{f}{I} = \int_I f
     \end{equation}
-  \item A similar argument for the lower integral show that, for all
+  \item A similar argument for the lower integral shows that, for all
     $\epsilon > 0$, there exists a piecewise constant function
     $\underline{f}$ minorizing $f$ such that
     \begin{equation}
@@ -8926,10 +8926,107 @@ exchangeable here, so that showing only one direction will be enough.
     Thus, we have $\supint{(f+g)}{I} = \infint{(f+g)}{I} = \int_I f +
     \int_I g$, which implies both that $f+g$ is Riemann-integrable and
     that $\int_I (f+g) = \int_I + \int_I g$.
-  \item TODO
+  \item We have to show that for any real number $c$, the function
+    $cf$ is Riemann-integrable, and we have $\int_I (cf) = c(\int_I
+    f)$. We will have to split into cases, depending on the value of
+    $c$.
+
+    \begin{itemize}
+    \item The easiest case is $c=0$. In this case, $cf$ is the
+      constant function $0$. In particular, since $cf$ is constant, it
+      is piecewise constant on $I$, so it is Riemann-integrable (by
+      Lemma 11.3.7). Thus we have
+      \[\int_I cf = p.c. \int_I cf = c \left(p.c. \int_I f\right)
+        = c \left(\int_I f\right)\]
+      since we can apply the properties of the piecewise constant
+      integral (more precisely, Theorem 11.2.16(b)).
+    \item Now consider the case $c > 0$. Since $c$ is positive, we
+      have the property of preservation of order; i.e., if
+      $\overline{f}$ majorizes $f$, then $c\overline{f}$ majorizes
+      $cf$. Similarly, if $\underline{f}$ minorizes $f$, then
+      $c\underline{f}$ minorizes $cf$ (where $\underline{f}$ and
+      $\overline{f}$ correspond to any fixed arbitrary $\epsilon > 0$
+      in equation \eqref{eq:11.4.1d}).
+
+      Since $c\overline{f}$ is a piecewise constant function that
+      majorizes $cf$, we have
+      \begin{equation}
+        \label{eq:11.4.1b1}
+        \supint{cf}{I} \leq p.c. \int_I c\overline{f} = c  \left(p.c.
+          \int_I \overline{f}\right) < c \left(\int_If + \epsilon\right)
+        \end{equation}
+        where we used Theorem 11.2.16(b) and equation
+        \eqref{eq:11.4.1d}.
+
+        Similarly, since $c\underline{f}$ is a piecewise constant
+        function that minorizes $cf$, we have
+        \begin{equation}
+          \label{eq:11.4.1b2}
+          \infint{cf}{I} \geq p.c. \int_I c\underline{f} = c  \left(p.c.
+            \int_I \underline{f}\right) > c \left(\int_If - \epsilon\right)
+        \end{equation}
+      still using Theorem 11.2.16(b) and equation \eqref{eq:11.4.1d}.
+
+      Thus, combining the two previous results (and using the fact
+      that $\infint{cf}{I} \leq \supint{cf}{I}$, by Lemma 11.3.3), we
+      have
+      \begin{equation*}
+        \label{eq:11.4.1b3}
+        c \int_If - c\epsilon < \infint{cf}{I} \leq
+        \supint{cf}{I} < c \int_If + c\epsilon.
+      \end{equation*}
+      In particular,
+      $c \int_If - c\epsilon < \infint{cf}{I} < c \int_If + c\epsilon$
+      for any arbitrary $\epsilon > 0$. Thus,
+      $c \int_If = \infint{cf}{I}$. A similar argument shows that
+      $c \int_If = \supint{cf}{I}$. This means that $cf$ is
+      Riemann-integrable, and that $\int_Icf = c \int_I f$, as
+      expected.
+    \item Now consider the case $c=-1$. In this case (still for an
+      arbitrary $\epsilon > 0$ in equation \eqref{eq:11.4.1d}), if
+      $\overline{f}$ majorizes $f$, we have
+      $c\overline{f} = - \overline{f} \leq -f$, i.e., $-\overline{f}$
+      minorizes $-f$. Similarly, $-\underline{f}$ majorizes $-f$.
+
+      Since $-\underline{f}$ majorizes $-f$, we have
+      \[ \supint{-f}{I} \leq p.c. \int_I -\underline{f} = - p.c.
+        \int_I \underline{f} < - \int_I f + \epsilon\]
+      where we have used Theorem 11.2.16(b) and equation
+      \eqref{eq:11.4.1d} (reversing the inequality ``$\int_I f -
+      \epsilon < \int_I \underline{f}$'' as ``$-\int_I f +
+      \epsilon > - \int_I \underline{f}$'').
+      
+      Similarly, we have
+      \[- \int_I f - \epsilon < p.c. \int_I \overline{f} \leq \infint{-f}{I}\]
+
+      Combining the previous results, we obtain
+      \[- \int_I f - \epsilon < \infint{-f}{I} \leq \supint{-f}{I}
+        \leq - \int_I f + \epsilon \]
+      and since this is true for any arbitrary $\epsilon > 0$, we have
+      $\supint{-f}{I} = \infint{-f}{I} = - \int_I f$, so that $-f$ is
+      Riemann-integrable, and $\int_I -f := - \int_I f$, as expected.
+    \item Finally, consider the general case $c < 0$. We just have to
+      combine the results of the two previous cases. If $c<0$, we have
+      $-c > 0$, so that $-cf$ is integrable, by the second case proved
+      earlier. And by the third case proved above, $-(-cf) = cf$ is
+      integrable. Furthermore, still using the two previous cases,
+      \[\int_I cf = \int_I (-1) \times (-cf) = -1 \times \int_I (-cf)
+        = (-1) \times (-c) \int_I f = c \int_I f\]
+      as expected.
+    \end{itemize}
   \item Simply combine \emph{(a)} and \emph{(b)} with $c=-1$.
-  \item TODO
+  \item Saying that $f(x) \geq 0$ for all $x \in I$ means that the
+    constant (and thus piecewise constant) function $0$ minorizes $f$
+    on $I$. Thus, by definition,
+    $\infint{f}{I} \geq p.c. \int_I 0 = 0$ (for instance by Theorem
+    11.2.16(e), or by the previous statement \emph{(b)} with $c=0$).
+    But since $f$ is supposed to be Riemann-integrable, we have
+    $\int_I f = \infint{f}{I}$. The statement follows.
   \item Direct consequence of \emph{(d)} and \emph{(c)}.
+  \item If $f(x) = c$ for all $x \in I$, then $f$ is constant, and
+    thus piecewise constant on $I$. By Lemma 11.3.3, $f$ is
+    Riemann-integrable, and $\int_I f = p.c. \int_I f = c|I|$, where
+    the last equality comes from Theorem 11.2.16(f).
   \end{enumerate}
 \end{exo}
 \end{document}
