@@ -9027,6 +9027,29 @@ exchangeable here, so that showing only one direction will be enough.
     thus piecewise constant on $I$. By Lemma 11.3.3, $f$ is
     Riemann-integrable, and $\int_I f = p.c. \int_I f = c|I|$, where
     the last equality comes from Theorem 11.2.16(f).
+  \item Let be $\overline{f}$ a piecewise function majorizing $f$ on
+    $I$. If we define the function $\overline{F} : J \to \rr$ by
+    $\overline{F}(x) = \overline{f}(x)$ when $x \in I$, and
+    $\overline{F}(x) = 0$ otherwise, then it is clear that
+    $\overline{F}$ is a piecewise function majorizing $f$ on $J$. Thus
+    for any given $\epsilon > 0$, there exist such functions
+    $\overline{f}, \overline{F}$, with
+    \[ \supint{F}{J} \leq p.c. \int_J \overline{F} = p.c. \int_I
+      \overline{F}  = p.c. \int_I \overline{f} < \int_I f + \epsilon\]
+    (where we used Theorem 11.2.16(g) and equation
+    \eqref{eq:11.4.1d}).
+
+    Similarly, with obvious notations, there exist two functions
+    $\underline{f}, \underline{F}$, with
+    \[ \infint{F}{J} \geq p.c. \int_J \underline{F} = p.c. \int_I
+      \underline{F}  = p.c. \int_I \underline{f} > \int_I f -
+      \epsilon\]
+
+    Combining these results, we have, for all $\epsilon > 0$,
+    \[ \int_I f - \epsilon < \infint{F}{J} \leq \supint{F}{J} < \int_I
+      f + \epsilon\]
+    which means that $F$ is Riemann-integrable, and $\int_J F = \int_I
+    f$, as expected.
   \end{enumerate}
 \end{exo}
 \end{document}
