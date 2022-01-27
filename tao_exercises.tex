@@ -9052,6 +9052,51 @@ exchangeable here, so that showing only one direction will be enough.
     f$, as expected.
   \end{enumerate}
 \end{exo}
+
+\begin{exo}{11.4.2}{Let $I$ be a bounded interval, let $f : I \to \rr$
+    be a Riemann integrable function, and let $\P$ be a partition of
+    $I$. Show that $\int_I f = \sum_{J \in \P} \int_J f$.}
+
+  Our best friends here will be Theorem 11.4.1(h) and Remark 11.4.2.
+  The later is especially useful, since it is not crucial to split
+  into cases depending on whether the intervals in $\P$ are open or
+  closed (as it was the case in the proof of Theorem 11.1.13); we know
+  that for all real numbers $a < b$ we have
+  $\int_{]a,b[} f = \int_{[a,b[} f = \int_{]a,b]} f = \int_{[a,b]} f$.
+
+  As previously in this document, we will write $(a,b)$ any interval
+  of the form $]a,b[$, $]a,b]$, $[a,b[$ or $[a,b]$ (i.e., the
+  parentheses stand for either open or closed brackets, and this
+  notation makes a tacit split into cases that does not change
+  anything for the integrals themselves).
+
+  Let be $I = (a,b)$ a bounded interval. We use induction on the
+  cardinality $n := \# \P$.
+
+  \begin{itemize}
+  \item If $n =2$, the result is simply Theorem 11.4.1(h).
+  \item Suppose inductively that we have showed the result for
+    $n \geq 2$, and let's prove that it is still true for $n+1$. As in
+    the proof of Theorem 11.1.13, if
+    $\P = \{I_1, I_2, \ldots, I_n, I_{n+1}\}$, then one of the
+    intervals $I_j$ is of the form $(c,b)$ with $a < c \leq b$ (and is
+    possibly just the singleton $\{b\}$ if $c=b$ and the brackets are
+    closed). Without any loss of generality, we can suppose that this
+    interval is $I_{n+1}$. Then, $\P' := \P - \{I_{n+1}\}$ is a
+    partition of $(a,c)$ and has cardinality $n$. Thus, we have:
+    \begin{align*}
+      \int_I f
+      &= \int_{(a,c)} f + \int_{(c,b)} f
+      &\text{ (Theorem 11.4.1(h))} \\
+      &= \sum_{J \in \P'} \int_J f + \int_{(c,b)} f
+      &\text{ (by induction hypothesis)}\\
+      &= \sum_{J \in \P} \int_J f
+      &\text{ (because $P = \P' \cup \{(c,b)\}$)}
+    \end{align*}
+    which closes the induction and shows the property, as expected.
+  \end{itemize}
+  
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
