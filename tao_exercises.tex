@@ -8887,7 +8887,7 @@ exchangeable here, so that showing only one direction will be enough.
 
   We are now ready to begin the actual proofs of the theorem.
 
-  \begin{enumerate}[label=\emph{(\alph*)}]
+  \begin{enumerate}[label=(\alph*)]
   \item First let's show that $f+g$ is Riemann-integrable. This
     requires to show that $\supint{(f+g)}{I} = \infint{(f+g)}{I}$. Let
     be $\epsilon > 0$ a positive real. With previous notations of
@@ -9014,15 +9014,15 @@ exchangeable here, so that showing only one direction will be enough.
         = (-1) \times (-c) \int_I f = c \int_I f\]
       as expected.
     \end{itemize}
-  \item Simply combine \emph{(a)} and \emph{(b)} with $c=-1$.
+  \item Simply combine (a) and (b) with $c=-1$.
   \item Saying that $f(x) \geq 0$ for all $x \in I$ means that the
     constant (and thus piecewise constant) function $0$ minorizes $f$
     on $I$. Thus, by definition,
     $\infint{f}{I} \geq p.c. \int_I 0 = 0$ (for instance by Theorem
-    11.2.16(e), or by the previous statement \emph{(b)} with $c=0$).
-    But since $f$ is supposed to be Riemann-integrable, we have
+    11.2.16(e), or by the previous statement (b) with $c=0$). But
+    since $f$ is supposed to be Riemann-integrable, we have
     $\int_I f = \infint{f}{I}$. The statement follows.
-  \item Direct consequence of \emph{(d)} and \emph{(c)}.
+  \item Direct consequence of (d) and (c).
   \item If $f(x) = c$ for all $x \in I$, then $f$ is constant, and
     thus piecewise constant on $I$. By Lemma 11.3.3, $f$ is
     Riemann-integrable, and $\int_I f = p.c. \int_I f = c|I|$, where
@@ -9050,6 +9050,90 @@ exchangeable here, so that showing only one direction will be enough.
       f + \epsilon\]
     which means that $F$ is Riemann-integrable, and $\int_J F = \int_I
     f$, as expected.
+  \item If we suppose that $f|_J$ and $f|_K$ are Riemann integrable,
+    the result can be immediately deduced from parts (a) and (g).
+    Indeed, let's take $F : I \to \rr$ the function defined by $F(x) =
+    f|_J(x)$ if $x \in J$ and $F(x) := 0$ otherwise; and similarly,
+    the function $G : I \to \rr$ defined by $G(x) = f|_K(x)$ if $x \in
+    K$ and $G(x) = 0$ otherwise. Thus, it is clear that we have $f = F
+    + G$. Using previous results, we have
+    \begin{align*}
+      \int_I f &= \int_I F + \int_I G &\text{ (by (a))} \\
+               &= \int_J f|_J + \int_K f|_K &\text{ (by (g))}
+    \end{align*}
+    as expected.
+
+    The painful part is precisely to show that $f|_J$ is Riemann
+    integrable on $J$, and $f|_K$ is Riemann integrable on $K$. So, we
+    have to prove that $\supint{f|_J}{J} = \infint{f|_J}{J}$, and
+    $\supint{f|_K}{K} = \infint{f|_K}{K}$.
+
+    Let be $\epsilon > 0$, and two piecewise continuous functions
+    $\overline{f}$ and $\underline{f}$ that obey to equation
+    \eqref{eq:11.4.1d}. First, note that if $\overline{f}$ majorizes
+    $f$ on $I$, then $\overline{f}|_J$ majorizes $f|_J$ on $J$ (and is
+    of course piecewise continuous on $J$). Similarly,
+    $\underline{f}|_J$ minorizes $f|_J$ on $J$, $\overline{f}|_K$
+    majorizes $f|_K$ on $K$, and $\underline{f}|_K$ minorizes $f|_K$
+    on $K$. Thus, we have in particular
+    \begin{equation}
+      \label{eq:11.4.1.h1}
+      p.c. \int_J \underline{f}|_J \leq \infint{f|_J}{J} \leq
+      \supint{f|_J}{J} \leq p.c. \int_J \overline{f}|_J
+    \end{equation}
+    and of course, a similar bound on $K$.
+
+    Since they are all piecewise continuous functions (on $I$, $J$ or
+    $K$ respectively), we have by Theorem 11.2.16(h)
+    \begin{align*}
+      p.c. \int_I \overline{f} &= p.c. \int_J \overline{f}|_J \, +
+                                 \, p.c. \int_K \overline{f}|_K \\
+      p.c. \int_I \underline{f} &= p.c. \int_J \underline{f}|_J \, +
+                                  \, p.c. \int_K \underline{f}|_K      
+    \end{align*}
+
+    Substituting this in equation \eqref{eq:11.4.1d}, we obtain
+    \[ \int_I f - \epsilon < \left( p.c. \int_J \underline{f}|_J +
+        p.c. \int_K \underline{f}|_K \right) \leq \left( p.c. \int_J
+        \overline{f}|_J + p.c. \int_K \overline{f}|_K\right) < \int_I
+      f + \epsilon \] so that in particular,
+    $(p.c. \int_J \overline{f}|_J + p.c. \int_K \overline{f}|_K)$ and
+    $(p.c. \int_J \underline{f}|_J + p.c. \int_K \underline{f}|_K)$
+    lie in an interval of length $2\epsilon$ and thus are at most
+    distant of $2\epsilon$ of each other\footnote{Formally, if we have
+      $x-\epsilon < y \leq z <x +\epsilon$, then
+      $0 \leq z-y \leq 2 \epsilon$ (why? Use triangular
+      inequality).\label{ft:distant-at-most}}
+
+    In other words, we have
+    \[ 0 \leq \left(p.c. \int_J \overline{f}|_J + p.c. \int_K
+        \overline{f}|_K\right) - \left(p.c. \int_J \underline{f}|_J + p.c. \int_K
+        \underline{f}|_K\right) \leq 2 \epsilon\]
+    or, even better, reordering the terms in the middle:
+    \begin{equation}
+      \label{eq:11.4.1.h2}
+      0 \leq \left(p.c. \int_J \overline{f}|_J - p.c. \int_J
+        \underline{f}|_J\right) + \left( p.c. \int_K \overline{f}|_K
+        + p.c. \int_K \underline{f}|_K\right) \leq 2 \epsilon
+    \end{equation}
+    Since each term of the sum of the middle is non-negative (by Lemma
+    11.3.3), each term is itself non-negative and lesser than
+    $2\epsilon$. In conclusion, we have
+    \begin{align*}
+      0 &\leq p.c. \int_J \overline{f}|_J - p.c. \int_J
+          \underline{f}|_J \leq 2 \epsilon \\
+      0 &\leq p.c. \int_K \overline{f}|_K - p.c. \int_K
+        \underline{f}|_K \leq 2 \epsilon
+    \end{align*}
+    for an arbitrary $\epsilon > 0$ previously fixed. Thus, if we come
+    back to equation \eqref{eq:11.4.1.h1}, this imply that
+    $\infint{f|_J}{J}$ and $\supint{f|_J}{J}$ lie in an interval of
+    length at most $2 \epsilon$, so that they are themselves distant
+    at most of $2 \epsilon$ (see footnote \ref{ft:distant-at-most}).
+    This is true for any arbitrary $\epsilon > 0$ previously fixed, so
+    that $f|_J$ is Riemann integrable on $J$.
+
+    Similarly, $f|_K$ is Riemann integrable on $K$.
   \end{enumerate}
 \end{exo}
 
