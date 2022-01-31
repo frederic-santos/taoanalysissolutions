@@ -7690,6 +7690,32 @@ exchangeable here, so that showing only one direction will be enough.
     with \eqref{eq:992a}.
   \end{itemize}
 \end{exo}
+
+\begin{exo}{9.9.3}{Prove Proposition 9.9.12.}
+
+  We must prove that uniformly continuous functions map Cauchy
+  sequences to Cauchy sequences. Let be an arbitrary $\epsilon > 0$.
+  First, note that if $f : X \to \rr$ is uniformly continuous, then we
+  have
+  \begin{equation}
+    \label{eq:9.9.3a}
+    \exists \delta > 0 \, : \, (x,y \in I, |x-y| < \delta)
+    \Longrightarrow |f(x) - f(y)| < \epsilon
+  \end{equation}
+
+  But since $\seq{x_n}{0}$ is supposed to be a Cauchy sequence, then
+  we have
+  \begin{equation}
+    \label{eq:9.9.3b}
+    \exists N \geq 0 \, : \, j,k \geq N \Longrightarrow |x_j - x_k| < \delta
+  \end{equation}
+
+  Thus combining equations \eqref{eq:9.9.3a} and \eqref{eq:9.9.3b}, if
+  we suppose that $j,k \geq N$, then we have $|x_j - x_k| < \delta$,
+  and thus $|f(x_j) - f(x_k)| < \epsilon$. Since this is true for any
+  arbitrary $\epsilon > 0$, this shows that $\seq{f(x_n)}{0}$ is a
+  Cauchy sequence, as required.
+\end{exo}
 \pagebreak
 
 \section{Differentiability}
@@ -9178,8 +9204,7 @@ exchangeable here, so that showing only one direction will be enough.
       &\text{ (because $P = \P' \cup \{(c,b)\}$)}
     \end{align*}
     which closes the induction and shows the property, as expected.
-  \end{itemize}
-  
+  \end{itemize} 
 \end{exo}
 \end{document}
 %%% Local Variables:
