@@ -7687,7 +7687,7 @@ exchangeable here, so that showing only one direction will be enough.
     If we consider a sequence $\seq{x_n}{1}$ of elements of $X$ that
     converges to $y_0$, then the sequences $\seq{x_n}{1}$ and
     $\seq{y_0}{1}$ are equivalent. This is thus a clear contradiction
-    with \eqref{eq:992a}.
+    with equation \eqref{eq:992a}.
   \end{itemize}
 \end{exo}
 
@@ -7715,6 +7715,32 @@ exchangeable here, so that showing only one direction will be enough.
   and thus $|f(x_j) - f(x_k)| < \epsilon$. Since this is true for any
   arbitrary $\epsilon > 0$, this shows that $\seq{f(x_n)}{0}$ is a
   Cauchy sequence, as required.
+\end{exo}
+
+\pagebreak
+\begin{exo}{9.9.4}{Use Proposition 9.9.12 to prove Corollary 9.9.14.}
+
+  First, recall that the limit $\lim_{x \to x_0; x \in X} f(x)$ exists
+  and is equal to a real number $L$ iff the sequence $\seq{f(a_n)}{0}$
+  converges to $L$ for \emph{any} sequence $\seq{a_n}{0}$ that
+  converges to $x_0$ (Proposition 9.3.9).
+
+  Since $x_0$ is an adherent point of $X$, there exists a sequence
+  $\seq{a_n}{0}$ entirely composed of elements on $X$ that converges
+  to $x_0$ (Lemma 9.1.14). Since it is a convergent sequence, it is
+  also a Cauchy sequence, because $\rr$ is complete (Theorem 6.4.18).
+  Thus, by Proposition 9.9.12, $\seq{f(a_n)}{0}$ is a Cauchy sequence;
+  and by Theorem 6.4.18 again, it is thus a convergent sequence. Say
+  that it converges to $L$.
+
+  An important remark: we cannot say yet that the proof is over, and
+  that we have $\lim_{x \to x_0; x \in X} f(x) = L$! We need one last
+  step: let's consider $\seq{b_n}{0}$ \emph{any other} sequence that
+  converges to $x_0$. Thus, by Lemma 9.9.1, $\seq{a_n}{0}$ and
+  $\seq{b_n}{0}$ are equivalent; and by Proposition 9.9.8,
+  $\seq{f(a_n)}{0}$ and $\seq{f(b_n)}{0}$ are equivalent. Thus,
+  $\seq{f(b_n)}{0}$ also converges to $L$. This, time, is shows indeed
+  that $\lim_{x \to x_0; x \in X} f(x) = L$, as expected.
 \end{exo}
 \pagebreak
 
