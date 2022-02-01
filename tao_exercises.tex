@@ -7742,6 +7742,34 @@ exchangeable here, so that showing only one direction will be enough.
   $\seq{f(b_n)}{0}$ also converges to $L$. This, time, is shows indeed
   that $\lim_{x \to x_0; x \in X} f(x) = L$, as expected.
 \end{exo}
+
+\bigskip
+\begin{exo}{9.9.5}{Prove Proposition 9.9.15.}
+
+  Suppose for the sake of contradiction that the set $f(E)$ is not
+  bounded. Thus, for all real number $M \geq 0$, there exists
+  $x \in E$ such that $|f(x)| \geq M$. Since this is true of all real
+  number, it is in particular true for any \emph{natural number}
+  $n \geq 0$, which implies that the set
+  \[X_n := \left\{x \in E \, : \, |f(x)| \geq n \right\} \]
+  is non-empty for all natural number $n \geq 0$. By the axiom of
+  choice, we can construct a sequence $\seq{x_n}{0}$ such that $x_n
+  \in X_n$ for all $n \geq 0$ (and in particular, $x_n \in E$).
+
+  Since $E$ is bounded by hypothesis, the sequence $\seq{x_n}{0}$ is
+  bounded. By the Bolzano-Weierstrass theorem (Theorem 6.6.8), there
+  exists a subsequence $(x_{n_j})_{j=0}^\infty$ of $\seq{x_n}{0}$ that
+  converges to some real number $L$ (note that we have $n_j \geq j$
+  for all $j$, as a quick induction shows). By Lemma 9.1.14, $L$ is
+  thus an adherent point of $E$. By Corollary 9.9.14, the limit
+  $\lim_{x \to L; x \in E} f(x)$ exists and is finite.
+
+  In particular, it implies that $\lim_{j \to \infty} f(x_{n_j})$
+  exists and is finite. In other words, $(f(x_{n_j}))_{j=0}^\infty$ is
+  a convergent sequence, and in particular, is a bounded sequence. But
+  this contradicts the definition of the $x_{n_j}$, since we have
+  $|f(x_{n_j})| \geq n_j \geq j$ for all $j$, by construction.
+\end{exo}
 \pagebreak
 
 \section{Differentiability}
