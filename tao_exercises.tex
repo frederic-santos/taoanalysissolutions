@@ -55,6 +55,11 @@
 \maketitle
 \tableofcontents
 
+\vskip 15mm
+
+\noindent \textbf{Remark.} The numbering of the Exercises follows the fourth edition of
+\textit{Analysis I}.
+
 \pagebreak
 \section{Introduction}
 \label{sec:introduction}
@@ -9255,10 +9260,51 @@ exchangeable here, so that showing only one direction will be enough.
       &= \sum_{J \in \P'} \int_J f + \int_{(c,b)} f
       &\text{ (by induction hypothesis)}\\
       &= \sum_{J \in \P} \int_J f
-      &\text{ (because $P = \P' \cup \{(c,b)\}$)}
+      &\text{ (because $\P = \P' \cup \{(c,b)\}$)}
     \end{align*}
     which closes the induction and shows the property, as expected.
   \end{itemize} 
+\end{exo}
+
+\begin{exo}{11.5.1}{Let $a<b$ be real numbers, and let
+    $f : [a,b] \to \rr$ be a continuous, non-negative function (so
+    $f(x) \geq 0$ for all $x \in [a,b]$). Suppose that
+    $\int_{[a,b]} f = 0$. Show that $f(x)=0$ for all $x\in [a,b]$.}
+
+  Suppose for the sake of contradiction that there exists an
+  $x_0 \in [a,b]$ such that $f(x_0) > 0$. (For simplicity, we will
+  assume that this $x_0$ lies in $]a,b[$; but the proof is essentially
+  the same if $x_0 = a$ or $x_0 = b$. The only change will consist in
+  a modification of equation \eqref{eq:11.5.1}.)
+
+  Let be $\epsilon := f(x_0) / 2$; by hypothesis, we have
+  $\epsilon > 0$. Since $f$ is continuous on $[a,b]$, there exists a
+  $\delta > 0$ such that $|f(x) - f(x_0)| < \epsilon$ whenever
+  ($x \in [a,b]$ and) $|x-x_0| < \delta$.
+
+  In particular, we have
+  \[ (x \in [a,b], \, |x-x_0| < \delta) \; \Longrightarrow \; 0 <
+    \frac{f(x_0)}{2} < f(x) < 3\frac{f(x_0)}{2}\]
+
+  By Theorem 11.4.1(h), we have
+  \begin{equation}
+    \label{eq:11.5.1}
+    \int_{[a,b]} f = \int_{[a, x_0 - \delta]} f + \int_{]x_0 - \delta,
+      x_0 + \delta[} f + \int_{]x_0 + \delta, b]} f
+  \end{equation}
+  and we know that all terms are (at least) non-negative in the
+  right-hand-side:
+  \begin{itemize}
+  \item $f|_{[a, x_0 - \delta]} \geq 0$ by hypothesis, so that $\int_{[a,
+      x_0 - \delta]} f \geq 0$ by Theorem 11.4.1(d);
+  \item the constant function $x \mapsto f(x_0)/2$ minorizes $f$ on
+    $]x_0 - \delta, x_0 + \delta[$, so that, by~Theorem 11.4.1(b,e),
+    $\int_{]x_0 - \delta, x_0 + \delta[} f \geq 2\delta f(x_0)/2 > 0$;
+  \item $f|_{]x_0 + \delta, b]} \geq 0$ by hypothesis, so that
+    $\int_{]x_0 - \delta, b]} f \geq 0$ by Theorem 11.4.1(d).
+  \end{itemize}
+  Thus we have $\int_{[a,b]} f > 0$, a contradiction. This shows that
+  $f$ is the constant function $0$ on $[a,b]$.
 \end{exo}
 \end{document}
 %%% Local Variables:
