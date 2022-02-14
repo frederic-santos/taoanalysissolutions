@@ -9306,6 +9306,90 @@ exchangeable here, so that showing only one direction will be enough.
   Thus we have $\int_{[a,b]} f > 0$, a contradiction. This shows that
   $f$ is the constant function $0$ on $[a,b]$.
 \end{exo}
+
+\bigskip
+\begin{exo}{11.5.2}{Prove Proposition 11.5.6. (Hint: use Theorem
+    11.4.1(a) and (g).)}
+
+  Let $I$ be a bounded interval, and $f :I \to \rr$ a function that is
+  both piecewise continuous and bounded. We have to show that $f$ is
+  Riemann integrable.
+
+  Saying that $f$ is piecewise continuous means that there exists a
+  partition $\P$ of $I$ such that $f|_J$ is continuous on each
+  interval $J \in \P$. Actually, we can even define, for each $J \in
+  \P$, a function $g_J : I \to \rr$ by:
+  \[
+    \begin{cases}
+      g_J(x) := f|_J(x) & \text{ if } x \in J \\
+      g_J(x) := 0 & \text{ if } x \in I - J.
+    \end{cases}
+  \]
+  By Theorem 11.5.1(g), we know that, for all $J \in \P$, $g_J$ is
+  Riemann-integrable on $I$. Furthermore, we have clearly
+  $f(x) = \sum_{J \in \P} g_J(x)$ for all $x \in I$. Thus, by Theorem
+  11.4.1(a), $f$ is Riemann-integrable on $I$ (and we have
+  $\int_I f = \sum_{J \in P} \int_I g_J$), as expected.
+\end{exo}
+\pagebreak
+
+\begin{exo}{11.6.1}{Prove Corollary 11.6.3.}
+
+  Let $I$ be a bounded interval, and let $f : I \to \rr$ be both
+  monotone and bounded. We have to show that $f$ is Riemann-integrable
+  on $I$.
+
+  First, note that there are several trivial particular cases. Since
+  $I$ is bounded, it can be the empty set or a singleton $\{a\}$. In
+  both cases the claim is trivial, with $\int_I f = 0$, by
+  Remark~11.3.8. But $I$ can also be a closed interval $[a,b]$: in
+  this case, the claim to prove is simply Proposition 11.6.1. Thus, we
+  just have to prove the claim when $I = ]a,b[$, $]a,b]$ or $[a,b[$,
+  with $a<b$ two real numbers.
+
+  Since $f$ is supposed to be bounded on $I$, there exists a positive
+  real number $M>0$ such that $-M \leq f(x) \leq M$ for all $x \in I$.
+
+  Let be $0 < \epsilon < (b-a)/2$ a small number. Thus, the closed
+  interval $[a+\epsilon, b-\epsilon]$ is a (proper) subset of $I$.
+  And, by Proposition 11.6.1, we know that the restriction of $f$ to
+  $[a+\epsilon, b-\epsilon]$ is Riemann-integrable on this interval,
+  since it is monotone.
+
+  Let be $h : [a+\epsilon, b-\epsilon] \to \rr$ a piecewise constant
+  function majorizing $f$. By definition, we have
+  \[ \int_{[a+\epsilon, b-\epsilon]} f \leq \int_{[a+\epsilon,
+      b-\epsilon]} h < \int_{[a+\epsilon, b-\epsilon]} f + \epsilon\]
+
+  Now we can define a new function $\tilde{h} : I \to \rr$ by
+  \[
+    \begin{cases}
+      \tilde{h}(x) = h(x) &\text{ if } x \in I\\
+      \tilde{h}(x) = M &\text{ if } x \notin I
+    \end{cases}
+  \]
+  The function $\tilde{h}$ is clearly piecewise constant on $I$, and
+  it clearly majorizes $f$ on $I$. Thus, by definition of an upper
+  integral, we have
+  \begin{align*}
+    \supint{f}{I}
+    &\leq \int_I \tilde{h}
+    := \epsilon M + \int_{[a+\epsilon, b-\epsilon]} \tilde{h} + \epsilon M \\
+    &\leq \int_{[a+\epsilon, b-\epsilon]} \tilde{h} + 2\epsilon M\\
+    &\leq \int_{[a+\epsilon, b-\epsilon]} f + (1+2M)\epsilon
+  \end{align*}
+  A similar argument would show that
+  \begin{equation*}
+    \infint{f}{I} \geq \int_{[a+\epsilon, b-\epsilon]} f - (1+2M)\epsilon
+  \end{equation*}
+  thus leading to
+  \begin{equation*}
+    \supint{f}{I} - \infint{f}{I} \leq (2+4M)\epsilon.
+  \end{equation*}
+  Since this is true for all $\epsilon > 0$, it shows that
+  $\supint{f}{I} = \infint{f}{I}$, i.e. that $f$ is Riemann-integrable
+  on $I$, as expected.
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
