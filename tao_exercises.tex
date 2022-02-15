@@ -9315,17 +9315,17 @@ exchangeable here, so that showing only one direction will be enough.
   both piecewise continuous and bounded. We have to show that $f$ is
   Riemann integrable.
 
-  Saying that $f$ is piecewise continuous means that there exists a
-  partition $\P$ of $I$ such that $f|_J$ is continuous on each
-  interval $J \in \P$. Actually, we can even define, for each $J \in
-  \P$, a function $g_J : I \to \rr$ by:
+  Since $f$ is piecewise continuous, there exists a partition $\P$ of
+  $I$ such that $f|_J$ is continuous for all $J \in \P$. Thus we can
+  define, for all $J \in \P$, a function $g_J : I \to \rr$ (integrable
+  on $I$ by Proposition 11.5.3) by:
   \[
     \begin{cases}
       g_J(x) := f|_J(x) & \text{ if } x \in J \\
       g_J(x) := 0 & \text{ if } x \in I - J.
     \end{cases}
   \]
-  By Theorem 11.5.1(g), we know that, for all $J \in \P$, $g_J$ is
+  By Theorem 11.4.1(g), we know that, for all $J \in \P$, $g_J$ is
   Riemann-integrable on $I$. Furthermore, we have clearly
   $f(x) = \sum_{J \in \P} g_J(x)$ for all $x \in I$. Thus, by Theorem
   11.4.1(a), $f$ is Riemann-integrable on $I$ (and we have
@@ -9389,6 +9389,37 @@ exchangeable here, so that showing only one direction will be enough.
   Since this is true for all $\epsilon > 0$, it shows that
   $\supint{f}{I} = \infint{f}{I}$, i.e. that $f$ is Riemann-integrable
   on $I$, as expected.
+\end{exo}
+
+\bigskip
+\begin{exo}{11.6.2}{Formulate a reasonable notion of a piecewise
+    monotone function, and then show that all bounded piecewise
+    monotone functions are Riemann integrable.}
+
+  We can define a piecewise monotone function as follows. Let be
+  $f : I \to \rr$ a function, with $I$ a bounded interval. We say that
+  $f$ is piecewise monotone on $I$ iff there exists a partition $\P$
+  of $I$ such that, for all $J \in \P$, the restriction $f|_J$ is
+  monotone on $J$.
+
+  Now let's prove that all bounded piecewise monotone functions are
+  Riemann integrable. Let be $f : I \to \rr$ a bounded piecewise
+  monotone function, and $\P$ a partition of $I$. For all $J \in \P$,
+  we define a function $g_J : J \to \rr$ as follows:
+  \[
+    \begin{cases}
+      g_J(x) := f|_J(x) & \text{ if } x \in J \\
+      g_J(x) := 0 & \text{ if } x \in I - J
+    \end{cases}
+  \]
+  Note that, since each $f|_J$ is piecewise monotone and
+  bounded, then by Corollary 11.6.3, for all $J \in \P$, $f|_J$ is
+  Riemann integrable on $J$.  By Theorem 11.4.1(g), it implies that
+  the functions $g_J$ defined above are Riemann-integrable on $I$.
+
+  Furthermore, we have clearly
+  \[f = \sum_{J \in \P} g_J\]
+  so that, by Theorem 11.4.1(a), $f$ is Riemann-integrable on $I$. 
 \end{exo}
 \end{document}
 %%% Local Variables:
