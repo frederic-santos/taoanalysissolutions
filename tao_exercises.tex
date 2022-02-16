@@ -9421,6 +9421,46 @@ exchangeable here, so that showing only one direction will be enough.
   \[f = \sum_{J \in \P} g_J\]
   so that, by Theorem 11.4.1(a), $f$ is Riemann-integrable on $I$. 
 \end{exo}
+
+\bigskip
+\begin{exo}{11.6.4}{Give examples to show that both directions of the
+    integral test break down if $f$ is not assumed to be monotone
+    decreasing.}
+
+  Consider the following two examples\footnote{Note that we must still
+    choose piecewise constant functions here, since we still do not
+    know how to compute the integral of a more general function.}:
+  \begin{itemize}
+  \item Let be the positive function $f: [0,+\infty[ \to \rr$ defined
+    by:
+    \[
+      \begin{cases}
+        f(x) = 0 &\text{ if } x \in [n, n+1/4], n \in \nn\\
+        f(x) = 1 &\text{ if } x \in [n+1/4, n+3/4], n \in \nn\\
+        f(x) = 0 &\text{ if } x \in [n+3/4, n+1], n \in \nn\\
+      \end{cases}
+    \]
+    In particular, we have $f(n) = 0$ for all $n \in \nn$; and
+    $\int_{[n, n+1]} f = 1/2$ for all $n \in \nn$. Thus, we clearly
+    have $\sum_{n=0}^\infty f(n) = 0$, i.e. the series converges; but
+    $\sup_{N > 0} \int_{[0,N]} f = \sup_{N>0} N/2 = +\infty$.
+  \item Let be the positive function $g : [0, +\infty[ \to \rr$
+    defined by:
+    \[
+      \begin{cases}
+        f(x) = 1&\text{ if } x \in \nn\\
+        f(x) = 0&\text{ otherwise}
+      \end{cases}
+    \]
+    For all $n \in \nn$, we clearly have $\int_{[n, n+1]} f = 0$, and
+    thus $\int_{[0,N]} f = 0$. Consequently, we also have
+    $\sup_{N>0} \int_{[0,N]} f = 0$.
+
+    On the other hand, we have $\sum_{n=0}^N f(n) = N$, so that
+    $\sum_{n=0}^\infty f(n) = \infty$. Thus, the series diverges, even
+    though the sup over the integrals $\int_{[0,N]} f$ is finite.
+  \end{itemize}
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
