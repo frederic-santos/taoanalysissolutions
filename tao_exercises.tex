@@ -9423,6 +9423,52 @@ exchangeable here, so that showing only one direction will be enough.
 \end{exo}
 
 \bigskip
+\begin{exo}{11.6.3}{Prove Proposition 11.6.4.}
+
+  Let be $f : [0, +\infty[ \to \rr$ a positive, decreasing function.
+  We have to show that $\sum_{n=0}^\infty f(n)$ converges iff
+  $\sup_{N>0} \int_{[0,N]}f$ is finite.
+
+  First observe that since $f$ is decreasing and positive, it is
+  bounded, and is thus Riemann-integrable on any interval of the form
+  $[0,N]$ by Corollary 11.6.3.
+
+  Also, we have $f(n) \geq f(x) \geq f(n+1)$ for all $x$ in an
+  interval $[n, n+1[$. This motivates the following argument:
+  
+  \begin{itemize}
+  \item Let be $\P := \{[n, n+1[ \, : \, n \in \nn\}$ a partition of
+    $[0, +\infty[$.
+  \item Let be the constant piecewise function
+    $g : [0,+\infty[ \to \rr$ defined by $g(x) := f(n)$ when
+    $x \in [n, n+1[$. The function $g$ clearly majorizes $f$ on
+    $[0, +\infty[$.
+  \item Let be the constant piecewise function
+    $h : [0,+\infty[ \to \rr$ defined by $h(x) := f(n+1)$ when
+    $x \in [n, n+1[$. The function $g$ clearly minorizes $f$ on
+    $[0, +\infty[$.
+  \item Thus, on any interval $[n, n+1[$ with $n \in \nn$, we have:
+    \[ f(n) = \int_{[n,n+1[} g(x) \geq \int_{[n,n+1[} f \geq
+      \int_{[n,n+1[} h = f(n+1) \]
+    We can use Theorem 11.4.1(g) to sum over such intervals, to get:
+    \[ \sum_{n=0}^{N-1} f(n) \geq \int_{[0,N[} f \geq
+      \sum_{n=0}^{N-1} f(n+1)\]
+    i.e., using Remark 11.4.2, and Lemma 7.1.4, 
+    \begin{equation}
+      \label{eq:11.6.3}
+      \sum_{n=0}^{N-1} f(n) \geq \int_{[0,N]} f \geq \sum_{n=1}^{N} f(n)
+    \end{equation}
+  \item In \eqref{eq:11.6.3}, if $\sum_{n=0}^\infty f(n)$ converges,
+    then (since is equal to $\sup_N \sum_{n=0}^{N-1} f(n)$) this sum
+    is an upper bound for $\int_{[0,N]} f$, so that the supremum
+    $\sup_{n>0} \int_{[0,N]} f$ is necessarily finite.
+  \item Conversely, if the supremum $\sup_{N>\int_{[0,N]} f } \int_{[0,N]} f$ is
+    finite, then it is a (finite) upper bound for the $\sum_{n=1}^{N}
+    f(n)$. Thus, the series $\sum_{n=0}^{\infty} f(n)$ converges, by
+    Proposition 7.3.1.
+  \end{itemize}
+\end{exo}
+
 \begin{exo}{11.6.4}{Give examples to show that both directions of the
     integral test break down if $f$ is not assumed to be monotone
     decreasing.}
@@ -9459,6 +9505,97 @@ exchangeable here, so that showing only one direction will be enough.
     On the other hand, we have $\sum_{n=0}^N f(n) = N$, so that
     $\sum_{n=0}^\infty f(n) = \infty$. Thus, the series diverges, even
     though the sup over the integrals $\int_{[0,N]} f$ is finite.
+  \end{itemize}
+\end{exo}
+
+\begin{exo}{11.8.1}{Prove Lemma 11.8.4. (Hint: modify the proof of
+    Theorem 11.1.13.)}
+
+  Let be $X$ a closed interval, $I \subseteq X$ a closed interval, and
+  $\alpha : X \to \rr$ a function which is either monotone increasing
+  or continuous, and $\P$ a partition of $I$. We have to show that
+  \begin{equation}
+    \label{eq:11.8.1}
+    \sum_{J \in \P} \alpha[J] = \alpha[I]
+  \end{equation}
+
+  As in the proof of Theorem 11.1.13, we use induction on
+  $n := \# \P$.
+  \begin{itemize}
+  \item The base case $n=0$ is trivial because in this case, $\P$ is
+    empty, and thus $I$ must be itself the empty set. In such a case,
+    both sides of \eqref{eq:11.8.1} are equal to $0$.
+
+    Similarly, if $n=1$, then $I$ must be a singleton $\{a\}$. In such
+    a case, both sides of \eqref{eq:11.8.1} are equal to
+    $\alpha[\{a\}]$, so that the property is once again trivial.
+  \item Now suppose inductively that the property is true when $\# \P
+    =n$, and let's prove that it is still true when $\# \P = n+1$.
+
+    First, note that once again, the property is trivial when $I =
+    \emptyset$ (since all elements of $\P$ are then the empty set
+    themselves), and when $I = \{a\}$ (since they can only be $\{a\}$
+    or the empty set). Thus, we now consider that $I$ is of the form
+    $[a,b]$, $]a,b]$, $[a,b[$ or $]a,b[$ (with $a<b$ two real
+    numbers).{\pagebreak}
+
+    Now we split into two sub-cases:
+    \begin{enumerate}
+    \item If $b \in I$, then $I$ is either $[a,b]$ or $]a,b]$.
+      Furthermore, since $b \in I$, there exists exactly one
+      $K \in \P$ such that $b \in K$. This interval $K$ must be either
+      $[c,b]$, $]c,b]$ or $\{b\}$, with $a \leq c \leq b$.
+
+      To avoid splitting the proof into an very deep imbrication of
+      sub-cases, let's consider that $I = [a,b]$ and $K = [c,b]$, but
+      the proof is very similar in the other cases. Thus, $I-K =
+      [a,c[$. We thus have:
+      \begin{align*}
+        \alpha[I] &:= \Bigl(\lim_{x\to a^+} \alpha(x) -
+                    \alpha(a)\Bigr) +
+                    \Bigl(\lim_{x\to b^-} \alpha(x) - \lim_{x\to a^+}
+                    \alpha(x) \Bigr) +
+                    \Bigl(\alpha(b) - \lim_{x\to b^-} \alpha(x)\Bigr)
+        \\
+                  &= \alpha(b) - \alpha(a)\\
+        \alpha[I-K] &:= \Bigl(\lim_{x\to a^+} \alpha(x) -
+                      \alpha(a)\Bigr)
+                      + \Bigl(\lim_{x\to c^-} \alpha(x) - \lim_{x\to a^+}
+                      \alpha(x) \Bigr)\\
+                  &= \lim_{x\to c^-} \alpha(x) - \alpha(a) \\
+        \alpha[K] &:= \Bigl(\lim_{x\to c^+} \alpha(x) - \lim_{x\to
+                    c^-} \alpha(x)\Bigr)
+                    + \Bigl( \lim_{x\to b^-} \alpha(x) - \lim_{x\to
+                    c^+} \alpha(x) \Bigr)
+                    + \Bigl(\alpha(b) - \lim_{x\to b^-}
+                    \alpha(x)\Bigr) \\
+                  &= -\lim_{x \to c^-} \alpha(x) + \alpha(b)
+      \end{align*}
+      when $\alpha$ is supposed to be monotone, or more directly, using
+      the simplified formula,
+      \begin{align*}
+        \alpha[I] &:= \alpha(b) - \alpha(a) \\
+        \alpha[K] &:= \alpha(b) - \alpha(c) \\
+        \alpha[I-K] &:= \alpha(c) - \alpha(a)
+      \end{align*}
+      when $\alpha$ is supposed to be continuous and not necessarily
+      monotone.
+
+      In both cases, we can see that we have
+      \begin{equation}
+        \label{eq:11.8.1b}
+        \alpha[I] = \alpha[I-K] + \alpha[K].
+      \end{equation}
+      And since $\P - \{K\}$ is a partition of $I-K$ of cardinality
+      $n$, the induction hypothesis applies, and we get
+      \[\alpha[I] = \alpha[K] + \alpha[I-K] = \alpha[K] + \sum_{J \in
+          \P - \{K\}} \alpha[J] = \sum_{J \in \P} \alpha[J]\]
+      as expected. This closes the induction.
+    \item If $b \notin I$, then $I = [a,b[$ or $]a,b[$, and thus there
+      exists exactly one $K \in \P$ which is equal to $]c,b[$ or
+      $[c,b[$. We just have to follow the same approach as in the
+      previous case.
+    \end{enumerate}
   \end{itemize}
 \end{exo}
 \end{document}
