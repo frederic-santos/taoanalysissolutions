@@ -9598,6 +9598,46 @@ exchangeable here, so that showing only one direction will be enough.
     \end{enumerate}
   \end{itemize}
 \end{exo}
+
+\begin{exo}{11.8.2}{State and prove a version of Proposition 11.2.13
+    for the Riemann-Stieltjes integral.}
+
+  This proposition could be stated as follows:
+
+  Let be $I$ a bounded interval, and $\P, \P'$ be partitions of $I$.
+  Let be $f : I \to \rr$ a function which is piecewise constant with
+  respect to $\P$ and $\P'$, and let be $\alpha : I \to \rr$ a
+  continuous or increasing function. Then we have
+  $p.c. \int_{[\P]} f \, d\alpha = p.c. \int_{[\P']} f \, d\alpha$.
+
+  To prove this statement, we just have to modify Exercise 11.2.13 (we
+  will reuse here the notations are results introduced in this former
+  exercise).
+
+  First let's consider $\P \# \P'$, which is a partition of $I$ finer
+  than both $\P$ and $\P'$ (Lemma~11.1.8). Furthermore, $f$ is
+  piecewise constant on $\P \# \P'$ (Lemma~11.2.7), so that
+  $p.c. \int_{[\P \# \P']} f \, d\alpha$ is well-defined.
+
+  We thus have:
+  \begin{align*}
+    p.c. \int_{[\P \# \P']} f \, d\alpha
+    &:= \sum_{J \in \P \# \P'} c_J \, \alpha[J]
+    &\text{ (Definition 11.8.5)}\\
+    &= \sum_{(K,L) \in \P \times \P'} c_{K \cap L} \, \alpha[K \cap L] &
+    \text{ (Definition 11.1.6)}\\
+    &= \sum_{K \in \P} \sum_{L \in \P'} c_{K \cap L} \, \alpha[K \cap L]
+    &\text{ (Corollary 7.1.14)} \\
+    &= \sum_{K \in \P} c_K \Bigl( \sum_{L \in \P'} \alpha[K \cap L]\Bigr)
+    & \text{ (because $c_K = c_{K \cap L}$)}\\
+    &= \sum_{K \in \P} c_K (\alpha[K])
+    &\text{ (Lemma 11.8.4)}\\
+    &=: p.c. \int_{[\P]} f \, d\alpha&
+  \end{align*}
+
+  The same argument would show that $p.c. \int_{[\P \# \P']} f \,
+  d\alpha = p.c. \int_{[\P']} f \, d\alpha$, which closes the proof.  
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
