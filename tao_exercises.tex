@@ -8637,7 +8637,9 @@ exchangeable here, so that showing only one direction will be enough.
     $g$ on $J$. Since these two summations are finite, we have
     (by linearity of finite sums, Proposition 7.1.11(f))
     \begin{equation*}
-      p.c. \int_{I} f + p.c. \int_{I} g = \sum_{J \in \P} (c_J + d_J) |J|.
+      p.c. \int_{I} f + p.c. \int_{I} g =
+      \sum_{J \in \P} c_J |J| + \sum_{J \in \P} d_J |J|
+      = \sum_{J \in \P} (c_J + d_J) |J|.
     \end{equation*}
     Now, observe that $f+g$ is also piecewise constant on $I$ (Lemma
     11.2.8) and that the constant value of $f+g$ on each element
@@ -8712,7 +8714,7 @@ exchangeable here, so that showing only one direction will be enough.
     We thus have
     \begin{align*}
       p.c. \int_J F &= p.c. \int_{[\P'']} F & \text{ (Definition 11.2.14)}\\
-                    &= p.c. \int_{[\P \cup P']} F &\\
+                    &= p.c. \int_{[\P \cup \P']} F &\\
                     &= \sum_{K \in \P \cup \P'} c_K |K| & \text{ (Definition 11.2.9)}\\
                     &= \sum_{K \in \P} c_K |K| + \sum_{K \in \P'} c_K
                       |K| & \text{ (Proposition 7.1.11(e))}\\
@@ -9608,7 +9610,8 @@ exchangeable here, so that showing only one direction will be enough.
   Let be $f : I \to \rr$ a function which is piecewise constant with
   respect to $\P$ and $\P'$, and let be $\alpha : I \to \rr$ a
   continuous or increasing function. Then we have
-  $p.c. \int_{[\P]} f \, d\alpha = p.c. \int_{[\P']} f \, d\alpha$.
+  $p.c. \int_{[\P]} f \, d\alpha = p.c. \int_{[\P']} f \, d\alpha =:
+  \int_I f \, d\alpha$.
 
   To prove this statement, we just have to modify Exercise 11.2.13 (we
   will reuse here the notations are results introduced in this former
@@ -9637,6 +9640,131 @@ exchangeable here, so that showing only one direction will be enough.
 
   The same argument would show that $p.c. \int_{[\P \# \P']} f \,
   d\alpha = p.c. \int_{[\P']} f \, d\alpha$, which closes the proof.  
+\end{exo}
+\bigskip
+
+\begin{exo}{11.8.3}{State and prove a version of Theorem 11.2.16 for
+    the Riemann-Stieltjes integral.}
+
+  This Theorem could be stated as follows.
+
+  Let be $I$ a bounded interval, and $X$ a closed interval that
+  contains $I$. Let be $f,g : I \to \rr$ two functions which are
+  piecewise constant on $I$, and $\alpha : X \to \rr$ an
+  \emph{increasing} function (note that in this paragraph, $\alpha$ is
+  really supposed to be increasing, and not ``either continuous or
+  increasing'' as before). Then we have:
+  \begin{enumerate}[label=(\alph*)]
+  \item
+    $p.c. \int_I (f+g) \, d\alpha = p.c. \int_I f \, d\alpha + p.c.
+    \int_I g \, d\alpha$.
+  \item For all $c>0$, $p.c. \int_I (cf) \, d\alpha = c (p.c. \int_I
+    f \, d\alpha)$.
+  \item $p.c. \int_I (f-g) \, d\alpha = p.c. \int_I f \, d\alpha -
+    p.c. \int_I g \, d\alpha$.
+  \item If $f(x) \geq 0$ for all $x \in I$, then $p.c. \int_I f \,
+    d\alpha \geq 0$.
+  \item If $f(x) \geq g(x)$ for all $x \in I$, then $p.c. \int_I f \,
+    d\alpha \geq p.c. \int_I g \, d\alpha$.
+  \item If $f$ is the constant function $f(x) = c$, then $p.c. \int_I
+    f \, d\alpha = c \alpha[I]$.
+  \item Let be $J$ a closed interval such that $I \subseteq J$. Then
+    the function $F : J \to \rr$ defined by
+    \[
+      \begin{cases}
+        F(x) = f(x) & \text{ if } x \in I \\
+        F(x) = 0 & \text{ if } x \in J - I
+      \end{cases}
+    \]
+    is piecewise constant on $J$, and $p.c. \int_J F \, d\alpha = p.c.
+    \int_I f \, d\alpha$.
+  \item If $\{J,K\}$ is a partition of $I$ into two intervals $J$ and
+    $K$, then the functions $f|_J : J \to \rr$ and $f|_K : K \to \rr$
+    are piecewise constant on $J$ and $K$ respectively, and we have
+    \[
+      p.c.\int_I f \, d\alpha = p.c.\int_J f|_J \, d\alpha + p.c.
+      \int_K f|_K \, d\alpha
+    \]
+  \end{enumerate}
+
+  Now we give a proof for each statement above. Just before that, we
+  introduce the general notation that $\P$ is a partition of $I$, and
+  for all $J \in \P$, $c_J$ and $d_J$ are the constant values on $J$
+  of $f$ and $g$ respectively.
+  
+  \begin{enumerate}[label=(\alph*)]
+  \item Let be $\P$ of partition of $I$ such that $f$ and $g$ are both
+    piecewise constant with respect to $\P$. (This partition certainly
+    exists; if $f$ is piecewise constant w.r.t. $\P'$ and $g$ is
+    piecewise constant w.r.t. $\P''$, we just have to take
+    $\P := \P' \# \P''$.) Note that $f+g$ is piecewise constant on
+    $\P$, and its constant value on each $J \in \P$ is $c_J + d_J$
+    (Lemma~11.2.8). Thus we have
+    \begin{align*}
+      \int_I (f+g) \, d\alpha
+      &:= \sum_{J \in \P} (c_J + d_J) \alpha[J] \\
+      &= \sum_{J \in \P} c_J \, \alpha[J] + \sum_{J \in \P} d_J \, \alpha[J]\\
+      &= \int_I f \, d\alpha + \int_I g \, d\alpha
+    \end{align*}
+    as expected (using the linearity of finite sums).
+  \item The function $(cf)$ is piecewise constant with respect to
+    $\P$, and on each $J \in \P$, its constant value is $cc_J$. Still
+    using the linearity of finite sums, we thus have
+    \begin{equation*}
+      \int_I (cf) \, d\alpha := \sum_{J \in \P} cc_J \, \alpha[J]
+      = c \sum_{J \in \P} c_J \alpha[J] = c \int_I f \, d\alpha
+    \end{equation*}
+    as expected.
+  \item Direct consequence of (a) and (b) with $c = -1$.
+  \item If $f(x) \geq 0$ for all $x \in I$, then $c_J \geq 0$ for all
+    $J \in \P$. Thus,
+    $p.c. \int_I f \, d\alpha = \sum_{J \in \P} c_J \, \alpha[J]$ is a
+    finite sum of non-negative terms ($\alpha[J]$ is also non-negative
+    because $\alpha$ is supposed to be increasing), and is thus
+    non-negative itself.
+  \item Direct consequence of (c) and (d).
+  \item If $f(x) = c$ for all $x \in I$, then $f$ is piecewise
+    constant with $c_J = c$ for all $J \in \P$. Thus we have
+    \[p.c. \int_I f \, d\alpha := \sum_{J \in \P} c_J \, \alpha[J]
+      = c \sum_{J \in \P} \alpha[J] = c \alpha[I]\]
+    as expected.
+  \item As shown in Exercise 11.2.4(g), there exists a partition
+    $\P''$ of $J$ such that $\P'' = \P \cup \P'$, where $\P$ is a
+    partition of $I$ and $\P'$ is a partition of $J-I$. Furthermore,
+    $F$ is piecewise constant with respect to $\P''$, and is constant
+    equal to $0$ on $\P'$.
+
+    Thus we have:
+    \begin{align*}
+      p.c. \int_J F \, d\alpha
+      &:= p.c. \int_{[\P'']} F \, d\alpha \\
+      &= p.c. \int_{[\P \cup \P']} F \, d\alpha \\
+      &= \sum_{K \in \P \cup \P'} c_K \, \alpha[K] \\
+      &= \sum_{K \in \P} c_K \, \alpha[K] + \sum_{K \in \P'} c_K \,
+        \alpha[K] \\
+      &= \sum_{K \in \P} c_K \, \alpha[K] + \sum_{K \in \P'} 0 \times
+        \alpha[K] \\
+      &=: p.c. \int_{[\P]} f \, d\alpha
+    \end{align*}
+    as expected.
+  \item As in Exercise 11.2.4(h), this is a direct consequence of (a)
+    and (g), by defining the function $F : I \to \rr$ and $G : I \to
+    \rr$ by
+    \[
+      \begin{cases}
+        F(x) = f|_J(x) & \text{ if } x \in J \\
+        F(x) = 0 & \text{ if } x \in I-J
+      \end{cases}
+    \]
+    and
+    \[
+      \begin{cases}
+        G(x) = f|_K(x) & \text{ if } x \in K \\
+        G(x) = 0 & \text{ if } x \in I-K
+      \end{cases}
+    \]
+    and using the fact that $f = F+G$ on $I$.
+  \end{enumerate}
 \end{exo}
 \end{document}
 %%% Local Variables:
