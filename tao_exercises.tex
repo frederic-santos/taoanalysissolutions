@@ -9766,6 +9766,82 @@ exchangeable here, so that showing only one direction will be enough.
     and using the fact that $f = F+G$ on $I$.
   \end{enumerate}
 \end{exo}
+
+\begin{exo}{11.8.4}{State and prove a version of Theorem 11.5.1 for
+    the Riemann-Stieltjes integral.}
+
+  This analogue could be stated as follows.
+
+  Let be $I$ a bounded interval, and $X$ a closed interval that
+  contains $I$. Let be $f : I \to \rr$ a function that is uniformly
+  continuous on $I$, and $\alpha : X \to \rr$ a monotone increasing
+  function. Then $f$ is Riemann-Stieltjes integrable on $I$ with
+  respect to $\alpha$.
+
+  \medskip
+  This theorem can be proved in a similar fashion as Theorem 11.5.1,
+  \textit{mutatis mutandis}.
+
+  Since $f$ is uniformly continuous on a bounded interval, then $f$ is
+  bounded. We have to prove that $\supint{f}{I} \, d\alpha =
+  \infint{f}{I} \, d\alpha$.
+
+  Of course, the statement is clear if $I$ is empty or a singleton. We
+  thus suppose that $I$ is an interval of the form $[a,b]$, $]a,b]$,
+  $[a,b[$ or $]a,b[$; with $a<b$ two real numbers.
+
+  Let be $\epsilon > 0$ an arbitrary real number. Since $f$ is
+  uniformly continuous, there exists a $\delta > 0$ such that $|f(x) -
+  f(y)| < \epsilon$ whenever ($x,y \in I$ and) $|x-y| < \delta$.
+
+  In particular, by the Archimedean principle, there exists a natural
+  number $N > 0$ such that $(b-a)/N < \delta$. Furthermore, we can
+  define a partition $\P$ of $I$ into $N$ intervals,
+  $\P := \{J_1, \ldots, J_N\}$, each interval being of length
+  $(b-a)/N$.
+
+  Now let be the function $G : I \to \rr$, defined to be piecewise
+  constant with respect to $\P$, with constant values
+  $c_{J_k} := \sup_{x \in J_k} f(x)$ for all $J_k \in \P$. It is clear
+  that $G$ is a piecewise constant function that majorizes $f$ on $I$.
+  By definition, we thus have
+  \begin{equation*}
+    \supint{f}{I} \, d\alpha
+    \leq p.c. \int_I G \, d\alpha = \sum_{k=1}^n \sup_{x \in J_k}
+    f(x) \alpha[J_k]
+  \end{equation*}
+  Similarly, we have
+  \begin{equation*}
+    \infint{f}{I} \, d\alpha
+    \geq \sum_{k=1}^N \inf_{x \in J_k} f(x) \alpha[J_k]
+  \end{equation*}
+  Combining the two previous results, we have
+  \begin{equation}
+    \label{eq:11.8.4}
+    \supint{f}{I} \, d\alpha - \infint{f}{I} \, d\alpha
+    \leq \sum_{k=1}^N \Bigl(\sup_{x \in J_k} f(x) - \inf_{x \in J_k}
+    f(x)\Bigr)
+    \alpha[J_k]
+  \end{equation}
+  For all $k = 1, \ldots, N$, since $|J_k| = (b-a)/N < \delta$, we have
+  $|f(x)-f(y)| < \epsilon$ for all $x,y \in J_k$. Thus, in particular,
+  \[f(x) < f(y) + \epsilon \text{ for all } x,y \in J_k\]
+  Thus, taking the suprema on $x$, we have
+  \[\sup_{x \in J_k} f(x) \leq f(y) + \epsilon\]
+  and then taking the infima on $y$,
+  \[\sup_{x \in J_k} f(x) - \inf_{y \in J_k} f(y) \leq \epsilon.\]
+  Using this bound in equation \eqref{eq:11.8.4} leads to
+  \begin{align*}
+    \label{eq:11.8.4b}
+    \supint{f}{I} \, d\alpha - \infint{f}{I} \, d\alpha
+    &\leq \sum_{k=1}^N \epsilon \alpha[J_k] &\\
+    &\leq \epsilon \alpha[I] &\text{ (Lemma 11.8.4)}
+  \end{align*}
+  Since this is true for all $\epsilon > 0$, and since $\alpha[I] \geq
+  0$ (because $\alpha$ is supposed to be monotone increasing), it
+  shows that $\supint{f}{I} \, d\alpha = \infint{f}{I} \, d\alpha$, as
+  expected. This closes the proof.
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
