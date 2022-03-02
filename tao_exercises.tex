@@ -9842,6 +9842,36 @@ exchangeable here, so that showing only one direction will be enough.
   shows that $\supint{f}{I} \, d\alpha = \infint{f}{I} \, d\alpha$, as
   expected. This closes the proof.
 \end{exo}
+
+\bigskip
+\begin{exo}{11.9.2}{Prove Lemma 11.9.5.}
+
+  Let be $I$ a bounded interval, and let $f : I \to \rr$ be a
+  function. If $F : I \to \rr$ and $G : I \to \rr$ are two
+  antiderivatives of $f$ on $I$, we have to prove that there exists a
+  real number $C$ such that $F(x) = G(x) + C$ for all $x \in I$.
+
+  First, note that there is nothing to prove if $I = \emptyset$, and
+  that the claim is trivial if $I$ is a singleton. We will thus
+  suppose that $I = [a,b]$, $[a,b[$, $]a,b]$ or $]a,b[$ with $a<b$.
+
+  Let be $H = F-G$. By Theorem 10.1.3(f), $H$ is differentiable on
+  $I$, and we have $H' = F' - G' = f - f = 0$ on $I$. Thus, in
+  particular, for any given limit point $x_0$ of $I$ included in
+  $]a,b[$, we have $H'(x_0) = 0$. Now let be an arbitrary $x \in I$.
+  \begin{itemize}
+  \item If $x > x_0$, then $[x_0, x] \subseteq I$. $H$ is
+    differentiable on this closed interval, since it is differentiable
+    on $I$. Thus, by the mean value theorem (Corollary 10.2.9), there
+    exists $z \in [x, x_0]$ such that $H'(z) := 0 = \frac{H(x_0) -
+      H(x)}{x_0 - x}$. Thus, we have $F(x_0) - G(x_0) = F(x) - G(x)$.
+    If we set $C := F(x_0) - G(x_0)$, the claim follows.
+  \item If $x_0 < x$, then $[x, x_0] \subseteq I$. Thus, the proof is
+    similar, just reversing $x$ and $x_0$ when needed.
+  \item Finally, if $x=x_0$, we also have $G(x) + C = G(x) + F(x_0) -
+    G(x_0) = F(x)$.
+  \end{itemize}
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
