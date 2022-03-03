@@ -9872,6 +9872,37 @@ exchangeable here, so that showing only one direction will be enough.
     G(x_0) = F(x)$.
   \end{itemize}
 \end{exo}
+
+\begin{exo}{11.10.1}{Prove Proposition 11.10.1.}
+
+  We have to prove here the integration by parts formula.
+  
+  \begin{itemize}
+  \item $F'$ is supposed to be Riemann-integrable on $I = [a,b]$.
+    Furthermore, $G$ is continuous on $I$ since it is supposed to be
+    differentiable on $I$. Thus, by Corollary 11.5.2, $G$ is
+    Riemann-integrable on $I$. And then, by Theorem 11.4.5, since $G$
+    and $F'$ are Riemann-integrable on $I$, then $F'G$ is
+    Riemann-integrable on $I$.
+    
+    Switching the roles of $F$ and $G$, we can show similarly that
+    $FG'$ is Riemann-integrable on $I$.
+  \item Also, by Theorem 10.1.3, we know that $FG$ is differentiable,
+    and that $(FG)' = F'G + FG'$.
+  \item Combining the two previous facts, we have on the one hand:
+    \begin{align*}
+      \int_I (FG)' &= \int_I (F'G + FG') \\
+                   &= \int_I F'G + \int_I FG'
+    \end{align*}
+    and on the other hand, by the second fundamental theorem of
+    calculus (Theorem 11.9.4), we have
+    \[
+      \int_I (FG)' = F(b)G(b) - F(a)G(a)
+    \]
+  \item We conclude that $\int_{[a,b]} FG' = F(b)G(b) - F(a)G(a) -
+    \int_{[a,b]} F'G$, as expected.
+  \end{itemize}
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
