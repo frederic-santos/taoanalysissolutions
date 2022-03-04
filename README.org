@@ -12,18 +12,15 @@ Note that this constitutes only /propositions/ of solutions; errors are still po
 ** Current status
 *** Analysis I
 - [X] Chapter 2: completed.
-- [ ] Chapter 3: numerous exercises are completed, but a substantial part of solutions is still missing.
+- [X] Chapter 3: numerous exercises are completed, but a substantial part of solutions is still missing.
 - [X] Chapter 4: (mostly) completed.
 - [X] Chapter 5: completed.
 - [X] Chapter 6: (mostly) completed.
 - [X] Chapter 7: (mostly) completed.
-- [ ] Chapter 8: numerous exercises are completed, but a substantial part of solutions is still missing.
+- [X] Chapter 8: numerous exercises are completed, but a substantial part of solutions is still missing.
 - [X] Chapter 9: (mostly) completed.
-- [ ] Chapter 10 : in progress.
-- [ ] Chapter 11 : in progress.
-
-More to come.
+- [X] Chapter 10 : (mostly) completed.
+- [X] Chapter 11 : (mostly) completed.
 
 *** Analysis II
 More to come.
-
