@@ -38,6 +38,7 @@
 \newcommand{\liminfp}[2]{\inf (#1^+_N)_{N=#2}^{\infty}}
 \newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
 \renewcommand{\P}{\mathbf{P}}
+\newcommand{\Q}{\mathbf{Q}}
 \renewcommand{\epsilon}{\varepsilon}
 \newcommand{\infint}[2]{\underline{\int_{#2}} #1}
 \newcommand{\supint}[2]{\overline{\int_{#2}} #1}
@@ -9906,7 +9907,90 @@ exchangeable here, so that showing only one direction will be enough.
 
 \begin{exo}{11.10.2}{Fill in the gaps marked (why?) in the proof of
     Lemma 11.10.5.}
-  
+
+  The statements to prove are the following:
+
+  \begin{itemize}
+  \item $\phi^{-1}(J)$ is connected.
+
+    Let be $x<y \in \phi^{-1}(J)$. Suppose that $J = [c,d]$ (the fact
+    that $J$ is closed or open does not really matter here). By
+    Definition 11.1.1, we have to prove that for all $z$ such that
+    $x \leq z \leq y$, we have $z \in \phi^{-1}(J)$. Since $\phi$ is
+    increasing, we have
+    $c \leq \phi(x) \leq \phi(z) \leq \phi(y) \leq d$, which shows
+    that $z \in \phi^{-1}(J)$, as expected. Thus, $\phi^{-1}(J)$ is
+    connected.
+
+  \item $c_J$ is the constant value of $f \circ \phi$ on
+    $\phi^{-1}(J)$.
+
+    Indeed, let be any $x \in \phi^{-1}(J)$. Thus, we have $\phi(x)
+    \in J$. But $f$ is supposed to be piecewise constant on $\P$, with
+    $c_J$ the constant value of $f$ on $J \in \P$. Thus, $f(\phi(x)) =
+    c_J$. But since this is true for any arbitrary $x \in
+    \phi^{-1}(J)$, this means that $c_J$ is the constant value of $f
+    \circ \phi$ on $\phi^{-1}(J)$.
+    
+  \item  $\Q := \{\phi^{-1}(J) : J \in \P\}$ is a partition of $[a,b]$.
+
+    First, let be any $x \in [a,b]$. We have $\phi(x) \in [\phi(a),
+    \phi(b)]$ because $\phi$ is monotone increasing. Since $\P$ is a
+    partition of $[\phi(a), \phi(b)]$, there exists a $J \in \P$ such
+    that $\phi(x) \in J$. Thus, there exists at least one $J \in \P$
+    such that $x \in \phi^{-1}(J)$, or, in other words, there exists
+    at least one $K \in \Q$ such that $x \in K$.
+
+    Now prove that there exists at most one such $K \in \Q$. Suppose
+    that there exists $K_1, K_2 \in \Q$, with $K_1 = \phi^{-1}(J_1)$,
+    $K_2 = \phi^{-1}(J_2)$, such that we have both $x \in
+    K_1, x \in K_2$. We would thus have $\phi(x) \in J_1$ and $\phi(x)
+    \in J_2$ at the same time, but this would contradict the fact that
+    $\P$ is a partition.
+
+    Thus, for all $x \in [a,b]$, there exists exactly one $K \in \Q$
+    such that $x \in K$, which shows that $\Q$ is a partition of
+    $[a,b]$.
+    
+  \item $f \circ \phi$ is piecewise constant with respect to $\Q$.
+
+    Any $K \in \Q$ is of the form $K = \phi^{-1}(J)$, with $J \in \P$.
+    We have previously showed that $c_J$ is the constant value of $f
+    \circ \phi$ on $\phi^{-1}(J)$; this also shows that $f \circ \phi$
+    is piecewise constant with respect to $\Q$.
+
+  \item Finally, $\phi[\phi^{-1}(J)] = |J|$ for all $J \in \P$.
+
+    Let be $J \in \P$. By Definition 11.1.10, $J$ is thus a bounded
+    interval; let's call its endpoints $c$ and $d$ (with
+    $\phi(a) \leq c < d \leq \phi(b)$). By Definition 11.1.8, we have
+    $|J| = d-c$.
+
+    $\phi$ is supposed to be monotone increasing. Thus, if we set
+    $d' := \sup\{x \in [a,b] : \phi(x) \leq d\}$ and
+    $c' := \inf\{x \in [a,b] : \phi(x) \geq c\}$, then $\phi^{-1}(J)$
+    is an interval whose endpoints are $c'$ and $d'$. And then we have
+    $\phi[\phi^{-1}(J)] = \phi(d') - \phi(c') = d-c$, as
+    expected\footnote{To be picky, some more details could be
+      necessary to show that $\phi(d') = d$. Let's denote
+      $X := \{x \in [a,b] : \phi(x) \leq d\}$. First, we cannot have
+      $\phi(d') < d$, because by the intermediate theorem value
+      (Theorem 9.7.1), there would exist a $\xi \in [a, b]$ such that
+      $\phi(\xi) = d > \phi(d')$. Because $\phi$ is increasing, we
+      would have $\xi > d'$. Since $\xi \in X$, it would be a
+      contradiction with the fact that $d'$ is the supremum of $X$.
+      Second, we cannot have $\phi(d') > d$ either. By the
+      intermediate value theorem, there would exist a $\xi \in [a,b]$
+      such that $\phi(\xi) = (\phi(d') + d)/2$, hence
+      $\phi(d') > \phi(\xi) > d$. Since $\phi(\xi) < \phi(d')$, we
+      would have $\xi < d'$ because $\phi$ is increasing. Meawhile,
+      $\xi$ is an upper bound for $X$ : if $x \in X$, then
+      $\phi(x) \leq d < \phi(\xi)$. Thus, $\xi$ would be an upper
+      bound for $X$ would would be smaller than $d'$, still a
+      contradiction with $d'$ being the supremum $X$. Thus, we must
+      have $\phi(d') = d$. A similar argument applies for
+      $\phi(c') = c$.}
+  \end{itemize} 
 \end{exo}
 \end{document}
 %%% Local Variables:
