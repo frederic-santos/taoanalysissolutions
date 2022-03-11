@@ -9992,6 +9992,21 @@ exchangeable here, so that showing only one direction will be enough.
       $\phi(c') = c$.}
   \end{itemize} 
 \end{exo}
+
+\begin{exo}{11.10.4}{What is the analogue of Proposition 11.10.7 when
+    $\phi$ is monotone decreasing instead of monotone increasing?}
+
+  This analogue could be stated as follows:
+  
+  Let $[a,b]$ be a closed interval, and let $\phi : [a,b] \to
+  [\phi(b), \phi(a)]$ be a differentiable, monotone decreasing
+  function, such that $\phi'$ is Riemann integrable. Let $f: [\phi(b),
+  \phi(a)] \to \rr$ be a Riemann integrable function on $[\phi(b),
+  \phi(a)]$. Then $(f \circ \phi) \phi' : [a,b] \to \rr$ is Riemann
+  integrable on $[a,b]$ and
+  
+  \[\int_{[a,b]}(f\circ \phi) \phi' = -\int_{[\phi(b),\phi(a)]}f \]  
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
