@@ -40,8 +40,8 @@
 \renewcommand{\P}{\mathbf{P}}
 \newcommand{\Q}{\mathbf{Q}}
 \renewcommand{\epsilon}{\varepsilon}
-\newcommand{\infint}[2]{\underline{\int_{#2}} #1}
-\newcommand{\supint}[2]{\overline{\int_{#2}} #1}
+\newcommand{\infint}[2]{\underline{\int}_{#2} \, #1}
+\newcommand{\supint}[2]{\overline{\int}_{#2} \, #1}
 % Lemmas:
 \usepackage{amsthm}
 \newtheorem*{lem}{Lemma}
@@ -9990,7 +9990,74 @@ exchangeable here, so that showing only one direction will be enough.
       contradiction with $d'$ being the supremum $X$. Thus, we must
       have $\phi(d') = d$. A similar argument applies for
       $\phi(c') = c$.}
-  \end{itemize} 
+  \end{itemize}
+\end{exo}
+
+\begin{exo}{11.10.3}{Let $a<b$ be real numbers, and let $f : [a,b] \to
+    \rr$ be a Riemann integrable function. Let $g : [-b,-a] \to \rr$
+    be defined by $g(x):=f(-x)$. Show that $g$ is also Riemann
+    integrable, and $\int_{[-b,-a]}g = \int_{[a,b]}f$.}
+
+  Since $x \mapsto -x$ is not an increasing function, this is not a
+  simple consequence of the results from Section 11.10; we have to
+  derive a proper proof instead. We (mainly) have to show that
+  $\supint{g}{[-b, -a]} = \infint{g}{[-b, -a]}$.
+
+  \begin{itemize}
+  \item First, note that if $\P$ is a partition of $[a,b]$, then $\Q
+    := \{ -J : J \in \P\}$ is clearly a partition of $[-b, -a]$ (where
+    $-J$ is a shorthand for $\{-x : x \in J\}$).
+  \item Let be $\epsilon > 0$ a positive real number. By equation
+    \eqref{eq:11.4.1f} (from this document), we know that there exist
+    a piecewise constant (with respect to $\P$) function
+    $\overline{f}$ that majorizes $f$ on $[a,b]$, and a piecewise
+    constant function $\underline{f}$ that minorizes $f$ on $[a,b]$,
+    such that
+    \begin{equation}
+      \label{eq:11.10.3a}
+      \int_{[a,b]} f - \epsilon < p.c. \int_{[a,b]} \underline{f} \leq
+      \int_{[a,b]} f \leq p.c. \int_{[a,b]} \overline{f} < \int_{[a,b]} f +
+      \epsilon.
+    \end{equation}  
+  \item Note that if we define $\overline{g} : [-b,-a] \to \rr$ by
+    $\overline{g}(x) := \overline{f}(-x)$, then $\overline{g}$ is
+    clearly a piecewise constant (with respect to $\Q$) function that
+    majorizes $g$ on $[-b,-a]$. Furthermore, if $c_J$ is the constant
+    value of $\overline{f}$ on $J$, then for all $K := -J \in \Q$, the
+    constant value $d_K$ of $\overline{g}$ on $K$ is equal to $c_J$.
+
+    And thus, we have
+    \begin{align*}
+      p.c. \int_{[-b,-a]} \overline{g}
+      &:= \sum_{K \in \Q} d_K |K| \\
+      &= \sum_{J \in \P} c_J |-J| \\
+      &= \sum_{J \in \P} c_J |J| \\
+      &= p.c. \int_{[a,b]} \overline{f}
+    \end{align*}
+  \item Similarly, if we define $\underline{g} : [-b,-a] \to \rr$ by
+    $\underline{g}(x) := \underline{f}(-x)$, then $\underline{g}$ is
+    clearly a piecewise constant function that minorizes $g$ on
+    $[-b,-a]$; and we have
+    \[ p.c. \int_{[-b,-a]} \underline{g} = p.c. \int_{[a,b]}
+      \underline{f}\]
+  \item Finally, if we come back to equation \eqref{eq:11.10.3a}, we
+    have
+    \begin{equation*}
+      \int_{[a,b]} f - \epsilon < p.c. \int_{[-b,-a]} \underline{g}
+      \leq p.c. \int_{[-b,-a]} \overline{g} < \int_{[a,b]} f +
+      \epsilon
+    \end{equation*}
+    and, thus,
+    \begin{equation*}
+      \int_{[a,b]} f - \epsilon < p.c. \int_{[-b,-a]} \underline{g} \leq
+      \infint{g}{[-b, -a]} \leq \supint{g}{[-b, -a]} \leq p.c.
+      \int_{[-b,-a]} \overline{g} < \int_{[a,b]} f + \epsilon.
+    \end{equation*}
+    Since this is true for any arbitrary $\epsilon > 0$, we have
+    indeed $\supint{g}{[-b, -a]} = \infint{g}{[-b, -a]}$, so that $g$
+    is Riemann-integrable; and we also have $\int_{[-b,-a]} g =
+    \int_{[a,b]} f$, as expected.
+  \end{itemize}
 \end{exo}
 
 \begin{exo}{11.10.4}{What is the analogue of Proposition 11.10.7 when
@@ -10005,7 +10072,9 @@ exchangeable here, so that showing only one direction will be enough.
   \phi(a)]$. Then $(f \circ \phi) \phi' : [a,b] \to \rr$ is Riemann
   integrable on $[a,b]$ and
   
-  \[\int_{[a,b]}(f\circ \phi) \phi' = -\int_{[\phi(b),\phi(a)]}f \]  
+  \[\int_{[a,b]}(f\circ \phi) \phi' = -\int_{[\phi(b),\phi(a)]}f \]
+
+  To prove it, one just have to adapt the proof in Exercise 11.10.3.
 \end{exo}
 \end{document}
 %%% Local Variables:
