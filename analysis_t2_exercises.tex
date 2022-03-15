@@ -1,0 +1,109 @@
+\documentclass[11pt]{article}
+\title{Propositions of solutions for \textit{Analysis II} by Terence Tao}
+\author{Frédéric Santos}
+% General packages:
+\usepackage{a4wide}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc}
+\usepackage{titlesec}
+\titlelabel{\thetitle.\quad}
+\usepackage{enumitem}
+% Fonts and math packages:
+\usepackage{lmodern}
+\usepackage{amsmath}
+\numberwithin{equation}{section}
+\usepackage[matha,mathb]{mathabx}
+\usepackage{mbboard}
+\usepackage{stmaryrd}
+\usepackage{hyperref}
+% Macros:
+\newcommand{\successor}[1]{#1 \! +\!\!\!+}
+\newcommand{\aval}[1]{\left\lvert #1 \right\rvert}
+\newcommand{\intset}[2]{\llbracket #1, #2 \rrbracket}
+\newcommand{\inv}[1]{#1^{-1}}
+\newcommand{\rr}{\mathbb{R}}
+\newcommand{\partsof}[1]{\mathcal{P}\left( #1 \right)}
+\newcommand{\minus}{\, \textrm{---}\!\textrm{--} \:}
+\newcommand{\quot}{\, \textrm{/}\!\textrm{/} \:}
+\newcommand{\nn}{\mathbb{N}}
+\newcommand{\zz}{\mathbb{Z}}
+\newcommand{\qq}{\mathbb{Q}}
+\newcommand{\floor}[1]{\lfloor #1 \rfloor}
+\newcommand{\formallimit}[1]{\text{LIM}_{n \to \infty} #1}
+\newcommand{\seq}[2]{(#1)_{n=#2}^\infty}
+\newcommand{\limit}[1]{\text{lim}_{n \to \infty} #1}
+\newcommand{\extrr}{\overline{\rr}}
+\newcommand{\adh}[1]{\overline{#1}}
+\newcommand{\liminfp}[2]{\inf (#1^+_N)_{N=#2}^{\infty}}
+\newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
+\renewcommand{\P}{\mathbf{P}}
+\newcommand{\Q}{\mathbf{Q}}
+\renewcommand{\epsilon}{\varepsilon}
+\newcommand{\infint}[2]{\underline{\int}_{#2} \, #1}
+\newcommand{\supint}[2]{\overline{\int}_{#2} \, #1}
+% Lemmas:
+\usepackage{amsthm}
+\newtheorem*{lem}{Lemma}
+\newtheorem*{theorem}{Theorem}
+% Environment:
+\newenvironment{exo}[2]{\noindent \textsc{Exercise #1}. ---
+  \textit{#2} \vspace{3mm}}
+
+%%%%%%%%%%%%%%
+%%% Begin doc:
+\begin{document}
+\maketitle
+\tableofcontents
+
+\vskip 15mm
+
+\noindent \textbf{Remarks.} The numbering of the Exercises follows the
+fourth edition of \textit{Analysis II}. In order to make the
+references to \textit{Analysis I} easier, we consider that we begin
+with Chapter 12 here, as in earlier editions of the textbook. Thus, in
+particular, a reference to ``Exercise 4.3.3'' (for instance) will
+always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
+
+\pagebreak
+\setcounter{section}{11}
+\section{Metric spaces}
+\label{sec:metric-spaces}
+\begin{exo}{12.1.1}{Prove Lemma 12.1.1}
+
+  Consider the sequence $\seq{a_n}{m}$ defined by
+  $a_n := d(x_n, x) = |x_n - x|$ for all $n \geq m$. We have to prove
+  that $\lim_{n \to \infty} a_n = 0$ if and only if
+  $\lim_{n \to \infty} x_n = x$.
+
+  \begin{itemize}
+  \item Let be $\epsilon > 0$. If $\lim_{n \to \infty} a_n = 0$, then
+    there exists an $N \geq m$ such that $|a_n| < \epsilon$ whenever
+    $n \geq N$. Thus, there exists an $N \geq m$ such that
+    $|x_n - x| < \epsilon$ whenever $n \geq N$, which means that
+    $\lim_{n \to \infty} x_n = x$.
+  \item Let be $\epsilon > 0$. Conversely, if $\lim_{n \to \infty} x_n
+    = x$, then there exists an $N \geq m$ such that $|x_n - x| <
+    \epsilon$ whenever $n \geq N$. But since $|a_n| := |x_n - x|$, it
+    means that $\lim_{n \to \infty} a_n = 0$, as expected.
+  \end{itemize}
+\end{exo}
+
+\begin{exo}{12.1.2}{Show that the real line with the metric $d(x, y) :=
+    |x-y|$ is indeed a metric space.}
+
+  Using Proposition 4.3.3, this claim is obvious. All claims (a)--(d)
+  of Definition 12.1.2 are satisfied because:
+  \begin{enumerate}[label=(\alph*)]
+  \item comes from Proposition 4.3.3(e)
+  \item also comes from Proposition 4.3.3(e)
+  \item comes from Proposition 4.3.3(f)
+  \item comes from Proposition 4.3.3(g).
+  \end{enumerate}
+\end{exo}
+
+\end{document}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
