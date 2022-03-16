@@ -102,6 +102,32 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
   \end{enumerate}
 \end{exo}
 
+\begin{exo}{12.1.3}{Let $X$ be a set, and let
+    $d : X \times X → [0, \infty)$ be a function. With respect to
+    Definition 12.1.2, give an example of a pair $(X,d)$ which obeys
+    to the following properties...}
+
+  We have the following cases for the pair $(X,d)$:
+  \begin{enumerate}[label=(\alph*)]
+  \item obeys the axioms (bcd) but not (a).
+
+    Consider $X = \rr$, and $d$ defined by $d(x,x) = 1$ and $d(x,y) =
+    5$ for all $x \neq y \in \rr$.
+  \item obeys the axioms (acd) but not (b).
+
+    Consider $X = \rr$, and $d$ defined by $d(x,y) = 0$ for all $x, y
+    \in \rr$.
+  \item obeys the axioms (abd) but not (c).
+
+    Consider $X = \rr$, and $d$ defined by $d(x,y) = \max(x-y,0)$ for
+    all $x,y \in \rr$.
+  \item obeys the axioms (abc) but not (d).
+
+    Consider the finite set $X := \{1,2,3\}$ and the application $d$
+    defined by $d(1,2) = d(2,1) = d(2,3) = d(3,2) := 1$, and
+    $d(1,3) = d(3,1) := 5$, and $d(x,x) = 0$ for all $x \in X$.
+  \end{enumerate}  
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
