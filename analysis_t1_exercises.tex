@@ -2954,7 +2954,7 @@ exchangeable here, so that showing only one direction will be enough.
     Indeed, suppose that we have at the same time
     $|a_n| \geq \epsilon$ for all $n \geq N$, $a_k \geq \epsilon$ for
     some $k \geq N$ and $a_j \leq -\epsilon$ for some $j \geq
-    N$. In such a case, we would have by triangular inequality:
+    N$. In such a case, we would have by triangle inequality:
     \[
       |a_k - a_j| \geq ||a_k| - |a_j|| \geq |\epsilon + \epsilon| \geq
       2\epsilon
@@ -3832,7 +3832,7 @@ exchangeable here, so that showing only one direction will be enough.
   there exists a natural number $N \geq m$ such that
   $n \geq N \Longrightarrow |a_n - c| \leq \epsilon/2$.
 
-  Now let be $j,k \geq N$ two natural numbers. We have, by triangular
+  Now let be $j,k \geq N$ two natural numbers. We have, by triangle
   inequality:
   \begin{align*}
     |a_j - a_k| &= |a_j - c + c - a_k| \\
@@ -3949,7 +3949,7 @@ exchangeable here, so that showing only one direction will be enough.
     Similarly, there exists $N_2 \geq m$ such that
     $n \geq N_2 \to |b_n - y| \leq \epsilon/2$.
 
-    Let be $N := \max(N_1, N_2)$. Thus, by triangular inequality, we
+    Let be $N := \max(N_1, N_2)$. Thus, by triangle inequality, we
     have for all $n \geq N$:
     \begin{align*}
       |(a_n + b_n) - (x+y)| &\leq |a_n + x| + |b_n + y| \\
@@ -4013,7 +4013,7 @@ exchangeable here, so that showing only one direction will be enough.
     result, which is the following: if $\seq{b_n}{m}$ is a sequence of
     non-zero real numbers, and converges to $y \neq 0$, then
     $\seq{b_n}{m}$ is bounded away from zero. Note that, by the
-    ``second formula'' of triangular inequality, we have:
+    ``second formula'' of triangle inequality, we have:
     \begin{equation}
       \label{eq:618e}
       |y| - |b_n| \leq \left| |y| - |b_n| \right| \leq |y - b_n|
@@ -4679,7 +4679,7 @@ exchangeable here, so that showing only one direction will be enough.
       $|a_k - L^-| \leq \epsilon/2$. Thus, we have both
       $|a_k - c| \leq \epsilon/2$ and $|a_k - L^-| \leq \epsilon/2$.
 
-      We then derive, by triangular inequality:
+      We then derive, by triangle inequality:
       $|L^- - c| \leq |L^- - a_n| + |a_n - c| \leq \epsilon/2 +
       \epsilon/2 = \epsilon$. This means that $|L^- - c| \leq
       \epsilon$ for all $\epsilon > 0$, which is equivalent to $L^- =
@@ -6889,7 +6889,7 @@ exchangeable here, so that showing only one direction will be enough.
   number. By definition, there exists $x'\in \adh{X}$ such that we
   have $|x'' - x'| \leq \epsilon$/2. And since $x' \in \adh{X}$, then
   by definition, there exists $x \in X$ such that we have $|x'-x| \leq
-  \epsilon/2$. Thus, by triangular inequality, we have $|x'' - x| \leq
+  \epsilon/2$. Thus, by triangle inequality, we have $|x'' - x| \leq
   |x'' - x'| + |x' - x| \leq 2 \epsilon /2 \leq \epsilon$. Thus, for
   any $\epsilon > 0$, there exists $x \in X$ such that $|x'' - x| \leq
   \epsilon$, which show that $x'' \in \adh{X}$, and thus that
@@ -7839,7 +7839,7 @@ exchangeable here, so that showing only one direction will be enough.
     \exists \alpha > 0, \, |x - x_0| < \alpha \Longrightarrow |f(x) -
     f(x_0) - L(x-x_0)| < \epsilon |x-x_0|.
   \end{equation}
-  Thus, by triangular inequality, we have
+  Thus, by triangle inequality, we have
   \begin{equation}
     \label{eq:10.1.3c}
     \exists \alpha > 0, \, |x-x_0| < \alpha \Longrightarrow |f(x)-f(x_0)| < |x-x_0| (|L| + \epsilon)
@@ -7998,7 +7998,7 @@ exchangeable here, so that showing only one direction will be enough.
     \delta \Longrightarrow |f(x) - f(x_0) - L_1(x-x_0)| \leq
     \epsilon|x-x_0|
   \end{equation}
-  and, using the triangular inequality, this also implies that
+  and, using the triangle inequality, this also implies that
    \begin{equation}
     \label{eq:10.1.7a.bis}
     \forall \epsilon > 0, \, \exists \delta > 0 \; : \; |x-x_0| \leq
@@ -8024,7 +8024,7 @@ exchangeable here, so that showing only one direction will be enough.
     \epsilon|y-y_0|.
   \end{equation}
 
-  By combining these three facts, we want to show that we have the
+  By combining all these facts, we want to show that we have the
   following Newton's approximation for $g \circ f$:
   \begin{equation}
     \label{eq:10.1.7d}
@@ -8035,9 +8035,9 @@ exchangeable here, so that showing only one direction will be enough.
 
   Thus, let be $\epsilon > 0$ a positive real number, and let's define
   another positive real number $\epsilon'$ such that
-  $\epsilon \leq \epsilon'(\epsilon' + |L_1| + |L_2|)$ --- the
+  $\epsilon \geq \epsilon'(\epsilon' + |L_1| + |L_2|)$ --- the
   rationale for introducing this quantity will be clearer a bit later
-  in the proof. \footnote{The existence of this $\epsilon'$ could be proved by
+  in the proof\footnote{The existence of this $\epsilon'$ could be proved by
   more advanced knowledge in algebra, but it may be proved in another
   (painful but more elementary) way. Indeed, the number $(1 + |L_1| +
   |L_2|)$ is positive, and so is $\epsilon$. Thus, by the Archimedean
@@ -8047,7 +8047,7 @@ exchangeable here, so that showing only one direction will be enough.
   And since we have $\frac{1}{M} \geq \frac{1}{M^2}$ for any positive
   integer $M$, then we have $\epsilon > (\frac{1}{M^2} + \frac{1}{M}
   |L_1| + \frac{1}{M} |L_2|)$. Let's take $\epsilon' = \frac{1}{M}$
-  and we are done.}
+  and we are done.}.
 
   By equation \eqref{eq:10.1.7c}, for this choice of $\epsilon' > 0$, there exists a
   $\delta_1 > 0$ such that we have
@@ -8079,7 +8079,7 @@ exchangeable here, so that showing only one direction will be enough.
   $L_1L_2(x-x_0)$ quantity that we want. One way to overcome this is
   to force this quantity into the previous equation, i.e. to apply the
   ``middle-man trick'' (see hint of Exercise 10.1.4), and then to
-  apply the triangular inequality:
+  apply the triangle inequality:
   \begin{align*}
     &|g(f(x)) - g(f(x_0)) - L_2(f(x)-f(x_0))|\\
     &= |g(f(x)) - g(f(x_0)) - L_2(f(x)-f(x_0)-L_1(x-x_0)) -
@@ -9190,7 +9190,7 @@ exchangeable here, so that showing only one direction will be enough.
     lie in an interval of length $2\epsilon$ and thus are at most
     distant of $2\epsilon$ of each other\footnote{Formally, if we have
       $x-\epsilon < y \leq z <x +\epsilon$, then
-      $0 \leq z-y \leq 2 \epsilon$ (why? Use triangular
+      $0 \leq z-y \leq 2 \epsilon$ (why? Use triangle
       inequality).\label{ft:distant-at-most}}
 
     In other words, we have
