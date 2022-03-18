@@ -219,9 +219,12 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
           2 (a_{n+1} b_{n+1}) \sum_{i=1}^{n} a_i b_i
           + \sum_{k=1}^{n} (a_kb_{n+1} - a_{n+1}b_k)^2\\
         &= \left(\sum_{i=1}^{n} a_i^2\right) \left(\sum_{j=1}^{n}
-          b_j^2\right)\\
-        &\quad + \cdots
-          + (a_{n+1} b_{n+1})^2 \\
+          b_j^2\right) + (a_{n+1} b_{n+1})^2\\
+        &\quad + 2 \sum_{i=1}^{n} a_i a_{n+1} b_i b_{n+1} +
+          \sum_{i=1}^{n}(a_i^2 b_{n+1}^2 - 2a_ib_{n+1}a_{n+1}b_i + a_{n+1}^2b_i^2)\\
+        &= \left(\sum_{i=1}^{n} a_i^2\right) \left(\sum_{j=1}^{n}
+          b_j^2\right) + \sum_{i=1}^{n}(a_i^2 b_{n+1}^2 + a_{n+1}^2
+          b_i^2) \\
         &= \left(\sum_{i=1}^{n+1} a_i^2\right) \left(\sum_{j=1}^{n+1}
           b_j^2\right) \\
         &= C
@@ -229,11 +232,40 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
       so that the identity is indeed true for all natural number $n$.
     \end{itemize}
     
-  \item Now let's prove the Cauchy-Schwarz identity,
+  \item We can use this identity to prove the Cauchy-Schwarz identity,
+    \begin{equation}
+      \label{eq:12.1.5b}
+      \left| \sum_{i=1}^{n} a_i b_i\right| \leq \left( \sum_{i=1}^{n}
+        a_i^2 \right)^{1/2} \left( \sum_{i=1}^{n}
+        b_i^2 \right)^{1/2}.
+    \end{equation}
+
+    Indeed, since $B \geq 0$ in the identity \eqref{eq:12.1.5a}, we
+    have
+    \[\left(\sum_{i=1}^{n} a_i b_i\right)^2 \leq \left(\sum_{i=1}^{n} a_i^2\right)
+      \left(\sum_{j=1}^{n} b_j^2\right)\]
+    and thus, taking the square root on both sides, we get
+    \eqref{eq:12.1.5b}, as expected.
     
-  \item Finally, let's prove the triangle inequality,
-  \end{enumerate}
-  
+  \item Finally, we can use the Cauchy-Schwarz inequality to prove the
+    triangle inequality.
+
+    We have
+    \begin{align*}
+      \sum_{i=1}^{n} (a_i^2 + b_i^2)
+      &= \sum_{i=1}^{n} a_i^2 + \sum_{i=1}^{n} b_i^2 + 2
+        \sum_{i=1}^{n} a_i b_i
+      &\\
+      &\leq \sum_{i=1}^{n} a_i^2 + \sum_{i=1}^{n} b_i^2 + 2
+        \left(\sum_{i=1}^{n} a_i^2\right)^{1/2} \left(\sum_{i=1}^{n}
+        b_i^2\right)^{1/2}
+      &\text{ (by eq. \eqref{eq:12.1.5b})}\\
+      &\leq \left( \left( \sum_{i=1}^{n} a_i^2 \right)^{1/2}
+        + \left( \sum_{i=1}^{n} b_i^2 \right)^{1/2}\right)^2&
+    \end{align*}
+    and, since everything is positive, we get the triangle inequality
+    by taking square roots on both sides.
+  \end{enumerate}  
 \end{exo}
 \end{document}
 %%% Local Variables:
