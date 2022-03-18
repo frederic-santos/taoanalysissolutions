@@ -137,6 +137,104 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
   statements (a)--(d) of Definition 12.1.2. Thus, $(Y, d|_{Y \times
     Y})$ is indeed a metric space.
 \end{exo}
+
+\begin{exo}{12.1.5}{Let $n \geq 1$, and let $a_1, a_2, \ldots, a_n$
+    and $b_1, b_2, \ldots, b_n$ be real numbers. Verify the identity
+    $\left(\sum_{i=1}^n a_i b_i\right)^2 + \frac{1}{2} \sum_{i=1}^{n}
+    \sum_{j=1}^{n} (a_i b_j - a_j b_i)^2 = \sum_{i=1}^{n} a_i^2
+    \sum_{j=1}^{n} b_j^2$, and conclude the Cauchy-Schwarz inequality.
+    Then use the Cauchy-Schwarz inequality to prove the triangle
+    inequality.}
+
+  Let's prove these three statements.
+
+  \begin{enumerate}[label=(\roman*)]
+  \item To prove the first identity, let's use induction on $n$.
+
+    The base case $n=1$ is obvious: on the left-hand side, we just get
+    $(a_1 b_1)^2$, and on the right-hand side, we get $a_1^2 b_1^2$,
+    hence the statement.
+
+    Now let's suppose inductively that this identity is true for a
+    given positive integer $n \geq 1$, and let's prove that it is
+    still true for $n+1$. We have to prove that
+    \begin{equation}
+      \label{eq:12.1.5a}
+      \underbrace{\left(\sum_{i=1}^{n+1} a_i b_i\right)^2}_{:=A} +
+      \underbrace{\frac{1}{2} \sum_{i=1}^{n+1} \sum_{j=1}^{n+1} (a_i
+        b_j - a_j b_i)^2}_{:= B}
+      = \underbrace{\left(\sum_{i=1}^{n+1} a_i^2\right)
+        \left(\sum_{j=1}^{n+1} b_j^2\right)}_{:=C}
+    \end{equation}
+    where we gave a name to each part of the identity for an easier
+    computation below. Indeed,
+    \begin{itemize}
+    \item for $A$, we have
+      \begin{align*}
+        A &:= \left(\sum_{i=1}^{n+1} a_i b_i\right)^2 \\
+          &= \left(a_{n+1} b_{n+1} + \sum_{i=1}^{n} a_i b_i\right)^2
+        \\
+          &= (a_{n+1} b_{n+1})^2 + \left(\sum_{i=1}^{n} a_i
+            b_i\right)^2 + 2 (a_{n+1} b_{n+1}) \sum_{i=1}^{n} a_i b_i
+      \end{align*}
+      
+    \item for $B$, we have
+      \begin{align*}
+        B &:= \frac{1}{2} \sum_{i=1}^{n+1} \sum_{j=1}^{n+1} (a_i
+            b_j - a_j b_i)^2 \\
+          &= \frac{1}{2} \sum_{i=1}^{n} \sum_{j=1}^{n+1} (a_i b_j -
+            a_j b_i)^2 + \frac{1}{2} \sum_{j=1}^{n+1} (a_{n+1} b_j -
+            a_j b_{n+1})^2\\
+          &= \frac{1}{2} \sum_{i=1}^{n} \sum_{j=1}^{n} (a_i b_j - a_j
+            b_i)^2 +
+            \underbrace{\frac{1}{2} \sum_{i=1}^{n} (a_i b_{n+1} -
+            a_{n+1} b_i)^2}_{:= 1/2 \times S} +
+            \underbrace{\frac{1}{2} \sum_{j=1}^{n} (a_{n+1} b_{j} - a_{j}
+            b_{n+1})^2}_{:= 1/2 \times S} \\
+          &\quad + \underbrace{\frac{1}{2} (a_{n+1}b_{n+1} -
+            b_{n+1}a_{n+1})^2}_{=0} \\
+          &= \frac{1}{2} \sum_{i=1}^{n} \sum_{j=1}^{n} (a_i b_j - a_j
+            b_i)^2 + \sum_{k=1}^{n} (a_kb_{n+1} -
+            a_{n+1}b_k)^2
+      \end{align*}
+      
+    \item and thus, for $A + B$, we now use the induction hypothesis (IH)
+      to get:
+      \begin{align*}
+        A + B
+        &:= (a_{n+1} b_{n+1})^2 + \left(\sum_{i=1}^{n} a_i
+          b_i\right)^2 +
+          2 (a_{n+1} b_{n+1}) \sum_{i=1}^{n} a_i b_i\\
+        &\quad + \frac{1}{2} \sum_{i=1}^{n} \sum_{j=1}^{n} (a_i b_j - a_j
+          b_i)^2 + \sum_{k=1}^{n} (a_kb_{n+1} - a_{n+1}b_k)^2\\
+        &= \underbrace{\left(\sum_{i=1}^{n} a_i b_i\right)^2 +
+          \frac{1}{2} \sum_{i=1}^{n} \sum_{j=1}^{n} (a_i b_j - a_j
+          b_i)^2}_{\text{apply (IH) here}} \\
+        &\quad + (a_{n+1} b_{n+1})^2 +
+          2 (a_{n+1} b_{n+1}) \sum_{i=1}^{n} a_i b_i
+          + \sum_{k=1}^{n} (a_kb_{n+1} - a_{n+1}b_k)^2\\
+        &= \left(\sum_{i=1}^{n} a_i^2\right) \left(\sum_{j=1}^{n}
+          b_j^2\right)\\
+        &\quad + (a_{n+1} b_{n+1})^2 +
+          2 (a_{n+1} b_{n+1}) \sum_{i=1}^{n} a_i b_i
+          + \sum_{k=1}^{n} (a_kb_{n+1} - a_{n+1}b_k)^2\\
+        &= \left(\sum_{i=1}^{n} a_i^2\right) \left(\sum_{j=1}^{n}
+          b_j^2\right)\\
+        &\quad + \cdots
+          + (a_{n+1} b_{n+1})^2 \\
+        &= \left(\sum_{i=1}^{n+1} a_i^2\right) \left(\sum_{j=1}^{n+1}
+          b_j^2\right) \\
+        &= C
+      \end{align*}
+      so that the identity is indeed true for all natural number $n$.
+    \end{itemize}
+    
+  \item Now let's prove the Cauchy-Schwarz identity,
+    
+  \item Finally, let's prove the triangle inequality,
+  \end{enumerate}
+  
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
