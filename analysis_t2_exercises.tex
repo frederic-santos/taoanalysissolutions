@@ -276,9 +276,11 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
   \begin{enumerate}[label=(\alph*)]
   \item For all $x \in \rr^n$, we have
     $d_{l^2}(x,x) = \sqrt{\sum_{i=1}^{n} (x_i - x_i)^2} = 0$, as expected.
-  \item Positivity: for all $x,y \in \rr^n$, we have
-    $d_{l^2}(x,y) = \sqrt{\sum_{i=1}^{n} (x_i - y_i)^2} \geq 0$, as the
-    square root of a sum of $n$ non-negative terms, as expected.
+  \item Positivity: for all $x \neq y \in \rr^n$, there exists at
+    least one $1 \leq i \leq n$ such that $x_i \neq y_i$, so that
+    $(x_i-y_i)^2 > 0$, and
+    $d_{l^2}(x,y) = \sqrt{\sum_{i=1}^{n} (x_i - y_i)^2} > 0$, as
+    expected.
   \item Symmetry: for all $x,y \in \rr^n$, we have
     \[d_{l^2}(y,x) = \sqrt{\sum_{i=1}^{n} (y_i - x_i)^2} =
       \sqrt{\sum_{i=1}^{n} (x_i - y_i)^2} = d_{l^2}(x,y)\] as expected.
