@@ -267,6 +267,38 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
     by taking square roots on both sides.
   \end{enumerate}  
 \end{exo}
+
+\begin{exo}{12.1.6}{Show that $(\rr^n , d_{l^2}$) in Example 12.1.6 is
+    indeed a metric space.}
+
+  We have to show the four axioms of Definition 12.1.2.
+
+  \begin{enumerate}[label=(\alph*)]
+  \item For all $x \in \rr^n$, we have
+    $d_{l^2}(x,x) = \sqrt{\sum_{i=1}^{n} (x_i - x_i)^2} = 0$, as expected.
+  \item Positivity: for all $x,y \in \rr^n$, we have
+    $d_{l^2}(x,y) = \sqrt{\sum_{i=1}^{n} (x_i - y_i)^2} \geq 0$, as the
+    square root of a sum of $n$ non-negative terms, as expected.
+  \item Symmetry: for all $x,y \in \rr^n$, we have
+    \[d_{l^2}(y,x) = \sqrt{\sum_{i=1}^{n} (y_i - x_i)^2} =
+      \sqrt{\sum_{i=1}^{n} (x_i - y_i)^2} = d_{l^2}(x,y)\] as expected.
+  \item Triangle inequality: for all $x,y,z \in \rr^n$, we have
+    \begin{align*}
+      d_{l^2}(x,z)
+      &:= \left(\sum_{i=1}^{n} (x_i - z_i)^2\right)^{1/2} &\\
+      &= \left(\sum_{i=1}^{n} (a_i + b_i)^2\right)^{1/2}
+      &\text{with $a_i := x_i-y_i$ and $b_i := y_i-z_i$}\\
+      &\leq \left(\sum_{i=1}^{n} a_i^2\right)^{1/2} +
+        \left(\sum_{i=1}^{n} b_i^2\right)^{1/2}
+      &\text{(Exercise 12.1.5(iii))}\\
+      &\leq \left(\sum_{i=1}^{n} (x_i - y_i)^2\right)^{1/2} +
+        \left(\sum_{i=1}^{n} (y_i-z_i)^2\right)^{1/2}& \\
+      &\leq d_{l^2}(x,y) + d_{l^2}(y,z)&
+    \end{align*}
+    as expected.
+  \end{enumerate}
+  Thus, $(\rr^n, d_{l^2})$ is indeed a metric space.
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
