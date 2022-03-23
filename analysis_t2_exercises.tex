@@ -301,6 +301,37 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
   \end{enumerate}
   Thus, $(\rr^n, d_{l^2})$ is indeed a metric space.
 \end{exo}
+
+\pagebreak
+\begin{exo}{12.1.7}{Show that $(\rr^n , d_{l^1}$) in Example 12.1.7 is
+    indeed a metric space.}
+
+  Once again, let's show the four axioms of Definition 12.1.2.
+
+  \begin{enumerate}[label=(\alph*)]
+  \item For all $x \in \rr^n$, we have
+    $d_{l^1}(x,x) = \sum_{i=1}^{n} |x_i - x_i| = 0$, as expected.
+  \item Positivity: for all $x \neq y \in \rr^n$, there exists at
+    least one $1 \leq i \leq n$ such that $x_i \neq y_i$, so that
+    $|x_i-y_i| > 0$, and
+    $d_{l^1}(x,y) = \sum_{i=1}^{n} |x_i - y_i| > 0$, as
+    expected.
+  \item Symmetry: for all $x,y \in \rr^n$, we have
+    \[d_{l^1}(y,x) = \sum_{i=1}^{n} |y_i - x_i| =
+      \sum_{i=1}^{n} |x_i - y_i| = d_{l^1}(x,y)\]
+    as expected.
+  \item Triangle inequality: we already know from Proposition 4.3.3(g)
+    (generalized to real numbers) that we have the triangle inequality
+    $|a-c| \leq |a-b| + |b-c|$ for all $a,b,c \in \rr$. Thus, for all
+    $x,y,z \in \rr^n$, we have
+    \begin{equation*}
+      d_{l^1}(x,z) := \sum_{i=1}^{n} |x_i - z_i| \leq \sum_{i=1}^{n}
+      (|x_i - y_i| + |y_i - z_i|) =: d_{l^1}(x,y) + d_{l^1}(y,z)&
+    \end{equation*}
+    as expected.
+  \end{enumerate}
+  Thus, $(\rr^n, d_{l^1})$ is indeed a metric space.  
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
