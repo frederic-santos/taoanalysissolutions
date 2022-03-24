@@ -330,7 +330,7 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
     \end{equation*}
     as expected.
   \end{enumerate}
-  Thus, $(\rr^n, d_{l^1})$ is indeed a metric space.  
+  Thus, $(\rr^n, d_{l^1})$ is indeed a metric space.
 \end{exo}
 
 \bigskip
@@ -369,7 +369,41 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
     \end{align*}
     as expected.
   \end{itemize}
-  
+\end{exo}
+
+\begin{exo}{12.1.9}{Show that the pair $(\rr^n, d_{l^\infty})$ in
+    Example 12.1.9 is a metric space.}
+
+  Once again, let's show the four axioms of Definition 12.1.2. 
+
+  \begin{enumerate}[label=(\alph*)]
+  \item For all $x \in \rr^n$, we clearly have
+    $d_{l^\infty}(x,x) = \sup \{|x_i - x_i| : 1 \leq i \leq n\} = 0$,
+    as expected.
+  \item Positivity: for all $x \neq y \in \rr^n$, there exists at
+    least one $1 \leq j \leq n$ such that $x_j \neq y_j$. Thus
+    $|x_j-y_j| > 0$, and
+    $d_{l^\infty}(x,y) = \sup \{|x_i - y_i| : 1 \leq i \leq n\} \geq
+    |x_j - y_j| > 0$, as expected.
+  \item Symmetry: for all $x,y \in \rr^n$, we have
+    \[d_{l^\infty}(x, y) = \sup \{|x_i - y_i| : 1 \leq i \leq n\} =
+      \sup \{|y_i - x_i| : 1 \leq i \leq n\} = d_{l^\infty}(y, x)\]
+    as expected.
+  \item Triangle inequality. Let be $x,y,z \in \rr^n$. We have
+    $|x_i - z_i| \leq |x_i - y_i| + |y_i - z_i|$ for all
+    $1 \leq i \leq n$, by Proposition 4.3.3(g). But, by definition of
+    the supremum, we have $|x_i - y_i| \leq d_{l^\infty}(x,y)$
+    and $|y_i - z_i| \leq d_{l^\infty}(y,z)$ for all $1 \leq i \leq
+    n$. Thus, we have $|x_i - z_i| \leq d_{l^\infty}(x,y) +
+    d_{l^\infty}(y,z)$ for all $1 \leq i \leq n$; i.e., $d_{l^\infty}(x,y) +
+    d_{l^\infty}(y,z)$ is an upper bound of the set $\{|x_i -
+    z_i| : 1 \leq i \leq n\}$. By definition of the supremum, it
+    implies that
+    \[d_{l^\infty}(x,z) := \sup \{|x_i - z_i| : 1 \leq i \leq n\} \leq d_{l^\infty}(x,y) +
+      d_{l^\infty}(y,z)\]
+    as expected.
+  \end{enumerate}
+  Thus, $(\rr^n, d_{l^1})$ is indeed a metric space.  
 \end{exo}
 \end{document}
 %%% Local Variables:
