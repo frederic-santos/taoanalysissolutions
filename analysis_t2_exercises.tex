@@ -326,11 +326,50 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
     $x,y,z \in \rr^n$, we have
     \begin{equation*}
       d_{l^1}(x,z) := \sum_{i=1}^{n} |x_i - z_i| \leq \sum_{i=1}^{n}
-      (|x_i - y_i| + |y_i - z_i|) =: d_{l^1}(x,y) + d_{l^1}(y,z)&
+      (|x_i - y_i| + |y_i - z_i|) =: d_{l^1}(x,y) + d_{l^1}(y,z)
     \end{equation*}
     as expected.
   \end{enumerate}
   Thus, $(\rr^n, d_{l^1})$ is indeed a metric space.  
+\end{exo}
+
+\bigskip
+\begin{exo}{12.1.8}{Prove the two inequalities in equation (12.1).}
+
+  We have to prove that for all $x,y \in \rr^n$, we have
+  \begin{equation}
+    \label{eq:12.1.8goal}
+    d_{l^2}(x,y) \leq d_{l^1}(x,y) \leq \sqrt{n} \, d_{l^2}(x,y)
+  \end{equation}
+
+  \begin{itemize}
+  \item The first inequality, since everything is non-negative, is
+    equivalent to $d_{l^2}(x,y)^2 \leq d_{l^1}(x,y)^2$, and we will prove
+    it in this form.
+
+    Indeed, using a trivial product expansion, we have
+    \begin{align*}
+      d_{l_1}(x,y)^2
+      &:= \left(\sum_{i=1}^{n} |x_i - y_i|\right)^2 \\
+      &= \left(\sum_{i=1}^{n} |x_i - y_i|\right) \times
+        \left(\sum_{i=1}^{n} |x_i - y_i|\right) \\
+      &= \sum_{i=1}^{n} |x_i - y_i|^2 + \overbrace{\sum_{1 \leq i,j \leq n ; \,
+        i\neq j} |x_i-y_i| \times |x_j - y_j|}^{\geq 0} \\
+      &\geq \sum_{i=1}^{n} |x_i - y_i|^2 =: d_{l^2}(x,y)^2
+    \end{align*}
+    as expected.
+  \item For the second inequality, we use the Cauchy-Schwarz
+    inequality, which says that
+    \begin{align*}
+      d_{l^1}(x,y) &:= \sum_{i=1}^{n} |x_i - y_i|\\
+      &= \left| \sum_{i=1}^{n} |x_i - y_i| \times 1 \right|\\
+      &\leq \left(\sum_{i=1}^{n} |x_i - y_i|^2 \right)^{1/2}
+        \left(\sum_{i=1}^{n} 1^2 \right)^{1/2} \\
+      &\leq d_{l^2}(x,y) \times \sqrt{n}
+    \end{align*}
+    as expected.
+  \end{itemize}
+  
 \end{exo}
 \end{document}
 %%% Local Variables:
