@@ -405,6 +405,42 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
   \end{enumerate}
   Thus, $(\rr^n, d_{l^1})$ is indeed a metric space.  
 \end{exo}
+
+\bigskip
+\begin{exo}{12.1.10}{Prove the two inequalities in equation (12.2).}
+
+  We have to prove that for all $x,y \in \rr^n$,
+  \[ \frac{1}{\sqrt{n}} d_{l^2}(x,y) \leq d_{l^\infty} (x,y) \leq
+    d_{l^2}(x,y).\]
+
+  First, a preliminary remark. By definition, we have
+  $d_{l^\infty}(x,y) := \sup \{|x_i - y_i| : 1 \leq i \leq n\}$ for
+  all $x,y \in \rr^n$. Since this distance is defined as the supremum
+  of a finite set, we know (see Chapter 8 of \textit{Analysis I}) that
+  there exists a $1 \leq m \leq n$ such that
+  $d_{l^\infty}(x,y) = |x_m - y_m|$ (the supremum belongs to the set).
+  The index ``$m$'' will have this meaning below.
+
+  \begin{itemize}
+  \item Let's prove the first inequality.
+    \begin{align*}
+      \frac{1}{\sqrt{n}} d_{l^2}(x,y)
+      &:= \sqrt{\frac{1}{n} \sum_{i=1}^{n} (x_i - y_i)^2} \\
+      &\leq \sqrt{\frac{1}{n} \sum_{i=1}^{n} (x_m - y_m)^2} \\
+      &\leq \sqrt{\frac{n}{n} (x_m - y_m)^2} \\
+      &= |x_m - y_m| =: d_{l^\infty} (x,y)
+    \end{align*}
+    as expected.
+  \item Now we prove the second one. We have
+    \begin{align*}
+      d_{l^2}(x,y) &:= \sqrt{\sum_{i=1}^{n} (x_i - y_i)^2} \\
+                   &= \sqrt{(x_m - y_m)^2 + \sum_{1 \leq i \leq n ; \, i
+                     \neq m} (x_i - y_i)^2}\\
+                   &\geq \sqrt{(x_m - y_m)^2} = |x_m - y_m| =: d_{l^\infty}(x,y)
+    \end{align*}
+    as expected.
+  \end{itemize}
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
