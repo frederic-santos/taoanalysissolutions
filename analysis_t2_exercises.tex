@@ -42,6 +42,7 @@
 \renewcommand{\epsilon}{\varepsilon}
 \newcommand{\infint}[2]{\underline{\int}_{#2} \, #1}
 \newcommand{\supint}[2]{\overline{\int}_{#2} \, #1}
+\newcommand{\ddisc}{d_{\text{disc}}}
 % Lemmas:
 \usepackage{amsthm}
 \newtheorem*{lem}{Lemma}
@@ -440,6 +441,36 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
     \end{align*}
     as expected.
   \end{itemize}
+\end{exo}
+
+\begin{exo}{12.1.11}{Show that the discrete metric $(X, \ddisc)$ in
+    Example 12.1.11 is indeed a metric space.}
+
+  Once again, let's show the four axioms of Definition 12.1.2. 
+
+  \begin{enumerate}[label=(\alph*)]
+  \item For all $x \in X$, we have
+    $\ddisc(x,x) := 0$ by definition, so that there is nothing to
+    prove here.
+  \item Positivity: for all $x \neq y \in X$, we have
+    $\ddisc(x,y) := 1 > 0$ by definition, so that there's still
+    nothing to prove.
+  \item Symmetry: for all $x,y \in X$, we have $\ddisc(x,y) =
+    \ddisc(y,x) = 1$, so that $\ddisc$ obeys the symmetry property.
+  \item Triangle inequality. Let be $x,y,z \in X$, and let's consider
+    $\ddisc(x,z)$.
+    \begin{itemize}
+    \item If $x=z$, then $\ddisc(x,z) = 0$. And since $\ddisc$ is a
+      non-negative application, we clearly have $0 =: \ddisc(x,z) \leq
+      \ddisc(x,y) + \ddisc(y,z)$ for all $y \in X$.
+    \item If $x \neq z$, then we cannot have both $x=y$ and $y=z$ (it
+      would be a clear contradiction with $x \neq z$). Thus, at least
+      one of the propositions ``$x \neq y$'', ``$y \neq z$'' is true.
+      Another way to say that is $\ddisc(x,y) + \ddisc(y,z) \geq 1$.
+      But since $\ddisc(x,z) := 1$, we have actually $\ddisc(x,y) +
+      \ddisc(y,z) \geq \ddisc(x,z)$, as expected.
+    \end{itemize}
+  \end{enumerate}
 \end{exo}
 \end{document}
 %%% Local Variables:
