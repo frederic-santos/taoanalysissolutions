@@ -472,6 +472,54 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
     \end{itemize}
   \end{enumerate}
 \end{exo}
+
+\begin{exo}{12.1.12}{Prove Proposition 12.1.18.}
+
+  First, recall that for all $x,y \in \rr^n$, we have, from Examples
+  12.1.7 and 12.1.9,
+  \begin{equation*}
+    \frac{1}{\sqrt{n}} \, d_{l^2} (x,y) \leq
+    d_{l^\infty}(x,y) \leq d_{l^2}(x,y) \leq
+    d_{l^1}(x,y) \leq \sqrt{n} \, d_{l^2}(x,y).
+  \end{equation*}
+
+  Note that $n$ is a real constant here.
+  
+  \begin{itemize}
+  \item Let's prove that $(a) \implies (b)$. If
+    $\lim_{k \to \infty} d_{l^2}(x^{(k)}, x) = 0$, then by the limit
+    laws, the sequence $t_k := \sqrt{n} \, d_{l^2}(x^{(k)}, x)$ also
+    converges to $0$ as $k \to \infty$, since $\sqrt{n}$ is a constant
+    real number. Thus, we have
+    \[d_{l^2}(x^{(k)}, x) \leq d_{l^1}(x^{(k)}, x) \leq \sqrt{n} \,
+      d_{l^2}(x^{(k)}, x)\] and, by the squeeze test, this implies
+    that $\lim_{k \to \infty} d_{l^1}(x^{(k)}, x)$ as expected.
+  \item Let's prove that $(b) \implies (c)$. If
+    $\lim_{k \to \infty} d_{l^1}(x^{(k)}, x) = 0$, then we have
+    \[0 \leq d_{l^\infty}(x^{(k)}, x) \leq d_{l^1}(x^{(k)}, x)\]
+    and, by the squeeze test, this implies
+    that $\lim_{k \to \infty} d_{l^\infty}(x^{(k)}, x)$ as expected.
+  \item Let's prove that $(c) \implies (d)$. Suppose that
+    $\lim_{k \to \infty} d_{l^\infty}(x^{(k)}, x) = 0$. Then, for all
+    $1 \leq j \leq n$, we have
+    $0 \leq |x_j^{k} - x_j| \leq d_{l^\infty}(x^{(k)}, x)$. Still by
+    the squeeze test, this implies that
+    $\lim_{k \to \infty} |x_j^{k} - x_j| = 0$, i.e. that
+    $(x_j^{k})_{k=m}^\infty$ converges to $x_j$ as $k \to \infty$ (by
+    Lemma 12.1.1), as expected.
+  \item Finally, let's prove that $(d) \implies (a)$. Using the
+    definition of convergence is more appropriate here. Let be
+    $\epsilon > 0$ a positive real number, and let be
+    $1 \leq j \leq n$. By definition, there exists a natural number
+    $N \geq m$ such that $|x_j^{(k)} - x_j| \leq \epsilon / \sqrt{n}$
+    whenever $k \geq N$. Thus, if $k \geq N$, we have
+    \[d_{l^2}(x^{(k)}, x) := \sqrt{\sum_{j=1}^{n} (x^{(k)}_j - x_j)^2}
+      \leq \sqrt{\sum_{j=1}^{n} \frac{\epsilon^2}{n}} \leq \epsilon\]
+    so that $\lim_{k \to \infty} d_{l^2}(x^{(k)}, x) = 0$, i.e.,
+    $(x^{k})_{k=m}^\infty$ converges to $x$ as $k \to \infty$ in the
+    $l^2$ metric (by Lemma 12.1.1), as expected.
+  \end{itemize}
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
