@@ -520,6 +520,29 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
     $l^2$ metric (by Lemma 12.1.1), as expected.
   \end{itemize}
 \end{exo}
+
+\begin{exo}{12.1.13}{Prove Proposition 12.1.19.}
+
+  Let be $\seq{x^{(n)}}{m}$ a sequence of elements of a set $X$.
+
+  \begin{itemize}
+  \item First suppose that $\seq{x^{(n)}}{m}$ is eventually constant.
+    Thus, by definition, there exists an $N \geq m$ and an element
+    $x \in X$ such that $\seq{x^{(n)}}{m} = x$ for all $n \geq N$.
+    This implies that we have $\ddisc(x^{(n)}, x) = 0$ for all $n \geq
+    N$. In particular, for all $\epsilon > 0$, we have
+    $\ddisc(x^{(n)}, x) \leq \epsilon$ whenever $n \geq N$, so that
+    $\seq{x^{(n)}}{m}$ indeed converges to $x$ with respect to
+    $\ddisc$.
+  \item Conversely, suppose that $\seq{x^{(n)}}{m}$ converges to $x$
+    with respect to $\ddisc$. Let be $\epsilon = 1/2$. By definition,
+    there exists an $N \geq m$ such that $\ddisc(x^{(n)}, x) \leq 1/2$
+    whenever $n \geq N$. Since $\ddisc(x^{(n)}, x)$ cannot be $1$, it
+    is necessarily equal to $0$, so that $x^{(n)} = x$ whenever
+    $n \geq N$. Thus, the sequence $x^{(n)}$ is indeed eventually
+    constant.
+  \end{itemize}
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
