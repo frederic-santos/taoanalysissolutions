@@ -543,6 +543,29 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
     constant.
   \end{itemize}
 \end{exo}
+
+\begin{exo}{12.1.14}{Prove Proposition 12.1.20.}
+
+  Suppose that we have $\lim_{n \to \infty} d(x^{(n)}, x) = 0$ and
+  $\lim_{n \to \infty} d(x^{(n)}, x') = 0$. Suppose, for the sake
+  of contradiction, that we have $x \neq x'$. Thus, the real number
+  $\epsilon := \frac{d(x,x')}{3}$ is positive.
+
+  Since $x^{(n)}$ converges to $x$, there exists a $N_1 \geq m$ such
+  that $d(x^{(n)}, x) \leq \epsilon$ whenever $n \geq N_1$.
+
+  Similarly, since $x^{(n)}$ converges to $x'$, there exists a
+  $N_2 \geq m$ such that $d(x^{(n)}, x') \leq \epsilon$ whenever
+  $n \geq N_2$.
+
+  By the triangle inequality, we thus have, for all $n \geq \max(N_1,
+  N_2)$,
+  \[d(x, x') \leq d(x, x^{(n)}) + d(x^{(n)}, x') \leq \epsilon +
+    \epsilon = \frac{2}{3}d(x,x')\]
+  which is a contradiction (since $d(x,x') > 0$ by hypothesis).
+
+  Thus, the limit is unique, and we must have $x=x'$.
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
