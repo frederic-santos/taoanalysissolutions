@@ -566,6 +566,167 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
 
   Thus, the limit is unique, and we must have $x=x'$.
 \end{exo}
+
+\bigskip
+\begin{exo}{12.1.15}{Let be
+    $X := \{\seq{a_n}{0} : \sum_{n=0}^{\infty} |a_n| < \infty\}$. We
+    define on this space the metrics
+    $d_{l^1}(\seq{a_n}{0}, \seq{b_n}{0}) := \sum_{n=0}^{\infty} |a_n -
+    b_n|$, and $d_{l^\infty}(\seq{a_n}{0}, \seq{b_n}{0}) := \sup_{n \in
+      \nn} |a_n - b_n|$. Then...}
+
+  We have to prove the following statements.
+
+  \begin{enumerate}
+  \item $d_{l^1}$ is a metric on $X$.
+
+    We have to prove the four axioms of Definition 12.1.2.
+
+    \begin{enumerate}[label=(\alph*)]
+    \item Let be $\seq{a_n}{0} \in X$. We have $d_{l^1}(\seq{a_n}{0},
+      \seq{a_n}{0}) = \sum_{n=0}^{\infty} |a_n - a_n| = 0$, as
+      expected.
+    \item Let be $\seq{a_n}{0}, \seq{b_n}{0}$ two distinct elements of
+      $X$. Since they are distinct, there exists at least one $m \in
+      \nn$ such as $|a_m - b_m| > 0$. Thus, $d_{l^1}(\seq{a_n}{0},
+      \seq{b_n}{0}) = \sum_{n=0}^{\infty} |a_n - b_n| \geq |a_m - b_m|
+      > 0$, as expected.
+    \item Symmetry: we clearly have
+      \[d_{l^1}(\seq{b_n}{0}, \seq{a_n}{0}) = \sum_{n=0}^{\infty}
+        |b_n - a_n| = \sum_{n=0}^{\infty} |a_n - b_n| =
+        d_{l^1}(\seq{a_n}{0}, \seq{b_n}{0}).\]
+    \item Finally, let's prove the triangle inequality. Let be
+      $\seq{a_n}{0}, \seq{b_n}{0}, \seq{c_n}{0} \in X$. Since we have
+      the triangle inequality for the usual distance $d$ on $\rr$
+      (i.e., we have $|a_n - c_n| \leq |a_n - b_n| + |b_n - c_n|$ for
+      all $n \in \nn$), we have immediately
+      \begin{align*}
+        d_{l^1}(\seq{a_n}{0}, \seq{c_n}{0})
+        &:= \sum_{n=0}^{\infty} |a_n - c_n|\\
+        &\leq \sum_{n=0}^{\infty} (|a_n - b_n| + |b_n - c_n|)
+          \; \text{ (consequence of Prop. 7.1.11(h))}\\
+        &\leq \sum_{n=0}^{\infty} |a_n - b_n| + \sum_{n=0}^{\infty}
+          |b_n - c_n|
+          \; \text{ (by Proposition 7.2.14(a))}\\
+        &\leq d_{l^1}(\seq{a_n}{0}, \seq{b_n}{0}) +
+          d_{l^1}(\seq{b_n}{0}, \seq{c_n}{0}).
+      \end{align*}
+    \end{enumerate}
+
+    Thus, $d_{l^1}$ is indeed a metric on $X$.
+  \item $d_{l^\infty}$ is a metric on $X$.
+
+    Once again, we have to prove the four axioms of Definition 12.1.2.
+
+    \begin{enumerate}[label=(\alph*)]
+    \item Let be $\seq{a_n}{0} \in X$. We have
+      $d_{l^\infty}(\seq{a_n}{0}, \seq{a_n}{0}) = \sup_{n \in \nn}
+      |a_n - a_n| = 0$, as expected.
+    \item Let be $\seq{a_n}{0}, \seq{b_n}{0}$ two distinct elements of
+      $X$. Since they are distinct, there exists at least one $m \in
+      \nn$ such as $|a_m - b_m| > 0$. Thus, $d_{l^\infty}(\seq{a_n}{0},
+      \seq{b_n}{0}) = \sup_{n \in \nn} |a_n - b_n| \geq |a_m - b_m|
+      > 0$, as expected.
+    \item Symmetry: we clearly have
+      \[d_{l^\infty}(\seq{b_n}{0}, \seq{a_n}{0}) = \sup_{n \in \nn}
+        |b_n - a_n| = \sup_{n \in \nn} |a_n - b_n| =
+        d_{l^\infty}(\seq{a_n}{0}, \seq{b_n}{0}).\]
+    \item Finally, let's prove the triangle inequality. Let be
+      $\seq{a_n}{0}, \seq{b_n}{0}, \seq{c_n}{0} \in X$. Since we have
+      the triangle inequality for the usual distance $d$ on $\rr$
+      (i.e., we have $|a_n - c_n| \leq |a_n - b_n| + |b_n - c_n|$ for
+      all $n \in \nn$), we have immediately
+      $|a_m - c_m| \leq \sup_{n \in \nn} |a_n - b_n| + \sup_{n \in
+        \nn} |b_n - c_n|$ for all $m \in \nn$, by definition of the
+      supremum. In other words,
+      $(\sup_{n \in \nn} |a_n - b_n| + \sup_{n \in \nn} |b_n - c_n|)$
+      is an upper bound for the set $\{|a_m - c_m| : m \in \nn\}$.
+      Thus we have, still by definition of the supremum,
+      $\sup_{n \in \nn} |a_n - c_n| \leq \sup_{n \in \nn} |a_n - b_n| +
+      \sup_{n \in \nn} |b_n - c_n|$, as expected.
+    \end{enumerate}
+    Thus, $d_{l^\infty}$ is indeed a metric on $X$.
+  \item There exist sequences $x^{(1)}$, $x^{(2)}$, ..., of elements
+    of $X$ (i.e., sequences of sequences) which are convergent with
+    respect to $d_{l^\infty}$, but are not convergent with respect to
+    $d_{l^1}$.
+
+    Here we are dealing with sequences of sequences: we have a
+    sequence $(x^{(k)})_{k=1}^\infty$ where each $x^{(k)}$ is
+    itself a sequence of real numbers. Thus, let's define
+    $(x^{(k)})_{k=1}^\infty$ as follows:
+    \[x^{(k)}_n := \left\{
+        \begin{array}{ll}
+          1/(k+1) & \text{ if } 0 \leq n \leq k \\
+          0 & \text{ if } n > k.
+        \end{array}
+      \right.\]
+    Just to make things clearer, we have for instance
+    \begin{align*}
+      x^{(1)} &:= \frac{1}{2}, \; \frac{1}{2}, \; 0, \; 0, \; 0, \; \ldots \\
+      x^{(2)} &:= \frac{1}{3}, \; \frac{1}{3}, \; \frac{1}{3}, \; 0, \; 0, \; \ldots \\
+      x^{(3)} &:= \frac{1}{4}, \; \frac{1}{4}, \; \frac{1}{4}, \; \frac{1}{4}, \; 0, \; \ldots
+    \end{align*}
+    Also, let be the null sequence $\seq{a_n}{0}$ defined by $a_n := 0$ for
+    all $n \in \nn$. Thus:
+    \begin{itemize}
+    \item $(x^{(k)})_{k=1}^\infty$ converges to $\seq{a_n}{0}$ w.r.t.
+      the metric $d_{l^\infty}$. Indeed, if we consider a given
+      positive integer $k$ (fixed), we have
+      \begin{equation*}
+        |x^{(k)} - a_n| = |x^{(k)}| = \left\{
+          \begin{array}{ll}
+            1/(k+1) & \text{ if } 0 \leq n \leq k \\
+            0 & \text{ if } n > k.
+          \end{array}
+        \right.
+      \end{equation*}
+      so that $d_{l^\infty}\left(\seq{x^{(k)}_n}{0},
+        \seq{a_n}{0}\right) := \sup_{n \in \nn} |x^{(k)} - a_n| =
+      \frac{1}{k+1}$.
+
+      Thus,
+      $\lim_{k \to \infty} d_{l^\infty}\left(\seq{x^{(k)}_n}{0},
+        \seq{a_n}{0}\right) = 0$, or in other words,
+      $(x^{(k)})_{k=1}^\infty$ converges to $\seq{a_n}{0}$ w.r.t. the
+      metric $d_{l^\infty}$ in $X$.
+      
+    \item But $(x^{(k)})_{k=1}^\infty$ does not converges to
+      $\seq{a_n}{0}$ w.r.t. the metric $d_{l^1}$. Indeed, we have, for
+      each given (fixed) $k$,
+      \begin{align*}
+        d_{l^1} \left(\seq{x^{(k)}_n}{0}, \seq{a_n}{0}\right)
+        = \sum_{n=0}^{k} \frac{1}{k+1} = 1
+      \end{align*}
+      Thus, we clearly do not have
+      $\lim_{k \to \infty} d_{l^1}\left(\seq{x^{(k)}_n}{0},
+        \seq{a_n}{0}\right) = 0$, i.e., $(x^{(k)})_{k=1}^\infty$ does
+      not converge to $\seq{a_n}{0}$ w.r.t. the  metric $d_{l^1}$.
+    \end{itemize}
+  \item Conversely, any sequence which converges with respect to
+    $d_{l^1}$ also converges with respect to $d_{l^\infty}$.
+
+    Suppose, for the sake of contradiction, that
+    $(x^{(k)})_{k=1}^\infty$ does not converge to $\seq{a_n}{0}$
+    w.r.t. the  metric $d_{l^\infty}$, but does converge to $\seq{a_n}{0}$
+    w.r.t. the  metric $d_{l^1}$.
+
+    In this case, there exists a $\epsilon > 0$ such that, for all
+    $k \geq 1$, we have
+    $(\sup_{n \geq 0} |x^{(k)}_n - a_n|) > \epsilon$. In particulier,
+    for all $k \geq 1$ and all $n \geq 0$, we have
+    $|x^{(k)}_n - a_n| > \epsilon$. Thus,
+    $\sum_{n=0}^{\infty} |x^{(k)}_n - a_n|$ is not even a convergent
+    series, and we cannot have
+    $\lim_{k \to \infty} \left(\sum_{n=0}^{\infty} |x^{(k)}_n - a_n|
+    \right) = 0$.
+  \end{enumerate}
+
+  Note that this exercise actually shows that in this space $X$, the
+  metrics are not equivalent; instead, the convergence in the taxi cab
+  metric is stronger than the convergence in the sup norm metric.
+  Thus, Proposition 12.1.18 is not true for \emph{any} metric space.
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
