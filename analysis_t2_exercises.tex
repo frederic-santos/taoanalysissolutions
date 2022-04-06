@@ -727,6 +727,37 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
   metric is stronger than the convergence in the sup norm metric.
   Thus, Proposition 12.1.18 is not true for \emph{any} metric space.
 \end{exo}
+
+\bigskip
+\begin{exo}{12.1.16}{Let $\seq{x_n}{1}$ and $\seq{y_n}{1}$ be two
+    sequences in a metric space $(X, d)$. Suppose that $\seq{x_n}{1}$
+    converges to a point $x \in X$, and $\seq{y_n}{1}$ converges to a
+    point $y \in X$. Show that
+    $\lim_{n \to \infty} d(x_n, y_n) = d(x, y)$.}
+
+    On the one hand, the triangle inequality applied two times to $d$
+    gives us
+    \[d(x_n, y_n) \leq d(x_n, x) + d(x,y) + d(y, y_n)\]
+    but this is only half of what we need to prove the result.
+
+    Similarly, we have
+    \[d(x, y) \leq d(x, x_n) + d(x_n,y_n) + d(y_n, y)\]
+    so that we can combine the previous two inequalities to get
+    \[-d(x_n, x) - d(y_n, y) \leq d(x_n, y_n) - d(x, y) \leq d(x_n, x)
+      + d(y_n, y)\]
+    i.e.,
+    \[|d(x_n, y_n) - d(x, y)| \leq d(x_n, x) + d(y_n, y).\]
+
+    Let be $\epsilon > 0$. By hypothesis, there exists a $N_1 \geq 1$
+    such that $d(x_n, x) \leq \epsilon/2$ whenever $n \geq N_1$.
+    Similarly, there exists a $N_2 \geq 1$ such that $d(y_n, y) \leq
+    \epsilon/2$ whenever $n \ges N_2$. Thus, if we set $N :=
+    \max(N_1,N_2)$, then for all $n \geq N$ we have
+    \[|d(x_n, y_n) - d(x, y)| \leq d(x_n, x) + d(y_n, y) \leq 2
+      \epsilon/2 \ leq \epsilon\]
+    which shows that $\lim_{n \to \infty} d(x_n, y_n) = d(x, y)$, as
+    expected.    
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
