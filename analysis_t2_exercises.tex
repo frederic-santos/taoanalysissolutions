@@ -43,6 +43,8 @@
 \newcommand{\infint}[2]{\underline{\int}_{#2} \, #1}
 \newcommand{\supint}[2]{\overline{\int}_{#2} \, #1}
 \newcommand{\ddisc}{d_{\text{disc}}}
+\newcommand{\inter}{\text{int}}
+\newcommand{\ext}{\text{ext}}
 % Lemmas:
 \usepackage{amsthm}
 \newtheorem*{lem}{Lemma}
@@ -735,28 +737,47 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
     point $y \in X$. Show that
     $\lim_{n \to \infty} d(x_n, y_n) = d(x, y)$.}
 
-    On the one hand, the triangle inequality applied two times to $d$
-    gives us
-    \[d(x_n, y_n) \leq d(x_n, x) + d(x,y) + d(y, y_n)\]
-    but this is only half of what we need to prove the result.
+  On the one hand, the triangle inequality applied two times to $d$
+  gives us
+  \[d(x_n, y_n) \leq d(x_n, x) + d(x,y) + d(y, y_n)\]
+  but this is only half of what we need to prove the result.
+  
+  Similarly, we have
+  \[d(x, y) \leq d(x, x_n) + d(x_n,y_n) + d(y_n, y)\]
+  so that we can combine the previous two inequalities to get
+  \[-d(x_n, x) - d(y_n, y) \leq d(x_n, y_n) - d(x, y) \leq d(x_n, x)
+    + d(y_n, y)\]
+  i.e.,
+  \[|d(x_n, y_n) - d(x, y)| \leq d(x_n, x) + d(y_n, y).\]
+  
+  Let be $\epsilon > 0$. By hypothesis, there exists a $N_1 \geq 1$
+  such that $d(x_n, x) \leq \epsilon/2$ whenever $n \geq N_1$.
+  Similarly, there exists a $N_2 \geq 1$ such that $d(y_n, y) \leq
+  \epsilon/2$ whenever $n \geq N_2$. Thus, if we set $N :=
+  \max(N_1,N_2)$, then for all $n \geq N$ we have
+  \[|d(x_n, y_n) - d(x, y)| \leq d(x_n, x) + d(y_n, y) \leq 2
+    \epsilon/2 \ leq \epsilon\]
+  which shows that $\lim_{n \to \infty} d(x_n, y_n) = d(x, y)$, as
+  expected.    
+\end{exo}
 
-    Similarly, we have
-    \[d(x, y) \leq d(x, x_n) + d(x_n,y_n) + d(y_n, y)\]
-    so that we can combine the previous two inequalities to get
-    \[-d(x_n, x) - d(y_n, y) \leq d(x_n, y_n) - d(x, y) \leq d(x_n, x)
-      + d(y_n, y)\]
-    i.e.,
-    \[|d(x_n, y_n) - d(x, y)| \leq d(x_n, x) + d(y_n, y).\]
+\pagebreak
+\begin{exo}{12.2.1}{Verify the claims in Example 12.2.8}
 
-    Let be $\epsilon > 0$. By hypothesis, there exists a $N_1 \geq 1$
-    such that $d(x_n, x) \leq \epsilon/2$ whenever $n \geq N_1$.
-    Similarly, there exists a $N_2 \geq 1$ such that $d(y_n, y) \leq
-    \epsilon/2$ whenever $n \ges N_2$. Thus, if we set $N :=
-    \max(N_1,N_2)$, then for all $n \geq N$ we have
-    \[|d(x_n, y_n) - d(x, y)| \leq d(x_n, x) + d(y_n, y) \leq 2
-      \epsilon/2 \ leq \epsilon\]
-    which shows that $\lim_{n \to \infty} d(x_n, y_n) = d(x, y)$, as
-    expected.    
+  Let be $(X, \ddisc)$ a metric space, and $E$ a subset of $X$.
+
+  \begin{itemize}
+  \item Let be $x \in E$. Then $x$ is an interior point of $E$.
+    Indeed, we have $B(x, 1/2) = \{x\} \subseteq E$.
+  \item Let be $y \notin E$. Then $y$ is an exterior point of $E$.
+    Indeed, we have $B(y, 1/2) \cap E = \{y\} \cap E = \emptyset$.
+  \item Finally, there are no boundary points of $E$ in $(X, \ddisc)$.
+    Indeed, let be $r > 0$ and any $x \in X$. We will always have
+    $B(x, r) = \{x\}$ by definition of the discrete metric $\ddisc$.
+    Thus, we have either $x \in E$ and then $x \in \inter (E)$, or $x
+    \notin E$ and then $x \in \ext(E)$. Thus, $E$ has no boundary
+    points.
+  \end{itemize}
 \end{exo}
 \end{document}
 %%% Local Variables:
