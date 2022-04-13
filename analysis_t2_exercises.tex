@@ -779,6 +779,40 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
     points.
   \end{itemize}
 \end{exo}
+
+\begin{exo}{12.2.2}{Prove Proposition 12.2.10.}
+
+  We have to prove the following implications:
+
+  \begin{itemize}
+  \item Let's show that $(a) \implies (b)$. We will use the
+    contrapositive, assuming that $x_0$ is neither an interior point
+    of $E$, nor a boundary point of $E$. By definition, it means that
+    $x_0$ is an exterior point of $E$, i.e. that there exists $r > 0$
+    such that $B(x_0, r) \cap E = \emptyset$. This is precisely the
+    negation of $x_0$ being an adherent point of $E$. Thus, we have
+    showed that if $x_0$ is an adherent of of $E$, it is either an
+    interior point of a boundary point.
+  \item Let's show that $(b) \implies (c)$. Let be a positive integer
+    $n > 0$, and suppose that $x_0$ is either an interior point of
+    $E$, or a boundary point of $E$. In either case, the set
+    $A_n := B(x_0, 1/n) \cap E$ is non empty, i.e., there exists
+    $a_n \in X$ such that $d(a_n, x_0) < 1/n$. By the (countable)
+    axiom of choice, we can define a sequence $\seq{a_n}{1}$ such that
+    $a_n \in A_n$ for all $n \geq 1$.
+
+    Let be $\epsilon > 0$. There exists $N > 0$ such that $1/N <
+    \epsilon$ (Exercise 5.4.4). Thus, for all $n \geq N$, we have
+    \[d(a_n, x_0) < \frac{1}{n} \leq \frac{1}{N} < \epsilon\]
+    i.e., the sequence $\seq{a_n}{1}$ converges to $x_0$ with respect
+    to the metric $d$, as expected.
+  \item Finally, let's show that $(c) \implies (a)$. Let be $r > 0$.
+    If $\seq{a_n}{1}$ in $E$ converges to $x_0$ with respect to $d$,
+    then there exists a $n$ such that $d(x_0, a_n) < r$. But since
+    $a_n \in E$, it means that $B(x_0, r) \cap E$ is non empty, i.e.
+    that $x_0$ is an adherent point of $E$.
+  \end{itemize}
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
