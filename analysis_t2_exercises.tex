@@ -813,6 +813,36 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
     that $x_0$ is an adherent point of $E$.
   \end{itemize}
 \end{exo}
+
+\begin{exo}{12.2.3}{Prove Proposition 12.2.5.}
+
+  Let be $(X,d)$ a metric space.
+
+  \begin{enumerate}[label=(\alph*)]
+  \item Let be $E \subseteq X$. First suppose that $E$ is open; this
+    means that $E \cap \partial E = \emptyset$. Let be $x \in E$, then we
+    have $x \notin \partial E$. But since $x \in E$, we have $x \in
+    \adh{E}$, and thus $x \in \inter(E)$ by Proposition 12.2.10(b). We
+    have shown that $x \in E \implies x \in \inter(E)$, and since the
+    converse implication is trivial (Remark 12.2.6), we have $E =
+    \inter(E)$ as expected.
+
+    Now suppose that $E = \inter(E)$. Let be $x \in E$. We thus have
+    $x \in \inter(E)$. By definition, $x$ is thus not a boundary point
+    of $E$, i.e. x $\notin \partial E$. This means that $E \cap
+    \partial E = \emptyset$, i.e. that $E$ is open, as expected.
+    
+  \item Let be $E \subseteq X$. First suppose that $E$ is closed; i.e.
+    that $\partial E \subseteq E$. Let be $x \in \adh{E}$. By
+    Proposition 12.2.10, we have $\adh{E} = \inter(E) \cup \partial
+    E$; such that $\adh{E}$ is the union of two subsets of $E$, and
+    thus is itself a subset of $E$, as expected.
+
+    Conversely, suppose that $\adh{E} \subseteq E$. It means that
+    $\inter(E) \cup \partial E \subseteq E$, and in particular that
+    $\partial E \subseteq E$, i.e. that $E$ is closed, as expected.
+  \end{enumerate}
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
