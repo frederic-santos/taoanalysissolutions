@@ -841,6 +841,50 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
     Conversely, suppose that $\adh{E} \subseteq E$. It means that
     $\inter(E) \cup \partial E \subseteq E$, and in particular that
     $\partial E \subseteq E$, i.e. that $E$ is closed, as expected.
+    
+  \item Let be $x_0 \in X$, $r > 0$ and $E := B(x_0, r)$. To show that
+    $E$ is open, we must show that $E = \inter(E)$ (by Proposition
+    1.2.15(a)), and in particular that $E \subseteq \inter(E)$ (the
+    converse inclusion being trivial). Let be $x \in E$, and let's
+    show that $x \in \inter(E)$. By definition, we have
+    $d(x, x_0) < r$, so that $\epsilon := r - d(x, x_0)$ is a positive
+    real number. Thus, let be $y \in B(x, \epsilon)$. By the triangle
+    inequality, we have
+    \begin{align*}
+      d(x_0, y) &< d(x, x_0) + d(x,y) \\
+                &< d(x, x_0) + \epsilon \\
+                &< d(x, x_0) + r - d(x, x_0) = r
+    \end{align*}
+    so that $y \in E$. Thus, there exists $\epsilon > 0$ such that
+    $B(x, \epsilon) \subseteq E$, i.e., $x$ is an interior point of
+    $E$. This shows that $E \subseteq \inter(E)$, as expected.
+
+    Now let be $F := \{x \in X : d(x, x_0) \leq r\}$, and let be
+    $\seq{a_n}{1}$ a convergent sequence in $F$. To show that $F$ is
+    closed, we have to show that $\ell := \lim_{n \to \infty} a_n$
+    lies in $F$ (Proposition 12.2.15(b)). Suppose, for the sake of
+    contradiction, that $\ell \notin F$. We thus have $d(\ell, x_0) >
+    r$, so that $\epsilon := d(\ell, x_0) - r$  is a positive real
+    number. Since $\seq{a_n}{1}$ converges to $\ell$, there exists a
+    $N > 0$ such that $d(a_n, \ell) < \epsilon$ whenever $n \geq N$.
+    By the triangle inequality, for $n \geq N$, we have
+    \begin{align*}
+      d(x_0, \ell) &\leq d(x_0, a_n) + d(a_n, \ell) \\
+      d(x_0, a_n) &\geq d(x_0, \ell) - d(a_n, \ell) \\
+                   &\geq d(x_0, \ell) - \epsilon \\
+                   &\geq d(x_0, \ell) + r - d(\ell, x_0) \\
+                   &\geq r
+    \end{align*}
+    and thus, $a_n \notin B(x_0, r)$, a contradiction. Thus, we must
+    have $\ell \in F$, so that $F$ is indeed a closed set.
+    
+  \item Let be $\{x_0\}$ a singleton with $x_0 \in X$. To show that
+    $E$ is closed, we may use Proposition 12.2.15(b), and show that
+    $\{x_0\}$ contains all its adherent points. Let be $\seq{a_n}{1}$
+    a convergent sequence in $\{x_0\}$; it can only be the constant
+    sequence $x_0, x_0, \ldots$. Since it is a constant sequence, its
+    limit can only be $x_0$ itself, and this limit belongs to
+    $\{x_0\}$. Thus, $\{x_0\}$ is a closed set.
   \end{enumerate}
 \end{exo}
 \end{document}
