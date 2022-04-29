@@ -885,6 +885,52 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
     sequence $x_0, x_0, \ldots$. Since it is a constant sequence, its
     limit can only be $x_0$ itself, and this limit belongs to
     $\{x_0\}$. Thus, $\{x_0\}$ is a closed set.
+    
+  \item First we can form a lemma: for any subset $E \subseteq X$, we
+    have $\inter(E) = \ext(X \backslash E)$. This is a direct
+    consequence of Definition 12.2.5. Indeed, $x \in \inter(E)$ iff
+    there exists a $r > 0$ such that $B(x,r) \subseteq E$, which is
+    equivalent to
+    ``$\exists r>0 : B(x,r) \cap (X \backslash E) = \emptyset$'',
+    which is equivalent to $x \in \ext(X \backslash E)$.
+
+    This implies that the interior points of $E$ are the exterior points
+    of $X \backslash E$, and conversely, that the exterior points of
+    $E$ are the interior points of $X \backslash E$. Thus, in
+    particular, we have this useful fact:
+    \begin{equation}
+      \label{eq:12.2.3}
+      \partial E = \partial(X \backslash E).
+    \end{equation}
+
+    Now we go back to the main proof. First suppose that $E$ is open.
+    Thus, by Definition 12.2.12, we have $E \cap \partial E =
+    \emptyset$, so that $\partial E \subseteq X \backslash E$, which
+    means that $X \backslash E$ is a closed set.
+
+    The converse also applies: if we suppose that $X \backslash E$ is
+    closed, then $\partial (X \backslash E) \subseteq X \backslash E$.
+    By equation \eqref{eq:12.2.3} above, this is equivalent to
+    $\partial E \subseteq X \backslash E$, and thus we have $\partial
+    E \cap E = \emptyset$. This means that $E$ is open, as expected.
+    
+  \item Let $E_1, \ldots, E_n$ be open sets. Thus, for all
+    $1 \leq i \leq n$, if $x \in E_i$, there exists a $r_i > 0$ such
+    that $B(x, r_i) \subseteq E_i$. Let's define $r := \min(r_1,
+    \ldots, r_n)$. We have $B(x, r) \subseteq B(x, r_i) \subseteq E_i$
+    for all $1 \leq i \leq n$, i.e. $B(x,r) \subseteq E_1 \cap \ldots
+    \cap E_n$. Thus, $E_1 \cap \ldots \cap E_n$ is an open set.
+
+    Also, let $F_1, \ldots, F_n$ be closed sets. By the previous
+    result (e), the complementary sets
+    $X\backslash F_1, \ldots X\backslash F_n$ are open sets. Thus, we
+    have just proved that
+    $(X \backslash F_1) \cap \ldots \cap (X \backslash F_n)$ is an
+    open set. But we have
+    $(X \backslash F_1) \cap \ldots \cap (X \backslash F_n) = X
+    \backslash (F_1 \cup \ldots \cup F_n)$, and this set is open.
+    Thus, by (e), we know that its complementary set,
+    $F_1 \cup \ldots \cup F_n$, is closed, as expected.
   \end{enumerate}
 \end{exo}
 \end{document}
