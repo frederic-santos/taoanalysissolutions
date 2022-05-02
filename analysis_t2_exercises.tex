@@ -931,6 +931,65 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
     \backslash (F_1 \cup \ldots \cup F_n)$, and this set is open.
     Thus, by (e), we know that its complementary set,
     $F_1 \cup \ldots \cup F_n$, is closed, as expected.
+    
+  \item Let $(E_\alpha)_{\alpha \in I}$ be open sets. Suppose that we
+    have $x \in \bigcup_{\alpha \in I} E_\alpha$. By definition, there
+    exists a $i \in I$ such that $x \in E_i$. Since $E_i$ is an open
+    set, there exists $r_i > 0$ such that
+    $B(x, r_i) \subseteq E_i \subseteq \bigcup_{\alpha \in I}
+    E_\alpha$. Thus, by (a), $\bigcup_{\alpha \in I} E_\alpha$ is an
+    open set, as expected.
+
+    Now let be $(F_\alpha)_{\alpha \in I}$ be closed sets. Suppose
+    that we have a convergent sequence $\seq{x_n}{1}$ such that
+    $x_n \in \bigcap_{\alpha \in I} F_\alpha$ for all $n \geq 1$.
+    Thus, for all $\alpha \in I$, the sequence $\seq{x_n}{1}$ entirely
+    belongs to the closed set $F_\alpha$, so that its limit $\ell$
+    also lies in $F_\alpha$ according to (b). Thus,
+    $\ell \in \bigcup_{\alpha \in I} F_\alpha$, so that
+    $\bigcap_{\alpha \in I} F_\alpha$ is a closed set, as expected.
+    
+  \item Let be $E \subseteq X$.
+    \begin{itemize}
+    \item Let's show that $\inter(E)$ is the largest open set included
+      in $E$. It has not clearly be proved in the main text that
+      $\inter(E)$ is an open set, so we begin by proving it. Let be
+      $x \in \inter(E)$. By definition, there exists $r > 0$ so that
+      $B(x, r) \subseteq E$. But by (c), we know that $B(x, r)$ is an
+      open set, so that any point $y$ of $B(x, r)$ is an interior
+      point of this open ball, and thus an interior point of $E$.
+      Thus, $\inter(E)$ is open.
+
+      Now consider another open set $V \subseteq E$, and let's show
+      that $V \subseteq \inter(E)$. If $x \in \inter(V)$, then there
+      exists $r > 0$ such that $B(x,r) \subseteq V \subseteq E$, so
+      that $x \in \inter(E)$. This shows that $V \subseteq \inter(E)$,
+      as expected.
+
+    \item Similarly, let's show that $\adh{E}$ is the smallest closed
+      set that contains $E$. First we show that $\adh{E}$ is closed,
+      i.e. that $\adh{\adh{E}} \subseteq \adh{E}$. (Hint: see Exercise
+      9.1.6 for an intuition.) Let be $x \in \adh{\adh{E}}$. By
+      definition, for all $r > 0$,
+      $B(x,r) \cap \adh{E} \neq \emptyset$. Thus, there exists
+      $y \in B(x,r)$ such that $y \in \adh{E}$. Thus, because $B(x,r)$
+      is an open set and $y$ is adherent to $E$, there exists
+      $\epsilon > 0$ such that $B(y, \epsilon) \subseteq B(x,r)$ and
+      $B(y, \epsilon) \cap E \neq \emptyset$; i.e., there exists
+      $z \in B(y, \epsilon) \subseteq B(x,r)$ such that $z \in E$. We
+      have showed that whenever $x \in \adh{\adh{E}}$, we have $B(x,r)
+      \cap E \neq \emptyset$ for all $r > 0$, i.e. that $x$ is an
+      adherent point of $E$, as expected. Thus, $\adh{E}$ is closed.
+      
+      Now we consider a closed set $K$ such that $E \subseteq K$, and
+      we have to show that $\adh{E} \subseteq K$. Let be
+      $x \in \adh{E}$. By definition, for all $r > 0$, we have
+      $B(x,r) \cap E \neq \emptyset$. But since $E \subseteq K$, we
+      also have $B(x,r) \cap K \neq \emptyset$ for all $r > 0$. Thus,
+      $x$ is an adherent point of $K$, i.e., $x \in \adh{K}$. But
+      since $K$ is closed, we have $K = \adh{K}$, and thus $x \in K$.
+      This shows that $\adh{E} \subseteq K$, as expected.
+    \end{itemize}
   \end{enumerate}
 \end{exo}
 \end{document}
