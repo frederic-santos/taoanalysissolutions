@@ -992,6 +992,42 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
     \end{itemize}
   \end{enumerate}
 \end{exo}
+
+\begin{exo}{12.2.4}{Let $(X, d)$ be a metric space, $x_0$ be a point
+    in $X$, and $r > 0$. Let $B$ be the open ball
+    $B := B(x_0 , r) = \{x \in X : d(x, x_0 ) < r\}$, and let $C$ be
+    the closed ball $C := \{x \in X : d(x, x_0 ) \leq r\}$.}
+
+  Let's prove the following claims:
+
+  \begin{enumerate}[label=(\alph*)]
+  \item Show that $\adh{B} \subseteq C$.
+
+    Let be $x \in \adh{B}$. By definition, since $x$ is an adherent
+    point of $B$, for all $\epsilon > 0$ we have
+    $B(x, \epsilon) \cap B \neq \emptyset$. In other words, there
+    exists $y$ such that we have both $d(x, y) < \epsilon$ and
+    $d(x_0, y) < r$. Thus, by the triangle inequality, we have
+    \begin{align*}
+      d(x, x_0) &\leq d(x,y) + d(y, x_0)\\
+                &\leq \epsilon + r \; \; \text{ for all } \epsilon > 0
+    \end{align*}
+    which is equivalent (as a quick proof by contradiction would show)
+    to $d(x,x_0) \leq r$. Thus, $x \in C$.
+
+    We have indeed proved that $\adh{B} \subseteq C$.
+    
+  \item Give an example of a metric space $(X,d)$, a point $x_0$, and
+    a radius $r > 0$ such that $\adh{B}$ is \emph{not} equal to $C$.
+
+    Let's take $X = \rr$, $d = \ddisc$, $x = 0$ and $r = 1$. One the
+    one hand, we have $B := \{0\}$ and $C := \rr$. Now let's work out
+    $\adh{B}$. By Proposition 12.2.15(bd), $B$ is closed, so that we
+    have $\adh{B} = B$. Thus, we clearly do not have $\adh{B} \neq C$
+    here. (Note however that any $x_0 \in \rr$ would be convenient
+    here; there is nothing special about $0$.)
+  \end{enumerate}
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
