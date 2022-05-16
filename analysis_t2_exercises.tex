@@ -904,15 +904,18 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
     \end{equation}
 
     Now we go back to the main proof. First suppose that $E$ is open.
-    Thus, by Definition 12.2.12, we have $E \cap \partial E =
-    \emptyset$, so that $\partial E \subseteq X \backslash E$, which
-    means that $X \backslash E$ is a closed set.
-
-    The converse also applies: if we suppose that $X \backslash E$ is
-    closed, then $\partial (X \backslash E) \subseteq X \backslash E$.
-    By equation \eqref{eq:12.2.3} above, this is equivalent to
-    $\partial E \subseteq X \backslash E$, and thus we have $\partial
-    E \cap E = \emptyset$. This means that $E$ is open, as expected.
+    Thus, by Definition 12.2.12, we have
+    $E \cap \partial E = \emptyset$, so that
+    $\partial E \subseteq X \backslash E$, which means that
+    $X \backslash E$ is a closed set. The converse also applies: if we
+    suppose that $X \backslash E$ is closed, then
+    $\partial (X \backslash E) \subseteq X \backslash E$. By equation
+    \eqref{eq:12.2.3} above, this is equivalent to
+    $\partial E \subseteq X \backslash E$, and thus we have
+    $\partial E \cap E = \emptyset$. This means that $E$ is open, as
+    expected.\footnote{This important result will be used in future
+      proofs to turn any statement on closed sets into a statement on
+      open sets.}
     
   \item Let $E_1, \ldots, E_n$ be open sets. Thus, for all
     $1 \leq i \leq n$, if $x \in E_i$, there exists a $r_i > 0$ such
@@ -929,8 +932,8 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
     open set. But we have
     $(X \backslash F_1) \cap \ldots \cap (X \backslash F_n) = X
     \backslash (F_1 \cup \ldots \cup F_n)$, and this set is open.
-    Thus, by (e), we know that its complementary set,
-    $F_1 \cup \ldots \cup F_n$, is closed, as expected.
+    Thus, by (e), its complementary set, $F_1 \cup \ldots \cup F_n$,
+    is closed, as expected.
     
   \item Let $(E_\alpha)_{\alpha \in I}$ be open sets. Suppose that we
     have $x \in \bigcup_{\alpha \in I} E_\alpha$. By definition, there
@@ -1027,6 +1030,63 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
     here. (Note however that any $x_0 \in \rr$ would be convenient
     here; there is nothing special about $0$.)
   \end{enumerate}
+\end{exo}
+
+\begin{exo}{12.3.1}{Prove Proposition 12.3.4(b).}
+
+  Let's show each direction of the equivalence.
+
+  \begin{itemize}
+  \item First suppose that $E$ is relatively closed w.r.t. $Y$, and
+    let's show that there exists a closed subset $K \subseteq X$ such
+    that $E = K \cap Y$.
+
+    Since $E$ is closed w.r.t. $Y$, the set $Y \backslash E$ is open
+    w.r.t. $Y$ (by Proposition 12.2.15(e)). Thus, by (a), there exists
+    an open subset $V \subseteq X$ such that
+    $Y \backslash E = V \cap Y$.
+
+    Let be $K := X \backslash V$; this subset $K \subseteq X$ is
+    closed w.r.t. $X$ by Proposition 12.2.15(e) since it is the
+    complementary set of an open set. We have to show that
+    $E = K \cap Y$.
+    \begin{itemize}
+    \item Let be $x \in E$. Thus, we have $x \in Y$, since $E
+      \subseteq Y$. And since $x \in E$, by definition, we have $x
+      \notin Y \backslash E$. Thus, $x \notin V \cap Y$, which implies
+      that $x \notin V$ (since $x \in Y$). Thus, by definition, $x \in
+      K$, and thus, $x \in K \cap Y$.
+    \item Conversely, let be $x \in K \cap Y$. By definition, $x \in
+      Y$ and $x \notin V$. Thus, $x \notin V \cap Y$, or, in other
+      words, $x \notin Y \backslash E$. We finally get $x \in E$, as
+      expected.
+    \end{itemize}
+    Thus, we have indeed $E = K \cap Y$, for some closed subset
+    $K \subseteq X$, as expected.
+    
+  \item Now let's prove the converse implication: suppose that $E = K
+    \cap Y$ for some closed subset $K \subseteq X$, and let's prove
+    that $E$ is relatively closed w.r.t. $Y$.
+
+    Still by Proposition 12.2.15(e), we know that the subset $V := X
+    \backslash K$ is open w.r.t. $X$. Thus, by the previous result
+    from this exercise, $V \cap Y$ is relatively open w.r.t. $Y$.
+    Thus, its complementary set $Y \backslash (V \cap Y) = Y
+    \backslash V$ is relatively closed w.r.t. $Y$. Now we want to show
+    that $E = Y \backslash V$ to close the proof.
+
+    \begin{itemize}
+    \item First suppose that $x \in E$. Since $E = K \cap Y$, we thus
+      have $x \in Y$ and $x \in K$, i.e. $x \notin V$. Thus, $x \in Y
+      \backslash V$.
+    \item Now suppose that $x \in Y \backslash V$. We thus have
+      $x \in X$ (since $Y \subseteq X$) and $x \notin V$, so that we
+      necessarily have $x \in K$. Thus $x \in Y \cap K$, i.e.
+      $x \in E$.
+    \end{itemize}
+    Thus $E = Y \backslash V$ is relatively closed w.r.t. $Y$, as
+    expected.
+  \end{itemize}  
 \end{exo}
 \end{document}
 %%% Local Variables:
