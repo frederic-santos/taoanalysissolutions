@@ -1088,6 +1088,32 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
     expected.
   \end{itemize}  
 \end{exo}
+
+\begin{exo}{12.4.1}{Prove Lemma 12.4.3.}
+
+  We have to prove that any subsequence $(x^{(n_j)})_{j=1}^\infty$ of
+  a convergent sequence $\seq{x^{(n)}}{m}$ converges to the same limit
+  as the whole sequence itself.
+
+  Suppose that the whole sequence $\seq{x^{(n)}}{m}$ converges to
+  $x_0$. Let be $\epsilon > 0$. By definition, we have a positive
+  integer $N \geq m$ such that $n \geq N \implies d(x^{(n)}, x_0) \leq
+  \epsilon$. Our aim here is to show that there exists a positive
+  integer $J \geq 1$ such that $j \geq J \implies d(x^{(n_j)}, x_0)
+  \leq \epsilon$.
+
+  By Definition 12.4.1, we know that we have $m \leq n_1 < n_2 < n_3 <
+  \ldots$. Thus, as a quick induction would show, we have $n_j \geq m
+  + j - 1$ for all $j \geq 1$. Let's take $J := N$. In this case, if
+  $j \geq J$, i.e. if $j \geq N$, we have $n_j \geq m + N - 1 \geq
+  N$. Thus:
+  
+  \[ j\geq J \implies n_j \geq N \implies d(x^{(n_j)}, x_0)
+    \leq \epsilon.\]
+
+  Since this is true for all $\epsilon > 0$, it means that
+  $(x^{(n_j)})_{j=1}^\infty$ converges to $x_0$, as expected. 
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
