@@ -1114,6 +1114,66 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
   Since this is true for all $\epsilon > 0$, it means that
   $(x^{(n_j)})_{j=1}^\infty$ converges to $x_0$, as expected. 
 \end{exo}
+
+\bigskip
+\begin{exo}{12.4.2}{Prove Proposition 12.4.5.}
+
+  Let $\seq{x^{(n)}}{m}$ be a sequence of points in a metric space. We
+  have to prove that the following two statements are equivalent:
+  \begin{enumerate}[label=(\alph*)]
+  \item $L$ is a limit point of $\seq{x^{(n)}}{m}$.
+  \item There exists a subsequence $(x^{(n_j)})_{j=1}^\infty$ of the
+    original sequence which converges to $L$.
+  \end{enumerate}
+
+  We will prove the two implications, but first, note that (with the
+  notations from Definition 12.4.1) if we have $1 \leq m \leq n_1 <
+  n_2 < n_3 < \ldots$, then a quick induction shows that we have $n_j
+  \geq j$ for all $j \geq 1$.
+  
+  \begin{itemize}
+  \item First we prove that (b) implies (a). If some subsequence
+    $(x^{(n_j)})_{j=1}^\infty$ converges to $L$, then we have by
+    definition:
+    \begin{equation}
+      \label{eq:12.4.2a}
+      \forall \epsilon > 0, \, \exists J \geq 1 : \; j \geq J \implies
+      d(x^{(n_j)}, L) \leq \epsilon
+    \end{equation}
+    Now, consider any $\epsilon > 0$ and any $N \geq m$. For this
+    particular choice of $\epsilon$, consider the corresponding real
+    number $J$ given by equation \eqref{eq:12.4.2a}, and let's define
+    $p := \max(N, J)$. Thus, we have $n_p \geq p \geq J$, and by
+    equation \eqref{eq:12.4.2a}, we thus have
+    $d(x^{(n_p)}, L) \leq \epsilon$. If we set $n := n_p$, we have
+    indeed found an $n \geq N$ such that
+    $d(x^{(n)}, L) \leq \epsilon$. Thus, $L$ is a limit point of
+    $\seq{x^{(n)}}{m}$, as required.
+  \item Now we prove that (a) implies (b). Suppose that $L$ is a limit
+    point of $\seq{x^{(n)}}{m}$. By definition, there exists a natural
+    number $n_1 \geq m$ such that $d(x^{(n_1)}, L) \leq 1$. Now, for
+    $j > 1$, let's define inductively
+    $n_j := \min \{n > n_{j-1} : d(x^{(n)}, L) \leq 1/j\}$. This set
+    is non-empty (by definition of a limit point), so that the
+    well-ordering principle (Proposition 8.1.4) ensures that it has a
+    (unique) minimal element, i.e. that $n_j$ indeed exists. Let's
+    define the subsequence $(x^{(n_j)})_{j=1}^\infty$ obtained
+    following this process. We thus have $d(x^{(n_j)}, L) \leq 1/j$
+    for all $j \geq 1$, by construction.
+
+    Thus, let be $\epsilon > 0$. There exists a $j \geq 1$ such that
+    $0 < 1/j < \epsilon$ (Exercise 5.4.4). Thus, for this positive
+    integer $j$, we have $d(x^{(n_j)}, L) \leq 1/j < \epsilon$. By
+    construction, for all other natural numbers $k \geq j+1$, we have
+    $d(x^{(n_k)}, L) \leq 1/k \leq 1/j \leq \epsilon$.
+
+    In summary, for our arbitrary choice of $\epsilon$, we have showed
+    that there exists $j \geq 1$ such that, for all $k \geq j$, we
+    have $d(x^{(n_k)}, L) \leq \epsilon$. Thus, the subsequence
+    $(x^{(n_j)})_{j=1}^\infty$ constructed in this way converges to
+    $L$, as expected.
+  \end{itemize}
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
