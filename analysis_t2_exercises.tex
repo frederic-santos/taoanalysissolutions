@@ -1174,6 +1174,29 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
     $L$, as expected.
   \end{itemize}
 \end{exo}
+
+\begin{exo}{12.4.3}{Prove Lemma 12.4.7.}
+
+  Suppose that $\seq{x^{(n)}}{m}$ is a convergent sequence of points
+  in a metric space $(X,d)$, and that its limit is $x_0$. Let's show
+  that it is a Cauchy sequence.
+
+  By the triangle inequality, we know that for all $j,k \geq m$, we
+  have:
+  \[d(x^{(j)}, x^{(k)}) \leq d(x^{(j)}, x_0) + d(x^{(k)}, x_0).\]
+
+  Let be $\epsilon > 0$. Since $\seq{x^{(n)}}{m}$ converges to $x_0$,
+  there exists an $N \geq m$ such that we have $d(x^{(n)}, x_0) \leq
+  \epsilon/3$ for all $n \geq N$. Thus, if we take $j,k \geq N$, we
+  have:
+  \begin{align*}
+    d(x^{(j)}, x^{(k)}) &\leq d(x^{(j)}, x_0) + d(x^{(k)}, x_0) \\
+                        &\leq \epsilon/3 + \epsilon/3\\
+                        &< \epsilon
+  \end{align*}
+  which means that $\seq{x^{(n)}}{m}$ is a Cauchy sequence, as
+  expected.  
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
