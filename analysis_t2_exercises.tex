@@ -1197,6 +1197,27 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
   which means that $\seq{x^{(n)}}{m}$ is a Cauchy sequence, as
   expected.  
 \end{exo}
+
+\bigskip
+\begin{exo}{12.4.4}{Prove Lemma 12.4.9.}
+
+  Let be an arbitrary $\epsilon > 0$. Since the subsequence
+  $(x^{(n_j)})_{j=1}^\infty$ converges to $x_0$, there exists a
+  $J \geq 1$ such that $d(x^{(n_j)}, x_0) \leq \epsilon/3$ whenever
+  $j \geq J$.
+
+  But the whole sequence $\seq{x^{(n)}}{m}$ is supposed to be a Cauchy
+  sequence. Thus, there also exists a $N \geq m$ such that $d(x^{(j)},
+  x^{(k)}) < \epsilon/3$ whenever $j,k \geq N$.
+
+  Now, let be $K := \max(J,N)$. If $k \geq K$, we have
+  \begin{align*}
+    d(x^{(k)}, x_0) &\leq d(x^{(k)}, x^{(n_k)}) + d(x^{(n_k)}, x_0) \\
+                    &< \epsilon/3 + \epsilon/3\\
+                    &< \epsilon
+  \end{align*}
+  which means that $\seq{x^{(n)}}{m}$ converges to $x_0$, as expected.
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
