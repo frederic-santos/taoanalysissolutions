@@ -1218,6 +1218,39 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
   \end{align*}
   which means that $\seq{x^{(n)}}{m}$ converges to $x_0$, as expected.
 \end{exo}
+
+\bigskip
+\begin{exo}{12.4.5}{Let $\seq{x^{(n)}}{m}$ be a sequence of points in
+    a metric space $(X,d)$ and let $L \in X$. Show that if $L$ is a
+    limit point of the sequence $\seq{x^{(n)}}{m}$, then $L$ is an
+    adherent point of the set $\{x^{(n)} : n \geq m\}$. Is the
+    converse true?}
+
+  First suppose that $L$ is a limit point of $\seq{x^{(n)}}{m}$. By
+  definition, it means that
+  \begin{equation}
+    \label{eq:12.4.5a}
+    \forall \epsilon > 0, \, \forall N \geq m, \, \exists n \geq N \;
+    : \; d(x^{(n)}, L) \leq \epsilon
+  \end{equation}
+
+  Let be an arbitrary $\epsilon > 0$, and let's take $N = m$. By
+  formula \eqref{eq:12.4.5a} above, there exists an $n \geq N$ such
+  that $d(x^{(n)}, L) \leq \epsilon$. Thus, this $x^{(n)}$ belongs to
+  both sets $\{x^{(n)} : n \geq m\}$ and $B(L, \epsilon)$. We have
+  just proved that for all $\epsilon > 0$, the intersection
+  $B(L, \epsilon) \cap \{x^{(n)} : n \geq m\}$ is always non-empty. In
+  other words, $L$ is thus an adherent point of
+  $\{x^{(n)} : n \geq m\}$.
+
+  However, the converse is not true. Indeed, consider the sequence
+  $\seq{x^{(n)}}{1}$ defined in $(\rr, d)$ by $x^{(1)} = 1$ and
+  $x^{(n)} = 0$ for all $n \geq 2$, i.e. the sequence
+  $1, 0, 0, 0, \ldots$. It is clear that $L := 1$ is an adherent point
+  of $\{x^{(n)} : n \geq 1\}$ (which is just the set $\{0, 1\}$). But
+  $1$ is not a limit point of $\seq{x^{(n)}}{1}$, since we have
+  $d(x^{(n)}, 1) > 1/2$ for all $n \geq 2$.
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
