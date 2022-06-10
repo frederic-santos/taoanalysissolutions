@@ -1290,6 +1290,24 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
     implies $L=L'$.
   \end{itemize}  
 \end{exo}
+
+\begin{exo}{12.4.7}{Prove Proposition 12.4.12.}
+
+  For statement (a), consider a convergent sequence $\seq{y^{(n)}}{m}$
+  of elements of $Y \subseteq X$. Since it is convergent, it is a
+  Cauchy sequence (Lemma 12.4.7). Saying that $(Y, d_{Y \times Y})$ is
+  complete means that $\seq{y^{(n)}}{m}$ converges in
+  $(Y, d_{Y \times Y})$. Thus, every convergent sequence in $Y$ has
+  its limit in $Y$: this is exactly the characterization of closed
+  sets given by Proposition 12.2.15(b).
+
+  For statement (b), consider a Cauchy sequence $\seq{y^{(n)}}{m}$ of
+  elements of a given closed subset $Y \subseteq X$. Since $(X,d)$ is
+  complete, $\seq{y^{(n)}}{m}$ must converge to some value $L \in X$.
+  But since $Y$ is closed, we have $L \in Y$ by Proposition
+  12.2.15(b). Thus, every Cauchy sequence in $Y$ converges in $Y$.
+  This means that $(Y, d_{Y \times Y})$ is complete, as expected.
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
