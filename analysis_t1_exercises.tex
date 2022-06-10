@@ -4390,6 +4390,7 @@ exchangeable here, so that showing only one direction will be enough.
   which means precisely that $\seq{a_n}{m}$ converges to $\ell$, as required.
 \end{exo}
 
+\bigskip
 \begin{exo}{6.3.4}{Explain why Proposition 6.3.10 fails when $x > 1$.
     In fact, show that the sequence $\seq{x^n}{1}$ diverges when
     $x > 1$. Compare this with the argument in Example 1.2.3; can you
@@ -4459,15 +4460,15 @@ exchangeable here, so that showing only one direction will be enough.
     positive, because $c-c' \neq 0$ by hypothesis).
 
     Since $\seq{a_n}{m}$ converges to $c$, there exists a positive
-    integer $N \geq m$ such that $|a_n - c| \leq \epsilon$ for all $n
-    \geq N$. Also, since $c'$ is a limit point, there exists $n_0 \geq
-    N$ such that $|a_{n_0} - c'| \leq \epsilon$. Thus:
+    integer $N \geq m$ such that ${|a_n - c| \leq \epsilon}$ for all
+    $n \geq N$. Also, since $c'$ is a limit point, there exists
+    $n_0 \geq N$ such that $|a_{n_0} - c'| \leq \epsilon$. Thus,
 
     \begin{align*}
       |c-c'| & \leq |c - a_{n_0} + a_{n_0} - c'| \\
              &\leq |a_{n_0} - c| + |a_{n_0} - c'| \\
-             & \leq \frac{\epsilon}{3} + \frac{\epsilon}{3} =
-      \frac{2\epsilon}{3} = \frac{2}{3} |c-c'|
+             & \leq \epsilon + \epsilon =
+               2\epsilon = \frac{2}{3} |c-c'|
     \end{align*}
 
     This is a clear contradiction. Thus, $\seq{a_n}{m}$ has no other
@@ -4798,6 +4799,7 @@ exchangeable here, so that showing only one direction will be enough.
   $ \limit{1/n^q} = \limit{(1/n^{1/b})^a} = 0^a = 0$.
 \end{exo}
 
+\bigskip
 \begin{exo}{6.5.2}{Prove Lemma 6.5.2.}
 
   Here, there are a lot of cases to consider.
