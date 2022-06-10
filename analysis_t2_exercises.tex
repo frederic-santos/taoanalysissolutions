@@ -1251,6 +1251,45 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
   $1$ is not a limit point of $\seq{x^{(n)}}{1}$, since we have
   $d(x^{(n)}, 1) > 1/2$ for all $n \geq 2$.
 \end{exo}
+
+\bigskip
+\begin{exo}{12.4.6}{Show that every Cauchy sequence can have at most
+    one limit point.}
+
+  Suppose that $\seq{x^{(n)}}{m}$ is a Cauchy sequence in a metric
+  space $(X,d)$, such that $L, L'$ are limit points. Then we have
+  $L=L'$. We will give two different proofs for this fact.
+
+  \begin{itemize}
+  \item \textbf{Proof 1} (short proof using previous results). By
+    Proposition 12.4.5, since $L$ is a limit point of
+    $\seq{x^{(n)}}{m}$, there exists a subsequence that converges to
+    $L$. But by Lemma 12.4.9, it means that the whole original
+    sequence $\seq{x^{(n)}}{m}$ also converges to $L$. The same
+    argument can be used to show that the whole sequence
+    $\seq{x^{(n)}}{m}$ converges to $L'$. But by uniqueness of limits
+    (Proposition 12.1.20), we must have $L=L'$, as expected.
+  \item \textbf{Proof 2} (a more ``manual'' proof). Let be
+    $\epsilon > 0$. Since $\seq{x^{(n)}}{m}$ is a Cauchy sequence,
+    there exists $N \geq m$ such that
+    $d(x^{(p)}, x^{(q)}) \leq \epsilon/3$ for all $p,q \geq N$.
+
+    If $L$ is a limit point of $\seq{x^{(n)}}{m}$, then for this $N
+    \geq m$, there exists $p \geq N$ such that $d(x^{(p)}, L) \leq
+    \epsilon /3$. Similarly, there exists $q \geq N$ such that
+    $d(x^{(q)}, L') \leq \epsilon/3$.
+
+    We thus have, by triangle inequality:
+    \begin{align*}
+      d(L, L') &\leq d(L, x^{(p)}) + d(x^{(p)}, x^{(q)}) + d(x^{(q)},
+                 L') \\
+               &\leq \epsilon/3 + \epsilon/3 + \epsilon/3 \\
+               &\leq \epsilon
+    \end{align*}
+    Thus, $d(L,L') \leq \epsilon$ for all $\epsilon > 0$, which
+    implies $L=L'$.
+  \end{itemize}  
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
