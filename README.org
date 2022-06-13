@@ -1,9 +1,9 @@
 #+TITLE: Solutions for /Analysis I/ and /II/ by Terence Tao
 #+AUTHOR: Frédéric Santos
 
-I'll host on this repo my current work on Terence Tao's textbooks, [[https://www.springer.com/gp/book/9789811017896][Analysis I]] & [[https://www.springer.com/gp/book/9789811018046][II]].
+I propose on this repo my solutions to the exercises from Terence Tao's textbooks, [[https://www.springer.com/gp/book/9789811017896][Analysis I]] & [[https://www.springer.com/gp/book/9789811018046][II]].
 
-Note that this constitutes only /propositions/ of solutions; errors are still possible. Pull requests to fix typos or errors are welcome.
+Please note that errors or typos are still possible. Pull requests to fix them are welcome.
 
 ** Current status
 *** /Analysis I/
@@ -24,6 +24,6 @@ As of March 14, 2022, a total of 227 exercises from /Analysis I/ are completed.
 - [ ] Chapter 12: in progress.
 
 ** Notes
-- The LaTeX file makes use of the [[https://www.ctan.org/pkg/mbboard][mbboard]] package. It provides nicer math fonts, but is not part of most LaTeX distributions and must be installed manually.
-- Those files are licensed under a [[http://creativecommons.org/licenses/by-nc-sa/4.0/][Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License]]. You are thus free to re-use and modify the LaTeX source, for non-commercial purposes only.
+- The LaTeX files make use of the [[https://www.ctan.org/pkg/mbboard][mbboard]] package. It provides nicer math fonts, but is not part of most LaTeX distributions and must be installed manually.
+- All files are licensed under a [[http://creativecommons.org/licenses/by-nc-sa/4.0/][Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License]]. You are thus free to re-use and modify the LaTeX source, for non-commercial purposes only.
 
