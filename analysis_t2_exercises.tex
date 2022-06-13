@@ -1308,6 +1308,50 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
   12.2.15(b). Thus, every Cauchy sequence in $Y$ converges in $Y$.
   This means that $(Y, d_{Y \times Y})$ is complete, as expected.
 \end{exo}
+
+\bigskip
+\begin{exo}{12.4.8}{The following construction generalizes the
+    construction of the reals from the rationals in Chapter 5. In what
+    follows, we let $(X,d)$ be a metric space.}
+
+  Let's prove the following statements.
+  \begin{enumerate}[label=(\alph*)]
+  \item Given any Cauchy sequence $\seq{x^{(n)}}{1}$ in $X$, we denote
+    $\formallimit{x_n}$ its formal limit. We say that two formal
+    limits $\formallimit{x_n}, \formallimit{y_n}$ are equal iff
+    $\lim_{n \to \infty} d(x_n, y_n) = 0$. Then, this equality
+    relation obeys the reflexive, symmetry and transitive axioms.
+    \begin{itemize}
+    \item This relation is reflexive: for every Cauchy sequence
+      $\seq{x^{(n)}}{1}$, we have ${d(x_n, x_n) = 0}$ for all
+      $n \geq 1$, by definition of a metric. Thus, $d(x_n, x_n)$ is
+      constant and equal to zero, so that
+      $\lim_{n \to \infty} d(x_n, x_n) = 0$.
+    \item By the property of symmetry of the metric $d$, we have
+      $d(x_n, y_n) = d(y_n, x_n)$ for all $n \geq 1$ and all Cauchy
+      sequence $\seq{x^{(n)}}{1}, \seq{y^{(n)}}{1}$. Thus,
+      $\formallimit{x_n} = \formallimit{y_n}$ iff $\lim_{n \to \infty}
+      d(x_n, y_n) = 0$, iff $\lim_{n \to \infty} d(y_n, x_n) = 0$,
+      which is equivalent to $\formallimit{y_n} = \formallimit{x_n}$.
+    \item For transitivity, suppose that $\seq{x^{(n)}}{1}$,
+      $\seq{y^{(n)}}{1}$ and $\seq{z^{(n)}}{1}$ are Cauchy sequences
+      in $X$. If $\formallimit{x_n} = \formallimit{y_n}$ and
+      $\formallimit{y_n} = \formallimit{z_n}$, then by definition we
+      have $\lim_{n \to \infty} d(x_n, y_n) = 0$ and $\lim_{n \to
+        \infty} d(y_n, z_n) = 0$. Let be $\epsilon > 0$. By
+      definition, there exists $N_1 \geq 1$ such that $d(x_n, y_n)
+      \leq \epsilon/2$ whenever $n \geq N_1$. Similarly, there exists
+      $N_2 \geq 1$ such that $d(y_n, z_n) \leq \epsilon/2$ whenever $n
+      \geq N_2$. Thus, if $n \geq N := \max(N_1, N_2)$, we have by the
+      triangle inequality $d(x_n, z_n) \leq d(x_n, y_n) + d(y_n, z_n)
+      \leq \epsilon$. It means that $\lim_{n \to \infty} d(x_n, z_n)$,
+      i.e. that $\formallimit{x_n} = \formallimit{z_n}$, as expected.
+    \end{itemize}
+    
+  \item 
+  \end{enumerate}
+  
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
