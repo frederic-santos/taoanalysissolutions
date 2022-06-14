@@ -1314,7 +1314,10 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
     construction of the reals from the rationals in Chapter 5. In what
     follows, we let $(X,d)$ be a metric space.}
 
-  Let's prove the following statements.
+  We have to prove the following statements. Note that this is a
+  generalization of the process of construction of the real numbers,
+  so that we can use all results relative to the real numbers below.
+  
   \begin{enumerate}[label=(\alph*)]
   \item Given any Cauchy sequence $\seq{x^{(n)}}{1}$ in $X$, we denote
     $\formallimit{x_n}$ its formal limit. We say that two formal
@@ -1348,9 +1351,104 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
       i.e. that $\formallimit{x_n} = \formallimit{z_n}$, as expected.
     \end{itemize}
     
-  \item 
-  \end{enumerate}
-  
+  \item Let $\adh{X}$ be the space of all formal limits of Cauchy
+    sequences in $X$, with the above equality relation. Define a
+    metric $d_{\adh{X}} : \adh{X} \times \adh{X} \to \rr^+$ by setting
+    \[ d_{\adh{X}}(\formallimit{x_n}, \formallimit{y_n}) := \lim_{n
+        \to \infty} d(x_n, y_n).\]
+    Then this function is well-defined and gives $\adh{X}$ the
+    structure of a metric space.
+    \begin{itemize}
+    \item First we have to show that the limit
+      $\lim_{n \to \infty} d(x_n, y_n)$ exists (in $\rr^+$) for all Cauchy
+      sequences $\seq{x^{(n)}}{1}, \seq{y^{(n)}}{1}$. We already know
+      that $\rr$ is complete, thus $\rr^{+}$ is complete as a closed
+      subset of the complete space $\rr$ (Proposition 12.4.12(b)).
+
+      Let be the sequence defined by $u_{n} := d(x_{n}, y_{n})$ for
+      all $n \geq 1$. Obviously, this sequence is in $\rr^{+}$, which is
+      a complete space. Thus, to show that it converges, we just have
+      to show that it is a Cauchy sequence.
+
+      Consider the usual metric on $\rr^{+}$. We have, for all
+      $p,q \geq 1$,
+      \begin{align*}
+        |u_{p} - u_q| &= |d(x_p, y_p) - d(x_q, y_q)| \\
+                      &\leq |d(x_p, x_q) + d(x_q, y_q) + d(y_q, y_p) -
+                        d(x_q, y_q)| \\
+                      &\leq |d(x_p, x_q)| + |d(y_p, y_q)|.
+      \end{align*}
+      Now let be $\epsilon > 0$. Since $\seq{x^{(n)}}{1}$ and
+      $\seq{y^{(n)}}{1}$ are Cauchy sequences, there exists
+      $N_1, N_2 \geq 1$ such that $d(x_p, x_q) \leq \epsilon/2$ whenever $p,q \geq
+      N_1$, and $d(y_p, y_q) \leq \epsilon/2$ whenever $p,q \geq N_2$. Thus, if
+      $p,q \geq N:= \max(N_1, N_2)$, we have
+      \[|u_p - u_q| \leq |d(x_p, x_q)| + |d(y_p, y_q)| \leq \epsilon.\]
+      This shows that $\seq{u_n}{1}$ is a Cauchy sequence, and thus,
+      that $\lim_{n \to \infty} d(x_n, y_n)$ exists.
+    \item Now we must show that the axiom of substitution is obeyed.
+      In other words, consider a Cauchy sequence $\seq{z^{(n)}}{1}$ in
+      $(X,d)$ such that $\formallimit z_n = \formallimit x_n$. We must
+      show that
+      $d_{\adh{X}}(\formallimit z_n, \formallimit y_n) =
+      d_{\adh{X}}(\formallimit x_n, \formallimit y_n)$, i.e. that
+      \begin{equation}
+        \label{eq:12.4.8b}
+        \lim_{n \to \infty} d(z_n, y_n) = \lim_{n \to \infty} d(x_n, y_n)
+      \end{equation}
+      By the previous bullet point, we know that both limits in
+      \eqref{eq:12.4.8b} do exist. Thus, the limit laws apply. We
+      have:
+      \[d(z_n, y_n) \leq d(z_n, x_n) + d(x_n, y_n)\]
+      but since $\lim_{n \to \infty} d(z_n, x_n) = 0$ by definition, we
+      obtain
+      \[\lim_{n \to \infty} d(z_n, y_n) \leq \lim_{n \to \infty} d(x_n, y_n)\]
+      if we take the limits of both sides in the previous inequality.
+
+      But similarly, we have $d(x_n, y_n) \leq d(x_n, z_n) + d(z_n,
+      y_n)$, so that a similar argument gives
+      \[\lim_{n \to \infty} d(x_n, y_n) \leq \lim_{n \to \infty} d(z_n, y_n).\]
+
+      Thus, we have indeed $\lim_{n \to \infty} d(z_n, y_n) = \lim_{n \to \infty}
+      d(x_n, y_n)$, as expected.
+    \item Finally, we must show that $d_{\adh{X}}$ is a metric on
+      $\adh{X}$. To prove this statement, we must show that
+      $d_{\adh{X}}$ obeys all four axioms that define a metric.
+      \begin{itemize}
+      \item First, it is clear that
+        $d_{\adh{X}}(\formallimit{x_n}, \formallimit{x_n}) = \lim_{n \to
+          \infty} d(x_n, x_n) = 0$ for all Cauchy sequence
+        $\seq{x^{(n)}}{1}$ in $(X,d)$.
+      \item Now let be two Cauchy sequences $\seq{x^{(n)}}{1}$,
+        $\seq{y^{(n)}}{1}$ in $X$, such that $\formallimit x_n \neq
+        \formallimit y_n$. This latest property implies that $\lim_{n
+          \to \infty} d(x_n, y_n) > 0$, by definition. Thus,
+        $d_{\adh{X}}(\formallimit{x_n}, \formallimit{y_n}) > 0$.
+      \item Symmetry: we have
+        \begin{align*}
+          d_{\adh{X}}(\formallimit{x_n}, \formallimit{y_n})
+          &= \lim_{n \to \infty} d(x_n, y_n) \\
+          &= \lim_{n \to \infty} d(y_n, x_n) \text{ (symmetry of $d$ on
+            $\rr^+$)}\\
+          &= d_{\adh{X}}(\formallimit{y_n}, \formallimit{x_n})
+        \end{align*}
+        for all Cauchy sequences $\seq{x^{(n)}}{1}$,
+        $\seq{y^{(n)}}{1}$.
+      \item Triangle inequality: by the limit laws, we have
+        \begin{align*}
+          &d_{\adh{X}}(\formallimit{x_n}, \formallimit{z_n})
+          = \lim_{n \to \infty} d(x_n, z_n) \\
+          &\leq \lim_{n \to \infty} (d(x_n, y_n) + d(y_n, z_n)) \\
+          &\leq \lim_{n \to \infty} d(x_n, y_n) + \lim_{n \to \infty} d(y_n, z_n) \\
+          &\leq d_{\adh{X}}(\formallimit{x_n}, \formallimit{y_n}) +
+            d_{\adh{X}}(\formallimit{y_n}, \formallimit{z_n})
+        \end{align*}
+        for all Cauchy sequences $\seq{x^{(n)}}{1}$,
+        $\seq{y^{(n)}}{1}$ and $\seq{z^{(n)}}{1}$.
+      \end{itemize}
+    \end{itemize}
+    Thus, $d_{\adh{X}}$ is indeed a metric on $\adh{X}$. 
+  \end{enumerate}  
 \end{exo}
 \end{document}
 %%% Local Variables:
