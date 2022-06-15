@@ -1447,7 +1447,26 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
         $\seq{y^{(n)}}{1}$ and $\seq{z^{(n)}}{1}$.
       \end{itemize}
     \end{itemize}
-    Thus, $d_{\adh{X}}$ is indeed a metric on $\adh{X}$. 
+    Thus, $d_{\adh{X}}$ is indeed a metric on $\adh{X}$.
+
+  \item The metric space $(\adh{X}, d_{\adh{X}})$ is complete.
+
+    To prove this statement, consider a Cauchy sequence $\seq{u_n}{1}$
+    in $\adh{X}$: we have to prove that this sequence converges in
+    $(\adh{X}, d_{\adh{X}})$.
+    
+    By definition, $\seq{u_n}{1}$ is a Cauchy sequence of Cauchy
+    sequences that take their values in $X$; i.e., for all $k \geq 1$,
+    there exists a Cauchy sequence $\seq{x_n^{(k)}}{1}$ of elements of
+    $X$ such that $u_k := \formallimit x_n^{(k)}$.
+
+    Since all $\seq{x_n^{(k)}}{1}$ are Cauchy sequences, then for all
+    $k \geq 1$, there exists a threshold $N_k$ such that
+    $d(x_n^{(k)}, x_{N_k}^{(k)}) < 1/k$ whenever $n \geq N_k$. Thus,
+    (using the countable axiom of choice) we can build a sequence
+    $(z_k)_{k=1}^\infty$ defined by
+    \[ z_k := \left(x_{N_k}^{(k)}\right)\]
+    for all $k \geq 1$.
   \end{enumerate}  
 \end{exo}
 \end{document}
