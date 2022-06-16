@@ -1455,20 +1455,79 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
     in $\adh{X}$: we have to prove that this sequence converges in
     $(\adh{X}, d_{\adh{X}})$.
     
-    By definition, $\seq{u_n}{1}$ is a Cauchy sequence of Cauchy
-    sequences that take their values in $X$; i.e., for all $k \geq 1$,
-    there exists a Cauchy sequence $\seq{x_n^{(k)}}{1}$ of elements of
-    $X$ such that $u_k := \formallimit x_n^{(k)}$.
+    By definition, $\seq{u_n}{1}$ is a Cauchy sequence of formal
+    limits of Cauchy sequences that take their values in $X$; i.e.,
+    for all $k \geq 1$, there exists a Cauchy sequence
+    $\seq{x_n^{(k)}}{1}$ of elements of $X$ such that
+    $u_k := \formallimit x_n^{(k)}$.
 
     Since all $\seq{x_n^{(k)}}{1}$ are Cauchy sequences, then for all
     $k \geq 1$, there exists a threshold $N_k$ such that
     $d(x_n^{(k)}, x_{N_k}^{(k)}) < 1/k$ whenever $n \geq N_k$. Thus,
     (using the countable axiom of choice) we can build a sequence
     $(z_k)_{k=1}^\infty$ defined by
-    \[ z_k := \left(x_{N_k}^{(k)}\right)\]
-    for all $k \geq 1$.
-  \end{enumerate}  
-\end{exo}
+    \[z_k := \left(x_{N_k}^{(k)}\right)\]
+    for all $k \geq 1$. Now:
+    \begin{itemize}
+    \item We claim that $(z_k)_{k=1}^\infty$ is itself a Cauchy sequence.
+      Indeed, consider an arbitrary positive real number $\epsilon > 0$. We
+      must prove that $d(z_p, z_q) := d(x_{N_p}^{(p)}, x_{N_q}^{(q)})$
+      is eventually lesser than $\epsilon$.
+
+      Since $\seq{u_n}{1}$ is a Cauchy sequence in $\adh{X}$, there
+      exists a $N \geq 1$ such that, if $p,q \geq N$, we have
+      $d_{\adh{X}}(u_p, u_q) < \epsilon/3$, i.e.:
+      \begin{align*}
+        \epsilon/3 &> d_{\adh{X}}(u_p, u_q) \\
+        &\geq d_{\adh{X}} (\formallimit x_n^{(p)}, \formallimit
+          x_n^{(q)}) \\
+        &\geq \lim_{n \to \infty} d(x_n^{(p)}, x_n^{(q)})
+      \end{align*}
+      Thus, there exists a $N' \geq 1$ such that, if $n \geq N'$, we have
+      $d(x_n^{(p)}, x_n^{(q)}) \leq \epsilon/3$\footnote{Indeed, for any
+        sequence $\seq{v_n}{1}$ that converges to $\ell$, if we have
+        $0 \leq \ell < \epsilon$, then there exists an $N \geq 1$ such that
+        $v_n \leq \epsilon$ whenever $n \geq N$ (why? use a proof by
+        contradiction.).}. Also, by Exercise 5.4.4, there exists a
+      $k > 0$ such that $1/k \leq \epsilon/3$. Thus, if
+      $n,p,q \geq \max(k, N', N_p, N_q)$, we have
+      \begin{align*}
+        d(z_p, z_q)
+        &= d(x_{N_p}^{(p)}, x_{N_q}^{(q)}) \\
+        &\leq \underbrace{d(x_{N_p}^{(p)}, x_n^{(p)})}_{\leq 1/p \, \leq \, \epsilon/3}
+          + \underbrace{d(x_n^{(p)}, x_n^{(q)})}_{\leq \epsilon/3}
+          + \underbrace{d(x_n^{(q)}, x_{N_q}^{(q)})}_{\leq 1/q \, \leq \, \epsilon
+          /3} \\
+        &\leq \epsilon/3 + \epsilon/3 + \epsilon/3\\
+        &\leq \epsilon
+      \end{align*}
+      Thus, $(z_k)_{k=1}^\infty$ is indeed a Cauchy sequence in $X$.
+    \item Consequently, we can take the formal limit $L :=
+      \formallimit z_n$, and this formal limit $L$ lies in $\adh{X}$
+      by definition. We claim that $\lim_{n \to \infty} u_n = L \in \adh{X}$;
+      proving this claim will close the proof of (c).
+
+      Let be $\epsilon > 0$. Since $\seq{z_n}{1}$ is a Cauchy sequence in
+      $X$, there exists a $N_1 \geq 1$ such that
+      $d(z_p, z_q) \leq \epsilon/2$ whenever $p,q \geq N_1$.
+
+      Once again, by Exercise 5.4.4, there exists a $K' \geq 1$ such that
+      $1/K' < \epsilon/2$. Thus, if $k \geq K$ and $n > N_k$, we have
+      \[d(x_n^{(k)}, z_k) := d(x_n^{(k)}, x_{N_k}^{(k)}) < \frac{1}{k}
+        \leq \frac{1}{K} < \frac{\epsilon}{2}.\]
+
+      Thus, by the triangle inequality, we have, for all $n >
+      \max(N_k, N_1)$,
+      \[d(x_n^{(k)}, z_n) \leq d(x_n^{(k)}, z_k) + d(z_k, z_n) \leq \epsilon/2 +
+        \epsilon/2 \leq \epsilon.\]
+
+      Consequently, we have, for all $k > K'$,
+      \[d_{\adh{X}}(u_k, L) := \lim_{n \to \infty} d(x_n^{(k)}, b_n) < \epsilon.\]
+      This shows that $\seq{u_n}{1} \to L$ in
+      $(\adh{X}, d_{\adh{X}})$, which closes the proof.
+    \end{itemize}
+  \end{enumerate}
+ \end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
