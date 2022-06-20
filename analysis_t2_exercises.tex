@@ -1526,6 +1526,56 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
       This shows that $\seq{u_n}{1} \to L$ in
       $(\adh{X}, d_{\adh{X}})$, which closes the proof.
     \end{itemize}
+    
+  \item We identify an element $x \in X$ with the corresponding formal
+    limit $\formallimit x$ in $\adh{X}$.
+    \begin{itemize}
+    \item This is legitimate since we have
+      $x = y \iff \formallimit x = \formallimit y$.
+        
+        Indeed, it is clear that if $x = y$, then we have
+        $\formallimit x = \formallimit y$ by definition. Conversely,
+        if $\formallimit x = \formallimit y$, then we have
+        $\lim_{n \to \infty} d(x,y) = 0$, i.e. $d(x,y) = 0$, i.e.
+        $x = y$. Thus, this identification is legitimate.
+      \item With this identification, we have $d(x,y) =
+        d_{\adh{X}}(x,y)$. Indeed:
+        \begin{align*}
+          d_{\adh{X}}(x,y)
+          &= d_{\adh{X}}(\formallimit x, \formallimit y) \\
+          &= \lim_{n \to \infty} d(x,y) \\
+          &= d(x,y).
+        \end{align*}
+      \end{itemize}
+      Thus, $(X,d)$ can be thought of as a subspace of
+      $(\adh{X}, d_{\adh{X}})$.
+      
+    \item The closure of $X$ in $\adh{X}$ is $\adh{X}$.
+
+      Indeed, let be $C$ the closure of $X$ in $\adh{X}$. We clearly
+      have $C \subseteq \adh{X}$, by definition. Thus we just have to show
+      that $\adh{X} \subseteq C$.
+
+      Let be $x \in \adh{X}$, and let's show that $x \in C$. By
+      definition, $x \in C$ means that $x$ is an adherent point of $X$
+      in $\adh{X}$, i.e. that for all $\epsilon > 0$,
+      $B_{(\adh{X}, d_{\adh{X}})}(x, \epsilon) \cap X \neq \emptyset$. In other words, for
+      all $\epsilon > 0$, we must show that there exists a
+      $y \in X$ such that $d_{\adh{X}}(x,y) < \epsilon$.
+
+      Thus, let be $\epsilon > 0$. By definition, $x$ is the formal limit of
+      a Cauchy sequence $\seq{x_n}{1}$ of elements of $X$, so that
+      $x := \formallimit x_n$. Since $\seq{x_n}{1}$ is a Cauchy
+      sequence, there exists an $N \geq 1$ such that
+      $d(x_n, x_N) < \epsilon/2$ whenever $n \geq N$. Thus:
+      \begin{align*}
+        d_{\adh{X}}(x, x_N)
+        &:= d_{\adh{X}}(\formallimit x_n, \formallimit x_N) \\
+        &= \lim_{n \to \infty} d(x_n, x_N) \\
+        &\leq \epsilon/2 < \epsilon
+      \end{align*}
+      so that $y := x_N$ is a convenient choice. This shows that $x$
+      is an adherent point of $X$ in $\adh{X}$, as expected.
   \end{enumerate}
  \end{exo}
 \end{document}
