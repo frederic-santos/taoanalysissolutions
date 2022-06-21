@@ -1313,7 +1313,7 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
 \begin{exo}{12.4.8}{The following construction generalizes the
     construction of the reals from the rationals in Chapter 5. In what
     follows, we let $(X,d)$ be a metric space.}
-
+  
   We have to prove the following statements. Note that this is a
   generalization of the process of construction of the real numbers,
   so that we can use all results relative to the real numbers below.
@@ -1437,7 +1437,7 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
       \item Triangle inequality: by the limit laws, we have
         \begin{align*}
           &d_{\adh{X}}(\formallimit{x_n}, \formallimit{z_n})
-          = \lim_{n \to \infty} d(x_n, z_n) \\
+            = \lim_{n \to \infty} d(x_n, z_n) \\
           &\leq \lim_{n \to \infty} (d(x_n, y_n) + d(y_n, z_n)) \\
           &\leq \lim_{n \to \infty} d(x_n, y_n) + \lim_{n \to \infty} d(y_n, z_n) \\
           &\leq d_{\adh{X}}(\formallimit{x_n}, \formallimit{y_n}) +
@@ -1479,17 +1479,17 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
       $d_{\adh{X}}(u_p, u_q) < \epsilon/3$, i.e.:
       \begin{align*}
         \epsilon/3 &> d_{\adh{X}}(u_p, u_q) \\
-        &\geq d_{\adh{X}} (\formallimit x_n^{(p)}, \formallimit
-          x_n^{(q)}) \\
-        &\geq \lim_{n \to \infty} d(x_n^{(p)}, x_n^{(q)})
+            &\geq d_{\adh{X}} (\formallimit x_n^{(p)}, \formallimit
+              x_n^{(q)}) \\
+            &\geq \lim_{n \to \infty} d(x_n^{(p)}, x_n^{(q)})
       \end{align*}
       Thus, there exists a $N' \geq 1$ such that, if $n \geq N'$, we have
       $d(x_n^{(p)}, x_n^{(q)}) \leq \epsilon/3$\footnote{Indeed, for any
         sequence $\seq{v_n}{1}$ that converges to $\ell$, if we have
         $0 \leq \ell < \epsilon$, then there exists an $N \geq 1$ such that
         $v_n \leq \epsilon$ whenever $n \geq N$ (why? use a proof by
-        contradiction.).}. Also, by Exercise 5.4.4, there exists a
-      $k > 0$ such that $1/k \leq \epsilon/3$. Thus, if
+        contradiction.).\label{ft.limsuites}}. Also, by Exercise
+      5.4.4, there exists a $k > 0$ such that $1/k \leq \epsilon/3$. Thus, if
       $n,p,q \geq \max(k, N', N_p, N_q)$, we have
       \begin{align*}
         d(z_p, z_q)
@@ -1551,7 +1551,7 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
       $(\adh{X}, d_{\adh{X}})$.
       
     \item The closure of $X$ in $\adh{X}$ is $\adh{X}$.
-
+      
       Indeed, let be $C$ the closure of $X$ in $\adh{X}$. We clearly
       have $C \subseteq \adh{X}$, by definition. Thus we just have to show
       that $\adh{X} \subseteq C$.
@@ -1576,8 +1576,63 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
       \end{align*}
       so that $y := x_N$ is a convenient choice. This shows that $x$
       is an adherent point of $X$ in $\adh{X}$, as expected.
-  \end{enumerate}
- \end{exo}
+      
+    \item Finally, the formal limit agrees with the actual limit,
+      i.e., $\lim_{n \to \infty} x_n = \formallimit x_n \in \adh{X}$ for all
+      Cauchy sequence $\seq{x_n}{1}$ in $X$.
+
+      Indeed, let be $\seq{x_n}{1}$ a Cauchy sequence of elements of
+      $X$. We know that $(X,d)$ can be thought of as a subspace of
+      $(\adh{X}, d_{\adh{X}})$, so that $\seq{x_n}{1}$ can be thought
+      of as a sequence of elements of $\adh{X}$. But we have showed
+      that $(\adh{X}, d_{\adh{X}})$ is complete. Thus, the sequence
+      $\seq{x_n}{1}$ converges in $\adh{X}$ to a certain limit $L \in
+      \adh{X}$; i.e., we have $\lim_{n \to \infty} x_n = L$ for some $L \in
+      \adh{X}$.
+
+      Consider this limit $L$. By definition of $\adh{X}$, there
+      exists a Cauchy sequence $\seq{a_n}{1}$ of elements of $X$ such
+      that $L := \formallimit a_n$. What we need to prove is that we
+      have
+      \begin{equation}
+        \label{eq:12.4.8f}
+        L = \lim_{n \to \infty} x_n = \formallimit a_n = \formallimit x_n
+      \end{equation}
+      and thus, it is sufficient to show that
+      $\formallimit a_n = \formallimit x_n$, since we already have the
+      other equalities. And, by definition of the equality relation
+      established in (a), in order to prove that
+      $\formallimit a_n = \formallimit x_n$, we just have to show that
+      $\lim_{n \to \infty} d(x_n, a_n) = 0$. Or, in yet another equivalent
+      way, we have to show that for all $\epsilon > 0$, there exists an $N \geq
+      1$ such that $d(x_n, a_n) \leq \epsilon$ whenever $n \geq N$.
+
+      Thus, let be an arbitrary $\epsilon > 0$. Let's unfold our hypotheses.
+      \begin{itemize}
+      \item We know that the sequence $\seq{x_n}{1}$ converges to $L$
+        in $\adh{X}$. Thus, by definition, there exists a $N_1 \geq 1$
+        such that $d_{\adh{X}}(x_k, L) \leq \epsilon/2$ whenever
+        $k \geq N_1$. In other words,
+        $\lim_{n \to \infty} d(x_k, a_n) \leq \epsilon/3 < \epsilon/2$ whenever $k \geq N_1$.
+
+        Thus, there exists a $N_2$ such that
+        $d(x_k, a_n) \leq \epsilon/2$ whenever $k \geq N_1$ and
+        $n \geq N_2$ (see footnote \ref{ft.limsuites} p.
+        \pageref{ft.limsuites} from the present document).
+      \item We also know that $\seq{x_n}{1}$ is a Cauchy sequence. It
+        means that there exists a $N_3 \geq 1$ such that
+        $d(x_p, x_q) \leq \epsilon/2$ for all $p,q \geq N_3$.
+      \end{itemize}
+      Let be $N := \max(N_1, N_2, N_3)$. Using the triangle
+      inequality, we finally get, for all $n \geq N$,
+      \begin{align*}
+        d(x_n, a_n) &\leq d(x_n, x_N) + d(x_N, a_n) \\
+                    &\leq \epsilon/2 + \epsilon/2 \\
+                    &\leq \epsilon
+      \end{align*}
+      This closes the proof.
+    \end{enumerate}
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
