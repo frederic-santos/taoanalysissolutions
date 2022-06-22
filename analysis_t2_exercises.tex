@@ -1633,6 +1633,29 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
       This closes the proof.
     \end{enumerate}
 \end{exo}
+
+\begin{exo}{12.5.1}{Show that Definitions 9.1.22 and 12.5.3 match when
+    talking about subsets of the real line with the standard metric.}
+
+  Consider $Y \subseteq \rr$ and the standard metric $d(x,y) = |x-y|$ for all
+  $x,y \in \rr$. We have to show that both definitions of boundedness
+  are equivalent in this case.
+
+  \begin{itemize}
+  \item First, suppose that $Y$ is bounded in the sense of Definition
+    12.5.3. Thus, there exists a real number $x$ and a positive real
+    number $r > 0$ such that $Y \subseteq B(x,r)$. In other words, we have
+    $Y \subseteq \, ]x-r, x+r[ \, \subseteq [x-r, x+r]$. Let be
+    $M := |x| + |r|$. We clearly have $x+r \leq M$, and $-M \leq x-r$. Thus,
+    we have $Y \subseteq [-M, M]$, and $Y$ is bounded in the sense of
+    Definition 9.1.22.
+  \item Conversely, suppose that $Y$ is bounded in the sense of
+    Definition 9.1.22. Thus, there exists a positive real $M > 0$ such
+    that $Y \subseteq [-M, M] \subset ]-2M, 2M[$. But this later interval is simply
+    $B(0, 2M)$, so that $Y$ is bounded in the sense of Definition
+    12.5.1, taking $x := 0$ and $r := 2M$.
+  \end{itemize}
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
