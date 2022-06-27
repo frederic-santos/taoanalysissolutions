@@ -1656,6 +1656,62 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
     12.5.1, taking $x := 0$ and $r := 2M$.
   \end{itemize}
 \end{exo}
+
+\begin{exo}{12.5.2}{Prove Proposition 12.5.5.}
+
+  We must prove that any compact space $(X,d)$ is both complete and
+  bounded. In both cases, we will use a proof by contradiction.
+
+  \begin{itemize}
+  \item First, let's prove completeness. Suppose, for the sake of
+    contradiction, that the compact space $(X,d)$ is not complete.
+    Since it is not complete, there exists a Cauchy sequence
+    $\seq{x^{(n)}}{1}$ of elements of $X$ which does not converge in
+    $(X,d)$. But since it is compact, there exists a subsequence
+    $(x^{(n_k)})_{k=1}^\infty$ of this Cauchy sequence, which converges in
+    $(X,d)$. But, by Lemma 12.4.9, if a Cauchy sequence has a
+    convergent subsequence, then it is convergent itself; thus
+    $\seq{x^{(n)}}{1}$ converges. It is a clear contradiction. Thus,
+    $(X,d)$ must be complete.
+  \item Now we show boundedness. Similarly, suppose for the sake of
+    contradiction that $(X,d)$ is not bounded. It means that, for all
+    positive real $r>0$ and all $x \in X$, we have
+    $X \not \subseteq B(x,r)$. In particular, for any positive natural number
+    $n \geq 1$ and an arbitrary $x \in X$, the set
+    $X \backslash B(x,n)$ is not empty. Thus, using the (countable) axiom of
+    choice, we can build a sequence $\seq{x^{(n)}}{1}$ such that
+    $x^{(n)} \in X \backslash B(x,n)$ for all positive integer
+    $n \geq 1$. Or, in other words, we have $d(x, x^{(n)}) \geq n$ for all
+    $n \geq 1$.
+
+    But recall that $(X,d)$ is compact. Thus, there must exist a
+    convergent subsequence $(x^{(n_k)})_{k=1}^\infty$ of the original
+    sequence. Say that this subsequence converges to some value $L$.
+    Thus, by definition,
+    \[\forall \epsilon > 0, \exists K \geq 1 \, : \, k \geq K \implies d(x^{(n_k)}, L) \leq \epsilon.\]
+    Let's take $\epsilon := 1$ (there is nothing special about this value;
+    this is just any arbitrary $\epsilon$ to obtain a contradiction). There
+    must exist a $K_{1} \geq 1$ such that $d(x^{(n_k)}, L) \leq 1$ whenever
+    $k \geq K_{1}$. But, at the same time, we have by the triangle
+    inequality
+    \begin{align*}
+      d(x^{(n_k)}, x) &\leq d(x^{(n_k)}, L) + d(L, x)\\
+      \implies d(x^{(n_k)}, L) &\geq d(x^{(n_k)}, x) - d(L,x)
+    \end{align*}
+
+    For instance by the Archimedean principle, there exists an $N \in
+    \nn$ such that $N \geq d(L,x) + 3$. Let be $K_2 := \min\{ k \in \nn :
+    n_k \geq N\}$ (this natural number exists simply because $n_N \geq N$,
+    so that the set is not empty). We thus have
+    \[d(x, x^{(n_k)}) \geq n_k \geq N \geq d(L,x) + 3\]
+    for all $k \geq K_2$.
+
+    Thus, for all $k \geq \max(K_1, K_2)$, we have both $d(x^{(n_k)}, x)
+    \leq 1$ (because $k \geq K_1$), and $d(x^{(n_k)}, L) \geq d(x^{(n_k)}, x) -
+    d(L,x) \geq d(L,x) + 3 - d(L,x) \geq 3$ (because $k \geq K_2$). This is a
+    contradiction. Thus, $(X,d)$ is bounded.
+  \end{itemize}
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
