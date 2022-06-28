@@ -1712,6 +1712,57 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
     contradiction. Thus, $(X,d)$ is bounded.
   \end{itemize}
 \end{exo}
+
+\begin{exo}{12.5.3}{Prove Theorem 12.5.7.}
+
+  Let be $(\rr^{n}, d)$ an Euclidean space, where $d$ is either the
+  Euclidean, taxicab or sup norm metric. Also, let be
+  $E \subseteq \rr^{n}$. We have to prove that $E$ is compact iff $E$ is
+  closed and bounded. By Corollary 12.5.6, we already know that if $E$
+  is compact, then it is closed and bounded. We thus have to prove the
+  converse implication.
+
+  Suppose that $E$ is both closed and bounded. Since $E$ is a subset
+  of $\rr^{n}$, we can write $E := E_{1} \times \ldots \times E_{n}$, where
+  $E_{j} \subseteq \rr$ for all $1 \leq j \leq n$.
+
+  We have to prove that any sequence $(x^{(k)})_{k=1}^{\infty}$ in $E$ has
+  a convergent subsequence in $(E, d)$. This sequence can be written
+  as a sequence of vectors of length $n$, i.e., we have
+  $x^{(k)} = (x_{1}^{(k)}, \ldots, x_{n}^{(k)})$, where
+  $x_{j}^{(k)} \in E_j$ for all $k \geq 1$ and all $1 \leq j \leq n$.
+
+ We will first need a lemma:
+
+  \smallskip
+  \textbf{Lemma}. If $E$ is bounded, then each $E_j \subseteq \rr$ is also
+  bounded.
+
+  \begin{proof}[Sketch of proof]
+    Suppose that $d$ is the sup norm metric. If $E$ is bounded, we
+    have $E \subseteq B(x, r)$ for some $x \in \rr^{n}$ and some $r > 0$
+    (Definition 12.5.3). In other words, we have $d(x, y) < r$ for all
+    $y \in E$. Since $d$ is the sup norm metric, this implies that
+    \[\forall j \in \llbracket 1, n \rrbracket, \,
+      |x_{j} - y_{j}| \leq \max_{j = 1, \ldots, n} |x_{j} - y_{j}| := d(x,y) <
+      r.\] Thus, $E_j \subseteq B(x_{j}, r)$, i.e. $E_{j}$ is bounded for all
+    $1 \leq j \leq n$.
+
+    The proof is similar if $d$ is the Euclidean metric, or the
+    taxicab metric.
+  \end{proof}
+
+  Now we go back to the main proof. Since each sequence
+  $(x_{j}^{(k)})_{k=1}^{\infty}$ is a sequence of real numbers in the
+  bounded subset $E_{j} \subseteq \rr$, then by Theorem 9.1.24 this sequence
+  has a convergent subsequence $(x_{j}^{(k_{l})})_{l=1}^{\infty}$, which
+  converges to $L_{j} \in \rr_{j}$. But by Proposition 12.1.18, this
+  implies that the whole subsequence $(x^{(k_{l})})_{l=1}^{\infty}$ converges
+  to $(L_{1}, \ldots, L_{n})$ (since it converges component-wise).
+
+  Thus, $(x_{j}^{(k)})_{k=1}^{\infty}$ indeed has a convergent subsequence,
+  as expected; and $E$ is compact.
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
