@@ -1763,6 +1763,32 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
   Thus, $(x_{j}^{(k)})_{k=1}^{\infty}$ indeed has a convergent subsequence,
   as expected; and $E$ is compact.
 \end{exo}
+
+\bigskip
+\begin{exo}{12.5.4}{Let $(\rr, d)$ be the real line with the standard
+    metric. Give an example of a continuous function $f : \rr \to
+    \rr$, and an open set $V \subseteq \rr$, such that the image $f(V) :=
+    \{f(x) : x \in V\}$ of $V$ is not open.}
+
+  As a simple example, consider the constant function $f(x) = 0$
+  defined on $V := ]-1, 1[$. The interval $V$ is clearly open, but we
+  have $f(V) = \{0\}$. This singleton (or more generally, any
+  singleton) is not open in $(\rr, d)$, since for all $r>0$, there
+  always exists a real number $x$ such that $x \in B(0, r) \backslash \{0\}$.
+\end{exo}
+
+\bigskip
+\begin{exo}{12.5.5}{Let $(\rr, d)$ be the real line with the standard
+    metric. Give an example of a continuous function $f: \rr \to \rr$, and
+    closed set $F \subseteq \rr$, such that $f(F)$ is not closed.}
+
+  One can give the example of the function $\tan^{-1}(x)$ defined on
+  the closed set $F := \rr$, but this function has not really been
+  defined so far in the book. So, let's use a simpler example.
+  
+  Consider the closed set $F := [1, +\infty[$ and the function $f(x) =
+  1/x$. We have $f(F) = ]0, 1]$, which is not a closed set.  
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
