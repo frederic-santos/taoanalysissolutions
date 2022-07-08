@@ -1789,6 +1789,50 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
   Consider the closed set $F := [1, +\infty[$ and the function $f(x) =
   1/x$. We have $f(F) = ]0, 1]$, which is not a closed set.  
 \end{exo}
+
+\pagebreak
+\begin{exo}{12.5.6}{Prove Corollary 12.5.9.}
+
+  Consider a sequence $K_1 \supset K_2 \supset K_3 \supset \ldots$ of non-empty compact sets
+  in a metric space $(X,d)$. We have to show that $\bigcap_{n=1}^\infty K_n \neq \emptyset$.
+
+  Let's work in the space $(K_1, d_{K_1 \times K_1})$. We define the sets
+  $V_n := K_1 \setminus K_n$ for all $n \geq 1$, i.e.,
+  \begin{align*}
+    V_1 &:= K_1 \setminus K_1 = \emptyset \\
+    V_2 &:= K_1 \setminus K_2 \\
+    V_3 &:= K_1 \setminus K_3 \\
+        & \ldots
+  \end{align*}
+  so that the $V_n$ clearly constitute an increasing sequence:
+  \[V_1 \subseteq V_2 \subseteq V_3 \subseteq \ldots,\]
+  so that $\bigcup_{k = 1}^n V_k = V_n$ for all $n \geq 1$.
+  
+  Furthermore, each set $V_n$ is open in $(K_1, d_{K_1 \times K_1})$, since
+  it is the complementary set of a compact (and then closed) set
+  (Proposition 12.2.15 (e)).
+
+  Suppose, for the sake of contradiction, that we have $\bigcap_{n=1}^\infty K_n
+  = \emptyset$. We would thus have:
+  \begin{align*}
+    \bigcup_{n=1}^\infty V_n &= \bigcup_{n=1}^\infty (K_1 \setminus K_n) \\
+                  &= K_1 \setminus \left(\bigcap_{n=1}^\infty K_n\right) \text{ (Exercise 3.4.11)}\\
+                  &= K_1 \setminus \emptyset \text{ (by hypothesis)} \\
+                  &= K_1.
+  \end{align*}
+
+  But since $K_1$ is compact, then by Theorem 12.5.8, there exists a
+  finite open cover of $K_1$, i.e., there exists a finite number $k$
+  of indices $n_1 < \ldots < n_k\}$ such that
+  \[\bigcup_{n \in \{n_1, \ldots, n_k\}} V_n = K_1.\]
+
+  But since the $V_n$ form an increasing sequence, this implies
+  $V_{n_k} = K_1$, i.e., $K_1 \setminus K_{n_k} = K_1$, so that we finally get
+  $K_{n_k} = \emptyset$.
+
+  But all the sets $K_n$ were supposed to be non empty: this is thus a
+  contradiction, and we must have $\bigcap_{n=1}^\infty K_n \neq \emptyset$.
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
