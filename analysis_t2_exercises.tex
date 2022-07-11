@@ -1833,6 +1833,29 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
   But all the sets $K_n$ were supposed to be non empty: this is thus a
   contradiction, and we must have $\bigcap_{n=1}^\infty K_n \neq \emptyset$.
 \end{exo}
+
+\bigskip
+\begin{exo}{12.5.7}{Prove Theorem 12.5.10.}
+
+  Let be $(X,d)$ a metric space.
+
+  \begin{enumerate}[label=(\alph*)]
+  \item Let be $Z \subseteq Y \subseteq X$, with $Y$ compact. We have to show that $Z$
+    is closed iff it is compact. We already know that if $Z$ is
+    compact, then it is closed (Corollary 12.5.6); so that we just
+    have to show the converse implication.
+
+    Suppose that $Z$ is closed, and let be $(z^{(n)})_{n=1}^{\infty}$ a
+    sequence of elements of $Z$. Since $Z \subseteq Y$, $(z^{(n)})_{n=1}^{\infty}$
+    is also a sequence of elements of $Y$; and since $Y$ is compact,
+    there exists a subsequence $(z^{(n_{k})})_{k=1}^{\infty}$ that
+    converges to some $z \in Y$. But since $Z$ is closed, we must have
+    $z \in Z$ (by Proposition 12.2.15(b)). Thus, any sequence of
+    elements of $Z$ has a subsequence that converges in $Z$, i.e., $Z$
+    is indeed compact.
+  \end{enumerate}
+  
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
