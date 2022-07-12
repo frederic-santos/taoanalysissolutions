@@ -1299,6 +1299,22 @@ there exists a set $\mathcal{A}$ such that $x \in \mathcal{A}$ iff
 $x \in A$ or $x \in B$. This is precisely the Axiom 3.4.
 
 \bigskip
+\begin{exo}{3.4.11}{Let $X$ be a set, let $I$ be a non-empty set, and
+    for all $\alpha \in I$ let $A_\alpha$ be a subset of X. Show that $X \setminus \bigcup_{\alpha \in
+      I} A_\alpha = \bigcap_{\alpha \in I} (X \setminus A_\alpha)$ and $X \setminus \bigcap_{\alpha \in
+      I} A_\alpha = \bigcup_{\alpha \in I} (X \setminus A_\alpha)$.}
+
+  We will just prove the first assertion here, since the second one
+  can be proved in a very similar fashion.
+
+  By definition, $x \in X \setminus \bigcup_{\alpha \in I} A_\alpha $ if and only if $x \in X$ and
+  $x \notin \bigcup_{\alpha \in I} A_\alpha$. Equivalently, we have $x \in X$ and $x \notin A_\alpha$ for
+  all $\alpha \in I$. We can just switch the last quantifier to say that
+  ``for all $\alpha \in I$, we have $x \in X$ and $x \notin A_\alpha$''. In other words,
+  we have $x \in \bigcap_{\alpha \in I} (X \setminus A_\alpha)$, as expected.
+\end{exo}
+
+\bigskip
 \begin{exo}{3.5.1}{Suppose we define the ordered pair $(x,y)$  for any
     objects $x$ and $y$ by the formula $(x,y) := \{\{x\},
     \{x,y\}\}$. Show that  this definition obeys the property (3.5), and
@@ -1490,7 +1506,6 @@ $x \in A$ or $x \in B$. This is precisely the Axiom 3.4.
     But $f(A) \subseteq B$, so that by Proposition 3.6.14(c), we have
     $\# B \geq \# (f(A)) = n$, which closes the proof.
   \end{itemize}
-  
 \end{exo}
 
 \pagebreak
