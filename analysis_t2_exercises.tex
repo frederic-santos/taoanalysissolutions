@@ -1853,6 +1853,48 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
     $z \in Z$ (by Proposition 12.2.15(b)). Thus, any sequence of
     elements of $Z$ has a subsequence that converges in $Z$, i.e., $Z$
     is indeed compact.
+    
+  \item Let be $Y_1, \ldots, Y_n$ be $n$ compact subsets of $X$; we have to
+    show that the finite union $Y_1 \cup \ldots \cup Y_n$ is compact. Let's
+    use the topological characterization of compact sets: suppose that
+    we have an open cover $\bigcup_{\alpha \in I} V_\alpha$ (possibly uncountable), i.e.
+    that
+    \[Y_1 \cup \ldots \cup Y_n \subseteq \bigcup_{\alpha \in I} V_\alpha.\]
+
+    Clearly, we have $Y_1 \subseteq  \bigcup_{\alpha \in I} V_\alpha$, and since $V_1$ is
+    compact, there exists a finite open cover, i.e. $Y_1 \subseteq  \bigcup_{i =
+      1}^{s_1} V_{a_i}$. Similarly, there exist finite open covers for
+    each other subset $Y_i$, i.e.,
+    \begin{align*}
+      Y_2 &\subseteq  \bigcup_{i = 1}^{s_2} V_{b_i} \\
+          & \ldots \\
+      Y_n &\subseteq \bigcup_{i = 1}^{s_n} V_{n_i}.
+    \end{align*}
+    Thus, there exists a finite open cover
+    \[Y_1 \cup \ldots \cup Y_n \subseteq \bigcup_{\alpha \in \{a_1, \ldots, a_{s_1}, b_1, \ldots, b_{s_2}, \ldots,
+        n_1, \ldots, n_{s_n}\}} V_\alpha\]
+    so that $Y_1 \cup \ldots \cup Y_n$ is indeed compact.
+    
+  \item Let be $Y$ a finite subset of $X$; we have to show that $Y$ is
+    compact.
+
+    First, suppose that $Y$ is a singleton $\{a\}$. By definition, any
+    sequence of elements of $Y$ can only be the constant sequence $a,
+    a, a, \ldots$. Thus, any subsequence of this sequence is still the
+    constant sequence $a, a, \ldots$, and still converges to $a$. Thus, any
+    sequence of elements of $Y$ has a subsequence that converges in
+    $Y$, i.e., $Y$ is compact.
+
+    Now suppose that $Y$ is a finite subset of cardinality $n$. Let's
+    write $Y := \{y_1, \ldots, y_n\}$. This can also be written
+    $Y := \{y_1\} \cup \ldots \cup \{y_n\}$, so that we are back in the previous
+    case (b): $Y$ is the finite union of compact subsets of $X$. Thus,
+    $Y$ is itself compact.
+
+    Note that for the limit case $Y = \emptyset$, we can say that the empty
+    set is just a closed\footnote{See Remark 12.2.14.} subset of the
+    compact set $\{a\}$, so that by the previous case (a), $Y = \emptyset$ is
+    compact.
   \end{enumerate}
   
 \end{exo}
