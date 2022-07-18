@@ -1898,6 +1898,69 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
   \end{enumerate}
 \end{exo}
 
+\begin{exo}{12.5.8}{Let $(X, d_{l^1})$ be the metric space from
+    Exercise 12.1.15. For each natural number $n$, let
+    $e^{(n)} = (e^{(n)}_j)_{j=0}^\infty$ be the sequence in $X$ such that
+    $e^{(n)}_j := 1$ when $n = j$ and $e^{(n)}_j := 0$ when
+    $n \neq j$. Show that the set $\{e^{(n)} : n \in \nn\}$ is a closed and
+    bounded subset of $X$, but is not compact.}
+
+  Recall that $(X,d_{l^1})$ is the metric space of absolutely
+  convergent sequences, with the metric defined by
+  $d_{l^1}((a^{(n)}), (b^{(n)})) := \sum_{n=0}^\infty |a_n - b_n|$. Hereafter,
+  we denote $E := \{e^{(n)} : n \in \nn\}$, with
+  \begin{align*}
+    e^{(0)} &:= 1, 0, 0, 0, \ldots \\
+    e^{(1)} &:= 0, 1, 0, 0, \ldots \\
+    e^{(2)} &:= 0, 0, 1, 0, \ldots \\
+    &\ldots
+  \end{align*}
+
+  \begin{itemize}
+  \item First, we show that $E$ is not compact. To prove this
+    statement, we just have to find one sequence of elements of $E$
+    that has no convergent subsequence in $E$.
+
+    Consider the ``canonical'' sequence of elements of $E$ defined by
+    $e^{(0)}, e^{(1)}, e^{(2)}, \ldots$. The distance between any two
+    distinct elements of this sequence is
+    \[d_{l^{(1)}}(e^{(j)}, e^{(k)}) := \sum_{i=0}^\infty |e_i^{(j)} -
+      e_i^{(k)}| = 2 > 1.\]
+
+    Thus, this sequence is not a Cauchy sequence itself, and it is
+    clear that no subsequence can be a Cauchy sequence either. Thus,
+    no subsequence of this sequence can converge in $E$, i.e., $E$ is
+    not compact.
+    
+  \item However, $E$ is a closed subset of $X$. To prove this
+    property, consider a convergent sequence of elements of $E$; we
+    have to prove that its limit lies in $E$. We've just shown that
+    the distance between any two distinct terms $e^{(j)}, e^{(k)}$ for
+    $j \neq k$ is equal to $2$. Thus, if a sequence of elements of $E$
+    converges, it must be eventually $0.5$-stable, and the only
+    possibility for that is to be eventually constant. In other words,
+    it must be eventually equal to $e^{(n_0)}$ for $n_0 \in \nn$, so
+    that it necessarily converges to $e^{(n_0)}$, which is an element
+    of $E$. This shows that $E$ is closed.
+    
+  \item Furthermore, $E$ is bounded. To show the boundedness of $E$,
+    we have to show that $E \subseteq B_{(X, d_{l^1})}((x_j)_{j=0}^\infty, r)$
+    for some $r > 0$ and some sequence $(x_j)_{j=0}^\infty \in X$.
+    Consider the zero sequence $(z_j)_{j=0}^\infty := 0, 0, 0, \ldots$. This
+    is clearly a sequence in $X$ (since it converges to $0$), and we
+    have
+    \[d_{l^1}\left((z_j)_{j=0}^\infty, (e^{(n)}_j)_{j=0}^\infty\right)
+      = \sum_{j=0}^\infty |z_j - e^{(n)}_j| = 1 < 2\]
+    for all $n \in \nn$. Thus, we have $E \subseteq B_{(X,
+      d_{l^1})}((z_j)_{j=0}^\infty, 2)$, which shows that $E$ is bounded.
+  \end{itemize}
+
+  Thus, the case of the subset $E$ of the metric space $(X, d_{l^1})$
+  shows that the Heine-Borel theorem (stated for the metric space
+  $(\rr^n, d)$) is not valid in more general metric spaces.
+\end{exo}
+
+\bigskip
 \begin{exo}{12.5.9}{Show that a metric space $(X, d)$ is compact if
     and only if every sequence in $X$ has at least one limit point.}
 
@@ -1906,6 +1969,35 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
   is a direct consequence of Proposition 12.4.5, which says basically
   that ``having a convergent subsequence'' and ``having a limit
   point'' are synonymous.
+\end{exo}
+
+\pagebreak
+\section{Continuous functions on metric spaces}
+\label{cha:cont-funct-metr}
+
+\begin{exo}{13.1.1}{Prove Theorem 13.1.4.}
+
+  Since the implication $(b) \implies (c)$ may be slightly more
+  difficult to write, we will prove the implications $(a) \implies
+  (c)$, $(c) \implies (b)$ and $(b) \implies (a)$ in this order.
+
+  Let be $f : (X, d_X) \to (Y, d_Y)$, and $x_0 \in X$.
+
+  \begin{itemize}
+  \item First let's prove $(a) \implies (c)$. Suppose that $f$ is
+    continuous at $x_0$, and let be $V \subset Y$ an open set that contains
+    $f(x_0)$. By Proposition 12.2.15(a), there exists a $\epsilon > 0$ such
+    that $B_Y(f(x_0), \epsilon) \subseteq V$. But since $f$ is continuous at $x_0$,
+    we know that there exists a $\delta > 0$ such that $d_X(x, x_0) < \delta
+    \implies d_Y(f(x), f(x_0)) < \epsilon$. Thus, if we set $U := B_X(x_0,
+    \delta)$, we have found an open set $U \subset X$ such that $f(U) \subseteq
+    B_Y(f(x_0), \epsilon) \subseteq V$, as required.
+  \item Now we prove $(c) \implies (b)$. and consider a sequence
+    $\seq{x^{(n)}}{1}$ in $X$ which converges to $x_0$ with respect to
+    $d_X$.
+  \item Finally, we prove $(b) \implies (a)$.
+  \end{itemize}
+  
 \end{exo}
 \end{document}
 %%% Local Variables:
