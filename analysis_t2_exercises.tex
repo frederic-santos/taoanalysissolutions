@@ -1985,19 +1985,51 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
 
   \begin{itemize}
   \item First let's prove $(a) \implies (c)$. Suppose that $f$ is
-    continuous at $x_0$, and let be $V \subset Y$ an open set that contains
+    continuous at $x_0$, and let be $V \subseteq Y$ an open set that contains
     $f(x_0)$. By Proposition 12.2.15(a), there exists a $\epsilon > 0$ such
-    that $B_Y(f(x_0), \epsilon) \subseteq V$. But since $f$ is continuous at $x_0$,
-    we know that there exists a $\delta > 0$ such that $d_X(x, x_0) < \delta
-    \implies d_Y(f(x), f(x_0)) < \epsilon$. Thus, if we set $U := B_X(x_0,
-    \delta)$, we have found an open set $U \subset X$ such that $f(U) \subseteq
-    B_Y(f(x_0), \epsilon) \subseteq V$, as required.
-  \item Now we prove $(c) \implies (b)$. and consider a sequence
+    that $B_Y(f(x_0), \epsilon) \subseteq V$. But since $f$ is continuous at
+    $x_0$, we know that there exists a $\delta > 0$ such that
+    $d_X(x, x_0) < \delta \implies d_Y(f(x), f(x_0)) < \epsilon$. Thus, if we set
+    $U := B_X(x_0, \delta)$, we have found an open set $U \subseteq X$ such that
+    $f(U) \subseteq B_Y(f(x_0), \epsilon) \subseteq V$, as required.
+  \item Now we prove $(c) \implies (b)$. Consider a sequence
     $\seq{x^{(n)}}{1}$ in $X$ which converges to $x_0$ with respect to
-    $d_X$.
-  \item Finally, we prove $(b) \implies (a)$.
-  \end{itemize}
-  
+    $d_X$. Let be an arbitrary $\epsilon > 0$; we set
+    $V_\epsilon := B_Y(f(x_0), \epsilon)$. By $(c)$, we know that there exists an open
+    set $U \subseteq X$ containing $x_0$ and such that $f(U) \subseteq V_\epsilon$. But since
+    $U$ is open set, by Proposition 12.2.15(a), there exists a $\delta > 0$
+    such that $B_X(x_0, \delta) \subseteq U$.
+
+    Since $\seq{x^{(n)}}{1}$ converges to $x_0$, there exists a
+    natural number $N \geq 1$ such that $d_X(x^{(n)}, x_0) < \delta$ whenever
+    $n \geq N$. Or, in other words, we have $x^{(n)} \in B_X(x_0, \delta) \subseteq U$
+    whenever $n \geq N$.
+
+    But since $f(U) \subseteq V$ by hypothesis, we thus have $f(x^{(n)}) \in V_\epsilon$
+    whenever $n \geq N$. Since this is true for any arbitrary $\epsilon > 0$,
+    this shows that the sequence $\seq{f(x^{(n)})}{1}$ converges to
+    $f(x_0)$ with respect to $d_Y$, as expected.
+    
+  \item Finally, we prove $(b) \implies (a)$. Suppose that
+    $\seq{f(x^{(n)})}{1}$ converges to $f(x_0)$ whenever
+    $\seq{x^{(n)}}{1}$ converges to $x_0$, and let's show that $f$ is
+    continuous at $x_0$.
+
+    Suppose, for the sake of contradiction, that $f$ is \emph{not}
+    continuous at $x_0$. Thus, there exists an $\epsilon > 0$ such that for
+    all $\delta > 0$, there exists an $x \in X$ such that
+    $d_Y(f(x), f(x_0)) \geq \epsilon$ although $d_X(x, x_0) < \delta$.
+
+    Thus, using the (countable) axiom of choice, we build a sequence
+    $\seq{x^{(n)}}{1}$ such that, for all $n \geq 1$, we have
+    $d_Y(f(x^{(n)}), f(x_0)) \geq \epsilon$ although
+    $d_X(x^{(n)}, x_0) < \frac{1}{n}$. It is thus clear that
+    $\seq{x^{(n)}}{1}$ converges to $x_0$, but that
+    $\seq{f(x^{(n)})}{1}$ does not converge to $f(x_0)$, since
+    $f(x^{(n)})$ and $f(x_0)$ are never $\epsilon/2$-close. This is a
+    contradiction with $(c)$. Thus, $f$ must be continuous at $x_0$,
+    as expected.
+  \end{itemize}  
 \end{exo}
 \end{document}
 %%% Local Variables:
