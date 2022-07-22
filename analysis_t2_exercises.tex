@@ -2031,6 +2031,59 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
     as expected.
   \end{itemize}  
 \end{exo}
+
+\begin{exo}{13.1.2}{Prove Theorem 13.1.5.}
+
+  We already know from Theorem 13.1.4 that $(a)$ and $(b)$ are
+  equivalent. Let's prove the other implications.
+
+  \begin{itemize}
+  \item First we prove that $(a) \implies (c)$. Let be $V$ an open set
+    in $Y$. We must show that $f^{-1}(V)$ is an open set in $X$. Thus,
+    if we take an arbitrary $x_0 \in f^{-1}(V)$, we must show that there
+    exists an $r_0 > 0$ such that $B_X(x_0, r_0) \subseteq f^{-1}(V)$ (cf.
+    Theorem 12.2.15(a)).
+
+    Consider this arbitrary $x_0 \in f^{-1}(V)$. By definition, we have
+    $f(x_0) \in V$. But since $V$ is an open set, there exists an $\epsilon >
+    0$ such that $B_Y(f(x_0), \epsilon) \subseteq V$.
+
+    But $f$ is continuous: for this $\epsilon > 0$, there exists a
+    $\delta > 0$ such that, for $x \in X$, we have
+    $d_X(x_0, x) < \delta \implies d_Y(f(x_0), f(x)) < \epsilon$. In other words,
+    we have $x \in B_X(x_0, \delta) \implies f(x) \in B_Y(f(x_0), \epsilon) \subseteq V$.
+
+    Thus, if we set $r_0 := \delta$, we are done: for all $x \in B_X(x_0,
+    r_0)$, we have $f(x) \in V$, i.e. $x \in f^{-1}(V)$. This shows that
+    $B_X(x_0, \delta) \subseteq f^{-1}(V)$, and thus that $f^{-1}(V)$ is an open
+    set, as expected.
+  \item Now we show that $(c) \implies (d)$. By Theorem 12.2.15(e), we
+    know that $F \subseteq X$ is closed iff $X \setminus F$ is open. Thus, consider
+    $F \subseteq Y$ a closed set in $Y$. Let be $V := Y \setminus F$ its complementary
+    set, which is thus an open set. By $(c)$, the set $f^{-1}(V)$ is
+    an open set in $X$. But we have :
+    \begin{align*}
+      f^{-1}(F) &= \{x \in X : f(x) \in F\} \\
+                &= \{x \in X : f(x) \in Y \setminus V\} \\
+                &= \{x \in X : f(x) \notin V\}
+    \end{align*}
+    so that $f^{-1}(F) = X \setminus f^{-1}(V)$. Since $f^{-1}(F)$ is the
+    complementary set of the open set $f^{-1}(V)$, it is closed in $X$,
+    as expected.
+  \item The implication $(d) \implies (c)$ can be shown in exactly the
+    same way as above.
+  \item Finally, let's show that $(c) \implies (a)$. Let be $\epsilon > 0$,
+    let be $x_0 \in X$. Consider $V := B_Y(f(x_0), \epsilon)$, which is an open
+    set in $Y$. By $(c)$, the set $f^{-1}(V)$ is open in $X$. Thus, by
+    Theorem 12.2.15(a), there exists a $\delta > 0$ such that $B_X(x_0, \delta)
+    \subseteq f^{-1}(V)$. Thus, if $x \in B_X(x_0, \delta)$, we have $f(x) \in V$.
+
+    In other words, for any $\epsilon > 0$, there exists a $\delta > 0$ such that
+    $d_X(x, x_0) < \delta \implies d_Y(f(x), f(x0)) < \epsilon$. This shows that
+    $f$ is continuous at $x_0$, for any arbitrary $x_0 \in X$, as
+    expected.
+  \end{itemize}
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
