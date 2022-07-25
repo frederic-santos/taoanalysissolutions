@@ -2083,6 +2083,26 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
     $f$ is continuous at $x_0$, for any arbitrary $x_0 \in X$, as
     expected.
   \end{itemize}
+
+  \begin{exo}{13.1.3}{Use Theorem 13.1.4 and Theorem 13.1.5 to prove
+      Corollary 13.1.7.}
+
+    To show (a), consider $\seq{x^{(n)}}{1}$ a sequence of elements of
+    $X$ that converges to $x_0 \in X$. Since $f$ is continuous at
+    $x_0$, then by Theorem 13.1.4(b), we know that
+    $\seq{f(x^{(n)})}{1}$ converges to $f(x_0) \in Y$. But
+    $\seq{f(x^{(n)})}{1}$ is a sequence of elements of $Y$. Since $g$
+    is continuous at $f(x_0)$, then still by Theorem 13.1.4(b), we
+    know that $\seq{g(f(x^{(n)}))}{1}$ converges to $g(f(x_0)) \in Z$.
+
+    Thus, we have proved that for any sequence $\seq{x^{(n)}}{1}$ of
+    elements of $X$ that converges to $x_0 \in X$, the sequence $\seq{g
+      \circ f(x^{(n)})}{1}$ converges to $g \circ f(x_0)$. This shows that $g \circ
+    f$ is continuous at $x_0$, as expected.
+
+    Once (a) is proved, the result (b) is clear, since it is just (a)
+    at any arbitrary $x_0 \in X$.
+  \end{exo}
 \end{exo}
 \end{document}
 %%% Local Variables:
