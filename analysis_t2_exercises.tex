@@ -1971,6 +1971,52 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
   point'' are synonymous.
 \end{exo}
 
+\bigskip
+\begin{exo}{12.5.13}{Let $E$ and $F$ be two compact subsets of $\rr$
+    (with the standard metric $d(x, y) = |x - y|$). Show that the
+    Cartesian product $E \times F := \{(x, y) : x \in E, y \in F \}$ is a
+    compact subset of $\rr^2$ (with the Euclidean metric $d_{l^2}$).}
+
+  To prove that $E \times F$ is compact, we will show that it is both
+  closed and bounded (by Heine-Borel theorem).
+
+  \begin{itemize}
+  \item First we show that $E \times F$ is bounded.
+
+    Since $E$ and $F$ are compact, they are themselves bounded (by
+    Heine-Borel theorem). Thus, there exist $a \in E$, $b \in F$ and $r_1,
+    r_2 > 0$ such that $E \subseteq B_d(a, r_1)$ and $F \subseteq B_d(b, r_2)$, by
+    Definition 12.5.3. In other words, we have:
+    \begin{align*}
+      \forall x \in E, & |x-a| < r_1 \\
+      \forall y \in F, & |y-b| < r_2.
+    \end{align*}
+    Thus, let be $(x, y) \in E \times F$. We have:
+    \begin{align*}
+      d_{l^2}\left( (x,y), (a,b) \right)
+      &= \sqrt{(x-a)^2 + (y-b)^2} \\
+      &< \sqrt{r_1^2 + r_2^2}.
+    \end{align*}
+    This means that each $(x,y) \in E \times F$ lies in
+    $B_{d_{l^2}}\left((a,b), \sqrt{r_1^2 + r_2^2}\right)$. Thus,
+    $E \times F$ is indeed bounded.
+    
+  \item Now let's show that $E \times F$ is closed.
+
+    Since $E$ and $F$ are compact, they are themselves closed (by
+    Heine-Borel theorem). Consider a sequence
+    $\seq{(x^{(n)}, y^{(n)})}{1}$ of elements of $E \times F$ which
+    converges to $(x_0, y_0)$ with respect to $d_{l^2}$. By
+    Proposition 12.1.18, this means that this sequence converges
+    component-wise, i.e. that $\seq{x^{(n)}}{1}$ converges to $x_0$,
+    and $\seq{y^{(n)}}{1}$ converges to $y_0$. By definition, we have
+    $x_0 \in E$ and $y_0 \in F$, since $E$ and $F$ are closed. Thus,
+    $(x_0, y_0) \in E \times F$. This shows that $E \times F$ is indeed bounded.
+  \end{itemize}
+
+  Thus, $E \times F$ is compact, as expected.
+\end{exo}
+
 \pagebreak
 \section{Continuous functions on metric spaces}
 \label{cha:cont-funct-metr}
