@@ -2129,26 +2129,79 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
     $f$ is continuous at $x_0$, for any arbitrary $x_0 \in X$, as
     expected.
   \end{itemize}
+\end{exo}
 
-  \begin{exo}{13.1.3}{Use Theorem 13.1.4 and Theorem 13.1.5 to prove
-      Corollary 13.1.7.}
+\begin{exo}{13.1.3}{Use Theorem 13.1.4 and Theorem 13.1.5 to prove
+    Corollary 13.1.7.}
+  
+  To show (a), consider $\seq{x^{(n)}}{1}$ a sequence of elements of
+  $X$ that converges to $x_0 \in X$. Since $f$ is continuous at
+  $x_0$, then by Theorem 13.1.4(b), we know that
+  $\seq{f(x^{(n)})}{1}$ converges to $f(x_0) \in Y$. But
+  $\seq{f(x^{(n)})}{1}$ is a sequence of elements of $Y$. Since $g$
+  is continuous at $f(x_0)$, then still by Theorem 13.1.4(b), we
+  know that $\seq{g(f(x^{(n)}))}{1}$ converges to $g(f(x_0)) \in Z$.
+  
+  Thus, we have proved that for any sequence $\seq{x^{(n)}}{1}$ of
+  elements of $X$ that converges to $x_0 \in X$, the sequence $\seq{g
+    \circ f(x^{(n)})}{1}$ converges to $g \circ f(x_0)$. This shows that $g \circ
+  f$ is continuous at $x_0$, as expected.
+  
+  Once (a) is proved, the result (b) is clear, since it is just (a)
+  at any arbitrary $x_0 \in X$.
+\end{exo}
 
-    To show (a), consider $\seq{x^{(n)}}{1}$ a sequence of elements of
-    $X$ that converges to $x_0 \in X$. Since $f$ is continuous at
-    $x_0$, then by Theorem 13.1.4(b), we know that
-    $\seq{f(x^{(n)})}{1}$ converges to $f(x_0) \in Y$. But
-    $\seq{f(x^{(n)})}{1}$ is a sequence of elements of $Y$. Since $g$
-    is continuous at $f(x_0)$, then still by Theorem 13.1.4(b), we
-    know that $\seq{g(f(x^{(n)}))}{1}$ converges to $g(f(x_0)) \in Z$.
+\bigskip
+\begin{exo}{13.1.4}{Give an example of functions $f : \rr \to \rr$ and
+    $g : \rr \to \rr$ such that (a) $f$ is not continuous, but $g$ and
+    $g \circ f$ are continuous; (b) $g$ is not continuous, but $f$ and
+    $g \circ f$ are continuous; (c) $f$ and $g$ are not continuous, but
+    $g \circ f$ is continuous. Explain brieﬂy why these examples do not
+    contradict Corollary 13.1.7.}
 
-    Thus, we have proved that for any sequence $\seq{x^{(n)}}{1}$ of
-    elements of $X$ that converges to $x_0 \in X$, the sequence $\seq{g
-      \circ f(x^{(n)})}{1}$ converges to $g \circ f(x_0)$. This shows that $g \circ
-    f$ is continuous at $x_0$, as expected.
+  Here, the simplest way is to use piecewise constant functions, at
+  least for one of the functions $f,g$.
 
-    Once (a) is proved, the result (b) is clear, since it is just (a)
-    at any arbitrary $x_0 \in X$.
-  \end{exo}
+  \begin{enumerate}[label=(\alph*)]
+  \item Let be, for instance,
+    \[f(x) :=
+      \begin{cases}
+        0  &\text{ if } x < 0 \\
+        1 & \text{ if } x \geq 0
+      \end{cases}
+    \]
+    and the constant function $g(x) := 3$. We thus have $g \circ f(x) = 3$
+    for all $x \in \rr$, so that $g \circ f$ is continuous.
+  \item Let be, for instance,
+    \[g(x) :=
+      \begin{cases}
+        -1  &\text{ if } x < 0 \\
+        1 & \text{ if } x \geq 0
+      \end{cases}
+    \]
+    and $f(x) := x^2 + 1$. We thus have $g \circ f(x) = 1$ for all
+    $x \in \rr$, so that $g \circ f$ is continuous.
+  \item Let be, for instance,
+    \[f(x) :=
+      \begin{cases}
+        0  &\text{ if } x < 0 \\
+        3 & \text{ if } x \geq 0
+      \end{cases}
+    \]
+    and
+    \[g(x) :=
+      \begin{cases}
+        -1  &\text{ if } x < 0 \\
+        1 & \text{ if } x \geq 0.
+      \end{cases}
+    \]
+    We thus have $g \circ f(x) = 1$ for all $x \in \rr$, so that
+    $g \circ f$ is continuous.
+  \end{enumerate}
+
+  This does not contradict Corollary 13.1.7, since the initial
+  hypothesis of this corollary is that both functions $f,g$ are
+  continuous, and it says nothing about non discontinuous functions.
 \end{exo}
 \end{document}
 %%% Local Variables:
