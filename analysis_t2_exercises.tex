@@ -2203,6 +2203,23 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
   hypothesis of this corollary is that both functions $f,g$ are
   continuous, and it says nothing about non discontinuous functions.
 \end{exo}
+
+\bigskip
+\begin{exo}{13.1.5}{Let $(X, d)$ be a metric space, and let
+    $(E, d|_{E \times E})$ be a subspace of $(X, d)$. Let
+    $\iota_{E \to X} : E \to X$ be the inclusion map, defined by setting
+    $\iota_{E \to X} (x) := x$ for all $x \in E$. Show that
+    $ι_{E \to X}$ is continuous.}
+
+  Let be $x_0 \in E$ an arbitrary point in $E$, and let be $\epsilon > 0$ a
+  positive real number. Note that we have, for all $x \in E$, 
+  \[d(\iota_{E \to X}(x_0), \iota_{E \to X}(x)) = d_{E \times E}(x_0, x).\]
+
+  Thus, if we take $\delta := \epsilon$ in Definition 13.1.1 of continuity, we are
+  done: if $d_{E \times E}(x_0, x) < \epsilon$, we automatically have $d(\iota_{E \to
+    X}(x_0), \iota_{E \to X}(x)) < \epsilon$, so that $\iota_{E \to X}$ is continuous at
+  any arbitrary $x_0 \in E$, as expected.
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
