@@ -2249,6 +2249,39 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
   constant function) at $0$, but the function $f$ itself is clearly
   not continuous at $0$.
 \end{exo}
+
+\bigskip
+\begin{exo}{13.2.1}{Prove Lemma 13.2.1.}
+
+  Here we just have to prove the statement (a), since the statement
+  (b) is essentially (a) applied to any arbitrary $x_0 \in X$.
+
+  \begin{itemize}
+  \item First suppose that $f$ and $g$ are both continuous at
+    $x_0 \in X$, and let be $\seq{x{^{(n)}}}{1}$ a sequence of elements
+      of $X$. Then, by Theorem 13.1.4(b), the sequence
+      $\seq{f(x^{(n)})}{1}$ converges to $f(x_0)$ in $\rr$, and the
+      sequence $\seq{g(x^{(n)})}{1}$ converges to $g(x_0)$ in $\rr$.
+
+      Thus, by Theorem 12.1.18, the sequence
+      $\seq{(f(x^{(n)}), g(x^{(n)}))}{1}$ of elements of $\rr^2$
+      converges to $(f(x_0), g(x_0))$ in $\rr^2$ with respect to the
+      metric $d_{l^2}$ (since it converges component-wise). In other
+      words, for any arbitrary sequence $\seq{x^{(n)}}{1}$ that
+      converges to $x_0$, the sequence $\seq{f \oplus g(x^{(n)})}{1}$
+      converges to $(f(x_0), g(x_0)) = f \oplus g (x_0)$. Thus,
+      $f \oplus g$ is continuous at $x_0$, by Theorem 13.1.4.
+      
+    \item Conversely, if $f \oplus g$ is continuous at $x_0$, then for any
+      sequence $\seq{x^{(n)}}{1}$ of elements of $X$, the sequence
+      $\seq{f \oplus g(x^{(n)})}{1}$ converges to $(f(x_0), g(x_0))$, by
+      Theorem 13.1.4. Thus, by Theorem 12.1.18, $\seq{f(x^{(n)})}{1}$
+      converges to $f(x_0)$ in $\rr$, and $\seq{g(x^{(n)})}{1}$
+      converges to $g(x_0)$ in $\rr$. Thus, $f$ and $g$ are both
+      continuous at $x_0$.
+  \end{itemize}
+  
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
