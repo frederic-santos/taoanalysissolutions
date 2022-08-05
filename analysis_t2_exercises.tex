@@ -2309,10 +2309,19 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
   $\seq{x_n, y_n}{1}$ a sequence of elements in
   $\rr \times \rr \setminus\{0\}$ which converges to $(x_0, y_0)$. In the proof
   above, we can indeed apply Proposition 6.1.19(f) since $y_n \neq 0$ for
-  all $n \geq 1$.
+  all $n \geq 1$.  
+\end{exo}
 
-  
-  
+\bigskip
+\begin{exo}{13.2.3}{Show that if $f : X \to \rr$ is a continuous
+    function, so is the function $|f| : X \to \rr$ deﬁned by
+    $|f|(x) := |f(x)|$.}
+
+  The function $|f|$ is the composition of the functions $f$ and
+  $x \mapsto |x|$. We already know (from Proposition 9.4.12) that the
+  function $x \mapsto |x|$ is continuous on $\rr$ (basically because
+  $|x| := \max(x, -x)$, and thus is the composition of two continuous
+  functions). Thus, by Corollary 13.1.7, $|f|$ is continuous on $X$.  
 \end{exo}
 \end{document}
 %%% Local Variables:
