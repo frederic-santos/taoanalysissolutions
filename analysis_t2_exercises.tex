@@ -2280,6 +2280,38 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
       converges to $g(x_0)$ in $\rr$. Thus, $f$ and $g$ are both
       continuous at $x_0$.
   \end{itemize}
+\end{exo}
+
+\begin{exo}{13.2.2}{Prove Lemma 13.2.2.}
+
+  First we prove that the addition function, $f : (x,y) \mapsto x+y$,
+  defined from $\rr^2$ to $\rr$, is continuous. Consider a sequence
+  $\seq{x_n, y_n}{1}$ of elements of $\rr^2$, that converges to
+  $(x_0, y_0)$ with respect to the metric $d_{l^2}$. In particular,
+  $\seq{x_n}{1}$ and $\seq{y_n}{1}$ are both sequences of real
+  numbers, and we know from Proposition 12.1.8 that $\seq{x_n}{1}$
+  converges to $x_0$, and $\seq{y_n}{1}$ converges to $y_0$. But we
+  have $f(x_n, y_n) = x_n + y_n$, and we know by the limit laws
+  (Proposition 6.1.19(a)) that
+  $\lim_{n \to \infty} (x_n + y_n) = x_0 + y_0 =: f(x_0, y_0)$. Thus, for any
+  sequence $\seq{(x_n, y_n)}{1}$ of elements of $\rr^2$ which
+  converges to $(x_0, y_0)$, we have proved that
+  $\seq{f(x_n, y_n)}{1}$ converges to $f(x_0, y_0)$. Thus, the
+  addition function $f$ is continuous at any $(x_0, y_0) \in \rr^2$, and
+  thus is continuous on $\rr^2$.
+
+  A similar proof applies for the substraction function, the
+  multiplication function, and the maximum and minimum functions.
+
+  An additional precaution is required for the division function,
+  $f : (x,y) \mapsto x/y$ defined from $\rr \times \rr \setminus\{0\}$ to
+  $\rr$. Let be $(x_0, y_0) \in \rr \times \rr \setminus\{0\}$, and let be
+  $\seq{x_n, y_n}{1}$ a sequence of elements in
+  $\rr \times \rr \setminus\{0\}$ which converges to $(x_0, y_0)$. In the proof
+  above, we can indeed apply Proposition 6.1.19(f) since $y_n \neq 0$ for
+  all $n \geq 1$.
+
+  
   
 \end{exo}
 \end{document}
