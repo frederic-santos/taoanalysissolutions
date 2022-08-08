@@ -2323,6 +2323,35 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
   $|x| := \max(x, -x)$, and thus is the composition of two continuous
   functions). Thus, by Corollary 13.1.7, $|f|$ is continuous on $X$.  
 \end{exo}
+
+\bigskip
+\begin{exo}{13.2.4}{Let $\pi_1 : \rr^2 \to \rr$ and
+    $\pi_2 : \rr^2 \to \rr$ be the functions $\pi_1(x, y) := x$ and
+    $\pi_2(x, y) := y$. Show that $\pi_1$ and $\pi_2$ are continuous.
+    Conclude that if $f : \rr \to X$ is any continuous function into a
+    metric space $(X, d)$, then the functions $g1 : \rr^2 \to X$ and
+    $g_2 : \rr^2 \to X$ deﬁned by $g_1(x, y) := f(x)$ and
+    $g_2(x, y) := f(y)$ are also continuous.}
+
+  Let be a sequence of elements of $\rr^2$, that we will note as
+  $\seq{(x_n, y_n)}{1}$, and suppose that this sequence converges to
+  $(x_0, y_0) \in \rr^2$. By Proposition 12.1.18, we know that this
+  sequence converges component-wise, i.e. that the sequence of real
+  numbers $\seq{x_n}{1}$ converges to $x_0$, and the sequence of real
+  numbers $\seq{y_n}{1}$ converges to $y_0$. But we have
+  $x_n = \pi_1(x_n, y_n)$, $x_0 = \pi_1(x_0, y_0)$,
+  $y_n = \pi_2(x_n, y_n)$, and $y_0 = \pi_2(x_, y_0)$. To summarise, for
+  any sequence $\seq{(x_n, y_n)}{1}$ of elements of $\rr^2$ that
+  converges to $(x_0, y_0)$, the sequence $\pi_1(x_n, y_n)$ converges to
+  $\pi_1(x_0, y_0)$, so that $\pi_1$ is continuous. A similar argument
+  shows that $\pi_2$ is continuous.
+
+  Furthermore, the function $g_1$ defined above can be expressed as
+  $g_1 := f \circ \pi_1$, and is thus continuous as the composition of two
+  continuous functions (Corollary 13.1.7). Similarly,
+  $g_2 = f \circ \pi_2$ is continuous.
+\end{exo}
+
 \end{document}
 %%% Local Variables:
 %%% mode: latex
