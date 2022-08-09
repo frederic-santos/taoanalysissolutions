@@ -2329,7 +2329,7 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
     $\pi_2 : \rr^2 \to \rr$ be the functions $\pi_1(x, y) := x$ and
     $\pi_2(x, y) := y$. Show that $\pi_1$ and $\pi_2$ are continuous.
     Conclude that if $f : \rr \to X$ is any continuous function into a
-    metric space $(X, d)$, then the functions $g1 : \rr^2 \to X$ and
+    metric space $(X, d)$, then the functions $g_1 : \rr^2 \to X$ and
     $g_2 : \rr^2 \to X$ deﬁned by $g_1(x, y) := f(x)$ and
     $g_2(x, y) := f(y)$ are also continuous.}
 
@@ -2350,6 +2350,40 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
   $g_1 := f \circ \pi_1$, and is thus continuous as the composition of two
   continuous functions (Corollary 13.1.7). Similarly,
   $g_2 = f \circ \pi_2$ is continuous.
+\end{exo}
+
+\bigskip
+\begin{exo}{13.2.5}{Let $n, m \geq 0$ be integers. Suppose that for
+    every $0 \leq i \leq n$ and $0 \leq j \leq m$ we have a real number
+    $c_{ij}$. Form the function $P : \rr^2 \to \rr$ defined by
+    \[ P(x,y) := \sum_{i=0}^n \sum_{j=0}^m c_{ij} x^i y^j.\] Show that
+    $P$ is continuous. Conclude that if $f : X \to \rr$ and
+    $g : X \to \rr$ are continuous functions, then the function
+    $P(f, g) : X \to \rr$ defined by $P(f, g)(x) := P (f(x), g(x))$ is
+    also continuous.}
+
+  By Exercise 13.2.4, we know that if $f : \rr \to \rr$ is continuous,
+  then the function $f \circ \pi_1 : \rr^2 \to \rr$ is also continuous. It is
+  clear that the function $f : x \mapsto x^i$ is continuous for all integer
+  $i \geq 0$ (as a product of $i$ continuous functions: apply Corollary
+  13.2.3 $i$ times to the identity function $x \mapsto x$). Thus, the
+  function $f_1 = f \circ \pi_1$ defined by $f_1(x,y) = x^i$ is continuous
+  on $\rr^2$. Similarly, the function $f_2(x,y) = y^j$ is continuous
+  on $\rr^2$ for all $j \geq 0$.
+
+  By Corollary 13.2.3 another time, the function
+  $(x,y) \mapsto x^i y^j$ is thus continuous (since it is the product of two
+  continuous functions), and still by Corollary 13.2.3, the function
+  $(x, y) \mapsto c_{ij} x^i y^j$ is also continuous, for all real constant
+  $c_{ij}$. And thus, $P(x,y)$ is also continuous as a sum of
+  continuous functions.
+
+  Now consider the function $H := P(f,g)$, such that
+  $H(x) := P(f(x), g(x))$. We have $H = P \circ (f \oplus g)$. But we have just
+  showed that $P$ is continuous, and we already know that $f \oplus g$ is
+  continuous whenever $f$ and $g$ are continuous (Lemma 2.2.1). Thus,
+  $H$ continuous (as the composition of two continuous functions), as
+  expected.
 \end{exo}
 
 \end{document}
