@@ -2386,6 +2386,59 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
   expected.
 \end{exo}
 
+\bigskip
+\begin{exo}{13.2.6}{Let $\rr^m$ and $\rr^n$ be Euclidean spaces. If
+    $f : X \to \rr^m$ and $g : X \to \rr^n$ are continuous functions, show
+    that $f \oplus g : X \to \rr^{m+n}$ is also continuous, where we have
+    identified $\rr^m \times \rr^n$ with $\rr^{m+n}$ in the obvious manner.
+    Is the converse statement true?}
+
+  This exercise generalizes the result of Lemma 13.2.1. The proof will
+  thus be very close to the approach adopted in Exercise 13.2.1.
+
+  \begin{itemize}
+  \item Let be an arbitrary $x_0 \in X$, and let's show that
+    $f \oplus g$ is continuous at $x_0$.
+
+    Let be $\seq{x^{(n)}}{1}$ a sequence of elements of $X$ that
+    converges to $x_0$. We will use below the following notations:
+    \begin{align*}
+      f(x_0) &:= (x_1, \ldots, x_m) \\
+      g(x_0) &:= (y_1, \ldots, y_m) \\
+      f(x^{(k)}) &:= (x^{(k)}_1, \ldots, x^{(k)}_m) \text{ for all } k \geq 1 \\
+      g(x^{(k)}) &:= (y^{(k)}_1, \ldots, y^{(k)}_n) \text{ for all } k \geq 1  
+    \end{align*}
+
+    First, note that by Proposition 12.1.18, the sequence
+    $\seq{x^{(n)}}{1}$ converges component-wise, i.e., we have
+    $\lim_{k \to \infty} x^{(k)}_p = x_p$ for all $1 \leq p \leq m$.
+
+    Since $f$ is continuous, the sequence $\seq{f(x^{(n)})}{1}$
+    converges to $f(x_0) \in \rr^m$. Similarly for $g$, the sequence
+    $\seq{g(x^{(n)})}{1}$ converges to $g(x_0) \in \rr^n$.
+
+    By definition, we have
+    $f \oplus g (x_0) = (x_1, \ldots, x_m, y_1, \ldots, y_n) \in \rr^{m+n}$.
+
+    But we also have, for all $k \geq 1$,
+    \begin{align*}
+      f \oplus g (x^{(k)})
+      &:= \left(f(x^{(k)}), g(x^{(k)})\right) \\
+      &= \left(x^{(k)}_1, \ldots, x^{(k)}_m, y^{(k)}_1, \ldots, y^{(k)}_n\right) 
+    \end{align*}
+
+    And since we already know that this sequence converges
+    component-wise, we have by Proposition 12.1.18
+    \[\lim_{k \to \infty} f \oplus g (x^{(k)}) = (x_1, \ldots, x_m, y_1, \ldots, y_m) =: f \oplus
+      g (x_0).\]
+
+    Thus, $f \oplus g$ is continuous at $x_0$. And since this is true for
+    any arbitrary $x_0 \in X$, $f \oplus g$ is continuous on $X$.
+    
+  \item The converse statement is also true; this can also be proved
+    in a very similar fashion as Exercise 13.2.1.
+  \end{itemize}
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
