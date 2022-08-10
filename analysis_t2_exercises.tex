@@ -2439,6 +2439,45 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
     in a very similar fashion as Exercise 13.2.1.
   \end{itemize}
 \end{exo}
+
+\begin{exo}{13.2.7}{Let $k \geq 1$, let $I$ be a ﬁnite subset of $\nn^k$,
+    and let $c : I \to \rr$ be a function. Form the function $P : \rr^k
+    \to \rr$ defined by
+    \[P (x_1 , \ldots , x_k) := \sum_{(i_1, \ldots, i_k) \in I} c(i_1 , \ldots , i_k)
+      x_1^{i_1} \ldots x_k^{i_k}.\] Show that $P$ is continuous.}
+
+  Let's use induction on $k$.
+
+  \begin{itemize}
+  \item First, if $k=1$, we have $I \subset \nn$, and $P$ is simply of the
+    form $P(x) := \sum_{i \in I} c_i x^i$. Such a function is clearly
+    continuous by Lemma 13.2.2, as the product and sum of continuous
+    functions.
+  \item We can also note that, for $k=2$, the result corresponds
+    exactly to Exercise 13.2.5.
+  \item Now suppose that the property is true for a given positive
+    integer $k$, and let's show that it is still true for $k+1$.
+
+    Let be $I$ a finite subset of $\nn^{k+1}$, and a function $P(x_1,
+    \ldots, x_k, x_{k+1})$ as defined above. Note that (for example by
+    Corollary 3.6.14(e)), since $I$ is supposed to be finite, we have
+    $I = I_1 \times \ldots \times I_k \times I_{k+1}$ where each $I_j$ is also a finite
+    subset of $\nn$. In particular, $I_{k+1}$ is finite.
+
+    We thus have:
+    \begin{align*}
+      P(x_1, \ldots, x_k, x_{k+1})
+      &:= \sum_{(i_1, \ldots, i_k, i_{k+1}) \in I} c(i_1, \ldots, i_k, i_{k+1}) \,
+        x_1^{i_1} \ldots x_k^{i_k} x_{k+1}^{i_{k+1}} \\
+      &= \sum_{i_{k+1} \in I_{k+1}} \left(\sum_{(i_1, \ldots, i_k) \in I_1 \times \ldots \times I_k}  c(i_1, \ldots, i_k,
+        i_{k+1}) x_1^{i_1} \ldots x_k^{i_k}\right) x_{k+1}^{i_{k+1}}
+    \end{align*}
+    By the induction hypothesis, the expression enclosed in the
+    parentheses is a continuous function. Thus,
+    $P(x_1, \ldots, x_{k+1})$ is also continuous, as a (finite) sum and
+    product of continuous functions.
+  \end{itemize}
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
