@@ -2478,6 +2478,102 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
     product of continuous functions.
   \end{itemize}
 \end{exo}
+
+\begin{exo}{13.2.8}{Let $(X, d_X)$ and $(Y, d_Y)$ be metric spaces.
+    Define the metric
+    $d_{X \times Y} : (X \times Y ) \times (X \times Y) \to [0, \infty[$ by the formula
+    \[d_{X \times Y} \left((x, y), (x', y')\right) := d_X (x, x') + d_Y (y,
+      y').\] Show that $(X \times Y, d_{X \times Y})$ is a metric space, and
+    deduce an analogue of Proposition 12.1.18 and Lemma 13.2.1.}
+
+  \begin{enumerate}
+  \item First we prove that $d_{X \times Y}$ is indeed a metric. In all the
+    proofs below, we simply use the fact that $d_X$ and $d_Y$ are
+    themselves metrics.
+    \begin{itemize}
+    \item For all $(x, y) \in X \times Y$, we have:
+      \[
+        d_{X \times Y} ((x,y), (x,y))
+        = \underbrace{d_X(x,x)}_{=0} + \underbrace{d_Y(y,y)}_{=0}
+        =0.
+      \]
+    \item For all distinct points $(x,y), (x',y') \in X \times Y$, we have
+      \[d_{X \times Y} \left((x,y), (x', y')\right)
+        = \underbrace{d_X(x, x')}_{>0} + \underbrace{d_Y(y, y')}_{>0}
+        > 0.
+      \]
+    \item Symmetry: for all $(x,y), (x',y') \in X \times Y$, we have
+      \begin{align*}
+        d_{X \times Y} \left((x,y), (x', y')\right)
+        &= d_X(x,x') + d_Y(y,y')\\
+        &= d_X(x',x) + d_Y(y',y)\\
+        &= d_{X \times Y}((x', y'), (x, y)).
+      \end{align*}
+    \item Triangle inequality: for all $(x,y), (x',y'), (x'', y'') \in X
+      \times Y$, we have
+      \begin{align*}
+        &d_{X \times Y} \left((x,y), (x', y')\right) + d_{X \times Y}
+        \left((x',y'), (x'', y'')\right)\\
+        = \; &d_X(x, x') + d_X(x', x'') + d_Y(y, y') + d_Y(y', y'') \\
+        \leq \; &d_X(x, x'') + d_Y(y, y'') \\
+        \leq \; &d_{X \times Y}\left((x, x''), (y, y')\right).
+      \end{align*}
+    \end{itemize}
+    Thus, $d_{X \times Y}$ is indeed a metric on $X \times Y$.
+    
+  \item Now we give an analogue of Proposition 12.1.18. Note that $X$
+    and $Y$ are ``abstract'' metric spaces here, and $d_X, d_Y$ also
+    are ``abstract'' distances, so that we cannot really give an
+    analogue to the notion of the equivalence of metrics
+    $d_{l^1}, d_{l^2}, d_{l^\infty}$. However, we can give an analogue of
+    the notion of ``component-wise'' convergence. Indeed, let be
+    $\seq{a^{(n)}}{1}$ a sequence of elements of $X \times Y$ (so that we
+    can write $a^{(n)} := (x^{(n)}, y^{(n)})$ for all $n \geq 1$ with
+    obvious notations), and let be $(x_0, y_0)$ a point in
+    $X \times Y$. The following two statements are equivalent:
+    \begin{enumerate}[label=(\roman*)]
+    \item $\seq{a^{(n)}}{1} := \seq{x^{(n)}, y^{(n)}}{1}$ converges to
+      $(x_0, y_0)$ with respect to the metric $d_{X \times Y}$
+    \item $\seq{x^{(n)}}{1}$ converges to $x_0$ with respect to $d_X$
+      and $\seq{y^{(n)}}{1}$ converges to $y_0$ with respect to $d_Y$.
+    \end{enumerate}
+
+    \begin{proof}
+      First we show that (i) $\implies$ (ii). If
+      $\seq{x^{(n)},y^{(n)}}{1}$ converges to $(x_0, y_0)$ with
+      respect to $d_{X \times Y}$, then by definition we have
+      $\lim_{n \to \infty} d_{X \times Y}((x^{(n)}, y^{(n)}), (x_0, y_0)) = 0$.
+      Thus, for any arbitrary $\epsilon > 0$, there exists $N \geq 1$ such that
+      for all $n \geq N$ we have
+      \begin{align*}
+        d_{X \times Y}((x^{(n)}, y^{(n)}), (x_0, y_0)) &< \epsilon \\
+        d_X(x^{(n)}, x_0) + d_Y(y^{(n)}, y_0) &< \epsilon.
+      \end{align*}
+      In particular, we have both $d_X(x^{(n)}, x_0) < \epsilon$ and
+      $d_Y(y^{(n)}, y_0) < \epsilon$ whenever $n \geq N$. Thus, we have
+      $\lim_{n \to \infty} d_X(x^{(n)}, x_0) = 0$ and
+      $\lim_{n \to \infty} d_Y(y^{(n)}, y_0) = 0$, which is precisely the
+      statement (ii).
+
+      Now we show that (ii) $\implies$ (i). Let be $\epsilon > 0$. Since we
+      have both $\lim_{n \to \infty} d_X(x^{(n)}, x_0) = 0$ and
+      $\lim_{n \to \infty} d_Y(y^{(n)}, y_0) = 0$, there exists $N_1, N_2 \geq
+      1$ such that $d_X(x^{(n)}, x_0) < \epsilon/2$ whenever $n \geq N_1$, and
+      $d_Y(y^{(n)}, y_0) < \epsilon/2$ whenever $n \ge N_2$. Thus, for all $n \geq
+      \max(N_1, N_2)$, we have
+      \begin{align*}
+        d_{X \times Y}((x^{(n)}, y^{(n)}), (x_0, y_0))
+        &= d_X(x^{(n)}, x_0) + d_Y(y^{(n)}, y_0) \\
+        &< \epsilon/2 + \epsilon/2\\
+        &< \epsilon
+      \end{align*}
+      which means that  $\lim_{n \to \infty} d_{X \times Y}((x^{(n)}, y^{(n)}),
+      (x_0, y_0)) = 0$. This is exactly the statement (i).
+      
+    \item 
+    \end{proof}
+  \end{enumerate}
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
