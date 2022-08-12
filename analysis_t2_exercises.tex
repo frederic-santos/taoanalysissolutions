@@ -2568,9 +2568,34 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
         &< \epsilon
       \end{align*}
       which means that  $\lim_{n \to \infty} d_{X \times Y}((x^{(n)}, y^{(n)}),
-      (x_0, y_0)) = 0$. This is exactly the statement (i).
-      
-    \item 
+      (x_0, y_0)) = 0$. This is the statement (i).     
+    \end{proof}
+    
+  \item Similarly, we can give an analogue for Lemma 13.2.1:
+    
+    Let be $S$ an arbitrary domain for the functions $f : S \to X$ and
+    $g : S \to Y$. Consider the metric spaces $(X, d_X)$, $(Y, d_Y)$ and
+    $(X \times Y, d_{X \times Y})$. Then the function
+    $f \oplus g : S \to X \times Y$ is continuous at $s_0 \in S$ iff both
+    $f$ and $g$ are continuous at $s_0$.
+
+    \begin{proof}
+      Suppose that both $f$ and $g$ are continuous at $s_0 \in S$. Let be
+      $\epsilon > 0$, and let be $\seq{s^{(n)}}{1}$ a sequence of elements of $S$
+      that converges to $s_0$. By definition, there exists $N_1 \geq 1$
+      such that $d_X(f(s^{(n)}), f(s_0)) < \epsilon/2$ whenever $n \geq N_1$;
+      and there exists $N_2 \geq 1$ such that $d_Y(g(s^{(n)}), g(s_0)) <
+      \epsilon/2$ whenever $n \geq N_2$. Thus, for $n \geq N := \max(N_1, N_2)$,
+      \[
+        d_{X \times Y}(f \oplus g(s^{(n)}), f \oplus g(s_0))
+        := \underbrace{d_X(f(s^{(n)}), f(s_0))}_{< \epsilon/2}
+          + \underbrace{d_Y(g(s^{(n)}), g(s_0))}_{< \epsilon/2}
+        < \epsilon
+      \]
+      which means that $f \oplus g$ is continuous at $s_0$, as expected.
+
+      The converse statement can be proved similarly (see also the
+      proof of 2. above).
     \end{proof}
   \end{enumerate}
 \end{exo}
