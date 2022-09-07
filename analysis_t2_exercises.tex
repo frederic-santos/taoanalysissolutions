@@ -2599,6 +2599,33 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
     \end{proof}
   \end{enumerate}
 \end{exo}
+
+\begin{exo}{13.2.10}{Let $f : \rr^2 \to \rr$ be a continuous function.
+    Show that for each $x \in \rr$, the function $y \mapsto f(x, y)$ is
+    continuous on $\rr$, and for each $y \in \rr$, the function
+    $x \mapsto f (x, y)$ is continuous on $\rr$. Thus a function
+    $f(x, y)$ which is jointly continuous in $(x, y)$ is also
+    continuous in each variable $x, y$ separately.}
+
+  Let be $x_0 \in \rr$ a real number. We will just prove the result for
+  the function $g : y \mapsto f(x_0, y)$, since the result for the other
+  function can be shown in the same way. We will work below with the
+  metric space $(\rr^2, d_{l^2})$ but the proof can easily be adapted
+  for the metrics $d_{l^1}$ or $d_{l^\infty}$.
+
+  Let be $y_0 \in \rr$ an arbitrary real number: we have to prove that
+  $g$ is continuous at $y_0$. Let be $\epsilon > 0$ an arbitrary positive
+  real number. Since $f$ is continuous on $\rr^2$, it is continuous in
+  particular at $(x_0, y_0) \in \rr^2$. Thus, there exists a
+  $\delta > 0$ such that $|f(x, y) - f(x_0, y_0)| < \epsilon$ whenever
+  $d((x,y), (x_0, y_0)) < \delta$.
+
+  If we set $x := x_0$ and choose any $y \in \rr$ such that
+  $|y-y_0| < \delta$, we will have
+  $d((x_0, y), (x_0, y_0)) = |y-y_0| < \delta$. Thus, we will have
+  $\epsilon > |f(x_0, y) - f(x_0, y_0)| = |g(y) - g(y_0)|$. This means that
+  $g$ is continuous at $y_0$, as expected.
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
