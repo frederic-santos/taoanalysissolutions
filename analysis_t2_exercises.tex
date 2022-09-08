@@ -2626,6 +2626,48 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
   $\epsilon > |f(x_0, y) - f(x_0, y_0)| = |g(y) - g(y_0)|$. This means that
   $g$ is continuous at $y_0$, as expected.
 \end{exo}
+
+\bigskip
+\begin{exo}{13.2.11}{Let $f : \rr^2 \to \rr$ be the function deﬁned by
+    $f(x, y) := \frac{xy}{x^2 + y^2}$ when $(x, y) \neq (0, 0)$, and
+    $f(x, y) = 0$ otherwise. Show that for each fixed $x \in \rr$, the
+    function $y \mapsto f(x, y)$ is continuous on $\rr$, and that for each
+    fixed $y \in \rr$, the function $x \mapsto f(x, y)$ is continuous on
+    $\rr$, but that the function $f : \rr \mapsto \rr$ is not continuous on
+    $\rr$. This shows that the converse to Exercise 13.2.10 fails; it
+    is possible to be continuous in each variable separately without
+    being jointly continuous.}
+
+  First, let be $x_0 \in \rr$ an arbitrary real number, and let's
+  consider the function $g : \rr \to \rr$ such that $g(y) = f(x_0 ,y)$
+  for all $y \in \rr$. We have two cases:
+  \begin{itemize}
+  \item If $x_0 = 0$, then $g$ is the constant null function, i.e.
+    $g(y) = 0$ for all $y \in \rr$. Thus (for example by Exercise
+    9.4.2), $g$ is continuous on $\rr$.
+  \item If $x_0 \neq 0$, then $x_0^2 + y^2 \neq 0$ for all
+    $y \in \rr$. Thus, $g(y) = \frac{xy}{x^2+y^2}$ is the ratio between
+    the continuous function $y \mapsto xy$ and the continuous, positive
+    function $y \mapsto x_0^2 + y^2$ (these functions can be shown to be
+    continuous by applying Lemma 13.2.2 several times). Thus, by
+    Corollary 13.2.3, $g$ is continuous on $\rr$.
+  \end{itemize}
+
+  Of course, the same demonstration shows that the function $h : x \mapsto
+  f(x,y)$ is also continuous on $\rr$.
+
+  Now let's show that $f$ is not jointly continuous on $\rr$, and more
+  precisely that it is not continuous at the point $(0,0)$. By Theorem
+  13.1.5, to show that a function $f$ is not continuous, it is enough to
+  find a sequence $\seq{x^{(n)}}{1}$ that converges to $x_0$, but such
+  that $\seq{f(x^{(n)})}{1}$ does not converge to $f(x_0)$. Consider
+  the sequence $(1/n, 1/n)_{n=1}^\infty$ of elements of $\rr^2$. It is
+  clear that this sequence converges to $(0,0)$. However, we have
+  $f(1/n, 1/n) = \frac{1/n^2}{2/n^2} = \frac{1}{2}$. Thus,
+  $\seq{f(1/n, 1/n)}{1}$ does not converge to $f(0,0) = 0$, which
+  means that $f$ is not continuous at $(0,0)$.
+  
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
