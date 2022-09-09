@@ -2665,8 +2665,32 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
   clear that this sequence converges to $(0,0)$. However, we have
   $f(1/n, 1/n) = \frac{1/n^2}{2/n^2} = \frac{1}{2}$. Thus,
   $\seq{f(1/n, 1/n)}{1}$ does not converge to $f(0,0) = 0$, which
-  means that $f$ is not continuous at $(0,0)$.
-  
+  means that $f$ is not continuous at $(0,0)$.  
+\end{exo}
+
+\bigskip
+\begin{exo}{13.2.12}{Let $f : \rr^2 \to \rr$ be the function defined by
+    $f(x,y) := x^2/y$ when $y \neq 0$, and $f(x,y) := 0$ when $y = 0$.
+    Show that $\lim_{t \to 0} f(tx, ty) = f(0,0)$ for every
+    $(x,y) \in \rr^2$, but that $f$ is not continuous at the origin.
+    Thus being continuous on every line through the origin is not
+    enough to guarantee continuity at the origin!}
+
+  By definition, we first note that we have $f(0,0) = 0$. Furthermore,
+  for all $t \in \rr$, we have
+  $f(tx, ty) = \frac{t^2x^2}{ty} = \frac{tx^2}{y}$. Thus, considering
+  the function $t \mapsto \frac{tx^2}{y}$ with $x,y$ fixed real numbers, we
+  have immediately
+  $\lim_{t \to 0} f(tx, ty) = \lim_{t \to 0} \frac{tx^2}{y} = 0 = f(0,0)$,
+  as expected.
+
+  However, $f$ is not continuous at $(0,0)$. Indeed, consider the
+  sequence $\seq{1/n, 1/n^2}{1}$ of elements of $\rr^2$. This sequence
+  converges (component-wise, and thus globally) to $(0,0)$ when $n \to
+  \infty$. However, we have $f(1/n, 1/n^2) = \frac{1/n^2}{1/n^2} = 1$ for
+  all $n \in \nn$, so that it is clear that $\seq{f(1/n, 1/n^2)}{1}$
+  does not converge to $f(0,0) = 0$. Thus, $f$ is not continuous at
+  the origin.
 \end{exo}
 \end{document}
 %%% Local Variables:
