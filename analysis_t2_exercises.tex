@@ -2692,6 +2692,33 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
   does not converge to $f(0,0) = 0$. Thus, $f$ is not continuous at
   the origin.
 \end{exo}
+
+\bigskip
+\begin{exo}{13.3.1}{Prove Theorem 13.3.1.}
+
+  We have to prove that continuous maps preserve compactness. Thus,
+  let's consider a function $f : X \to Y$ from one metric space $(X,
+  d_X)$ to another $(Y, d_Y)$, and let be $K \subseteq X$ a compact subset of
+  $X$. We have to prove that the image $f(K)$ is also compact.
+
+  To prove that $f(K)$ is compact, let's use Definition 12.5.1.
+  Consider a sequence $\seq{y^{(n)}}{1}$ of elements of $f(K)$, and
+  let's show that there exists a convergent subsequence.
+
+  By definition, for all positive integer $n \geq 1$, there exists an
+  element $x^{(n)} \in K$ such that $y^{(n)} = f(x^{(n)})$. For example
+  by using the countable axiom of choice, we thus get a sequence
+  $\seq{x^{(n)}}{1}$ of elements of $K$. Since $K$ is compact by
+  hypothesis, there exists a subsequence $(x^{(n_k)})_{k=1}^\infty$ that
+  converges in $K$ to some $x_0 \in K$ (relative to $d_X$). Since $f$ is
+  continuous on $X$, it is in particular continuous at $x_0$; and
+  using Theorem 13.1.4 (i.e., sequential characterization of
+  continuity), we immediately can say that the subsequence
+  $(y^{(n_k)})_{k=1}^\infty = (f(x^{(n_k)}))_{k=1}^\infty$ converges to
+  $f(x_0)$ in $f(K)$.
+
+  This shows that $f(K)$ is compact, as expected.
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
