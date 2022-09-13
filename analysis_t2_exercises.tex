@@ -2719,6 +2719,56 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
 
   This shows that $f(K)$ is compact, as expected.
 \end{exo}
+
+\bigskip
+\begin{exo}{13.3.2}{Prove Proposition 13.3.2.}
+
+  We have to prove the maximum principle in the general setting of
+  metric spaces. Let be $f : X \to \rr$ a continuous function on a
+  compact metric space $(X, d)$.
+
+  \begin{itemize}
+  \item First we prove that $f$ is bounded. We can simply modify the
+    proof of Lemma 9.6.3. Suppose, for the sake of contradiction, that
+    $f$ is not bounded. Thus, for all $n \geq 1$, the set
+    $X_n := \{x \in X : |f(x)| > n\}$ is non-empty, and contains at
+    least one element $x^{(n)}$. Thus, using the countable axiom of
+    choice, we can form a sequence $\seq{x^{(n)}}{1}$ of elements of
+    $X$ such that $x^{(n)} \in X_n$ for all $n \geq 1$. But since $X$ is
+    compact, the sequence $\seq{x^{(n)}}{1}$ has a convergent
+    subsequence, say $(x^{(n_k)})_{k=1}^\infty$, which converges to
+    $L$ in $X$. Since $f$ is continuous, the sequence
+    $(f(x^{(n_k)}))_{k=1}^\infty$ converges to $f(L)$. Since this
+    sequence is convergent, it is necessarily bounded. But this is
+    a contradiction with the fact that we have $|f(x^{(n_k)})| > n_k \geq
+    k$ for all $k \geq 1$. Thus, $f$ must be bounded.
+  \item Now let's prove that $f$ attains its maximum on $X$, i.e. that
+    there exists a point $x_{max} \in X$ such that $f(x) \leq x_{max}$ for
+    all $x \in X$. We have shown that $f$ is bounded on $X$, thus there
+    exists an $M \in \rr$ such that $M := \sup_{x \in X} f(x)$. By
+    definition of a supremum, for all $n \geq 1$, the set
+    $G_n := \{x \in X : M - 1/n < f(x) \leq M\}$ is non-empty and contains
+    at least one element $x^{(n)}$. Thus, using the countable axiom of
+    choice, we can form a sequence $\seq{x^{(n)}}{1}$ such that
+    $x^{(n)} \in G_n$ for all $n \geq 1$. Because $X$ is compact, there
+    exists a subsequence $(x^{(n_k)})_{k=1}^\infty$ that converges to some point
+    $x_{max} \in X$. Since $f$ is continuous, the sequence
+    $(f(x^{(n_k)}))_{k=1}^\infty$ also converges (to $f(x_{max})$).
+
+    By construction, we have $f(x) \leq M$ for all $x \in X$, and thus we
+    have in particular $f(x_{max}) \leq M$.
+
+    On the other hand, we have $M - 1/k \leq M - 1/n_k < f(x^{(n_k)})$
+    for all $k \geq 1$, so that taking the limit as $k \to \infty$ on both sides
+    leads to $f(x_{max}) \geq M$.
+
+    Thus, there indeed exists a $x_{max} \in X$ such that $f(x_{max}) =
+    M = \sup_{x \in X} f(x)$, as required.
+    
+  \item A similar proof would show that $f$ also attains its minimum
+    on $X$.
+  \end{itemize}  
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
