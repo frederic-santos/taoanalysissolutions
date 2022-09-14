@@ -2769,6 +2769,36 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
     on $X$.
   \end{itemize}  
 \end{exo}
+
+\begin{exo}{13.3.3}{Show that every uniformly continuous function is
+    continuous, but give an example that shows that not every
+    continuous function is uniformly continuous.}
+
+  Below, we consider two metric spaces $(X, d_X)$ and $(Y, d_Y)$.
+
+  \begin{itemize}
+  \item Let be $f : X \to Y$ a function that is uniformly continuous on
+    $X$. Let be $\epsilon > 0$. By definition, there exists a $\delta > 0$ such
+    that for all $x,x' \in X$, we have $d_X(x,x') < \delta \implies d_Y(f(x),
+    f(x')) < \epsilon$.
+
+    Consider an arbitrary $x' \in X$ and let's show that $f$ is
+    continuous at $X$. For this same $\epsilon > 0$, we already have a $\delta >
+    0$ such that $d_Y(f(x), f(x')) < \epsilon$ whenever $d_X(x,x') < \delta$.
+    Thus, $f$ is continuous at $x'$.
+  \item Now we give an example of function $f : X \to Y$ that is
+    continuous but not uniformly continuous. A simple example would be
+    to consider $X = [0, +\infty[$ and $Y = [0, +\infty[$, with
+    $f(x) = x^2$. Consider $\epsilon := 1$. We have to show that, for all
+    $\delta > 0$, there exist $x,y \in \rr$ such that
+    $|x^2 - y^2| \geq 1$ although $|x-y| < \delta$. If we consider an
+    arbitrary $\delta > 0$ and set $y := x + \delta/2$, we clearly have
+    $|x-y| < \delta$. However, the inequality
+    $|x^2 - (x+\delta/2)^2| \geq 1$ always has a solution, in
+    $[0, \infty[$; more precisely, any $x \geq 1/\delta - \delta/4$ will do the trick.
+    Thus, $f$ is not uniformly continuous.
+  \end{itemize}
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
