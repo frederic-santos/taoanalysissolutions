@@ -2799,6 +2799,27 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
     Thus, $f$ is not uniformly continuous.
   \end{itemize}
 \end{exo}
+
+\begin{exo}{13.3.4}{Let $(X, d_X), (Y, d_Y), (Z, d_Z)$ be metric
+    spaces, and let $f : X \to Y$ and $g : Y \to Z$ be two uniformly
+    continuous functions. Show that $g \circ f : X \to Z$ is also uniformly
+    continuous.}
+
+  Let be $\epsilon > 0$ an arbitrary real number.
+  \begin{itemize}
+  \item Since $g$ is uniformly continuous, there exists a $\delta > 0$ such
+    that, for all $y,y' \in Y$, we have $d_Y(y, y') < \delta \implies
+    d_Z(g(y), g(y')) < \epsilon$.
+  \item For this $\delta > 0$, since $f$ is uniformly continuous, there
+    exists a $\delta' > 0$ such that, for all $x,x' \in X$, we have
+    $d_X(x,x') < \delta' \implies d_Y(f(x), f(x')) < \delta$.
+  \item Combining the two previous results, there exists a $\delta' > 0$
+    such that, for all $x,x' \in X$,
+    \[d_X(x,x') < \delta' \implies d_Y(f(x), f(x')) < \delta \implies d_Z(g \circ f
+      (x), g \circ f (x')) < \epsilon.\]
+    This shows that $g \circ f$ is uniformly continuous, as expected.
+  \end{itemize}
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
