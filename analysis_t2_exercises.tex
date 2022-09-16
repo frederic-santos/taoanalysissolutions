@@ -2820,6 +2820,44 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
     This shows that $g \circ f$ is uniformly continuous, as expected.
   \end{itemize}
 \end{exo}
+
+\begin{exo}{13.3.5}{Let $(X, d_X)$ be a metric space, and let
+    $f : X \to \rr$ and $g : X \to \rr$ be uniformly continuous functions.
+    Show that the direct sum $f \oplus g : X \to \rr^2$ defined by
+    $f \oplus g(x) := (f(x), g(x))$ is uniformly continuous.}
+
+  First note that the exercise does not specify which metric
+  ($d_{l^1}$, $d_{l^2}$ or $d_{l^\infty}$) should be considered on $\rr^2$.
+  However, we will see that one choice will come naturally, and that
+  the two others cases can be deduced immediately from that choice.
+
+  Let be $\epsilon > 0$. Since $f$ is uniformly continuous, there exists a
+  $\delta_1 > 0$ such that, for all $x,x' \in X$, we have $d_X(x,x') < \delta_1
+  \implies |f(x) - f(x')| < \epsilon/2$.
+
+  Similarly, since $g$ is uniformly continuous, there exists a
+  $\delta_2 > 0$ such that, for all $x,x' \in X$, we have $d_X(x,x') < \delta_2
+  \implies |g(x) - g(x')| < \epsilon/2$.
+
+  Thus, if we set $\delta := \min(\delta_1, \delta_2)$, then for all $x,x' \in X$ we
+  have
+  \[d_X(x,x') < \delta \implies |f(x) - f(x')| + |g(x) - g(x')| < \epsilon/2 +
+    \epsilon/2\]
+  i.e.,
+  \[d_{l^1}\left((f(x), g(x)), (f(x'), g(x'))\right) < \epsilon\]
+  or finally
+  \begin{equation}
+    \label{eq:13.3.5}
+    d_{l^1}\left(f \oplus g(x), f \oplus g (x')\right) < \epsilon.
+  \end{equation}
+  This means that $f \oplus g$ is indeed uniformly continuous if we
+  consider the metric space $(\rr^2, d_{l^1})$. However, remember from
+  Exercise 12.1.8 and 12.1.10 that we have $d_{l^\infty}(x,y) \leq
+  d_{l^2}(x,y) \leq d_{l^1}(x,y)$ for all $x,y \in \rr^2$. Thus, the
+  inequality \eqref{eq:13.3.5} remains true if we consider the metric
+  spaces $(\rr^2, d_{l^2})$ or $(\rr^2, d_{l^\infty})$ instead. This shows
+  that $f \oplus g$ is indeed uniformly continuous in all cases.
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
