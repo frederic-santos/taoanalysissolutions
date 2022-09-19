@@ -2858,6 +2858,61 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
   spaces $(\rr^2, d_{l^2})$ or $(\rr^2, d_{l^\infty})$ instead. This shows
   that $f \oplus g$ is indeed uniformly continuous in all cases.
 \end{exo}
+
+\bigskip
+\begin{exo}{13.3.6}{Show that the addition function
+    $(x, y) \mapsto x + y$ and the subtraction function
+    $(x, y) \mapsto x - y$ are uniformly continuous from $\rr^2$ to
+    $\rr$, but the multiplication function $(x, y) \mapsto xy$ is not.
+    Conclude that if $f : X \to \rr$ and $g : X \to \rr$ are uniformly
+    continuous functions on a metric space $(X, d)$, then
+    $f + g : X \to \rr$ and $f - g : X \to \rr$ are also uniformly
+    continuous. Give an example to show that $fg : X \to \rr$ need not
+    be uniformly continuous. What is the situation for $\max(f, g)$,
+    $\min(f, g)$, $f/g$, and $cf$ for a real number $c$?}
+
+  Because it is by far the most common case, we will consider below
+  that we work on the metric space $(\rr, d_{l^2})$. Similar proofs
+  would show the results for other choices of metrics on $\rr^2$.
+
+  \begin{itemize}
+  \item First let's show that $f : (x,y) \mapsto x+y$ is uniformly
+    continuous. Let be $\epsilon > 0$. We have to show that there exists a
+    $\delta > 0$ such that, for all $(x,y), (x',y') \in \rr^2$, we have
+    $d_{l^2}((x,y), (x',y')) < \delta \implies |f(x,y) - f(x',y')| < \epsilon$,
+    i.e.
+    \[\sqrt{(x-x')^2 + (y-y')^2} < \delta \implies |(x+y) - (x'+y')| < \epsilon.\]
+    First note that we always have
+    $|x-x'| \leq \sqrt{(x-x')^2 + (y-y')^2}$, and
+    $|y-y'| \leq \sqrt{(y-y')^2 + (y-y')^2}$. Consequently, if we set
+    $\delta := \epsilon/3$, and if we suppose that
+    $\sqrt{(x-x')^2 + (y-y')^2} < \delta$, we will have
+    $|x-x'| \leq \epsilon/3$ and $|y-y'| \leq \epsilon/3$. Thus, we will also have, by
+    triangle inequality,
+    $|(x+y) - (x'+y')| \leq |x+y| + |x'+y'| \leq \epsilon/3 + \epsilon/3 < \epsilon$, as
+    expected. Thus, the addition function is indeed uniformly
+    continuous.
+  \item Only a very small modification in the previous proof is needed
+    to handle the case of the substraction function, so that we will
+    not give the detailed proof here.
+  \item However, the multiplication function $f : (x,y) \mapsto xy$ is not
+    uniformly continuous. Indeed, let's take $\epsilon := 1$. We have to show
+    that for all $\delta > 0$, we will always be able to find
+    $(x,y, (x',y') \in \rr^2$ such that $|xy - x'y'| \geq 1$ although
+    $d_{l^2}((x,y), (x',y')) < \delta$.
+
+    Consider an arbitrary $\delta > 0$, and an arbitrary $(x,y) \in \rr^2$. If we
+    set $(x', y') := (x+\delta/2, y)$, we clearly have $d_{l^2}((x,y),
+    (x',y')) < \delta$. On the other hand, we have
+    \begin{align*}
+      |xy - x'y'| &= |xy - (x+\delta/2)y| = |xy - xy - y\delta/2| \\
+                  &= \frac{\delta}{2} |y|
+    \end{align*}
+    Thus, we just have to choose $y \geq \frac{2}{\delta}$ to get
+    $|xy - x'y'| \geq 1$, although $d_{l^2}((x,y), (x',y')) < \delta$. This
+    shows that $f$ is not uniformly continuous.
+  \end{itemize}
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
