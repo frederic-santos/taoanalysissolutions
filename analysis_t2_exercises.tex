@@ -2911,6 +2911,28 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
     Thus, we just have to choose $y \geq \frac{2}{\delta}$ to get
     $|xy - x'y'| \geq 1$, although $d_{l^2}((x,y), (x',y')) < \delta$. This
     shows that $f$ is not uniformly continuous.
+  \item Now consider $f,g : X \to \rr$ two uniformly continuous
+    functions. We can note that $f + g : X \to \rr$ is simply the
+    composition of the function $f \oplus g$ with the addition function.
+    But we have just shown that the addition function is uniformly
+    continuous, and we have shown in Exercise 13.3.5 that $f \oplus g$ is
+    also uniformly continuous. Thus, $f+g$ is uniformly continuous, by
+    Exercise 13.3.4. The same argument applies to $f-g$.
+  \item On the other hand, if $f,g : X \to \rr$ are two uniformly continuous
+    functions, the function $fg$ is not necessarily continuous.
+    Indeed, we have a ``free'' example provided by Exercise 13.3.3: if
+    we take $f(x) = g(x) = x$, we have $(fg)(x) = x^2$ and we have
+    already shown that this function is not uniformly continuous.
+  \item If $f,g : X \to \rr$ are two uniformly continuous functions, the
+    function $\max(f,g)$ is uniformly continuous, since it is simply
+    the composition of $f \oplus g$ and of the function
+    $(x,y) \mapsto \max(x,y)$. The first one is continuous by Exercise
+    13.3.5, the second one is continuous by Proposition 13.3.2. The
+    same argument applies to $\min(f,g)$.
+  \item Finally, the function $f/g$ is not necessarily continuous: we
+    can simply consider the case of $f(x) = 1$ and $g(x) = x$, which
+    are clearly uniformly continuous, whereas $(f/g)(x) = 1/x$ is not
+    (see for instance Example 9.9.1).
   \end{itemize}
 \end{exo}
 \end{document}
