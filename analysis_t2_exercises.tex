@@ -2935,6 +2935,21 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
     (see for instance Example 9.9.1).
   \end{itemize}
 \end{exo}
+
+\begin{exo}{13.4.1}{Let $(X, \ddisc)$ be a metric space with the
+    discrete metric. Let $E$ be a subset of $X$ which contains at
+    least two elements. Show that $E$ is disconnected.}
+
+  By definition, there exists at least two elements $x,y \in E$. Thus,
+  we have $\{x\} \subseteq E$, and the set $X \setminus \{x\}$ contains at least the
+  element $y$, and is thus non empty. In other words, $\{x\}$ is a
+  proper subset of $X$, i.e. $\{x\} \subsetneq X$.
+
+  By Remark 12.2.14, we know that for the discrete metric $\ddisc$,
+  every set is both open and closed. Thus, the set $\{x\}$ is a proper
+  subset of $X$ that is non-empty, open, and closed. This shows that
+  $(X, \ddisc)$ is connected (Definition 13.4.1).
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
