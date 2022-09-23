@@ -2950,6 +2950,38 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
   subset of $X$ that is non-empty, open, and closed. This shows that
   $(X, \ddisc)$ is connected (Definition 13.4.1).
 \end{exo}
+
+\bigskip
+\begin{exo}{13.4.2}{Let $f : X \to Y$ be a function from a connected
+    metric space $(X, d)$ to a metric space $(Y, \ddisc)$ with the
+    discrete metric. Show that $f$ is continuous if and only if it is
+    constant. (Hint: use Exercise 13.4.1.)}
+
+  TODO
+\end{exo}
+
+\bigskip
+\begin{exo}{13.4.3}{Prove the equivalence of statements (b) and (c) in
+    Theorem 13.4.5.}
+
+  First we prove that (b) $\implies$ (c). $X$ is supposed to be a
+  non-empty set of the real line, and thus has a supremum
+  $b \in \extrr$ and an infimum $a \in \extrr$ (by Definition 5.5.10).
+  Consider a real number $z \in ]a,b[$. Because $z < b$, then by
+  definition of the supremum of $X$, there exists a real number $y \in
+  X$ such that $z < y \leq b$. Similarly, because $a < z$, there must
+  exist a $x \in X$ such that $a \leq x < z$. Thus, there exist $x,y \in X$
+  such that $a \leq x < z < y \leq b$. By property (b), this implies that $z
+  \in X$. Since this applies to any $z \in [a,b]$, we actually have $]a,b[
+  \subseteq X$. Thus, $X$ can be either $]a,b[$, $[a,b[$, $]a, b]$ or $[a,b]$,
+  but in each case it is an interval in the sense of Definition 9.1.1.
+
+  Now let's prove that (c) $\implies$ (b). Suppose that $X$ is an
+  interval in the sense of Definition 9.1.1, for instance that
+  $X = [a,b]$. Then it is clear that for all $a \leq x < y \leq b$ we have
+  $[x,y] \subseteq X$. This is just as clear for any other type of interval
+  listed in Definition 9.1.1.
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
