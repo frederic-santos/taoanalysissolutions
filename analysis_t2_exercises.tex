@@ -2982,6 +2982,47 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
   $[x,y] \subseteq X$. This is just as clear for any other type of interval
   listed in Definition 9.1.1.
 \end{exo}
+
+\bigskip
+\begin{exo}{13.4.4}{Prove Theorem 13.4.6. (Hint: the formulation of
+    continuity in Theorem 13.1.5(c) is the most convenient to use.)}
+
+  Given that connectedness is a ``negative'' notion (i.e., not being
+  separable into two disjoint open sets), it may seem more natural to
+  give a proof by contradiction. Thus, suppose that $f(E)$ is
+  \emph{not} connected. In this case, we can split $f(E)$ into two
+  disjoint open (non-empty) sets $V$ and $W$, i.e. we have
+  $f(E) = V \sqcup W$.
+
+  \begin{itemize}
+  \item Since $f$ is continuous on $X$, it is in particular continuous
+    on $E$. Thus, by Theorem 13.1.5(c), $f^{-1}(V)$ and $f^{-1}(W)$ are
+    open in $X$, and $A := E \cap f^{-1}(V)$ and $B : = E \cap f^{-1}(W)$
+    are open in $E$.
+  \item Of course, since $V$ and $W$ are non-empty, $A$ and $B$ are
+    also non-empty.
+  \item Furthermore, $A$ and $B$ are disjoint. Indeed, suppose that we
+    have $x \in A \cap B$. Thus we would have $f(x) \in V \cap W$, which is a
+    contradiction with the fact that $V$ and $W$ are disjoint.
+  \item Finally, we have $E = A \sqcup B$. Indeed, the inclusion
+    $A \sqcup B \subseteq E$ is clear (since $A, B$ are subsets of $E$ by
+    definition). Conversely, the inclusion $E \subseteq A \sqcup B$ can be proved
+    easily: if $x \in E$, then $f(x) \in f(E)$, i.e.
+    $f(x) \in V \sqcup W$. If $f(x) \in V$, then $x \in A$; and if $x \in W$, then
+    $x \in B$. In both cases, $x \in A \sqcup B$, which proves the second
+    inclusion. Thus, we have $E = A \sqcup B$.
+  \end{itemize}
+
+  Thus, the metric space $(E, d|_{E \times E})$ is not connected, since $E$
+  can be split into two open disjoint and non-empty subsets. This is a
+  contradiction with our initial hypothesis, as expected; and $f(E)$
+  must be connected.
+
+  (Note that for this exercise, we could have re-used some statements
+  proved earlier, for example in Exercises 3.4.2 or 3.4.4, to make the
+  proof a bit shorter.)
+\end{exo}
+\bigskip
 \end{document}
 %%% Local Variables:
 %%% mode: latex
