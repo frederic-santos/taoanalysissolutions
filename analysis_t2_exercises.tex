@@ -2996,9 +2996,11 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
 
   \begin{itemize}
   \item Since $f$ is continuous on $X$, it is in particular continuous
-    on $E$. Thus, by Theorem 13.1.5(c), $f^{-1}(V)$ and $f^{-1}(W)$ are
-    open in $X$, and $A := E \cap f^{-1}(V)$ and $B : = E \cap f^{-1}(W)$
-    are open in $E$.
+    on $E$. Thus, by Theorem 13.1.5(c), $f^{-1}(V)$ and $f^{-1}(W)$
+    are open in $X$, and the sets $A := E \cap f^{-1}(V)$ and
+    $B : = E \cap f^{-1}(W)$ are open in $E$\footnote{Note that we use
+      here a relative topology in the metric space
+      $(E, d|_{E \times E})$.}.
   \item Of course, since $V$ and $W$ are non-empty, $A$ and $B$ are
     also non-empty.
   \item Furthermore, $A$ and $B$ are disjoint. Indeed, suppose that we
@@ -3023,6 +3025,30 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
   proof a bit shorter.)
 \end{exo}
 \bigskip
+
+\begin{exo}{13.4.5}{Use Theorem 13.4.6 to prove Corollary 13.4.7.}
+
+  Let be $f : X \to \rr$ a continuous map, let be $E \subseteq X$ a connected
+  set, and let be $a,b \in E$. Suppose that we have $f(a) \leq f(b)$ (the
+  proof can easily be adapted if $f(b) > f(a)$), and let be $f(a) \leq y
+  \leq f(b)$.
+
+  By hypothesis, $E$ is a connected subset of $X$, so that $f(E)$ must
+  also be connected, by Theorem 13.4.6. And since $a,b \in E$, we
+  clearly have $f(a), f(b) \in f(E)$, by definition. Recall that we
+  suppose here $f(a) \leq f(b)$, and that $f(E) \subseteq \rr$ by definition.
+  
+  \begin{itemize}
+  \item (Trivial case) If $f(a) = f(b)$, then we necessarily have
+    $f(a) = y = f(b)$, so that we just have to pick $c := a$ to
+    exhibit a number $c \in E$ such that $f(c) = y$.
+  \item (General case) If $f(a) < f(b)$, then by Theorem 13.4.5, since
+    $f(E)$ is a connected subset of $\rr$, the interval $[f(a), f(b)]$
+    is contained in $f(E)$. Thus, for any $y \in [f(a), f(b)]$, we have
+    $y \in f(E)$, and there exists a $c \in E$ such that $f(c) = y$, as
+    expected.
+  \end{itemize}
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
