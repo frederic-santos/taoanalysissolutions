@@ -2905,7 +2905,8 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
     set $(x', y') := (x+\delta/2, y)$, we clearly have $d_{l^2}((x,y),
     (x',y')) < \delta$. On the other hand, we have
     \begin{align*}
-      |xy - x'y'| &= |xy - (x+\delta/2)y| = |xy - xy - y\delta/2| \\
+      |xy - x'y'| &= |xy - (x+\delta/2)y| \\
+                  &= |xy - xy - y\delta/2| \\
                   &= \frac{\delta}{2} |y|
     \end{align*}
     Thus, we just have to choose $y \geq \frac{2}{\delta}$ to get
@@ -2951,16 +2952,27 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
   $(X, \ddisc)$ is connected (Definition 13.4.1).
 \end{exo}
 
-\bigskip
+\pagebreak
 \begin{exo}{13.4.2}{Let $f : X \to Y$ be a function from a connected
     metric space $(X, d)$ to a metric space $(Y, \ddisc)$ with the
     discrete metric. Show that $f$ is continuous if and only if it is
     constant. (Hint: use Exercise 13.4.1.)}
 
-  TODO
+  (Remark: this exercise is much easier to solve if we assume that we
+  already know Theorem 13.4.6 and/or Corollary 13.4.7. We will proceed
+  accordingly.)
+
+  \begin{itemize}
+  \item First, it is clear that if $f$ is constant, then it is
+    continuous (since $\ddisc(f(x_0), f(x)) = 0$, and is thus inferior to
+    any $\epsilon > 0$, no matter how close are $x, x_0 \in X$).
+  \item Furthermore, if $f$ is continuous, then it is constant.
+    Indeed, $X$ is connected, thus $f(X)$ must be connected (by
+    Theorem 13.4.6). By Exercise 13.4.1, $f(X)$ can only have one
+    element, i.e., $f$ is constant.
+  \end{itemize}
 \end{exo}
 
-\bigskip
 \begin{exo}{13.4.3}{Prove the equivalence of statements (b) and (c) in
     Theorem 13.4.5.}
 
