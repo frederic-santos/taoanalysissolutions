@@ -3061,6 +3061,34 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
     expected.
   \end{itemize}
 \end{exo}
+
+\begin{exo}{13.4.6}{Let $(X,d)$ be a metric space, and let
+    $(E_\alpha)_{\alpha \in I}$ be a collection of connected sets in
+    $X$. Suppose also that $\bigcap_{\alpha \in I} E_\alpha$ is non-empty. Show that
+    $\bigcup_{\alpha \in I} E_\alpha$ is connected.}
+
+  As in Exercise 13.4.4, it may seem more natural to give a proof by
+  contradiction to prove connectedness. Thus, let's suppose for the
+  sake of contradiction that $\bigcup_{\alpha \in I} E_\alpha$ is disconnected. It means
+  that there exists two open, disjoint and non empty sets $V$ and $W$
+  in $X$ such that $\bigcup_{\alpha \in I} E_\alpha = V \sqcup W$.
+
+  Let's take an arbitrary $E_\alpha$. We clearly have
+  $E_\alpha \subseteq V \sqcup W$. But since $E_\alpha$ is connected, we must have either
+  $E_\alpha \subseteq V$, or $E_\alpha \subseteq W$. Indeed, if it were not the case,
+  $E_\alpha$ could be split into two open (in $E_\alpha$), disjoint and
+  non-empty sets (namely $V \cap E_\alpha$ and $W \cap E_\alpha$), which is a
+  contradiction. Thus, for all $\alpha \in I$, we have either $E_\alpha \subseteq V$, or
+  $E_\alpha \subseteq W$.
+
+  Furthermore, there exists at least one $\alpha_1 \in I$ such that
+  $E_{\alpha_1} \subseteq V$ (otherwise $V$ would be empty, which is excluded); and
+  similarly there exists at least one $\alpha_2 \in I$ such that $E_{\alpha_2} \subseteq
+  W$. Thus, $E_{\alpha_1} \cap E_{\alpha_2} = \emptyset$, which implies that $\bigcap_{\alpha \in I}
+  E_\alpha$ is empty. This contradicts out initial hypothesis.
+
+  Thus, $\bigcup_{\alpha \in I} E_\alpha$ is necessarily connected.
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
