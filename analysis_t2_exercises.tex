@@ -3089,6 +3089,37 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
 
   Thus, $\bigcup_{\alpha \in I} E_\alpha$ is necessarily connected.
 \end{exo}
+
+\bigskip
+\begin{exo}{13.4.7}{Let $(X, d)$ be a metric space, and let $E$ be a
+    subset of $X$. We say that $E$ is path-connected iff, for every
+    $x, y \in E$, there exists a continuous function
+    $\gamma : [0, 1] \to E$ from the unit interval $[0, 1]$ to $E$ such that
+    $\gamma(0) = x$ and $\gamma(1) = y$. Show that every path-connected set is
+    connected.}
+
+  As for the previous exercises, we will use a proof by contradiction
+  here. Thus, let be $E$ a path-connected set, and suppose for the
+  sake of contradiction that $E$ is not connected. Thus, there exist
+  two open (in $E$), disjoint and non empty sets $V, W \subseteq X$ such that
+  $E = V \sqcup W$.
+
+  Consider two points, $x \in V$ and $y \in W$. Since $E$ is path
+  connected, there exists a continuous map $\gamma : [0,1] \to E$ such that
+  $\gamma(0) = x$ and $\gamma(1) = y$. We know (for instance by Theorem 13.4.5)
+  that the interval $[0,1]$ is a connected set. Thus, the image set $S
+  := \gamma([0,1])$ is also a connected set, since $\gamma$ is continuous
+  (Theorem 13.4.6).
+
+  But since $V$ is open in $E$, then $V \cap S$ is open in $S$
+  (Proposition 12.3.4). Similarly, $W \cap S$ is open in $S$. These sets
+  are non-empty since they contain $x$ and $y$ respectively; and they
+  are clearly disjoint since $V$ and $W$ are disjoint. Thus, we have
+  $S = (S \cap V) \sqcup (S \cap W)$, so that $S$ is disconnected. This is a
+  contradiction.
+
+  Thus, $E$ must be a connected set.
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
