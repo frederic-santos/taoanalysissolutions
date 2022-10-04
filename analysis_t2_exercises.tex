@@ -3064,7 +3064,8 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
 
 \begin{exo}{13.4.6}{Let $(X,d)$ be a metric space, and let
     $(E_\alpha)_{\alpha \in I}$ be a collection of connected sets in
-    $X$. Suppose also that $\bigcap_{\alpha \in I} E_\alpha$ is non-empty. Show that
+    $X$ (we suppose that $I$ is non-empty). Suppose also that
+    $\bigcap_{\alpha \in I} E_\alpha$ is non-empty. Show that
     $\bigcup_{\alpha \in I} E_\alpha$ is connected.}
 
   As in Exercise 13.4.4, it may seem more natural to give a proof by
@@ -3095,8 +3096,8 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
     subset of $X$. We say that $E$ is path-connected iff, for every
     $x, y \in E$, there exists a continuous function
     $\gamma : [0, 1] \to E$ from the unit interval $[0, 1]$ to $E$ such that
-    $\gamma(0) = x$ and $\gamma(1) = y$. Show that every path-connected set is
-    connected.}
+    $\gamma(0) = x$ and $\gamma(1) = y$. Show that every non-empty
+    path-connected set is connected.}
 
   As for the previous exercises, we will use a proof by contradiction
   here. Thus, let be $E$ a path-connected set, and suppose for the
@@ -3120,6 +3121,53 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
 
   Thus, $E$ must be a connected set.
 \end{exo}
+\bigskip
+
+\begin{exo}{13.4.8}{Let $(X, d)$ be a metric space, and let $E$ be a
+    subset of $X$. Show that if $E$ is connected, then the closure
+    $\adh{E}$ of $E$ is also connected. Is the converse true?}
+
+  Suppose, for the sake of contradiction, that $E$ is connected but
+  $\adh{E}$ is not connected. In this case, there exist two open (in
+  $\adh{E}$), disjoint and non-empty sets $V$ and $W$ such that
+  $\adh{E} = V \sqcup W$. Intuitively, we will show that this partition of
+  $\adh{E}$ will provide a partition of $E$ into two open, non-empty
+  sets, which will be a contradiction with the connectedness of $E$.
+  Thus, let be $V' := V \cap E$ and $W' := W \cap E$.
+  \begin{itemize}
+  \item These sets $V', W'$ are open in $E$, by Proposition~12.3.4.
+  \item These sets are also non-empty\footnote{This is, quite
+      paradoxically, the key point of this proof. Or, more precisely,
+      this is the point that will not necessarily be true if we
+      consider a superset of $E$ that is larger that $\adh{E}$ (can
+      you find an example?). The general idea here is that $\adh{E}$
+      is ``so close to $E$'' that $\adh{E}$ has ``no room to be
+      disconnected'' if $E$ is connected.}. Indeed, let be $x \in V$.
+    Since $V \subset \adh{E}$, $x$ is adherent to $E$. Thus, $x$ belongs
+    either to $E$, or to $\partial E$. If $x \in E$, then clearly,
+    $x \in V' := V \cap E$. If $x \in \partial E$, remember that $V$ is open in
+    $\adh{E}$, so that there exists an open ball
+    $B_{\adh{E}}(x, \epsilon) \subseteq V$. But this open ball has a non-empty
+    intersection with $E$, because $x \in \adh{E}$. Thus, in both cases,
+    $V'$ is non-empty. The same argument applies to $W$ and $W'$.
+  \item Furthermore, since $E \subseteq \adh{E}$, we have\footnote{See for
+      instance Proposition 3.1.28(f).}
+    \begin{align*}
+      V' \sqcup W' &= (V \cap E) \sqcup (W \cap E) \\
+              &= (V \sqcup W) \cap E \\
+              &= \adh{E} \cap E \\
+              &= E.
+    \end{align*}
+  \end{itemize}
+  Thus, $E$ is disconnected, which is a contradiction.
+
+  However, the converse statement is not true. Indeed, consider the
+  set $E := ]-1,0[ \sqcup ]0,1[$ in $\rr$. This set is clearly
+  disconnected, since it is natively the disjoint union of two open
+  intervals. But the closure $\adh{E} = [-1,1]$ is connected, since it
+  is an interval.
+\end{exo}
+
 \end{document}
 %%% Local Variables:
 %%% mode: latex
