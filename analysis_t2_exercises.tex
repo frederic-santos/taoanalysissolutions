@@ -3168,6 +3168,48 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
   is an interval.
 \end{exo}
 
+\pagebreak
+\section{Uniform convergence}
+\label{sec:uniform-convergence}
+\begin{exo}{14.1.1}{Let $(X, d_X)$ and $(Y, d_Y)$ be metric spaces,
+    let $E$ be a subset of $X$, let $f : E \to Y$ be a function, and let
+    $x_0$ be an element of $E$. Show that the limit
+    $\lim_{x\to x_0; x \in E} f(x)$ exists if and only if the limit
+    $\lim_{x\to x_0; x \in E \setminus \{x_0\}} f(x)$ exists and is equal to
+    $f(x_0)$. Also, show that if the limit
+    $\lim_{x \to x_0; x \in E} f(x)$ exists at all, then it must equal
+    $f(x_0)$.}
+
+  We will denote (i) and (ii) the two following statements:
+  \begin{enumerate}[label=(\roman*)]
+  \item $\lim_{x \to x_0; x \in E}  f(x) = f(x_0)$;
+  \item $\lim_{x \to x_0; x \in E \setminus \{x_0\}}  f(x) = f(x_0)$.
+  \end{enumerate}
+
+  First, it is clear that we have (i) $\implies$ (ii), since $E \setminus
+  \{x_0\} \subseteq E$.
+
+  Now let's show that (ii) $\implies$ (i). It means that for any
+  arbitrary $\epsilon > 0$, there exists a $\delta > 0$ such that
+  $d_Y(f(x), f(x_0)) < \epsilon$ whenever $x \in E \setminus \{x_0\}$ and
+  $d_X(x, x_0) < \delta$. Note that, obviously, if $x=x_0$, then
+  $f(x) = f(x_0)$, so that the previous statement can be extended over
+  $E$ (it is true by hypothesis if $x \in E \setminus \{x_0\}$ and it remains
+  true if $x = x_0$). Thus, we have indeed (ii), as expected.
+
+  Finally, suppose that the limit $\lim_{x \to x_0; x \in E} f(x)$ exists
+  at all, and let's show that it must equal $f(x_0)$. Suppose that the
+  limit exists, and suppose for the sake of contradiction that this
+  limit is some $L \neq f(x_0)$. Consider
+  $\epsilon := d_Y(L, f(x_0))/2$. By hypothesis, we have
+  $\epsilon > 0$, and there exists a $\delta > 0$ such that
+  $d_Y(f(x), L) < \epsilon$ whenever $x \in E$ and
+  $d_X(x, x_0) < \delta$. At $x = x_0$, we clearly have $x_0 \in E$ and
+  $d(x, x_0) = 0 < \delta$, but we have
+  $d_Y(f(x), L) = 2 \epsilon > \epsilon$. This is a contradiction, and thus we must
+  have $L = f(x_0)$.
+\end{exo}
+
 \end{document}
 %%% Local Variables:
 %%% mode: latex
