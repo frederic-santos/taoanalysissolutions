@@ -3210,6 +3210,54 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
   have $L = f(x_0)$.
 \end{exo}
 
+\bigskip
+\begin{exo}{14.1.2}{Prove Proposition 14.1.5.}
+
+  In this Proposition, the three statements (a), (b), (c) are the
+  exact counterparts of Theorem 13.1.4, whereas statement (d) is sort
+  of a whole new statement. We can thus prove it separately, showing
+  first that (a) $\implies$ (c) $\implies$ (b) $\implies$ (a), and
+  then that (a) $\iff$ (d).
+
+  \begin{itemize}
+  \item First we show that (a) $\implies (c)$. Suppose that
+    $\lim_{x \to x_0; x \in E} f(x) = L$, and let be $V \subseteq Y$ an open set
+    such that $L \in V$. By definition of an open set (Proposition
+    12.2.15(a)), there exists $\epsilon > 0$ such that
+    $B_Y(L, \epsilon) \subseteq V$. By hypothesis (a), for this $\epsilon > 0$, there exists
+    a $\delta > 0$ such that:
+    \[(x \in E; x \in B_X(x_0, \delta) \implies f(x) \in B_Y(L, \epsilon) \subseteq V.\]
+    If we set $U := B_X(x_0, \delta)$, we have indeed found an open set $U$
+    such that $f(U \cap E) \subseteq V$, as expected.
+  \item Now we show that (c) $\implies$ (b). Consider a sequence
+    $\seq{x^{(n)}}{1}$ of elements of $E$ that converges to $x_0$. Let
+    be $\epsilon > 0$. It is clear that $V := B_Y(L, \epsilon)$ is an open set
+    containing $L$. By (c), there exists an open set $U \subseteq X$
+    containing $x_0$ such that $f(U \cap E) \subseteq V$. Since $U$ is open,
+    there exists an open ball $B_X(x_0, \delta) \subseteq U$; and since
+    $\seq{x^{(n)}}{1}$ converges to $x_0$, there exists an $N \geq 1$
+    such that $n \geq N \implies x^{(n)} \in B_X(x_0, \delta)$. In particular,
+    $n \geq N \implies x^{(n)} \in U \cap E$, so that by (c), we have
+    $f(x^{(n)}) \in V$. Unfolding these statements, for all $\epsilon > 0$,
+    there exists $N \geq 1$ such that $n \geq N \implies d_Y(f(x^{(n)}), L)
+    < \epsilon$. Thus, $\seq{f(x^{(n)})}{1}$ converges to $L$, as expected.
+  \item Now let's show that (b) $\implies$ (a). Suppose, for the sake
+    of contradiction, that we have
+    $\lim_{x \to x_0; x\in E} f(x) \neq L$. Thus, there exists an
+    $\epsilon > 0$ such that, for all $\delta > 0$, we have an
+    $x \in E$ with $d_Y(f(x), L) \geq \epsilon$ although
+    $d_X(x, x_0) < \delta$. In particular, for all $n \geq 1$, there exists a
+    $x^{(n)} \in E$ such that $d_X(x^{(n)}, x_0) < 1/n$ but
+    $d_Y(f(x^{(n)}), L) \geq \epsilon$. By the (countable) axiom of choice, we
+    can form the corresponding sequence $\seq{x^{(n)}}{1}$, which
+    clearly converges to $x_0$. However, the sequence
+    $\seq{f(x^{(n)})}{1}$ does not converge to $L$, a contradiction
+    with (b). Thus, we must have $\lim_{x \to x_0; x\in E} f(x) = L$.
+  \item Now let's show that (a) $\implies$ (d).
+  \item Finally, let's show that (d) $\implies$ (a).
+  \end{itemize}
+  
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
