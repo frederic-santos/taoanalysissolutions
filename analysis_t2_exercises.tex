@@ -3253,10 +3253,37 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
     clearly converges to $x_0$. However, the sequence
     $\seq{f(x^{(n)})}{1}$ does not converge to $L$, a contradiction
     with (b). Thus, we must have $\lim_{x \to x_0; x\in E} f(x) = L$.
-  \item Now let's show that (a) $\implies$ (d).
-  \item Finally, let's show that (d) $\implies$ (a).
+  \item Now let's show that (a) $\implies$ (d). Suppose that
+    $\lim_{x \to x_0; x \in E} f(x) = L = g(x_0)$. We have indeed
+    $\lim_{x \to x_0; x \in E \cup \{x_0\}} g(x) = L = g(x_0)$, because
+    \begin{itemize}
+    \item if $x \in E \setminus \{x_0\}$, we have
+      $\lim_{x \to x_0; x \in E \setminus \{x_0\}} g(x) = \lim_{x \to x_0; x \in E \setminus
+        \{x_0\}} f(x) = L = g(x_0)$ by definition (using the fact that
+      $E \setminus \{x_0\} \subseteq E$);
+    \item if $x = x_0$, we have of course $g(x) = g(x_0)$, i.e.
+      $d_Y(g(x), g(x_0)) = 0$.
+    \end{itemize}
+    Thus, in both cases, for all $\epsilon > 0$, we can indeed find a
+    $\delta > 0$ such that $d_Y(g(x), g(x_0)) < \epsilon$ whenever
+    $x \in E \cup \{x_0\}$ and $d_X(x, x_0) < \delta$. In other words,
+    $g$ is continuous at $x_0$.
+
+    Furthermore, if $x_0 \in E$, we already know by Exercise 14.1.1 that
+    we must have $f(x_0) = L$.
+  \item Finally, let's show that (d) $\implies$ (a). By hypothesis, we
+    have $\lim_{x \to x_0; x \in E \cup \{x_0\}} g(x) = g(x_0) = L$, and if
+    $x_0 \in E$, we have $f(x_0) = g(x_0) = L$. We can split into two
+    cases:
+    \begin{itemize}
+    \item if $x_0 \notin E$, then $E \setminus \{x_0\}$ is simply $E$, so that the
+      result is trivial: we have
+      $L = \lim_{x \to x_0; x \in E \setminus \{x_0\}} g(x) = \lim_{x \to x_0; x \in
+        E} f(x)$;
+    \item if $x_0 \in E$, then $E \cup \{x_0\}$ is simply $E$, and $g$ is
+      simply $f$, so that (a) is trivial.
+    \end{itemize}
   \end{itemize}
-  
 \end{exo}
 \end{document}
 %%% Local Variables:
