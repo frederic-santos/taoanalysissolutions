@@ -3285,6 +3285,36 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
     \end{itemize}
   \end{itemize}
 \end{exo}
+
+\begin{exo}{14.1.5}{Let $(X, d_X)$, $(Y, d_Y)$, $(Z, d_Z)$ be metric
+    spaces, and let $x_0 \in X$, $y_0 \in Y$, $z_0 \in Z$. Let
+    $f : X \to Y$ and $g : Y \to Z$ be functions, and let $E$ be a subset
+    of $X$. If we have $\lim_{x \to x_0; x \in E} f(x) = y_0$ and
+    $\lim_{y \to y_0; y \in f(E)} g(y) = z_0$, conclude that
+    $\lim_{x \in x_0; x \in E} g \circ f(x) = z_0$.}
+
+  Let be $\epsilon > 0$.
+
+  \begin{itemize}
+  \item Since $g$ converges to $z_0$ at $y_0$ in $f(E)$, there exists
+    a $\delta > 0$ such that $d_Z(g(y), z_0) < \epsilon$ whenever
+    $y \in f(E)$ and $d_Y(y, y_0) < \delta$.
+  \item Consider this same number $\delta > 0$. Since $f$ converges to
+    $y_0$ at $x_0$ in $E$, there exists an $\alpha > 0$ such that
+    $d_Y(f(x), y_0) < \delta$ whenever $x \in E$ and $d_X(x, x_0) < \alpha$.
+  \end{itemize}
+
+  Thus, for any $\epsilon > 0$, we can find an $\alpha > 0$ such that:
+  \[
+    \left(x \in E, \; d_X(x, x_0) < \alpha \right)
+    \implies
+    \left(f(x) \in f(E), \; d_Y(f(x), y_0) < \delta \right)
+    \implies
+    d_Z(g \circ f(x), z_0) < \epsilon.
+  \]
+
+  Thus, we have indeed  $\lim_{x \in x_0; x \in E} g \circ f(x) = z_0$.
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
