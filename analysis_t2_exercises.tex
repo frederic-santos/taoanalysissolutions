@@ -3315,6 +3315,52 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
 
   Thus, we have indeed  $\lim_{x \in x_0; x \in E} g \circ f(x) = z_0$.
 \end{exo}
+
+\bigskip
+\begin{exo}{14.1.6}{State and prove an analogue of the limit laws in
+    Proposition 9.3.14 when $X$ is now a metric space rather than a
+    subset of $\rr$. (Hint: use Corollary 13.2.3.)}
+
+  \textbf{Proposition.} Let $(X, d_X)$ and $(Y, d_Y)$ be metric
+  spaces, and let $f,g : X \to Y$ be functions. Let be $E \subseteq X$ and
+  $x_0$ an adherent point of $E$. Suppose that
+  $\lim_{x \to x_0; x \in E} f(x) = L$ and
+  $\lim_{x \to x_0; x \in E} g(x) = M$. Then $f+g$ has limit $L+M$ at
+  $x_0$; $f-g$ has limit $L-M$ at $x_0$; $\max(f,g)$ and $\min(f,g)$
+  have limit $\max(L,M)$ and $\min(L,M)$ at $x_0$ respectively; $fg$
+  has limit $LM$ at $x_0$; and $cf$ has limit $cL$ at $x_0$ for any
+  constant $c$. Furthermore, if $g(x) \neq 0$ for all $x \in X$ and
+  $M \neq 0$, then $f/g$ has limit $L/M$ at $x_0$.
+
+  \begin{proof}
+    We just prove the first claim, i.e. that $\lim_{x \to x_0; x \in E}
+    (f+g)(x) = L+M$, since all the other claims can be proved
+    similarly.
+
+    The hint suggests to use Corollary 13.2.3, but this result applies
+    to continuous functions and we do not know know whether $f, g$ are
+    continuous at $x_0$ (we can possibly even have $x_0 \notin E$ here, if
+    $x_0$ is only a boundary point of $E$). However, we can actually
+    ``build'' continuous counterparts for $f, g$, using Proposition
+    14.1.5(d). Indeed, let be $F : E \cup \{x_0\} \to Y$ such that
+    $F(x) = f(x)$ if $x \neq x_0$, and $F(x_0) = L$. Similarly, let be
+    $G : E \cup \{x_0\} \to Y$ defined by $G(x) = g(x)$ if
+    $x \neq x_0$ and $G(x_0) = M$. This time, it is clear by Proposition
+    14.1.5(d) that $F, G$ are continuous at $x_0$.
+
+    Thus, by Corollary 13.2.3, $F+G$ is continuous at $x_0$.
+    Consequently, we have
+    \[\lim_{x \to x_0; x \in E \cup \{x_0\}} (F+G)(x) = (F+G)(x_0) = L+M.\]
+
+    This function $(F+G) : E \cup \{x_0\} \to Y$ is a continuous function
+    such that $(F+G)(x_0) = L+M$, and $(F+G)(x) = (f+g)(x)$ for all
+    $x \in E \setminus \{x_0\}$. The function $F+G$ satisfies Proposition
+    14.1.5(d)\footnote{We also have the part ``if $x_0 \in E$, then
+      $(f+g)(x_0) = L+M$'' because we have this part for $f,g$ taken
+      separately.}, and thus we also have Proposition 14.1.5(a), i.e.
+    $\lim_{x \to x_0; x \in E} (f+g)(x) = L+M$, as expected.
+  \end{proof}
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
