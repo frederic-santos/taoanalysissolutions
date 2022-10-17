@@ -73,25 +73,29 @@ No exercises in this chapter.
 \begin{exo}{2.2.1}{Prove that the addition is associative, i.e. that
     for any natural numbers $a, b, c$, we have $(a+b) + c = a + (b+c)$.}
 
-  Let's use induction on $c$ while keeping $a$ and $b$ fixed.
+  Let's use induction on $a$ while keeping $b$ and $c$ fixed.
   
   \begin{itemize}
-  \item Base case for $c=0$: let's prove that $(a+b)+0 = a+(b+0)$. The
-    left hand side is equal to $(a+b)$ according to Lemma 2.2.3. For the
-    right hand side, if we apply the same lemma to the $(b+0)$ part,
-    we get $a + (b+0) = a+b$. Both sides are equal to $a+b$, and the
-    base case is thus done.
-  \item Now let's suppose inductively that $(a+b) + c = a + (b+c)$: we
-    have to prove that $(a+b) + \successor{c} = a + (b +
-    \successor{c})$. Using Lemma 2.2.3 on the right
-    hand side leads to $a + \successor{(b+c)}$. Now consider the left
-    hand side. Using still the same lemma, we get $(a+b) +
-    \successor{c} = \successor{\left((a+b) + c\right)}$. By the
-    inductive hypothesis, this is also equal to
-    $\successor{\left(a + (b+c)\right)}$. And, using the lemma 2.2.3
-    again, this also leads to $a + \successor{b+c}$. Therefore, both
-    sides are equal to $a + \successor{b+c}$, and we have closed the
-    induction.
+  \item Base case for $a=0$: let's prove that $(0+b)+c = 0+(b+c)$. For
+    the left hand side, we have $(0+b)=b$ by definition of addition.
+    For the right hand side, since by definition, we have
+    $0+(b+c) = b+c$. Thus, both sides are equal to $b+c$, and the base
+    case is done.
+  \item Suppose inductively that $(a+b) + c = a + (b+c)$. We have to
+    prove that ${(\successor{a}+b) + c} = {\successor{a} + (b + c)}$.
+
+    \begin{itemize}
+    \item Using (two times) Definition 2.2.1 on the left hand side,
+      we have
+      $(\successor{a}+b) + c = \successor{(a+b)} + c =
+      \successor{((a+b) + c)}$.
+    \item Now consider the right hand side. Still using the definition
+      of addition, we get
+      $\successor{a} + (b + c) = \successor{(a + (b+c))}$.
+    \end{itemize}
+
+    But by inductive hypothesis, we have $(a+b) + c = a + (b+c)$.
+    Thus, both sides are equal, and this closes the induction.
   \end{itemize}
 \end{exo}
 
@@ -200,6 +204,7 @@ No exercises in this chapter.
   \end{enumerate}
 \end{exo}
 
+\pagebreak
 \begin{exo}{2.2.4}{Demonstrate three lemmas used to prove the
     trichotomy of order for natural numbers.}
   \begin{enumerate}[label=\emph{(\alph*)}]
