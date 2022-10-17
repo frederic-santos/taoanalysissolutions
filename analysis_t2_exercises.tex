@@ -3361,6 +3361,80 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
     $\lim_{x \to x_0; x \in E} (f+g)(x) = L+M$, as expected.
   \end{proof}
 \end{exo}
+
+\smallskip
+\begin{exo}{14.2.1}{The purpose of this exercise is to demonstrate a
+    concrete relationship between continuity and pointwise
+    convergence, and between uniform continuity and uniform
+    convergence. Let $f : \rr \to \rr$ be a function. For any
+    $a \in \rr$, let $f_a : \rr \to \rr$ be the shifted function
+    $f_a(x) := f(x - a)$.
+    \begin{enumerate}[label=(\alph*)]
+    \item Show that $f$ is continuous if and only if, whenever
+      $\seq{a_n}{0}$ is a sequence of real numbers which converges to
+      zero, the shifted functions $f_{a_n}$ converge pointwise to $f$.
+    \item Show that $f$ is uniformly continuous if and only if,
+      whenever $\seq{a_n}{0}$ is a sequence of real numbers which
+      converges to zero, the shifted functions $f_{a_n}$ converge
+      uniformly to $f$.
+    \end{enumerate}}
+
+  Let be $a \in \rr$, and $\seq{a_n}{0}$ a sequence of real numbers that
+  converges to $0$.
+
+  \begin{enumerate}[label=(\alph*)]
+  \item Suppose that $f$ is continuous. Let be $\epsilon > 0$, and let be an
+    arbitrary $x \in \rr$. In particular, since $f$ is continuous at
+    $x$, there exists a $\delta_x > 0$ such that $|x-y| < \delta_x \implies |f(x) -
+    f(y)| < \epsilon$. Furthermore, since $\seq{a_n}{0}$ converges to $0$,
+    there exists a $N \geq 0$ such that $n \geq N \implies |a_n| < \delta_x$. Thus,
+    for any $x \in \rr$ and any $\epsilon >0$ we have a $N \geq 0$ such that
+    \[n \geq N
+      \implies |x - (x-a_n)| < \delta_x
+      \implies \underbrace{|f(x) - f(x-a_n)|}_{=|f(x)-f_{a_n}(x)|} <
+      \epsilon\]
+    which means that $\seq{f_{a_n}}{0}$ converges pointwise to $f$.
+
+    Conversely, suppose that $\seq{f_{a_n}}{0}$ converges pointwise to
+    $f$ for any sequence $\seq{a_n}{0}$, but suppose, for the sake of
+    contradiction, that $f$ is not continuous. Thus, there exists some
+    $\epsilon > 0$ such that, for all $n \geq 0$, we have a
+    $y_n \in \rr$ with $|x - y_n| < \frac{1}{n+1}$ but
+    $|f(x) - f(y_n)| \geq \epsilon$. By the (countable) axiom of choice, we can
+    form the corresponding sequence $\seq{y_n}{0}$. And if we define
+    another sequence $a_n := x-y_n$, then it is clear that
+    $\seq{a_n}{0}$ converges to $0$ (since $|a_n| < \frac{1}{n+1}$ for
+    all $n \geq 0$); but that the functions $f_{a_n}$ do not converge
+    pointwise to $f$, since $|f(x) - f_{a_n}(x)| \geq \epsilon$ for all $n \geq 0$.
+  \item Suppose that $f$ is uniformly continuous. Let be
+    $\epsilon > 0$. By definition, there exists a $\delta > 0$ such that, for all
+    $x,y \in \rr$, we have
+    $|x-y| < \delta \implies |f(x) - f(y)| < \epsilon$. Furthermore, since
+    $\seq{a_n}{0}$ converges to $0$, there exists a $N \geq 0$ such that
+    $n \geq N \implies |a_n| < \delta$. Thus, for any $\epsilon >0$ we have a
+    $N \geq 0$ such that, for all $x \in \rr$,
+    \[n \geq N
+      \implies |x - (x-a_n)| < \delta
+      \implies \underbrace{|f(x) - f(x-a_n)|}_{=|f(x)-f_{a_n}(x)|} <
+      \epsilon\]
+    which means that $\seq{f_{a_n}}{0}$ converges uniformly to $f$.
+
+    Conversely, suppose that $\seq{f_{a_n}}{0}$ converges uniformly to
+    $f$ for any sequence $\seq{a_n}{0}$, but suppose, for the sake of
+    contradiction, that $f$ is not uniformly continuous. Thus, there
+    exists some $\epsilon > 0$ such that, for all $n \geq 0$, we have some
+    $x_n, y_n \in \rr$ with $|x_n - y_n| < \frac{1}{n+1}$ but
+    $|f(x_n) - f(y_n)| \geq \epsilon$. By the (countable) axiom of choice, we
+    can form the corresponding sequences $\seq{x_n}{0}$ and
+    $\seq{y_n}{0}$. If we define a new sequence $a_n := x_n - y_n$,
+    then $\seq{a_n}{0}$ clearly converges to $0$. However,
+    $\seq{f_{a_n}}{0}$ does not converge uniformly to $f$, since for
+    all $n \geq 0$, we have
+    \[ \epsilon \leq |f(x_n) - f(y_n)| = |f(x_n) - f_{a_n}(x_n)|.\]
+    This is thus a contradiction, and $f$ must be uniformly
+    continuous.
+  \end{enumerate}
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
