@@ -3435,6 +3435,81 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
     continuous.
   \end{enumerate}
 \end{exo}
+
+\begin{exo}{14.2.2}{(a) Let $\seq{f^{(n)}}{1}$ be a sequence of
+    functions from one metric space $(X, d_X)$ to another $(Y, d_Y)$,
+    and let $f : X \to Y$ be another function from $X$ to $Y$. Show that
+    if $f^{(n)}$ converges uniformly to $f$, then $f^{(n)}$ also
+    converges pointwise to $f$.\\
+    (b) For each integer $n \geq 1$, let $f^{(n)} : ]-1, 1[ \to \rr$ be the
+    function $f^{(n)}(x) := x^n$. Prove that $f^{(n)}$ converges
+    pointwise to the zero function $0$, but does not converge
+    uniformly to any function $f : ]-1, 1[ \to \rr$.\\
+    (c) Let $g : (-1, 1) \to \rr$ be the function $g(x) := x/(1-x)$.
+    With the notation as in (b), show that the partial sums
+    $\sum_{n=1}^N f(n)$ converges pointwise as $N \to \infty$ to
+    $g$, but does not converge uniformly to $g$, on the open interval
+    $]-1, 1[$. (Hint: use Lemma 7.3.3.) What would happen if we
+    replaced the open interval $]-1, 1[$ with the closed interval
+    $[-1, 1]$?}
+
+  \vspace{-4mm}
+  \begin{enumerate}[label=(\alph*)]
+  \item Let be $\epsilon > 0$. Since the $f^{(n)}$ converge uniformly to
+    $f$, there exists a $N \geq 0$ such that, for all $x \in X$, we have
+    $d_X(f^{(n)}(x), f(x)) < \epsilon$. Thus, for any fixed
+    $x \in \rr$, this same $N \geq 0$ is such that
+    $d_X(f^{(n)}(x), f(x)) < \epsilon$ whenever $n \geq N$, i.e., the
+    $f^{(n)}$ converge pointwise to $f$.
+  \item By Lemma 6.5.2, we know that for all $x \in ]-1, 1[$, we have
+    $\lim_{n \to \infty} x^n = 0$. Thus, $f^{(n)}$ converges pointwise to the
+    zero function.
+
+    However, $f^{(n)}$ does not converge uniformly to the zero
+    function\footnote{If the uniform limit exists, it can only be
+      equal to the pointwise limit, by (a) and the uniqueness of
+      limits.}, as stated in the main text. More formally, we can give
+    a proof in the same spirit as what we did in Exercises 13.3.3 and
+    13.3.5. Indeed, let be $\epsilon = 0.1$, and suppose that there exists $N
+    \geq 0$ such that, for all $x \in ]-1,1[$, $n \geq N \implies |x^n| < 0.1$.
+    Actually, we are always able to find an $x \in ]-1,1[$ such that
+    $|x^n| \geq 0.1$ although $n \geq N$. For instance, for $n = N$ and $x =
+    0.1^{1/N}$, we have $|x^n| = \left|((1/10)^{1/N})^N\right| = 0.1$.
+  \item Here we will denote $S_N(x) := \sum_{n=1}^{N} f^{(n)}(x)$ the
+    partial sums. We already know, by Lemma 7.3.3, that we have, for
+    all $x \in ]-1,1[$,
+    \begin{equation*}
+      \lim_{n \to \infty} \sum_{n=0}^{N} f^{(n)}(x) = \frac{1}{1-x},
+    \end{equation*}
+    so that we have
+    \[\lim_{n \to \infty} \sum_{n=1}^{N} f^{(n)}(x)
+      = \lim_{n \to \infty} \left(\sum_{n=0}^{N} f^{(n)}(x) - 1\right) =
+      \frac{1}{1-x} - 1 = \frac{x}{1-x},\]
+    thus meaning that $S_N$ converges pointwise to $x/(1-x)$ as
+    $N \to \infty$, as expected.
+
+    However, $S_N$ does not converge uniformly to $x/(1-x)$ as
+    $N \to \infty$. The explicit expression of the partial sums is
+    $S_N := 1 - \frac{1-x^{N+1}}{1-x} = \frac{x(1-x^N)}{1-x}$, for all
+    $N \geq 1$, and for all $x \in ]-1, 1[$. In the same spirit as question
+    (b), let be $\epsilon := 0.1$, and suppose that there exists
+    $N_0 \geq 0$ such that, for all $x \in ]-1,1[$, we have
+    \[
+      N \geq N_0 \implies \left|\frac{x(1-x^N)}{1-x} -
+        \frac{x}{1-x}\right| = \left| \frac{-x^{N+1}}{1-x} \right| =
+      \frac{x^{N+1}}{1-x} < 0.1
+    \]
+    Actually, we are always able to find an $x \in ]-1,1[$ such that
+    $\frac{x^{N+1}}{1-x} \geq 0.1$ although $N \geq N_0$. For instance, for
+    $N = N_0$ and $x = (1/10)^{\frac{1}{N_0+1}}$, we have
+    $\frac{x^{N+1}}{1-x} = 1/9 > 0.1$ although $N \geq N_0$. Thus, we do
+    not have uniform convergence here.
+    
+    Finally, if we replace $]-1,1[$ by $[-1,1]$, then $S_N(x)$ does
+    not even converge pointwise (see Lemma 7.3.3 when $x=1$ or
+    $x=-1$).
+  \end{enumerate}
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
