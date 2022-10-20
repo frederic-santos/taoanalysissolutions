@@ -3510,6 +3510,25 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
     $x=-1$).
   \end{enumerate}
 \end{exo}
+
+\begin{exo}{14.2.3}{Let be $(X, d_X)$ a metric space, and for every
+    integer $n \geq 1$, let $f_n : X \to \rr$ be a real-valued
+    function. Suppose that $f_n$ converges pointwise to another
+    function $f : X \to \rr$ on $X$ (in this question we give $\rr$ the
+    standard metric $d(x,y) := |x-y|$). Let $h : \rr \to \rr$ be a
+    continuous function. Show that the functions $h \circ f_n$ converge
+    pointwise to $h \circ f$ on $X$, where $h \circ f_n : X \to \rr$ is the
+    function $h \circ f_n(x) := h(f_n(x))$, and similarly for $h \circ f$.}
+
+  This exercise is a trivial application of the equivalence (a) $\iff$
+  (b) in Theorem 13.1.4. Indeed, let be an arbitrary $x_0 \in X$. Since
+  $f_n$ converges pointwise to $f$ on $X$, the sequence
+  $\seq{f_n(x_0)}{1}$ converges to $f(x_0)$ in $(\rr, d)$, by
+  definition. And since $h$ is continuous on $\rr$, then by Theorem
+  13.2.4(b), we have $\lim_{n \to \infty} h(f_n(x_0)) = h(f(x_0))$, which
+  means exactly that $\seq{h \circ f_n}{1}$ converges pointwise to
+  $h \circ f$ on $X$.
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
