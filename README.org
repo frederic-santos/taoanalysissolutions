@@ -22,7 +22,8 @@ As of March 14, 2022, a total of 227 exercises from /Analysis I/ are completed.
 
 *** /Analysis II/
 - [X] Chapter 12: (mostly) completed.
-- [ ] Chapter 13: in progress.
+- [X] Chapter 13: (mostly) completed.
+- [ ] Chapter 14 : in progress.
 
 ** Notes
 - The LaTeX files make use of the [[https://www.ctan.org/pkg/mbboard][mbboard]] package. It provides nicer math fonts, but is not part of most LaTeX distributions and must be installed manually.
