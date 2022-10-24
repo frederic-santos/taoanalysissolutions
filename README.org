@@ -28,4 +28,3 @@ As of March 14, 2022, a total of 227 exercises from /Analysis I/ are completed.
 ** Notes
 - The LaTeX files make use of the [[https://www.ctan.org/pkg/mbboard][mbboard]] package. It provides nicer math fonts, but is not part of most LaTeX distributions and must be installed manually.
 - All files are licensed under a [[http://creativecommons.org/licenses/by-nc-sa/4.0/][Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License]]. You are thus free to re-use and modify the LaTeX source, for non-commercial purposes only.
-

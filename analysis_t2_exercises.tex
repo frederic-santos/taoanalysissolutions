@@ -3529,6 +3529,61 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
   means exactly that $\seq{h \circ f_n}{1}$ converges pointwise to
   $h \circ f$ on $X$.
 \end{exo}
+
+\bigskip
+\begin{exo}{14.2.4}{Let $f_n : X \to Y$ be a sequence of bounded
+    functions from one metric space $(X, d_X)$ to another metric space
+    $(Y, d_Y)$. Suppose that $f_n$ converges uniformly to another
+    function $f : X \to Y$. Suppose that $f$ is a bounded function;
+    i.e., there exists a ball $B_{(Y,d_Y)}(y_0, R)$ in $Y$ such that
+    $f(x) \in B_{(Y, d_Y)}(y_0, R)$ for all $x \in X$. Show that the
+    sequence $f_n$ is uniformly bounded; i.e. there exists a ball
+    $B_{(Y,d_Y)}(y_0, R)$ in $Y$ such that
+    $f_n(x) \in B_{(Y,d_Y)}(y_0, R)$ for all $x \in X$ and all positive
+    integers $n$.}
+
+  Let be $\epsilon := 1$, for instance. Since
+    $\seq{f_n}{1}$ converges to $f$, there exists $N \geq 1$ such that,
+    for all $x \in X$, we have $d_Y(f_n(x), f(x)) < 1$ whenever
+    $n > N$.
+
+    Furthermore, $f$ is supposed to be bounded. Thus, there exists a
+    $y_0 \in Y$ and a real $R > 0$ such that $d_Y(f(x), y_0) < R$ for
+    all $x \in X$.
+
+    Thus, if $n > N$, we have (by triangle inequality) for all $x \in
+    X$,
+    \[d_Y(f_n(x), y_0) \leq d_Y(f_n(x), f(x)) + d_Y(f(x), y_0) < 1 + R.\]
+   In other words, the sequence $\seq{f_n}{N+1}$ is uniformly bounded.
+   Now, we still have to extend this result to the whole sequence
+   $\seq{f_n}{1}$.
+
+   Recall that each $f_n$ is bounded. Thus, there exists in particular
+   a finite sequence of centers
+   $y_1, \ldots, y_{N} \in Y$ and a finite sequence of radii
+   $R_1, \ldots, R_{N} > 0$ such that, for all $x \in X$,
+   \[f_1(x) \in B_Y(y_1, R_1) \; ; \; \ldots
+     \; ; \; f_{N}(x) \in B_Y(y_{N}, R_{N}).\]
+
+   Let be
+   \[
+     S := \left(\max_{1 \leq i \leq N} d_Y(y_i, y_0)\right) + \left(\max_{1
+         \leq i \leq N} R_i\right) + (R + 1).
+   \]
+   We have thus by triangle inequality, for all $1 \leq i \leq N$ and for
+   all $x \in X$,
+   \begin{alignat*}{3}
+     d_Y(f_i(x), y_0) &\leq \quad d_Y(f_i(x), y_i) &+& \quad d_Y(y_i, y_0) \\
+                      &\leq \quad R_i &+& \quad d_Y(y_i, y_0) \\
+                      &\leq \left(\max_{1 \leq i \leq N} R_i\right)  &+&
+                         \left(\max_{1 \leq i \leq N} d_Y(y_i, y_0)\right)
+                        \\
+                      &\leq S.&&
+   \end{alignat*}
+
+   Thus, we have indeed $d_Y(f_n(x), y_0) < S$ for all $x \in X$ and for
+   all $n \geq 1$, which means that $\seq{f_n}{1}$ is uniformly bounded.
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
