@@ -3543,46 +3543,94 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
     integers $n$.}
 
   Let be $\epsilon := 1$, for instance. Since
-    $\seq{f_n}{1}$ converges to $f$, there exists $N \geq 1$ such that,
-    for all $x \in X$, we have $d_Y(f_n(x), f(x)) < 1$ whenever
-    $n > N$.
+  $\seq{f_n}{1}$ converges to $f$, there exists $N \geq 1$ such that,
+  for all $x \in X$, we have $d_Y(f_n(x), f(x)) < 1$ whenever
+  $n > N$.
+  
+  Furthermore, $f$ is supposed to be bounded. Thus, there exists a
+  $y_0 \in Y$ and a real $R > 0$ such that $d_Y(f(x), y_0) < R$ for
+  all $x \in X$.
+  
+  Thus, if $n > N$, we have (by triangle inequality) for all $x \in
+  X$,
+  \[d_Y(f_n(x), y_0) \leq d_Y(f_n(x), f(x)) + d_Y(f(x), y_0) < 1 + R.\]
+  In other words, the sequence $\seq{f_n}{N+1}$ is uniformly bounded.
+  Now, we still have to extend this result to the whole sequence
+  $\seq{f_n}{1}$.
+  
+  Recall that each $f_n$ is bounded. Thus, there exists in particular
+  a finite sequence of centers
+  $y_1, \ldots, y_{N} \in Y$ and a finite sequence of radii
+  $R_1, \ldots, R_{N} > 0$ such that, for all $x \in X$,
+  \[f_1(x) \in B_Y(y_1, R_1) \; ; \; \ldots
+    \; ; \; f_{N}(x) \in B_Y(y_{N}, R_{N}).\]
+  
+  Let be
+  \[
+    S := \left(\max_{1 \leq i \leq N} d_Y(y_i, y_0)\right) + \left(\max_{1
+        \leq i \leq N} R_i\right) + (R + 1).
+  \]
+  We have thus by triangle inequality, for all $1 \leq i \leq N$ and for
+  all $x \in X$,
+  \begin{alignat*}{3}
+    d_Y(f_i(x), y_0) &\leq \quad d_Y(f_i(x), y_i) &+& \quad d_Y(y_i, y_0) \\
+                     &\leq \quad R_i &+& \quad d_Y(y_i, y_0) \\
+                     &\leq \left(\max_{1 \leq i \leq N} R_i\right)  &+&
+                                                               \left(\max_{1 \leq i \leq N} d_Y(y_i, y_0)\right)
+    \\
+                     &\leq S.&&
+  \end{alignat*}
+  
+  Thus, we have indeed $d_Y(f_n(x), y_0) < S$ for all $x \in X$ and for
+  all $n \geq 1$, which means that $\seq{f_n}{1}$ is uniformly bounded.
+\end{exo}
+\bigskip
 
-    Furthermore, $f$ is supposed to be bounded. Thus, there exists a
-    $y_0 \in Y$ and a real $R > 0$ such that $d_Y(f(x), y_0) < R$ for
-    all $x \in X$.
+\begin{exo}{14.3.1}{Prove Theorem 14.3.1. Explain brieﬂy why your proof
+    requires uniform convergence, and why pointwise convergence would
+    not suffice.}
 
-    Thus, if $n > N$, we have (by triangle inequality) for all $x \in
-    X$,
-    \[d_Y(f_n(x), y_0) \leq d_Y(f_n(x), f(x)) + d_Y(f(x), y_0) < 1 + R.\]
-   In other words, the sequence $\seq{f_n}{N+1}$ is uniformly bounded.
-   Now, we still have to extend this result to the whole sequence
-   $\seq{f_n}{1}$.
+  Let be $\epsilon > 0$ an arbitrary real number. By our initial hypothesis,
+  the sequence $\seq{f^{(n)}}{1}$ converges uniformly to $f$. Thus,
+  there exists an $N \geq 1$ such that:
+  \begin{equation}
+    \label{eq:14.3.1a}
+    (n > N) \text{ and } (x \in X) \implies d_Y(f^{(n)}(x), f(x)) < \epsilon/3.
+  \end{equation}
+  
+  Furthermore, each function in the sequence $\seq{f^{(n)}}{1}$ is
+  continuous at $x_0$. In particular, the function $f^{N+1}$ is
+  continuous at $x_0$: there exists a $\delta > 0$ such that
+  \begin{equation}
+    \label{eq:14.3.1b}
+    (x \in X) \text{ and } (d_X(x, x_0) < \delta) \implies d_Y(f^{(N+1)}(x), f^{(N+1)}(x_0)) < \epsilon/3.
+  \end{equation}
 
-   Recall that each $f_n$ is bounded. Thus, there exists in particular
-   a finite sequence of centers
-   $y_1, \ldots, y_{N} \in Y$ and a finite sequence of radii
-   $R_1, \ldots, R_{N} > 0$ such that, for all $x \in X$,
-   \[f_1(x) \in B_Y(y_1, R_1) \; ; \; \ldots
-     \; ; \; f_{N}(x) \in B_Y(y_{N}, R_{N}).\]
+  Since $N + 1 > N$, we have, for all $x \in X$ such that
+  $d_X(x, x_0) < \delta$,
+  \begin{align*}
+    d_Y\left(f(x), f(x_0) \right)
+    &\leq \underbrace{d_Y\left(f(x), f^{(N+1)}(x) \right)}_{< \epsilon/3
+      \text{ by \eqref{eq:14.3.1a}}}
+      + \underbrace{d_Y\left(f^{(N+1)}(x), f^{(N+1)}(x_0) \right)}_{< \epsilon/3
+      \text{ by \eqref{eq:14.3.1b}}}\\
+    &+ \underbrace{d_Y\left(f^{(N+1)}(x_0), f(x_0) \right)}_{< \epsilon/3
+      \text{ by \eqref{eq:14.3.1a}}} \\
+    &< \epsilon.
+  \end{align*}
+  Since this is true for any arbitrary $\epsilon > 0$, the function $f$ is
+  indeed continuous at $x_0$.
 
-   Let be
-   \[
-     S := \left(\max_{1 \leq i \leq N} d_Y(y_i, y_0)\right) + \left(\max_{1
-         \leq i \leq N} R_i\right) + (R + 1).
-   \]
-   We have thus by triangle inequality, for all $1 \leq i \leq N$ and for
-   all $x \in X$,
-   \begin{alignat*}{3}
-     d_Y(f_i(x), y_0) &\leq \quad d_Y(f_i(x), y_i) &+& \quad d_Y(y_i, y_0) \\
-                      &\leq \quad R_i &+& \quad d_Y(y_i, y_0) \\
-                      &\leq \left(\max_{1 \leq i \leq N} R_i\right)  &+&
-                         \left(\max_{1 \leq i \leq N} d_Y(y_i, y_0)\right)
-                        \\
-                      &\leq S.&&
-   \end{alignat*}
-
-   Thus, we have indeed $d_Y(f_n(x), y_0) < S$ for all $x \in X$ and for
-   all $n \geq 1$, which means that $\seq{f_n}{1}$ is uniformly bounded.
+  Note that the hypothesis of \emph{uniform} convergence was indeed
+  necessary. In the previous inequalities, one single $N \geq 1$
+  was convenient to have both
+  \[
+    d_Y\left(f(x), f^{(N+1)}(x) \right) < \epsilon/3
+    \;\;\;\; \text{ and } \;\;\;\;
+    d_Y\left(f^{(N+1)}(x_0), f(x_0) \right) < \epsilon/3,
+  \]
+  at the same time at $x$ and at $x_0$. Example 14.2.4 is a
+  counter-example when we only suppose pointwise convergence.
 \end{exo}
 \end{document}
 %%% Local Variables:
