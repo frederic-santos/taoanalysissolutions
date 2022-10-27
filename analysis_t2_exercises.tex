@@ -3632,6 +3632,82 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
   at the same time at $x$ and at $x_0$. Example 14.2.4 is a
   counter-example when we only suppose pointwise convergence.
 \end{exo}
+\bigskip
+
+\begin{exo}{14.3.2}{Prove Proposition 14.3.3}
+
+  Let be $\epsilon > 0$, and $x_0$ an adherent point to $E$. Hereafter, we
+  denote by convenience
+  $\ell_n := \lim_{x \to x_0; x \in E}{f^{(n)}(x)}$, for all
+  ${n \geq 1}$. We thus have to prove that
+  $\lim_{n \to \infty}{\ell_n} = \lim_{x \to x_0; x \in E}{f(x)}$.
+
+  However, we must begin by proving that the sequence
+  $\seq{\ell_n}{1}$ is indeed convergent. Since this sequence is
+  entirely composed of elements of $Y$, and since $Y$ is complete, it
+  is sufficient to prove that $\seq{\ell_n}{1}$ is a Cauchy sequence.
+
+  To that end, consider two integers $j,k \geq 1$ and an element
+  $x \in E$. We note that we can always write
+  \begin{align*}
+    d_Y(\ell_j, \ell_k) &\leq d_Y(\ell_j, f^{(j)}(x)) + d_Y(f^{(j)}(x), f(x))\\
+                  &\quad + d_Y(f(x), f^{(k)}(x)) + d(f^{(k)}(x), \ell_k).
+  \end{align*}
+  Let's prove that each term of this sum is inferior to $\epsilon/4$ under
+  certain conditions.
+
+  First, the sequence $\seq{f^{(n)}}{1}$ is supposed to converge
+  uniformly to $f$. Thus, there exists an $N_1 \geq 1$ such that
+  \begin{equation}
+    \label{eq:14.3.2a}
+    (n > N) \text{ and } (x \in E) \implies
+    d_Y(f^{(n)}(x), f(x)) < \epsilon/4.
+  \end{equation}
+
+  Let be two integers $j,k > N_1$. By definition of $\ell_n$, there exist
+  two real numbers $\delta_1, \delta_2 > 0$ such that
+  \begin{align}
+    (x \in E) \text{ and } (d_X(x, x_0) < \delta_1)
+    &\implies d_Y(f^{(j)}(x), \ell_j) < \epsilon/4,\label{eq:14.3.2b}\\
+    (x \in E) \text{ and } (d_X(x, x_0) < \delta_2)
+    &\implies d_Y(f^{(k)}(x), \ell_k) < \epsilon/4\label{eq:14.3.2c}.
+  \end{align}
+
+  Now we set $\delta := \min(\delta_1, \delta_2)$. Thus, for all
+  $j,k > N_1$ and for all $x \in E$ such that $d_X(x, x_0) < \delta$, we have
+  \begin{align*}
+    d_Y(\ell_j, \ell_k)
+    &\leq \underbrace{d_Y(\ell_j, f^{(j)}(x))}_{<\epsilon/4 \text{ by \eqref{eq:14.3.2b}}}
+      + \underbrace{d_Y(f^{(j)}(x), f(x))}_{<\epsilon/4 \text{ by \eqref{eq:14.3.2a}}}\\
+    &\quad + \underbrace{d_Y(f(x), f^{(k)}(x))}_{<\epsilon/4 \text{ by \eqref{eq:14.3.2a}}}
+      + \underbrace{d(f^{(k)}(x), \ell_k)}_{<\epsilon/4 \text{ by
+      \eqref{eq:14.3.2c}}}\\
+    &< \epsilon.
+  \end{align*}
+  Thus, $\seq{\ell_n}{1}$ is a Cauchy sequence, and thus converges in
+  $Y$; in other words, there exists a $\ell \in Y$ such that
+  $\ell = \lim_{n \to \infty}{\ell_n}$.
+
+  To close the proof, we still have to show that
+  $\lim_{x \to x_0; x \in E}{f(x)} = \ell$. Since
+  $\ell = \lim_{n \to \infty}{\ell_n}$, there exists an integer
+  $N_2 \geq 1$ such that $d_Y(\ell, \ell_n) < \epsilon/4$ for all
+  $n \geq N_2$. Let be $N := \max(N_1, N_2) + 1$. We thus have, for all
+  $x \in E$ such that $d_X(x, x_0) < \delta$, and all $n \geq N$,
+  \begin{align*}
+    d_Y(f(x), \ell) &\leq d_Y(f(x), f^{(n)}(x)) + d_Y(f^{(n)}(x), \ell_n)
+                   + d_Y(\ell_n, \ell)\\
+                 &< \epsilon/4 + \epsilon/4 + \epsilon/4 \\
+                 &< \epsilon.
+  \end{align*}
+  This shows that $\lim_{x \to x_0; x \in E}{f(x)} = \ell$, and thus closes
+  the proof:
+  \begin{align*}
+    \lim_{x \to x_0; x \in E} \lim_{n \to \infty} f^{(n)}(x)
+    &= \lim_{x \to x_0; x \in E}{f(x)} = \ell = \lim_{n \to \infty}{\ell_n} \\
+    &= \lim_{n \to \infty} \lim_{x \to x_0; x \in E} f^{(n)}(x).
+  \end{align*} 
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
