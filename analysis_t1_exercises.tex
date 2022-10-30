@@ -160,33 +160,34 @@ No exercises in this chapter.
     $a = b + m$. Therefore, $a + c = b+m+c$ for any natural number
     $c$. Still by associativity and commutativity, we can rewrite this
     as $a+c = (b+c) +m$, i.e. $a+c \geq b+c$.
-  \item $a < b$ iff $\successor{a} \leq b$. First, let's prove that
-    $\successor{a} \leq b \Longrightarrow a < b$. By definition of
-    ordering, there exists a natural number $n$ such that
-    $b = (\successor{a}) + n$. By definition of addition, we can
-    re-write: $b = \successor{(\successor{a} + n)}$. Then, by
-    commutativity and yet again by definition of addition,
-    $b = \successor{(n + \successor{a})} = (\successor{n}) +
-    (\successor{a})$. Thus, there exists a natural number
-    $\successor{n}$ such that $b = \successor{n} + a$, which means that
-    $b \geq a$. But we still have to prove that $a \neq b$. Let's
-    suppose that $a=b$: in this case, by cancellation law, we would
-    have $\successor{n} = 0$, which is impossible according to Axiom
-    2.3 (0 is not the successor of any natural number). Thus, $a \neq
-    b$ et $b \geq a$: we have showed that $a < b$. 
+  \item $a < b$ iff $\successor{a} \leq b$. First suppose that
+    $\successor{a} \leq b$. Thus, there exists a natural number $n$ such
+    that:
+      \begin{align*}
+        b &= (\successor{a}) + n &\text{ (Definition 2.2.11)}\\
+          &= \successor{(a + n)} &\text{ (Definition 2.2.1)}\\
+          &= \successor{(n + a)} &\text{ (Proposition 2.2.4)}\\
+          &= (\successor{n}) + a &\text{ (Definition 2.2.1)} \\
+          &= a + \successor{n} &\text{ (Proposition 2.2.4)}
+      \end{align*}
+      which means that $a \leq b$. We still have to prove that $a \neq
+      b$. Suppose for the sake of contradiction that $a=b$. We could
+      use use the cancelation law in $b = a + \successor{n}$ to get
+      $0 = \successor{n}$, a contradiction with Axiom
+      2.3. We thus have $a \leq b$ and $a \neq b$, i.e., $a < b$.
 
-    Conversely, let's prove that
-    $a < b \Longrightarrow \successor{a} \leq b$. Starting from that
-    strict inequality, there exists a \textit{positive}\footnote{We
-      make use here of the statement \textit{(f)} demonstrated
-      below. There is no circularity here, since proving \textit{(f)}
-      will not make use of \textit{(e)}.} natural number $n$ such that
-    $b = a + n$. By Lemma 2.2.10, since $n$ is positive, it has one
-    unique antecessor $m$, so that $n$ can be written
-    $\successor{m}$. Thus,
-    $b = a + (\successor{m}) = \successor{(a + m)} = \successor{(m +
-      a)} = m + (\successor{a}) = (\successor{a}) + m$. And, $m$ being
-    a natural number, this corresponds to the statement $b \geq a$.
+      Conversely, suppose that $a<b$. Thus, there exists a natural
+      number $n$ such that $b = a + n$, and $a \neq b$. The condition
+      $a \neq b$ clearly implies $n \neq 0$ (otherwise we would immediately
+      get $a=b$, a contradiction). By Exercise 2.2.2, there exists a
+      natural numer $m$ such that $\successor{m} = n$. We thus have,
+      still using Definitions 2.2.1 and 2.2.11, and Proposition 2.2.4,
+      \[
+        b = a + \successor{m} = (\successor{m}) + a =
+        \successor{(m+a)} = \successor{(a+m)} =
+        (\successor{a}) + m.
+      \]
+      Thus we have $\successor{a} \leq b$, as expected.
   \item $a < b$ iff $b=a+d$ for some positive number $d$. First, let's
     prove the first implication, $a<b \Longrightarrow b=a+d$ with
     $d \neq 0$. Since $a<b$, we have in particular $a \leq b$, and
@@ -204,7 +205,6 @@ No exercises in this chapter.
   \end{enumerate}
 \end{exo}
 
-\pagebreak
 \begin{exo}{2.2.4}{Demonstrate three lemmas used to prove the
     trichotomy of order for natural numbers.}
   \begin{enumerate}[label=\emph{(\alph*)}]
