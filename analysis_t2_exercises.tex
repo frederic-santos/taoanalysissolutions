@@ -3708,6 +3708,23 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
     &= \lim_{n \to \infty} \lim_{x \to x_0; x \in E} f^{(n)}(x).
   \end{align*} 
 \end{exo}
+
+\begin{exo}{14.3.5}{Give an example to show that Proposition 14.3.4
+    fails if the phrase ``converges uniformly'' is replaced by
+    ``converges pointwise''. (Hint: some of the examples already given
+    earlier will already work here.)}
+
+  Consider once again the sequence of functions $\seq{f^{(n)}}{1}$,
+  such that for all $n \geq 1$, the function $f^{(n)} : [0,1] \to \rr$ is
+  defined by $f^{(n)}(x) := x^n$. This sequence converges pointwise to
+  the function $f : [0,1] \to \rr$ defined by $f(x) := 0$ when
+  $x \in [0,1[$, and $f(1) := 1$. Furthermore, consider the sequence
+  $\seq{x^{(n)}}{1}$ defined by $x^{(n)} := (1/2)^{1/n}$.
+
+  By Lemma 6.5.3, we have $\lim_{n \to \infty}{x^{(n)}} = 1$. However,
+  for all $n \geq 1$, we have $f^{(n)}(x^{(n)}) = 1/2$. Thus, it is clear
+  that this constant sequence $1/2$ does not converge to $f(1) = 1$.
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
