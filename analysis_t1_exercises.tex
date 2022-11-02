@@ -3822,23 +3822,22 @@ exchangeable here, so that showing only one direction will be enough.
   \item First, suppose that $\seq{a_n}{m}$ converges to $c$. Let
     $\epsilon > 0$ be a real number. We must show that there exists
     $M \geq m$ such that
-    $n+k \geq M \to |a_{n+k} - c| \leq \epsilon$. We know that
+    $n+k \geq M \implies |a_{n+k} - c| \leq \epsilon$. We know that
     there exists $N \geq m$ such that
-    $n \geq N \to |a_n -c| \leq \epsilon$. But for any
-    $k \leq 0$, we have $n + k \geq n$, so that as soon as $n \geq N$,
+    $n \geq N \implies |a_n -c| \leq \epsilon$. But for any
+    $k \geq 0$, we have $n + k \geq n$, so that whenever $n \geq N$,
     we have $n+k \geq n \geq N$, and thus $|a_{n+k} - c| \leq
     \epsilon$. So, choosing $M := N$ is suitable here, and we have
     showed the first part.
   \item Now prove the converse implication: suppose that
     $\seq{a_{n+k}}{m}$ converges to $c$. We want to show that there
     exists $N \geq m$ such that
-    $n \geq N \to |a_n -c| \leq \epsilon$. We already know
-    that there exists $M \geq m$ such that
-    $n \geq M \to |a_{n+k} - c| \leq \epsilon$. Let be
+    $n \geq N \implies |a_n -c| \leq \epsilon$. We already know that there exists
+    $M \geq m$ such that
+    $n \geq M \implies |a_{n+k} - c| \leq \epsilon$. Let be
     $N := M+k$. We can see that if $n \geq N$, we have $n \geq M+k$,
-    i.e. $n-k \geq M$, and thus $|a_{(n-k)+k} - c| \leq \epsilon$ as
-    required. So, $N := M+k$ is suitable, and $\seq{a_n}{m}$ converges
-    to $c$.
+    i.e. $n-k \geq M$, and thus $|a_{(n-k)+k} - c| \leq \epsilon$ as required. So,
+    $N := M+k$ is suitable, and $\seq{a_n}{m}$ converges to $c$.
   \end{itemize}
 \end{exo}
 
