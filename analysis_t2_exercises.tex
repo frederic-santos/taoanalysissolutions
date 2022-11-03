@@ -3725,6 +3725,36 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
   for all $n \geq 1$, we have $f^{(n)}(x^{(n)}) = 1/2$. Thus, it is clear
   that this constant sequence $1/2$ does not converge to $f(1) = 1$.
 \end{exo}
+\bigskip
+
+\begin{exo}{14.3.6}{Prove Proposition 14.3.6. Discuss how this
+    proposition differs from Exercise 14.2.4}
+
+  Consider for instance $\epsilon := 1$. Since the functions $f^{(n)}$
+  converge uniformly to $f$, there exists an integer $N \geq 1$ such
+  that, for all $n > N$ and all $x \in X$, we have
+  $d_Y(f^{(n)}(x), f(x)) < 1$.
+
+  Furthermore, since all the functions $f^{(n)}$ are bounded, then in
+  particular $f^{(N+1)}$ is bounded: there exists a ball
+  $B_Y(y_{N+1}, R_{N+1})$ such that
+  $f^{(N+1)}(x) \in B_Y(y_{N+1}, R_{N+1})$ for all $x \in X$. In other
+  words, we have $d_Y(f^{(N+1)}(x), y_{N+1}) < R_{N+1}$ for all
+  $x \in X$.
+
+  Thus, by triangle inequality, we have for all $x \in X$,
+  \begin{align*}
+    d_Y(f(x), y_{N+1}) &\leq d_Y(f(x), f^{(N+1)}(x)) + d_Y(f^{(N+1)},
+                         y_{N+1}) \\
+                       &< 1 + R_{N+1}.
+  \end{align*}
+  We thus have $f(x) \in B_Y(y_{N+1}, 1 + R_{N+1})$ for all $x \in X$,
+  which shows $f$ is bounded on $X$.
+
+  This provides some sort of reciprocal to Exercise 13.2.4, where we
+  supposed that the uniform limit $f$ was bounded to show that the
+  $f^{(n)}$ were themselves bounded.
+\end{exo}
 \end{document}
 %%% Local Variables:
 %%% mode: latex
