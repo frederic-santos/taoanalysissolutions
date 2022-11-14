@@ -3768,7 +3768,109 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
   $g^{(n)}(x) \in B(0, n)$ for all $n$. However, the function $g(x)$ is
   not bounded on $(-1,1)$.
 \end{exo}
+\bigskip
+
+\begin{exo}{14.3.8}{Let $(X, d)$ be a metric space, and for every
+    positive integer $n$, let $\seq{f^{(n)}}{1} : X \to \rr$ and
+    $\seq{g^{(n)}}{1} : X \to \rr$ be functions. Suppose that
+    $\seq{f^{(n)}}{1}$ converges uniformly to another function
+    $f : X \to \rr$, and that $\seq{g^{(n)}}{1}$ converges uniformly to
+    another function $g : X \to \rr$. Suppose also that the functions
+    $\seq{f^{(n)}}{1}$ and $\seq{g^{(n)}}{1}$ are uniformly
+    bounded. Prove that the functions $f_n g_n : X \to \rr$ converge
+    uniformly to $fg : X \to \rr$.}
+
+  Let be an arbitrary $\epsilon > 0$. To show that
+  $\seq{f_ng_n}{1}$ converge uniformly to $fg$, we must show that
+  there exists an integer $N \geq 1$ such that
+  $|f_n(x)g_n(x) - f(x)g(x)| < \epsilon$ for all $n > N$ and all
+  $x \in \rr$. Note that
+  \begin{align*}
+    &|f_n(x)g_n(x) - f(x)g(x)|\\
+    &= |f_n(x)g_n(x) - f_n(x)g(x) + f_n(x)g(x) - f(x)g(x)| \\
+    &\leq |f_n(x)g_n(x) - f_n(x)g(x)| + |f_n(x)g(x) - f(x)g(x)| \\
+    &\leq |f_n(x)| \times |g_n(x) - g(x)| \, + \, |g(x)| \times |f_n(x) - f(x)|.
+  \end{align*}
+  We can find an upper bound for each term in this expression.
+  
+  \begin{itemize}
+  \item First, $\seq{f_n}{1}$ is uniformly bounded, so that there
+    exists a $M_1 \geq 0$ such that $|f_n(x)| \leq M_1$ for all
+    $n \geq 1$ and all $x \in \rr$.
+  \item Similarly, $\seq{g_n}{1}$ is uniformly bounded. Thus, by
+    Proposition 14.3.6, the uniform limit $g$ is also bounded: there
+    exists a $M_2 \geq 0$ such that $|g(x)| \leq M_2$ for all $x \in \rr$.
+  \item Furthermore, $\seq{f_n}{1}$ converges uniformly to $f$:
+    there exists an integer $N_1 \geq 1$ such that
+    $|f_n(x) - f(x)| < \epsilon/2M_2$ for all $n > N_1$ and all $x \in \rr$.
+  \item Finally, $\seq{g_n}{1}$ converges uniformly to $g$: there
+    exists an integer $N_2 \geq 1$ such that
+    $|g_n(x) - g(x)| < \epsilon/2M_1$ for all $n > N_2$ and all $x \in \rr$.
+  \end{itemize}
+  
+  Let be $N := \max(N_1, N_2)$. We thus have, for all $x \in \rr$ and
+  all $n > N$,
+  \begin{align*}
+    &|f_n(x)g_n(x) - f(x)g(x)| \\
+    &\leq |f_n(x)| \times |g_n(x) - g(x)| \, + \, |g(x)| \times |f_n(x) - f(x)|
+    \\
+    &< M_1 \times \frac{\epsilon}{2M_1} + M_2 \times \frac{\epsilon}{2M_1} \\
+    &< \epsilon.
+  \end{align*}
+  It means that $\seq{f_ng_n}{1}$ converges uniformly to $fg$, as
+  expected.
+\end{exo}
+\bigskip
+
+\begin{exo}{14.4.1}{Let $(X, d_X)$ and $(Y, d_Y)$ be metric spaces. Show
+    that the space $B(X \to Y)$ defined in Definition 14.4.2, with the
+    metric $d_{B(X \to Y)}$, is indeed a metric space.}
+
+  Here we must prove that $d_\infty$ satisfies all four properties of a
+  distance on $B(X \to Y)$, as stated in Definition 12.1.2.
+
+  \begin{enumerate}[label=(\alph*)]
+  \item For all $f \in B(X \to Y)$ and all $x \in X$, we clearly have
+    $d_Y(f(x), f(x)) = 0$, since $d_Y$ is a distance on $Y$. Thus it
+    is clear that
+    \[d_\infty(f, f) = \sup_{X \in X} d_Y(f(x), f(x)) = \sup \{0 \, : \, x
+      \in X\} = 0.\]
+  \item For all distinct $f, g \in B(X \to Y)$, there exists an
+    ${x_0 \in X}$ such that $f(x_0) \neq g(x_0)$. We thus have
+    $d_Y(f(x_0), g(x_0)) > 0$, since $d_Y$ is a distance on $Y$. Thus,
+    by Definition 5.5.5 of a supremum, we have
+    $0 < d_Y(f(x_0), g(x_0)) \leq \sup_{x \in X}{d_Y(f(x), g(x))}$, which
+    implies $d_\infty(f,g) > 0$.
+  \item Since $d_Y$ is a distance on $Y$, we have
+    $d_Y(f(x), g(x)) = d_Y(g(x), f(x))$ for all $f,g \in B(X \to Y)$ and
+    all $x \in X$. We thus have
+    \[
+      d_\infty(f,g) := \sup_{x \in X}{d_Y(f(x), g(x))}
+      = \sup_{x \in X}{d_Y(g(x), f(x))}
+      =: d_\infty(g,f).
+    \]
+  \item Let $f, g, h \in B(X \to Y)$ be functions. Since $d_Y$
+    is a distance on $Y$, it satisfies the triangle inequality on
+    $Y$: for all ${x \in X}$, we have $d_Y(f(x), h(x)) \leq d_Y(f(x),
+    g(x)) + d_Y(g(x), h(x))$.
+    
+    In particular, for all $x \in X$, we have
+    \[
+      d_Y(f(x), h(x)) \leq \sup_{X \in X} d_Y(f(x), g(x)) + \sup_{x \in X}
+      d_Y(g(x), h(x)),
+    \]
+    or in other words, $d_\infty(f,g) + d_\infty(g,h)$ is an upper bound of the
+    set $\{d_Y(f(x), h(x)) \, : \, x \in X\}$. Thus, by Definition 5.5.5
+    of a supremum, we have
+    \[
+      d_\infty(f,h) := \sup_{x \in X} \{d_Y(f(x), h(x)) \, : \, x \in X\}
+      \leq d_\infty(f,g) + d_\infty(g,h),
+    \]
+    as expected.
+  \end{enumerate}
+\end{exo}
 \end{document}
+
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: t
