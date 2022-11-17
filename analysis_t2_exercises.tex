@@ -3869,6 +3869,61 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
     as expected.
   \end{enumerate}
 \end{exo}
+
+\begin{exo}{14.5.1}{Let $f^{(1)}, \ldots, f^{(n)}$ be a sequence of bounded
+    functions from a metric space $(X, d_X)$ to $\rr$. Show that
+    $\sum_{i=1}^{n} f^{(i)}$ is also bounded. Prove a similar claim when
+    ``bounded'' is replaced by ``continuous''. What if ``continuous''
+    was replaced by ``uniformly continuous''?}
+  
+  Let $F : X \to \rr$ be the finite sum defined by
+  $F(x) := \sum_{i=1}^{n} f^{(i)}(x)$.
+
+  \begin{itemize}
+  \item If the functions $f^{(1)}, \ldots, f^{(n)}$ are bounded, then there exist
+    $n$ positive real numbers $M_1, \ldots, M_n$ such that
+    $|f^{(i)}(x)| \leq M_i$ for all $x \in X$ and all $1 \leq i \leq
+    n$. Let be $M := \sum_{i=1}^{n} M_i$.
+
+    We thus have, by Lemma 7.1.4(e),
+    \[
+      \left| F(x) \right| = \left| \sum_{i=1}^{n} f^{(i)}(x) \right|
+      \leq
+      \sum_{i=1}^{n} \left|f^{(i)}(x) \right|
+      \leq
+      \sum_{i=1}^{n} M_i
+      =
+      M.
+    \]
+    The finite sum $F$ is thus bounded (by $M$).
+    
+  \item Suppose that the functions $f^{(1)}, \ldots, f^{(n)}$ are
+    continuous at some point $x_0 \in X$, and let be an arbitrary
+    $\epsilon > 0$. By definition, for all $1 \leq i \leq n$, there exists a
+    $\delta_i > 0$ such that
+    $d_X(x, x_0) \leq \delta_i \implies |f^{(i)}(x) - f^{(i)}(x_0)| \leq
+    \epsilon/n$. Let be $\delta := \min(\delta_1, \ldots, \delta_n)$.
+
+    For all $x \in X$ such that $d_X(x, x_0) \leq \delta$, we thus have
+    \begin{align*}
+      |f(x) - f(x_0)|
+      &= \left| \sum_{i=1}^{n} f^{(i)}(x) - \sum_{i=1}^{n} f^{(i)}(x_0)
+        \right| \\
+      &\leq \sum_{i=1}^{n} \left| f^{(i)}(x) - f^{(i)}(x_0) \right|
+      & \text{(Lemma 7.1.4(e))} \\
+      &\leq \sum_{i=1}^{n} \frac{\epsilon}{n} \\
+      &\leq \epsilon.
+    \end{align*}
+    The finite sum $F$ is thus also continuous at $x_0$.  And since
+    $x_0$ was arbitrary, we have the more general result that if
+    $f^{(1)}, \ldots, f^{(n)}$ are continuous on $X$, then $F$ is
+    continuous on $X$.
+    
+  \item Similarly, if $f^{(1)}, \ldots, f^{(n)}$ are uniformly continuous
+    on $X$, then $F$ is also uniformly continuous on $X$ (The proof is
+    almost identical to the previous one.)
+  \end{itemize}
+\end{exo}
 \end{document}
 
 %%% Local Variables:
