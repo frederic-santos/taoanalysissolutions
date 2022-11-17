@@ -5178,15 +5178,12 @@ exchangeable here, so that showing only one direction will be enough.
     $\sum_{i=m}^{n} a_i + \sum_{i=n+1}^{p} a_i = \sum_{i=m}^{p} a_i$,
     and let's prove that this equality still holds for $p+1$. We have:
     \begin{align*}
-      \sum_{i=m}^{n} a_i + \sum_{i=m}^{p+1} &= \sum_{i=m}^{n} a_i +
-                                              \sum_{i=m}^{p} a_i + a_{p+1}
-                                              \text { (Definition 7.1.1)}
-      \\
-                                            &= \sum_{i=m}^p a_i + a_{p+1}
-                                              \text{ (induction
-                                              hypothesis)} \\
-                                            &= \sum_{i=m}^{p+1} a_i
-                                              \text{ (Definition 7.1.1)}
+      \sum_{i=m}^{n} a_i + \sum_{i=n+1}^{p+1} a_i
+      &= \sum_{i=m}^{n} a_i + \sum_{i=m}^{p} a_i + a_{p+1}
+      &\text {(Definition 7.1.1)} \\
+      &= \sum_{i=m}^p a_i + a_{p+1}
+      &\text{(induction hypothesis)} \\
+      &= \sum_{i=m}^{p+1} a_i &\text{ (Definition 7.1.1)}
     \end{align*}
     which closes the induction and proves the equality for all
     integers $m \leq n < p$.
