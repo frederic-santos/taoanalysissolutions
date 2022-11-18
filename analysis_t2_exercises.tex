@@ -12,8 +12,9 @@
 % Fonts and math packages:
 \usepackage{lmodern}
 \usepackage{amsmath}
+\usepackage{amssymb}
 \numberwithin{equation}{section}
-\usepackage[matha,mathb]{mathabx}
+\usepackage[matha,mathb,mathx]{mathabx}
 \usepackage{mbboard}
 \usepackage{stmaryrd}
 \usepackage{hyperref}
@@ -45,6 +46,7 @@
 \newcommand{\ddisc}{d_{\text{disc}}}
 \newcommand{\inter}{\text{int}}
 \newcommand{\ext}{\text{ext}}
+\newcommand{\ninf}[1]{\|#1\|_\infty}
 % Lemmas:
 \usepackage{amsthm}
 \newtheorem*{lem}{Lemma}
@@ -3924,8 +3926,40 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
     almost identical to the previous one.)
   \end{itemize}
 \end{exo}
-\end{document}
 
+\begin{exo}{14.5.2}{Prove Theorem 3.5.7.}
+
+  Let $\seq{f^{(n)}}{1}$ be a sequences of functions of
+  $C(X \to \rr)$, and suppose that the series (of non-negative real
+  numbers) $\sum_{n=1}^{\infty} \ninf{f^{(n)}}$ converges. Let be
+  $\epsilon > 0$ arbitrary. By Proposition 7.2.5, there exists a
+  $K \geq 1$ such that $\sum_{n=i}^{j} \ninf{f^{(n)}} \leq \epsilon$ for all
+  $i,j \geq K$.
+
+  For ${N \geq 1}$, let be $F^{(N)}$ the partial sums defined by
+  $F^{(N)}(x) := \sum_{n=1}^{N} f^{(n)}(x)$ for all $x \in
+  X$. By Exercise 14.5.1, for all ${N \geq 1}$, the partial sum
+  $F^{(N)}$ is itself an element of $C(X \to
+  \rr)$. Furthermore, let's show that $(F^{(N)})_{N=1}^\infty$ is a Cauchy
+  sequence. For all $x \in X$ and all $p > q \geq K$, we have
+  \begin{align*}
+    \aval{F^{(p)}(x) - F^{(q)}(x)}
+    &= \aval{\sum_{n=1}^{p} f^{(n)}(x) - \sum_{n=1}^{q}f^{(n)}(x)} \\
+    &= \aval{\sum_{n=q+1}^{p} f^{(n)}(x)} \\
+    &\leq \sum_{n=q+1}^{p} \aval{f^{(n)}(x)} &\text{(Lemma 7.1.4(e))}\\
+    &\leq \sum_{n=q+1}^{p} \ninf{f^{(n)}}\\
+    &\leq \epsilon.
+  \end{align*}
+  In particular, we thus have for all $p > q \geq K$,
+  \[
+    \ninf{F^{(p)} - F^{(q)}} \leq \epsilon.
+  \]
+  The sequence $(F^{(N)})_{N=1}^\infty$ is thus a Cauchy sequence in
+  $C(X \to Y)$. By Theorem 14.4.5, this sequence
+  converges to a function $F \in C(X \to Y)$, as expected, and this
+  convergence is uniform by Proposition 14.4.4.
+\end{exo}
+\end{document}
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: t
