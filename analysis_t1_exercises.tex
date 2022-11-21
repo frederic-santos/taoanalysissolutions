@@ -5409,13 +5409,11 @@ exchangeable here, so that showing only one direction will be enough.
     Suppose that $X$ has $n$ elements, so that there exists a
     bijection $h : \intset{1}{n} \to X$. Then we have:
     \begin{align*}
-      \sum_{x \in X} f(x) + g(x) & := \sum_{i=1}^{n} f(h(i)) + g(h(i))
-      \\
-                                 & = \sum_{i=1}^{n} f(h(i)) +
-                                   \sum_{i=1}^{n} g(h(i)) \text{
-                                   (Lemma 7.1.4(e))} \\
-                                 & := \sum_{x \in X} f(x) + \sum_{x
-                                   \in X} g(x)
+      \sum_{x \in X} f(x) + g(x)
+      & := \sum_{i=1}^{n} f(h(i)) + g(h(i)) \\
+      & = \sum_{i=1}^{n} f(h(i)) + \sum_{i=1}^{n} g(h(i))
+      & \text{(Lemma 7.1.4(c))} \\
+      & := \sum_{x \in X} f(x) + \sum_{x \in X} g(x)
     \end{align*}
     
   \item If $c$ is a real number, the we have $\sum_{x \in X} cf(x) = c
@@ -5425,10 +5423,10 @@ exchangeable here, so that showing only one direction will be enough.
     bijection $\intset{1}{n} \to X$, we have:
     
     \begin{align*}
-      \sum_{x \in X} cf(x) &= \sum_{x \in X} g(x) = \sum_{i=1}^{n} g(h(i)) = \sum_{i=1}^n cf(h(i)) \\
-                           &= c \times \sum_{i=1}^{n} f(h(i)) \text{
-                             (Lemma 7.1.4(d))} \\
-                           &= c \times \sum_{x \in X} f(x)
+      \sum_{x \in X} cf(x)
+      &= \sum_{x \in X} g(x) = \sum_{i=1}^{n} g(h(i)) = \sum_{i=1}^n cf(h(i)) \\
+      &= c \times \sum_{i=1}^{n} f(h(i)) &\text{(Lemma 7.1.4(d))} \\
+      &= c \times \sum_{x \in X} f(x)
     \end{align*}
   \item If $f,g$ are functions such that $f(x) \leq g(x)$ for all $i
     \in \rr$, then we have $\sum_{x \in X} f(x) \leq \sum_{x \in X}
@@ -5437,10 +5435,10 @@ exchangeable here, so that showing only one direction will be enough.
     If $X$ has $n$ elements, let $h : \intset{1}{n} \to X$ be
     a bijection. Then we have:
     \begin{align*}
-      \sum_{x \in X} f(x) &= \sum_{i=1}^{n} f(h(i)) \\
-                     & \leq \sum_{i=1}^{n} g(h(i)) \text{ (Lemma
-                       7.1.4(f))} \\
-                     &= \sum_{x \in X} g(x)
+      \sum_{x \in X} f(x)
+      &= \sum_{i=1}^{n} f(h(i)) \\
+      & \leq \sum_{i=1}^{n} g(h(i)) \text{(Lemma 7.1.4(f))} \\
+      &= \sum_{x \in X} g(x)
     \end{align*}
   \item Triangle inequality: we have $\aval{\sum_{x \in X} f(x)} \leq
     \sum_{x \in X} |f(x)|$.
@@ -5449,17 +5447,16 @@ exchangeable here, so that showing only one direction will be enough.
     $k(x) = |f(x)|$ for all $x \in X$; and $h : \intset{1}{n}
     \to X$ a bijection, we have:
     \begin{align*}
-      \aval{\sum_{x \in X} f(x)} &= \aval{\sum_{i=1}^{n} f(h(i))} \\
-                                 & \leq \sum_{i=1}^{n} |f(h(i))|
-                                   \text{ (Lemma 7.1.4(e))} \\
-                                 & = \sum_{i=1}^{n} k(h(i)) = \sum_{x
-                                   \in X} k(x) \\
-                                 &= \sum_{x \in X} |f(x)|
+      \aval{\sum_{x \in X} f(x)}
+      &= \aval{\sum_{i=1}^{n} f(h(i))} \\
+      & \leq \sum_{i=1}^{n} |f(h(i))| &\text{ (Lemma 7.1.4(e))} \\
+      & = \sum_{i=1}^{n} k(h(i)) = \sum_{x \in X} k(x) \\
+      &= \sum_{x \in X} |f(x)|
     \end{align*}
   \end{enumerate}
 \end{exo}
 
-\begin{exo}{7.1.4}{Deﬁne the factorial function $n!$ for natural
+\begin{exo}{7.1.4}{Define the factorial function $n!$ for natural
     numbers $n$ by the recursive definition $0! := 1$ and
     $(n + 1)! := n! \times (n + 1)$. If $x$ and $y$ are real numbers,
     prove the binomial formula
