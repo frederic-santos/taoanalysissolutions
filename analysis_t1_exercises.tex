@@ -5394,13 +5394,12 @@ exchangeable here, so that showing only one direction will be enough.
 
     Thus, we have:
     \begin{align*}
-      \sum_{x \in X \cup Y} f(x) &= \sum_{i=1}^{n+m}f(k(i)) \\
-                         &= \sum_{i=1}^{n}f(k(i)) +
-                           \sum_{i=n+1}^{n+m}f(k(i)) \text{ (by Lemma
-                           7.1.4(a))} \\
-                         &= \sum_{i=1}^{n}f(g(i)) +
-                           \sum_{i=n+1}^{n+m}f(h(i)) \\
-                         &= \sum_{x \in X} f(x) + \sum_{y \in Y} f(y)
+      \sum_{x \in X \cup Y} f(x)
+      &= \sum_{i=1}^{n+m}f(k(i)) \\
+      &= \sum_{i=1}^{n}f(k(i)) + \sum_{i=n+1}^{n+m}f(k(i))
+      &\text{(by Lemma 7.1.4(a))} \\
+      &= \sum_{i=1}^{n}f(g(i)) + \sum_{i=n+1}^{n+m}f(h(i)) \\
+      &= \sum_{x \in X} f(x) + \sum_{y \in Y} f(y)
     \end{align*}
     as required, which closes the proof.
   \item If $X$ is a finite set, then we have $\sum_{x \in X} (f(x) +
@@ -5437,7 +5436,7 @@ exchangeable here, so that showing only one direction will be enough.
     \begin{align*}
       \sum_{x \in X} f(x)
       &= \sum_{i=1}^{n} f(h(i)) \\
-      & \leq \sum_{i=1}^{n} g(h(i)) \text{(Lemma 7.1.4(f))} \\
+      & \leq \sum_{i=1}^{n} g(h(i)) &\text{(Lemma 7.1.4(f))} \\
       &= \sum_{x \in X} g(x)
     \end{align*}
   \item Triangle inequality: we have $\aval{\sum_{x \in X} f(x)} \leq
@@ -5455,6 +5454,42 @@ exchangeable here, so that showing only one direction will be enough.
     \end{align*}
   \end{enumerate}
 \end{exo}
+
+\begin{exo}{7.1.3}{Form a definition for the finite products
+    $\prod_{i=m}^n a_i$ and $\prod_{x \in X} f(x)$. Which of the above results
+    for finite series have analogues for finite products?}
+
+  By mimicking Definitions 7.1.1 and 7.1.6, we can form the following
+  definitions for finite products $\prod_{i=m}^n a_i$, and products over
+  finite sets $\prod_{x \in X} f(x)$ (where $X$ is finite).
+  
+  \begin{enumerate}[label=(\roman*)]
+  \item Let $m,n$ be integers, and let $(a_i)_{i=m}^n$ be a finite
+    sequence of real numbers. We define the finite product
+    $\prod_{i=m}^n a_i$ recursively by:
+    \begin{align*}
+      \prod_{i=m}^n a_i &:= 1
+      &\text{ whenever } n < m \\
+      \prod_{i=m}^{n+1} a_i &:= \left(\prod_{i=m}^n a_i\right) \times a_{n+1}
+      &\text{ whenever } n \geq m-1.
+    \end{align*}
+    
+  \item Let $X$ be a finite set of $n$ elements, $f : X \to \rr$ be
+    function, and $g$ a bijection from
+    $\{i \in \nn : 1 \leq i \leq n\}$ to $X$. We thus define
+    \[
+      \prod_{x \in X} f(x) := \prod_{i=1}^n f(g(i)).
+    \]
+  \end{enumerate}
+  With the above definitions, we can form analogues for Lemma 7.1.4
+  and Proposition 7.1.11. Almost all their statements can be adapted
+  (and then remain true) for finite products; Lemma 7.1.4(f) and
+  Proposition 7.1.11(h) are the only statements that do not remain
+  true if we replace the sign ``sum'' by a sign ``product''. However,
+  if all the $a_i$ are positive, then an analogue for these two
+  statements is now possible (why? See Proposition 5.4.7(e)).
+\end{exo}
+\pagebreak
 
 \begin{exo}{7.1.4}{Define the factorial function $n!$ for natural
     numbers $n$ by the recursive definition $0! := 1$ and
