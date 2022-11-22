@@ -32,7 +32,7 @@
 \newcommand{\floor}[1]{\lfloor #1 \rfloor}
 \newcommand{\formallimit}[1]{\text{LIM}_{n \to \infty} #1}
 \newcommand{\seq}[2]{(#1)_{n=#2}^\infty}
-\newcommand{\limit}[1]{\text{lim}_{n \to \infty} #1}
+\newcommand{\limit}[1]{\lim_{n \to \infty} #1}
 \newcommand{\extrr}{\overline{\rr}}
 \newcommand{\adh}[1]{\overline{#1}}
 \newcommand{\liminfp}[2]{\inf (#1^+_N)_{N=#2}^{\infty}}
@@ -5504,20 +5504,20 @@ exchangeable here, so that showing only one direction will be enough.
   \frac{n!}{j! (n-j)!}$. Indeed:
   \begin{align*}
     \frac{n!}{(j-1)! (n-j+1)!} +
-    \frac{n!}{j! (n-j)!} &= \frac{n! \times j}{j! (n-j+1)!} + \frac{n!
-                           \times (n-j+1)}{j! (n-j+1)!} \\
-                         &= \frac{n! \times (n+1)}{j! (n-j+1)!} \\
+    \frac{n!}{j! (n-j)!}
+    &= \frac{n! \times j}{j! (n-j+1)!} + \frac{n! \times (n-j+1)}{j! (n-j+1)!} \\
+    &= \frac{n! \times (n+1)}{j! (n-j+1)!} \\
     &= \frac{(n+1)!}{j! (n+1-j)!}
   \end{align*}
 
-
- Now we can go back to the main proof, for which we will induct on $n$.
+  Now we can go back to the main proof, for which we will induct on
+  $n$.
   \begin{itemize}
-  \item Let's start with the base case $n=0$. On the one hand,
-    by Definition 5.6.1, we have $(x+y)^0 = 1$. On the other hand, we
+  \item Let's start with the base case $n=0$. On the one hand, by
+    Definition 5.6.1, we have $(x+y)^0 = 1$. On the other hand, we
     have
-    $\sum_{j=0}^{0} \frac{n!}{j!(n - j)!} x^{j}y^{n-j} = \frac{0!}{0!
-      \times 0!} x^0 y^0 = 1$, so that the base case is done.
+    $\sum_{j=0}^{0} \frac{n!}{j!(n - j)!} x^{j}y^{n-j} = \frac{0!}{0! \times
+      0!} x^0 y^0 = 1$, so that the base case is done.
 
   \item Now suppose inductively that we have
     $(x + y)^n = \sum_{j=0}^n \frac{n!}{j!(n - j)!} x^{j}y^{n-j}$, and
@@ -5588,19 +5588,16 @@ exchangeable here, so that showing only one direction will be enough.
     convergent sequence; and $a_n(h(r+1))$ is a convergent sequence by
     the initial hypothesis; so that we can apply Theorem 6.1.19(a):
     \begin{align*}
-      \limit{\sum_{x \in X} a_n(x)} &= \limit{\left( \sum_{i=1}^r a_n(h(i)) +
-                                      a_n(h(r+1)) \right)} \\
-                                    &= \limit{\sum_{i=1}^r a_n(h(i))}
-                                      + \limit{a_n(h(r+1))} \\
-                                    &= \sum_{i=1}^r \limit{a_n(h(i))}
-                                      + \limit{a_n(h(r+1))} \text{ (by
-                                      induction hypothesis)} \\
-                                    &= \sum_{i=1}^{r+1}
-                                      \limit{a_n(h(i))} \text{
-                                      (Definition 7.1.1)} \\
-      &= \sum_{x \in X} \limit{a_n(x)} \text{ (by Proposition 7.1.11(c))}
+      \limit{\sum_{x \in X} a_n(x)}
+      &= \limit{\left( \sum_{i=1}^r a_n(h(i)) + a_n(h(r+1)) \right)} \\
+      &= \limit{\sum_{i=1}^r a_n(h(i))} + \limit{a_n(h(r+1))} \\
+      &= \sum_{i=1}^r \limit{a_n(h(i))} + \limit{a_n(h(r+1))}
+      &\text{(induction hypothesis)} \\
+      &= \sum_{i=1}^{r+1} \limit{a_n(h(i))}
+      &\text{(Definition 7.1.1)} \\
+      &= \sum_{x \in X} \limit{a_n(x)} \text{(Proposition 7.1.11(c))}
     \end{align*}
-    so that the property is also true when $X$ has $n+1$ elements.
+    so that the property is also true when $X$ has $r+1$ elements.
     This closes the induction.
   \end{itemize}
 \end{exo}
