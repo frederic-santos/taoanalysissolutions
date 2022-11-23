@@ -5656,6 +5656,53 @@ exchangeable here, so that showing only one direction will be enough.
 \end{exo}
 \bigskip
 
+\begin{exo}{7.2.4}{Prove Proposition 7.2.9.}
+
+   Let $\sum_{n=m}^{\infty} a_n$ be a convergent formal series; i.e., the
+   formal series $\sum_{n=m}^{\infty} |a_n|$ is convergent. Let be $\epsilon >
+   0$. Thus, by Proposition 7.2.5, there exists an $N \geq m$ such that
+   $\aval{\sum_{n=p}^{q} |a_n|} \leq \epsilon$ for all $p,q \geq N$. But by Lemma
+   7.1.4(e), we have
+    \[
+      \aval{\sum_{n=p}^{q} a_n}
+      \leq \sum_{n=p}^{q} |a_n|
+      = \aval{\sum_{n=p}^{q} |a_n|}
+      \leq \epsilon,
+    \]
+    which means (once again by Proposition 7.2.5) that the formal
+    series $\sum_{n=m}^{\infty} a_n$ converges.
+
+    \medskip
+    Now we define, for all $N \geq m$, the partial sums
+    $S_N := \sum_{n=1}^{N} a_n$ and $T_N := \sum_{n=1}^{N} |a_n|$. By Lemma
+    7.1.4(e), we have
+    \begin{equation}
+      \label{eq:7.2.4a}
+      |S_N| \leq T_N \text{ for all } N \geq m.
+    \end{equation}
+    Let's take the limit as $N \to \infty$ in inequality \eqref{eq:7.2.4a}
+    (which is legit since we know that both $(S_N)$ and $(T_N)$
+    converge) :
+    \begin{itemize}
+    \item on the one hand, we have
+      $\lim_{N \to \infty}{T_N} = \sum_{n=m}^{\infty} |a_n|$ (by Definition 7.2.2) ;
+    \item on the other hand, we have
+      $\lim_{N \to \infty}{S_N} = \sum_{n=m}^{\infty} a_n$, and since the function
+      $f : x \mapsto |x|$ is continuous on $\rr$, we have
+      \[
+        \lim_{N \to \infty}{|S_N|} = \aval{\lim_{N \to \infty}{S_N}}
+        = \aval{\sum_{n=m}^{\infty} a_n}
+      \]
+      by Proposition 9.4.7(b).
+    \end{itemize}
+    We can thus conclude
+    \[
+      \aval{\sum_{n=m}^{\infty} a_n} \leq \sum_{n=m}^{\infty} |a_n|,
+    \]
+    as expected.
+\end{exo}
+\bigskip
+
 \begin{exo}{7.2.5}{Prove Proposition 7.2.14.}
 
   We have to prove several statements here:
