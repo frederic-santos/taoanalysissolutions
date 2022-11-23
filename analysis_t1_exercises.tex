@@ -5602,6 +5602,26 @@ exchangeable here, so that showing only one direction will be enough.
   \end{itemize}
 \end{exo}
 
+\begin{exo}{7.2.1}{Is the series $\sum_{n=1}^\infty (-1)^n$ convergent or
+    divergent? Can you now resolve the difficulty in Example 1.2.2?}
+
+  Consider the partial sums defined by $S_N := \sum_{n=1}^{N} (-1)^n$. We
+  note that ${S_1 = -1}$, $S_2 = 0$, $S_3 = -1$, etc. More generally,
+  a quick induction shows that $S_{2K-1} = -1$ et $S_{2K} = 0$ for all
+  $K \geq 0$.
+  
+  It is thus clear that the limit superior $L^+$ of
+  $(S_N)_{N=1}^\infty$ is equal to $0$, and that its limit inferior
+  $L^-$ is equal to $-1$ (why?). Thus, since $L^+ \neq L^-$, the sequence
+  of partial sums $(S_N)_{N=1}^\infty$ diverges (Proposition 6.4.12(f)),
+  and the series $\sum_{n=1}^{\infty} a_n$ is divergent.
+
+  Example 1.2.2 is not valid because the series presented there does
+  not converge: the ``sum'' $S$ is not a real number, and thus the
+  usual algebraic laws do not apply.
+\end{exo}
+\bigskip
+
 \begin{exo}{7.2.2}{Prove Proposition 7.2.5.}
 
   We have to prove that the formal series $\sum_{n=m}^\infty a_n$
@@ -8516,10 +8536,10 @@ exchangeable here, so that showing only one direction will be enough.
   $I \cap J$ is also a bounded and connected set.
 
   \begin{itemize}
-  \item Since $I$ is bounded, we have $I \subset [-M, M]$ for some
-    $M>0$. Similarly, we have $J \subset [-N, N]$ for some $N>0$.
+  \item Since $I$ is bounded, we have $I \subseteq [-M, M]$ for some
+    $M>0$. Similarly, we have $J \subseteq [-N, N]$ for some $N>0$.
     Thus, if we set $P := \max(M, N)$, we have clearly $I \cap J
-    \subset [-P, P]$, so that $I \cap J$ is bounded.
+    \subseteq [-P, P]$, so that $I \cap J$ is bounded.
   \item Let be $x<y$ in $I \cap J$, and another element $z$ such that
     $x<z<y$. Let's show that $z \in I \cap J$. Since $x,y \in I \cap J$,
     then in particular $x,y \in I$, which is a connected set. Thus,
