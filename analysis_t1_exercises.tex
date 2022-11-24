@@ -8665,8 +8665,8 @@ exchangeable here, so that showing only one direction will be enough.
   finer than $\P$, then by Definition 11.1.14, there exists an
   interval $J \in P$ such that $J' \subseteq J$. But $f$ is supposed
   to be piecewise constant with respect to $\P$, so that $f|_J$ is a
-  constant function, i.e., there exists a constant $c_j$ such that
-  $f(x) = c_j$ for all $x \in J$. Thus, in particular, $f(x) = c_j$
+  constant function, i.e., there exists a constant $c_J$ such that
+  $f(x) = c_J$ for all $x \in J$. Thus, in particular, $f(x) = c_J$
   for all $x \in J'$, so that $f|_{J'}$ is constant.
 
   This shows that $f$ is also piecewise constant with respect to $\P'$.
@@ -8687,8 +8687,8 @@ exchangeable here, so that showing only one direction will be enough.
   $\P \# \P'$.
 
   For this partition $\P \# \P'$, it thus clear that $f+g$ is piecewise
-  constant. Indeed, for any $K \in \P \# \P'$, we have $f|_K = c_f$
-  and $g|_K = c_g$, so that $(f+g)|_K = c_f + c_g$. A similar argument
+  constant. Indeed, for any $K \in \P \# \P'$, we have $f|_K = c_K$
+  and $g|_K = d_K$, so that $(f+g)|_K = c_K + d_K$. A similar argument
   applies for $f-g$, $\max(f,g)$, $fg$, and for $f/g$ if $g$ vanishes
   nowhere on $I$.
 \end{exo}
@@ -8705,13 +8705,13 @@ exchangeable here, so that showing only one direction will be enough.
   \item Let's begin with a preliminary result. Consider $\P$ and $\P'$
     two partitions of an interval $I$. We claim that, for any
     $J \in \P$, the set $S_J := \{J \cap K \, : \, K \in \P'\}$ is a
-    partition of $J$ (of course, we can switch the r\^oles of $P$ and
-    $P'$ and this statement will still be true). Indeed, let be
+    partition of $J$ (of course, we can switch the r\^oles of $\P$ and
+    $\P'$ and this statement will still be true). Indeed, let be
     $x \in J$ (we consider that $J$ is non empty, otherwise the result
-    is trivial). In particular, $x \in I$. Since $\P'$ is a partition
-    of $I$, there exists exactly one $K \in P'$ such that $x \in K$.
-    Thus, $x \in J \cap K$, and since $K$ is unique, so is $J \cap K$.
-    Thus, $S_J$ is indeed a partition of $J$.
+    is trivial). In particular, $x \in I$. Since $\P'$ is a partition of
+    $I$, there exists exactly one $K \in P'$ such that $x \in K$.  Thus,
+    $x \in J \cap K$, and since $K$ is unique, so is $J \cap K$.  Thus,
+    $S_J$ is indeed a partition of $J$.
   \item Another preliminary result : as a consequence, for any
     $J \in \P$, we have:
     \begin{align*}
