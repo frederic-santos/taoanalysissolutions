@@ -3481,11 +3481,11 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
     partial sums. We already know, by Lemma 7.3.3, that we have, for
     all $x \in ]-1,1[$,
     \begin{equation*}
-      \lim_{n \to \infty} \sum_{n=0}^{N} f^{(n)}(x) = \frac{1}{1-x},
+      \lim_{N \to \infty} \sum_{n=0}^{N} f^{(n)}(x) = \frac{1}{1-x},
     \end{equation*}
     so that we have
-    \[\lim_{n \to \infty} \sum_{n=1}^{N} f^{(n)}(x)
-      = \lim_{n \to \infty} \left(\sum_{n=0}^{N} f^{(n)}(x) - 1\right) =
+    \[\lim_{N \to \infty} \sum_{n=1}^{N} f^{(n)}(x)
+      = \lim_{N \to \infty} \left(\sum_{n=0}^{N} f^{(n)}(x) - 1\right) =
       \frac{1}{1-x} - 1 = \frac{x}{1-x},\]
     thus meaning that $S_N$ converges pointwise to $x/(1-x)$ as
     $N \to \infty$, as expected.
