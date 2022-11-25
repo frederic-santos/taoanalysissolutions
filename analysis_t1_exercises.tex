@@ -8716,8 +8716,8 @@ exchangeable here, so that showing only one direction will be enough.
     $J \in \P$, we have:
     \begin{align*}
       \sum_{K \in \P'} |J \cap K|
-      &= \sum_{X \in S_J} |X| &\text{ (by Proposition 7.1.11(c))} \\
-      &= |J| &\text{ (by Theorem 11.1.13)}
+      &= \sum_{X \in S_J} |X| &\text{(Proposition 7.1.11(c))} \\
+      &= |J| &\text{(Theorem 11.1.13)}
     \end{align*}
   \item Now let's begin the actual proof. First, note that, by Lemma
     11.2.7, $f$ is  piecewise constant with respect to $\P \# \P'$, so
@@ -8726,19 +8726,19 @@ exchangeable here, so that showing only one direction will be enough.
     \begin{align*}
       p.c. \int_{[\P \# \P']} f
       &= \sum_{X \in \P \# \P'} c_X |X|
-      &\text{ (by Definition 11.2.9)} \\
+      &\text{(Definition 11.2.9)} \\
       &= \sum_{(J,K) \in \P \times \P'} c_{J \cap K} |J \cap K|
-      &\text{ (by Definition 11.1.14)} \\
+      &\text{(Proposition 7.1.11(c))} \\
       &= \sum_{J \in P} \sum_{K \in \P'} c_{J \cap K} |J \cap K|
-      &\text{ (by Corollary 7.1.14)} \\
+      &\text{(Corollary 7.1.14)} \\
       &= \sum_{J \in P} \sum_{K \in \P'} c_J |J \cap K|
-      &\text{ (because $c_J = c_{J \cap K}$ for all $K \in \P'$)} \\
+      &\text{(because $c_J = c_{J \cap K}$ for all $K \in \P'$)} \\
       &= \sum_{J \in P} c_J \sum_{K \in \P'} |J \cap K|
-      &\text{ (by linearity of finite sums)}\\
+      &\text{(Proposition 7.1.11(g))}\\
       &= \sum_{J \in P} c_J |J|
-      &\text{ (see preliminary result above)} \\
+      &\text{(see preliminary result above)} \\
       &= p.c. \int_{[\P]} f
-      &\text{ (by Definition 11.2.9)}
+      &\text{(Definition 11.2.9)}
     \end{align*}
   \end{itemize}
 
