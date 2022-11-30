@@ -47,6 +47,7 @@
 \newcommand{\inter}{\text{int}}
 \newcommand{\ext}{\text{ext}}
 \newcommand{\ninf}[1]{\|#1\|_\infty}
+\newcommand{\vecn}[1]{(#1_i)_{1 \leq i \leq n}}
 % Lemmas:
 \usepackage{amsthm}
 \newtheorem*{lem}{Lemma}
@@ -3959,6 +3960,51 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
   converges to a function $F \in C(X \to Y)$, as expected, and this
   convergence is uniform by Proposition 14.4.4.
 \end{exo}
+
+\pagebreak
+
+\setcounter{section}{16}
+\section{Several variables differential calculus}
+
+\begin{exo}{17.1.1}{Prove Lemma 6.1.2}
+
+  Let be $x := \vecn{x}$, $y = \vecn{y}$ and $z =
+  \vecn{z}$ three elements of $\rr^n$ ; let be $c,d \in \rr$. We will
+  just prove here the first three properties of Lemma 6.1.2.
+  
+  \begin{itemize}
+  \item \textit{Commutativity of addition}. We have:
+    \begin{align*}
+      x + y &= \vecn{x} + \vecn{y} \\
+            &= (x_i + y_i)_{1 \leq i \leq n} \\
+            &= (y_i + x_i)_{1 \leq i \leq n}
+            &\text{(commutativity of $+$ on $\rr$)}\\
+            &= \vecn{y} + \vecn{x}\\
+            &= y + x.
+    \end{align*}
+    
+  \item \textit{Associativity of addition}. We have:
+    \begin{align*}
+      (x+y)+z &= (\vecn{x} + \vecn{y}) + \vecn{z} \\
+              &= ((x_i + y_i) + z_i)_{1 \leq i \leq n} \\
+              &= (x_i + (y_i + z_i))_{1 \leq i \leq n}
+              & \text{(associativity of $+$ on $\rr$)}\\
+              &= \vecn{x} + (\vecn{y} + \vecn{z}) \\
+              &= x + (y+z).
+    \end{align*}
+    
+  \item \textit{Additive identity}. The part $x+0 = 0+x$ comes
+    directly from commutativity of addition proved above; and by
+    definition,
+    \[
+      x + 0 = \vecn{x} + (0)_{1 \leq i \leq n} = (x_i+0)_{1 \leq i \leq n} =
+      \vecn{x} = x.\]      
+  \end{itemize}
+
+  All other properties can be proved similarly from the algebraic
+  properties of real numbers (Proposition 5.3.11).
+\end{exo}
+
 \end{document}
 %%% Local Variables:
 %%% mode: latex
