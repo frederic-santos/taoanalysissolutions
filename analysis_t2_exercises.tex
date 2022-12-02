@@ -3189,28 +3189,58 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
   \item $\lim_{x \to x_0; x \in E \setminus \{x_0\}}  f(x) = f(x_0)$.
   \end{enumerate}
 
-  First, it is clear that we have (i) $\implies$ (ii), since $E \setminus
-  \{x_0\} \subseteq E$.
+  Let's prove that (i) and (ii) are equivalent.
+    
+  \begin{itemize}
+  \item First we show that (i) $\implies$ (ii). If
+    $\lim_{x \to x_0; x \in E}{f(x)}$ exists, then there exists
+    $L \in Y$ such that $\lim_{x \to x_0; x \in E}{f(x)} = L$. Let be
+    $\epsilon > 0$. There exists a $\delta > 0$ such that:
+    \begin{equation}
+      \label{eq:14.1.1a}
+      (x \in E \, \text{ and } \, d_X(x, x_0) < \delta)
+      \implies
+      d_Y(f(x), L) < \epsilon.
+    \end{equation}
 
-  Now let's show that (ii) $\implies$ (i). It means that for any
-  arbitrary $\epsilon > 0$, there exists a $\delta > 0$ such that
-  $d_Y(f(x), f(x_0)) < \epsilon$ whenever $x \in E \setminus \{x_0\}$ and
-  $d_X(x, x_0) < \delta$. Note that, obviously, if $x=x_0$, then
-  $f(x) = f(x_0)$, so that the previous statement can be extended over
-  $E$ (it is true by hypothesis if $x \in E \setminus \{x_0\}$ and it remains
-  true if $x = x_0$). Thus, we have indeed (ii), as expected.
+    Thus, for all $x \in E \setminus \{x_0\}$ such that
+    $d_X(x, x_0) < \delta$, we will also have
+    $d_Y(f(x), L) < \epsilon$, since $E \setminus \{x_0\} \subset E$. This means that we
+    have $\lim_{x \to x_0 ; x \in E \setminus \{x_0\}}{f(x)} = L$.
 
-  Finally, suppose that the limit $\lim_{x \to x_0; x \in E} f(x)$ exists
-  at all, and let's show that it must equal $f(x_0)$. Suppose that the
-  limit exists, and suppose for the sake of contradiction that this
-  limit is some $L \neq f(x_0)$. Consider
-  $\epsilon := d_Y(L, f(x_0))/2$. By hypothesis, we have
-  $\epsilon > 0$, and there exists a $\delta > 0$ such that
-  $d_Y(f(x), L) < \epsilon$ whenever $x \in E$ and
-  $d_X(x, x_0) < \delta$. At $x = x_0$, we clearly have $x_0 \in E$ and
-  $d(x, x_0) = 0 < \delta$, but we have
-  $d_Y(f(x), L) = 2 \epsilon > \epsilon$. This is a contradiction, and thus we must
-  have $L = f(x_0)$.
+    But we still have to prove that $L = f(x_0)$. Suppose for the sake
+    of contradiction that $L \neq f(x_0)$. In particular, this implies
+    that $\epsilon' := d_Y(f(x_0), L)/2 > 0$. Thus, by \eqref{eq:14.1.1a},
+    there exists a $\delta'>0$ such that $d_Y(f(x), L) < \epsilon'$ for all
+    $x \in E$ with $d_X(x, x_0) < \delta'$. But if we consider
+    $x = x_0$, we clearly have $d_Y(f(x), L) = 2\epsilon' > \epsilon'$ although
+    $x \in E$ and $d_X(x, x_0) = 0 < \delta'$, a contradiction. Thus, we must
+    have $L = f(x_0)$.
+
+    Note that this shows both that (i) $\implies$ (ii), and that if
+    $\lim_{x \to x_0; x \in E}{f(x)}$ exists at all, then this limit is
+    necessarily equal to $f(x_0)$.
+    
+  \item Now we show that (ii) $\implies$ (i). Let be $\epsilon>0$. Since we
+    have (by hypothesis)
+    $\lim_{x \to x_0 ; x \in E \setminus \{x_0\}}{f(x)} = f(x_0)$, there exists a
+    $\delta>0$ such that
+    \begin{equation}
+      \label{eq:14.1.1b}
+      (x \in E \setminus \{x_0\} \, \text{ and } \, d_X(x, x_0) < \delta)
+      \implies
+      d_Y(f(x), f(x_0)) < \epsilon.
+    \end{equation}
+
+    Now let be $x \in E$. We have two cases: either $x \neq x_0$, or
+    $x=x_0$. If $x \neq x_0$, \eqref{eq:14.1.1b} is true. If $x=x_0$, we
+    have both $d_X(x, x_0) = 0 < \delta$ and
+    $d_Y(f(x), f(x_0)) = 0 < \epsilon$. Thus, in both cases, if
+    $x \in E$ and $d_X(x, x_0) < \delta$, we have indeed
+    $d_Y(f(x), f(x_0)) = 0 < \epsilon$. Thus,
+    $\lim_{x \to x_0; x\in E}{f(x)} = f(x_0)$, and in particular (i) is
+    true.
+  \end{itemize}
 \end{exo}
 
 \bigskip
