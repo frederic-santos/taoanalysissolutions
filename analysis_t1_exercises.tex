@@ -5841,9 +5841,10 @@ exchangeable here, so that showing only one direction will be enough.
     by Lemma 6.5.2. Thus, by the zero test (Corollary 7.2.6), the
     formal series $\sum_{n=0}^{\infty}x^n$ is not convergent.
   \item If $|x| < 1$, then let's prove that for all $N \geq 0$, the
-    partial sum $S_N$ is equal to $\sum_{n=0}^{N}x^n$. Let's induct on
-    $N$, starting with the base case $N=0$. In this case, we have $S_0
-    = \sum_{n=0}^{0}x^n = 1$; and on the other side, we have
+    partial sum $S_N := \sum_{n=0}^{N}x^n$ is equal to
+    $(1-x^{N+1})/(1-x)$. Let's induct on $N$, starting with the base
+    case $N=0$. In this case, we have $S_0 = \sum_{n=0}^{0}x^n = 1$; and
+    on the other side, we have
     $\frac{1-x^{N+1}}{1-x} = \frac{1-x}{1-x} = 1$, so the base case is
     done.
 
@@ -5870,6 +5871,21 @@ exchangeable here, so that showing only one direction will be enough.
     |x|^n$, and the series $\sum_{n=0}^{\infty} |x|^n$ is convergent,
     by the previous result. This closes the proof.
   \end{itemize}
+\end{exo}
+
+\begin{exo}{7.3.3}{Let $\sum_{n=0}^{\infty} a_n$ be an absolutely convergent
+    series of real numbers such that $\sum_{n=0}^{\infty} |a_n| = 0$. Show
+    that $a_n = 0$ for every natural number $n$.}
+
+  Suppose for the sake of contradiction that there exists a anturel
+  number $m$ such that $a_m \neq 0$. Thus, in particular,
+  $|a_m| > 0$, and for all $N \geq m$, we have
+  \[
+    \sum_{n=0}^{N} |a_n| \geq |a_m| > 0.
+  \]
+  We can take the limit as $N \to \infty$ in this inequality leads to
+  $\sum_{n=0}^{\infty} |a_n| \geq |a_m| > 0$, a contradiction with the initial
+  hypothesis.
 \end{exo}
 
 \pagebreak
