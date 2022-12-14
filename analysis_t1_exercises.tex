@@ -8016,19 +8016,16 @@ exchangeable here, so that showing only one direction will be enough.
     for all $x_0 \in \rr$.
   \item We have:
     \begin{align*}
-      \frac{(f+g)(x) - (f+g)(x_0)}{x - x_0} &= \frac{f(x) + g(x) -
-                                              f(x_0) - g(x_0)}{x -
-                                              x_0}  \\
-                                            &= \frac{f(x) - f(x_0)}{x
-                                              - x_0} + \frac{g(x) -
-                                              g(x_0)}{x - x_0}
+      \frac{(f+g)(x) - (f+g)(x_0)}{x - x_0}
+      &= \frac{f(x) + g(x) - f(x_0) - g(x_0)}{x - x_0}  \\
+      &= \frac{f(x) - f(x_0)}{x - x_0} + \frac{g(x) - g(x_0)}{x - x_0}
     \end{align*}
     and thus, in particular, since both terms of the right-hand side
     converge by hypothesis, we have by Proposition 9.3.14:
     \begin{align*}
       \lim_{x \to x_0} \frac{(f+g)(x) - (f+g)(x_0)}{x - x_0}
-      &= \lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0} + \lim_{x \to
-        x_0} \frac{g(x) - g(x_0)}{x - x_0} \\
+      &= \lim_{x \to x_0} \frac{f(x) - f(x_0)}{x - x_0}
+        + \lim_{x \to x_0} \frac{g(x) - g(x_0)}{x - x_0} \\
       &= f'(x_0) + g'(x_0)
     \end{align*}
     as expected.
@@ -8048,7 +8045,7 @@ exchangeable here, so that showing only one direction will be enough.
         f(x_0) \frac{g(x)-g(x_0)}{x-x_0} \right) \\
       &= \lim_{x\to x_0} \left(g(x)\frac{f(x) - f(x_0)}{x-x_0}\right)
         + \left( f(x_0) \frac{g(x)-g(x_0)}{x-x_0} \right) \\
-      &= g(x_0) f'(x_0) + f(x_0) + g'(x_0)
+      &= g(x_0) f'(x_0) + f(x_0) g'(x_0)
     \end{align*}
     as expected.
   \item Obvious using limit laws and/or Proposition 9.3.14.
