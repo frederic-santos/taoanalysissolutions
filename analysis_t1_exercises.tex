@@ -9016,25 +9016,31 @@ exchangeable here, so that showing only one direction will be enough.
 
   \begin{itemize}
   \item First, let's prove that
-    $\supint{f}{I} \geq \inf \{U(f, \P) : \P \text{ is a partition of
-    } I\}$. 
-
+    $\supint{f}{I} \geq \inf \{U(f, \P) : \P \text{ is a partition of }
+    I\}$.
+    
     Let be $\P$ any partition of $I$, and $g$ any function piecewise
-    constant with respect to $\P$ that majorizes $f$ on $I$. Thus we
-    have $p.c. \int_I g \geq U(f, \P)$, by Lemma 11.3.11.
+    constant with respect to $\P$ that majorizes $f$ on $I$. Thus, by
+    Lemma 11.3.11 and by definition of an infimum, we have
+    \[
+      p.c. \int_I g \geq \mathbf{U}(f, \P) \geq \inf \{\mathbf{U}(f, \P) : \P
+      \text{ partition of } I\}.
+    \]
 
-    It means that $U(f, \P)$ is a lower bound for the set $\{ p.c.
-    \int_I g \; | \; g \text{ is p.c. and majorizes } f \}$. Thus, by
-    definition of an infimum (taken on functions $g$), we have
-    \[ U(f, \P) \geq \inf \left\{ p.c. \int_I g \; \Bigl| \; g \text{ is p.c. and
-          majorizes } f \right\} =: \supint{f}{I}\]
-    This is true for any given partition $\P$ of $I$. Thus, it means
-    that $\supint{f}{I}$ is a lower bound for the set $\{U(f,\P) : \P
-    \text{ is a partition of } I\}$. By definition of an infimum
-    (taken on partitions $\P$), we have
-    \[\supint{f}{I} \geq \inf \left\{ U(f,\P) : \P
-        \text{ is a partition of } I\right\}\]
+    Since this is true for an arbitrary function $g$, we see that the
+    real number
+    $\inf \{\mathbf{U}(f, \P) : \P \text{ partition of } I\}$ is a
+    lower bound for the set $\{p.c. \int_I g : g \text{ p.c. on $I$
+      and majorizes } f\}$.
+
+    By definition of an infimum, we thus have
+    \begin{align*}
+      \supint{f}{I}
+      &:= \inf \left\{p.c. \int_I g : g \text{ p.c. on $I$ and majorizes } f\right\} \\
+      &\geq \inf \{\mathbf{U}(f, \P) : \P \text{ partition of } I\},
+    \end{align*}
     as expected.
+         
   \item Now, let's prove that
     $\supint{f}{I} \leq \inf \{U(f, \P) : \P \text{ is a partition of }
     I\}$.
