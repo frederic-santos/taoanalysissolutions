@@ -3990,6 +3990,33 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
   converges to a function $F \in C(X \to Y)$, as expected, and this
   convergence is uniform by Proposition 14.4.4.
 \end{exo}
+\bigskip
+
+\begin{exo}{14.8.5}{Let $f : \rr \to \rr$ and $g : \rr \to \rr$ be
+    continuous, compactly supported functions. Suppose that $f$ is
+    supported on the interval $[0, 1]$, and $g$ is constant on the
+    interval $[0, 2]$ (i.e., there is a real number $c$ such that
+    $g(x) = c$ for all $x \in [0, 2]$). Show that the convolution
+    $f * g$ is constant on the interval $[1, 2]$.}
+
+  Since $f$ is supported on $[0,1]$, the function
+  $y \mapsto f(y) g(x-y)$ is itself null outside of $[0,1]$ (where
+  $x \in \rr$ is a fixed real number). Furthermore, since $g$ is
+  constant on $[0,2]$, we have $g(x) = c$ for all $x \in \rr$.
+
+  Now let be $x \in [1,2]$. Note that if $1 \leq x \leq 2$ and
+  $0 \leq y \leq 1$, we have $0 \leq x-y \leq 2$, so that
+  $g(x-y) = c$. Thus, we have
+  \begin{align*}
+    f*g(x)
+    &:= \int_{-\infty}^{+\infty} f(y) g(x-y) \, dy \\
+    &= \int_{0}^{1} f(y) g(x-y) \, dy \\
+    &= \int_{0}^{1} f(y) \times c \, dy \\
+    &= c \int_{-\infty}^{+\infty} f(y) \, dy.
+  \end{align*}
+  
+  Thus, the function $f*g$ is indeed constant on $[1,2]$.  
+\end{exo}
 
 \pagebreak
 
