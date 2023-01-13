@@ -4017,6 +4017,103 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
   
   Thus, the function $f*g$ is indeed constant on $[1,2]$.  
 \end{exo}
+\bigskip
+
+\begin{exo}{14.8.6}{Prove Lemma 14.8.14.}
+
+  \begin{enumerate}[label=(\alph*)]
+  \item Let $g$ be an $(\epsilon, \delta)$-approximation of the identity. Thus, by
+    definition, $g$ is a positive function on $[-1, 1]$, and in
+    particular,
+    $0 \leq \int_{[-\delta, \delta]} g \leq \int_{[-1, 1]} g = 1$ (by Theorem 11.4.1 (d,h)).
+
+    Furthermore, we have $g(x) \leq \epsilon$ whenever
+    $\delta \leq |x| \leq 1$. So, we have:
+    \begin{align*}
+      \int_{[-1, 1]} g
+      &= \int_{[-1, -\delta]} g + \int_{[-\delta, \delta]} g + \int_{[\delta, 1]} g \\
+      &\leq (- \delta + 1) \epsilon + \int_{[-\delta, \delta]} g + (1- \delta) \epsilon \\
+      &\leq (2 - 2\delta) \epsilon + \int_{[-\delta, \delta]} g.
+    \end{align*}
+    And since $\int_{[-1, 1]} g = 1$ by definition, we get
+    \[
+      \int_{[-\delta, \delta]} g \geq \int_{[-1, 1]} g - (2 - 2\delta) \epsilon \geq 1 - 2 \epsilon.
+    \]
+    
+    Thus, we indeed have the inequalities
+    \[
+      1 - 2 \epsilon \leq \int_{[-\delta, \delta]} g \leq 1,
+    \]
+    as expected.
+    
+  \item First we note that, by Proposition 14.8.11(b), and then by
+    Theorem 11.4.1, we have for all $x \in [0,1]$ :
+    \begin{align*}
+      f*g(x)
+      &:= \int_{-\infty}^{+\infty} f(y) g(x-y) \, dy \\
+      &= \int_{-\infty}^{+\infty} f(x-y) g(y) \, dy \\
+      &= \int_{-1}^{1} f(x-y) g(y) \, dy \\
+      &= \underbrace{\int_{[-1, \delta]} f(x-y) g(y) \, dy}_{:= A} +
+        \underbrace{\int_{[-\delta, \delta]} f(x-y) g(y) \, dy}_{:= B} +
+        \underbrace{\int_{[\delta, 1]} f(x-y) g(y) \, dy}_{:= C}.
+    \end{align*}
+
+    First let's show that $B$ is $\epsilon$-close to $f(x)$.
+
+    Since $-\delta \leq y \leq \delta$, we have in particular
+    $-\delta \leq x - (x-y) \leq \delta$. Thus, by the initial hypothesis,
+    $|f(x) - f(x-y)| \leq \epsilon$, or in other words,
+    \begin{equation}
+      \label{eq:14.8.6b}
+      f(x) - \epsilon \leq f(x-y) \leq f(x) + \epsilon,
+    \end{equation}
+    for all $y \in [-\delta, \delta]$ and all $x \in [0,1]$.
+
+    Furthermore, by (a), we also know that
+    $1 - 2 \epsilon \leq \int_{[-\delta, \delta]} g \leq 1$. Let's use \eqref{eq:14.8.6b} to
+    make the integration variable $y$ partly ``vanish'' in $B$:
+
+    {\everymath={\displaystyle}
+      \[
+        \displaystyle
+        \begin{array}{rcccl}
+          \int_{[-\delta, \delta]} (f(x)-\epsilon) g(y) \, dy
+          &\leq& \int_{[-\delta, \delta]} f(x-y) g(y) \, dy
+          &\leq& \int_{[-\delta, \delta]} (f(x)+\epsilon) g(y) \, dy \\
+          (f(x)-\epsilon) \int_{[-\delta, \delta]} g(y) \, dy
+          &\leq& \int_{[-\delta, \delta]} f(x-y) g(y) \, dy
+          &\leq& (f(x)+\epsilon) \int_{[-\delta, \delta]} g(y) \, dy \\
+          (f(x)-\epsilon) (1-2 \epsilon)
+          &\leq& \int_{[-\delta, \delta]} f(x-y) g(y) \, dy
+          &\leq& (f(x)+\epsilon).
+        \end{array}
+      \]
+    }
+    
+    Now let's show that $|A| \leq M\epsilon$. Recall that for all
+    $x \in \rr$, we have ${-M \leq f(x) \leq M}$; and that for all
+    $x \in [\delta, 1]$, we have $g(x) \leq \epsilon$. Thus,
+    \[- M \epsilon \leq -M(1-\delta) \epsilon \leq -M \int_{[\delta, 1]} g
+      \leq \int_{[\delta, 1]} f(x-y) g(y) \, dy
+      \leq M \int_{[\delta, 1]} g \leq M(1-\delta) \epsilon \leq M \epsilon, \]
+    and in particular, $-M \epsilon \leq A \leq M \epsilon$.
+    
+    A similar proof would also show that $-M \epsilon \leq C \leq M \epsilon$.
+
+    Thus, since $f*g(x) := A + B + C$, we can combine the three
+    previous results about $A, B, C$ to get:
+    \[
+      (f(x) - \epsilon)(1 - 2 \epsilon) - 2M \epsilon \leq f*g(x) \leq f(x) + \epsilon(1+2M),
+    \]
+    i.e.,
+    \[
+      - \epsilon(1+4M) \leq -2 \epsilon f(x) - \epsilon + 2 \epsilon^2 - 2M \epsilon
+      \leq f*g(x) - f(x)
+      \leq \epsilon(1+2M) \leq \epsilon(1+4M).
+    \]
+    Thus finally shows Lemma 14.8.14.
+  \end{enumerate}
+\end{exo}
 
 \pagebreak
 
