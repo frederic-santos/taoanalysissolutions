@@ -4115,6 +4115,30 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
   \end{enumerate}
 \end{exo}
 
+\begin{exo}{14.8.7}{Prove Corollary 14.8.15.}
+
+  Since $f : \rr \to \rr$ is continuous and supported on $[0,1]$, the
+  function $f$ is bounded and uniformly continuous on $\rr$ (Exercise
+  14.8.3). So, there exists a real number $M$ such that
+  $|f(x)| \leq M$ for all $x \in \rr$.
+
+  Let be $\epsilon > 0$ a positive real number. Let's take
+  $\epsilon' := \epsilon/(1+4M)$. By definition, there exists a real number
+  $\delta > 0$ such that $|f(x) - f(y)| \leq \epsilon'$ for all real numbers
+  $x,y$ such that $|x-y| < \delta$. Let be
+  $\delta' := \min(\delta, 1/2)$, so that we have in particular $0 < \delta' < 1$.
+
+  By Lemma 14.8.8, there exists a function $P$ which is a
+  $(\epsilon', \delta')$-approximation of the identity, and which is a polynomial
+  on $[-1, 1]$.
+
+  Thus, by Lemma 14.8.13, the function $P' := f * P$ is a
+  polynomial on $[0,1]$.
+
+  And finally, by Lemma 14.8.14, we have
+  $|P'(x) - f(x)| \leq (1+4M) \epsilon' = \epsilon$ for all
+  $x \in [0,1]$, which proves Corollary 14.8.15.
+\end{exo}
 \pagebreak
 
 \setcounter{section}{16}
