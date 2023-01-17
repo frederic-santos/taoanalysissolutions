@@ -4139,6 +4139,60 @@ always mean ``Exercise 4.3.3 from \textit{Analysis I}''.
   $|P'(x) - f(x)| \leq (1+4M) \epsilon' = \epsilon$ for all
   $x \in [0,1]$, which proves Corollary 14.8.15.
 \end{exo}
+\bigskip
+
+\begin{exo}{14.8.8}{Let $f : [0, 1] \to \rr$ be a continuous function,
+    and suppose that $\int_{[0,1]} f(x)x^n \, dx = 0$ for all
+    non-negative integers $n$. Show that $f$ must be the zero function
+    $f = 0$.}
+
+  Let be $P$ a polynomial on $[0,1]$: by Definition 14.8.1, there
+  exists a natural number $n$ such that
+  $P(x) := \sum_{j=0}^{n} c_j x^j$ for all $x \in [0,1]$. By linearity of
+  the Riemann integral (Theorem 11.4.1), we thus have
+  \begin{equation}
+    \label{eq:14.8.8}
+    \int_{[0,1]} f(x)P(x) \, dx =
+    \sum_{j=0}^{n} c_j \int_{[0,1]} f(x) x^j \, dx =
+    \sum_{j=0}^{n} c_j \times 0 = 0.
+  \end{equation}
+
+  Furthermore, since $[0,1]$ is a compact interval, the function $f$
+  is bounded, by the maximum principle. There exists a real number $M$
+  such that $|f(x)| \leq M$ for all $x \in [0,1]$.
+    
+  Let be $\epsilon > 0$ a real number, and let be
+  $\epsilon' := \epsilon/M$. By the Weierstrass approximation theorem (Corollary
+  14.8.19), there exists a polynomial $P : [0,1] \to \rr$ such that
+  $|P(x) - f(x)| \leq \epsilon'$ for all $x \in [0,1]$. Thus, we also have
+  \begin{equation*}
+    |f(x)| \times |P(x)-f(x)| = |f(x) (P(x)-f(x))| \leq M \times \epsilon' = \epsilon,
+  \end{equation*}
+  which also implies
+  \begin{equation}
+    \label{eq:14.8.8b}
+    -\epsilon \leq f(x)P(x) - f(x)f(x) \leq \epsilon
+  \end{equation}
+  for all $x \in [0,1]$.
+
+  So, we have
+  \begin{equation*}
+    \int_{[0,1]} -\epsilon \, dx
+    \leq  \int_{[0,1]} f(x)P(x) - f(x)f(x) \, dx
+    \leq  \int_{[0,1]} \epsilon \, dx
+  \end{equation*}
+  and, by \eqref{eq:14.8.8} and linearity of the Riemann integral, we
+  finally get
+  \begin{equation}
+    \label{eq:14.8.8b}
+    -\epsilon \leq \int_{[0,1]} f(x)f(x) \, dx \leq \epsilon.
+  \end{equation}
+
+  Since this is true for all $\epsilon > 0$, we can conclude that
+  $\int_{[0,1]} f(x) f(x) \, dx = 0$. But since $f^2$ is a continuous and
+  non-negative function, we can use Exercise 11.4.2 and conclude that
+  $f^2 = 0$. Thus, we indeed have $f = 0$ on $[0,1]$, as expected.
+\end{exo}
 \pagebreak
 
 \setcounter{section}{16}
